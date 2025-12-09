@@ -612,21 +612,6 @@ Value='X     ';OTHER
 Value='?     ';NO RESPONSE
 
 [Item]
-Label=Type of health insurance - Mutual-health organization / Community-based health insurance
-Name=UIN2A
-Start=17
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Type of health insurance - Mutual-health organization / Community-based health insurance
-Name=UIN2A_VS1
-Value='A';MUTUAL HEALTH ORGANIZATION / COMMUNITY-BASED HEALTH INSURANCE
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
 Label=Type of health insurance - Health insurance through employer
 Name=UIN2B
 Start=18
@@ -1965,7 +1950,7 @@ Label=Child Functioning
 Name=MODUCF
 RecordTypeValue='UCF'
 Required=No
-RecordLen=29
+RecordLen=28
 
 [Item]
 Label=Child wear glasses
@@ -2181,30 +2166,12 @@ Value=3;A LOT OF DIFFICULTY
 Value=4;CANNOT PLAY AT ALL
 Value=9;NO RESPONSE
 
-[Item]
-Label=Compared with children of the same age, how much child kick, bite or hit other children or adults
-Name=UCF19
-Start=29
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Compared with children of the same age, how much child kick, bite or hit other children or adults
-Name=UCF19_VST
-Value=1;NOT AT ALL
-Value=2;LESS
-Value=3;THE SAME
-Value=4;MORE
-Value=5;A LOT MORE
-Value=9;NO RESPONSE
-
 [Record]
 Label=IYCF: Breastfeeding and Dietary Intake
 Name=MODBD
 RecordTypeValue='0BD'
 Required=No
-RecordLen=58
+RecordLen=59
 
 [Item]
 Label=Child ever been breastfed
@@ -2627,9 +2594,25 @@ Value=8;DK
 Value=9;NO RESPONSE
 
 [Item]
+Label=Any fortified baby food such as Cerelac, Nutrilac?     
+Name=BD8B1
+Start=41
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Any fortified baby food such as Cerelac, Nutrilac?     
+Name=BD8B1_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
 Label=Child ate pumpkin, carrots, squash etc. that are yellow or orange inside yesterday
 Name=BD8C
-Start=41
+Start=42
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2645,7 +2628,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Child ate plantains, white potatoes, white yams, manioc, cassava etc. any other foods made from starchy roots yesterday
 Name=BD8D
-Start=42
+Start=43
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2661,7 +2644,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Child ate dark green, leafy vegetables yesterday
 Name=BD8E
-Start=43
+Start=44
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2677,7 +2660,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Child ate other vegetables yesterday
 Name=BD8F
-Start=44
+Start=45
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2693,7 +2676,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Child ate ripe mangoes, papayas etc. any other vitamin A-rich fruits yesterday
 Name=BD8G
-Start=45
+Start=46
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2709,7 +2692,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Child ate other fruits yesterday
 Name=BD8H
-Start=46
+Start=47
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2725,7 +2708,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Child ate liver, kidney, heart or other organ meat yesterday
 Name=BD8I
-Start=47
+Start=48
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2741,7 +2724,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Child ate sausages, hot dogs, ham, bacon, salami, canned meat or other processed meats yesterday
 Name=BD8J
-Start=48
+Start=49
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2757,7 +2740,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Child ate meat, such as beef, pork, lamb, goat, chicken, duck yesterday
 Name=BD8K
-Start=49
+Start=50
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2773,7 +2756,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Child ate eggs yesterday
 Name=BD8L
-Start=50
+Start=51
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2789,7 +2772,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Child ate fresh or dried fish or shellfish yesterday
 Name=BD8M
-Start=51
+Start=52
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2805,7 +2788,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Child ate beans, peas, lentils or nuts or any food made from these yesterday
 Name=BD8N
-Start=52
+Start=53
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2821,7 +2804,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Child ate hard or soft cheese yesterday
 Name=BD8O
-Start=53
+Start=54
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2837,7 +2820,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Child ate sweet foods such as chocolates, candies, pastries, cakes, biscuits, frozen treats or other sentinel sweet foods yesterday
 Name=BD8P
-Start=54
+Start=55
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2853,7 +2836,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Child ate chips, crisps, puffs, French fries, fried dough, instant noodles or other sentinel fried and salty foods yesterday
 Name=BD8Q
-Start=55
+Start=56
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2869,7 +2852,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Child ate other solid, semi-solid or soft food yesterday
 Name=BD8X
-Start=56
+Start=57
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2885,7 +2868,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Times child ate solid or semi-solid food
 Name=BD9
-Start=57
+Start=58
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2906,7 +2889,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Dummy for BD8 explanation
 Name=BD8DUMMY
-Start=58
+Start=59
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -3041,6 +3024,7 @@ Value=2022;2022
 Value=2023;2023
 Value=2024;2024
 Value=2025;2025
+Value=2026;2026
 Value=9998;DK
 Value=9999;NO RESPONSE
 
@@ -3117,6 +3101,7 @@ Value=2022;2022
 Value=2023;2023
 Value=2024;2024
 Value=2025;2025
+Value=2026;2026
 Value=4444;MARKED ON CARD
 Value=6666;MOTHER REPORTED
 Value=9999;NO RESPONSE
@@ -3194,6 +3179,7 @@ Value=2022;2022
 Value=2023;2023
 Value=2024;2024
 Value=2025;2025
+Value=2026;2026
 Value=4444;MARKED ON CARD
 Value=6666;MOTHER REPORTED
 Value=9999;NO RESPONSE
@@ -3271,6 +3257,7 @@ Value=2022;2022
 Value=2023;2023
 Value=2024;2024
 Value=2025;2025
+Value=2026;2026
 Value=4444;MARKED ON CARD
 Value=6666;MOTHER REPORTED
 Value=9999;NO RESPONSE
@@ -3348,6 +3335,7 @@ Value=2022;2022
 Value=2023;2023
 Value=2024;2024
 Value=2025;2025
+Value=2026;2026
 Value=4444;MARKED ON CARD
 Value=6666;MOTHER REPORTED
 Value=9999;NO RESPONSE
