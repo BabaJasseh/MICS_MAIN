@@ -59,7 +59,7 @@ Value=1:50
 Label=Five-Seventeen Child Information Panel
 Name=MODFS
 RecordTypeValue='0FS'
-RecordLen=95
+RecordLen=97
 
 [Item]
 Label=Child's name
@@ -291,23 +291,29 @@ Value=1;ENGLISH
 Label=Language of the interview
 Name=FS13
 Start=85
-Len=1
+Len=2
 DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
 Label=Language of the interview
-Name=FS13_VST
+Name=FS13_VS1
 Value=1;ENGLISH
-Value=2;LANGUAGE 2
-Value=3;LANGUAGE 3
-Value=6;OTHER LANGUAGE
+Value=2;MANDINKA/JAHANKA
+Value=3;WOLLOF
+Value=4;FULA/TUKULOR/LOROBO
+Value=5;JOLA/KARONINKA
+Value=6;SARAHULE
+Value=7;SERERE
+Value=8;MANJAGO
+Value=10;BAMBARA
+Value=96;OTHER LANGUAGE (SPECIFY)
 
 [Item]
 Label=Native language of the respondent
 Name=FS14
-Start=86
-Len=1
+Start=87
+Len=2
 DataType=Numeric
 ZeroFill=Yes
 
@@ -315,14 +321,20 @@ ZeroFill=Yes
 Label=Native language of the respondent
 Name=FS14_VST
 Value=1;ENGLISH
-Value=2;LANGUAGE 2
-Value=3;LANGUAGE 3
-Value=6;OTHER LANGUAGE
+Value=2;MANDINKA/JAHANKA
+Value=3;WOLLOF
+Value=4;FULA/TUKULOR/LOROBO
+Value=5;JOLA/KARONINKA
+Value=6;SARAHULE
+Value=7;SERERE
+Value=8;MANJAGO
+Value=10;BAMBARA
+Value=96;OTHER LANGUAGE (SPECIFY)
 
 [Item]
 Label=Translator used
 Name=FS15
-Start=87
+Start=89
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -337,7 +349,7 @@ Value=3;NO, NOT USED
 [Item]
 Label=Has been interviewed for any individual questionnaires
 Name=FS15C
-Start=88
+Start=90
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -351,7 +363,7 @@ Value=2;NO, NOT ALREADY INTERVIEWED
 [Item]
 Label=Consent for phone survey
 Name=FS15EF
-Start=89
+Start=91
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -365,7 +377,7 @@ Value=2;NO
 [Item]
 Label=Have personal phone number or phone number for the household
 Name=FS15GH
-Start=90
+Start=92
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -379,7 +391,7 @@ Value=2;NO
 [Item]
 Label=Note on sharing phone number for the household
 Name=FS15I
-Start=91
+Start=93
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -392,7 +404,7 @@ Value=1;CONTINUE
 [Item]
 Label=Household interviewer
 Name=FSHINT
-Start=92
+Start=94
 Len=3
 DataType=Numeric
 ZeroFill=Yes
@@ -400,7 +412,7 @@ ZeroFill=Yes
 [Item]
 Label=Finish
 Name=FSFIN
-Start=95
+Start=97
 Len=1
 DataType=Numeric
 ZeroFill=Yes

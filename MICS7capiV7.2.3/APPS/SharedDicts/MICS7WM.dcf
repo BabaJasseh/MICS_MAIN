@@ -59,7 +59,7 @@ Value=1:50
 Label=Woman's Information Panel
 Name=MODWM
 RecordTypeValue='0WM'
-RecordLen=77
+RecordLen=78
 
 [Item]
 Label=Woman's name
@@ -313,13 +313,13 @@ Value=7;SERERE
 Value=8;MANJAGO
 Value=9;KRIO/AKU/MARABOUT
 Value=10;BAMBARA
-Value=6;OTHER LANGUAGE
+Value=96;OTHER LANGUAGE
 
 [Item]
 Label=Native language of the respondent
 Name=WM14
 Start=66
-Len=1
+Len=2
 DataType=Numeric
 ZeroFill=Yes
 
@@ -327,14 +327,21 @@ ZeroFill=Yes
 Label=Native language of the respondent
 Name=WM14_VST
 Value=1;ENGLISH
-Value=2;LANGUAGE 2
-Value=3;LANGUAGE 3
-Value=6;OTHER LANGUAGE
+Value=2;MANDINKA
+Value=3;WOLLOF
+Value=4;FULA/TUKULOR/LOROBO
+Value=5;JOLA/KARONINKA
+Value=6;SARAHULE
+Value=7;SERERE
+Value=8;MANJAGO
+Value=9;KRIO/AKU/MARABOUT
+Value=10;BAMBARA
+Value=96;OTHER LANGUAGE
 
 [Item]
 Label=Translator used
 Name=WM15
-Start=67
+Start=68
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -349,7 +356,7 @@ Value=3;NO, NOT USED
 [Item]
 Label=Has been interviewed for any individual questionnaires
 Name=WM15C
-Start=68
+Start=69
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -363,7 +370,7 @@ Value=2;NO, NOT ALREADY INTERVIEWED
 [Item]
 Label=Consent for phone survey
 Name=WM15EF
-Start=69
+Start=70
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -377,7 +384,7 @@ Value=2;NO
 [Item]
 Label=Have personal phone number or phone number for the household
 Name=WM15GH
-Start=70
+Start=71
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -391,7 +398,7 @@ Value=2;NO
 [Item]
 Label=Note on sharing phone number for the household
 Name=WM15I
-Start=71
+Start=72
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -404,7 +411,7 @@ Value=1;CONTINUE
 [Item]
 Label=Household interviewer
 Name=WMHINT
-Start=72
+Start=73
 Len=3
 DataType=Numeric
 ZeroFill=Yes
@@ -412,7 +419,7 @@ ZeroFill=Yes
 [Item]
 Label=Introduction MM Listing
 Name=INTROMM
-Start=75
+Start=76
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -426,7 +433,7 @@ Value=2;NO BROTHERS/SISTERS
 [Item]
 Label=Other brother/sisters
 Name=MMAUX
-Start=76
+Start=77
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -440,7 +447,7 @@ Value=2;NO
 [Item]
 Label=Finish
 Name=WMFIN
-Start=77
+Start=78
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -534,7 +541,7 @@ ZeroFill=Yes
 [ValueSet]
 Label=Born in this country or another one
 Name=WB5_VS1
-Value=1;THIS COUNTRY
+Value=1;THE GAMBIA
 Value=2;OTHER COUNTRY
 Value=8;DK
 Value=9;NO RESPONSE
@@ -550,13 +557,15 @@ ZeroFill=Yes
 [ValueSet]
 Label=Region of birth
 Name=WB5A_VS1
-Value=1;REGION 1
-Value=2;REGION 2
-Value=3;REGION 3
-Value=4;REGION 4
-Value=5;REGION 5
+Value=1;BANJUL
+Value=2;KANIFING
+Value=3;BRIKAMA
+Value=4;MANSAKONKO
+Value=5;KEREWAN
+Value=6;KUNTAUR
+Value=7;JANJANBUREH
+Value=8;BASSE
 Value=98;DK
-Value=99;NO RESPONSE
 
 [Item]
 Label=Country of birth
@@ -833,7 +842,7 @@ ZeroFill=Yes
 [ValueSet]
 Label=Have citizenship of this country
 Name=WB7_VS1
-Value=1;YES, CITIZEN OF THIS COUNTRY
+Value=1;YES, CITIZEN OF THE GAMBIA
 Value=2;NO, ANOTHER COUNTRY
 Value=3;NO, NO CITIZENSHIP
 Value=9;NO RESPONSE
