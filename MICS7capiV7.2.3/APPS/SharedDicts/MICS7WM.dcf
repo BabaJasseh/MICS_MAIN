@@ -59,7 +59,7 @@ Value=1:50
 Label=Woman's Information Panel
 Name=MODWM
 RecordTypeValue='0WM'
-RecordLen=76
+RecordLen=77
 
 [Item]
 Label=Woman's name
@@ -291,14 +291,12 @@ ZeroFill=Yes
 Label=Language of the questionnaire
 Name=WM12_VST
 Value=1;ENGLISH
-Value=2;LANGUAGE 2
-Value=3;LANGUAGE 3
 
 [Item]
 Label=Language of the interview
 Name=WM13
 Start=64
-Len=1
+Len=2
 DataType=Numeric
 ZeroFill=Yes
 
@@ -306,14 +304,21 @@ ZeroFill=Yes
 Label=Language of the interview
 Name=WM13_VST
 Value=1;ENGLISH
-Value=2;LANGUAGE 2
-Value=3;LANGUAGE 3
+Value=2;MANDINKA
+Value=3;WOLLOF
+Value=4;FULA/TUKULOR/LOROBO
+Value=5;JOLA/KARONINKA
+Value=6;SARAHULE
+Value=7;SERERE
+Value=8;MANJAGO
+Value=9;KRIO/AKU/MARABOUT
+Value=10;BAMBARA
 Value=6;OTHER LANGUAGE
 
 [Item]
 Label=Native language of the respondent
 Name=WM14
-Start=65
+Start=66
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -329,7 +334,7 @@ Value=6;OTHER LANGUAGE
 [Item]
 Label=Translator used
 Name=WM15
-Start=66
+Start=67
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -344,7 +349,7 @@ Value=3;NO, NOT USED
 [Item]
 Label=Has been interviewed for any individual questionnaires
 Name=WM15C
-Start=67
+Start=68
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -358,7 +363,7 @@ Value=2;NO, NOT ALREADY INTERVIEWED
 [Item]
 Label=Consent for phone survey
 Name=WM15EF
-Start=68
+Start=69
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -372,7 +377,7 @@ Value=2;NO
 [Item]
 Label=Have personal phone number or phone number for the household
 Name=WM15GH
-Start=69
+Start=70
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -386,7 +391,7 @@ Value=2;NO
 [Item]
 Label=Note on sharing phone number for the household
 Name=WM15I
-Start=70
+Start=71
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -399,7 +404,7 @@ Value=1;CONTINUE
 [Item]
 Label=Household interviewer
 Name=WMHINT
-Start=71
+Start=72
 Len=3
 DataType=Numeric
 ZeroFill=Yes
@@ -407,7 +412,7 @@ ZeroFill=Yes
 [Item]
 Label=Introduction MM Listing
 Name=INTROMM
-Start=74
+Start=75
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -421,7 +426,7 @@ Value=2;NO BROTHERS/SISTERS
 [Item]
 Label=Other brother/sisters
 Name=MMAUX
-Start=75
+Start=76
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -435,7 +440,7 @@ Value=2;NO
 [Item]
 Label=Finish
 Name=WMFIN
-Start=76
+Start=77
 Len=1
 DataType=Numeric
 ZeroFill=Yes
