@@ -1741,7 +1741,7 @@ Value=95;ALWAYS / SINCE BIRTH
 Value=99;NO RESPONSE
 
 [Item]
-Label=Just before you moved here, did you live in Banjul, in another Urban Area or in a Rural Area?Type of place before move
+Label=Type of place before move
 Name=WB9
 Start=18
 Len=1
@@ -1749,7 +1749,7 @@ DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Just before you moved here, did you live in Banjul, in another Urban Area or in a Rural Area?Type of place before move
+Label=Type of place before move
 Name=WB9_VS1
 Value=1;BANJUL
 Value=2;OTHER URBAN
@@ -1759,7 +1759,7 @@ Value=8;OUTSIDE THE GAMBIA (Specify)
 Value=9;NO RESPONSE
 
 [Item]
-Label=Before you moved here, in which Local Government Area did you live in?
+Label=Region lived before move
 Name=WB10
 Start=19
 Len=2
@@ -1767,7 +1767,7 @@ DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Before you moved here, in which Local Government Area did you live in?
+Label=Region lived before move
 Name=WB10_VS2
 Value=1;BANJUL
 Value=2;KANIFING
@@ -1811,27 +1811,11 @@ DataType=Alpha
 [ValueSet]
 Label=Type of health insurance
 Name=IN2_VS1
-Value='A     ';MUTUAL HEALTH ORGANIZATION / COMMUNITY-BASED HEALTH INSURANCE
 Value='B     ';HEALTH INSURANCE THROUGH EMPLOYER
-Value='C     ';SOCIAL SECURITY
+Value='C     ';NATIONAL HEALTH INSURANCE AUTHORITY (NHIA)
 Value='D     ';OTHER PRIVATELY PURCHASED COMMERCIAL HEALTH INSURANCE
 Value='X     ';OTHER
 Value='?     ';NO RESPONSE
-
-[Item]
-Label=Type of health insurance - Mutual-health organization / Community-based health insurance
-Name=IN2A
-Start=17
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Type of health insurance - Mutual-health organization / Community-based health insurance
-Name=IN2A_VS1
-Value='A';MUTUAL HEALTH ORGANIZATION / COMMUNITY-BASED HEALTH INSURANCE
-Value=' '
-Value='?';NO RESPONSE
 
 [Item]
 Label=Type of health insurance - Health insurance through employer
@@ -1859,7 +1843,7 @@ DataType=Alpha
 [ValueSet]
 Label=Type of health insurance - Social security
 Name=IN2C_VS1
-Value='C';SOCIAL SECURITY
+Value='C';NATIONAL HEALTH INSURANCE AUTHORITY (NHIA)
 Value=' '
 Value='?';NO RESPONSE
 
@@ -1906,396 +1890,6 @@ Label=Type of health insurance - No response
 Name=IN2NR_VS1
 Value='?';NO RESPONSE
 Value=' '
-
-[Record]
-Label=Employment and Training
-Name=MODNE
-RecordTypeValue='0NE'
-Required=No
-RecordLen=40
-
-[Item]
-Label=In the past 4 weeks: Attended school
-Name=NE3
-Start=16
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 4 weeks: Attended school
-Name=NE3_VS1
-Value=1;YES
-Value=2;NO
-Value=3;NO, FULL-TIME STUDENT ON SCHOOL BREAK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 4 weeks: Participated in any unpaid activity in a workplace
-Name=NE4
-Start=17
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 4 weeks: Participated in any unpaid activity in a workplace
-Name=NE4_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Within last one year: Participated in any unpaid activity in a workplace
-Name=NE5
-Start=18
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Within last one year: Participated in any unpaid activity in a workplace
-Name=NE5_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 4 weeks: Attended courses, seminars or training
-Name=NE6
-Start=19
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 4 weeks: Attended courses, seminars or training
-Name=NE6_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Within last one year: Attended courses, seminars or training
-Name=NE7
-Start=20
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Within last one year: Attended courses, seminars or training
-Name=NE7_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Last week: Did paid work
-Name=NE8
-Start=21
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Last week: Did paid work
-Name=NE8_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Last week: Ran or did kind of business, farming or other activity
-Name=NE9
-Start=22
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Last week: Ran or did kind of business, farming or other activity
-Name=NE9_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Last week: Helped in a family business or farm
-Name=NE10
-Start=23
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Last week: Helped in a family business or farm
-Name=NE10_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Last week: Had an absence to the paid job
-Name=NE11
-Start=24
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Last week: Had an absence to the paid job
-Name=NE11_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Last week reason for absence: Due to a shift work, flexi time
-Name=NE12A
-Start=25
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Last week reason for absence: Due to a shift work, flexi time
-Name=NE12A_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Last week reason for absence: Were on vacation
-Name=NE12B
-Start=26
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Last week reason for absence: Were on vacation
-Name=NE12B_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Last week reason for absence: Sick, ill, suffered an ancident
-Name=NE12C
-Start=27
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Last week reason for absence: Sick, ill, suffered an ancident
-Name=NE12C_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Last week reason for absence: On parental leave
-Name=NE12D
-Start=28
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Last week reason for absence: On parental leave
-Name=NE12D_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Last week reason for absence: Waiting to start new job or business
-Name=NE13
-Start=29
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Last week reason for absence: Waiting to start new job or business
-Name=NE13_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Last week reason for absence: Job/Business was in low or off-season
-Name=NE14
-Start=30
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Last week reason for absence: Job/Business was in low or off-season
-Name=NE14_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=During the low or off-season contines to do some work for that job / business
-Name=NE15
-Start=31
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=During the low or off-season contines to do some work for that job / business
-Name=NE15_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Will return to same job / business in 3 months or less
-Name=NE16
-Start=32
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Will return to same job / business in 3 months or less
-Name=NE16_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=Continue to receive an income from the job / business during this absence
-Name=NE17
-Start=33
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Continue to receive an income from the job / business during this absence
-Name=NE17_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=Work: Farming or rearing farm animals
-Name=NE18A
-Start=34
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Work: Farming or rearing farm animals
-Name=NE18A_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Work: Fishing or fishing farming
-Name=NE18B
-Start=35
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Work: Fishing or fishing farming
-Name=NE18B_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Work: Another type of business
-Name=NE18X
-Start=36
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Work: Another type of business
-Name=NE18X_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Last week: Did farming, raring animals, fishing or fish farming
-Name=NE20
-Start=37
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Last week: Did farming, raring animals, fishing or fish farming
-Name=NE20_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Products from work: Intention for sale
-Name=NE21
-Start=38
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Products from work: Intention for sale
-Name=NE21_VS1
-Value=1;ONLY FOR SALE
-Value=2;MAINLY FOR SALE
-Value=3;MAINLY FOR FAMILY USE
-Value=4;ONLY FOR FAMILY USE
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=Products from work: Type of sale
-Name=NE22
-Start=39
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Products from work: Type of sale
-Name=NE22_VS1
-Value=1;ONLY SOLD
-Value=2;MAINLY SOLD
-Value=3;MAINLY KEPT FOR FAMILY USE
-Value=4;ONLY KEPT FOR FAMILY USE
-Value=9;NO RESPONSE
-
-[Item]
-Label=Hired by someone else to do this work
-Name=NE23
-Start=40
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Hired by someone else to do this work
-Name=NE23_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
 
 [Record]
 Label=ICT Use
