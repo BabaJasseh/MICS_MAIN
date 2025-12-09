@@ -53,27 +53,27 @@ questions:
         questionText:
           ENG: |
             <p><span class="Qnum">UF10B. </span><span class="Qtxt">Now I would like to talk to you about <span class="REF">~~UF3N~~</span>'s health and well-being in more detail.</span></p>
-            <p><span class="Qtxt">This interview usually takes about <span class="QtxtC">number </span>minutes.</span></p> 
+            <p><span class="Qtxt">This interview usually takes about <span class="QtxtC"><font color="#000000">30</font>&nbsp;</span>minutes.</span></p> 
             <p><span class="Qtxt">Again, participation in this survey is voluntary. No payment of incentive will be given to you for answering these questions. However, this survey will help the government and the general public better understand the situation and needs of young children.</span></p>
             <p><span class="Qtxt">Please know that all the information you share during the interview will remain strictly confidential and anonymous. No information about you or your child will be made publicly available. We will only produce information about the general population.</span></p>
             <p><span class="Qtxt">Again, should you wish not to answer a question or wish to stop the interview at any point, please let me know.</span></p>
-            <p><span class="Qtxt">If at any time you have any complaints or concerns about this survey, please use the information on the card I gave you earlier to contact <span class="QtxtC">organization name</span>.</span></p>
+            <p><span class="Qtxt">If at any time you have any complaints or concerns about this survey, please use the information on the card I gave you earlier to contact Gambia Bureau of Statistics.</span></p>
             <p><span class="Qtxt">May I start the interview?</span></p>
       - logic: UF9=2
         questionText:
           ENG: |
-            <p><span class="Qnum">UF10A. </span><span class="Qtxt">Hello, my name is <span class="REF">~~STAFF_NAME~~</span>. We are from <span class="QtxtC">National Statistical Office</span>. We are conducting a survey about the situation of children, families and households. I would like to talk to you about <span class="REF">~~UF3N~~</span>'s health and well-being.</span></p>
-            <p><span class="Qtxt">This interview usually takes about <span class="QtxtC">number </span>minutes.</span></p> 
+            <p><span class="Qnum">UF10A. </span><span class="Qtxt">Hello, my name is <span class="REF">~~STAFF_NAME~~</span>. We are from <span class="QtxtC"><font color="#000000">Gambia Bureau of Statistics</font></span>. We are conducting a survey about the situation of children, families and households. I would like to talk to you about <span class="REF">~~UF3N~~</span>'s health and well-being.</span></p>
+            <p><span class="Qtxt">This interview usually takes about <font color="#000000"><span class="QtxtC"><font color="#000000">30&nbsp;</font></span>min</font>utes.</span></p> 
             <p></p><p><span class="Qtxt">Again, participation in this survey is voluntary. No payment of incentive will be given to you for answering these questions. However, this survey will help the government and the general public better understand the situation and needs of young children.</span></p>
             <p><span class="Qtxt">Please know that all the information you share during the interview will remain strictly confidential and anonymous. No information about you or your child will be made publicly available. We will only produce information about the general population.</span></p>
             <p><span class="Qtxt">Should you feel uncomfortable about any questions and not wish to answer, just let me know and we can skip the question. Also, if you wish to stop the interview at any point just let me know.</span></p>
-            <p><span class="Qtxt">If at any time you have any complaints or concerns about this survey, please use the information on the card I gave you earlier to contact <span class="QtxtC">organization name</span>.</span></p>
+            <p><span class="Qtxt">If at any time you have any complaints or concerns about this survey, please use the information on the card I gave you earlier to contact <span class="QtxtC"><font color="#000000">Gambia Bureau of Statistics</font></span>.</span></p>
             <p><span class="Qtxt">May I start the interview?</span></p>
   - name: MICS7CH.UB0
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">UB0. </span><span class="Qtxt">Before I begin the interview, could you please bring <span class="REF">~~UF3N~~</span>'s Birth Certificate, <span class="QtxtC">National Child Immunisation Record</span>, and any immunisation record from a private health provider? We will need to refer to those documents.</span></p>
+            <p><span class="Qnum">UB0. </span><span class="Qtxt">Before I begin the interview, could you please bring <span class="REF">~~UF3N~~</span>'s Birth Certificate, <span class="QtxtC"><font color="#000000">Infant Welfare Card</font></span>, and any immunisation record from a private health provider? We will need to refer to those documents.</span></p>
   - name: MICS7CH.UB0B
     conditions:
       - questionText:
@@ -144,19 +144,19 @@ questions:
       - logic: UF4<>HH47 and chsex=1
         questionText:
           ENG: |
-            <p><span class="Qnum">UB8A. </span><span class="Qtxt">I have earlier recorded that <span class="REF">~~UF3N~~</span> has attended an <span class="QtxtC">Early Childhood Education programme </span>this school year. Does he currently attend this programme?</span></p>
+            <p><span class="Qnum">UB8A. </span><span class="Qtxt">I have earlier recorded that <span class="REF">~~UF3N~~</span> has attended an <span class="QtxtC"><font color="#000000">Early Childhood Development programme</font> </span>this school year. Does he currently attend this programme?</span></p>
       - logic: UF4<>HH47 and chsex=2
         questionText:
           ENG: |
-            <p><span class="Qnum">UB8A. </span><span class="Qtxt">I have earlier recorded that <span class="REF">~~UF3N~~</span> has attended an <span class="QtxtC">Early Childhood Education programme </span>this school year. Does she currently attend this programme?</span></p>
+            <p><span class="Qnum">UB8A. </span><span class="Qtxt">I have earlier recorded that <span class="REF">~~UF3N~~</span> has attended an&nbsp;<span class="QtxtC"><span style="color: rgb(0, 0, 0);">Early Childhood Development programme</span>&nbsp;</span>this school year. Does she currently attend this programme?</span></p>
       - logic: UF4=HH47 and chsex=1
         questionText:
           ENG: |
-            <p><span class="Qnum">UB8B. </span><span class="Qtxt">You have mentioned that <span class="REF">~~UF3N~~</span> has attended an <span class="QtxtC">Early Childhood Education programme </span>this school year. Does he currently attend this programme?</span></p>
+            <p><span class="Qnum">UB8B. </span><span class="Qtxt">You have mentioned that <span class="REF">~~UF3N~~</span> has attended an Early Childhood Development programme this school year. Does he currently attend this programme?</span></p>
       - logic: UF4=HH47 and chsex=2
         questionText:
           ENG: |
-            <p><span class="Qnum">UB8B. </span><span class="Qtxt">You have mentioned that <span class="REF">~~UF3N~~</span> has attended an <span class="QtxtC">Early Childhood Education programme </span>this school year. Does she currently attend this programme?</span></p>
+            <p><span class="Qnum">UB8B. </span><span class="Qtxt">You have mentioned that <span class="REF">~~UF3N~~</span> has attended an&nbsp;<span class="QtxtC"><span style="color: rgb(0, 0, 0);">Early Childhood Development programme</span>&nbsp;</span>this school year. Does she currently attend this programme?</span></p>
   - name: MICS7CH.UIN1
     conditions:
       - questionText:
@@ -178,7 +178,7 @@ questions:
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">BR2. </span><span class="Qtxt">Has <span class="REF">~~UF3N~~</span>'s birth been registered with <span class="QtxtC">the civil authorities</span>?</span></p>
+            <p><span class="Qnum">BR2. </span><span class="Qtxt">Has <span class="REF">~~UF3N~~</span>'s birth been registered with <span class="QtxtC"><font color="#000000">Ministry of Health</font></span>?</span></p>
   - name: MICS7CH.BR3
     conditions:
       - questionText:
@@ -325,11 +325,11 @@ questions:
       - logic: chsex=1
         questionText:
           ENG: |
-            <p><span class="Qnum">EC8. </span><span class="Qtxt">Can <span class="REF">~~UF3N~~</span> dress himself, that is, put on <span class="QtxtC">pants and a shirt </span>without help?</span></p>
+            <p><span class="Qnum">EC8. </span><span class="Qtxt">Can <span class="REF">~~UF3N~~</span> dress himself, that is, put on <font color="#000000"><span class="QtxtC"><font color="#000000">shorts and a shirt</font> </span>without help?</font></span></p>
       - logic: chsex=2
         questionText:
           ENG: |
-            <p><span class="Qnum">EC8. </span><span class="Qtxt">Can <span class="REF">~~UF3N~~</span> dress herself, that is, put on <span class="QtxtC">pants and a shirt </span>without help?</span></p>
+            <p><span class="Qnum">EC8. </span><span class="Qtxt">Can <span class="REF">~~UF3N~~</span> dress herself, that is, put on&nbsp;<span class="QtxtC"><span style="color: rgb(0, 0, 0);">shorts and a shirt</span>&nbsp;</span>without help?</span></p>
   - name: MICS7CH.EC9
     conditions:
       - questionText:
@@ -685,13 +685,6 @@ questions:
       - questionText:
           ENG: |
             <p><span class="Qnum">UCF18. </span><span class="Qtxt">Compared with children of the same age, does <span class="REF">~~UF3N~~</span> have difficulty playing?</span></p>
-  - name: MICS7CH.UCF19
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">UCF19. </span><span class="Qtxt">The next question has five different options for answers. I am going to read these to you after the question.</span></p>
-            <p><span class="Qtxt">Compared with children of the same age, how much does <span class="REF">~~UF3N~~</span> kick, bite or hit other children or adults?</span></p>
-            <p><span class="Qtxt">Would you say: not at all, less, the same, more or a lot more?</span></p>
   - name: MICS7CH.BD2
     conditions:
       - questionText:
@@ -711,7 +704,7 @@ questions:
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">BD5. </span><span class="Qtxt">Yesterday, during the day or at night, did <span class="REF">~~UF3N~~</span> drink <span class="QtxtC">Oral Rehydration Salt solution (ORS)</span>?</span></p>
+            <p><span class="Qnum">BD5. </span><span class="Qtxt">Yesterday, during the day or at night, did <span class="REF">~~UF3N~~</span> drink <span class="QtxtC"><font color="#000000">Oral Rehydration Solution (ORS)</font></span>?</span></p>
   - name: MICS7CH.BD6
     conditions:
       - questionText:
@@ -728,7 +721,7 @@ questions:
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">BD7B. </span><span class="Qtxt">Yesterday, during the day or at night, did <span class="REF">~~UF3N~~</span> drink infant formula, such as <span class="QtxtC">insert local names of common brands</span>?</span></p>
+            <p><span class="Qnum">BD7B. </span><span class="Qtxt">Yesterday, during the day or at night, did <span class="REF">~~UF3N~~</span> drink infant formula, such as <font color="#000000"><span class="QtxtC"><font color="#000000">Lactogen or SMA</font></span>?</font></span></p>
   - name: MICS7CH.BD7B1
     conditions:
       - questionText:
@@ -753,7 +746,7 @@ questions:
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">BD7D. </span><span class="Qtxt">Yesterday, during the day or at night, did <span class="REF">~~UF3N~~</span> drink yogurt drinks such as <span class="QtxtC">insert local names of common types of yogurt drinks</span>?</span></p>
+            <p><span class="Qnum">BD7D. </span><span class="Qtxt">Yesterday, during the day or at night, did <span class="REF">~~UF3N~~</span> drink yogurt drinks and fermented milk such as, soow, including Kombo Dairy Farms Sow Crème, Dolima, Ardo and also natural or plain yogurt?</span></p>
   - name: MICS7CH.BD7D1
     conditions:
       - questionText:
@@ -768,17 +761,17 @@ questions:
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">BD7E. </span><span class="Qtxt">Yesterday, during the day or at night, did <span class="REF">~~UF3N~~</span> drink chocolate-flavoured drinks including those made from syrups or powders?</span></p>
+            <p><span class="Qnum">BD7E. </span><span class="Qtxt">Yesterday, during the day or at night, did <span class="REF">~~UF3N~~</span> drink chocolate-flavoured drinks including those made from syrups or powders, such as Ovaltine?</span></p>
   - name: MICS7CH.BD7F
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">BD7F. </span><span class="Qtxt">Yesterday, during the day or at night, did <span class="REF">~~UF3N~~</span> drink fruit juice or fruit-flavoured drinks including those made from syrups or powders?</span></p>
+            <p><span class="Qnum">BD7F. </span><span class="Qtxt">Yesterday, during the day or at night, did <span class="REF">~~UF3N~~</span> drink fruit juice or fruit-flavoured drinks including those made from syrups or powders, such as sachet juice, wonjo juice, daharr juice, bouye drink, or ginger juice?</span></p>
   - name: MICS7CH.BD7G
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">BD7G. </span><span class="Qtxt">Yesterday, during the day or at night, did <span class="REF">~~UF3N~~</span> drink sodas, malt drinks, sports drinks, or energy drinks?</span></p>
+            <p><span class="Qnum">BD7G. </span><span class="Qtxt">Yesterday, during the day or at night, did <span class="REF">~~UF3N~~</span> drink b</span>ottled or canned soft drinks, sports drinks such as Coca Cola, Fanta, or Vimto, Malta, or energy drinks such as XXL?</p>
   - name: MICS7CH.BD7H
     conditions:
       - questionText:
@@ -845,52 +838,57 @@ questions:
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">BD8B. </span><span class="Qtxt">Just to make sure, did <span class="REF">~~UF3N~~</span> eat porridge, bread, rice, noodles, pasta, or <span class="QtxtC">insert other commonly consumed grains and foods made from grains</span> yesterday during the day or at night?</span></p>
+            <p><span class="Qnum">BD8B. </span><span class="Qtxt">Just to make sure, did <span class="REF">~~UF3N~~</span> eat bread, rice, noodles, pasta such as macaroni and spaghetti, chereh made from grains like millet, wheat or maize, any groundnut paste mixed to prepare porridge like Gidiyoo or Ogi/Gisuma Monoo yesterday during the day or at night?</span></p>
+  - name: MICS7CH.BD8B1
+    conditions:
+      - questionText:
+          ENG: |
+            <span class="Qnum">BD8B1.&nbsp;</span><span class="Qtxt">Just to make sure, did&nbsp;<span class="REF">~~UF3N~~</span>&nbsp;eat any fortified baby food such as Cerelac, Nutrilac yesterday during the day or at night?</span><p></p>
   - name: MICS7CH.BD8C
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">BD8C. </span><span class="Qtxt">Just to make sure, did <span class="REF">~~UF3N~~</span> eat pumpkin, carrots, sweet red peppers, squash, or sweet potatoes that are yellow or orange inside yesterday during the day or at night?</span></p>
+            <p><span class="Qnum">BD8C. </span><span class="Qtxt">Just to make sure, did <span class="REF">~~UF3N~~</span> eat pumpkin, banga, carrots, sweet red peppers, squash, or sweet potatoes that are yellow or orange inside yesterday during the day or at night?</span></p>
   - name: MICS7CH.BD8D
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">BD8D. </span><span class="Qtxt">Just to make sure, did <span class="REF">~~UF3N~~</span> eat plantains, white potatoes, white yams, manioc, cassava, or <span class="QtxtC">insert other commonly consumed starchy tubers or starchy tuberous roots that are white or pale inside</span> yesterday during the day or at night?</span></p>
+            <p><span class="Qnum">BD8D. </span><span class="Qtxt">Just to make sure, did <span class="REF">~~UF3N~~</span> eat plantains, white potatoes, white sweet potatoe, white yams, or cassava yesterday during the day or at night?</span></p>
   - name: MICS7CH.BD8E
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">BD8E. </span><span class="Qtxt">Just to make sure, did <span class="REF">~~UF3N~~</span> eat dark green, leafy vegetables, such as <span class="QtxtC">insert commonly consumed vitamin A-rich dark green leafy vegetables</span> yesterday during the day or at night?</span></p>
+            <p><span class="Qnum">BD8E. </span><span class="Qtxt">Just to make sure, did <span class="REF">~~UF3N~~</span> eat dark green, leafy vegetables, such as kereng kereng, green bissap leaves, moron, Moringa or Nebedie leaf and powder, cassava leave, sweet potatoe leave, bean leaves, green leaves, bologi yesterday during the day or at night?</span></p>
   - name: MICS7CH.BD8F
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">BD8F. </span><span class="Qtxt">Just to make sure, did <span class="REF">~~UF3N~~</span> eat any other vegetables, such as <span class="QtxtC">insert commonly consumed vegetables</span> yesterday during the day or at night?</span></p>
+            <p><span class="Qnum">BD8F. </span><span class="Qtxt">Just to make sure, did <span class="REF">~~UF3N~~</span> eat any other vegetables, such as tomato, egg plant/batanse, bitter tomatoe/Jahatu, cabbage, cumcumber/cacumba, sweet green pepper, green beans, salad, okra yesterday during the day or at night?</span></p>
   - name: MICS7CH.BD8G
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">BD8G. </span><span class="Qtxt">Just to make sure, did <span class="REF">~~UF3N~~</span> eat ripe mangoes, ripe papayas, or <span class="QtxtC">insert commonly consumed vitamin A-rich fruits</span> yesterday during the day or at night?</span></p>
+            <p><span class="Qnum">BD8G. </span><span class="Qtxt">Just to make sure, did <span class="REF">~~UF3N~~</span> eat ripe mangoes, ripe papayas, ripe ninkomg or saloum plum yesterday during the day or at night?</span></p>
   - name: MICS7CH.BD8H
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">BD8H. </span><span class="Qtxt">Just to make sure, did <span class="REF">~~UF3N~~</span> eat any other fruits such as <span class="QtxtC">insert commonly consumed fruits</span> yesterday during the day or at night?</span></p>
+            <p><span class="Qnum">BD8H. </span><span class="Qtxt">Just to make sure, did <span class="REF">~~UF3N~~</span> eat any other fruits such as kabaa, ditakh/taloo Banana, orange, mandarin, grapefruit, watermelon, melon, bouye, grapes, apple, pear or avocado, coconut, jujube/sidem, soursop/sunkun, guava, or solom solom yesterday during the day or at night?</span></p>
   - name: MICS7CH.BD8I
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">BD8I. </span><span class="Qtxt">Just to make sure, did <span class="REF">~~UF3N~~</span> eat liver, kidney, heart, or <span class="QtxtC">insert other commonly consumed organ meats</span> yesterday during the day or at night?</span></p>
+            <p><span class="Qnum">BD8I. </span><span class="Qtxt">Just to make sure, did <span class="REF">~~UF3N~~</span> eat liver, lung, kidney or heart yesterday during the day or at night?</span></p>
   - name: MICS7CH.BD8J
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">BD8J. </span><span class="Qtxt">Just to make sure, did <span class="REF">~~UF3N~~</span> eat sausages, hot dogs, ham, bacon, salami, canned meat, or <span class="QtxtC">insert other commonly consumed processed meats</span> yesterday during the day or at night?</span></p>
+            <p><span class="Qnum">BD8J. </span><span class="Qtxt">Just to make sure, did <span class="REF">~~UF3N~~</span> eat sausages, hot dogs, ham, bacon, salami, corned beef or canned meat yesterday during the day or at night?</span></p>
   - name: MICS7CH.BD8K
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">BD8K. </span><span class="Qtxt">Just to make sure, did <span class="REF">~~UF3N~~</span> eat any other meat, such as beef, pork, lamb, goat, chicken, duck, or <span class="QtxtC">insert other commonly 	consumed meat</span> yesterday during the day or at night?</span></p>
+            <p><span class="Qnum">BD8K. </span><span class="Qtxt">Just to make sure, did <span class="REF">~~UF3N~~</span> eat any other meat, such as beef, pork, lamb, goat, chicken or duck&nbsp;yesterday during the day or at night?</span></p>
   - name: MICS7CH.BD8L
     conditions:
       - questionText:
@@ -900,27 +898,27 @@ questions:
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">BD8M. </span><span class="Qtxt">Just to make sure, did <span class="REF">~~UF3N~~</span> eat fresh fish, dried fish, or shellfish yesterday during the day or at night?</span></p>
+            <p><span class="Qnum">BD8M. </span><span class="Qtxt">Just to make sure, did <span class="REF">~~UF3N~~</span> eat Fresh fish, dried fish, or shellfish such as paagn/yohus or oyster, crabs, smoked fish, canned sardines or shrimp yesterday during the day or at night?</span></p>
   - name: MICS7CH.BD8N
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">BD8N. </span><span class="Qtxt">Just to make sure, did <span class="REF">~~UF3N~~</span> eat beans, peas, lentils, nuts, seeds, or <span class="QtxtC">insert commonly consumed foods made from these</span> yesterday during the day or at night?</span></p>
+            <p><span class="Qnum">BD8N. </span><span class="Qtxt">Just to make sure, did <span class="REF">~~UF3N~~</span> eat beans, peas, lentils, nuts or seeds yesterday during the day or at night?</span></p>
   - name: MICS7CH.BD8O
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">BD8O. </span><span class="Qtxt">Just to make sure, did <span class="REF">~~UF3N~~</span> eat hard or soft cheese such as <span class="QtxtC">insert commonly consumed types of cheese</span> yesterday during the day or at night?</span></p>
+            <p><span class="Qnum">BD8O. </span><span class="Qtxt">Just to make sure, did <span class="REF">~~UF3N~~</span> eat hard or soft cheese such as laughing cow, mozzarella&nbsp;yesterday during the day or at night?</span></p>
   - name: MICS7CH.BD8P
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">BD8P. </span><span class="Qtxt">Just to make sure, did <span class="REF">~~UF3N~~</span> eat sweet foods such as chocolates, candies, pastries, cakes, biscuits, or frozen treats like ice cream and popsicles, or <span class="QtxtC">insert other commonly consumed sentinel sweet foods</span> yesterday during the day or at night?</span></p>
+            <p><span class="Qnum">BD8P. </span><span class="Qtxt">Just to make sure, did <span class="REF">~~UF3N~~</span> eat sweet foods such as candy or minty, chocolates, groundnut cake, ngato, nanburu, pastries, cakes, biscuits, mbouraké, panket, or frozen treats like ice cream and popsicles yesterday during the day or at night?</span></p>
   - name: MICS7CH.BD8Q
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">BD8Q. </span><span class="Qtxt">Just to make sure, did <span class="REF">~~UF3N~~</span> eat chips, crisps, puffs, French fries, fried dough, instant noodles, or <span class="QtxtC">insert other commonly 	consumed sentinel fried and salty foods</span> yesterday during the day or at night?</span></p>
+            <p><span class="Qnum">BD8Q. </span><span class="Qtxt">Just to make sure, did <span class="REF">~~UF3N~~</span> eat Packaged chips such as Crax, Pringles, Lays, Doritos, cheese balls, puffs, french fries, fried dough, instant noodles such as Indomie or Kellogg's, akara, fish cake, fish balls, fish or meat pie, fried fish, or fried chicken yesterday during the day or at night?</span></p>
   - name: MICS7CH.BD8X
     conditions:
       - questionText:
@@ -2068,6 +2066,11 @@ questions:
       - questionText:
           ENG: |
             <p><span class="Inum">HF10. </span><span class="Itxt">Record the start time of vaccination recording at facility</span></p>
+  - name: MICS7CH.HF15
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">HF15. </span><span class="Itxt">Result of health facility visit</span></p>
   - name: MICS7CH.HF11D
     conditions:
       - questionText:
@@ -2471,9 +2474,11 @@ questions:
       - questionText:
           ENG: |
             <p><span class="Inum">HF14. </span><span class="Itxt">Record the end time of vaccination recording at facility</span></p>
-  - name: MICS7CH.HF15
+  - name: MICS7CH.UCF19
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Inum">HF15. </span><span class="Itxt">Result of health facility visit</span></p>
+            <p><span class="Qnum">UCF19. </span><span class="Qtxt">The next question has five different options for answers. I am going to read these to you after the question.</span></p>
+            <p><span class="Qtxt">Compared with children of the same age, how much does <span class="REF">~~UF3N~~</span> kick, bite or hit other children or adults?</span></p>
+            <p><span class="Qtxt">Would you say: not at all, less, the same, more or a lot more?</span></p>
 ...
