@@ -1,0 +1,9901 @@
+﻿[Dictionary]
+Version=CSPro 7.7
+Label=MICS7 Questionnaire for Children Under 5
+Name=MICS7CH
+RecordTypeStart=11
+RecordTypeLen=3
+Positions=Relative
+ZeroFill=Yes
+DecimalChar=No
+SecurityOptions=BB41F727B36B07D6E669AAC54D5515713993916F5A79FF2E60FCCAFAFFCA44EC
+
+[Languages]
+ENG=English
+
+[Level]
+Label=Children U5
+Name=CH
+
+[IdItems]
+
+[Item]
+Label=Cluster number
+Name=UF1
+Start=1
+Len=5
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Household number
+Name=UF2
+Start=6
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Interviewer number
+Name=UFINT
+Start=8
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Child's line number
+Name=UF3
+Start=14
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child's line number
+Name=UF3_VST
+Value=1:50
+
+[Record]
+Label=Under-Five Child Information Panel
+Name=MODUF
+RecordTypeValue='0UF'
+RecordLen=95
+
+[Item]
+Label=Child's name
+Name=UF3N
+Start=16
+Len=20
+DataType=Alpha
+
+[Item]
+Label=Mother / Caretaker's name
+Name=UF4N
+Start=36
+Len=20
+DataType=Alpha
+
+[Item]
+Label=Mother / Caretaker's line number
+Name=UF4
+Start=56
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Mother / Caretaker's line number
+Name=UF4_VS1
+Value=1:50
+
+[Item]
+Label=Interviewer number
+Name=UF5
+Start=58
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Supervisor number
+Name=UF6
+Start=61
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Date of Interview
+Name=UF7
+Start=64
+Len=8
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Day of interview
+Name=UF7D
+Start=64
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of interview
+Name=UF7D_VS1
+Value=1:31
+
+[Item]
+Label=Month of interview
+Name=UF7M
+Start=66
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of interview
+Name=UF7M_VS1
+Value=1:12
+
+[Item]
+Label=Year of interview
+Name=UF7Y
+Start=68
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of interview
+Name=UF7Y_VS1
+Value=2025:2028
+
+[Item]
+Label=Respondent to another questionnaire
+Name=UF9
+Start=72
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Respondent to another questionnaire
+Name=UF9_VS1
+Value=1;YES, INTERVIEWED ALREADY
+Value=2;NO, FIRST INTERVIEW
+
+[Item]
+Label=Consent
+Name=UF10
+Start=73
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Consent
+Name=UF10_VS1
+Value=1;YES
+Value=2;NO / NOT ASKED
+
+[Item]
+Label=Result of interview for children under 5
+Name=UF17
+Start=74
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Result of interview for children under 5
+Name=UF17_VS1
+Value=1;COMPLETED
+Value=2;NOT AT HOME
+Value=3;REFUSED
+Value=4;PARTLY COMPLETED
+Value=5;INCAPACITATED
+Value=6;NO ADULT CONSENT FOR MOTHER / CAREGIVER AGE 15-17
+Value=96;OTHER
+
+[Item]
+Label=Time of start of interview
+Name=UF8
+Start=76
+Len=4
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Start of interview - Hour
+Name=UF8H
+Start=76
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Start of interview - Hour
+Name=UF8H_VS1
+Value=6:23
+
+[Item]
+Label=Start of interview - Minutes
+Name=UF8M
+Start=78
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Start of interview - Minutes
+Name=UF8M_VS1
+Value=0:59
+
+[Item]
+Label=Time of end of interview
+Name=UF11
+Start=80
+Len=4
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=End of interview - Hour
+Name=UF11H
+Start=80
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=End of interview - Hour
+Name=UF11H_VS1
+Value=6:23
+
+[Item]
+Label=End of interview - Minutes
+Name=UF11M
+Start=82
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=End of interview - Minutes
+Name=UF11M_VS1
+Value=0:59
+
+[Item]
+Label=Language of the questionnaire
+Name=UF12
+Start=84
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Language of the questionnaire
+Name=UF12_VS1
+Value=1;ENGLISH
+Value=2;LANGUAGE 2
+Value=3;LANGUAGE 3
+
+[Item]
+Label=Language of the interview
+Name=UF13
+Start=85
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Language of the interview
+Name=UF13_VS1
+Value=1;ENGLISH
+Value=2;LANGUAGE 2
+Value=3;LANGUAGE 3
+Value=6;OTHER LANGUAGE
+
+[Item]
+Label=Native language of the respondent
+Name=UF14
+Start=86
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Native language of the respondent
+Name=UF14_VS1
+Value=1;ENGLISH
+Value=2;LANGUAGE 2
+Value=3;LANGUAGE 3
+Value=6;OTHER LANGUAGE
+
+[Item]
+Label=Translator used
+Name=UF15
+Start=87
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Translator used
+Name=UF15_VS1
+Value=1;YES, THE ENTIRE QUESTIONNAIRE
+Value=2;YES, PARTS OF THE QUESTIONNAIRE
+Value=3;NO, NOT USED
+
+[Item]
+Label=Has been interviewed for any individual questionnaires
+Name=UF15C
+Start=88
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Has been interviewed for any individual questionnaires
+Name=UF15C_VS1
+Value=1;YES, ALREADY INTERVIEWED
+Value=2;NO, NOT ALREADY INTERVIEWED
+
+[Item]
+Label=Consent for phone survey
+Name=UF15EF
+Start=89
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Consent for phone survey
+Name=UF15EF_VS1
+Value=1;YES
+Value=2;NO
+
+[Item]
+Label=Have personal phone number or phone number for the household
+Name=UF15GH
+Start=90
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Have personal phone number or phone number for the household
+Name=UF15GH_VS1
+Value=1;YES
+Value=2;NO
+
+[Item]
+Label=Note on sharing phone number for the household
+Name=UF15I
+Start=91
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Note on sharing phone number for the household
+Name=UF15I_VS1
+Value=1;CONTINUE
+
+[Item]
+Label=Household interviewer
+Name=UFHINT
+Start=92
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Finish
+Name=CHFIN
+Start=95
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Finish
+Name=CHFIN_VS1
+Value=1;REVIEW QUESTIONNAIRE
+Value=2;ADD NOTES
+Value=3;SAVE QUESTIONNAIRE AND FINISH
+
+[Record]
+Label=Under-Five's Background
+Name=MODUB
+RecordTypeValue='0UB'
+Required=No
+RecordLen=29
+
+[Item]
+Label=Advice to bring relevant documents
+Name=UB0
+Start=16
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Advice to bring relevant documents
+Name=UB0_VS1
+Value=1;CONTINUE
+
+[Item]
+Label=Biological mother/father of child
+Name=UB0A
+Start=17
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Biological mother/father of child
+Name=UB0A_VS1
+Value=1;BIOLOGICAL MOTHER
+Value=2;BIOLOGICAL FATHER
+Value=6;OTHER
+
+[Item]
+Label=Relationship of caregiver to child
+Name=UB0B
+Start=18
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Relationship of caregiver to child
+Name=UB0B_VS1
+Value=1;GRANDPARENT
+Value=2;AUNT/UNCLE
+Value=3;BROTHER/SISTER
+Value=6;OTHER RELATIVE OF CHILD
+Value=11;STEPMOTHER/FATHER
+Value=12;STEPSISTER/BROTHER
+Value=16;OTHER RELATIVE OF STEPPARENT
+Value=21;FORMAL FOSTER/ADOPTED PARENT
+Value=31;FRIEND
+Value=96;OTHER
+Value=99;NO RESPONSE
+
+[Item]
+Label=Date of birth of child
+Name=UB1
+Start=20
+Len=8
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Day of birth of child
+Name=UB1D
+Start=20
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of birth of child
+Name=UB1D_VST
+Value=1:31
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of birth of child
+Name=UB1M
+Start=22
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of birth of child
+Name=UB1M_VST
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of birth of child
+Name=UB1Y
+Start=24
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of birth of child
+Name=UB1Y_VST
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Age of child
+Name=UB2
+Start=28
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Age of child
+Name=UB2_VST
+Value=0;Less than 1 year old
+Value=1;1 year old
+Value=2;2 years old
+Value=3;3 years old
+Value=4;4 years old
+
+[Item]
+Label=Currently attending early childhood education programme
+Name=UB8
+Start=29
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Currently attending early childhood education programme
+Name=UB8_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Record]
+Label=Health Insurance
+Name=MODUIN
+RecordTypeValue='UIN'
+Required=No
+RecordLen=22
+
+[Item]
+Label=Covered by any health insurance
+Name=UIN1
+Start=16
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Covered by any health insurance
+Name=UIN1_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Type of health insurance
+Name=UIN2
+Start=17
+Len=6
+DataType=Alpha
+
+[ValueSet]
+Label=Type of health insurance
+Name=UIN2_VS1
+Value='A     ';MUTUAL HEALTH ORGANIZATION / COMMUNITY-BASED HEALTH INSURANCE
+Value='B     ';HEALTH INSURANCE THROUGH EMPLOYER
+Value='C     ';SOCIAL SECURITY
+Value='D     ';OTHER PRIVATELY PURCHASED COMMERCIAL HEALTH INSURANCE
+Value='X     ';OTHER
+Value='?     ';NO RESPONSE
+
+[Item]
+Label=Type of health insurance - Mutual-health organization / Community-based health insurance
+Name=UIN2A
+Start=17
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Type of health insurance - Mutual-health organization / Community-based health insurance
+Name=UIN2A_VS1
+Value='A';MUTUAL HEALTH ORGANIZATION / COMMUNITY-BASED HEALTH INSURANCE
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Type of health insurance - Health insurance through employer
+Name=UIN2B
+Start=18
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Type of health insurance - Health insurance through employer
+Name=UIN2B_VS1
+Value='B';HEALTH INSURANCE THROUGH EMPLOYER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Type of health insurance - Social security
+Name=UIN2C
+Start=19
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Type of health insurance - Social security
+Name=UIN2C_VS1
+Value='C';SOCIAL SECURITY
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Type of health insurance - Other privately purchased commercial health insurance
+Name=UIN2D
+Start=20
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Type of health insurance - Other privately purchased commercial health insurance
+Name=UIN2D_VS1
+Value='D';OTHER PRIVATELY PURCHASED COMMERCIAL HEALTH INSURANCE
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Type of health insurance - Other
+Name=UIN2X
+Start=21
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Type of health insurance - Other
+Name=UIN2X_VS1
+Value='X';OTHER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Type of health insurance - No response
+Name=UIN2NR
+Start=22
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Type of health insurance - No response
+Name=UIN2NR_VS1
+Value='?';NO RESPONSE
+Value=' '
+
+[Record]
+Label=Birth Registration
+Name=MODBR
+RecordTypeValue='0BR'
+Required=No
+RecordLen=18
+
+[Item]
+Label=Has birth certificate
+Name=BR1
+Start=16
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Has birth certificate
+Name=BR1_VST
+Value=1;YES, SEEN
+Value=2;YES, NOT SEEN
+Value=3;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Birth registered
+Name=BR2
+Start=17
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Birth registered
+Name=BR2_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Know how to register birth
+Name=BR3
+Start=18
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Know how to register birth
+Name=BR3_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Record]
+Label=Early Childhood Development
+Name=MODEC
+RecordTypeValue='0EC'
+Required=No
+RecordLen=72
+
+[Item]
+Label=Number of children's books or picture books for child
+Name=EC1
+Start=16
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Number of children's books or picture books for child
+Name=EC1_VST
+Value=0;NONE
+Value=1;ONE
+Value=2;TWO
+Value=3;THREE
+Value=4;FOUR
+Value=5;FIVE
+Value=6;SIX
+Value=7;SEVEN
+Value=8;EIGHT
+Value=9;NINE
+Value=10;TEN OR MORE BOOKS
+Value=99;NO RESPONSE
+
+[Item]
+Label=Play with homemade toys
+Name=EC2A
+Start=18
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Play with homemade toys
+Name=EC2A_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Play with toys from shops
+Name=EC2B
+Start=19
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Play with toys from shops
+Name=EC2B_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Play with household objects or outside objects
+Name=EC2C
+Start=20
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Play with household objects or outside objects
+Name=EC2C_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Number of days left alone for more than one hour
+Name=EC3A
+Start=21
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Number of days left alone for more than one hour
+Name=EC3A_VST
+Value=0;NONE
+Value=1;ONE
+Value=2;TWO
+Value=3;THREE
+Value=4;FOUR
+Value=5;FIVE
+Value=6;SIX
+Value=7;SEVEN
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Number of days left in the care of another child less than 10 years old for more than one hour
+Name=EC3B
+Start=22
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Number of days left in the care of another child less than 10 years old for more than one hour
+Name=EC3B_VST
+Value=0;NONE
+Value=1;ONE
+Value=2;TWO
+Value=3;THREE
+Value=4;FOUR
+Value=5;FIVE
+Value=6;SIX
+Value=7;SEVEN
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=In past 3 days, read books or looks at picture book
+Name=EC5A
+Start=23
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=In past 3 days, read books or looks at picture book
+Name=EC5A_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Read books
+Name=EC5A1
+Start=24
+Len=4
+DataType=Alpha
+
+[ValueSet]
+Label=Read books
+Name=EC5A1_VS1
+Value='A   ';MOTHER
+Value='B   ';FATHER
+Value='X   ';OTHER
+Value='?   ';NO RESPONSE
+
+[Item]
+Label=Read books - Mother
+Name=EC5A1A
+Start=24
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Read books - Mother
+Name=EC5A1A_VS1
+Value='A';MOTHER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Read books - Father
+Name=EC5A1B
+Start=25
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Read books - Father
+Name=EC5A1B_VS1
+Value='B';FATHER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Read books - Other
+Name=EC5A1X
+Start=26
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Read books - Other
+Name=EC5A1X_VS1
+Value='X';OTHER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Read books - No response
+Name=EC5A1NR
+Start=27
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Read books - No response
+Name=EC5A1NR_VS1
+Value='?';NO RESPONSE
+Value=' '
+
+[Item]
+Label=In past 3 days, tell stories
+Name=EC5B
+Start=28
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=In past 3 days, tell stories
+Name=EC5B_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Tell stories
+Name=EC5B1
+Start=29
+Len=4
+DataType=Alpha
+
+[ValueSet]
+Label=Tell stories
+Name=EC5B1_VS1
+Value='A   ';MOTHER
+Value='B   ';FATHER
+Value='X   ';OTHER
+Value='?   ';NO RESPONSE
+
+[Item]
+Label=Tell stories - Mother
+Name=EC5B1A
+Start=29
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Tell stories - Mother
+Name=EC5B1A_VS1
+Value='A';MOTHER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Tell stories - Father
+Name=EC5B1B
+Start=30
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Tell stories - Father
+Name=EC5B1B_VS1
+Value='B';FATHER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Tell stories - Other
+Name=EC5B1X
+Start=31
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Tell stories - Other
+Name=EC5B1X_VS1
+Value='X';OTHER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Tell stories - No response
+Name=EC5B1NR
+Start=32
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Tell stories - No response
+Name=EC5B1NR_VS1
+Value='?';NO RESPONSE
+Value=' '
+
+[Item]
+Label=In past 3 days, sang songs
+Name=EC5C
+Start=33
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=In past 3 days, sang songs
+Name=EC5C_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Sang songs
+Name=EC5C1
+Start=34
+Len=4
+DataType=Alpha
+
+[ValueSet]
+Label=Sang songs
+Name=EC5C1_VS1
+Value='A   ';MOTHER
+Value='B   ';FATHER
+Value='X   ';OTHER
+Value='?   ';NO RESPONSE
+
+[Item]
+Label=Sang songs - Mother
+Name=EC5C1A
+Start=34
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Sang songs - Mother
+Name=EC5C1A_VS1
+Value='A';MOTHER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Sang songs - Father
+Name=EC5C1B
+Start=35
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Sang songs - Father
+Name=EC5C1B_VS1
+Value='B';FATHER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Sang songs - Other
+Name=EC5C1X
+Start=36
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Sang songs - Other
+Name=EC5C1X_VS1
+Value='X';OTHER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Sang songs - No response
+Name=EC5C1NR
+Start=37
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Sang songs - No response
+Name=EC5C1NR_VS1
+Value='?';NO RESPONSE
+Value=' '
+
+[Item]
+Label=In past 3 days, took outside
+Name=EC5D
+Start=38
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=In past 3 days, took outside
+Name=EC5D_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Took outside
+Name=EC5D1
+Start=39
+Len=4
+DataType=Alpha
+
+[ValueSet]
+Label=Took outside
+Name=EC5D1_VS1
+Value='A   ';MOTHER
+Value='B   ';FATHER
+Value='X   ';OTHER
+Value='?   ';NO RESPONSE
+
+[Item]
+Label=Took outside - Mother
+Name=EC5D1A
+Start=39
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Took outside - Mother
+Name=EC5D1A_VS1
+Value='A';MOTHER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Took outside - Father
+Name=EC5D1B
+Start=40
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Took outside - Father
+Name=EC5D1B_VS1
+Value='B';FATHER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Took outside - Other
+Name=EC5D1X
+Start=41
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Took outside - Other
+Name=EC5D1X_VS1
+Value='X';OTHER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Took outside - No response
+Name=EC5D1NR
+Start=42
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Took outside - No response
+Name=EC5D1NR_VS1
+Value='?';NO RESPONSE
+Value=' '
+
+[Item]
+Label=In past 3 days, played with
+Name=EC5E
+Start=43
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=In past 3 days, played with
+Name=EC5E_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Played with
+Name=EC5E1
+Start=44
+Len=4
+DataType=Alpha
+
+[ValueSet]
+Label=Played with
+Name=EC5E1_VS1
+Value='A   ';MOTHER
+Value='B   ';FATHER
+Value='X   ';OTHER
+Value='?   ';NO RESPONSE
+
+[Item]
+Label=Played with - Mother
+Name=EC5E1A
+Start=44
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Played with - Mother
+Name=EC5E1A_VS1
+Value='A';MOTHER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Played with - Father
+Name=EC5E1B
+Start=45
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Played with - Father
+Name=EC5E1B_VS1
+Value='B';FATHER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Played with - Other
+Name=EC5E1X
+Start=46
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Played with - Other
+Name=EC5E1X_VS1
+Value='X';OTHER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Played with - No response
+Name=EC5E1NR
+Start=47
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Played with - No response
+Name=EC5E1NR_VS1
+Value='?';NO RESPONSE
+Value=' '
+
+[Item]
+Label=In past 3 days, spent time naming, counting, or drawing
+Name=EC5F
+Start=48
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=In past 3 days, spent time naming, counting, or drawing
+Name=EC5F_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Named/counted
+Name=EC5F1
+Start=49
+Len=4
+DataType=Alpha
+
+[ValueSet]
+Label=Named/counted
+Name=EC5F1_VS1
+Value='A   ';MOTHER
+Value='B   ';FATHER
+Value='X   ';OTHER
+Value='?   ';NO RESPONSE
+
+[Item]
+Label=Named/counted - Mother
+Name=EC5F1A
+Start=49
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Named/counted - Mother
+Name=EC5F1A_VS1
+Value='A';MOTHER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Named/counted - Father
+Name=EC5F1B
+Start=50
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Named/counted - Father
+Name=EC5F1B_VS1
+Value='B';FATHER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Named/counted - Other
+Name=EC5F1X
+Start=51
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Named/counted - Other
+Name=EC5F1X_VS1
+Value='X';OTHER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Named/counted - No response
+Name=EC5F1NR
+Start=52
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Named/counted - No response
+Name=EC5F1NR_VS1
+Value='?';NO RESPONSE
+Value=' '
+
+[Item]
+Label=Child walks on an uneven surface without falling
+Name=EC6
+Start=53
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child walks on an uneven surface without falling
+Name=EC6_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child jumps up with both feet leaving the ground
+Name=EC7
+Start=54
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child jumps up with both feet leaving the ground
+Name=EC7_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child dresses himself/herself without help
+Name=EC8
+Start=55
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child dresses himself/herself without help
+Name=EC8_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child fasten and unfasten buttons without help
+Name=EC9
+Start=56
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child fasten and unfasten buttons without help
+Name=EC9_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child says 10 or more words
+Name=EC10
+Start=57
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child says 10 or more words
+Name=EC10_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child speaks using sentences of 3 or more words that go together
+Name=EC11
+Start=58
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child speaks using sentences of 3 or more words that go together
+Name=EC11_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child speaks using sentences of 5 or more words that go together
+Name=EC12
+Start=59
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child speaks using sentences of 5 or more words that go together
+Name=EC12_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child correctly uses any of the words 'I', 'you', 'she', or 'he'
+Name=EC13
+Start=60
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child correctly uses any of the words 'I', 'you', 'she', or 'he'
+Name=EC13_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child consistently names an object when shown
+Name=EC14
+Start=61
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child consistently names an object when shown
+Name=EC14_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child recognizes at least 5 letters of the alphabet
+Name=EC15
+Start=62
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child recognizes at least 5 letters of the alphabet
+Name=EC15_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child writes own name
+Name=EC16
+Start=63
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child writes own name
+Name=EC16_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child recognized all numbers from 1 to 5
+Name=EC17
+Start=64
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child recognized all numbers from 1 to 5
+Name=EC17_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child gives correct amount of objects when asked
+Name=EC18
+Start=65
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child gives correct amount of objects when asked
+Name=EC18_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child counts 10 objects without mistakes
+Name=EC19
+Start=66
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child counts 10 objects without mistakes
+Name=EC19_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child does an activity without repeatedly asking for help or giving up too quickly
+Name=EC20
+Start=67
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child does an activity without repeatedly asking for help or giving up too quickly
+Name=EC20_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child asks about familiar people other than parents when they are not there
+Name=EC21
+Start=68
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child asks about familiar people other than parents when they are not there
+Name=EC21_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child offers to help someone who seems to need help
+Name=EC22
+Start=69
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child offers to help someone who seems to need help
+Name=EC22_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child gets along well with other children
+Name=EC23
+Start=70
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child gets along well with other children
+Name=EC23_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=How often child seems to be very sad or depressed
+Name=EC24
+Start=71
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=How often child seems to be very sad or depressed
+Name=EC24_VS1
+Value=1;DAILY
+Value=2;WEEKLY
+Value=3;MONTHLY
+Value=4;A FEW TIMES A YEAR
+Value=5;NEVER
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=How much child kicks, bites, or hits other children or adults
+Name=EC25
+Start=72
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=How much child kicks, bites, or hits other children or adults
+Name=EC25_VS1
+Value=1;NOT AT ALL
+Value=2;LESS
+Value=3;THE SAME
+Value=4;MORE
+Value=5;A LOT MORE
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Record]
+Label=Child Discipline
+Name=MODUCD
+RecordTypeValue='UCD'
+Required=No
+RecordLen=29
+
+[Item]
+Label=Took away privileges
+Name=UCD2A
+Start=16
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Took away privileges
+Name=UCD2A_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Explained why behaviour was wrong
+Name=UCD2B
+Start=17
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Explained why behaviour was wrong
+Name=UCD2B_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Shook child
+Name=UCD2C
+Start=18
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Shook child
+Name=UCD2C_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Shouted, yelled or screamed at child
+Name=UCD2D
+Start=19
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Shouted, yelled or screamed at child
+Name=UCD2D_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Gave child something else to do
+Name=UCD2E
+Start=20
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Gave child something else to do
+Name=UCD2E_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Spanked, hit or slapped child on bottom with bare hand
+Name=UCD2F
+Start=21
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Spanked, hit or slapped child on bottom with bare hand
+Name=UCD2F_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Hit child on the bottom or elsewhere with belt, brush, stick, etc.
+Name=UCD2G
+Start=22
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Hit child on the bottom or elsewhere with belt, brush, stick, etc.
+Name=UCD2G_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Called child dumb, lazy or another name
+Name=UCD2H
+Start=23
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Called child dumb, lazy or another name
+Name=UCD2H_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Hit or slapped child on the face, head or ears
+Name=UCD2I
+Start=24
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Hit or slapped child on the face, head or ears
+Name=UCD2I_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Hit or slapped child on the hand, arm or leg
+Name=UCD2J
+Start=25
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Hit or slapped child on the hand, arm or leg
+Name=UCD2J_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Beat child up as hard as one could
+Name=UCD2K
+Start=26
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Beat child up as hard as one could
+Name=UCD2K_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Mother / Caregiver of another child age under 5 or selected child age 5-17
+Name=UCD3
+Start=27
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Mother / Caregiver of another child age under 5 or selected child age 5-17
+Name=UCD3_VST
+Value=1;YES
+Value=2;NO
+
+[Item]
+Label=Already responded to question UCD5 or FCD5
+Name=UCD4
+Start=28
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Already responded to question UCD5 or FCD5
+Name=UCD4_VST
+Value=1;YES
+Value=2;NO
+
+[Item]
+Label=Child needs to be physically punished to be brought up properly
+Name=UCD5
+Start=29
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child needs to be physically punished to be brought up properly
+Name=UCD5_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK / NO OPINION
+Value=9;NO RESPONSE
+
+[Record]
+Label=Child Functioning
+Name=MODUCF
+RecordTypeValue='UCF'
+Required=No
+RecordLen=29
+
+[Item]
+Label=Child wear glasses
+Name=UCF2
+Start=16
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child wear glasses
+Name=UCF2_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child uses hearing aid
+Name=UCF3
+Start=17
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child uses hearing aid
+Name=UCF3_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child uses any equipment or receive assistance for walking
+Name=UCF4
+Start=18
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child uses any equipment or receive assistance for walking
+Name=UCF4_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child has difficulty seeing
+Name=UCF7
+Start=19
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child has difficulty seeing
+Name=UCF7_VST
+Value=1;NO DIFFICULTY
+Value=2;SOME DIFFICULTY
+Value=3;A LOT OF DIFFICULTY
+Value=4;CANNOT SEE AT ALL
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child has difficulty hearing sounds like people voices or music
+Name=UCF9
+Start=20
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child has difficulty hearing sounds like people voices or music
+Name=UCF9_VST
+Value=1;NO DIFFICULTY
+Value=2;SOME DIFFICULTY
+Value=3;A LOT OF DIFFICULTY
+Value=4;CANNOT HEAR AT ALL
+Value=9;NO RESPONSE
+
+[Item]
+Label=Without using equipment or assistance child has difficulty walking
+Name=UCF11
+Start=21
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Without using equipment or assistance child has difficulty walking
+Name=UCF11_VST
+Value=2;SOME DIFFICULTY
+Value=3;A LOT OF DIFFICULTY
+Value=4;CANNOT WALK AT ALL
+Value=9;NO RESPONSE
+
+[Item]
+Label=When using equipment or assistance child has difficulty walking
+Name=UCF12
+Start=22
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=When using equipment or assistance child has difficulty walking
+Name=UCF12_VST
+Value=1;NO DIFFICULTY
+Value=2;SOME DIFFICULTY
+Value=3;A LOT OF DIFFICULTY
+Value=4;CANNOT WALK AT ALL
+Value=9;NO RESPONSE
+
+[Item]
+Label=Compared with children of the same age, child has difficulty walking
+Name=UCF13
+Start=23
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Compared with children of the same age, child has difficulty walking
+Name=UCF13_VST
+Value=1;NO DIFFICULTY
+Value=2;SOME DIFFICULTY
+Value=3;A LOT OF DIFFICULTY
+Value=4;CANNOT WALK AT ALL
+Value=9;NO RESPONSE
+
+[Item]
+Label=Compared with children of the same age, child has difficulty picking upsmall objects with his/her hand
+Name=UCF14
+Start=24
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Compared with children of the same age, child has difficulty picking upsmall objects with his/her hand
+Name=UCF14_VST
+Value=1;NO DIFFICULTY
+Value=2;SOME DIFFICULTY
+Value=3;A LOT OF DIFFICULTY
+Value=4;CANNOT PICK-UP AT ALL
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child has difficulty understanding parent/caregiver
+Name=UCF15
+Start=25
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child has difficulty understanding parent/caregiver
+Name=UCF15_VST
+Value=1;NO DIFFICULTY
+Value=2;SOME DIFFICULTY
+Value=3;A LOT OF DIFFICULTY
+Value=4;CANNOT UNDERSTAND AT ALL
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child has difficulty being understood by parent/caregiver when speaks
+Name=UCF16
+Start=26
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child has difficulty being understood by parent/caregiver when speaks
+Name=UCF16_VST
+Value=1;NO DIFFICULTY
+Value=2;SOME DIFFICULTY
+Value=3;A LOT OF DIFFICULTY
+Value=4;CANNOT BE UNDERSTOOD AT ALL
+Value=9;NO RESPONSE
+
+[Item]
+Label=Compared with children of the same age, child has difficulty learning things
+Name=UCF17
+Start=27
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Compared with children of the same age, child has difficulty learning things
+Name=UCF17_VST
+Value=1;NO DIFFICULTY
+Value=2;SOME DIFFICULTY
+Value=3;A LOT OF DIFFICULTY
+Value=4;CANNOT LEARN THINGS AT ALL
+Value=9;NO RESPONSE
+
+[Item]
+Label=Compared with children of the same age, child has difficulty playing
+Name=UCF18
+Start=28
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Compared with children of the same age, child has difficulty playing
+Name=UCF18_VST
+Value=1;NO DIFFICULTY
+Value=2;SOME DIFFICULTY
+Value=3;A LOT OF DIFFICULTY
+Value=4;CANNOT PLAY AT ALL
+Value=9;NO RESPONSE
+
+[Item]
+Label=Compared with children of the same age, how much child kick, bite or hit other children or adults
+Name=UCF19
+Start=29
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Compared with children of the same age, how much child kick, bite or hit other children or adults
+Name=UCF19_VST
+Value=1;NOT AT ALL
+Value=2;LESS
+Value=3;THE SAME
+Value=4;MORE
+Value=5;A LOT MORE
+Value=9;NO RESPONSE
+
+[Record]
+Label=IYCF: Breastfeeding and Dietary Intake
+Name=MODBD
+RecordTypeValue='0BD'
+Required=No
+RecordLen=58
+
+[Item]
+Label=Child ever been breastfed
+Name=BD2
+Start=16
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child ever been breastfed
+Name=BD2_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child was breastfed yesterday
+Name=BD3
+Start=17
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child was breastfed yesterday
+Name=BD3_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child drank anything from a bottle with a nipple yesterday
+Name=BD4
+Start=18
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child drank anything from a bottle with a nipple yesterday
+Name=BD4_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child drank ORS yesterday
+Name=BD5
+Start=19
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child drank ORS yesterday
+Name=BD5_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child drank or ate vitamin or mineral supplements yesterday
+Name=BD6
+Start=20
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child drank or ate vitamin or mineral supplements yesterday
+Name=BD6_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child drank plain water yesterday
+Name=BD7A
+Start=21
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child drank plain water yesterday
+Name=BD7A_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child drank infant formula yesterday
+Name=BD7B
+Start=22
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child drank infant formula yesterday
+Name=BD7B_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Times child drank infant formula
+Name=BD7B1
+Start=23
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Times child drank infant formula
+Name=BD7B1_VS1
+Value=1;ONE
+Value=2;TWO
+Value=3;THREE
+Value=4;FOUR
+Value=5;FIVE
+Value=6;SIX
+Value=7;SEVEN OR MORE
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child drank milk from animals yesterday
+Name=BD7C
+Start=24
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child drank milk from animals yesterday
+Name=BD7C_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Times child drank milk from animals
+Name=BD7C1
+Start=25
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Times child drank milk from animals
+Name=BD7C1_VS1
+Value=1;ONE
+Value=2;TWO
+Value=3;THREE
+Value=4;FOUR
+Value=5;FIVE
+Value=6;SIX
+Value=7;SEVEN OR MORE
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Milk from animals was a sweet or flavoured type of
+Name=BD7C2
+Start=26
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Milk from animals was a sweet or flavoured type of
+Name=BD7C2_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child drank yogurt drinks yesterday
+Name=BD7D
+Start=27
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child drank yogurt drinks yesterday
+Name=BD7D_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Times child drank yogurt drinks
+Name=BD7D1
+Start=28
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Times child drank yogurt drinks
+Name=BD7D1_VS1
+Value=1;ONE
+Value=2;TWO
+Value=3;THREE
+Value=4;FOUR
+Value=5;FIVE
+Value=6;SIX
+Value=7;SEVEN OR MORE
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Yogurt drinks was a sweet or flavoured type of
+Name=BD7D2
+Start=29
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Yogurt drinks was a sweet or flavoured type of
+Name=BD7D2_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child drank chocolate-flavoured drinks yesterday
+Name=BD7E
+Start=30
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child drank chocolate-flavoured drinks yesterday
+Name=BD7E_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child drank fruit juice or fruit-flavoured drinks yesterday
+Name=BD7F
+Start=31
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child drank fruit juice or fruit-flavoured drinks yesterday
+Name=BD7F_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child drank sodas, malt, sports or energy drinks yesterday
+Name=BD7G
+Start=32
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child drank sodas, malt, sports or energy drinks yesterday
+Name=BD7G_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child drank tea, coffee, or herbal drinks yesterday
+Name=BD7H
+Start=33
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child drank tea, coffee, or herbal drinks yesterday
+Name=BD7H_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Tea, coffee, or herbal drinks was sweetened
+Name=BD7H1
+Start=34
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Tea, coffee, or herbal drinks was sweetened
+Name=BD7H1_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child drank clear broth or clear soup yesterday
+Name=BD7I
+Start=35
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child drank clear broth or clear soup yesterday
+Name=BD7I_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child drank any other liquid yesterday
+Name=BD7X
+Start=36
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child drank any other liquid yesterday
+Name=BD7X_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Other drinks was sweetened
+Name=BD7X2
+Start=37
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Other drinks was sweetened
+Name=BD7X2_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child ate yogurt other than yogurt drinks yesterday
+Name=BD8A
+Start=38
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child ate yogurt other than yogurt drinks yesterday
+Name=BD8A_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Times ate yogurt
+Name=BD8A1
+Start=39
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Times ate yogurt
+Name=BD8A1_VST
+Value=1;ONE
+Value=2;TWO
+Value=3;THREE
+Value=4;FOUR
+Value=5;FIVE
+Value=6;SIX
+Value=7;SEVEN OR MORE
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child ate foods made from grains yesterday
+Name=BD8B
+Start=40
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child ate foods made from grains yesterday
+Name=BD8B_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child ate pumpkin, carrots, squash etc. that are yellow or orange inside yesterday
+Name=BD8C
+Start=41
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child ate pumpkin, carrots, squash etc. that are yellow or orange inside yesterday
+Name=BD8C_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child ate plantains, white potatoes, white yams, manioc, cassava etc. any other foods made from starchy roots yesterday
+Name=BD8D
+Start=42
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child ate plantains, white potatoes, white yams, manioc, cassava etc. any other foods made from starchy roots yesterday
+Name=BD8D_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child ate dark green, leafy vegetables yesterday
+Name=BD8E
+Start=43
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child ate dark green, leafy vegetables yesterday
+Name=BD8E_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child ate other vegetables yesterday
+Name=BD8F
+Start=44
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child ate other vegetables yesterday
+Name=BD8F_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child ate ripe mangoes, papayas etc. any other vitamin A-rich fruits yesterday
+Name=BD8G
+Start=45
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child ate ripe mangoes, papayas etc. any other vitamin A-rich fruits yesterday
+Name=BD8G_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child ate other fruits yesterday
+Name=BD8H
+Start=46
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child ate other fruits yesterday
+Name=BD8H_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child ate liver, kidney, heart or other organ meat yesterday
+Name=BD8I
+Start=47
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child ate liver, kidney, heart or other organ meat yesterday
+Name=BD8I_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child ate sausages, hot dogs, ham, bacon, salami, canned meat or other processed meats yesterday
+Name=BD8J
+Start=48
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child ate sausages, hot dogs, ham, bacon, salami, canned meat or other processed meats yesterday
+Name=BD8J_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child ate meat, such as beef, pork, lamb, goat, chicken, duck yesterday
+Name=BD8K
+Start=49
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child ate meat, such as beef, pork, lamb, goat, chicken, duck yesterday
+Name=BD8K_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child ate eggs yesterday
+Name=BD8L
+Start=50
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child ate eggs yesterday
+Name=BD8L_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child ate fresh or dried fish or shellfish yesterday
+Name=BD8M
+Start=51
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child ate fresh or dried fish or shellfish yesterday
+Name=BD8M_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child ate beans, peas, lentils or nuts or any food made from these yesterday
+Name=BD8N
+Start=52
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child ate beans, peas, lentils or nuts or any food made from these yesterday
+Name=BD8N_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child ate hard or soft cheese yesterday
+Name=BD8O
+Start=53
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child ate hard or soft cheese yesterday
+Name=BD8O_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child ate sweet foods such as chocolates, candies, pastries, cakes, biscuits, frozen treats or other sentinel sweet foods yesterday
+Name=BD8P
+Start=54
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child ate sweet foods such as chocolates, candies, pastries, cakes, biscuits, frozen treats or other sentinel sweet foods yesterday
+Name=BD8P_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child ate chips, crisps, puffs, French fries, fried dough, instant noodles or other sentinel fried and salty foods yesterday
+Name=BD8Q
+Start=55
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child ate chips, crisps, puffs, French fries, fried dough, instant noodles or other sentinel fried and salty foods yesterday
+Name=BD8Q_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child ate other solid, semi-solid or soft food yesterday
+Name=BD8X
+Start=56
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child ate other solid, semi-solid or soft food yesterday
+Name=BD8X_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Times child ate solid or semi-solid food
+Name=BD9
+Start=57
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Times child ate solid or semi-solid food
+Name=BD9_VST
+Value=1;ONE
+Value=2;TWO
+Value=3;THREE
+Value=4;FOUR
+Value=5;FIVE
+Value=6;SIX
+Value=7;SEVEN OR MORE
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Dummy for BD8 explanation
+Name=BD8DUMMY
+Start=58
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Dummy for BD8 explanation
+Name=BD8DUMMY_VST
+Value=1;CONTINUE
+
+[Record]
+Label=Immunization
+Name=MODIM
+RecordTypeValue='0IM'
+Required=No
+RecordLen=220
+
+[Item]
+Label=Has vaccination card for child
+Name=IM2
+Start=16
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Has vaccination card for child
+Name=IM2_VST
+Value=1;YES, HAS ONLY CARD(S)
+Value=2;YES, HAS ONLY OTHER DOCUMENT
+Value=3;YES, HAS CARD(S) AND OTHER DOCUMENT
+Value=4;NO, HAS NO CARD AND NO OTHER DOCUMENT
+Value=9;NO RESPONSE
+
+[Item]
+Label=Ever had vaccination card
+Name=IM3
+Start=17
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Ever had vaccination card
+Name=IM3_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Card - document seen
+Name=IM5
+Start=18
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Card - document seen
+Name=IM5_VST
+Value=1;YES, ONLY CARD(S) SEEN
+Value=2;YES, ONLY OTHER DOCUMENT SEEN
+Value=3;YES, CARD(S) AND OTHER DOCUMENT SEEN
+Value=4;NO CARD AND NO OTHER DOCUMENT SEEN
+Value=9;NO RESPONSE
+
+[Item]
+Label=Date of birth of child from card and/or other document
+Name=IM5A
+Start=19
+Len=8
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Day of birth of child from card and/or other document
+Name=IM5AD
+Start=19
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of birth of child from card and/or other document
+Name=IM5AD_VS1
+Value=1:31
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of birth of child from card and/or other document
+Name=IM5AM
+Start=21
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of birth of child from card and/or other document
+Name=IM5AM_VS1
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of birth of child from card and/or other document
+Name=IM5AY
+Start=23
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of birth of child from card and/or other document
+Name=IM5AY_VS1
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=9998;DK
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of BCG immunization
+Name=IM6B
+Start=27
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of BCG immunization
+Name=IM6BD
+Start=27
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of BCG immunization
+Name=IM6BD_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of BCG immunization
+Name=IM6BM
+Start=29
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of BCG immunization
+Name=IM6BM_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of BCG immunization
+Name=IM6BY
+Start=31
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of BCG immunization
+Name=IM6BY_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=6666;MOTHER REPORTED
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of HepB (at birth) immunization
+Name=IM6H0
+Start=35
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of HepB (at birth) immunization
+Name=IM6H0D
+Start=35
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of HepB (at birth) immunization
+Name=IM6H0D_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of HepB (at birth) immunization
+Name=IM6H0M
+Start=37
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of HepB (at birth) immunization
+Name=IM6H0M_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of HepB (at birth) immunization
+Name=IM6H0Y
+Start=39
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of HepB (at birth) immunization
+Name=IM6H0Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=6666;MOTHER REPORTED
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Polio (OPV) (at birth) immunization
+Name=IM6P0
+Start=43
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Polio (OPV) (at birth) immunization
+Name=IM6P0D
+Start=43
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Polio (OPV) (at birth) immunization
+Name=IM6P0D_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Polio (OPV) (at birth) immunization
+Name=IM6P0M
+Start=45
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Polio (OPV) (at birth) immunization
+Name=IM6P0M_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Polio (OPV) (at birth) immunization
+Name=IM6P0Y
+Start=47
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Polio (OPV) (at birth) immunization
+Name=IM6P0Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=6666;MOTHER REPORTED
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Polio1 (OPV) immunization
+Name=IM6P1
+Start=51
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Polio1 (OPV) immunization
+Name=IM6P1D
+Start=51
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Polio1 (OPV) immunization
+Name=IM6P1D_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Polio1 (OPV) immunization
+Name=IM6P1M
+Start=53
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Polio1 (OPV) immunization
+Name=IM6P1M_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Polio1 (OPV) immunization
+Name=IM6P1Y
+Start=55
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Polio1 (OPV) immunization
+Name=IM6P1Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=6666;MOTHER REPORTED
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Polio2 (OPV) immunization
+Name=IM6P2
+Start=59
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Polio2 (OPV) immunization
+Name=IM6P2D
+Start=59
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Polio2 (OPV) immunization
+Name=IM6P2D_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Polio2 (OPV) immunization
+Name=IM6P2M
+Start=61
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Polio2 (OPV) immunization
+Name=IM6P2M_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Polio2 (OPV) immunization
+Name=IM6P2Y
+Start=63
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Polio2 (OPV) immunization
+Name=IM6P2Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=6666;MOTHER REPORTED
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Polio3 (OPV) immunization
+Name=IM6P3
+Start=67
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Polio3 (OPV) immunization
+Name=IM6P3D
+Start=67
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Polio3 (OPV) immunization
+Name=IM6P3D_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Polio3 (OPV) immunization
+Name=IM6P3M
+Start=69
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Polio3 (OPV) immunization
+Name=IM6P3M_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Polio3 (OPV) immunization
+Name=IM6P3Y
+Start=71
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Polio3 (OPV) immunization
+Name=IM6P3Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=6666;MOTHER REPORTED
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Polio (IPV) 1 immunization
+Name=IM6I1
+Start=75
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Polio (IPV) 1 immunization
+Name=IM6I1D
+Start=75
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Polio (IPV) 1 immunization
+Name=IM6I1D_VS1
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Polio (IPV) 1 immunization
+Name=IM6I1M
+Start=77
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Polio (IPV) 1 immunization
+Name=IM6I1M_VS1
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Polio (IPV) 1 immunization
+Name=IM6I1Y
+Start=79
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Polio (IPV) 1 immunization
+Name=IM6I1Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=6666;MOTHER REPORTED
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Polio (IPV) 2 immunization
+Name=IM6I2
+Start=83
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Polio (IPV) 2 immunization
+Name=IM6I2D
+Start=83
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Polio (IPV) 2 immunization
+Name=IM6I2D_VS1
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Polio (IPV) 2 immunization
+Name=IM6I2M
+Start=85
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Polio (IPV) 2 immunization
+Name=IM6I2M_VS1
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Polio (IPV) 2 immunization
+Name=IM6I2Y
+Start=87
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Polio (IPV) 2 immunization
+Name=IM6I2Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=6666;MOTHER REPORTED
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Pentavalent (DPTHibHepB) 1 immunization
+Name=IM6PENTA1
+Start=91
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Pentavalent (DPTHibHepB) 1 immunization
+Name=IM6PENTA1D
+Start=91
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Pentavalent (DPTHibHepB) 1 immunization
+Name=IM6PENTA1D_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Pentavalent (DPTHibHepB) 1 immunization
+Name=IM6PENTA1M
+Start=93
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Pentavalent (DPTHibHepB) 1 immunization
+Name=IM6PENTA1M_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Pentavalent (DPTHibHepB) 1 immunization
+Name=IM6PENTA1Y
+Start=95
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Pentavalent (DPTHibHepB) 1 immunization
+Name=IM6PENTA1Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=6666;MOTHER REPORTED
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Pentavalent (DPTHibHepB) 2 immunization
+Name=IM6PENTA2
+Start=99
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Pentavalent (DPTHibHepB) 2 immunization
+Name=IM6PENTA2D
+Start=99
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Pentavalent (DPTHibHepB) 2 immunization
+Name=IM6PENTA2D_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Pentavalent (DPTHibHepB) 2 immunization
+Name=IM6PENTA2M
+Start=101
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Pentavalent (DPTHibHepB) 2 immunization
+Name=IM6PENTA2M_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Pentavalent (DPTHibHepB) 2 immunization
+Name=IM6PENTA2Y
+Start=103
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Pentavalent (DPTHibHepB) 2 immunization
+Name=IM6PENTA2Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=6666;MOTHER REPORTED
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Pentavalent (DPTHibHepB) 3 immunization
+Name=IM6PENTA3
+Start=107
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Pentavalent (DPTHibHepB) 3 immunization
+Name=IM6PENTA3D
+Start=107
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Pentavalent (DPTHibHepB) 3 immunization
+Name=IM6PENTA3D_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Pentavalent (DPTHibHepB) 3 immunization
+Name=IM6PENTA3M
+Start=109
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Pentavalent (DPTHibHepB) 3 immunization
+Name=IM6PENTA3M_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Pentavalent (DPTHibHepB) 3 immunization
+Name=IM6PENTA3Y
+Start=111
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Pentavalent (DPTHibHepB) 3 immunization
+Name=IM6PENTA3Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=6666;MOTHER REPORTED
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Pneumococcal (Conjugate) 1 immunization
+Name=IM6PCV1
+Start=115
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Pneumococcal (Conjugate) 1 immunization
+Name=IM6PCV1D
+Start=115
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Pneumococcal (Conjugate) 1 immunization
+Name=IM6PCV1D_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Pneumococcal (Conjugate) 1 immunization
+Name=IM6PCV1M
+Start=117
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Pneumococcal (Conjugate) 1 immunization
+Name=IM6PCV1M_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Pneumococcal (Conjugate) 1 immunization
+Name=IM6PCV1Y
+Start=119
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Pneumococcal (Conjugate) 1 immunization
+Name=IM6PCV1Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=6666;MOTHER REPORTED
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Pneumococcal (Conjugate) 2 immunization
+Name=IM6PCV2
+Start=123
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Pneumococcal (Conjugate) 2 immunization
+Name=IM6PCV2D
+Start=123
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Pneumococcal (Conjugate) 2 immunization
+Name=IM6PCV2D_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Pneumococcal (Conjugate) 2 immunization
+Name=IM6PCV2M
+Start=125
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Pneumococcal (Conjugate) 2 immunization
+Name=IM6PCV2M_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Pneumococcal (Conjugate) 2 immunization
+Name=IM6PCV2Y
+Start=127
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Pneumococcal (Conjugate) 2 immunization
+Name=IM6PCV2Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=6666;MOTHER REPORTED
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Pneumococcal (Conjugate) 3 immunization
+Name=IM6PCV3
+Start=131
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Pneumococcal (Conjugate) 3 immunization
+Name=IM6PCV3D
+Start=131
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Pneumococcal (Conjugate) 3 immunization
+Name=IM6PCV3D_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Pneumococcal (Conjugate) 3 immunization
+Name=IM6PCV3M
+Start=133
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Pneumococcal (Conjugate) 3 immunization
+Name=IM6PCV3M_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Pneumococcal (Conjugate) 3 immunization
+Name=IM6PCV3Y
+Start=135
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Pneumococcal (Conjugate) 3 immunization
+Name=IM6PCV3Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=6666;MOTHER REPORTED
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Rotavirus 1 immunization
+Name=IM6R1
+Start=139
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Rotavirus 1 immunization
+Name=IM6R1D
+Start=139
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Rotavirus 1 immunization
+Name=IM6R1D_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Rotavirus 1 immunization
+Name=IM6R1M
+Start=141
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Rotavirus 1 immunization
+Name=IM6R1M_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Rotavirus 1 immunization
+Name=IM6R1Y
+Start=143
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Rotavirus 1 immunization
+Name=IM6R1Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=6666;MOTHER REPORTED
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Rotavirus 2 immunization
+Name=IM6R2
+Start=147
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Rotavirus 2 immunization
+Name=IM6R2D
+Start=147
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Rotavirus 2 immunization
+Name=IM6R2D_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Rotavirus 2 immunization
+Name=IM6R2M
+Start=149
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Rotavirus 2 immunization
+Name=IM6R2M_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Rotavirus 2 immunization
+Name=IM6R2Y
+Start=151
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Rotavirus 2 immunization
+Name=IM6R2Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=6666;MOTHER REPORTED
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Rotavirus 3 immunization
+Name=IM6R3
+Start=155
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Rotavirus 3 immunization
+Name=IM6R3D
+Start=155
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Rotavirus 3 immunization
+Name=IM6R3D_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Rotavirus 3 immunization
+Name=IM6R3M
+Start=157
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Rotavirus 3 immunization
+Name=IM6R3M_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Rotavirus 3 immunization
+Name=IM6R3Y
+Start=159
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Rotavirus 3 immunization
+Name=IM6R3Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=6666;MOTHER REPORTED
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of MMR/MR 1 immunization
+Name=IM6M1
+Start=163
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of MMR/MR 1 immunization
+Name=IM6M1D
+Start=163
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of MMR/MR 1 immunization
+Name=IM6M1D_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of MMR/MR 1 immunization
+Name=IM6M1M
+Start=165
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of MMR/MR 1 immunization
+Name=IM6M1M_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of MMR/MR 1 immunization
+Name=IM6M1Y
+Start=167
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of MMR/MR 1 immunization
+Name=IM6M1Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=6666;MOTHER REPORTED
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of MMR/MR 2 immunization
+Name=IM6M2
+Start=171
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of MMR/MR 2 immunization
+Name=IM6M2D
+Start=171
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of MMR/MR 2 immunization
+Name=IM6M2D_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of MMR/MR 2 immunization
+Name=IM6M2M
+Start=173
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of MMR/MR 2 immunization
+Name=IM6M2M_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of MMR/MR 2 immunization
+Name=IM6M2Y
+Start=175
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of MMR/MR 2 immunization
+Name=IM6M2Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=6666;MOTHER REPORTED
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Yellow Fever immunization
+Name=IM6Y
+Start=179
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Yellow Fever immunization
+Name=IM6YD
+Start=179
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Yellow Fever immunization
+Name=IM6YD_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Yellow Fever immunization
+Name=IM6YM
+Start=181
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Yellow Fever immunization
+Name=IM6YM_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Yellow Fever immunization
+Name=IM6YY
+Start=183
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Yellow Fever immunization
+Name=IM6YY_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=6666;MOTHER REPORTED
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Td Booster 1 immunization
+Name=IM6TD1
+Start=187
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Td Booster 1 immunization
+Name=IM6TD1D
+Start=187
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Td Booster 1 immunization
+Name=IM6TD1D_VS1
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Td Booster 1 immunization
+Name=IM6TD1M
+Start=189
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Td Booster 1 immunization
+Name=IM6TD1M_VS1
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Td Booster 1 immunization
+Name=IM6TD1Y
+Start=191
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Td Booster 1 immunization
+Name=IM6TD1Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=6666;MOTHER REPORTED
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Participate in campaign, national immunization day A
+Name=IM8A
+Start=195
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Participate in campaign, national immunization day A
+Name=IM8A_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Participate in campaign, national immunization day B
+Name=IM8B
+Start=196
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Participate in campaign, national immunization day B
+Name=IM8B_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Participate in campaign, national immunization day C
+Name=IM8C
+Start=197
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Participate in campaign, national immunization day C
+Name=IM8C_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child received any other vaccinations during campaigns, immunization days or child health days
+Name=IM9
+Start=198
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child received any other vaccinations during campaigns, immunization days or child health days
+Name=IM9_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child ever received any vaccinations
+Name=IM11
+Start=199
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child ever received any vaccinations
+Name=IM11_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Participate in campaign, national immunization day A
+Name=IM12A
+Start=200
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Participate in campaign, national immunization day A
+Name=IM12A_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Participate in campaign, national immunization day B
+Name=IM12B
+Start=201
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Participate in campaign, national immunization day B
+Name=IM12B_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Participate in campaign, national immunization day C
+Name=IM12C
+Start=202
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Participate in campaign, national immunization day C
+Name=IM12C_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child ever received BCG vaccination
+Name=IM14
+Start=203
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child ever received BCG vaccination
+Name=IM14_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Hepatitis B vaccination received at or soon after birth
+Name=IM15
+Start=204
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Hepatitis B vaccination received at or soon after birth
+Name=IM15_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Hepatitis B vaccination received within 24 hours of birth
+Name=IM15A
+Start=205
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Hepatitis B vaccination received within 24 hours of birth
+Name=IM15A_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child ever received oral Polio vaccination
+Name=IM16
+Start=206
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child ever received oral Polio vaccination
+Name=IM16_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=First oral polio vaccination in the first two weeks after birth or later
+Name=IM17
+Start=207
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=First oral polio vaccination in the first two weeks after birth or later
+Name=IM17_VST
+Value=1;FIRST TWO WEEKS
+Value=2;LATER
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Times received oral Polio vaccination
+Name=IM18
+Start=208
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Times received oral Polio vaccination
+Name=IM18_VST
+Value=1;ONE
+Value=2;TWO
+Value=3;THREE
+Value=4;FOUR
+Value=5;FIVE
+Value=6;SIX
+Value=7;SEVEN
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child ever received injected Polio vaccination
+Name=IM19
+Start=209
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child ever received injected Polio vaccination
+Name=IM19_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Times received injected Polio vaccination
+Name=IM19A
+Start=210
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Times received injected Polio vaccination
+Name=IM19A_VS1
+Value=1;ONE
+Value=2;TWO
+Value=3;THREE
+Value=4;FOUR
+Value=5;FIVE
+Value=6;SIX
+Value=7;SEVEN
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child ever received Pentavelent vaccination
+Name=IM20
+Start=211
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child ever received Pentavelent vaccination
+Name=IM20_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Times received Pentavelent vaccination
+Name=IM21
+Start=212
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Times received Pentavelent vaccination
+Name=IM21_VST
+Value=1;ONE
+Value=2;TWO
+Value=3;THREE
+Value=4;FOUR
+Value=5;FIVE
+Value=6;SIX
+Value=7;SEVEN
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child ever given Pneumococcal Conjugate vaccination
+Name=IM22
+Start=213
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child ever given Pneumococcal Conjugate vaccination
+Name=IM22_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Times received Pneumococcal Conjugate vaccination
+Name=IM23
+Start=214
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Times received Pneumococcal Conjugate vaccination
+Name=IM23_VST
+Value=1;ONE
+Value=2;TWO
+Value=3;THREE
+Value=4;FOUR
+Value=5;FIVE
+Value=6;SIX
+Value=7;SEVEN
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child ever given Rotavirus vaccination
+Name=IM24
+Start=215
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child ever given Rotavirus vaccination
+Name=IM24_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Times received Rotavirus vaccination
+Name=IM25
+Start=216
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Times received Rotavirus vaccination
+Name=IM25_VST
+Value=1;ONE
+Value=2;TWO
+Value=3;THREE
+Value=4;FOUR
+Value=5;FIVE
+Value=6;SIX
+Value=7;SEVEN
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child ever received MMR/MR vaccination
+Name=IM26
+Start=217
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child ever received MMR/MR vaccination
+Name=IM26_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Times received MMR/MR vaccination
+Name=IM26A
+Start=218
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Times received MMR/MR vaccination
+Name=IM26A_VST
+Value=1;ONE
+Value=2;TWO
+Value=3;THREE
+Value=4;FOUR
+Value=5;FIVE
+Value=6;SIX
+Value=7;SEVEN
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child ever received Yellow Fever vaccination
+Name=IM27
+Start=219
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child ever received Yellow Fever vaccination
+Name=IM27_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child ever received Td Booster vaccination
+Name=IM27A
+Start=220
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child ever received Td Booster vaccination
+Name=IM27A_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Record]
+Label=Care-seeking and Treatment of Diarrhoea
+Name=MODDA
+RecordTypeValue='0DA'
+Required=No
+RecordLen=59
+
+[Item]
+Label=Child had diarrhoea in last 2 weeks
+Name=DA1
+Start=16
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child had diarrhoea in last 2 weeks
+Name=DA1_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child was given less or more to drink during diarrhoea
+Name=DA3
+Start=17
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child was given less or more to drink during diarrhoea
+Name=DA3_VS1
+Value=1;MUCH LESS
+Value=2;SOMEWHAT LESS
+Value=3;ABOUT THE SAME
+Value=4;MORE
+Value=5;NOTHING TO DRINK
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child was given less or more to eat during diarrhoea
+Name=DA4
+Start=18
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child was given less or more to eat during diarrhoea
+Name=DA4_VS1
+Value=1;MUCH LESS
+Value=2;SOMEWHAT LESS
+Value=3;ABOUT THE SAME
+Value=4;MORE
+Value=5;STOPPED FOOD
+Value=7;NEVER GAVE FOOD
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Sought advice or treatment for the diarrhoea from any source
+Name=DA5
+Start=19
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Sought advice or treatment for the diarrhoea from any source
+Name=DA5_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Place sought care
+Name=DA6
+Start=20
+Len=22
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care
+Name=DA6_VS1
+Value='A                     ';GOVERNMENT HOSPITAL
+Value='B                     ';GOVERNMENT HEALTH CENTRE
+Value='C                     ';GOVERNMENT HEALTH POST
+Value='D                     ';COMMUNITY HEALTH WORKER
+Value='E                     ';MOBILE / OUTREACH CLINIC
+Value='G                     ';OTHER PUBLIC MEDICAL
+Value='H                     ';PRIVATE HOSPITAL / CLINIC
+Value='I                     ';PRIVATE PHYSICIAN
+Value='J                     ';PRIVATE PHARMACY
+Value='K                     ';COMMUNITY HEALTH WORKER (NON-GOVERNMENT)
+Value='L                     ';PRIVATE MOBILE CLINIC
+Value='N                     ';OTHER PRIVATE MEDICAL
+Value='O                     ';NGO HOSPITAL
+Value='P                     ';NGO CLINIC
+Value='Q                     ';OTHER NGO
+Value='W                     ';DK PUBLIC OR PRIVATE
+Value='S                     ';RELATIVE / FRIEND
+Value='T                     ';SHOP / MARKET / STREET
+Value='U                     ';TRADITIONAL PRACTITIONER
+Value='X                     ';OTHER
+Value='Z                     ';DK / DON’T REMEMBER
+Value='?                     ';NO RESPONSE
+
+[Item]
+Label=Place sought care: Government hospital
+Name=DA6A
+Start=20
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Government hospital
+Name=DA6A_VS1
+Value='A';GOVERNMENT HOSPITAL
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Government health centre
+Name=DA6B
+Start=21
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Government health centre
+Name=DA6B_VS1
+Value='B';GOVERNMENT HEALTH CENTRE
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Government health post
+Name=DA6C
+Start=22
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Government health post
+Name=DA6C_VS1
+Value='C';GOVERNMENT HEALTH POST
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Community health worker
+Name=DA6D
+Start=23
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Community health worker
+Name=DA6D_VS1
+Value='D';COMMUNITY HEALTH WORKER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Mobile / Outreach clinic
+Name=DA6E
+Start=24
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Mobile / Outreach clinic
+Name=DA6E_VS1
+Value='E';MOBILE / OUTREACH CLINIC
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Other public medical
+Name=DA6G
+Start=25
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Other public medical
+Name=DA6G_VS1
+Value='G';OTHER PUBLIC MEDICAL
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Private hospital / clinic
+Name=DA6H
+Start=26
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Private hospital / clinic
+Name=DA6H_VS1
+Value='H';PRIVATE HOSPITAL / CLINIC
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Private physician
+Name=DA6I
+Start=27
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Private physician
+Name=DA6I_VS1
+Value='I';PRIVATE PHYSICIAN
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Private pharmacy
+Name=DA6J
+Start=28
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Private pharmacy
+Name=DA6J_VS1
+Value='J';PRIVATE PHARMACY
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Community health worker (Non Government)
+Name=DA6K
+Start=29
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Community health worker (Non Government)
+Name=DA6K_VS1
+Value='K';COMMUNITY HEALTH WORKER (NON-GOVERNMENT)
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Private mobile clinic
+Name=DA6L
+Start=30
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Private mobile clinic
+Name=DA6L_VS1
+Value='L';PRIVATE MOBILE CLINIC
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Other private medical
+Name=DA6N
+Start=31
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Other private medical
+Name=DA6N_VS1
+Value='N';OTHER PRIVATE MEDICAL
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: NGO hospital
+Name=DA6O
+Start=32
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: NGO hospital
+Name=DA6O_VS1
+Value='O';NGO HOSPITAL
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: NGO clinic
+Name=DA6P
+Start=33
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: NGO clinic
+Name=DA6P_VS1
+Value='P';NGO CLINIC
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Other NGO
+Name=DA6Q
+Start=34
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Other NGO
+Name=DA6Q_VS1
+Value='Q';OTHER NGO
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: DK public, private, or NGO
+Name=DA6W
+Start=35
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: DK public, private, or NGO
+Name=DA6W_VS1
+Value='W';DK PUBLIC OR PRIVATE
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Relative / Friend
+Name=DA6S
+Start=36
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Relative / Friend
+Name=DA6S_VS1
+Value='S';RELATIVE / FRIEND
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Shop / Market / Street
+Name=DA6T
+Start=37
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Shop / Market / Street
+Name=DA6T_VS1
+Value='T';SHOP / MARKET / STREET
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Traditional practitioner
+Name=DA6U
+Start=38
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Traditional practitioner
+Name=DA6U_VS1
+Value='U';TRADITIONAL PRACTITIONER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Other
+Name=DA6X
+Start=39
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Other
+Name=DA6X_VS1
+Value='X';OTHER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: DK / Don't remember
+Name=DA6Z
+Start=40
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: DK / Don't remember
+Name=DA6Z_VS1
+Value='Z';DK / DON’T REMEMBER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: No response
+Name=DA6NR
+Start=41
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: No response
+Name=DA6NR_VS1
+Value='?';NO RESPONSE
+Value=' '
+
+[Item]
+Label=Place first sought care
+Name=DA8
+Start=42
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Place first sought care
+Name=DA8_VS1
+Value=11;GOVERNMENT HOSPITAL
+Value=12;GOVERNMENT HEALTH CENTRE
+Value=13;GOVERNMENT HEALTH POST
+Value=14;COMMUNITY HEALTH WORKER
+Value=15;MOBILE / OUTREACH CLINIC
+Value=16;OTHER PUBLIC MEDICAL
+Value=21;PRIVATE HOSPITAL / CLINIC
+Value=22;PRIVATE PHYSICIAN
+Value=23;PRIVATE PHARMACY
+Value=24;COMMUNITY HEALTH WORKER (NON-GOVERNMENT)
+Value=25;PRIVATE MOBILE CLINIC
+Value=26;OTHER PRIVATE MEDICAL
+Value=31;NGO HOSPITAL
+Value=32;NGO CLINIC
+Value=36;OTHER NGO
+Value=76;DK PUBLIC OR PRIVATE
+Value=61;RELATIVE / FRIEND
+Value=62;SHOP / MARKET / STREET
+Value=63;TRADITIONAL PRACTITIONER
+Value=96;OTHER
+Value=98;DK / DON’T REMEMBER
+Value=99;NO RESPONSE
+
+[Item]
+Label=Child given ORS packet solution
+Name=DA9A
+Start=44
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child given ORS packet solution
+Name=DA9A_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child given pre-packaged ORS liquid
+Name=DA9B
+Start=45
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child given pre-packaged ORS liquid
+Name=DA9B_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child given zinc tablets or syrup
+Name=DA9C
+Start=46
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child given zinc tablets or syrup
+Name=DA9C_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child given government-recommended home-made fluid
+Name=DA9D
+Start=47
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child given government-recommended home-made fluid
+Name=DA9D_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Anything else given to treat the diarrhoea
+Name=DA10
+Start=48
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Anything else given to treat the diarrhoea
+Name=DA10_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Other treatment
+Name=DA11
+Start=49
+Len=11
+DataType=Alpha
+
+[ValueSet]
+Label=Other treatment
+Name=DA11_VS1
+Value='A          ';PILL OR SYRUP: ANTIBIOTIC
+Value='B          ';PILL OR SYRUP: ANTIMOTILITY (ANTI-DIARRHOEA)
+Value='G          ';PILL OR SYRUP: OTHER
+Value='H          ';PILL OR SYRUP: UNKNOWN
+Value='L          ';INJECTION: ANTIBIOTIC
+Value='M          ';INJECTION: NON-ANTIBIOTIC
+Value='N          ';INJECTION: UNKNOWN
+Value='O          ';INTRAVENOUS (IV)
+Value='Q          ';HOME REMEDY / HERBAL MEDICINE
+Value='X          ';OTHER
+Value='?          ';NO RESPONSE
+
+[Item]
+Label=Other treatment (pill or syrup): Antibiotic
+Name=DA11A
+Start=49
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Other treatment (pill or syrup): Antibiotic
+Name=DA11A_VS1
+Value='A';PILL OR SYRUP: ANTIBIOTIC
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Other treatment (pill or syrup): Antimotility (anti-diarrhoea)
+Name=DA11B
+Start=50
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Other treatment (pill or syrup): Antimotility (anti-diarrhoea)
+Name=DA11B_VS1
+Value='B';PILL OR SYRUP: ANTIMOTILITY (ANTI-DIARRHOEA)
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Other treatment (pill or syrup): Other
+Name=DA11G
+Start=51
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Other treatment (pill or syrup): Other
+Name=DA11G_VS1
+Value='G';PILL OR SYRUP: OTHER PILL OR SYRUP
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Other treatment (pill or syrup): Unknown
+Name=DA11H
+Start=52
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Other treatment (pill or syrup): Unknown
+Name=DA11H_VS1
+Value='H';PILL OR SYRUP: UNKNOWN PILL OR SYRUP
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Other treatment (injection): Antibiotic
+Name=DA11L
+Start=53
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Other treatment (injection): Antibiotic
+Name=DA11L_VS1
+Value='L';INJECTION: ANTIBIOTIC
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Other treatment (injection): Non-antibiotic
+Name=DA11M
+Start=54
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Other treatment (injection): Non-antibiotic
+Name=DA11M_VS1
+Value='M';INJECTION: NON-ANTIBIOTIC
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Other treatment (injection): Unknown
+Name=DA11N
+Start=55
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Other treatment (injection): Unknown
+Name=DA11N_VS1
+Value='N';INJECTION: UNKNOWN INJECTION
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Other treatment: Intravenous (IV)
+Name=DA11O
+Start=56
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Other treatment: Intravenous (IV)
+Name=DA11O_VS1
+Value='O';INTRAVENOUS (IV)
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Other treatment: Home remedy / Herbal medicine
+Name=DA11Q
+Start=57
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Other treatment: Home remedy / Herbal medicine
+Name=DA11Q_VS1
+Value='Q';HOME REMEDY / HERBAL MEDICINE
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Other treatment: Other
+Name=DA11X
+Start=58
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Other treatment: Other
+Name=DA11X_VS1
+Value='X';OTHER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Other treatment: No response
+Name=DA11NR
+Start=59
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Other treatment: No response
+Name=DA11NR_VS1
+Value='?';NO RESPONSE
+Value=' '
+
+[Record]
+Label=Care-seeking and Treatment of Symptoms of ARI
+Name=MODAR
+RecordTypeValue='0AR'
+Required=No
+RecordLen=57
+
+[Item]
+Label=Child ill with cough in the last 2 weeks
+Name=AR1
+Start=16
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child ill with cough in the last 2 weeks
+Name=AR1_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Difficulty breathing in the last 2 weeks
+Name=AR2
+Start=17
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Difficulty breathing in the last 2 weeks
+Name=AR2_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Difficulty breathing due to problem in chest or blocked nose
+Name=AR3
+Start=18
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Difficulty breathing due to problem in chest or blocked nose
+Name=AR3_VS1
+Value=1;PROBLEM IN CHEST ONLY
+Value=2;BLOCKED OR RUNNY NOSE ONLY
+Value=3;BOTH
+Value=6;OTHER
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Sought advice or treatment for illness
+Name=AR4
+Start=19
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Sought advice or treatment for illness
+Name=AR4_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Place sought care
+Name=AR5
+Start=20
+Len=22
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care
+Name=AR5_VS1
+Value='A                     ';GOVERNMENT HOSPITAL
+Value='B                     ';GOVERNMENT HEALTH CENTRE
+Value='C                     ';GOVERNMENT HEALTH POST
+Value='D                     ';COMMUNITY HEALTH WORKER
+Value='E                     ';MOBILE / OUTREACH CLINIC
+Value='G                     ';OTHER PUBLIC MEDICAL
+Value='H                     ';PRIVATE HOSPITAL / CLINIC
+Value='I                     ';PRIVATE PHYSICIAN
+Value='J                     ';PRIVATE PHARMACY
+Value='K                     ';COMMUNITY HEALTH WORKER (NON-GOVERNMENT)
+Value='L                     ';PRIVATE MOBILE CLINIC
+Value='N                     ';OTHER PRIVATE MEDICAL
+Value='O                     ';NGO HOSPITAL
+Value='P                     ';NGO CLINIC
+Value='Q                     ';OTHER NGO
+Value='W                     ';DK PUBLIC OR PRIVATE
+Value='S                     ';RELATIVE / FRIEND
+Value='T                     ';SHOP / MARKET / STREET
+Value='U                     ';TRADITIONAL PRACTITIONER
+Value='X                     ';OTHER
+Value='Z                     ';DK / DON’T REMEMBER
+Value='?                     ';NO RESPONSE
+
+[Item]
+Label=Place sought care: Government hospital
+Name=AR5A
+Start=20
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Government hospital
+Name=AR5A_VS1
+Value='A';GOVERNMENT HOSPITAL
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Government health centre
+Name=AR5B
+Start=21
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Government health centre
+Name=AR5B_VS1
+Value='B';GOVERNMENT HEALTH CENTRE
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Government health post
+Name=AR5C
+Start=22
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Government health post
+Name=AR5C_VS1
+Value='C';GOVERNMENT HEALTH POST
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Community health worker
+Name=AR5D
+Start=23
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Community health worker
+Name=AR5D_VS1
+Value='D';COMMUNITY HEALTH WORKER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Mobile / Outreach clinic
+Name=AR5E
+Start=24
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Mobile / Outreach clinic
+Name=AR5E_VS1
+Value='E';MOBILE / OUTREACH CLINIC
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Other public medical
+Name=AR5G
+Start=25
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Other public medical
+Name=AR5G_VS1
+Value='G';OTHER PUBLIC MEDICAL
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Private hospital / clinic
+Name=AR5H
+Start=26
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Private hospital / clinic
+Name=AR5H_VS1
+Value='H';PRIVATE HOSPITAL / CLINIC
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Private physician
+Name=AR5I
+Start=27
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Private physician
+Name=AR5I_VS1
+Value='I';PRIVATE PHYSICIAN
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Private pharmacy
+Name=AR5J
+Start=28
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Private pharmacy
+Name=AR5J_VS1
+Value='J';PRIVATE PHARMACY
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Community health worker (Non Government)
+Name=AR5K
+Start=29
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Community health worker (Non Government)
+Name=AR5K_VS1
+Value='K';COMMUNITY HEALTH WORKER (NON-GOVERNMENT)
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Private mobile clinic
+Name=AR5L
+Start=30
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Private mobile clinic
+Name=AR5L_VS1
+Value='L';PRIVATE MOBILE CLINIC
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Other private medical
+Name=AR5N
+Start=31
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Other private medical
+Name=AR5N_VS1
+Value='N';OTHER PRIVATE MEDICAL
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: NGO hospital
+Name=AR5O
+Start=32
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: NGO hospital
+Name=AR5O_VS1
+Value='O';NGO HOSPITAL
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: NGO clinic
+Name=AR5P
+Start=33
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: NGO clinic
+Name=AR5P_VS1
+Value='P';NGO CLINIC
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Other NGO
+Name=AR5Q
+Start=34
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Other NGO
+Name=AR5Q_VS1
+Value='Q';OTHER NGO
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: DK public or private
+Name=AR5W
+Start=35
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: DK public or private
+Name=AR5W_VS1
+Value='W';DK PUBLIC OR PRIVATE
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Relative / Friend
+Name=AR5S
+Start=36
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Relative / Friend
+Name=AR5S_VS1
+Value='S';RELATIVE / FRIEND
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Shop / Market / Street
+Name=AR5T
+Start=37
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Shop / Market / Street
+Name=AR5T_VS1
+Value='T';SHOP / MARKET / STREET
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Traditional practitioner
+Name=AR5U
+Start=38
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Traditional practitioner
+Name=AR5U_VS1
+Value='U';TRADITIONAL PRACTITIONER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Other
+Name=AR5X
+Start=39
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Other
+Name=AR5X_VS1
+Value='X';OTHER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: DK / Don't remember
+Name=AR5Z
+Start=40
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: DK / Don't remember
+Name=AR5Z_VS1
+Value='Z';DK / DON’T REMEMBER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: No response
+Name=AR5NR
+Start=41
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: No response
+Name=AR5NR_VS1
+Value='?';NO RESPONSE
+Value=' '
+
+[Item]
+Label=Place first sought care
+Name=AR7
+Start=42
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Place first sought care
+Name=AR7_VS1
+Value=11;GOVERNMENT HOSPITAL
+Value=12;GOVERNMENT HEALTH CENTRE
+Value=13;GOVERNMENT HEALTH POST
+Value=14;COMMUNITY HEALTH WORKER
+Value=15;MOBILE / OUTREACH CLINIC
+Value=16;OTHER PUBLIC MEDICAL
+Value=21;PRIVATE HOSPITAL / CLINIC
+Value=22;PRIVATE PHYSICIAN
+Value=23;PRIVATE PHARMACY
+Value=24;COMMUNITY HEALTH WORKER (NON-GOVERNMENT)
+Value=25;PRIVATE MOBILE CLINIC
+Value=26;OTHER PRIVATE MEDICAL
+Value=31;NGO HOSPITAL
+Value=32;NGO CLINIC
+Value=36;OTHER NGO
+Value=76;DK PUBLIC OR PRIVATE
+Value=61;RELATIVE / FRIEND
+Value=62;SHOP / MARKET / STREET
+Value=63;TRADITIONAL PRACTITIONER
+Value=96;OTHER
+Value=98;DK / DON’T REMEMBER
+Value=99;NO RESPONSE
+
+[Item]
+Label=How many days after illness first sought care
+Name=AR8
+Start=44
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=How many days after illness first sought care
+Name=AR8_VS1
+Value=0;SAME DAY
+Value=1;NEXT DAY
+Value=2:95
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Took medicine to treat this illness
+Name=AR9
+Start=46
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Took medicine to treat this illness
+Name=AR9_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Medicine taken
+Name=AR10
+Start=47
+Len=11
+DataType=Alpha
+
+[ValueSet]
+Label=Medicine taken
+Name=AR10_VS1
+Value='L          ';ANTIBIOTICS: AMOXICILLIN
+Value='M          ';ANTIBIOTICS: COTRIMOXAZOLE
+Value='N          ';ANTIBIOTICS: OTHER ANTIBIOTIC PILL / SYRUP
+Value='O          ';ANTIBIOTICS: OTHER ANTIBIOTIC INJECTION / IV
+Value='R          ';PARACETAMOL / PANADOL / ACETAMINOPHEN
+Value='S          ';ASPIRIN
+Value='T          ';IBUPROFEN
+Value='W          ';ONLY BRAND NAME RECORDED
+Value='X          ';OTHER
+Value='Z          ';DK
+Value='?          ';NO RESPONSE
+
+[Item]
+Label=Medicine taken: Antibiotics: Amoxicillin
+Name=AR10L
+Start=47
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Medicine taken: Antibiotics: Amoxicillin
+Name=AR10L_VS1
+Value='L';ANTIBIOTICS: AMOXICILLIN
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Medicine taken: Antibiotics: Cotrimoxazole
+Name=AR10M
+Start=48
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Medicine taken: Antibiotics: Cotrimoxazole
+Name=AR10M_VS1
+Value='M';ANTIBIOTICS: COTRIMOXAZOLE
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Medicine taken: Antibiotics: Other antibiotic pill / syrup
+Name=AR10N
+Start=49
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Medicine taken: Antibiotics: Other antibiotic pill / syrup
+Name=AR10N_VS1
+Value='N';ANTIBIOTICS: OTHER ANTIBIOTIC PILL / SYRUP
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Medicine taken: Antibiotics: Other antibiotic injection / IV
+Name=AR10O
+Start=50
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Medicine taken: Antibiotics: Other antibiotic injection / IV
+Name=AR10O_VS1
+Value='O';ANTIBIOTICS: OTHER ANTIBIOTIC INJECTION / IV
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Medicine taken: Paracetamol / Panadol / Acetaminophen
+Name=AR10R
+Start=51
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Medicine taken: Paracetamol / Panadol / Acetaminophen
+Name=AR10R_VS1
+Value='R';PARACETAMOL / PANADOL / ACETAMINOPHEN
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Medicine taken: Aspirin
+Name=AR10S
+Start=52
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Medicine taken: Aspirin
+Name=AR10S_VS1
+Value='S';ASPIRIN
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Medicine taken: Ibupropfen
+Name=AR10T
+Start=53
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Medicine taken: Ibupropfen
+Name=AR10T_VS1
+Value='T';IBUPROFEN
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Medicine taken: Only brand name recorded
+Name=AR10W
+Start=54
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Medicine taken: Only brand name recorded
+Name=AR10W_VS1
+Value='W';ONLY BRAND NAME RECORDED
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Medicine taken: Other
+Name=AR10X
+Start=55
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Medicine taken: Other
+Name=AR10X_VS1
+Value='X';OTHER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Medicine taken: DK
+Name=AR10Z
+Start=56
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Medicine taken: DK
+Name=AR10Z_VS1
+Value='Z';DK
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Medicine taken: No response
+Name=AR10NR
+Start=57
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Medicine taken: No response
+Name=AR10NR_VS1
+Value='?';NO RESPONSE
+Value=' '
+
+[Record]
+Label=Malaria: Care-seeking and Treatment
+Name=MODMC
+RecordTypeValue='0MC'
+Required=No
+RecordLen=67
+
+[Item]
+Label=Child ill with fever in the last 2 weeks
+Name=MC1
+Start=16
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child ill with fever in the last 2 weeks
+Name=MC1_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Blood taken from finger or heel for testing in the last 2 weeks
+Name=MC2
+Start=17
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Blood taken from finger or heel for testing in the last 2 weeks
+Name=MC2_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Told by healthcare provider child had malaria
+Name=MC3
+Start=18
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Told by healthcare provider child had malaria
+Name=MC3_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Sought advice or treatment for illness
+Name=MC4
+Start=19
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Sought advice or treatment for illness
+Name=MC4_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Place sought care
+Name=MC5
+Start=20
+Len=22
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care
+Name=MC5_VS1
+Value='A                     ';GOVERNMENT HOSPITAL
+Value='B                     ';GOVERNMENT HEALTH CENTRE
+Value='C                     ';GOVERNMENT HEALTH POST
+Value='D                     ';COMMUNITY HEALTH WORKER
+Value='E                     ';MOBILE / OUTREACH CLINIC
+Value='G                     ';OTHER PUBLIC MEDICAL
+Value='H                     ';PRIVATE HOSPITAL / CLINIC
+Value='I                     ';PRIVATE PHYSICIAN
+Value='J                     ';PRIVATE PHARMACY
+Value='K                     ';COMMUNITY HEALTH WORKER (NON-GOVERNMENT)
+Value='L                     ';PRIVATE MOBILE CLINIC
+Value='N                     ';OTHER PRIVATE MEDICAL
+Value='O                     ';NGO HOSPITAL
+Value='P                     ';NGO CLINIC
+Value='Q                     ';OTHER NGO
+Value='W                     ';DK PUBLIC OR PRIVATE
+Value='S                     ';RELATIVE / FRIEND
+Value='T                     ';SHOP / MARKET / STREET
+Value='U                     ';TRADITIONAL PRACTITIONER
+Value='X                     ';OTHER
+Value='Z                     ';DK / DON’T REMEMBER
+Value='?                     ';NO RESPONSE
+
+[Item]
+Label=Place sought care: Government hospital
+Name=MC5A
+Start=20
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Government hospital
+Name=MC5A_VS1
+Value='A';GOVERNMENT HOSPITAL
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Government health centre
+Name=MC5B
+Start=21
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Government health centre
+Name=MC5B_VS1
+Value='B';GOVERNMENT HEALTH CENTRE
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Government health post
+Name=MC5C
+Start=22
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Government health post
+Name=MC5C_VS1
+Value='C';GOVERNMENT HEALTH POST
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Community health worker
+Name=MC5D
+Start=23
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Community health worker
+Name=MC5D_VS1
+Value='D';COMMUNITY HEALTH WORKER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Mobile / Outreach clinic
+Name=MC5E
+Start=24
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Mobile / Outreach clinic
+Name=MC5E_VS1
+Value='E';MOBILE / OUTREACH CLINIC
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Other public medical
+Name=MC5G
+Start=25
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Other public medical
+Name=MC5G_VS1
+Value='G';OTHER PUBLIC MEDICAL
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Private hospital / clinic
+Name=MC5H
+Start=26
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Private hospital / clinic
+Name=MC5H_VS1
+Value='H';PRIVATE HOSPITAL / CLINIC
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Private physician
+Name=MC5I
+Start=27
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Private physician
+Name=MC5I_VS1
+Value='I';PRIVATE PHYSICIAN
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Private pharmacy
+Name=MC5J
+Start=28
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Private pharmacy
+Name=MC5J_VS1
+Value='J';PRIVATE PHARMACY
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Community health worker (Non Government)
+Name=MC5K
+Start=29
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Community health worker (Non Government)
+Name=MC5K_VS1
+Value='K';COMMUNITY HEALTH WORKER (NON-GOVERNMENT)
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Private mobile clinic
+Name=MC5L
+Start=30
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Private mobile clinic
+Name=MC5L_VS1
+Value='L';PRIVATE MOBILE CLINIC
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Other private medical
+Name=MC5N
+Start=31
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Other private medical
+Name=MC5N_VS1
+Value='N';OTHER PRIVATE MEDICAL
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: NGO hospital
+Name=MC5O
+Start=32
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: NGO hospital
+Name=MC5O_VS1
+Value='O';NGO HOSPITAL
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: NGO clinic
+Name=MC5P
+Start=33
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: NGO clinic
+Name=MC5P_VS1
+Value='P';NGO CLINIC
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Other NGO
+Name=MC5Q
+Start=34
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Other NGO
+Name=MC5Q_VS1
+Value='Q';OTHER NGO
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: DK public or private
+Name=MC5W
+Start=35
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: DK public or private
+Name=MC5W_VS1
+Value='W';DK PUBLIC OR PRIVATE
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Relative / Friend
+Name=MC5S
+Start=36
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Relative / Friend
+Name=MC5S_VS1
+Value='S';RELATIVE / FRIEND
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Shop / Market / Street
+Name=MC5T
+Start=37
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Shop / Market / Street
+Name=MC5T_VS1
+Value='T';SHOP / MARKET / STREET
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Traditional practitioner
+Name=MC5U
+Start=38
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Traditional practitioner
+Name=MC5U_VS1
+Value='U';TRADITIONAL PRACTITIONER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: Other
+Name=MC5X
+Start=39
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: Other
+Name=MC5X_VS1
+Value='X';OTHER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: DK / Don't remember
+Name=MC5Z
+Start=40
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: DK / Don't remember
+Name=MC5Z_VS1
+Value='Z';DK / DON’T REMEMBER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Place sought care: No response
+Name=MC5NR
+Start=41
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Place sought care: No response
+Name=MC5NR_VS1
+Value='?';NO RESPONSE
+Value=' '
+
+[Item]
+Label=Place first sought care
+Name=MC7
+Start=42
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Place first sought care
+Name=MC7_VS1
+Value=11;GOVERNMENT HOSPITAL
+Value=12;GOVERNMENT HEALTH CENTRE
+Value=13;GOVERNMENT HEALTH POST
+Value=14;COMMUNITY HEALTH WORKER
+Value=15;MOBILE / OUTREACH CLINIC
+Value=16;OTHER PUBLIC MEDICAL
+Value=21;PRIVATE HOSPITAL / CLINIC
+Value=22;PRIVATE PHYSICIAN
+Value=23;PRIVATE PHARMACY
+Value=24;COMMUNITY HEALTH WORKER (NON-GOVERNMENT)
+Value=25;PRIVATE MOBILE CLINIC
+Value=26;OTHER PRIVATE MEDICAL
+Value=31;NGO HOSPITAL
+Value=32;NGO CLINIC
+Value=36;OTHER NGO
+Value=76;DK PUBLIC OR PRIVATE
+Value=61;RELATIVE / FRIEND
+Value=62;SHOP / MARKET / STREET
+Value=63;TRADITIONAL PRACTITIONER
+Value=96;OTHER
+Value=98;DK / DON’T REMEMBER
+Value=99;NO RESPONSE
+
+[Item]
+Label=How many days after illness first sought care
+Name=MC8
+Start=44
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=How many days after illness first sought care
+Name=MC8_VS1
+Value=0;SAME DAY
+Value=1;NEXT DAY
+Value=2:95
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Took medicine to treat this illness
+Name=MC9
+Start=46
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Took medicine to treat this illness
+Name=MC9_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Medicine taken
+Name=MC10
+Start=47
+Len=20
+DataType=Alpha
+
+[ValueSet]
+Label=Medicine taken
+Name=MC10_VS1
+Value='A                   ';ANTI-MALARIALS: ARTEMISININ COMBINATION THERAPY (ACT)
+Value='B                   ';ANTI-MALARIALS: SP / FANSIDAR
+Value='C                   ';ANTI-MALARIALS: CHLOROQUINE
+Value='D                   ';ANTI-MALARIALS: AMODIAQUINE
+Value='E                   ';ANTI-MALARIALS: QUININE PILLS
+Value='F                   ';ANTI-MALARIALS: QUININE INJECTION / IV
+Value='G                   ';ANTI-MALARIALS: ARTESUNATE RECTAL
+Value='H                   ';ANTI-MALARIALS: ARTESUNATE INJECTION / IV
+Value='K                   ';ANTI-MALARIALS: OTHER
+Value='L                   ';ANTIBIOTICS: AMOXICILLIN
+Value='M                   ';ANTIBIOTICS: COTRIMOXAZOLE
+Value='N                   ';ANTIBIOTICS: OTHER ANTIBIOTIC PILL / SYRUP
+Value='O                   ';ANTIBIOTICS: OTHER ANTIBIOTIC INJECTION / IV
+Value='R                   ';PARACETAMOL / PANADOL / ACETAMINOPHEN
+Value='S                   ';ASPIRIN
+Value='T                   ';IBUPROFEN
+Value='W                   ';ONLY BRAND NAME RECORDED
+Value='X                   ';OTHER
+Value='Z                   ';DK
+Value='?                   ';NO RESPONSE
+
+[Item]
+Label=Medicine taken: Anti-Malarials: Artemisinin combination therapy (ACT)
+Name=MC10A
+Start=47
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Medicine taken: Anti-Malarials: Artemisinin combination therapy (ACT)
+Name=MC10A_VS1
+Value='A';ANTI-MALARIALS: ARTEMISININ COMBINATION THERAPY (ACT)
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Medicine taken: Anti-Malarials: SP / Fansidar
+Name=MC10B
+Start=48
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Medicine taken: Anti-Malarials: SP / Fansidar
+Name=MC10B_VS1
+Value='B';ANTI-MALARIALS: SP / FANSIDAR
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Medicine taken: Anti-Malarials: Chloroquine
+Name=MC10C
+Start=49
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Medicine taken: Anti-Malarials: Chloroquine
+Name=MC10C_VS1
+Value='C';ANTI-MALARIALS: CHLOROQUINE
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Medicine taken: Anti-Malarials: Amodiaquine
+Name=MC10D
+Start=50
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Medicine taken: Anti-Malarials: Amodiaquine
+Name=MC10D_VS1
+Value='D';ANTI-MALARIALS: AMODIAQUINE
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Medicine taken: Anti-Malarials: Quinine pills
+Name=MC10E
+Start=51
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Medicine taken: Anti-Malarials: Quinine pills
+Name=MC10E_VS1
+Value='E';ANTI-MALARIALS: QUININE PILLS
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Medicine taken: Anti-Malarials: Quinine injection / IV
+Name=MC10F
+Start=52
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Medicine taken: Anti-Malarials: Quinine injection / IV
+Name=MC10F_VS1
+Value='F';ANTI-MALARIALS: QUININE INJECTION / IV
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Medicine taken: Anti-Malarials: Artesunate rectal
+Name=MC10G
+Start=53
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Medicine taken: Anti-Malarials: Artesunate rectal
+Name=MC10G_VS1
+Value='G';ANTI-MALARIALS: ARTESUNATE RECTAL
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Medicine taken: Anti-Malarials: Artesunate injection / IV
+Name=MC10H
+Start=54
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Medicine taken: Anti-Malarials: Artesunate injection / IV
+Name=MC10H_VS1
+Value='H';ANTI-MALARIALS: ARTESUNATE INJECTION / IV
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Medicine taken: Anti-Malarials: Other
+Name=MC10K
+Start=55
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Medicine taken: Anti-Malarials: Other
+Name=MC10K_VS1
+Value='K';ANTI-MALARIALS: OTHER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Medicine taken: Antibiotics: Amoxicillin
+Name=MC10L
+Start=56
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Medicine taken: Antibiotics: Amoxicillin
+Name=MC10L_VS1
+Value='L';ANTIBIOTICS: AMOXICILLIN
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Medicine taken: Antibiotics: Cotrimoxazole
+Name=MC10M
+Start=57
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Medicine taken: Antibiotics: Cotrimoxazole
+Name=MC10M_VS1
+Value='M';ANTIBIOTICS: COTRIMOXAZOLE
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Medicine taken: Antibiotics: Other antibiotic pill / syrup
+Name=MC10N
+Start=58
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Medicine taken: Antibiotics: Other antibiotic pill / syrup
+Name=MC10N_VS1
+Value='N';ANTIBIOTICS: OTHER ANTIBIOTIC PILL / SYRUP
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Medicine taken: Antibiotics: Other antibiotic injection / IV
+Name=MC10O
+Start=59
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Medicine taken: Antibiotics: Other antibiotic injection / IV
+Name=MC10O_VS1
+Value='O';ANTIBIOTICS: OTHER ANTIBIOTIC INJECTION / IV
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Medicine taken: Paracetamol / Panadol / Acetaminophen
+Name=MC10R
+Start=60
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Medicine taken: Paracetamol / Panadol / Acetaminophen
+Name=MC10R_VS1
+Value='R';PARACETAMOL / PANADOL / ACETAMINOPHEN
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Medicine taken: Aspirin
+Name=MC10S
+Start=61
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Medicine taken: Aspirin
+Name=MC10S_VS1
+Value='S';ASPIRIN
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Medicine taken: Ibupropfen
+Name=MC10T
+Start=62
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Medicine taken: Ibupropfen
+Name=MC10T_VS1
+Value='T';IBUPROFEN
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Medicine taken: Only brand name recorded
+Name=MC10W
+Start=63
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Medicine taken: Only brand name recorded
+Name=MC10W_VS1
+Value='W';ONLY BRAND NAME RECORDED
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Medicine taken: Other
+Name=MC10X
+Start=64
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Medicine taken: Other
+Name=MC10X_VS1
+Value='X';OTHER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Medicine taken: DK
+Name=MC10Z
+Start=65
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Medicine taken: DK
+Name=MC10Z_VS1
+Value='Z';DK
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Medicine taken: No response
+Name=MC10NR
+Start=66
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Medicine taken: No response
+Name=MC10NR_VS1
+Value='?';NO RESPONSE
+Value=' '
+
+[Item]
+Label=How many days after illness first took artemisinin combination therapy
+Name=MC12
+Start=67
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=How many days after illness first took artemisinin combination therapy
+Name=MC12_VS1
+Value=0;SAME DAY
+Value=1;NEXT DAY
+Value=2;2 DAYS AFTER FEVER STARTED
+Value=3;3 OR MORE DAYS AFTER FEVER STARTED
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Record]
+Label=MICS Plus consent
+Name=MODCPN
+RecordTypeValue='CPN'
+Required=No
+MaxRecords=5
+RecordLen=25
+
+[Item]
+Label=Shared phone number
+Name=UF15J
+Start=16
+Len=8
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Confirm shared number
+Name=UF15K
+Start=24
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Confirm shared number
+Name=UF15K_VS1
+Value=1;YES
+Value=2;NO
+
+[Item]
+Label=Another personal or shared phone number where can be reached
+Name=UF15L
+Start=25
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Another personal or shared phone number where can be reached
+Name=UF15L_VS1
+Value=1;YES
+Value=2;NO
+
+[Record]
+Label=Anthropometric Measurements Form
+Name=MODAN
+RecordTypeValue='0AN'
+Required=No
+RecordLen=93
+
+[Item]
+Label=Cluster number
+Name=AN1
+Start=16
+Len=5
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Household number
+Name=AN2
+Start=21
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Child's name
+Name=AN3N
+Start=23
+Len=20
+DataType=Alpha
+
+[Item]
+Label=Child's line number
+Name=AN3
+Start=43
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child's line number
+Name=AN3_VST
+Value=1:50
+
+[Item]
+Label=Age of child
+Name=AN4
+Start=45
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Age of child
+Name=AN4_VST
+Value=0:4
+
+[Item]
+Label=Mother / Caregiver's name
+Name=AN5N
+Start=46
+Len=20
+DataType=Alpha
+
+[Item]
+Label=Mother / Caregiver's line number
+Name=AN5
+Start=66
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Mother / Caregiver's line number
+Name=AN5_VST
+Value=1:50
+
+[Item]
+Label=Interviewer number
+Name=AN6
+Start=68
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Measurer number
+Name=AN7
+Start=71
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Child's weight (kilograms)
+Name=AN8
+Start=74
+Len=4
+DataType=Numeric
+Decimal=1
+DecimalChar=Yes
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child's weight (kilograms)
+Name=AN8_VST
+Value=0.5:36.0
+Value=99.3;CHILD NOT PRESENT AFTER REVISITS
+Value=99.4;CHILD REFUSED
+Value=99.5;RESPONDENT REFUSED
+Value=99.6;OTHER
+
+[Item]
+Label=Child undressed to the minimum
+Name=AN9
+Start=78
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child undressed to the minimum
+Name=AN9_VST
+Value=1;YES
+Value=2;NO, THE CHILD COULD NOT BE UNDRESSED TO THE MINIMUM
+
+[Item]
+Label=Child's length or height (centimetres)
+Name=AN11
+Start=79
+Len=5
+DataType=Numeric
+Decimal=1
+DecimalChar=Yes
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child's length or height (centimetres)
+Name=AN11_VST
+Value=36.0:140.0
+Value=999.4;CHILD REFUSED
+Value=999.5;RESPONDENT REFUSED
+Value=999.6;OTHER
+
+[Item]
+Label=Child measured lying or standing
+Name=AN12
+Start=84
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child measured lying or standing
+Name=AN12_VST
+Value=1;LYING DOWN
+Value=2;STANDING UP
+
+[Item]
+Label=Measurement interfered with by braided or ornamented hair
+Name=AN13
+Start=85
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Measurement interfered with by braided or ornamented hair
+Name=AN13_VS1
+Value=1;YES, HAIR INTERFERED WITH MEASUREMENT
+Value=2;NO
+
+[Item]
+Label=Date of measurment
+Name=AN14
+Start=86
+Len=8
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Day of measurement
+Name=AN14D
+Start=86
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of measurement
+Name=AN14D_VS1
+Value=1:31
+
+[Item]
+Label=Month of measurement
+Name=AN14M
+Start=88
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of measurement
+Name=AN14M_VS1
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+
+[Item]
+Label=Year of measurement
+Name=AN14Y
+Start=90
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of measurement
+Name=AN14Y_VS1
+Value=2025;2025
+
+[Record]
+Label=Facility Based Records of Vaccination Form
+Name=MODHF
+RecordTypeValue='0HF'
+Required=No
+RecordLen=301
+
+[Item]
+Label=Cluster number
+Name=HF1
+Start=16
+Len=5
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Household number
+Name=HF2
+Start=21
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Child's name
+Name=HF3N
+Start=23
+Len=20
+DataType=Alpha
+
+[Item]
+Label=Child's line number
+Name=HF3
+Start=43
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child's line number
+Name=HF3_VST
+Value=1:50
+
+[Item]
+Label=Mother / Caregiver's name
+Name=HF4N
+Start=45
+Len=20
+DataType=Alpha
+
+[Item]
+Label=Mother / Caregiver's line number
+Name=HF4
+Start=65
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Mother / Caregiver's line number
+Name=HF4_VST
+Value=1:50
+
+[Item]
+Label=Interviewer number
+Name=HF5
+Start=67
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Name of the health facility
+Name=HF6
+Start=70
+Len=20
+DataType=Alpha
+
+[Item]
+Label=Date of birth of child from UB2
+Name=HF7A
+Start=90
+Len=8
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Day of birth of child from UB2
+Name=HF7AD
+Start=90
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of birth of child from UB2
+Name=HF7AD_VS1
+Value=1:31
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of birth of child from UB2
+Name=HF7AM
+Start=92
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of birth of child from UB2
+Name=HF7AM_VS1
+Value=1:12
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of birth of child from UB2
+Name=HF7AY
+Start=94
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of birth of child from UB2
+Name=HF7AY_VS1
+Value=2020:2025
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of birth of child from IM5A
+Name=HF7B
+Start=98
+Len=8
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Day of birth of child from IM5A
+Name=HF7BD
+Start=98
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of birth of child from IM5A
+Name=HF7BD_VS1
+Value=1:31
+Value=98;DK
+Value=99;NO RESPONSE
+Value='  ';NotAppl
+Name=NOTAPPL,Special
+
+[Item]
+Label=Month of birth of child from IM5A
+Name=HF7BM
+Start=100
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of birth of child from IM5A
+Name=HF7BM_VS1
+Value=1:12
+Value=98;DK
+Value=99;NO RESPONSE
+Value='  ';NotAppl
+Name=NOTAPPL,Special
+
+[Item]
+Label=Year of birth of child from IM5A
+Name=HF7BY
+Start=102
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of birth of child from IM5A
+Name=HF7BY_VS1
+Value=2020:2025
+Value=9998;DK
+Value=9999;NO RESPONSE
+Value='    ';NotAppl
+Name=NOTAPPL,Special
+
+[Item]
+Label=Field staff's number recording at facility
+Name=HF8
+Start=106
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Date of facility visit
+Name=HF9
+Start=108
+Len=8
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Day of facility visit
+Name=HF9D
+Start=108
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of facility visit
+Name=HF9D_VS1
+Value=1:31
+
+[Item]
+Label=Month of facility visit
+Name=HF9M
+Start=110
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of facility visit
+Name=HF9M_VS1
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+
+[Item]
+Label=Year of facility visit
+Name=HF9Y
+Start=112
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of facility visit
+Name=HF9Y_VS1
+Value=2025;2025
+
+[Item]
+Label=Time of start of interview
+Name=HF10
+Start=116
+Len=4
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Start of interview - Hour
+Name=HF10H
+Start=116
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Start of interview - Hour
+Name=HF10H_VS1
+Value=6:23
+
+[Item]
+Label=Start of interview - Minutes
+Name=HF10M
+Start=118
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Start of interview - Minutes
+Name=HF10M_VS1
+Value=0:59
+
+[Item]
+Label=Time of end of interview
+Name=HF14
+Start=120
+Len=4
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=End of interview - Hour
+Name=HF14H
+Start=120
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=End of interview - Hour
+Name=HF14H_VST
+Value=6:23
+
+[Item]
+Label=End of interview - Minutes
+Name=HF14M
+Start=122
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=End of interview - Minutes
+Name=HF14M_VST
+Value=0:59
+
+[Item]
+Label=Result of health facility visit
+Name=HF15
+Start=124
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Result of health facility visit
+Name=HF15_VST
+Value=1;RECORDS AT FACILITY AND COPIED
+Value=2;RECORDS AT FACILITY AND NOT COPIED
+Value=3;RECORDS NOT AVAILABLE AT FACILITY
+Value=6;OTHER
+
+[Item]
+Label=Date of birth as written on vaccination record
+Name=HF11
+Start=126
+Len=8
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Day of birth as written on vaccination record
+Name=HF11D
+Start=126
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of birth as written on vaccination record
+Name=HF11D_VST
+Value=1:31
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of birth as written on vaccination record
+Name=HF11M
+Start=128
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of birth as written on vaccination record
+Name=HF11M_VST
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of birth as written on vaccination record
+Name=HF11Y
+Start=130
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of birth as written on vaccination record
+Name=HF11Y_VST
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of BCG immunization
+Name=HF12B
+Start=134
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of BCG immunization
+Name=HF12BD
+Start=134
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of BCG immunization
+Name=HF12BD_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of BCG immunization
+Name=HF12BM
+Start=136
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of BCG immunization
+Name=HF12BM_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of BCG immunization
+Name=HF12BY
+Start=138
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of BCG immunization
+Name=HF12BY_VST
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of HepB (at birth) immunization
+Name=HF12H0
+Start=142
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of HepB (at birth) immunization
+Name=HF12H0D
+Start=142
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of HepB (at birth) immunization
+Name=HF12H0D_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of HepB (at birth) immunization
+Name=HF12H0M
+Start=144
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of HepB (at birth) immunization
+Name=HF12H0M_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of HepB (at birth) immunization
+Name=HF12H0Y
+Start=146
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of HepB (at birth) immunization
+Name=HF12H0Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Polio (OPV) (at birth) immunization
+Name=HF12P0
+Start=150
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Polio (OPV) (at birth) immunization
+Name=HF12P0D
+Start=150
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Polio (OPV) (at birth) immunization
+Name=HF12P0D_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Polio (OPV) (at birth) immunization
+Name=HF12P0M
+Start=152
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Polio (OPV) (at birth) immunization
+Name=HF12P0M_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Polio (OPV) (at birth) immunization
+Name=HF12P0Y
+Start=154
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Polio (OPV) (at birth) immunization
+Name=HF12P0Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Polio1 (OPV) immunization
+Name=HF12P1
+Start=158
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Polio1 (OPV) immunization
+Name=HF12P1D
+Start=158
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Polio1 (OPV) immunization
+Name=HF12P1D_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Polio1 (OPV) immunization
+Name=HF12P1M
+Start=160
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Polio1 (OPV) immunization
+Name=HF12P1M_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Polio1 (OPV) immunization
+Name=HF12P1Y
+Start=162
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Polio1 (OPV) immunization
+Name=HF12P1Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Polio2 (OPV) immunization
+Name=HF12P2
+Start=166
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Polio2 (OPV) immunization
+Name=HF12P2D
+Start=166
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Polio2 (OPV) immunization
+Name=HF12P2D_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Polio2 (OPV) immunization
+Name=HF12P2M
+Start=168
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Polio2 (OPV) immunization
+Name=HF12P2M_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Polio2 (OPV) immunization
+Name=HF12P2Y
+Start=170
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Polio2 (OPV) immunization
+Name=HF12P2Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Polio3 (OPV) immunization
+Name=HF12P3
+Start=174
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Polio3 (OPV) immunization
+Name=HF12P3D
+Start=174
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Polio3 (OPV) immunization
+Name=HF12P3D_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Polio3 (OPV) immunization
+Name=HF12P3M
+Start=176
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Polio3 (OPV) immunization
+Name=HF12P3M_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Polio3 (OPV) immunization
+Name=HF12P3Y
+Start=178
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Polio3 (OPV) immunization
+Name=HF12P3Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Polio (IPV) 1 immunization
+Name=HF12I1
+Start=182
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Polio (IPV) 1 immunization
+Name=HF12I1D
+Start=182
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Polio (IPV) 1 immunization
+Name=HF12I1D_VS1
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Polio (IPV) 1 immunization
+Name=HF12I1M
+Start=184
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Polio (IPV) 1 immunization
+Name=HF12I1M_VS1
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Polio (IPV) 1 immunization
+Name=HF12I1Y
+Start=186
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Polio (IPV) 1 immunization
+Name=HF12I1Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Polio (IPV) 2 immunization
+Name=HF12I2
+Start=190
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Polio (IPV) 2 immunization
+Name=HF12I2D
+Start=190
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Polio (IPV) 2 immunization
+Name=HF12I2D_VS1
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Polio (IPV) 2 immunization
+Name=HF12I2M
+Start=192
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Polio (IPV) 2 immunization
+Name=HF12I2M_VS1
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Polio (IPV) 2 immunization
+Name=HF12I2Y
+Start=194
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Polio (IPV) 2 immunization
+Name=HF12I2Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Pentavalent (DPTHibHepB) 1 immunization
+Name=HF12PENTA1
+Start=198
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Pentavalent (DPTHibHepB) 1 immunization
+Name=HF12PENTA1D
+Start=198
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Pentavalent (DPTHibHepB) 1 immunization
+Name=HF12PENTA1D_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Pentavalent (DPTHibHepB) 1 immunization
+Name=HF12PENTA1M
+Start=200
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Pentavalent (DPTHibHepB) 1 immunization
+Name=HF12PENTA1M_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Pentavalent (DPTHibHepB) 1 immunization
+Name=HF12PENTA1Y
+Start=202
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Pentavalent (DPTHibHepB) 1 immunization
+Name=HF12PENTA1Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Pentavalent (DPTHibHepB) 2 immunization
+Name=HF12PENTA2
+Start=206
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Pentavalent (DPTHibHepB) 2 immunization
+Name=HF12PENTA2D
+Start=206
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Pentavalent (DPTHibHepB) 2 immunization
+Name=HF12PENTA2D_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Pentavalent (DPTHibHepB) 2 immunization
+Name=HF12PENTA2M
+Start=208
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Pentavalent (DPTHibHepB) 2 immunization
+Name=HF12PENTA2M_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Pentavalent (DPTHibHepB) 2 immunization
+Name=HF12PENTA2Y
+Start=210
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Pentavalent (DPTHibHepB) 2 immunization
+Name=HF12PENTA2Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Pentavalent (DPTHibHepB) 3 immunization
+Name=HF12PENTA3
+Start=214
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Pentavalent (DPTHibHepB) 3 immunization
+Name=HF12PENTA3D
+Start=214
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Pentavalent (DPTHibHepB) 3 immunization
+Name=HF12PENTA3D_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Pentavalent (DPTHibHepB) 3 immunization
+Name=HF12PENTA3M
+Start=216
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Pentavalent (DPTHibHepB) 3 immunization
+Name=HF12PENTA3M_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Pentavalent (DPTHibHepB) 3 immunization
+Name=HF12PENTA3Y
+Start=218
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Pentavalent (DPTHibHepB) 3 immunization
+Name=HF12PENTA3Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Pneumococcal (Conjugate) 1 immunization
+Name=HF12PCV1
+Start=222
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Pneumococcal (Conjugate) 1 immunization
+Name=HF12PCV1D
+Start=222
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Pneumococcal (Conjugate) 1 immunization
+Name=HF12PCV1D_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Pneumococcal (Conjugate) 1 immunization
+Name=HF12PCV1M
+Start=224
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Pneumococcal (Conjugate) 1 immunization
+Name=HF12PCV1M_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Pneumococcal (Conjugate) 1 immunization
+Name=HF12PCV1Y
+Start=226
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Pneumococcal (Conjugate) 1 immunization
+Name=HF12PCV1Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Pneumococcal (Conjugate) 2 immunization
+Name=HF12PCV2
+Start=230
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Pneumococcal (Conjugate) 2 immunization
+Name=HF12PCV2D
+Start=230
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Pneumococcal (Conjugate) 2 immunization
+Name=HF12PCV2D_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Pneumococcal (Conjugate) 2 immunization
+Name=HF12PCV2M
+Start=232
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Pneumococcal (Conjugate) 2 immunization
+Name=HF12PCV2M_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Pneumococcal (Conjugate) 2 immunization
+Name=HF12PCV2Y
+Start=234
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Pneumococcal (Conjugate) 2 immunization
+Name=HF12PCV2Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Pneumococcal (Conjugate) 3 immunization
+Name=HF12PCV3
+Start=238
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Pneumococcal (Conjugate) 3 immunization
+Name=HF12PCV3D
+Start=238
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Pneumococcal (Conjugate) 3 immunization
+Name=HF12PCV3D_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Pneumococcal (Conjugate) 3 immunization
+Name=HF12PCV3M
+Start=240
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Pneumococcal (Conjugate) 3 immunization
+Name=HF12PCV3M_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Pneumococcal (Conjugate) 3 immunization
+Name=HF12PCV3Y
+Start=242
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Pneumococcal (Conjugate) 3 immunization
+Name=HF12PCV3Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Rotavirus 1 immunization
+Name=HF12R1
+Start=246
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Rotavirus 1 immunization
+Name=HF12R1D
+Start=246
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Rotavirus 1 immunization
+Name=HF12R1D_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Rotavirus 1 immunization
+Name=HF12R1M
+Start=248
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Rotavirus 1 immunization
+Name=HF12R1M_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Rotavirus 1 immunization
+Name=HF12R1Y
+Start=250
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Rotavirus 1 immunization
+Name=HF12R1Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Rotavirus 2 immunization
+Name=HF12R2
+Start=254
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Rotavirus 2 immunization
+Name=HF12R2D
+Start=254
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Rotavirus 2 immunization
+Name=HF12R2D_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Rotavirus 2 immunization
+Name=HF12R2M
+Start=256
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Rotavirus 2 immunization
+Name=HF12R2M_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Rotavirus 2 immunization
+Name=HF12R2Y
+Start=258
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Rotavirus 2 immunization
+Name=HF12R2Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Rotavirus 3 immunization
+Name=HF12R3
+Start=262
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Rotavirus 3 immunization
+Name=HF12R3D
+Start=262
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Rotavirus 3 immunization
+Name=HF12R3D_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Rotavirus 3 immunization
+Name=HF12R3M
+Start=264
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Rotavirus 3 immunization
+Name=HF12R3M_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Rotavirus 3 immunization
+Name=HF12R3Y
+Start=266
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Rotavirus 3 immunization
+Name=HF12R3Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of MMR/MR 1 immunization
+Name=HF12M1
+Start=270
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of MMR/MR 1 immunization
+Name=HF12M1D
+Start=270
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of MMR/MR 1 immunization
+Name=HF12M1D_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of MMR/MR 1 immunization
+Name=HF12M1M
+Start=272
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of MMR/MR 1 immunization
+Name=HF12M1M_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of MMR/MR 1 immunization
+Name=HF12M1Y
+Start=274
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of MMR/MR 1 immunization
+Name=HF12M1Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of MMR/MR 2 immunization
+Name=HF12M2
+Start=278
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of MMR/MR 2 immunization
+Name=HF12M2D
+Start=278
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of MMR/MR 2 immunization
+Name=HF12M2D_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of MMR/MR 2 immunization
+Name=HF12M2M
+Start=280
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of MMR/MR 2 immunization
+Name=HF12M2M_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of MMR/MR 2 immunization
+Name=HF12M2Y
+Start=282
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of MMR/MR 2 immunization
+Name=HF12M2Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Yellow Fever immunization
+Name=HF12Y
+Start=286
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Yellow Fever immunization
+Name=HF12YD
+Start=286
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Yellow Fever immunization
+Name=HF12YD_VST
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Yellow Fever immunization
+Name=HF12YM
+Start=288
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Yellow Fever immunization
+Name=HF12YM_VST
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Yellow Fever immunization
+Name=HF12YY
+Start=290
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Yellow Fever immunization
+Name=HF12YY_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Td Booster 1 immunization
+Name=HF12TD1
+Start=294
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Td Booster 1 immunization
+Name=HF12TD1D
+Start=294
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Td Booster 1 immunization
+Name=HF12TD1D_VS1
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Td Booster 1 immunization
+Name=HF12TD1M
+Start=296
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Td Booster 1 immunization
+Name=HF12TD1M_VS1
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Td Booster 1 immunization
+Name=HF12TD1Y
+Start=298
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Td Booster 1 immunization
+Name=HF12TD1Y_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=9999;NO RESPONSE
+
+[Record]
+Label=Time Stamps of the Under-Five Questionnaire Modules
+Name=MODCHTS
+RecordTypeValue='CTS'
+RecordLen=405
+
+[Item]
+Label=Timestamp of start of CH Questionnaire - Under-five child information panel
+Name=CHUFTSTMPS
+Start=16
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of CH Questionnaire - Under-five child information panel
+Name=CHUFTSTMPE
+Start=31
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of start of Module UB Under-five’s background
+Name=CHUBTSTMPS
+Start=46
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of Module UB Under-five’s background
+Name=CHUBTSTMPE
+Start=61
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of start of Module UIN Health insurance
+Name=CHUINTSTMPS
+Start=76
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of Module UIN Health insurance
+Name=CHUINTSTMPE
+Start=91
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of start of Module BR Birth registration
+Name=CHBRTSTMPS
+Start=106
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of Module BR Birth registration
+Name=CHBRTSTMPE
+Start=121
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of start of Module EC Early childhood development
+Name=CHECTSTMPS
+Start=136
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of Module EC Early childhood development
+Name=CHECTSTMPE
+Start=151
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of start of Module UCD Child discipline [1-4]
+Name=CHUCDTSTMPS
+Start=166
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of Module UCD Child discipline [1-4]
+Name=CHUCDTSTMPE
+Start=181
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of start of Module UCF Child functioning [2-4]
+Name=CHUCFTSTMPS
+Start=196
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of Module UCF Child functioning [2-4]
+Name=CHUCFTSTMPE
+Start=211
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of start of Module BD IYCF: Breastfeeding and dietary intake [0-1]
+Name=CHBDTSTMPS
+Start=226
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of Module BD IYCF: Breastfeeding and dietary intake [0-1]
+Name=CHBDTSTMPE
+Start=241
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of start of Module IM Immunisation [0-2]
+Name=CHIMTSTMPS
+Start=256
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of Module IM Immunisation [0-2]
+Name=CHIMTSTMPE
+Start=271
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of start of Module DA Care-seeking and treatment of diarrhoea
+Name=CHDATSTMPS
+Start=286
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of Module DA Care-seeking and treatment of diarrhoea
+Name=CHDATSTMPE
+Start=301
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of start of Module AR Care-seeking and treatment of symptoms of ARI
+Name=CHARTSTMPS
+Start=316
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of Module AR Care-seeking and treatment of symptoms of ARI
+Name=CHARTSTMPE
+Start=331
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of start of Module MC Malaria: Care-seeking and treatment
+Name=CHMCTSTMPS
+Start=346
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of Module MC Malaria: Care-seeking and treatment
+Name=CHMCTSTMPE
+Start=361
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of start of CH - End of Interview
+Name=CHENDTSTMPS
+Start=376
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of CH - End of Interview
+Name=CHENDTSTMPE
+Start=391
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes

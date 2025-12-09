@@ -1,0 +1,2428 @@
+﻿{ Based on MICS7 Base Household Questionnaire 7.2.1
+           MICS7 ComTops - Household Energy Use 7.1.3
+		   MICS7 ComTops - Malaria - HH 7.2.1
+		   MICS7 ComTops - Social Transfers - HH 7.1.9
+		   MICS7 ComTops - Post-emergency - HH 7.1.4
+		   MICS7 ComTops - Food Insecurity Experience - HH 7.1.3
+		   MICS7 Water Quality Testing Form 7.1.4                             }
+{ v 12 May 2025 }
+{ --------------------------------------------------------------------------- }
+
+
+
+PROC GLOBAL
+	function find_hh_location()
+		numeric lat= tonumber(sysparm("LAT"));
+		numeric lon = tonumber(sysparm("LON"));
+		SystemApp google_maps_navigation;
+		google_maps_navigation.setArgument("action", "android.intent.action.VIEW");
+		string dataintineaire=maketext("google.navigation:q=%f,%f", lat, lon);
+		google_maps_navigation.setArgument("data", dataintineaire);
+		google_maps_navigation.exec("com.google.android.apps.maps");
+	end;
+	{ Definitions of working variables }
+	array alpha(8) KishGrid(10);	   { Grid used for selection of child for child discipline module }
+	alpha(26) alphavar;				   { Alpha working variable used in checking alpha vars }
+	alpha(26) alphanew;                { Alpha working variable used in checking alpha vars }
+	alpha(62) alphalst;                { The alphabet }
+
+	array codes(50);                   { Array used for creating line numbers of household members sleeping under mosquito net}
+	array alpha(50) labels(50);        { Array used for creating names of household members sleeping under mosquito net} 
+
+	alpha(40) ynamehh; 				   { List of names for questions }
+
+	alpha(900) strnotes;               { for editnote at the end of the interview }
+
+	numeric addmode, 
+		maxmem, maxnet, minage, maxage, minab, mminage, mmaxage,
+		err, 
+		di, 
+		a, e, i, j, l, lx, n, t, x, y, qmark, totlen, aok, alphsize,
+		found, net,
+		rp,
+		kount,
+		 vwkount;
+	numeric inEntry, xintnum, xsupnum, xmodcent, xentryhw, xverif;
+	numeric db, comply, verific, nopartflag;
+	numeric qhMoreCount;
+
+	string worklabel;               { Alpha variable to get customize text for questions }
+
+	valueset headrelationship,otherrelationship;  //relationships for HL3
+	
+	numeric selection, x1;
+
+	{ User defined functions }
+
+	{ help function to display household roster }
+	function showroster () 
+		show( MICS7HH.MODHL, HL1, HL2, HL3, HL4, HL6  title( tr("Ln"), tr("Name"), tr("Relation"), tr("Sex"), tr("Age") ) );
+	end;
+
+	function showCalc()
+		execsystem("calc");
+	end;
+
+	function ensureNotBlank(string value, numeric min_length = 1)	
+		if length(strip(value)) < min_length then
+			errmsg ("You must enter text with %d+ characters for field %s", min_length, getsymbol());
+			reenter;
+		endif;
+	end;
+	
+	function showmanuals ()
+		view(publicfolder+"\interviewer_manual.pdf");
+    end;
+	  
+	function goto()
+		selection = accept(tr("Go to section"),
+						   tr("Household Information Panel"),
+						   tr("List of Household Members - Initial"),
+						   tr("List of Household Members"),
+						   tr("Education"),
+						   tr("Household Characteristics"),
+					       tr("Household Energy Use"),
+						   tr("Insecticide Treated Nets"),
+						   tr("Social Transfers"),
+						   tr("Post-Emergency"),
+						   tr("Food Insecurity Experience"),
+						   tr("Water"),
+						   tr("Sanitation"),
+						   tr("Hygiene"),
+						   tr("End of Interview"),
+						   tr("Water Quality Testing"));
+		
+		if selection = 1 then
+			move to FORMHH advance;
+		elseif selection = 2 then
+			move to FORMHX advance;
+		elseif selection = 3 then
+			move to FORMHL advance;
+		elseif selection = 4 then
+			move to FORMED advance;
+		elseif selection = 5 then
+			move to FORMHC advance;
+		elseif selection = 6 then
+			move to FORMEU advance;
+		elseif selection = 7 then    
+			move to FORMTN advance;
+		elseif selection = 8 then    
+			move to FORMST advance;
+		elseif selection = 9 then
+			move to FORMPE advance;
+		elseif selection = 10 then
+			move to FORMFE advance;
+		elseif selection = 11 then
+			move to FORMWS advance;	  
+		elseif selection = 12 then
+			move to FORMWS2 advance;	  
+		elseif selection = 13 then
+			move to FORMHW advance;
+	    elseif selection = 14 then
+			move to FORMEND advance;
+	    elseif selection = 15 then
+			move to FORMWQ advance;
+		endif;
+	end;
+	  
+	{ setup basic user bar }
+	function userbase();
+		userbar( clear );
+		userbar( add button, "<",    do("PreviousField") );
+		userbar( add button, ">",    do("NextField") );
+		userbar( add button, ">>|",  do("AdvanceToEnd") );
+		userbar( add button, tr("Note"), do("EditNote") );
+		userbar( add button, tr("Lang"), do("ChangeLanguage") );
+		userbar( add button, tr("Calc"), showCalc );
+		userbar( add button, tr("Section"), goto );
+		userbar(add button, tr("Manuals"),  showManuals );;
+		userbar( add spacing, 10 );  
+		userbar(add button,"Find household location", find_hh_location());
+		userbar( add button, tr("See HH roster"), showroster() );
+	end;
+  
+	{ valid
+	Checks that a variable has a valid value.
+	A valid value is less than 96 and not a special value e.g notappl/missing
+	Returns: 1 if valid, 0 if not valid                                        }
+	function valid(xvar);
+		valid = (!special(xvar) and xvar < 96)
+	end;
+
+	{ clear_labels
+	Set value labels for certain questions where the response categories can change }
+	function clean_labels();
+		do i = 1 while i <= 50 by 1
+			codes(i) = notappl;
+			labels(i) = "";
+		enddo;
+	end;
+
+	{ ITN functions }
+	function setnet(alpha(8) xvarname, curnet);
+		clean_labels();
+		n = tonumber(xvarname[length(strip(xvarname)):1]);  { Gets the TN15_x number, e.g. TN15_2 returns 2 }
+		x = 0;
+		codes(x) = 0;
+		labels(x) = tr("Not in household list");
+			
+		for i in FORMHL_ROSTER do
+			found = 0;
+			do net = 1 while !found & net <= curnet
+				if !found & (net < curnet | n > 1) & TN15_1(net) = i then found = 1 endif;
+				if !found & (net < curnet | n > 2) & TN15_2(net) = i then found = 1 endif;
+				if !found & (net < curnet | n > 3) & TN15_3(net) = i then found = 1 endif;
+				if !found & (net < curnet        ) & TN15_4(net) = i then found = 1 endif;
+			enddo;
+			if !found then
+				x = x + 1;
+				codes(x) = i;
+				labels(x) = HX2(i);
+			endif;
+		enddo;
+		if n <> 1 then { First person - cannot be "90" }
+			x = x + 1;
+			codes(x) = 90;
+			labels(x) = tr("Nobody else");
+		endif;
+	end;
+
+	function checknet(xvar, alpha(8) xvarname, curnet);
+		e = 0;
+		n = tonumber(xvarname[length(strip(xvarname)):1]);  { Gets the TN15_x number, e.g. TN15_2 returns 2 }
+		if xvar = 90 then
+			if n = 1 & TN10 = 1 then
+				e=errmsg(0205);
+			endif;
+		elseif xvar < 90 then
+			if xvar > HH48 then	{ Greater than number of HH members }
+				e=errmsg(0201,xvar,HH48);
+			else
+				{ Is member already listed, possibly under another net }
+				found = 0;
+				if xvar <> 0 then
+					do net = 1 while !found & net <= curnet
+						if !found & (net < curnet | n < 1) & TN15_1(net) = xvar then found = 1 endif;
+						if !found & (net < curnet | n < 2) & TN15_2(net) = xvar then found = 1 endif;
+						if !found & (net < curnet | n < 3) & TN15_3(net) = xvar then found = 1 endif;
+						if !found & (net < curnet | n < 4) & TN15_4(net) = xvar then found = 1 endif;
+					enddo;
+				endif;
+				if found then
+					e=errmsg(0204,xvar);
+				endif;
+				{ check if person slept in HH last night }
+				if xvar <> 0 then
+					if HL7(xvar) <> 1 then
+						e=errmsg(0203,xvar,HL7(xvar));
+					endif;
+				endif;
+			endif;
+		endif;
+		checknet = e;
+	end;
+
+	{ endmess
+	If user is in addmode, it displays a menu with the options
+	"Review Questionnaire" and "Next Questionnaire"
+	Returns: 1 if user is in addmode or selects Next Questionnaire, 0 otherwise }
+	function endmess();
+		{ Returns true if response is REVIEW }
+		endmess = (accept(tr("End of Questionnaire"),
+						  tr("Check Questionnaire"),
+						  tr("New Quest./Questionnaire after")) <> 2);
+	end;
+
+	{ Function to check entry of alpha string variables }
+	{ alphachk
+	Function to check entry of alpha string variables.
+    Requirement: preceed with the statment alphavar = $
+    Input variables:
+    alphamask - The characters allowed and the order and position of these
+    alphavar (set before calling the function) - the variable to be checked
+
+    Checks that all the characters in the alphavar variable is found in alphamask
+    and that they are in correct order. Repositions the characters before returning.
+    If ? is found in string, makes sure that no other characters are present
+    Returns: Repositioned string if valid, else 0
+
+    Examples:
+    alphavar    alphamask     returns
+    "ABC"		  "ABCDEX"      "ABC   "
+    "AC"		  "ABCDEX"      "A C   "
+    "BEX"		  "ABCDEX"      " B  EX"
+    "?"		  "ABCDEX"      "??????"
+    "J"		  "ABCDEX"      0
+     "ABQ"		  "ABCDEX"      0
+    "?A"		  "ABCDEX"      0
+    "BA"		  "ABCDEX"      0 (wrong order)                 }
+	function alphachk(alpha(26) alphamask);
+		{  russian_convert();}
+		{ first remove all blanks, and duplicate question marks }
+		alphanew = "";
+		qmark = 0;
+		lx = 1;
+		do l = 1 while l <= length(strip(alphavar))
+			if alphavar[l:1] <> " " and (alphavar[l:1] <> "?" or not qmark) then
+				alphanew[lx:1] = alphavar[l:1];
+				lx = lx + 1;
+				if alphavar[l:1] = "?" then
+					qmark = 1;
+				endif;
+			endif;
+		enddo;
+		{ aok = 0 - string is bad, aok = 1 - string is good }
+		totlen = length(strip(alphamask));
+		aok = 0;           { assume string is bad - for empty string }
+		alphsize = length(strip(alphanew));
+		if alphsize then   { not empty string }
+			{ check for "?" as only character }
+			aok = (alphanew[1:1] = "?" and alphsize = 1);
+			if !aok then     { if not a single "?", check string }
+				aok = 1;       { now assume string is good until we know otherwise }
+				l = 1;         { l is position in string of acceptable values }
+				a = 1;         { a is position in input string }
+				{ loop while the string is still good and there are more letters }
+				while aok and a <= alphsize do
+					aok = pos(alphanew[a:1],alphamask[l:totlen-l+1]);
+					if aok then     { letter is acceptable }
+						l = l + aok;  { increment l to position after letter in string of acceptable values }
+						a = a + 1     { increment a to next letter in input string }
+					endif;
+				enddo;
+			endif;
+		endif;
+		alphachk = (!aok);    { alphachk = 0 - if string is good, = 1 - if string is bad }
+		{ now expand variables }
+		if aok then
+			do l = 1 while l <= length(strip(alphamask))
+				if pos(alphamask[l:1],alphanew) then
+					alphavar[l:1] = alphamask[l:1]
+				elseif pos("?",alphanew) then
+					alphavar[l:1] = "?"
+				else
+					alphavar[l:1] = " "
+				endif;
+			enddo;
+		endif;
+	end;
+
+	function onStop();
+		if noPartFlag | xmodcent then
+			x1 = errmsg(9980) select(tr("Yes"), continue, tr("No"), continue);
+			if x1 = 1 then
+				advance;
+			else
+				if !xmodcent then
+					stop(-1);
+				endif;
+			endif;
+		else
+			savepartial();
+			stop(-1);
+		endif;
+	end;
+
+	function setEDlabels(edlevel);
+		valueset educgrades;
+		if edlevel = 1 then         //primary
+		   educgrades.add(tr("GRADE/YEAR") + " 1",1);
+		   educgrades.add(tr("GRADE/YEAR") + " 2",2);
+		   educgrades.add(tr("GRADE/YEAR") + " 3",3);
+		   educgrades.add(tr("GRADE/YEAR") + " 4",4);
+		   educgrades.add(tr("GRADE/YEAR") + " 5",5);
+		   educgrades.add(tr("GRADE/YEAR") + " 6",6);
+		elseif edlevel = 2 then      //lower secondary
+		   educgrades.add(tr("GRADE/YEAR") + " 1",1);
+		   educgrades.add(tr("GRADE/YEAR") + " 2",2);
+		   educgrades.add(tr("GRADE/YEAR") + " 3",3);
+		elseif edlevel = 3 then      //upper secondary
+		   educgrades.add(tr("GRADE/YEAR") + " 1",1);
+		   educgrades.add(tr("GRADE/YEAR") + " 2",2);
+		   educgrades.add(tr("GRADE/YEAR") + " 3",3);
+		elseif edlevel in 4,8,9 then      //higher
+		   educgrades.add(tr("GRADE/YEAR") + " 1",1);
+		   educgrades.add(tr("GRADE/YEAR") + " 2",2);
+		   educgrades.add(tr("GRADE/YEAR") + " 3",3);
+		   educgrades.add(tr("GRADE/YEAR") + " 4",4);
+		   educgrades.add(tr("GRADE/YEAR") + " 5",5);
+		   educgrades.add(tr("GRADE/YEAR") + " 6",6);
+		   educgrades.add(tr("GRADE/YEAR") + " 7",7);	   
+		   educgrades.add(tr("GRADE/YEAR") + " 8",8);
+		endif;
+		   educgrades.add(tr("DK"),98);	   
+		   educgrades.add(tr("NO RESPONSE"),99);	
+		setvalueset(@getsymbol(),educgrades);
+	end
+
+	function string htmlencode (string htmltext);
+		htmltext=replace(htmltext,"&","+");
+		htmltext=replace(htmltext,"'","-");
+		htmltext=replace(htmltext,'"',"/");
+		htmltext=replace(htmltext,"<","[");
+		htmltext=replace(htmltext,">","]");
+		
+		htmlencode=htmltext;
+	end;
+
+	array string daystr(7);
+	string daystring, daystring3;
+
+	function dayOfWeek(yyyymmdd)
+		numeric referenceDay = 20230813; // This was be a Sunday
+		numeric diff = datediff(referenceDay, yyyymmdd, "d");
+		dayOfWeek = diff % 7 + 1;
+	end;
+
+
+PROC FL_ENTRYHH
+preproc
+  
+	setfont(All,"Consolas",30);
+	//setproperty(MICS7HH,"uppercase",yes);
+  
+	setlanguage("ENG");  
+	//setlanguage("FRA");  // to set French language
+	//setlanguage("ARB");  // to set Arabic language
+	//setlanguage("SPA");  // to set Spanish language
+	//setlanguage("RUS");  // to set Russian language
+	//setlanguage("CS");  // to set Country-Specific language
+
+	verific = 0;
+	maxmem = 50;      { maximum number of household members }
+	maxnet = 10;      { maximum number of bednets. MUST BE EQUAL TO OR LESS THAN MAX OCCUR OF MODTN }
+	minage = 15;      { minimum age of eligible women }
+	maxage = 49;      { maximum age of eligible women }
+	mminage = 15;     { minimum age of eligible men }
+	mmaxage = 49;     { maximum age of eligible men }
+	minab  = 120;     { minimum age at birth in months = 12 years }
+	addmode = (demode() = ADD);
+
+  xintnum = tonumber(sysparm("INTERVIEWERID"));
+  xsupnum = tonumber(sysparm("SUPERID"));
+  xmodcent = tonumber(sysparm("MODCENTRAL"));
+  xentryhw = tonumber(sysparm("ENTRYWQ"));
+
+	alphalst = "ABCDEFGHIJKLMNOPQRSTUVWXYZÃÇÅÄÁÆÈÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÝÞßáãäåæíÉìÂ";
+	inEntry = (demode() = add | demode() = modify);
+
+  xverif = tonumber(sysparm("VERIFY"));
+
+	{ settings for CAPI }
+	if !xmodcent then      { central office desn't have to exit after reviewing one HH }
+		set behavior() exit on;
+	else
+		set behavior() exit off;
+		addmode = 0;
+		noPartFlag = 1;
+	endif;
+
+    setproperty(MICS7HH, "ShowExtendedControlTitle", "No");
+
+	{ set up minimal user bar }
+	userbase();
+	userbar( show );
+
+	//prepare valuesets for HL3 (Household head relationship)
+	headrelationship.clear();
+	headrelationship.add(getlabel(HX3,1),1);//create valueset for the head
+	otherrelationship=HX3_VST;              //create valueset for the others
+	otherrelationship.remove(1);
+
+    daystr(1)="Sunday";
+    daystr(2)="Monday";
+	daystr(3)="Tuesday";
+	daystr(4)="Wednesday";
+	daystr(5)="Thursday";
+	daystr(6)="Friday";
+	daystr(7)="Saturday";
+	daystring=daystr(dayOfWeek(sysdate("YYYYMMDD"))); 
+	daystring3=daystr(dayOfWeek(dateadd(sysdate("YYYYMMDD"),-3,"d"))); 
+
+
+	
+setfile(STAFF_DICT,publicfolder+"\staff.csdb");
+
+postproc
+	if !xmodcent then      { central office doesn't have to exit after reviewing one HH }
+		stop(-1);
+	endif;
+
+PROC HH
+preproc
+
+	qhmoreCount = totocc(FORMHX_Roster); 
+	if ispartial() then
+		advance to getsymbol(savepartial);
+	endif;
+	
+	
+
+postproc
+	endlevel;
+
+PROC FORMHH
+preproc
+if visualvalue (HHHHTSTMPS) = notappl then
+   HHHHTSTMPS = timestamp (); 
+   endif; 
+   
+  if visualvalue(HH46)=1 then  //if questionnaire is completed, not partial flag are allowed
+     noPartFlag=1;
+  else
+	 noPartFlag=0;
+  endif;
+
+	//Advancing to water quality questionnaire
+  if xentryhw then
+		advance to WQ1;
+  endif;
+
+postproc
+if visualvalue (HHHHTSTMPE) = notappl then
+   HHHHTSTMPE = timestamp (); 
+   endif; 
+PROC HH1
+postproc
+  CLUSTER_SEL = $;
+  if loadcase( CLUSTERS, cluster_sel ) then
+    HH6 = zone;
+    HH7 = REGION;
+  endif;
+
+
+PROC HH2
+postproc
+	set attributes(HHNAME) native;
+	if addmode then
+		HHNAME = sysparm("HEAD");
+	else
+		if length(strip(HHNAME)) then 
+			set attributes (HHNAME) protect; 
+		else 
+			HHNAME = sysparm("HEAD");
+		endif;
+	endif;
+
+
+PROC HH4
+preproc;
+  if visualvalue($)=notappl then
+    HH3 = xintnum;
+    HH4 = xsupnum;
+  endif;
+PROC HH5D
+preproc
+   if visualvalue(HH5D)=notappl then
+		if !sysdate("YYYYMMDD") in minvalue(HH5Y_VST)*10000+0101:maxvalue(HH5Y_VST)*10000+1231 then // !!customize to dates of the fieldwork
+			errmsg(9988,minvalue(HH5Y_VST),maxvalue(HH5Y_VST));
+			stop(-1);
+		endif;   
+		HH5D = sysdate( "DD" );
+		HH5M = sysdate( "MM" );
+		HH5Y = sysdate( "YYYY" );
+	endif;
+
+PROC HH5Y
+di = cmcode(HH5M,HH5Y);
+
+PROC HH8
+preproc
+	if !addmode then
+		exit;
+	endif;
+
+  numeric sub = tonumber(sysparm("MANSELECTED"));
+	if sub = 1 then
+		$ = 1;
+	else
+		$ = 2;
+	endif;
+  
+PROC HH9
+preproc
+	if !addmode then
+		exit;
+	endif;
+
+  numeric sub = tonumber(sysparm("WQSELECTED"));
+	if sub = 1 then
+		$ = 1;
+	else
+		$ = 2;
+	endif;
+  
+PROC HH10
+preproc
+	if !addmode then
+		exit;
+	endif;
+
+   numeric sub = tonumber(sysparm("BLANKSELECTED"));
+	if sub = 1 then
+		$ = 1;
+	else
+		$ = 2;
+	endif;
+
+PROC HH11H
+preproc
+   if visualvalue(HH11H)=notappl then
+		x = systime();
+		if !int(x / 10000) in minvalue(HH11H_VST):maxvalue(HH11H_VST) then 
+			errmsg(9989,minvalue(HH11H_VST),maxvalue(HH11H_VST));
+			stop(-1);
+		endif;  
+		if HH11H = notappl then HH11H = int(x / 10000);endif;
+		if HH11M = notappl then HH11M = int(x / 100) % 100;endif;
+	endif;
+
+PROC HH12
+preproc
+  STAFF_CODE  = HINT;
+  loadcase( STAFF_DICT, STAFF_CODE ) ;
+
+postproc
+if $ <> 1 then
+	skip to HH46
+endif;  
+  
+PROC HHNAME
+preproc
+	if !addmode then
+		exit;
+	endif;
+  HHADDR = sysparm("ADDRESS");
+ 
+postproc    
+	if length(strip($)) = 0 then
+		errmsg( 9991 );
+		set attributes ($) native;
+		reenter
+	endif;
+	$=htmlencode(HHNAME);
+
+PROC FORMHX
+preproc
+if visualvalue(HHHLTSTMPS) = notappl then
+   HHHLTSTMPS = timestamp (); 
+   endif; 
+
+
+PROC FORMHX_ROSTER
+for i in FORMHX_ROSTER
+	{ Check the spouse of head of household is of opposite sex }
+	if HX3 = 2 and HX4 = HX4(1) then
+		errmsg(0071,HX2,i,HX2(1)) select (tr("Relationship of spouse/partner"),HX3,tr("Sex of household head"),HX4(1), tr("Sex of spouse/partner"), HX4); 
+	endif;
+enddo;
+
+{ store household head name to use in dictionary postproc }
+ynamehh = HX2(1);
+HHNAME  = HX2(1);
+
+PROC HX1
+preproc
+	if addmode then
+		savepartial ();
+	endif;	
+	$ = curocc ();
+
+PROC HX2
+preproc
+{2024.08.14. YC: Taken out after the comment from NYHQ experts
+   if curocc(formhx_roster) = 1 and strip($)="" then
+		$ = HHNAME;
+  endif;
+}
+postproc
+	if length(strip($)) = 0 then
+		errmsg( 9991 );
+		reenter
+	endif;
+	$=htmlencode($);
+
+PROC HX3
+onfocus;
+	if curocc()=1 then
+		setvalueset($,headrelationship);
+	else
+		setvalueset($,otherrelationship);  
+	endif;
+
+PROC HX4
+if HX1 > 1 & HX3 = 2 & $ = $(1) then
+	errmsg( 0060, HX2, getlabel( $, $ ), HX2(1), getlabel( $, $(1) ) ) select( tr("Sex of spouse/partner"), $, tr("Sex of household head"), $(1),  tr("Continue"), continue );
+	reenter;
+endif;
+rp = HX3;
+n  = HX4;
+if HX3 in 6,7 & count( FORMHX_ROSTER where HX3 = rp & HX4 = n ) >= 2 then
+	errmsg( 0061, getlabel(HX3, rp), HX4, getlabel(HX4, n) );
+	reenter;
+endif;
+
+PROC HX0
+if $ <> 1 then
+	endgroup
+endif;
+
+PROC HHAUX
+if $ = 1 then
+	reenter HX0(totocc(FORMHX_ROSTER));
+	else HH48 = totocc(FORMHX_ROSTER);
+endif;
+  
+PROC FORMHL
+postproc
+if visualvalue(HHHLTSTMPE) = notappl then
+   HHHLTSTMPE = timestamp (); 
+   endif; 
+PROC FORMHL_ROSTER
+preproc
+	for i in FORMHX_ROSTER
+		HL1(i) = HX1(i);
+		HL2(i) = HX2(i);
+		HL3(i) = HX3(i);
+		HL4(i) = HX4(i);
+	enddo;
+
+postproc
+	for i in FORMHL_ROSTER
+
+		{ Check that HH member identified by HL14 could be child's mother }
+		if HL14 >= 1 then
+			if HL4(HL14) <> 2 or HL6(HL14) < HL6+(minab/12) then
+				errmsg(0082,i,HL4(HL14),HL6(HL14),tr("Mother"), "HL14",HL14);
+				reenter HL14;
+			endif;
+		endif;
+
+		{ Check that HH member identified by HL18 could be child's father }
+		if HL18 >= 1 then
+			if HL4(HL18) <> 1 or HL6(HL18) < HL6+(minab/12) then
+				errmsg(0082,i,HL4(HL18),HL6(HL18),tr("Father"), "HL18",HL18);
+			endif;
+		endif;
+
+		{ Check that HH member identified by HL20 could be child's caretaker }
+		if HL14=notappl and HL20 in 1:89 then
+			if HL6(HL20) < 15 then
+				errmsg(0083,HL2(i),i,HL2(HL20),HL20, HL6(HL20));
+				set attributes (HL20) native;
+				reenter HL20;
+			endif;
+		endif;
+	
+		{ Check the spouse of head of household is of opposite sex }
+		if HL3 = 2 and HL4 = HL4(1) then
+			errmsg(0071,HL2,i,HL2(1));
+		{ Check children of head of household are at least 12 years younger }
+		elseif HL3 = 3 and HL6(1) < HL6+(minab/12) then
+			errmsg(0072,minab/12,i);
+		{ Check grandchildren of head of household are at least 24 years younger }
+		elseif HL3 = 5 and HL6(1) < HL6+2*(minab/12) then
+			errmsg(0073,2*minab/12,i);
+		{ Check parents of head of household are at least 12 years older }
+		elseif HL3 = 6 and HL6(1)+(minab/12) > HL6 then
+			errmsg(0074,minab/12,i);
+		endif;
+
+	enddo;
+
+PROC HL1
+preproc
+	if addmode then
+		savepartial();
+	endif;
+
+	if curocc() > HH48 then
+		endgroup
+	endif;
+
+PROC HL6
+if $ = 98 or $ = 99 then
+	errmsg (0031);
+	reenter;
+endif;
+
+{ Check the head of household is of age 15 or above }
+if HL3 = 1 and HL6 < 15 then
+	errmsg(0075,HL1,HL6);
+	reenter;
+endif;
+
+if !(HL5M in 98,99) & !(HL5Y in 9998,9999) then
+	db = cmcode(HL5M, HL5Y);  {Century month code for date of birth}
+	di = cmcode(HH5M, HH5Y);  {Century month code for date of interview}
+	comply=int((di-db)/12); {Age in completed years, according to date of birth}
+	if comply > 95 then comply = 95; endif;
+	if $ <> comply & $ <> comply - (HL5M = HH5M) then {If month of interview is the same as month of birth, allowing one year less}
+		errmsg(0030);
+		reenter 
+	endif;
+elseif (HL5M in 98,99) and HL5Y <= HH5Y then
+	db = cmcode(1 , HL5Y);
+	di = cmcode(HH5M, HH5Y);
+	comply=int((di-db)/12);
+	if comply > 95 then comply = 95; endif;
+	if $ <> comply & $ <> comply - 1 then
+		errmsg(0030);
+		reenter;
+	endif;
+endif;
+
+PROC HL8
+preproc
+	if not (HL4 = 2 and HL6 in minage:maxage) then
+		HL8 = 0;
+	else
+		HL8 = HL1;
+	endif;
+
+PROC HL9
+preproc
+	if HH8 <> 1 then
+		skip to HL10;
+	endif;
+
+	if HL4 = 1 and HL6 in mminage:mmaxage then
+		HL9 = HL1;
+	else
+		HL9 = 0;
+	endif;
+
+PROC HL10
+preproc
+	if not (HL6 in 0:4) then
+		HL10 = 0;
+	else
+		HL10 = HL1;
+	endif;
+
+PROC HL11
+preproc
+	if HL6 <= 17 then
+		$ = 1
+	else 
+		$ = 2;
+	endif;
+  
+PROC HL12
+preproc
+	if HL11 <> 1 then
+		skip to next HL1
+	endif;
+
+postproc
+	if $ <> 1 then
+		skip to HL16
+	endif;  
+
+PROC HL13
+if $ <> 1 then
+	skip to HL15
+endif;
+
+PROC HL14
+onfocus
+	clean_labels();
+	j = 0;
+	do i = 1 while i <= HH48
+		if HX4(i) = 2 & (i > curocc() | HL6(i) in HL6+12:98,99,notappl) then
+			codes(j)  = i;
+			labels(j) = HX2(i);
+			j = j + 1;
+		endif;
+	enddo;
+	SetValueSet( @GetSymbol(), codes, labels );
+
+postproc
+	if HL14 >= 1 then
+		if valid(HL14) and HL14 > HH48 then
+			errmsg(0080,tr("Mother's"),"HL14",HL14,HH48);
+			reenter;
+		elseif HL14 = HL1 then
+			errmsg(0081,tr("Mother's"),"HL14",HL14,HL1);
+			reenter;
+		endif;
+	endif;
+
+	skip to HL16;
+
+PROC HL16
+if $ <> 1 then
+	skip to HL20
+endif;
+
+PROC HL17
+if $ <> 1 then
+	skip to HL19
+endif;  
+
+PROC HL18
+onfocus
+	clean_labels();
+	j = 0;
+	do i = 1 while i <= HH48
+		if HX4(i) = 1 & (i > curocc() | HL6(i) in HL6+12:98,99,notappl) then
+			codes(j)  = i;
+			labels(j) = HX2(i);
+			j = j + 1;
+		endif;
+	enddo;
+	SetValueSet( @GetSymbol(), codes, labels );
+
+postproc
+	if HL18 >= 1 then
+		if valid(HL18) and HL18 > HH48 then
+			errmsg(0080,tr("Father's"),"HL18",HL18,HH48);
+			reenter;
+		elseif HL18 = HL1 then
+			errmsg(0081,tr("Father's"),"HL18",HL18,HL1);
+			reenter;
+		endif;
+	endif;
+
+	skip to HL20;
+
+PROC HL20
+preproc
+	set attributes (HL20) native;
+	if HL14 > 0 then
+		$ = HL14;
+		set attributes (HL20) protect;
+	endif;  	
+
+onfocus
+	clean_labels();
+	j = 0;
+	do i = 1 while i <= HH48
+		if (i > curocc() | HL6(i) in 15:98 & i <> curocc()) then
+			codes(j)  = i;
+			labels(j) = HX2(i);
+			j = j + 1;
+		endif;
+	enddo;
+		
+	if HL6 >= 15 then  
+		codes(j)  = 90;
+		labels(j) = tr("No one");
+		j = j + 1;
+	endif;
+	SetValueSet( @GetSymbol(), codes, labels );
+
+PROC HH47
+onfocus
+	clean_labels();
+	j = 0;
+	do i = 1 while i <= HH48
+		if HL6(i) >= 15 then
+			codes(j)  = i;
+			labels(j) = HX2(i);
+			j = j + 1;
+		endif;
+	enddo;
+	SetValueSet( @GetSymbol(), codes, labels );
+
+PROC HH49
+preproc
+	HH49 = count( FORMHL_ROSTER where HL4 = 2 & HL6 in 15:49 ); 
+	HH50 = count( FORMHL_ROSTER where HL4 = 1 & HL6 in 15:49 & HL9 > 0 ); 
+	HH51 = count( FORMHL_ROSTER where HL6 in 0:4  ); 
+	HH52 = count( FORMHL_ROSTER where HL6 in 5:17 ); 
+
+	HH53 = 0;
+	HH54 = 0;
+	HH55 = 0;
+	HH56 = 0;
+
+PROC HH56
+if xverif then
+	if endmess() then
+		reenter HL5M(noccurs(FORMHL_ROSTER));
+	endif;
+	endlevel;
+endif;
+
+PROC FORMED
+preproc
+if visualvalue(HHEDTSTMPS) = notappl then
+   HHEDTSTMPS = timestamp (); 
+   endif; 
+   
+postproc
+if visualvalue(HHEDTSTMPE) = notappl then
+   HHEDTSTMPE = timestamp (); 
+   endif; 
+PROC FORMED_ROSTER
+preproc
+	for i in FORMHX_ROSTER
+		ED1(i)  = HX1(i);
+		ED2(i)  = HX2(i);
+		ED2A(i) = HL6(i); 
+		ED3(i) = 2;
+		if HL6(i) >= 3 then
+			ED3(i) = 1; 
+		endif;  
+	enddo;
+
+PROC ED1
+preproc
+	if addmode then
+		savepartial();
+	endif;
+
+	if curocc(FORMED_ROSTER) > HH48 then
+		endgroup
+	endif;
+
+	if inEntry then
+		do i = 1 while i <= maxmem
+			if i <= HH48 then
+				ED1(i) = i;
+			else
+				ED1(i) = notappl;
+			endif;
+		enddo;
+	endif;
+
+PROC ED3
+preproc
+	if HL6(ED1)>= 3 then
+		ED3 = 1
+	else 
+		ED3 = 2    
+	endif;  
+
+PROC ED4
+preproc
+	if ED3 = 2 then
+		skip to next ED1
+	endif;
+
+postproc
+	if $ <> 1 then
+		skip to next ED1;
+	endif; 
+
+PROC ED5A
+//!!!needs to be customized for the country context!!!//
+recode $ -> numeric minEducAge;
+	   0 -> 3; 
+	   1 -> 5; 
+	   2 -> 10; 
+	   3 -> 13; 
+	   4 -> 16;
+	     -> 0; 	   
+endrecode;
+if ED2A < minEducAge THEN
+	errmsg(tr("Level of education (%02d) is  not consistent with age (%02d), please checke!"), $, ED2A ); 
+endif;	
+		
+if $ = 0 then
+	skip to ED7;
+endif;
+
+PROC ED5B
+onfocus;
+	setedlabels(ED5A);
+
+postproc; 
+	if $ in 98:99 then
+		skip to ED7
+	endif;
+
+PROC ED7
+preproc
+	if HL6(ED1) <= 24 then
+		$ = 1
+	else 
+		$ = 2    
+	endif; 
+
+PROC ED8
+preproc
+	if ED7 <> 1 then
+		skip to next ED1
+	endif;  
+
+	if ED4 <> 1 then
+		$ = 2;
+	else 
+		$ = 1  
+	endif;
+
+PROC ED9
+preproc
+	if ED8 <> 1 then
+		skip to next ED1
+	endif;
+
+postproc;
+	if $ <> 1 then
+		skip to ED15
+	endif;  
+
+PROC ED10A
+if $ <= 4 and ED5A <= 4 and $ < ED5A then
+	errmsg(0098,"ED10A",$,"ED5A",ED5A); 
+endif;
+
+if $ <= 4 and ED5A <= 4 and $ > ED5A then
+	errmsg(0091,"ED10A",$,"ED5A",ED5A) select( tr("Current year Level"), $, tr("Highest Level"), ED5A );
+endif;
+
+if $ = 0 then
+	skip to ED15;
+endif;
+
+PROC ED10B
+onfocus;
+	setedlabels(ED10A);
+
+postproc;
+	{ Compare current Grade/Year and level to max Grade/Year and level }
+	if (ED5A = ED10A) and valid($) and valid(ED5B) and $ > ED5B  then
+		errmsg(0092,"ED10B",$,"ED5B",ED5B) select( tr("Current year Grade"), $, tr("Highest Grade"), ED5B);
+	endif;
+
+	if ED5A = ED10A and valid($) and valid(ED5B) and $ = ED5B and ED6 = 1 then
+		errmsg(0097,"ED10A", "ED10B", ED10A, $, "ED5A", "ED5B", ED5A, ED5B, "ED6",ED6) ;
+		reenter
+	endif;
+
+
+PROC ED12
+if $ <> 1 then
+	skip to ED14
+endif;  
+  
+PROC ED13
+alphavar = $;
+if alphachk("ABCXZ?") then
+	errmsg(9998);
+	reenter
+else
+	$ = alphavar;
+endif;
+{ Check "Don't Know" is only response }
+if pos("Z",$) & alphsize > 1 then
+	errmsg(9996);
+	reenter
+endif;
+{ Check "Missing" is only response }
+if pos("?",$) & alphsize > 1 then
+	errmsg(9995);
+	reenter
+endif;
+{ Display the note entry dialog box for recording "Other" answer }
+if pos("X",$) and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+PROC ED14
+if $ > 3 then
+	skip to ED15;
+endif;
+PROC ED15
+if $ <> 1 then
+	skip to next ED1
+endif;  
+
+PROC ED16A
+if $ <= 4 and ED5A <= 4 and $ > ED5A then
+	errmsg(0093,"ED16A",$,"ED5A",ED5A) select( tr("Previous year Level"), $, tr("Highest Level"), ED5B);
+endif;
+
+if ED16A = 0 then
+	skip to next ED1
+endif;
+
+PROC ED16B
+onfocus;
+	setedlabels(ED16A);
+
+postproc;
+	{ Compare last year's grade and level to max grade and level }
+	if ED5A = ED16A and valid($) and valid(ED5B) and $ > ED5B  then
+		errmsg(0094,"ED16B",$,"ED5B",ED5B);
+		reenter;
+	{ Compare this year's grade and level to last year's grade and level }
+	elseif (ED10A = ED16A and valid($) and valid(ED10B) and $ > ED10B) then
+		errmsg(0095,"ED16A","ED16B",ED16A,$,"ED10A","ED10B",ED10A,ED10B);
+		reenter;
+	elseif (ED10A = ED16A and valid($) and valid(ED10B) and $ < ED10B-1) then
+		errmsg(0096,"ED16A","ED16B",ED16A,ED16B,"ED10A","ED10B",ED10A,ED10B);
+		reenter;
+	endif;
+
+PROC FORMHC
+preproc
+if visualvalue(HHHCTSTMPS) = notappl then
+   HHHCTSTMPS = timestamp (); 
+   endif; 
+
+postproc
+if visualvalue(HHHCTSTMPE) = notappl then
+   HHHCTSTMPE = timestamp (); 
+   endif; 
+PROC HC1A
+preproc
+	if addmode then
+		savepartial();
+	endif;
+	
+postproc
+{ Display the note entry dialog box for recording "Other" answer }
+if $ = 6 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+PROC HC1B
+{ Display the note entry dialog box for recording "Other" answer }
+if $ = 6 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+PROC HC2
+{ Display the note entry dialog box for recording "Other" answer }
+if $ = 6 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+PROC HC3
+onfocus;
+	numeric oldHC3=visualvalue(HC3);
+
+postproc;
+	if $ > 3 and $ > HH48 and $<>oldHC3 then
+		errmsg(0100,$);
+	endif;  
+
+PROC HC4
+{ Display the note entry dialog box for recording "Other" answer }
+if $ = 96 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+PROC HC5
+{ Display the note entry dialog box for recording "Other" answer }
+if $ = 96 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+PROC HC6
+{ Display the note entry dialog box for recording "Other" answer }
+if $ = 96 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+PROC HC8
+if $ <> 1 then 
+	skip to HC10A
+endif;
+
+PROC HC8A
+alphavar = $;
+if alphachk("ABCDEFGXZ?") then
+	errmsg(9998);
+	reenter
+else
+	$ = alphavar;
+endif;
+{ Check "Don't Know" is only response }
+if pos("Z",$) & alphsize > 1 then
+	errmsg(9996);
+	reenter
+endif;
+{ Check "Missing" is only response }
+if pos("?",$) & alphsize > 1 then
+	errmsg(9995);
+	reenter
+endif;
+{ Display the note entry dialog box for recording "Other" answer }
+if pos("X",$) and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+PROC HC8B
+if $ < 98 then
+   if $=11 and HC8AA<>"A" or
+      $=21 and HC8AB<>"B" or
+      $=31 and HC8AC<>"C" or
+      $=32 and HC8AD<>"D" or
+      $=41 and HC8AE<>"E" or
+      $=51 and HC8AF<>"F" or
+      $=52 and HC8AG<>"G" or 
+      $=96 and HC8AX<>"X" then
+      errmsg("Only a source recorded in HC8A can be recorded here. Please check");
+	  reenter;
+   endif;	  
+endif;
+
+if $ = 96 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+PROC HC12
+if $ <> 1 then
+	skip to HC13
+endif;
+PROC HC13
+if $ in 1,9 then
+	skip to HC14
+else
+	if HC12 = 2 or HC12A = 2 then
+		skip to HC14
+	endif;
+endif;
+PROC HC14
+{ Display the note entry dialog box for recording "Other" answer }
+if $ = 6 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+PROC HC15
+if $ <> 1 then
+	skip to HC17;
+endif;
+
+PROC HC17
+if $ <> 1 then
+	skip to HC19;
+endif;
+
+PROC HC18H
+if HC17 = 1 & HC18A = 0 & HC18B = 0 & HC18C = 0 & HC18D = 0 & HC18E = 0 & HC18F = 0 & HC18G = 0 & HC18H = 0 then
+	errmsg (0101);
+	reenter;  
+endif;
+
+PROC FORMEU
+preproc
+if visualvalue(HHEUTSTMPS) = notappl then
+   HHEUTSTMPS = timestamp (); 
+   endif; 
+
+postproc
+if visualvalue(HHEUTSTMPE) = notappl then
+   HHEUTSTMPE = timestamp (); 
+   endif; 
+
+PROC EU1
+{ Display the note entry dialog box for recording "Other" answer }
+if $ = 96 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+if $ = 2 and HC8 >= 2 then
+	errmsg (0102)
+endif;  
+
+if $ in 1:5,97 then
+	skip to EU6
+elseif $ in 8:10,96 then
+	skip to EU4
+endif;  
+
+PROC EU1A
+{ Display the note entry dialog box for recording "Other" answer }
+if $ = 96 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+PROC EU4
+{ Display the note entry dialog box for recording "Other" answer }
+if $ = 96 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+PROC EU6
+{ Display the note entry dialog box for recording "Other" answer }
+if $ = 96 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+if $ in 1,6,7,8,96 then
+	skip to EU8
+endif;  
+
+if $ = 97 or $ = 0 then
+	skip to EU9
+endif;  
+
+PROC EU6A
+{ Display the note entry dialog box for recording "Other" answer }
+if $ = 96 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+PROC EU8
+{ Display the note entry dialog box for recording "Other" answer }
+if $ = 96 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+PROC EU9
+{ Display the note entry dialog box for recording "Other" answer }
+if $ = 96 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+PROC FORMTN
+preproc
+if visualvalue(HHTNTSTMPS) = notappl then
+   HHTNTSTMPS = timestamp (); 
+   endif; 
+   
+postproc
+if visualvalue(HHTNTSTMPE) = notappl then
+   HHTNTSTMPE = timestamp (); 
+   endif; 
+PROC TN1
+preproc
+	if addmode then
+		savepartial();
+	endif;
+	
+postproc
+if TN1 <> 1 then
+	endgroup;
+endif;
+
+PROC TNLN
+preproc
+	if curocc(FORMTN_ROSTER) > TN2 then
+		endgroup
+	endif;
+
+	if inEntry then
+		do i = 1 while i <= maxnet
+			if i <= TN2 then
+				TNLN(i) = i;
+			else
+				TNLN(i) = notappl;
+			endif;
+		enddo;
+	endif;
+
+  
+PROC TN5
+{ Display the note entry dialog box for recording "Other" answer }
+if $ = 36 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+PROC TN10
+if !$ in 4,8 then
+	skip to TN13
+endif;	
+
+PROC TN12
+{ Display the note entry dialog box for recording "Other" answer }
+if $ = 96 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+PROC TN13
+if $ = 1 then
+	skip to TN15_1;
+elseif $ in 8,9 then
+	skip to next TNLN
+endif;
+
+
+PROC TN14A
+skip to next TNLN;
+PROC TN15_1
+onfocus
+	setnet(GetSymbol(),curocc());
+	setvalueset($,codes,labels);
+
+postproc
+	if checknet($,GetSymbol(),curocc()) then
+		reenter
+	elseif $ > HH48 then
+		errmsg( 0201, $,HH48 );
+		reenter;
+	endif;
+
+
+PROC TN15_2
+onfocus
+	setnet(GetSymbol(),curocc());
+	setvalueset($,codes,labels);
+
+
+postproc
+	if checknet($,GetSymbol(),curocc()) then
+		reenter
+	elseif $ = 90 then
+		skip to next TNLN
+	elseif $ > HH48 then
+		errmsg( 0201, $,HH48 );
+		reenter;
+	elseif $ & $ = TN15_1 then
+		errmsg( 0202);
+		reenter;
+	endif;
+	
+PROC TN15_3
+onfocus
+	setnet(GetSymbol(),curocc());
+	setvalueset($,codes,labels);
+
+postproc
+	if checknet($,GetSymbol(),curocc()) then
+		reenter
+	elseif $ = 90 then
+		skip to next TNLN
+	elseif $ > HH48 then
+		errmsg(0201, $,HH48 );
+		reenter;
+	elseif $ & $ = TN15_1 then
+		errmsg(0202);
+		reenter;
+	endif;
+
+PROC TN15_4
+onfocus
+	setnet(GetSymbol(),curocc());
+	setvalueset($,codes,labels);
+
+postproc
+	if checknet($,GetSymbol(),curocc()) then
+		reenter
+	elseif $ = 90 then
+		skip to next TNLN
+	elseif $ > HH48 then
+		errmsg( 0201, $,HH48 );
+		reenter;
+	elseif $ & $ = TN15_1 then
+		errmsg( 0202 );
+		reenter;
+	endif;
+	
+PROC FORMST
+preproc
+if visualvalue(HHSTTSTMPS) = notappl then
+   HHSTTSTMPS = timestamp (); 
+   endif; 
+
+postproc
+if visualvalue(HHSTTSTMPE) = notappl then
+   HHSTTSTMPE = timestamp (); 
+   endif; 
+PROC ST2
+preproc
+	if addmode then
+		savepartial();
+	endif;
+  
+postproc
+if curocc(FORMST_ROSTER) = 5 then
+	if $(5) = 1 and !inadvance() then
+		string other = editnote();
+		ensureNotBlank(other);
+	endif;
+endif;
+	
+if $ <> 1 then 
+	skip to next ST2
+endif;  
+
+PROC ST3
+if $ <> 1 then
+	skip to next ST2
+endif;  
+
+PROC ST4
+onfocus;
+valueset string ST4_valuesets;
+
+do j=1 while j<=totocc(MODHL)
+	ST4_valuesets.add(HL2(j),edit("99",j));
+enddo;
+ST4_valuesets.add(tr("ALL MEMBERS"), "95");
+ST4_valuesets.add(tr("DK"), "98");
+ST4_valuesets.add(tr("NO RESPONSE"), "99");
+setvalueset(ST4,ST4_valuesets);
+
+killfocus;
+if length(strip($))=0 then
+	errmsg(tr("Select the household members who receive/have received assistance"));
+	reenter;
+endif;
+
+if ischecked("95",$) and length(strip($))>2 then
+	errmsg(tr("Do not select ALL MEMBERS or other answers at the same time"));
+	reenter;
+endif;
+if ischecked("98",$) and length(strip($))>2 then
+	errmsg(9996);
+	reenter;
+endif;
+if ischecked("99",$) and length(strip($))>2 then
+	errmsg(9996);
+	reenter;
+endif;
+
+if curocc()=4 then  //********DO NOT ASK THIS QUESTION FOR PENSION RETIREMENT FOND **** BE SURE IT IS THE 5TH SOCIAL TRANSFER
+   skip to ST6U;
+endif;
+PROC ST5
+onfocus;
+valueset string ST5_valuesets;
+
+do j=1 while j<=totocc(MODHL)
+	ST5_valuesets.add(HL2(j), edit("99",j));
+enddo;
+ST5_valuesets.add(tr("NO ONE IN THIS HOUSEHOLD"), "00");
+ST5_valuesets.add(tr("ALL MEMBERS"), "95");
+ST5_valuesets.add(tr("DK"), "98");
+ST5_valuesets.add(tr("NO RESPONSE"), "99");
+setvalueset(ST5,ST5_valuesets);
+
+killfocus;
+if length(strip($))=0 then
+	errmsg(tr("Select household members who are eligible to receive and collect assistance"));
+	reenter;
+endif;
+
+if ischecked("00",$) and length(strip($))>2 then
+	errmsg(tr("Do not select NO ONE IN THIS HOUSEHOLD and other answers at the same time"));
+	reenter;
+endif;
+
+if ischecked("95",$) and length(strip($))>2 then
+	errmsg(tr("Do not select ALL MEMBERS and other answers at the same time"));
+	reenter;
+endif;
+if ischecked("98",$) and length(strip($))>2 then
+	errmsg(9996);
+	reenter;
+endif;
+if ischecked("99",$) and length(strip($))>2 then
+	errmsg(9996);
+	reenter;
+endif;
+PROC ST6U
+if     $ = 1 then    worklabel=tr("number of months")
+elseif $ = 2 then    worklabel=tr("number of years")
+else                 worklabel="98 DK /99 NO RESPONSE"
+endif;
+PROC ST6N
+recode ST6U  ::          $ -> aok;
+		 1   :: 0:11,98,99 -> 1;
+		 2   :: 0:15,98,99 -> 1;
+		 9   ::      98,99 -> 1;
+			 ::            -> 0;
+endrecode;
+if !aok then
+	errmsg(9992);
+	reenter;
+endif;
+PROC FORMPE
+preproc
+if visualvalue(HHPETSTMPS) = notappl then
+   HHPETSTMPS = timestamp (); 
+   endif; 
+
+postproc
+if visualvalue(HHPETSTMPE) = notappl then
+   HHPETSTMPE = timestamp (); 
+   endif; 
+PROC PE1
+preproc
+	if addmode then
+		savepartial();
+	endif;
+	
+postproc
+if $ <> 1 then
+	skip to PE3;
+endif;	
+PROC PE3
+if $ <> 1 then
+	skip to PE5;
+endif;	
+PROC PE4U
+if     $ = 1 then    worklabel=tr("number of days")
+elseif $ = 2 then    worklabel=tr("number of months")
+elseif $ = 3 then    worklabel=tr("number of years")
+else                 worklabel="95/98/99"
+endif;
+PROC PE4N
+recode PE4U  ::          $ -> aok;
+		 1   :: 0:6 ,98,99 -> 1;
+		 2   :: 0:15,98,99 -> 1;
+		 3   :: 0:20,98,99 -> 1;
+		 9   ::   95,98,99 -> 1;
+			 ::            -> 0;
+endrecode;
+if !aok then
+	errmsg(9992);
+	reenter;
+endif;
+PROC PE7
+if $ <> 1 then
+	skip to PE9;
+endif;
+PROC PE9
+if $ <> 1 then
+	skip to PE11;
+endif;
+PROC PE12
+if $ <> 1 then
+	skip to PE15;
+endif;
+PROC PE15
+if $ <> 1 then
+	skip to PE18;
+endif;
+PROC PE16
+if $ <> 1 then
+	skip to PE18;
+endif;
+PROC PE20
+if $ <> 2 then
+	skip to PE22;
+endif;
+PROC PE21
+alphavar = $;
+if alphachk("ABCDEFGHIJX?") then
+	errmsg(9998);
+	reenter
+else
+	$ = alphavar;
+endif;
+{ Check "Missing" is only response }
+if pos("?",$) & alphsize > 1 then
+	errmsg(9995);
+	reenter
+endif;
+{ Display the note entry dialog box for recording "Other" answer }
+if pos("X",$)  and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+PROC FORMFE
+preproc
+if visualvalue(HHFETSTMPS) = notappl then
+   HHFETSTMPS = timestamp (); 
+   endif; 
+   
+postproc
+if visualvalue(HHFETSTMPE) = notappl then
+   HHFETSTMPE = timestamp (); 
+   endif; 
+PROC FE1
+preproc
+	if addmode then
+		savepartial();
+	endif;
+PROC FORMWS
+preproc
+if visualvalue(HHWS1TSTMPS) = notappl then
+   HHWS1TSTMPS = timestamp (); 
+   endif; 
+
+postproc
+if visualvalue(HHWS1TSTMPE) = notappl then
+   HHWS1TSTMPE = timestamp (); 
+   endif; 
+PROC WS1
+preproc
+	if addmode then
+		savepartial();
+	endif;
+
+postproc
+	{ Display the note entry dialog box for recording "Other" answer }
+	if $ = 96 and !inadvance() then
+		string other = editnote();
+		ensureNotBlank(other);
+	endif;
+	if $ in 11,12 then
+		skip to WS7
+	elseif $ in 13,14,61,71,72 then
+		skip to WS4
+	elseif $ in 21:51,81,96,99 then
+		skip to WS3
+	endif;
+
+PROC WS2
+{ Display the note entry dialog box for recording "Other" answer }
+if $ = 96 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+  
+if $ in 11,12 then
+	skip to WS7
+elseif $ in 13,14,61,71,72 then
+	skip to WS4  
+endif;
+
+PROC WS3
+if $ in 1,2 then
+	skip to WS7
+endif;
+
+PROC WS4
+if $ = 0 then
+	skip to WS7
+endif;  
+
+PROC WS5
+onfocus
+	clean_labels();
+	j = 0;
+	do i = 1 while i <= HH48
+		codes(j)  = i;
+		labels(j) = HX2(i);
+		j = j + 1;
+	enddo;
+	j=j+1;
+	codes(j)  = 99;
+	labels(j) = tr("NO RESPONSE");
+	SetValueSet( @GetSymbol(), codes, labels );
+  
+PROC WS7
+if $ = 1 then
+	skip to WS8
+endif;
+
+PROC WS7A
+if $ <> 1 then 
+	skip to WS9;
+endif;	
+PROC WS8
+{ Display the note entry dialog box for recording "Other" answer }
+if $ = 6 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+PROC WS9
+if $ <> 1 then
+	skip to WS10AA;
+endif;
+
+PROC WS10
+alphavar = $;
+if alphachk("ABCDEFXZ?") then
+	errmsg(9998);
+	reenter
+else
+	$ = alphavar;
+endif;
+{ Check "Don't Know" is only response }
+if pos("Z",$) & alphsize > 1 then
+	errmsg(9996);
+	reenter
+endif;
+{ Check "Missing" is only response }
+if pos("?",$) & alphsize > 1 then
+	errmsg(9995);
+	reenter
+endif;
+{ Display the note entry dialog box for recording "Other" answer }
+if pos("X",$)  and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+PROC WS10BB
+if $ <> 2 then
+	endgroup;
+endif;	
+PROC WS10CC
+if $ in 13,14,61,71,72 then
+	skip to WS10EE
+elseif $ in 11,12 then
+	endgroup
+endif;
+	
+{ Display the note entry dialog box for recording "Other" answer }
+if $ = 96 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+PROC WS10DD
+if $ <= 2 then
+	endgroup;
+endif;
+PROC FORMWS2
+preproc
+if visualvalue(HHWS2TSTMPS) = notappl then
+   HHWS2TSTMPS = timestamp (); 
+   endif; 
+
+postproc
+if visualvalue(HHWS2TSTMPE) = notappl then
+   HHWS2TSTMPE = timestamp (); 
+   endif; 
+
+PROC WS11
+preproc
+	if addmode then
+		savepartial();
+	endif;
+	
+postproc
+worklabel=getlabel(WS11,WS11);
+
+{ Display the note entry dialog box for recording "Other" answer }
+if $ = 96 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+if $ in 18,21,22,23,24,31,32,99 then
+	skip to WS11DA
+elseif $ in 11,14,41,51,96 then
+	skip to WS14
+elseif $ = 95 then
+	endgroup;
+endif;
+
+
+PROC WS11B
+if $ <> 1 then
+	skip to WS11DA;
+endif;	
+PROC WS11C
+{ Display the note entry dialog box for recording "Other" answer }
+if $ = 96 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+PROC WS11DD
+if $ = 1 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+PROC WS12
+if $ >= 4 then
+	skip to WS14
+endif;  
+
+PROC WS12A
+{ Display the note entry dialog box for recording "Other" answer }
+if $ = 96 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+PROC WS13
+{ Display the note entry dialog box for recording "Other" answer }
+if $ = 6 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+PROC WS15
+if $ <> 1 then
+	endgroup
+endif;  
+
+PROC WS16
+if $ <> 1 then
+	endgroup
+endif;  
+
+PROC FORMHW
+preproc
+if visualvalue(HHHWTSTMPS) = notappl then
+   HHHWTSTMPS = timestamp (); 
+   endif; 
+
+postproc
+if visualvalue(HHHWTSTMPE) = notappl then
+   HHHWTSTMPE = timestamp (); 
+   endif; 
+PROC HW1
+preproc
+	if addmode then
+		savepartial();
+	endif;
+
+postproc
+	{ Display the note entry dialog box for recording "Other" answer }
+	if $ = 6 and !inadvance() then
+		string other = editnote();
+		ensureNotBlank(other);
+	endif;
+  
+	if $ >= 4 then
+		skip to HW4A
+	endif;  
+
+PROC HW3
+alphavar = $;
+if alphachk("ABCDY") then
+	errmsg(9998);
+	reenter
+else
+	$ = alphavar;
+endif;
+{ Check "None of these present" is only response }
+if pos("Y",$) & alphsize > 1 then
+	errmsg(9995);
+	reenter
+endif;
+PROC HW4A
+if $ >= 4 then
+	endgroup
+endif;
+PROC FORMEND
+preproc
+if visualvalue(HHENDTSTMPS) = notappl then
+   HHENDTSTMPS = timestamp (); 
+   endif; 
+
+
+postproc
+if visualvalue(HHENDTSTMPE) = notappl then
+   HHENDTSTMPE = timestamp (); 
+   endif; 
+PROC HH13H
+preproc
+	if special(visualvalue($)) then
+		x = systime();
+		if HH13H = notappl then HH13H = int(x / 10000);endif;
+		if HH13M = notappl then HH13M = int(x / 100) % 100;endif;
+	endif;
+
+PROC HH15
+{ Display the note entry dialog box for recording "Other" answer }
+if $ = 6 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+PROC HH16
+{ Display the note entry dialog box for recording "Other" answer }
+if $ = 6 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+PROC HH26A
+preproc
+	if count(FORMHL_ROSTER where HL6 in 5:17) = 0 then
+		skip to HH30HA;
+	endif;
+
+	{ Kish grid }
+	KishGrid(0) = "12243654";
+	KishGrid(1) = "11314165";
+	KishGrid(2) = "12125276";
+	KishGrid(3) = "11231317";
+	KishGrid(4) = "12342428";
+	KishGrid(5) = "11113531";
+	KishGrid(6) = "12224642";
+	KishGrid(7) = "11335153";
+	KishGrid(8) = "12141264";
+	KishGrid(9) = "11212375";
+
+	if count(FORMHL_ROSTER where HL6 in 5:17) <= 8 then
+		$ = tonumber(Kishgrid(HH2%10)[count(FORMHL_ROSTER where HL6 in 5:17):1]);
+	else
+		$ = tonumber(Kishgrid(HH2%10)[8:1]);
+	endif;  
+
+PROC HH26B
+preproc
+	kount = 0;
+    for i in FORMHL_ROSTER do
+		if HL6 in 5:17 then
+			kount = kount + 1;
+			if kount = HH26A then
+				$ = HL1;
+			endif;
+		endif;
+    enddo;
+
+PROC HH26C
+preproc
+	$ = HL6(HH26B);
+
+PROC HH30HA
+preproc
+	if count(FORMHL_ROSTER where HL4 = 2 and HL6 in 15:49) = 0 then
+		skip to HH39X000;
+	endif;
+
+	{ Kish grid }
+	KishGrid(0) = "12243654";
+	KishGrid(1) = "11314165";
+	KishGrid(2) = "12125276";
+	KishGrid(3) = "11231317";
+	KishGrid(4) = "12342428";
+	KishGrid(5) = "11113531";
+	KishGrid(6) = "12224642";
+	KishGrid(7) = "11335153";
+	KishGrid(8) = "12141264";
+	KishGrid(9) = "11212375";
+
+	if count(FORMHL_ROSTER where HL4 = 2 and HL6 in 15:49) <= 8 then
+		$ = tonumber(Kishgrid(HH2%10)[count(FORMHL_ROSTER where HL4 = 2 and HL6 in 15:49):1]);
+	else
+		$ = tonumber(Kishgrid(HH2%10)[8:1]);
+	endif;  
+PROC HH30HB
+preproc
+	vwkount = 0;
+    for i in FORMHL_ROSTER do
+		if HL4=2 and HL6 in 15:49 then
+			vwkount = vwkount + 1;
+			if vwkount = HH30HA then
+				$ = HL1;
+			endif;
+		endif;
+    enddo;
+PROC HH30HC
+preproc
+	$ = HL6(HH30HB);
+	
+PROC HH33X
+preproc;
+	if curocc()>HH48 then
+		endgroup;
+	endif;   
+
+	if not (HL4(curocc())=2 and HL6(curocc()) in 15:17 and HL20(curocc()) < 90) then
+		skip to next HH33X
+	else
+		worklabel=strip(HL2(curocc()))  
+	endif;
+
+PROC HH33
+preproc;
+	if count(HH33X000 where HH33X <> notappl) = 0 then
+		skip to HH39X000;
+	elseif count(HH33X000 where HH33X =1) = count(HH33X000 where HH33X <> notappl) then
+		$ = 1;  // consent was given for all girls 15-17 years
+	elseif count(HH33X000 where HH33X =2) = count(HH33X000 where HH33X <> notappl) then
+		$ = 2;  // consent was not given for any all girls 15-17 years
+	else
+		$ = 3;  // consent was given for some girls 15-17 years but not for all
+	endif;
+
+PROC HH39X000
+preproc
+	if HH8 <> 1 then
+		skip to HH44
+	endif;
+
+PROC HH39X
+preproc;
+	if curocc()>HH48 then
+		endgroup;
+	endif;   
+
+	if not (HL4(curocc())=1 and HL6(curocc()) in 15:17 and HL20(curocc()) < 90) then
+		skip to next HH39X
+	else
+		worklabel=strip(HL2(curocc()))  
+	endif;
+
+PROC HH39
+preproc;
+	if count(HH39X000 where HH39X <> notappl) = 0 then
+		skip to HH44;
+	elseif count(HH39X000 where HH39X =1) = count(HH39X000 where HH39X <> notappl) then
+		$ = 1;  // consent was given for all boys 15-17 years
+	elseif count(HH39X000 where HH39X =2) = count(HH39X000 where HH39X <> notappl) then
+		$ = 2;  // consent was not given for any all boys 15-17 years
+	else
+		$ = 3;  // consent was given for some boys 15-17 years but not for all
+	endif;
+
+PROC HH44
+preproc;
+	if HH9 <> 1 then
+		skip to HH44BC
+	endif   
+
+PROC HH44BC
+if $ = 2 then
+	skip to HH46
+endif;
+PROC HH44DE
+if $ = 2 then
+	skip to HH46
+endif;
+PROC HH44H
+if $ = 2 then
+	errmsg("Return to HH44G to correct the phone number");
+	reenter HH44G;
+endif;
+PROC HH44I
+if $ = 1 then
+	skip to next HH44G	
+else
+	skip to HH46
+endif;
+PROC HH46
+if $ = 1 and HH12 <> 1 then
+	errmsg (9970);
+	reenter;
+endif;	
+
+if $ <> 1 and HH12 = 1 then
+	errmsg (9970);
+	reenter;
+endif;	
+
+if $ <> 1 and visualvalue(HW1) then
+	errmsg(9971);
+endif;	
+
+{ Display the note entry dialog box for recording "Other" answer }
+if $ = 96 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+if $ <> 1 then
+	if endmess() then
+		//reenter HH46
+		goto();
+	endif;
+	endlevel
+endif;
+
+PROC HHWQ
+preproc
+	if HH9 <> 1 then
+		skip to HHFIN
+	endif;
+  
+PROC HHFIN
+preproc	
+	if xentryhw then
+		$ = 3;
+		noinput;
+	endif;
+
+postproc
+	if $ = 1 then
+		goto ()
+	elseif $ = 2 then
+		strnotes = editnote();
+    reenter
+	endif;
+  
+PROC FORMWQ
+preproc 
+	if HH9 <> 1 then
+		endlevel
+	endif;  
+  
+	if !xmodcent then
+		if xentryhw <> 1 then
+			if !special(visualvalue(WQ1)) then
+				advance;
+			else
+				endlevel;
+			endif;
+		endif;
+	endif;
+  
+postproc
+   
+	if endmess() then
+		goto ()
+	endif;
+	endlevel;
+
+PROC WQ1
+preproc 
+	$ = HH1;
+
+PROC WQ2
+preproc
+	$ = HH2;
+
+PROC WQ4
+preproc
+	$ =  HINT;
+
+PROC WQ5Y
+if datediff(HH5Y*10000+HH5M*100+HH5D,WQ5Y*10000+WQ5M*100+WQ5D,"d") < 0 then
+	errmsg (0501); 
+	reenter
+endif;  
+
+PROC WQ6
+preproc 
+	$ = HH10;
+
+PROC WQ7
+onfocus
+	clean_labels();
+	j = 0;
+	do i = 1 while i <= HH48
+		if HL6(i) >= 15 then
+			codes(j)  = i;
+			labels(j) = HX2(i);
+			j = j + 1;
+		endif;
+	enddo;
+	SetValueSet( @GetSymbol(), codes, labels );
+	
+PROC WQ8
+preproc
+	$ = HH44;
+
+PROC WQ10M
+if datediff(HH5Y*10000+HH5M*100+HH5D,WQ5Y*10000+WQ5M*100+WQ5D,"d") = 0 then
+	if valid(HH13H) and valid(HH13M) and valid(WQ10H) and valid(WQ10M) then
+		if (WQ10H*100+WQ10M) < (HH13H*100+HH13M)then
+			errmsg(0501);
+			reenter
+		endif;
+	endif;
+endif;  
+
+PROC WQ11
+if $ <> 1 then
+	errmsg(0504);
+	skip WQ31;
+	{reenter }
+endif;  
+
+PROC WQ12
+onfocus
+	worklabel=tr("H-")+edit("999",WQ1)+"-"+edit("99",WQ2);
+
+postproc
+	if $ in 1,2,3 then 
+		skip to WQ14
+	endif;
+PROC WQ14
+if $ <> 1 then
+	skip to WQ17
+endif;
+
+PROC WQ15
+alphavar = $;
+if alphachk("ABCDEFXZ?") then
+	errmsg(9998);
+	reenter
+else
+	$ = alphavar;
+endif;
+{ Check "Don't Know" is only response }
+if pos("Z",$) & alphsize > 1 then
+	errmsg(9996);
+	reenter
+endif;
+{ Check "Missing" is only response }
+if pos("?",$) & alphsize > 1 then
+	errmsg(9995);
+	reenter
+endif;
+if pos("X",$) and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+PROC WQ17
+if $ = 96 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+PROC WQ18
+if $ <> 1 then
+	skip to WQ20
+endif;
+
+PROC WQ19
+onfocus
+	worklabel=tr("S-")+edit("999",WQ1)+"-"+edit("99",WQ2);
+
+PROC WQ20
+preproc 
+	$ = WQ6;
+
+postproc
+	if $ <> 1 then
+		skip to WQ23H
+	endif;
+  
+PROC WQ21
+onfocus;
+	worklabel=tr("B-")+edit("999",WQ1)+"-"+edit("99",WQ2);
+	
+PROC WQ23M
+if valid(WQ23H) and valid(WQ23M) and valid(WQ10H) and valid(WQ10M) then
+	if (WQ10H*100+WQ10M)>(WQ23H*100+WQ23M)then
+		errmsg(0506);
+		reenter
+	endif;
+endif;  
+  
+PROC WQ24Y
+{Check WQ5 and WQ24 to make sure that WQ24 is at least one day ahead of WQ5 and less than 7 days}
+if datediff(WQ5Y*10000+WQ5M*100+WQ5D,WQ24Y*10000+WQ24M*100+WQ24D,"d") <= 0 or datediff(WQ5Y*10000+WQ5M*100+WQ5D,WQ24Y*10000+WQ24M*100+WQ24D,"d") > 6 then
+	errmsg (0505); 
+endif;  
+
+PROC WQ27
+preproc
+	if WQ19 <> 1 then
+		skip to WQ29;
+	endif;
+
+PROC WQ29
+preproc;
+    if WQ21 <> 1 then
+        skip to WQ31;
+	endif;
+
+PROC WQ31
+if $ = 1 and WQ8 <> 1 then
+	errmsg (0502); 
+	reenter;
+endif;	
+
+if $ <> 1 and WQ8 = 1 and WQ11 = 1 then	
+	errmsg (0503);						
+	reenter;
+endif;
+
+if $ <> 3 and WQ11 = 2 then
+	errmsg (0507, $); 
+	reenter;
+endif;	
+
+if $ <> 1 and visualvalue(WQ12) <> notappl then
+	errmsg(9971);
+endif;	
+
+if $ <> 1 then
+	endgroup;
+endif;   

@@ -1,0 +1,123 @@
+﻿[Dictionary]
+Version=CSPro 7.7
+Label=Menu
+Name=MENU_CENTRAL_DICT
+RecordTypeStart=0
+RecordTypeLen=0
+Positions=Relative
+ZeroFill=Yes
+DecimalChar=Yes
+SecurityOptions=81421089B20CB5312645C94A127A1BF422F5AB409E889023C2773379512172B3
+
+[Languages]
+EN=English
+ES=Español
+
+[Level]
+Label=Menu questionnaire
+Name=MENU_QUEST
+
+[IdItems]
+
+[Item]
+Label=Id|Id
+Name=MENU_QUEST_ID
+Start=1
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[Record]
+Label=Menu record
+Name=MENU_REC
+RecordTypeValue=''
+RecordLen=12
+
+[Item]
+Label=Central office Menu|Menú de oficina central
+Name=CENTRAL_MENU
+Start=2
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Central office Menu|Menú de oficina central
+Name=CENTRAL_MENU_VS1
+Value=1;Select cluster|Selecionar cluster
+Image=.\Resources\Images\selectpsu.png
+Value=2;Sync (download data or upload updates)|Sincronizar (bajar datos o subir actualiz.)
+Image=.\Resources\Images\syncserver.png
+Value=3;Work with actual cluster|Trabajar con cluster actual
+Image=.\Resources\Images\work.png
+Value=4;Export data|Exportar datos
+Image=.\Resources\Images\export.png
+Value=9;Logout|Salir
+Image=.\Resources\Images\bye.png
+
+[Item]
+Label=Primary sampling unit|Unidad primaria de muestreo
+Name=PSU
+Start=3
+Len=5
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Sync with server|Sincronizar con servidor
+Name=SYNCWITHSERVER
+Start=8
+Len=3
+DataType=Alpha
+
+[ValueSet]
+Label=Sync with server|Sincronizar con servidor
+Name=SYNCWITHSERVER_VS1
+Value='1  ';Receive cluster data|Recibir datos del cluster
+Value='2  ';Send updated sample|Enviar muestra actualizada
+Value='3  ';Send system update (includes staff and sample)|Enviar actualización del sistema (incluye staff y muestra)
+Value='4  ';Receive ALL clusters from server|Recibir TODOS los clusters del servidor
+
+[Item]
+Label=Work with PSU|Trabajar con UPM
+Name=WORKPSU
+Start=11
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Trabajar con UPM|Trabajar con UPM
+Name=WORKPSU_VS1
+Value=1;Questionnaires Report of this cluster|Reporte de los cuestionarios de este cluster
+Image=.\Resources\Images\report.png
+Value=2;View Interviewer notes|Ver notas del entrevistador
+Image=.\Resources\Images\notes.png
+Value=3;Editing Report|Reporte de edición
+Image=.\Resources\Images\editing.png
+Value=4;Modify questionnaires of 'In Review' cluster|Modificar cuestionarios de cluster 'En Revisión'
+Image=.\Resources\Images\modify.png
+Value=5;Change cluster status|Cambiar status del cluster
+Image=.\Resources\Images\chstatus.png
+Value=9;Return to Central Office Menu|Volver al menú de Oficina Central
+Image=.\Resources\Images\goback.png
+
+[Item]
+Label=Datasets to export|Archivos a exportar
+Name=EXPORTDATA
+Start=12
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Datasets to export|Archivos a exportar
+Name=EXPORTDATA_VS1
+Value=0;All questionnaires|Todos los cuestionarios
+Value=1;Household questionnaires|Questionarios de hogar
+Value=2;Woman questionnaires|Questionarios de personas
+Value=3;Under 5 questionnaires|Questionarios de personas
+Value=4;5-17 questionnaires|Questionarios de personas
+Value=5;Man questionnaires|Questionarios de personas
+Value=6;HH Verification files
+Value=9;Cancel action|Cancelar acción

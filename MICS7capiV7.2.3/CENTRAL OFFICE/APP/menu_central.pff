@@ -1,0 +1,18 @@
+﻿[Run Information]
+Version=CSPro 7.7
+AppType=Entry
+Description=MICS7 CENTRAL OFFICE
+
+[DataEntryInit]
+StartMode=Add
+Lock=CaseListing
+FullScreen=Yes
+
+[Files]
+Application=.\menu_central.ENT
+InputData=|type=None
+
+[ExternalFiles]
+CLUSTERS=..\..\PUBLIC\clusters.csdb
+STAFF_DICT=..\..\PUBLIC\staff.csdb
+HOUSEHOLDS=|type=None

@@ -1,0 +1,1183 @@
+﻿PROC GLOBAL
+//set explicit;
+
+file myWM,	{ singly-occuring women's records (essentially, everything except MODBH) }
+	myBH, 	{ birth history (optional module) in woman's QRE }
+	myFG, 	{ female genital cutting in woman's QRE }
+	myMM,   { maternal mortality in woman's QRE }
+	myWMTU,  {Time use module}
+	myWMTS; {Timestamp of the Modules}	  
+
+numeric i, j, notoccur, hloccur, edoccur, tnoccur;
+numeric ldob, udob, ldom, udom, ldobfc, udobfc, ldoblc, udoblc;
+numeric minage, maxage, minab, minam, t, x, y, incr;
+numeric temp, maxevent, doimp, ignorey;
+numeric sd3pos, sd23pos, sd3neg, sd23neg;
+numeric n0,n1,n2,n3,n4,n5,n6,n7,n8,n9,n6f,n7f,n8f,n9f,n6m,n7m,n8m,n9m;
+numeric agechild,weightch,lengthch,lystand,uselngth,lnhe,agedhw;
+numeric ddw, diwm;
+numeric ldofm, udofm, cnt, diMi, lnum, misskid, memrel, found, goodlink, oldclust, oldarea, team;
+
+array type     (30);        { event type }
+array norder   (30);        { event order }
+array twincode (30);        { if a child is twin or not }
+array surv     (30);        { child's survival status }
+array sflag    (30);        { date flag }
+array smonth   (30);        { if month for event was given }
+array errflag  (30);        { event error flag }
+array lcmc     (30);        { event lower CMC }
+array ucmc     (30);        { event upper CMC }
+array cmc      (30);        { event imputed CMC }
+array interv   (30);        { interval to following event }
+array cdelay   (30);        { delay for pregnancy between events }
+array flagdth  (30);        { flag for age at death }
+array deathl   (30);        { age at death lower limit }
+array deathu   (30);        { age at death upper limit }
+array lstdu    (30);        { age adt death untis for hot deck imputation }
+array lstdn    (30);        { age at death number of units for hot deck imputation }
+{ Arrays to check duplicate HH line numbers in birth histories }
+array persline(50);
+array mothline(50);
+alpha(5) sdeath;           { to display age at death as a string }
+alpha(1) asterisk, spaces;
+
+numeric mindb, maxdb, minpd, mincd, xdatemin, xdatemax;
+numeric nevents;
+numeric aged, agedu, agedn, mind, maxd, du, dn, xdeath, dmonths;
+numeric evermarr, chadj;
+numeric umin, lmax, ntwin;
+numeric jinterv, gap, gap2, xgap, k, x1, x2, e, eno;
+
+numeric ismonth, isyear, isage;
+
+numeric mminage, mmaxage, mminab;
+
+numeric cm2m, cm2y, cm3c;									
+
+numeric xMA8M, xMA8Y;
+{ --------------------------------------------------------------------------- }
+
+function valid(xvar);
+  valid = (!special(xvar) and xvar < 96)
+end;
+
+{ returns true if a valid 4 digits year variable }
+function validyr( xvar )
+  validyr = ( !special(xvar) & xvar <= 9996 )
+end;
+
+{ returns true if a valid 4 digits year variable }
+function validyr1( xvar )
+  validyr1 = (xvar > 0 & xvar <= 9996 )
+end;
+
+{ Function to get a month from a CMC }
+function cmc2m( xcmc );
+  cmc2m = (xcmc-1)%12+1;
+end;
+
+{ Function to get a 4 digits year from a CMC }
+function cmc2y( xcmc );
+ cmc2y = int( (xcmc-1)/12 ) + 1900;
+end;
+
+function NAtoZero(xvar);
+  if xvar = notappl then
+    xvar = 0
+  endif;
+  NAtoZero = xvar;
+end;
+
+{ function to adjust lower bound dates based on age }
+function ndjlba( lowera, uppera, lowerb, upperb, agetofit )
+  temp = lowerb - 12 * (agetofit + 1);
+  if temp > uppera then
+    temp = -1
+  else
+    if temp < uppera then
+      temp = temp + 1
+    endif;
+    if lowera > temp then
+      temp = lowera
+    endif
+  endif;
+  ndjlba = temp
+end;
+
+
+{ --------------------------------------------------------------------------- }
+{ EXPORT WOMEN}
+
+PROC MICS7_FF
+
+preproc
+  seed(101);            { Seed to start the random number generator }
+  { set application parameters                              }
+  {!!! minimum and maximum age in years for eligable woman  }
+  minage = 15;
+  maxage = 49;
+  
+  {!!! minimum age of woman in years for the first birth    }
+  minab = 12;
+  {!!! minimum age of woman in years for the first marriage }
+  minam = 10;
+  
+  { Initializing the application before the first questionnaire }
+
+  minpd    = 7;         { !!! Minimum pregnancy duration               }
+  mincd    = 2;         { !!! Minimum conception delay after birth     }
+  maxevent = 30;        { !!! Maximum number of events                 }
+  doimp    = 1;         { 1 if doing imputation - 0 if no imputation   }
+  ignorey  = 0;         { 1 if ignoring year when age + year = interview year
+                          0 if using year when age + year = interview year  }
+
+  { initialize hot deck to impute age at death }
+  do i = 1 while i <= maxevent
+    lstdu(i) = 2;               { Units set initially as months }
+    lstdn(i) = int((i-1)/10);   { Numbers within units as 0, 1, 2, 3 and 4 }
+  enddo;
+    
+PROC WM
+       
+preproc
+  { initialize arrays to check duplicates betwen birth history and HH members }
+  do i = 1 while i <= 50
+    persline(i) = 0;
+    mothline(i) = 0;
+  enddo;
+  
+postproc
+
+ HH1 = WM1; HH2 = WM2; HINT = WMHINT; HLN = 0; 
+ if !loadcase(MICS7HH,HH1,HH2,HINT,HLN) then  //NEEDED
+   errmsg("Household %03d%02d data not loaded !!!", hh1, hh2); 
+ endif;  
+
+set behavior() export (SPSS SubitemOnly);
+
+  if WM17 = 1 then { Complete interviews }
+  
+  wdoi = cmcode(WM6M, WM6Y);
+  diwm = cmcode(WM6M, WM6Y);
+  wdob = notappl;
+  wdom = notappl;
+  wage = notappl;
+  wagem = notappl;
+  wdobfc = notappl;
+  wdoblc = notappl;
+  bh3_first = notappl;
+  bh3_last = notappl;
+  mstatus = notappl;
+  ceb   = notappl;
+  csurv = notappl;
+  cdead = notappl;
+
+    udob = wdoi - minage*12;
+    ldob = wdoi - maxage*12 - 11;
+    if WB3Y < 9997 then
+      ldob = setlb(WB3M,WB3Y,0);
+      udob = setub(WB3M,WB3Y,9999);
+      if udob < wdoi - maxage*12 - 11 or ldob > wdoi - minage*12 then
+        errmsg("Date of birth %02d/%4d outside bounds of eligibility based on date of interview %02d/%4d",WB3M,WB3Y,WM6M,WM6Y);
+      endif;
+    endif;
+    if valid(WB4) then
+      { Lower bound of CMC date of birth }
+      t = adjlba(ldob,udob,wdoi,wdoi,WB4);
+      if t < 0 then
+        errmsg("Date of birth %02d/%4d and age %02d inconsistent with date of interview %02d/%4d",WB3M,WB3Y,WB4,WM6M,WM6Y);
+      else
+        ldob = t
+      endif;
+      { Upper bound of CMC date of birth }
+      t = adjuba(ldob,udob,wdoi,wdoi,WB4);
+      if t < 0 then
+        errmsg("Date of birth %02d/%4d and age %02d inconsistent with date of interview %02d/%4d",WB3M,WB3Y,WB4,WM6M,WM6Y);
+      else
+        udob = t
+      endif;
+    endif;
+    { Impute date of birth }
+    if ldob = udob then
+      wdob = ldob
+    else
+      { Correction in case minimum allows age one year older }
+      if int( (wdoi - ldob ) /12 ) = WB4+1 then
+        if ldob < udob then
+          ldob = ldob + 1
+        else
+          errmsg("Date of birth (cmc=%4d-%4d) will be imputed as %2d, inconsistent from age reported as %2d",ldob,udob,int((wdoi-ldob)/12),WB4)
+        endif;
+      endif;
+      wdob = random(ldob,udob);
+    endif;
+    { Fix in case imputed as exactly 50 years old }
+    if wdoi - wdob = 600 then
+      wdob = wdob + 1
+    endif;
+
+    { Age in 5 year groups }
+    if valid(WB4) then
+      wage = int(WB4/5) - 2;
+    else
+      wage = int((wdoi - wdob) / 60) - 2;
+    endif;
+
+    { Marital status }
+    recode MA1 :: MA5 -> mstatus;
+           1,2 ::     -> 1;
+               :: 1,2 -> 2;
+               ::  3  -> 3;
+               ::     -> 9;
+    endrecode;
+    if mstatus = 9 then
+      errmsg("Marital status not reported, MA1=%d MA5=%d",MA1,MA5);
+    endif;
+    { Date of marriage }
+    if mstatus in 1,2 then
+      if MA8Y < 9997 then
+        ldom = setlb(MA8M, MA8Y, wdob);
+        udom = setub(MA8M, MA8Y, wdoi);
+      else
+        ldom = wdob + minam*12;
+        udom = wdoi;
+      endif;
+      if valid(MA11) then
+        { Lower bound of CMC date of marriage }
+        t = adjlba(wdoi-udom,wdoi-ldom,wdoi-wdob,wdoi-wdob,MA11);
+        if t < 0 then
+          errmsg("Date of marriage (%02d/%4d, age at marriage=%2d) inconsistent with date of birth/age (%02d/%4d, age=%2d)",MA8M,MA8Y,MA11,WB3M,WB3Y,WB4);
+        else
+          udom = wdoi-t
+        endif;
+        { Upper bound of CMC date of marriage }
+        t = adjuba(wdoi-udom,wdoi-ldom,wdoi-wdob,wdoi-wdob,MA11);
+        if t < 0 then
+          errmsg("Date of marriage (%02d/%4d, age at marriage=%2d) inconsistent with date of birth/age (%02d/%4d, age=%2d)",MA8M,MA8Y,MA11,WB3M,WB3Y,WB4);
+        else
+          ldom = wdoi-t
+        endif;
+        { Adjustment for over imputing age at marriage }
+        if wdob+(MA11*12+11) in ldom,udom-1 then
+          udom = wdob+(MA11*12+11);
+        endif;
+      endif;
+      { Impute date of marriage }
+      if ldom = udom then
+        wdom = ldom
+      else
+        wdom = random(ldom,udom);
+      endif;
+      { Age at marriage }
+      if valid(MA11) then
+        if valid(MA11) & MA11 <> int((wdom - wdob) / 12) then
+          errmsg("Imputed age at marriage %2d differs from reported age at marriage %2d",int((wdom - wdob) / 12),MA11);
+          errmsg("WB3=%02d/%4d,WB4=%d cmc=%d-%d=%d MA8=%02d,%4d,MA11=%d cmc=%d-%d=%d",WB3M,WB3Y,WB4,ldob,udob,wdob,MA8M,MA8Y,MA11,ldom,udom,wdom);
+        endif;
+        wagem = MA11;
+      else
+        wagem = int((wdom - wdob) / 12);
+      endif;
+    endif;
+
+    { calculate total children ever born, dead, surviving }
+    cdead = 0;
+    if CM8 = 1 then
+      cdead = CM9 + CM10
+    endif;
+    if CM1 = 1 or CM8 = 1 then
+      ceb = CM11;
+      csurv = 0;
+      if CM2 = 1 then
+        csurv = CM3 + CM4;
+      endif;
+      if CM5 = 1 then
+        csurv = csurv + CM6 + CM7;
+      endif;
+      if csurv <> ceb - cdead then
+        errmsg("Number of children ever born (%d), surviving (%d) and dead (%d) inconsistent",ceb,csurv,cdead);
+        errmsg("CM1=%d CM2=%d CM3=%d,CM4=%d, CM5=%d, CM6=%d, CM7=%d, CM8=%d, CM9=%d ,CM10=%d , CM11=%d",CM1,CM2,CM3,CM4,CM5,CM6,CM7,CM8,CM9,CM10,CM11);
+      endif;
+    else
+      ceb = 0;
+      csurv = 0;
+    endif;
+
+{ --------------------------------------------------------------------------------------- }
+{ B I R T H   H I S T O R Y }
+
+{+BH}	{ Include the following if using a birth history }
+
+  { Almost all of the logic for the birth history is added here at the end for simplicity }
+
+  mindb = diwm - (maxage+1)*12 + 1;      { Minimum date of birth - women }
+  maxdb = diwm - minage*12;              { Maximum date of birth - women }
+
+  { Initialize event table }
+  do i = 1 while i <= maxevent
+    norder(i)  = default;     { Birth order of children }
+    twincode(i)= default;     { Twin code for children }
+    surv(i)    = default;     { Survival status for children }
+    deathl(i)  = default;     { Age at death of child - lower limit }
+    deathu(i)  = default;     { Age at death of child - upper limit }
+    sflag(i)   = default;     { Status code flag }
+    errflag(i) = default;     { Error flag }
+    flagdth(i) = 0;           { Flag for age at death of the child }
+  enddo;
+
+{ --------------------------------------------------------------------------------------- }
+  { Set up event table entry for date of birth of woman }
+  nevents = 1;
+  ismonth = valid(WB3M);
+  isyear  = validyr(WB3Y);
+  isage   = valid(WB4);
+  if ismonth then
+    smonth(1) = WB3M;
+  else
+    smonth(1) = 0;
+  endif;
+  recode isyear :: ismonth :: isage -> flag;
+           1 ::       1 ::       -> 1;
+             ::       1 ::     1 -> 2;
+           1 ::         ::     1 -> 3;
+           1 ::         ::       -> 5;
+             ::         ::     1 -> 6;
+             ::       1 ::       -> 7;
+             ::         ::       -> 8;
+  endrecode;
+  sflag(1)   = flag;
+  errflag(1) = notappl;
+
+  type(1) = 1;
+  interv(1) = 0;
+  cdelay(1) = 0;
+  x = diwm - (WB4*12 + 11);
+  if ldob < x & x <= udob then
+    ldob = x
+  endif;
+
+{ --------------------------------------------------------------------------------------- }
+  { Set up event table entry for date of marriage }
+  evermarr = (MA1 in 1,2 | MA5 in 1,2,9);
+  chadj = 1;                    { Adjustment for children in event table }
+  if evermarr then              { added to line number of child          }
+    chadj = 2;
+    nevents = nevents + 1;
+    ismonth = valid(MA8M);
+    isyear  = validyr(MA8Y);
+    isage   = valid(MA11);
+    if ismonth then
+      smonth(2) = MA8M;
+    else
+      smonth(2) = 0;
+    endif;
+    recode isyear :: ismonth :: isage -> flag;
+             1 ::       1 ::       -> 1;
+               ::       1 ::     1 -> 2;
+             1 ::         ::     1 -> 3;
+             1 ::         ::       -> 5;
+               ::         ::     1 -> 6;
+               ::       1 ::       -> 7;
+               ::         ::       -> 8;
+    endrecode;
+    sflag(2)   = flag;
+    errflag(2) = notappl;
+    type(2)    = 2;
+    
+    { Initial ranges for date of marriage }
+    if validyr(MA8Y) then
+      ldofm = setlb(MA8M,MA8Y,0);
+      udofm = setub(MA8M,MA8Y,9999);
+      if udofm > diwm then udofm = diwm endif;
+    else
+      ldofm = ldob + minam;
+      udofm = diwm;
+    endif;
+
+    { Adjust ranges for date of marriage based on age at marriage }
+    if valid(MA11) then
+
+      { Adjust functions used with dates upside down to allow
+        adjustment of date of marriage based on age at marriage
+        rather than adjusting date of birth }
+      t = adjuba(diwm-udofm,diwm-ldofm,diwm-udob,diwm-ldob,MA11);
+      if t < 0 then
+        errmsg(1411,WM6M,WM6Y,WB4,WB3M,WB3Y,MA11,MA8M,MA8Y);
+        errflag(2) = default;
+      else
+        ldofm = diwm-t;
+      endif;
+      t = ndjlba(diwm-udofm,diwm-ldofm,diwm-udob,diwm-ldob,MA11);
+      if t < 0 then
+        errmsg(1411,WM6M,WM6Y,WB4,WB3M,WB3Y,MA11,MA8M,MA8Y);
+        errflag(2) = default;
+      else
+        udofm = diwm-t;
+      endif;
+
+    { Adjust ranges for date of birth based on age at marriage }
+      if errflag(2) <> default then
+        t = ndjlba(ldob,udob,ldofm,udofm,MA11);
+        if t < 0 then
+          errmsg(1412,WM6M,WM6Y,WB4,WB3M,WB3Y,MA11,MA8M,MA8Y);
+          errflag(2) = default;
+        else
+          ldob = t;
+        endif;
+        t = adjuba(ldob,udob,ldofm,udofm,MA11);
+        if t < 0 then
+          errmsg(1412,WM6M,WM6Y,WB4,WB3M,WB3Y,MA11,MA8M,MA8Y);
+          errflag(2) = default;
+        else
+          udob = t;
+        endif
+      endif
+
+    endif;
+
+    { Check date of marriage not after date of interview }
+    if ldofm > diwm then
+      errmsg(1413,WM6M,WM6Y,WB3M,WB3Y,WB4,MA8M,MA8Y,MA11);
+      errflag(2) = default;
+    elseif udofm > diwm then
+      udofm = diwm
+    endif;
+
+    { Adjust for minimum age at marriage }
+    t = adjlbi(ldob,udob,ldofm,udofm,minam);
+    if t < 0 then
+      errmsg(1414,int(minam/12),WB3M,WB3Y,WB4,MA8M,MA8Y,MA11);
+      errflag(2) = default;
+    else
+      ldofm = t;
+    endif;
+
+    { Check date of marriage not after date of interview }
+    if ldofm > diwm then
+      errmsg(1415,MA8M,MA8Y,MA11,WM6M,WM6Y,WB3M,WB3Y,WB4);
+      errflag(2) = default;
+    elseif udofm > diwm then
+      udofm = diwm
+    endif;
+
+    lcmc(2) = ldofm;
+    ucmc(2) = udofm;
+    interv(2) = minam;
+    cdelay(2) = 0;
+
+  endif;
+
+  lcmc(1) = ldob;
+  ucmc(1) = udob;
+
+{ --------------------------------------------------------------------------------------- }
+
+  misskid = 0;
+  ceb = totocc(MODBH_EDT);
+
+  for i in MODBH_EDT do
+    j = BH8;
+    if valid(j) & j <> 0 then
+      if persline(j) then
+        errmsg( 1140, i, persline(j), mothline(j) );
+      else
+        persline(j) = j;
+        mothline(j) = WM3;
+      endif;
+    endif;
+  enddo;
+
+  { Birth history }
+  for i in MODBH_EDT do
+  
+    nevents    = nevents + 1;
+    j          = nevents;
+    type(j)    = 3;
+    norder(j)  = i;
+    twincode(j)= 0;
+    surv(j)    = (BH5 = 2) + 1;
+    deathl(j)  = 0;
+    deathu(j)  = 0;
+    smonth(j)  = 0;
+
+    isyear = 0; ismonth = 0; isage = 0;
+    if valid(BH4M) then
+      smonth(j) = BH4M;
+      ismonth = 1
+    endif;
+    { Initialize logical ranges for date of birth of child }
+    if validyr(BH4Y) then
+      isyear = 1;
+      lcmc(j) = setlb(BH4M,BH4Y,0);
+      ucmc(j) = setub(BH4M,BH4Y,9999);
+    else
+      lcmc(j) = mindb + minab;
+      ucmc(j) = diwm;
+    endif;
+    if valid(BH6) then
+      isage = 1;
+    endif;
+
+    recode isyear :: ismonth :: isage -> flag;
+             1 ::       1 ::       -> 1;
+               ::       1 ::     1 -> 2;
+             1 ::         ::     1 -> 3;
+             1 ::         ::       -> 5;
+               ::         ::     1 -> 6;
+               ::       1 ::       -> 7;
+               ::         ::       -> 8;
+    endrecode;
+    sflag(j)   = flag;
+    errflag(j) = notappl;
+
+{ -------------------------------------------------------------------------- }
+
+    { Set up twin code variable coded as follows:
+      0 - Single birth
+      1 - 1st of multiple
+      2 - 2nd of multiple
+      3 - 3rd of multiple
+      etc.
+      This variable easier to use in controlling twins.
+    }
+
+    if BH2 in 1,9 then         { Single birth }
+      twincode(j) = 0
+    elseif BH0 = 1 then       { First birth }
+      twincode(j) = 1
+    else
+      twincode(j) = twincode(j-1) + 1
+    endif;
+
+    { Update twin code variable in case of two pairs of twins together }
+    { Twincode is 0-Single birth, 1-1st of multiple, 2-2nd of multiple, ... }
+    if BH2 = 2 & i > 2 & twincode(j-1) >= 2 then
+      if (BH4Y <> BH4Y(i-1) | BH4M <> BH4M(i-1)) then
+        twincode(j) = 1
+      endif
+    endif;
+
+{ -------------------------------------------------------------------------- }
+
+    { Adjust ranges for date of birth of child based on age of child }
+    if BH5 <> 2 then
+      { Living children }
+      if valid(BH6) then
+        { Lower bound of CMC date of birth }
+        t = ndjlba(lcmc(j),ucmc(j),diwm,diwm,BH6);
+        if t < 0 then
+          errmsg(1911,i,BH4M,BH4Y,WM6M,WM6Y,BH6);
+          errflag(j) = default;
+        else
+          lcmc(j) = t;
+        endif;
+        { Upper bound of CMC date of birth }
+        t = adjuba(lcmc(j),ucmc(j),diwm,diwm,BH6);
+        if t < 0 then
+          errmsg(1911,i,BH4M,BH4Y,WM6M,WM6Y,BH6);
+          errflag(j) = default;
+        else
+          ucmc(j) = t;
+        endif;
+        x = diwm - (BH6*12 + 11);
+        if lcmc(j) < x & x <= ucmc(j) then
+          lcmc(j) = x
+        endif
+      endif;
+
+    else
+
+      { Re calculate age at death variables }
+
+      { Children who have died }
+      agedu = BH9U;         { age at death - units }
+      agedn = BH9N;         { age at death - number }
+
+      { Check maximum and mininum values }
+      recode agedu -> maxd;
+              1 -> 30;       { 0-30 days   }
+              2 -> 23;       { 1-23 months }
+              3 -> 40;       { 2-40 years  }
+                -> 99;
+      endrecode;
+      mind = agedu-1;
+      if agedu = 9 then agedu = 0 endif;
+      if !(agedn in mind:maxd) then
+        errmsg(1912,i,agedn,mind,maxd,agedu) summary;
+        flagdth(i+chadj) = 6;
+      endif;
+
+      { Check age at death plausible considering date of birth }
+      recode agedu:: agedn -> aged;
+               :: missing -> 999;
+               :: 97:99   -> 999;
+             1 ::         -> int(agedn/30);
+             2 ::         -> agedn;
+             3 ::         -> agedn*12;
+               ::         -> 999;
+      endrecode;
+      if aged <> 999 then
+        if lcmc(j) + aged > diwm then
+          errmsg(1913,i,BH4M,BH4Y,BH9U,BH9N,WM6M,WM6Y);
+          errflag(j) = default;
+          flagdth(j) = 1;
+        elseif ucmc(j) + aged > diwm then
+          ucmc(j) = diwm - aged
+        endif;
+        { Now make age at death as late as possible for those with
+          age at death reported in years }
+        deathl(j) = aged;               { lower limit of age at death }
+        deathu(j) = aged;               { upper limit of age at death }
+        if agedu = 3 then               { Age at death reported in years }
+          deathu(j) = aged + 11;
+          if flagdth(j) = 0 & lcmc(j) + deathu(j) > diwm then
+            deathu(j) = diwm - lcmc(j)
+          endif;
+        endif
+      else
+        deathl(j) = 0;
+        deathu(j) = diwm - lcmc(j);
+      endif
+    endif;
+
+{ -------------------------------------------------------------------------- }
+
+    { Set minimum intervals }
+    cdelay(j) = 0;
+    if twincode(j) > 1 then
+      interv(j) = 0;
+    else
+      if i = 1 then             { first birth }
+        if j = 3 then           { woman ever married }
+          interv(j) = 0
+        else                    { woman never married }
+          interv(j) = minab
+        endif
+      else                      { subsequent births }
+        interv(j) = minpd;      { minimum pregnancy duration }
+        cdelay(j) = mincd;      { minimum conception delay }
+      endif
+    endif;
+
+{ --------------------------------------------------------------------------- }
+
+    if BH8 > 0 then
+      lnum = BH8;
+      { check for duplicate household line number }
+      if count(MODBH_EDT where BH8 = lnum & BH0 <> i) then
+        errmsg( 1143, i, lnum );
+      endif;
+
+      { Check sex of child against sex in household questionnaire }
+      if BH3 <> HL4(BH8) then
+        errmsg( 1144, i, BH8, BH3, HL4(BH8) );
+      endif;
+
+      if HL5Y(BH8) <> BH4Y {| HL5M(BH8) <> BH4M} then
+        errmsg( 1142, i, BH8, BH4M, BH4Y, HL5M(BH8), HL5Y(BH8) )
+      endif;
+
+      { Check age of child against age in household questionnaire }
+      if valid(BH6) & valid(HL6(BH8)) then
+        x = BH6 - HL6(BH8);
+        if !x in (-1):1 then
+          errmsg( 1145, i, BH8, BH6, HL6(BH8) );
+        endif
+      endif;
+
+      if HL13(BH8) <> notappl & HL14(BH8) <> WM3 then
+        errmsg( 1148, i, BH8, HL13(BH8), HL14(BH8) );
+      endif; 
+    endif;
+
+    { if mother is de jure and child lives with mother, child must have line number in HH }
+    if BH7 = 1 & BH8 = 0 then
+      misskid = 1;
+      errmsg( 1146, i, BH8, BH7 ) summary
+    elseif BH7 = 2 & BH8 <> 0 then
+      errmsg( 1149, i, BH8, BH7 ) summary
+    endif;
+
+  enddo;
+
+  { Checking for probable child that should be in birth history }  
+  memrel = HL3(WM3);
+  { Check to ensure that all children listed in HH are listed in BH }
+ { for i in MODHL do
+    if ((memrel in 1,2 & HL3 = 3) | (memrel in 6 & HL3 = 8)) & 
+        count(MODBH_EDT where BH8 = i) <> 1 then
+      if misskid then errmsg( 1141, i ) endif;
+    endif;
+    if HL14 = LN & count(MODBH_EDT where BH8 = i) <> 1 then
+      errmsg( 1147, i );
+    endif;
+  enddo;}
+
+{ ------------------------------------------------------------------------- }
+
+  { Equalizing twins }
+  umin = 9999;
+  lmax = 0;
+  ntwin = 0;
+  do i = chadj+1 while i <= ceb+chadj
+    j = i + 1;
+    if special(twincode(j)) | twincode(j) <= 1 then
+      if umin < lmax then
+        errmsg(1990,j-1,lmax,umin,cmc2m(lmax),cmc2y(lmax),cmc2m(umin),cmc2y(umin))
+      else
+        do k = 1 while k <= ntwin
+          lcmc(j-k) = lmax;
+          ucmc(j-k) = umin;
+        enddo;
+      endif;
+      umin = 9999;
+      lmax = 0;
+      ntwin = 0;
+    endif;
+    if !special(twincode(j)) & twincode(j) >= 1 then
+      ntwin = ntwin + 1;
+      if lcmc(j) > lmax then lmax = lcmc(j) endif;
+      if ucmc(j) < umin then umin = ucmc(j) endif;
+    endif;
+  enddo;
+
+{ -------------------------------------------------------------------------- }
+
+  { Date of interview event and open birth interval }
+  nevents = nevents + 1;
+  lcmc(nevents)   = diwm;
+  ucmc(nevents)   = diwm;
+  type(nevents)   = 4;
+  sflag(nevents)  = 1;
+  smonth(nevents) = 0;
+  errflag(nevents)= notappl;
+  interv(nevents) = 0;
+  cdelay(nevents) = 0;
+
+{ -------------------------------------------------------------------------- }
+
+  if ceb then
+    { forward checking of date of first birth }
+    i = chadj + 1;
+    t = adjlbi(lcmc(1),ucmc(1),lcmc(i),ucmc(i),minab);
+    if t < 0 then
+      errmsg(1992,1,lcmc(1),ucmc(1),cmc2m(lcmc(1)),cmc2y(lcmc(1)),cmc2m(ucmc(1)),cmc2y(ucmc(1)),
+                    i,lcmc(i),ucmc(i),cmc2m(lcmc(i)),cmc2y(lcmc(i)),cmc2m(ucmc(i)),cmc2y(ucmc(i)),minab);
+      errflag(i) = default;
+    else
+      lcmc(i) = t;
+      { backward checking of date of first birth }
+      t = adjubi(lcmc(1),ucmc(1),lcmc(i),ucmc(i),minab);
+      if t < 0 then
+        errmsg(1992,i,lcmc(i),ucmc(i),cmc2m(lcmc(i)),cmc2y(lcmc(i)),cmc2m(ucmc(i)),cmc2y(ucmc(i)),
+                      1,lcmc(1),ucmc(1),cmc2m(lcmc(1)),cmc2y(lcmc(1)),cmc2m(ucmc(1)),cmc2y(ucmc(1)),minab);
+        errflag(1) = default;
+      else
+        ucmc(1) = t;
+      endif;
+    endif;
+  endif;
+
+{ -------------------------------------------------------------------------- }
+
+  { forward checking of minimum interval }
+  do i = 1 while i <= nevents - 1
+    j = i + 1;
+    t = adjlbi(lcmc(i),ucmc(i),lcmc(j),ucmc(j),interv(j)+cdelay(j));
+    if t < 0 then
+        x1 = type(i);
+        x2 = type(j);
+        recode x1 :: x2 -> eno;
+             1 ::  2 -> 1991;    { Between birth and first union }
+             1 ::  3 -> 1992;    { Between birth and first child }
+             2 ::  3 -> 1993;    { Between union and first child }
+           1,2 ::    -> 1994;    { Between birth or union and other events }
+             3 ::  3 -> 1995;    { Between children }
+             3 ::    -> 1996;    { Between last child and later events }
+               ::    -> 1997;    { Between other events }
+        endrecode;
+        if eno = 1995 then
+          errmsg(eno,norder(i),i,lcmc(i),ucmc(i),cmc2m(lcmc(i)),cmc2y(lcmc(i)),cmc2m(ucmc(i)),cmc2y(ucmc(i)),
+                     norder(j),j,lcmc(j),ucmc(j),cmc2m(lcmc(j)),cmc2y(lcmc(j)),cmc2m(ucmc(j)),cmc2y(ucmc(j)),interv(j)+cdelay(j));
+        elseif eno = 1993 then
+          errmsg(eno,i,lcmc(i),ucmc(i),cmc2m(lcmc(i)),cmc2y(lcmc(i)),cmc2m(ucmc(i)),cmc2y(ucmc(i)),
+                     j,lcmc(j),ucmc(j),cmc2m(lcmc(j)),cmc2y(lcmc(j)),cmc2m(ucmc(j)),cmc2y(ucmc(j)),interv(j)+cdelay(j)) summary;
+        else
+          errmsg(eno,i,lcmc(i),ucmc(i),cmc2m(lcmc(i)),cmc2y(lcmc(i)),cmc2m(ucmc(i)),cmc2y(ucmc(i)),
+                     j,lcmc(j),ucmc(j),cmc2m(lcmc(j)),cmc2y(lcmc(j)),cmc2m(ucmc(j)),cmc2y(ucmc(j)),interv(j)+cdelay(j));
+        endif;
+        if eno <> 1993 then
+          errflag(j) = default;
+        endif;
+    else
+      lcmc(j) = t;
+    endif;
+  enddo;
+
+{ -------------------------------------------------------------------------- }
+
+  { backward checking of minimum interval }
+  do i = nevents while i >= 2 by (-1)
+    j = i - 1;
+    t = adjubi(lcmc(j),ucmc(j),lcmc(i),ucmc(i),interv(i)+cdelay(i));
+    if t < 0 then
+        x1 = type(j);
+        x2 = type(i);
+        recode x1 :: x2 -> eno;
+             1 ::  2 -> 1991;    { Between birth and first union }
+             1 ::  3 -> 1992;    { Between birth and first child }
+             2 ::  3 -> 1993;    { Between union and first child }
+           1,2 ::    -> 1994;    { Between birth or union and other events }
+             3 ::  3 -> 1995;    { Between children }
+             3 ::    -> 1996;    { Between last child and later events }
+               ::    -> 1997;    { Between other events }
+        endrecode;
+        if eno = 1995 then
+          errmsg(eno,norder(i),i,lcmc(i),ucmc(i),cmc2m(lcmc(i)),cmc2y(lcmc(i)),cmc2m(ucmc(i)),cmc2y(ucmc(i)),
+                     norder(j),j,lcmc(j),ucmc(j),cmc2m(lcmc(j)),cmc2y(lcmc(j)),cmc2m(ucmc(j)),cmc2y(ucmc(j)),interv(i)+cdelay(i));
+        elseif eno = 1993 then
+          errmsg(eno,i,lcmc(i),ucmc(i),cmc2m(lcmc(i)),cmc2y(lcmc(i)),cmc2m(ucmc(i)),cmc2y(ucmc(i)),
+                     j,lcmc(j),ucmc(j),cmc2m(lcmc(j)),cmc2y(lcmc(j)),cmc2m(ucmc(j)),cmc2y(ucmc(j)),interv(i)+cdelay(i)) summary;
+        else
+          errmsg(eno,i,lcmc(i),ucmc(i),cmc2m(lcmc(i)),cmc2y(lcmc(i)),cmc2m(ucmc(i)),cmc2y(ucmc(i)),
+                     j,lcmc(j),ucmc(j),cmc2m(lcmc(j)),cmc2y(lcmc(j)),cmc2m(ucmc(j)),cmc2y(ucmc(j)),interv(i)+cdelay(i));
+        endif;
+        if eno <> 1993 then
+          errflag(j) = default;
+        endif;
+    else
+      ucmc(j) = t;
+    endif;
+  enddo;
+
+{ -------------------------------------------------------------------------- }
+
+  { Equalizing twins }
+  umin = 9999;
+  lmax = 0;
+  ntwin = 0;
+  do i = 1 while i <= ceb+chadj
+    j = i + 1;
+    if special(twincode(j)) | twincode(j) <= 1 then
+      if umin < lmax then
+        errmsg(1990,j-1,lmax,umin,cmc2m(lmax),cmc2y(lmax),cmc2m(umin),cmc2y(umin))
+      else
+        do k = 1 while k <= ntwin
+          lcmc(j-k) = lmax;
+          ucmc(j-k) = umin;
+        enddo;
+      endif;
+      umin = 9999;
+      lmax = 0;
+      ntwin = 0;
+    endif;
+    if !special(twincode(j)) & twincode(j) >= 1 then
+      ntwin = ntwin + 1;
+      if lcmc(j) > lmax then lmax = lcmc(j) endif;
+      if ucmc(j) < umin then umin = ucmc(j) endif;
+    endif;
+  enddo;
+
+{ -------------------------------------------------------------------------- }
+
+  { Preparation for imputation }
+  if doimp then
+    do i = 1 while i <= nevents-1
+      if special(twincode(i)) | twincode(i) <= 1 then
+        do j = nevents while j > i by (-1)
+          if special(twincode(j)) | twincode(j) <= 1 then
+            jinterv = 0;
+            if j = i + 1 | (!special(twincode(j-1)) & i = j-twincode(j-1)) then
+              jinterv = interv(j) + cdelay(j);
+            endif;
+            gap=ucmc(i)+jinterv-lcmc(j);
+            if gap < 0 | lcmc(i) > lcmc(j) | ucmc(i) > ucmc(j) |
+            (j = i+1 & errflag(i) = default & errflag(i+1) = default) then
+              gap = 0
+            endif;
+            gap2 = int(gap/2);
+            xgap = 0;
+            if gap <> gap2*2 then xgap = 1 endif;
+            ucmc(i) = ucmc(i) - gap2;
+            lcmc(j) = lcmc(j) + gap2;
+            if xgap = 1 then
+              if ucmc(i) > lcmc(i) then
+                ucmc(i) = ucmc(i) - 1
+              else
+                if ucmc(j) > lcmc(j) then
+                  lcmc(j) = lcmc(j) + 1
+                else
+                  if !evermarr | i <> 2 | j <> 3 then
+                    errmsg(1998,i,lcmc(i),ucmc(i),cmc2m(lcmc(i)),cmc2y(lcmc(i)),cmc2m(ucmc(i)),cmc2y(ucmc(i)),
+                                  j,lcmc(j),ucmc(j),cmc2m(lcmc(j)),cmc2y(lcmc(j)),cmc2m(ucmc(j)),cmc2y(ucmc(j)),
+                                  jinterv);
+                    errflag(i) = default
+                  endif
+                endif
+              endif
+            endif;
+          endif;
+        enddo;
+      else
+        lcmc(i) = lcmc(i-1);
+        ucmc(i) = ucmc(i-1);
+      endif;
+    enddo;
+
+{ -------------------------------------------------------------------------- }
+
+    { Imputation - Random }
+
+    { Impute date of birth of respondent }
+    if lcmc(1) > ucmc(1) then
+      errmsg(1999,1,lcmc(1),ucmc(1),cmc2m(lcmc(1)),cmc2y(lcmc(1)),cmc2m(ucmc(1)),cmc2y(ucmc(1)));
+      cmc(1) = default
+    elseif lcmc(1) = ucmc(1) then
+      cmc(1) = lcmc(1)
+    else
+      cmc(1) = random(lcmc(1),ucmc(1))
+    endif;
+    { Fix imputed date if a month given }
+    if smonth(1) & (smonth(1) <> ((cmc(1) - 1) % 12) + 1) then
+      x = int((cmc(1) - 1) / 12) * 12 + smonth(1);
+      if x > ucmc(1) then x = x - 12 endif;
+      if x < lcmc(1) then x = x + 12 endif;
+      if x <= ucmc(1) then
+        cmc(1) = x
+      else
+        errmsg(1989,1,smonth(1),lcmc(1),ucmc(1),cmc2m(lcmc(1)),cmc2y(lcmc(1)),cmc2m(ucmc(1)),cmc2y(ucmc(1)),cmc(1),cmc2m(cmc(1)),cmc2y(cmc(1)));
+        cmc(1) = int((lcmc(1)+ucmc(1))/2);
+      endif;
+    endif;
+
+{ -------------------------------------------------------------------------- }
+
+    { Imputation - Random }
+
+    do i = 2 while i <= nevents
+      if lcmc(i) > ucmc(i) then
+        { Inconsistent date }
+        cmc(i) = default;
+        errmsg(1999,i,lcmc(i),ucmc(i),cmc2m(lcmc(i)),cmc2y(lcmc(i)),cmc2m(ucmc(i)),cmc2y(ucmc(i)))
+      elseif lcmc(i) = ucmc(i) then
+        { Exact date }
+        cmc(i) = lcmc(i)
+      else
+        { Imputed date }
+        cmc(i) = random(lcmc(i),ucmc(i));
+        if i > chadj & i <= ceb+chadj & twincode(i) >= 1 then
+          { Set same date for twins }
+          do j = i+1 while j <= ceb+chadj & twincode(j) > twincode(i)
+            lcmc(j) = cmc(i);
+            ucmc(j) = cmc(i);
+          enddo;
+        endif;
+      endif;
+
+      { Fix imputed date if a month given }
+      if smonth(i) & (smonth(i) <> ((cmc(i) - 1) % 12) + 1) then
+        x = int((cmc(i) - 1) / 12) * 12 + smonth(i);
+        if x > ucmc(i) then x = x - 12 endif;
+        if x < lcmc(i) then x = x + 12 endif;
+        if x <= ucmc(i) then
+          cmc(i) = x
+        else
+          errmsg(1989,i,smonth(i),lcmc(i),ucmc(i),cmc2m(lcmc(i)),cmc2y(lcmc(i)),cmc2m(ucmc(i)),cmc2y(ucmc(i)),cmc(i),cmc2m(cmc(i)),cmc2y(cmc(i)));
+          cmc(i) = int((lcmc(i)+ucmc(i))/2);
+        endif;
+      endif;
+
+{ -------------------------------------------------------------------------- }
+
+      { Impute age at death if needed, otherwise update hot deck }
+      if type(i) = 3 & BH5(norder(i)) = 2 then
+
+        { Hot Deck entries: }
+        { LSTDU: Only elements 1-10 are used, representing birth orders 1-9,10+ }
+        { LSTDN: Elements  1-10: duration in days   for birth orders 1-9,10+ }
+        {        Elements 11-20: duration in months for birth orders 1-9,10+ }
+        {        Elements 21-30: duration in years  for birth orders 1-9,10+ }
+
+        j = i;
+        if i > 10 then j = 10 endif;
+
+        if BH9U(norder(i)) = 9 | special(BH9U(norder(i))) then
+          du = lstdu(j);
+          dn = lstdn(10*(du-1)+j);
+          flagdth(i) = 8;
+        else
+          du = BH9U(norder(i));
+          if valid(BH9N(norder(i))) then
+            dn = BH9N(norder(i));
+          else
+            dn = lstdn(10*(du-1)+j);
+            flagdth(i) = 7
+          endif;
+          lstdu(j) = du;
+          lstdn(10*(du-1)+j) = dn;
+        endif;
+        recode du -> dmonths;
+             1 -> int(dn/30);
+             2 -> dn;
+             3 -> dn*12;
+               -> dn;
+        endrecode;
+        if dmonths < deathl(i) | dmonths > deathu(i) then
+          if flagdth(i) = 7 | flagdth(i) = 8 |
+             (du = 3 & dmonths < deathl(i) & dmonths+11 >= deathl(i)) then
+            dmonths = deathl(i)
+          endif
+        endif;
+        deathl(i) = dmonths;
+        deathu(i) = dmonths;
+      endif;
+
+    enddo;
+
+{ -------------------------------------------------------------------------- }
+
+    WB3C = cmc(1);                     { CMC date of birth }
+    WB3F = sflag(1);                   { Flag for date of birth }
+    WB4C = int((diwm-WB3C)/12);        { Computed age of respondent }
+    if evermarr then
+      MA8C = cmc(2);                   { CMC date of first union }
+      MA8F = sflag(2);                 { Flag for date of first union }
+      MA11C = int((cmc(2)-cmc(1))/12); { Computed age at first union }
+    else
+      MA8C = notappl;
+      MA8F = notappl;
+      MA11C = notappl;
+    endif;
+    for i in MODBH_EDT
+      j = i + chadj;
+      BH4C = cmc(j);                { CMC date of birth of child }
+      BH4F = sflag(j);              { Flag for date of birth of child }
+      if BH5 = 2 then
+        BH9C = deathl(j);           { Imputed age at death }
+        BH9F = flagdth(j);          { Flag for age at death }
+      else
+        BH9C = notappl;
+        BH9F = notappl;
+      endif;
+    {
+      export to BHimpute
+        HH1,HH2,LN,BHLN(i),WB3C,WB3F,WB4C,MA8C,MA8F,MA11C,BH4C(i),BH4F(i),BH5(i),BH9C(i),BH9F(i),BH9U(i),BH9N(i);
+    }
+    enddo;
+
+  endif;      { end of imputation if no errors }
+
+{ -------------------------------------------------------------------------- }
+
+  { Check for errors and display event table }
+  e = 0;
+  do i = 1 while i <= nevents
+    if errflag(i) = default then
+      e = 1
+    endif;
+  enddo;
+  if e then
+    write( " " );
+    write( "Cluster %02d    Household %03d      Woman's Line %02d", HH1, HH2, WM3 );
+    write( " " );
+    write( "                         Minimum       Maximum         Con Age   ");
+    write( "Ix  T Ord  M  S  F  E   Date    CMC   CMC   Date   Int cep death f");
+
+    do i = 1 while i <= nevents
+      if type(i) = 3 & surv(i) = 2 then
+        xdeath = BH9U(norder(i))*100;
+        if BH9N(norder(i)) = missing then
+          xdeath = xdeath+99
+        else
+          xdeath = xdeath+BH9N(norder(i))
+        endif;
+      else
+        xdeath = notappl;
+      endif;
+      xdatemin = ((lcmc(i)-1)%12 + 1)*10000 + int((lcmc(i)-1)/12)+1900;
+      xdatemax = ((ucmc(i)-1)%12 + 1)*10000 + int((ucmc(i)-1)/12)+1900;
+      if errflag(i) = default then
+        asterisk = "*"
+      else
+        asterisk = " ";
+      endif;
+      if type(i) = 3 then
+        write( "%2d%3d%4d%3d%3d%3d%3s%8d%6d%6d%8d%5d%3d  %03d%3d",
+                i, type(i), norder(i),   twincode(i), surv(i),    sflag(i),
+                asterisk,   xdatemin,    lcmc(i),     ucmc(i),    xdatemax,
+                interv(i),  cdelay(i),   xdeath,     flagdth(i) );
+      else
+        write( "%2d%3d%10s%3d%3s%8d%6d%6d%8d%5d",
+                i, type(i), spaces,      sflag(i),    asterisk,    xdatemin,    lcmc(i),
+                ucmc(i),    xdatemax,    interv(i) );
+      endif;
+
+    enddo;
+
+    write( "--------------------------------------------------------------------------" );
+  endif;
+
+{ -------------------------------------------------------------------------- }
+{BH+}
+    
+   { calculate CMC date of birth of first and last child }
+   if ceb > 0 then
+      wdobfc = BH4C (1);
+      wdoblc = BH4C (totocc(MODBH));
+      bh3_first = BH3 (1);
+      bh3_last =  BH3 (totocc(MODBH));
+   endif;
+
+  endif; { Complete interview }
+
+ LN = WM3; 
+if WM17 <> 97 then 
+ export to myWM
+      HH1, HH2, LN, WM1, WM2, WM3, WMINT, 	{ ID vars }
+      MODWM, MODWB, MODMG, MODIN, MODNE, MODIC, MODCM, MODDB, MODMN, MODPN, MODCP, MODUN, MODHP, MODTU1, MODDV, MODVT,
+      MODMA, MODAF, MODSB, MODDM, MODTO, MODMH, MODVW, MODWPN,
+      HH4, HH6, HH7, wdob, wdom, wagem, wdobfc, wdoblc, bh3_first, bh3_last, mstatus, ceb, csurv, cdead;	 	{ Recoded variables } 
+endif;
+{ --------------------------------------------------------------------------- }
+if WM17 = 1 then
+
+ { EXPORT Female genital cutting}
+  for i in MODFC_EDT do
+     export to myFG
+       HH1, HH2, LN, WM1, WM2, WM3, WMINT,  { ID vars }
+       FG1, FG3, FG9, MODFC(i), 
+       HH4, HH6, HH7, WM6D, WM6M, WM6Y, wdob, wdom, wagem, mstatus;
+  enddo;
+
+  { EXPORT Birth History }
+  for i in MODBH_EDT do
+    export to myBH
+      HH1, HH2, LN, WM1, WM2, WM3, WMINT, { ID vars }
+      MODBX(i), MODBH(i),
+      HH4, HH6, HH7, WM6D, WM6M, WM6Y, wdoi, wdob;
+  enddo;
+  
+    { EXPORT Maternal Mortality}
+  for i in MODMM_EDT do
+     export to myMM
+       HH1, HH2, LN, WM1, WM2, WM3, WMINT,  { ID vars }
+       MODMM (i), 
+       HH4, HH6, HH7, WM6D, WM6M, WM6Y;
+  enddo;
+
+  { EXPORT Time Use Module }
+  for i in MODTU2_EDT do
+    export to myWMTU
+      HH1, HH2, LN, WM1, WM2, WM3, WMINT, { ID vars }
+      MODTU2(i),
+      HH4, HH6, HH7, WM6D, WM6M, WM6Y, wdoi, wdob;
+  enddo;
+
+endif;
+
+{Timestamp of the Modules}	
+if WM17 <> 97 then 
+ export to myWMTS
+      HH1, HH2, LN, WM1, WM2, WM3, WMINT, 	{ ID vars }
+      MODWMTS;		 	
+endif;

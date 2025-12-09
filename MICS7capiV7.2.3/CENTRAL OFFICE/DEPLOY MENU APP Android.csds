@@ -1,0 +1,99 @@
+{
+  "fileType": "Application Deployment Specification",
+  "version": "7.7",
+  "name": "MICS7 MENU APP",
+  "description": "MICS7 MENU APP",
+  "files": [
+    {
+      "path": "..\\APPS\\ENTRY\\ENTRYCH.ENT"
+    },
+    {
+      "path": "..\\APPS\\ENTRY\\ENTRYFS.ENT"
+    },
+    {
+      "path": "..\\APPS\\ENTRY\\ENTRYHH.ENT"
+    },
+    {
+      "path": "..\\APPS\\ENTRY\\ENTRYMN.ENT"
+    },
+    {
+      "path": "..\\APPS\\ENTRY\\ENTRYWM.ENT"
+    },
+    {
+      "path": "..\\APPS\\MENU\\choiceimage.html"
+    },
+    {
+      "path": "..\\APPS\\MENU\\menu.ENT"
+    },
+    {
+      "path": "..\\APPS\\MENU\\menu.pff"
+    },
+    {
+      "path": "..\\APPS\\shareddicts\\Staff.dcf"
+    },
+    {
+      "path": "..\\PUBLIC\\clusters.csdb"
+    },
+    {
+      "path": "..\\PUBLIC\\HOUSEHOLDS.csdb"
+    },
+    {
+      "path": "..\\PUBLIC\\STAFF.csdb"
+    }
+  ],
+  "dictionaries": [
+    {
+      "path": "..\\APPS\\MENU\\menu.dcf"
+    },
+    {
+      "path": "..\\APPS\\shareddicts\\CLUSTERS.DCF"
+    },
+    {
+      "path": "..\\APPS\\Shareddicts\\Clusters.dcf"
+    },
+    {
+      "path": "..\\APPS\\shareddicts\\HOUSEHOLDS.DCF"
+    },
+    {
+      "path": "..\\APPS\\shareddicts\\MICS7CH.dcf"
+    },
+    {
+      "path": "..\\APPS\\Shareddicts\\MICS7CH.dcf"
+    },
+    {
+      "path": "..\\APPS\\shareddicts\\MICS7FS.dcf"
+    },
+    {
+      "path": "..\\APPS\\SharedDicts\\MICS7FS.dcf"
+    },
+    {
+      "path": "..\\APPS\\shareddicts\\MICS7HH.dcf"
+    },
+    {
+      "path": "..\\APPS\\Shareddicts\\MICS7HH.dcf"
+    },
+    {
+      "path": "..\\APPS\\SharedDicts\\MICS7HH.dcf"
+    },
+    {
+      "path": "..\\APPS\\shareddicts\\MICS7MN.dcf"
+    },
+    {
+      "path": "..\\APPS\\SharedDicts\\MICS7MN.dcf"
+    },
+    {
+      "path": "..\\APPS\\shareddicts\\MICS7WM.dcf"
+    },
+    {
+      "path": "..\\APPS\\SharedDicts\\MICS7WM.dcf"
+    },
+    {
+      "path": "..\\APPS\\shareddicts\\Staff.dcf"
+    }
+  ],
+  "deployment": {
+    "type": "CSWeb",
+    "cswebUrl": "https:\/\/csweb.unicef.org\/mics\/api",
+    "ftpUrl": "ftp:\/\/"
+  }
+}

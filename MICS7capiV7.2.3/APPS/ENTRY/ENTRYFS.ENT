@@ -1,0 +1,28 @@
+﻿[CSPro Application]
+Version=CSPro 7.7
+Label=MICS5 FS
+Name=MICS5FS
+AppType=DataEntry
+OperatorID=No
+ShowEndCaseDialog=No
+CAPI=Yes
+VerifyFrequency=1
+VerifyStart=RANDOM
+ParadataCollection=AllEvents
+ParadataDeviceStateMinutes=5
+[External Dictionaries]
+File=..\SharedDicts\MICS7HH.dcf
+File=..\shareddicts\Staff.dcf
+[AppCode]
+File=.\entryFS.apc
+Include=..\SETTINGS.APC
+[Message]
+File=.\entry.mgf
+[Help]
+File=.\ENTRYFS.qsf
+[Forms]
+File=.\ENTRYFS.fmf
+[Dictionary Types]
+Dict-Type=..\SharedDicts\MICS7FS.dcf,Input,.\entryFS.fmf
+Dict-Type=..\shareddicts\Staff.dcf,External
+Dict-Type=..\SharedDicts\MICS7HH.dcf,External

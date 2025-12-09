@@ -1,0 +1,134 @@
+﻿PROC GLOBAL
+//set explicit;
+
+file myHH,	 { singly-occuring HH records }
+ 	 myHL,   { HH roster }
+	 myTN,   { insecticide-treated nets in HH level }
+	 myHHTS; {Timestamp of the Modules}	
+	
+numeric i, j, notoccur, hloccur, edoccur, tnoccur;
+
+{ --------------------------------------------------------------------------- }
+
+function valid(xvar);
+  valid = (!special(xvar) and xvar < 96)
+end;
+
+{ --------------------------------------------------------------------------- }
+
+PROC MICS7_FF
+preproc
+notoccur = 999;       { HH member's occurrence number if not listed in module  }
+
+
+postproc
+
+PROC HH
+preproc
+{ EXPORT HH }
+set behavior() export (SPSS SubitemOnly);
+
+HHSex = notappl;
+if HH46 = 1 then
+  HHSex = HL4(1);
+endif;
+
+HHAge = notappl;
+if HH46 = 1 then
+  HHAge = HL6(1);
+endif;
+
+export to myHH
+  HH1, HH2, { ID vars }
+  MODHH, MODHC, MODEU, MODST, MODPE, MODFE, MODWS, MODHW, MODHPN, MODWQ, HHSex, HHAge;
+
+{ --------------------------------------------------------------------------- }
+{ EXPORT HH MEMBERS }
+for i in MODHL_EDT do
+
+  hloccur = i;      	 { HH member's occurrence number in the HL module  }
+  edoccur = notoccur;    { HH member's occurrence number in the ED module  }
+  tnoccur = notoccur;    { HH member's occurrence number in the TN module  }
+
+  { Mother's/caretaker's line number }
+  if HL20 <> 0 then
+    mline = HL20(i)
+ { elseif HL14 <> 0 then
+    mline = HL14 }
+  else
+    mline = notappl;
+  endif;
+  if HL6 < 18 and special(mline) then
+    mline = 0
+  endif;
+  { use mother's line number if mother/caretaker from HL7 & HL8 is not available }
+  if mline = 0 and !special(HL14) and HL14 <> 0 then
+    mline = HL14
+  endif;
+
+  { Father's line number }
+  if valid(HL18) then
+    fline = HL18
+  else
+    fline = notappl;
+  endif;
+  if HL6 < 18 and special (fline) then 
+    fline = 0;
+  endif;   
+
+  { Determine HH member's occurrence number in ED module [notoccur if not present] }
+  for j in MODED_EDT do
+    if ED1 = HLoccur then
+      edoccur = j;
+      break;
+    endif;
+  enddo;
+
+  { Determine HH member's net number in TN module [notoccur if not present] }
+
+  for j in MODTN_EDT do
+    if HLoccur in TN15_1,TN15_2,TN15_3,TN15_4 then
+      tnoccur = j;
+      break;
+    endif;
+  enddo;
+
+
+{Eligible for social transfer}
+
+  for j in MODST_EDT do
+    ST4ELI(j)=2;
+	ST5ENT(j)=2;
+    if ischecked(edit("99",i),ST4) or ST4_1=95 then
+      ST4ELI(j)=1;
+    endif;
+    if ischecked(edit("99",i),ST5) or ST5_1=95 then
+      ST5ENT(j)=1;
+    endif;
+  enddo;
+
+
+  { Export the HH member }
+  export to myHL
+    HH1, HH2, 	{ ID vars, + the first variable of the MODHL record, i.e., HL1, the person's line # }
+    MODHL(hloccur), MODED(edoccur), MODTN(tnoccur), HH3, HH4, HH5D, HH5M, HH5Y, HH6, HH7, mline, fline,ST4ELI,ST5ENT;
+ enddo;
+
+{ --------------------------------------------------------------------------- }
+{ EXPORT INSECTICIDE-TREATED NET }
+
+for i in MODTN_EDT do
+   export to myTN
+     HH1, HH2, HINT, { ID vars }
+     MODTN, TN1, TN2, 
+	 HH4, HH5D, HH5M, HH5Y, HH6, HH7;
+enddo;
+
+
+export to myHHTS
+     HH1, HH2, { ID vars }
+     MODHHTS;
+
+
+
+

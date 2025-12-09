@@ -1,0 +1,246 @@
+﻿[Dictionary]
+Version=CSPro 7.7
+Label=Menu
+Name=MENU_DICT
+RecordTypeStart=1
+RecordTypeLen=1
+Positions=Relative
+ZeroFill=Yes
+DecimalChar=Yes
+SecurityOptions=067F73DD16819176E306844F92207E4C4DF25E48BCA7DB388B81F5D2D8353AF3
+
+[Languages]
+EN=English
+ES=Español
+
+[Level]
+Label=Menu questionnaire
+Name=MENU_QUEST
+
+[IdItems]
+
+[Item]
+Label=Menu identification
+Name=MENU_ID
+Start=2
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[Record]
+Label=Menu record
+Name=MENU_REC
+RecordTypeValue='1'
+RecordLen=20
+
+[Item]
+Label=Staff ID number|Número de identificación
+Name=STAFF_ID
+Start=3
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Primary sampling unit|Conglomerado
+Name=CLUSTER
+Start=6
+Len=5
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Supervisor Menu|Menú del supervisor
+Name=SUPERVISOR_MENU
+Start=11
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Supervisor Menu|Menú del supervisor
+Name=SUPERVISOR_MENU_VS1
+Value=1;Work as interviewer|Trabajar como entrevistador
+Value=9;Logout|Salir
+
+[Item]
+Label=Select_interviewed|Seleccionar entrevistado
+Name=SELECT_INTERVIEWED
+Start=12
+Len=2
+DataType=Numeric
+
+[Item]
+Label=Sync with central office|Sincronizar con oficina central
+Name=SYNCCENTRAL
+Start=14
+Len=3
+DataType=Alpha
+
+[ValueSet]
+Label=Sync with central office|Sincronizar con oficina central
+Name=SYNCCENTRAL_VS1
+Value='1  ';Send data|Enviar datos
+Value='2  ';Receive updated sample|Recibir muestra actualizada
+Value='3  ';Receive staff or application updates|Recibir actualizaciones de aplicaciones o staff
+
+[Item]
+Label=Sample managnment and household assignment|Manejo de la muestra y asignación de hogares
+Name=SAMPLE_MENU
+Start=17
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Sample managnment and household assignment|Manejo de la muestra y asignación de hogares
+Name=SAMPLE_MENU_VS1
+Value=1;Household assigment to interviewers|Asignación de hogares a los entrevistadores
+Image=.\Resources\Images\assignHH.png
+Value=2;Add new structure/dwelling|Agregar nueva vivienda/estructura
+Image=.\Resources\Images\adddwelling.png
+Value=3;Add household to existing dwelling|Agregar hogar a vivienda existente
+Image=.\Resources\Images\addHH.png
+Value=4;Delete household/structure added by supervisor|Eliminar hogar/estructura agregada por supervisor
+Image=.\Resources\Images\deleteHH.png
+Value=9;Return to supervisor menu|Volver al menú del supervisor
+Image=.\Resources\Images\goback.png
+
+[Item]
+Label=Interview assigned|Entrevistador asignado
+Name=ASSIGNED
+Start=18
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Record]
+Label=ASSIGMENTS
+Name=ASSIGMENTS
+RecordTypeValue='2'
+Required=No
+MaxRecords=100
+RecordLen=188
+
+[Item]
+Label=PSU
+Name=X_PSU
+Start=3
+Len=5
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Dwelling unit number
+Name=X_DWNO
+Start=8
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Household address
+Name=X_ADDRESS
+Start=11
+Len=80
+DataType=Alpha
+
+[Item]
+Label=Household head name
+Name=X_HEAD
+Start=91
+Len=40
+DataType=Alpha
+
+[Item]
+Label=Household contact phone
+Name=X_PHONE
+Start=131
+Len=15
+DataType=Alpha
+
+[Item]
+Label=Assigned interviewer
+Name=X_ASSIGNED
+Start=146
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=sam longitude
+Name=X_LON
+Start=149
+Len=15
+DataType=Numeric
+Decimal=9
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=sam latitude
+Name=X_LAT
+Start=164
+Len=15
+DataType=Numeric
+Decimal=9
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Subsamples
+Name=X_SUBSAMPLES
+Start=179
+Len=1
+DataType=Numeric
+Occurrences=10
+ZeroFill=Yes
+
+[Record]
+Label=Interviewer record
+Name=INTERVIEWER_RECORD
+RecordTypeValue='3'
+Required=No
+RecordLen=7
+
+[Item]
+Label=Interviewer Menu|Menú del entrevistador
+Name=INTERVIEWER_MENU
+Start=3
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Interviewer Menu
+Name=INTERVIEWER_MENU_VS1
+Value=1;Return to work as supervisor|Retornar a trabajar como supervisor
+Value=9;Logout|Salir
+
+[Item]
+Label=Options to sync with supervisor|Opciones sincronizar con supervisor
+Name=SYNCOPTIONS
+Start=4
+Len=3
+DataType=Alpha
+
+[ValueSet]
+Label=Options to sync with supervisor|Opciones sincronizar con supervisor
+Name=SYNCOPTIONS_VS1
+Value='1  ';Receive assigments|Recibir asignaciones
+Value='2  ';Send data|Enviar datos
+Value='3  ';Receive updates|Recibir actualizaciones
+
+[Item]
+Label=Confirm delete|Confirmación de eliminar hogar
+Name=CONFIRM_DELETE
+Start=7
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Confirm delete|Confirmación de eliminar hogar
+Name=CONFIRM_DELETE_VS1
+Value=1;Yes|Si
+Value=2;No (cancel action)|No (cancelar la acción)

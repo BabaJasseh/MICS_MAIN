@@ -1,0 +1,372 @@
+﻿Language=EN
+0010 CSEntry version must be 7.7.3, please install it, to do that you must desinstall the current version, BUT FIRST DO A COPY OF THE BACKUP FOLDER OF THE SD CARD TO ANOTHER PLACE TO REINSTALL THE DATA
+1000 Problem copying the staff.csdb file from the PUBLIC folder, program canceled
+1010 Ask supervisor to SYNC with interviewers, you need to receive assignment for CLUSTER %d
+1020 Coudn't connect
+1030 No assignment received
+1040 Missing 'syncsession.ini' file in supervisor's tablet. Sync canceled
+1050 Sync with wrong supervisor (%s). \nPlease sync with your supervisor (%04d).\nSync canceled
+1060 Actual supervisor's cluster=%s. Your actual cluster=%05d.\nBoth have to be working in the same cluster. \nSync canceled
+1070 Updates received (%d) - Please exit the system and open it again
+1080 No updates found in the supervisor's tablet
+1200 Internal error loading household cluster %s household %02d interviewer %03d for to delegated questionnaries to interviewer %03d
+1210 Couldn't connect to the interviewer.\nPleae try again
+1220 Missing 'syncsession.ini' file in interviewer %04v's tablet. Sync canceled
+1230 You must sync with the interviewer %04d,\nbut you are syncing with intervierwer %s. \nPlease check
+1240 Clustr=%s in tablet of interviewer %s. Your actual cluster=%05d.\nBoth have to be working in the same cluster. \nSync canceled
+1250 Delegated questionnaires sent to intervierwer %04d
+1260 Error sending delegated file %v to interviewer %04d
+1320 You, as supervisor, haven't started the cluster %d.  Please start it or select another cluster
+//1330 Cluster %d not started yet. Ask to supervisor send your assignment. \nDo you want to sync with supervisor to receive the assigment or select another cluster?
+1340 No assignment received from supervisor. Try again
+1350 Supervisor acting as interviewer does not need to sync with supervisor
+1390 Tell to the interviewer that you are ready to receive the questionnaires\nHe/She must sync with %v
+1400 Did not sync with interviewer
+1410 Cluster %v does not have structure problems
+1420 This household belongs to another interviewer, you can not modify it
+1430 Household %v will not be shown because it does not exists in this tablet, please receive a fresh copy of the assigments from the supervisor
+
+2010 Cluster %v has %v households, last dewelling number is %v. \nNew dwelling will have number %v.
+2020 Dwelling number %v added to PSU %v
+2030 In cluster %v dewelling number %v already has %v households. \nNo more households can be added
+2040 In cluster %v dewelling number %v has %d households. \nNew household will be number %d.
+2050 Household number %v was added to dwelling number %v in cluster %v
+2060 Are you sure to delete this household:\nDwelling:%d \nHousehold:%d \nAddress:%s \nHead:%s \nPhone:%s \nAssigned to inverviewer:%d
+2070 Dwelling %d - household %d can not be deleted because this dwelling has household %d.\nOnly the last household of each dwelling must be deleted
+2080 Household %d deleted
+2081 Household %d deleted. It was assigned to interviewer %v, if the assigment was sync with this interviewere, please send assigments again
+2110 <br><br><h3>STRUCTURAL PROBLEMS</h3>
+2115 <br><h3>RESULT OF INDIVIDUAL QUESTIONNAIRES INCONSISTENT WITH ADULT PERMISION</h3>
+2120 \nHOUSEHOLDS/INDIVIDUALS FOUND NOT BELONGING TO THE INTERVIEWER ASSIGNED OR NOT IN THE SAMPLE
+2130 HouseInterviewer  Household Head       Status                        I n d i v i d u a l s :
+2140 hold Assig. Found                                                  Quest.    LN Name                 Age Sex Status
+2150 \nINDIVIDUALS WITH RECORD OF %v BUT IN HOUSEHOLD DON'T EXISTS OR NOT MEET THIS CONDITION
+2160 House - - - - - - - H o u s e h o l d   d a t a - - - - - - - -    - - - - - - I n d i v i d u a l    d a t a - - - - - -
+2170  hold Interv. Head                 Name                 Age Sex    Interv. LN Name                 Age Sex Status
+2180 \n\n\nINDIVIDUALS WITH DUPLICATED QUESTIONNAIRE OF %v
+2190 House     - - - - - - R E C O R D S   F O U N D  - - - - - -
+2200  hold LN  Interv. Name                 Status                        
+2210 \n\n *** Total structure problems found %d ***
+2220 <h3 style="color:blue">  No structural problems found</h3>
+2230 <br><h3>HOUSEHOLDS VERIFICATIONS: SUPERVISOR VS INTERVIERWER MEMBERS FOUND</h3>
+2240 <b>HOUSEHOLD %d - Supervisor's %04d report:</b>
+2250 <br><b>HOUSEHOLD %d - Interviewers's %04d report:</b>
+2260 <p>(*) Interviewed person<br>*** Total households verified %d ***</p>
+2270 *** No households verified ***
+2280 <br><h3>SUMMARY</h3>
+2310 </pre><p>(*) Completed questionnaires refer to questionnaires with completion code=01</p><br>
+2320 <h3>Cluster %s can not be closed by the following reasons: </h3>
+2330 -   There are %d households questionnaires not started
+2340 -   There are %d individual questionnares not started
+2350 -   There are %d partial saved household questionnaires
+2360 -   There are %d partial saved individual questionnaires
+2370 -   There are %d structural errors
+2380 -   There are not households with verified members composition
+2382 -   There are %d children questionnaires with pending Anthropometric data 
+2384 -   There are %d household questionnaires with pending water quality info 
+2385 -   There are %d individual questionnaires with result codes inconsistent with adult permision
+2390 <h3 style="color:red"> Cluster %s can be closed </h3>
+2400 Cluster %v was closed. Remember to send it to central office
+2430  NOTES REPORT OF CLUSTER:%v HOUSEHOLD:%v 
+//2440 .  # Quest.type  Interv.   Line Question        Occ. Note
+2450 Error Supervisor application already working
+2460 Role of ID=%v (%v) is not Supervisor.  Try again.
+2470 This tablet (%v) does not belong to this supervisor/interviewer. Contact technical support. Program finished.
+2520 Invalid STAFF_ID. Try again.
+2530 Cluster=%d not assigned to the supervisor %04d. Try again
+2540 Sample does not have any household for the cluster %d.  Ask central office for an updated sample. This cluster can not be started. Please select another cluster
+2550 Cluster %d not started yet, it has %d households. If you start working with it, \nthe sample for this cluster can not be updated later from central office.\nDo you want to start working with this cluster?
+2560 Can not create folder %s. System stopped
+2570 Invalid cluster. Try again.
+2580 Select who you want to sync with:\n -'Interviewers' to send assignments, send updates or receive data.\n -'Central Office' to receive sample updates or send data
+2590 Tell to the interviewers that you are ready to sync\nThey must sync with %v
+2600 Did not sync with interviewer
+2610 Select report of:\n -'CLUSTER %v': all interviews status, structural problems and pendings to close the cluster.\n -'All Clusters': see general list of all clusters assigned to this team
+2620 <h2><header style="color:blue">STATUS REPORT OF CLUSTER %v </h2>
+2650 Previously cluster %v was 'Closed' but now is 'On Field'\nbecause the issues found in the report
+2660 Select:\n -'Review completed interviews' to review households and individual interviews or verify household composition\n -'See interviewer notes' to see the notes of the interviewer in the selected household
+2700 Coudn't sync with central office - Please check Internet connection
+2705 Updates received
+2710 Error receiving sample files
+2720 Error sending file %s
+
+Language=ES
+0010 La versión de CSEntry debe ser 7.7.3, por favor instalarla, para ello debe desinstalar la version actual, PERO PRIMERO DEBE HACER UNA COPIA DE LA CARPETA DATA DE LA TARJETA SD EN OTRO LUGAR PARA REINSTALAR LOS DATOS
+1000 Hubo un problema al copiar el archivo staff.csdb desde la carpeta PUBLIC, programa cancelado
+1010 Indique al supervisor que sincronice con entrevistadores, usted necesita recibir las asignaciones del cluster %d
+1020 No se pudo conectar
+1030 No se recibieron las asignaciones
+1040 Falta el archivo 'syncsession.ini' en la tableta del supervisor. Sincronización cancelada
+1050 Sincronizando con un supervisor incorrecto (%s). \nPor favor sincronice con su supervisor (%04d).\nSincronización cancelada
+1060 UPM actual del supervisor es %s. Su UPM actual es %05d.\nAmbos tienen que estar trabajando en la misma UPM. \nSincronización cancelada
+1070 Actualizaciones recibidas (%d) - Por favor cierre la aplicación y vuelva a iniciarla
+1080 No se encontraron actualizaciones en la tableta del supervisor
+1200 Error interno al cargar hogar en el cluster %s hogar %02d intrevistador %03d para delegar cuestionarios al entrevistador %03d
+1210 No se pudo conectar con el entrevistador.\nPor favor inténtelo de nuevo
+1220 Falta el archivo 'syncsession.ini' en la tableta del entrevisador %04v. Sincronización cancelada
+1230 Usted debe sincronizar con el entrevistador %04d,\npero está sincronizando con el entrevistador %s. \nPor favor revise
+1240 CLUSTER=%s en la tableta del entrevistador %s. Su CLUSTER actual es %05d.\nAmbos deben estar trabajando en la misma UPM. \nSincronización cancelada
+1250 Cuestionario delegado fue enviado al entrevistador %04d
+1260 Error al enviar el archivo de delegados %v al entrevistador %04d
+1320 Usted, como supervisor, no ha inicidado la UPM %d.  Por favor iniciarla o seleccione otra UPM
+//1330 La UPM %d aun no se iniciado. Dígale al supervisor que se le envíe su asignación. \n¿Desea sincronizar con el supervisor para recibir la asignación o seleccionar otra UPM?
+1340 No se recibió la asignación por parte del supervisor.  Inténtelo de nuevo.
+1350 Supervisor actuando como entrevistador no necesita sincronizar con el supervisor
+1390 Dígale al entrevistador que usted está listo para recibir los cuestionarios.\nEl/ella debe sincronizar con %v
+1400 No sincronizó con el entrevistador
+1410 UPM %v no tiene problemas estructurales
+1420 Este hogar pertenece a otro entrevistador, usted no puede modificarlo
+1430 Hogar %v no será mostrado pues no existe en esta tableta, por favor reciba una copia actualizada de las asignaciones del supervisor
+
+2010 UPM %v tiene %v hogares, la última vivienda tiene número %v. \nLa nueva vivienda tendría el número %v.
+2020 Vivienda número %v fue agregada a la UPM %v
+2030 En la UPM %v la vivienda número %v ya contiene %v hogares. \nNo se le pueden agregar más hogares
+2040 En la UPM %v la vivienda número %v tiene %d hogares. \nEl nuevo hogar será el número %d.
+2050 Hogar número %v fue agregado a la vivienda número %v en la UPM %v
+2060 ¿Está seguro de eliminar este hogar?:\nVivienda:%d \nHogar:%d \nDirección:%s \nJefe:%s \nTeléfono:%s \nAsignado al entrevistador:%d
+2070 Vivienda %d - hogar %d no puede ser eliminado porque esta vivienda tiene el hogar %d.\nSolo el último hogar de cada vivienda puede ser eliminado
+2080 Hogar %d eliminado
+2081 Hogar %d eliminado. Este hogar estaba asignado al entrevistador %v, si ya se había sincronizado la asignación a este entrevistador, por favor sincronice la asignación de nuevo
+2110 <br><br><h3>PROBLEMAS ESTRUCTURALES:</h3>
+2115 <br><h3>RESULTADO DE CUESTIONARIOS INDIVIDUALES INCONSISTENTE CON PERMISO DE ADULTO</h3>
+2120 \nHOGARES/INDIVIDUOS ENCONTRADOS QUE NO PERTENECEN AL ENTREVISTADOR ASIGNADO O NO ESTAN EN LA MUESTRA
+2130 Vivi Entrevistad. Jefe del hogar       Estado                        I n d i v i d u a l e s :
+2140 enda Asign. Encon.                                                 Cuest.    NL Nombre              Edad Sexo Estado
+2150 \nINDIVIDUOS CON REGISTRO DE %v PERO EN EL HOGAR NO EXISTEN O NO CUMPLEN ESTA CODICIÓN
+2160 Hogar - - - - - - - D a t o s  d e l  h o g a r - - - - - - - -    - - - - - D a t o s   I n d i v i d u a l e s - - - -
+2170 .    Entrev. Jefe                 Nombre              Edad Sexo   Entrev. NL Nombre              Edad Sexo Estado
+2180 \n\n\nINDIVIDUOS CON CUESTIONARIO DE %v DUPLICADOS
+2190 Hogar     - - - - - - R E C O R D S   F O U N D  - - - - - -
+2200 .     NL  Entrev. Nombre               Estado                        
+2210 \n\n *** Total de problemas estructurales encontrados %d ***
+2220 <h3 style="color:blue">  No se encontraron problemas estructurales</h3>
+2230 <br><h3>HOGARES VERIFICADOS: MIEMBROS DEL HOGAR ECONTRADOS POR EL SUPERVISOR Y EL ENTREVISTADOR</h3>
+2240 <b>HOGAR %d - Reporte del suopervisor %04d:</b>
+2250 <br><b>HOGAR %d - Reporte del entrevistador %04d:</b>
+2260 <p>(*) Persona entrevistada<br>*** Total de hogares verificados: %d ***</p>
+2270 <p>*** No households verified ***</p>
+2280 <br><h3>RESUMEN</h3>
+2310 </pre><p>(*) Completed questionnaires refers to questionnaires with completion code=01</p><br>
+2320 <h3>Cluster %s no se puede cerrar por las siguientes razones: </h3>
+2330 -   Hay %d cuestionarios de hogar no iniciales
+2340 -   Hay %d cuestionarios individuales no iniciados
+2350 -   Hay %d cuestionarios de hogar parcialmente guardados
+2360 -   Hay %d cuestionarios individuales parcialmente guardados
+2370 -   Hay %d errores estructurales
+2380 -   No hay hogares con verificación de la composición del hogar
+2382 -   Hay %d cuestionario(s) de niños con la información de antropometría pendiente
+2384 -   Hay %d cuestionarios de hogar con la información de calidad de agua pendiente
+2385 -   Hay %d cuestionarios individuales con código de resultado inconsistente con permiso de adulto
+2390 <h3 style="color:red"> Cluster %s se puede cerrar </h3>
+2400 UPM %v fue cerrada. Recuerde enviarla a la oficina central
+2430 REPORTE DE LAS NOTAS DEL CLUSTER:%v HOGAR:%v 
+2440 #   Tipo cuest. Interv.  Linea Pregunta        Ocur Nota
+2450 Error: la aplicación del Supervisor ya está activa
+2460 Rol del ID=%v (%v) no es Supervisor.  Revise por favor.
+2470 Tableta %v no pertenece a este supervisor/entrevistador %v. Contacte a soporte técnico. Programa terminado
+2520 STAFF_ID inválido. Inténtelo de nuevo.
+2530 UPM=%d no fue asignado al supervisor %04d. Inténtelo de nuevo
+2540 La muestra no tiene ningún hogar para la UPM %d.  Solicite a la oficina central la muestra actualizada. Esta UPM no se puede iniciar. Seleccione otra UPM
+2550 UPM %d no se ha iniciado, ella tiene %d hogares. Si empieza a trabajar con ella,\nla muestra para esta UPM no podrá ser actualiza luego por la oficina central.\n¿Desea empezar a trabajar con esta UPM?
+2560 Se no pudo crear el folder %s. El sistema se detuvo
+2570 UPM inválida. Inténtelo de nuevo.
+2580 Seleccione con quién desea sincronizar:\n -'Entrevistadores' para enviar asignaciones, actualizaciones o recibir datos.\n -'Oficina Central' para enviar datos o recibir actualizaciones
+2590 Dígale a los entrevistadores que usted está listo para sincronicar.\nEllos deben sincronizar con %v
+2600 No se sincronizó con el entrevistador
+2610 Seleccione reporte de:\n -'UPM %v': el estado de todas las entrevistas, problemas estructurales y pendientes para cerrar la UPM.\n -'Todas las UPM': ver lista general de todas las UPM asignadas a este grupo
+2620 <h2><header style="color:blue">REPORTE DEL ESTADO DEL CLUSTER %v </h2>
+2650 Anteriormente la UPM %v estaba 'Cerrada' pero ahora está 'En Campo'\npor los problemas encontrados en este reporte
+2660 Seleccone:\n -'Revisar entrevistas completas' para revisar entrevistas de hogar e individuales o verificar la composición del hogar\n -'Ver notas del entrevistador' para ver las notas del entrevistador en el hogar seleccionado
+2700 No se pudo sincronizar con la oficina central - Por favor revise la conexión a Internet
+2705 Actualizaciones recibidas
+2710 Error recibiendo los archivos de la muestra
+2720 Error enviando el archivo %s
+
+ES("[No adult consent]") [Sin consentimiento de un adulto]
+ES("[Original HH:%02d]") [Hogar original:%02d]
+ES("[Pending Antho data]") [Pendiente datos antrop.]
+ES("[Pending WQ test]") [Prueba WQ pendiente]
+ES("5-17") 5-17
+ES("According with the BlueTooth name, this tablet must be assigned to") Según el nombre de BlueTooth, esta tableta debe asignarse a
+//ES("add in the Target option the full path of the runpff before the pffname, ") agregar en la opción Target el camino completo del runpff antes de pffname,
+ES("Add new household") Agregar nuevo hogar
+ES("Address") Dirección
+ES("ADDRESS") DIRECCIÓN
+ES("Age") Edad
+ES("All Clusters") Todos los clusters
+ES("and verified") y verificado
+ES("ANOTHER CLUSTER") OTRO CLUSTER
+ES("Are you sure to delete this household:") ¿Está seguro de eliminar este hogar?
+ES("AREA 1") ÁREA 1
+ES("AREA 2") ÁREA 2
+ES("AREA 3") ÁREA 3
+ES("AREA 4") ÁREA 4
+ES("Ask supervisor to SYNC, interviewer needs:") Pídale al supervisor que SINCRONICE, el entrevistador necesita:
+ES("Assigments and household managment menu:") Menú de asignaciones y manejo de hogares:
+ES("Assign/view households") Asignar/ver hogares
+ES("Assigned interviewer") Entrevistador asignado
+ES("Assigned to inverviewer") Asignado al encuestador
+ES("Assigned") Asignado
+ES("Bluetooth name could not be configurated.") Nombre de Bluetooth no pudo ser configurado. 
+ES("but such member is not in the STAFF database.") pero ese miembro no se encuentra en la base de datos de STAFF.
+ES("Cancel action") Cancelar acción
+ES("Cancel") Cancelar
+ES("Caretaker LN") Línea del cuidador
+ES("Caretaker of 5-17 child has 'Adult Consent' but Result of 5-17 quest.=6 (No adult consent)") Cuidador de niño 5-17 tiene 'Consentimiento de adulto' pero el resultado del cuest. de 5-17=6(Sin consentimiento de adulto)
+ES("Caretaker of 5-17 child has 'No Adult Consent' but result of 5-17 quest.=%v (it must be 6)") Cuidador de niño 5-17 No tiene 'Consentimiento de adulto' pero el resultado del cuest. de 5-17=%v (debe ser 6)
+ES("Caretaker of 5-17 child is < 15 years and Result of 5-17 quest.=%v (it must be 6)") Cuidador de niño 5-17 es menor de 15 años y el resultado del cuest. de 5-17=%v (debe ser 6)
+ES("Caretaker of 5-17 child is 18+ years, but Result of 5-17 quest.=6 (No adult consent)") Cuidador de niño 5-17 tiene 18+ años y el resultado del cuest. de 5-17=6 (Sin consentimiento de adulto)
+ES("Caretaker of 5-17 child is a emancipated person of 15:17 and the Result of 5-17 quest.=6 (No adult consent)") Cuidador de niño 5-17 es una persona emancipada de 15:17 años y el resultado del cuest. de 5-17=6 (Sin consentimiento de adulto)
+ES("Caretaker of under 5 child has 'Adult Consent' but Result of Under 5 quest.=6 (No adult consent)") Cuidador de menor de 5 años tiene 'Consentimiento de adulto' pero el resultado del cuest. menor de 5=6(Sin consentimiento de adulto)
+ES("Caretaker of under 5 child has 'No Adult Consent' but result of Under 5 quest.=%v (it must be 6)") Cuidador de menor de 5 años no tiene 'Consentimiento de adulto' pero el resultado del cuest. menor de 5=%v (debe ser 6)
+ES("Caretaker of under 5 child is < 15 years and Result of Under 5 quest.=%v (it must be 6)") Cuidador de menor de 5 años es menor de 15 años pero el resultado del cuest. menor de 5=%v (debe ser 6)
+ES("Caretaker of under 5 child is 18+ years, but Result of Under 5 quest.=6 (No adult consent)") Cuidador de menor de 5 años tiene 18+ años y el resultado del cuest. menor de 5=6 (Sin consentimiento de adulto)
+ES("Caretaker of under 5 child is a emancipated person of 15:17 and the Result of Under5 quest.=6 (No adult consent)") Cuidador de menor de 5 años es una persona emancipada de 15:17 años y el resultado del cuest. menor de 5=6 (Sin consentimiento de adulto)
+ES("Central Office") Oficina Central
+ES("CHILD 5-17 NOT FOUND IN HOUSEHOLD, NOT IN 5:17 OR NOT SELECTED") NIÑO 5-17 NO ENCONTRADO EN EL HOGAR, NO ES DE 5:17 OR NO FUE SELECCIONADO
+ES("CHILD UNDER 5 NOT FOUND IN HOUSEHOLD OR AGE NOT IN 0:4") NIÑO MENOR DE 5 AÑOS NO ENCONTRADO EN EL HOGAR O EDAD NO EN 0:4
+ES("Closed") Cerrado
+ES("CLUSTER %s is ready to be closed.  Do you want to close it?") CLUSTER %s está listo para ser cerrado. ¿Desea cerrarlo?
+ES("CLUSTER STATUS") ESTADO DEL CLÚSTER
+ES("CLUSTER") CLUSTER
+ES("Cluster: %v not started yet. \nSelect:") Clúster: %v aún no se ha iniciado. \nSeleccione:
+ES("Completed") Completados
+ES("Confirm that you want to work with CLUSTER %v Status: %v") Confirme que desea trabajar con CLUSTER %v Estado: %v
+ES("Continue with this cluster without assigments") Continuar con este cluster sin asignaciones
+ES("Currently dwelling %v has %v households. Are you sure to add one more household") Actualmente la vivienda %v tiene %v hogares. ¿Está seguro de agregar un hogar más?
+ES("Delegate questionnaire") Delegar cuestionario
+ES("DELEGATED BY") DELEGADO POR
+ES("DELEGATED TO") DELEGADO A
+ES("Delete added household") Eliminar hogar agregado
+ES("Delete it") Eliminarlo
+ES("Do you want to assign this tablet to an interviewer or a supervisor") ¿Quieres asignar esta tableta a un entrevistador o a un supervisor?
+ES("Do you want to assing him/her this tablet?") ¿Quieres asignarle esta tableta?
+ES("Do you want to delete this assigment before close the program?") ¿Desea eliminar esta asignación antes de cerrar el programa?
+ES("Do you want to start the interview to verify the members composition of this household") ¿Quieres iniciar la entrevista para verificar la composición de los miembros de este hogar?
+ES("DOB(MM/YYYY)") FdN(MM/AAAA)
+ES("Emancipated 15-17 child has a Result of 5-17 quest.=6 (No adult consent)") Niño de 15-17 emancipado tiene resultado del cuest. 5-17=6 (Sin consentimiento de adulto)
+ES("Emancipated Man 15:17 has Result of Man quest.=6 (No adult consent)") Hombre de 15-17 emancipado tiene resultado del cuest. de hombre=6 (Sin consentimiento de adulto)
+ES("Emancipated Woman 15:17 has Result of Woman quest.=6 (No adult consent)") Mujer de 15-17 emancipada tiene resultado del cuest. de mujer=6 (Sin consentimiento de adulto)
+ES("Emancipated") Emancipado
+ES("Enter/modify anthropometric data") Ingresar/modificar datos antropométricos
+ES("Enter household") Ingresar hogar
+ES("Entry") Ingresar
+ES("Enter %v questionnaire") Ingresar cuestionario de %v
+ES("Enter/modify Water Quality data") Ingresar/modificar datos de Calidad del Agua
+ES("For Windows system you need Admin Rights, if you have them,")"Para el sistema Windows usted necesita derechos de administrador, si los tiene,")
+ES("Found") Encontrado
+ES("Head") Jefe
+ES("HEAD") JEFE
+ES("Household added") Hogar agregado
+ES("HOUSEHOLD ASSIGNED TO ANOTHER INTERVIEWER") HOGAR ASIGNADO A OTRO ENTREVISTADOR
+ES("Household interviewer") Entrevistador deL hogar
+ES("HOUSEHOLD NOT FOUND") HOGAR NO ENCONTRADO
+ES("HOUSEHOLD NOT PRESENT IN THE HOUSEHOLD LISTING") HOGAR NO SE ENCUENTRA EN LA LISTA DE HOGARES
+ES("HOUSEHOLD PRESENT BUT NOT YET ASSIGNED") HOGAR PRESENTE PERO AÚN NO ASIGNADO
+ES("Household questionnaires") Cuestionarios de hogar
+ES("Household") Hogar
+ES("HOUSEHOLD") HOGAR
+ES("Individual questionnaires") Cuestionarios individuales
+ES("Individual Quest.") Cuest.Individual
+ES("Interv:") Entrev:
+ES("Interviewer assigned") Entrevistador asignado
+ES("Interviewer") Entrevistador
+ES("INTERVIEWER: to RECEIVE delegated questionnaires") ENTREVISTADOR: para RECIBIR cuestionarios delegados
+ES("INTERVIEWER: to SEND delegated questionnaires") ENTREVISTADOR: para ENVIAR cuestionarios delegados
+ES("Interviewers") Entrevistadores
+ES("Issue") Problema
+ES("ISSUE") PROBLEMA
+//ES("later select the Advance buttom and check Run as administrator. ") luego presione el botón de Avanzado y seleccione Ejecutar como administrador.
+//ES("like:'C:\Program Files (x86)\CSPro 7.7\runpff.exe' C:\MICS7XXX\APPS\MENU\menu.pff ") por ejemplo:'C:\Archivos de programa (x86)\CSPro 7.7\runpff.exe' C:\MICS7XXX\APPS\MENU\menu.pff
+ES("Line number") Número de línea
+ES("LN") NL
+ES("Man > 17 years has Result of Man quest.=6 (No adult consent)") Hombre > 17 años tiene Resultado de cuesto de hombre=6 (Sin consentimiento de adulto)
+ES("Man 15:17 with 'Adult Consent' but Result of Man quest.=6 (No adult consent)") Hombre de 15:17 años con 'Consentimiento de adulto' tiene resultado de cuesto de hombre=6 (Sin consentimiento de adulto)
+ES("Man 15:17 with 'No Adult Consent' but Result of Man quest.=%v (it must be 6)") Hombre de 15:17 años sin 'Consentimiento de adulto' tiene resultado de cuesto de hombre=%v (debe ser 6)
+ES("MAN NOT FOUND IN HOUSEHOLD, AGE NOT IN 15:49 OR SEX IS NOT MAN") HOMBRE NO ENCONTRADO EN EL HOGAR, EDAD NO EN 15:49 O SEXO NO ES HOMBRE
+ES("Man") Hombre
+ES("Modify household") Modificar hogar
+ES("Modify") Modificar
+ES("Modify %v questionnaire") Modificar cuestionario de %v
+ES("Name") Nombre
+ES("No HH") No.Hogar
+ES("No household assigment received yet. Contact supervisor to receive assigments") Aún no se ha recibido ninguna asignación para el hogar. Contactar al supervisor para recibir asignaciones
+ES("No new updates found") No se encontraron nuevas actualizaciones
+ES("No") No
+ES("Not assigned yet") Aún no asignado
+ES("Not assigned") No asignado
+ES("Not started") No iniciado
+ES("NotAs.") No Asig.
+ES("Note") Nota
+ES("NOTES:") NOTAS:
+ES("Occ.") Oc.
+ES("On field") En el campo
+ES("Otherwise in the SETTINGS.APC file the variable BTSyncMode must be set to 2") De lo contrario, en el archivo SETTINGS.APC, la variable BTSyncMode debe ser inicializada con 2
+ES("Partial saved") Guardado Parcial
+ES("Press OK to make a backup of the current cluster") Presione OK para hacer un respaldo del clúster actual
+ES("Problem unzipping the file %v. Update not installed") Problema al descomprimir el archivo %v. Actualización no instalada
+ES("Proceeding to install the update. The system will be finished") Procediendo a instalar la actualización. El sistema se cerrará.
+ES("Quest.type") Tipo de cuest.
+ES("Question") Pregunta
+ES("Questionnaire type") Tipo de cuestionario
+ES("Receive assigment") Recibir asignación
+ES("RECEIVE ASSIGNMENT FOR CLUSTER %d") RECIBIR ASIGNACIONES DEL CLUSTER %d
+ES("Receive supervisor's assigment") Recibir asignacones del supervisor
+ES("Receive updates") Recibir actualizaciones
+ES("Record deleted") Registro eliminado
+ES("REGION") REGIÓN
+ES("Relationship") Parentesco
+ES("Return to main menu") Volver al menú principal
+ES("Review %v questionnaire") Revisar cuestionario de %v
+ES("Review anthropometric data") Revisar datos antropométricos
+ES("Review household") Revisar hogar
+ES("Review notes from household and individuals") Revisar notas de hogares e individuos
+ES("Review") Revisar
+ES("run as administrator the bat file MICS7setup from the desktop.") ejecute como administrador el archivo bat MICS7setup dede el escritorio. 
+ES("says this tablet was assigned to staff member:") dice que esta tableta fue asignada al miembro del personal:
+ES("Select added household to delete") Seleccione el hogar agregado para eliminar
+ES("Select another cluster") Seleccione otro clúster
+ES("Select cluster to work on") Seleccione el clúster para trabajar
+ES("Select dwelling to add household") Seleccione vivienda para agregar hogar
+ES("Select HH to assign from cluster %v") Seleccione Hogar para asignar del clúster %v
+ES("Select interviewer to send the delegated questionnaires") Seleccionar entrevistador para enviar los cuestionarios delegados
+//ES("select properties of the PFF, in the shortcut tab, ") seleccione propiedades del PFF, en la pestaña de acceso directo, 
+ES("Select the %v to assign this tablet") Seleccione el %v para asignar esta tableta
+ES("Select the interview with structural issues to delete") Seleccione la entrevista con problemas estructurales para eliminar
+ES("Select the interview") Selecciona la entrevista
+ES("Select the interviewer to delegate:") Seleccione el entrevistador a delegar:
+ES("Select who you want to sync with:") Selecciona con quién quiere sincronizar:
+ES("Send data") Enviar datos
+ES("Sex") Sexo
+ES("START") INICIAR
+ES("Status of this questionnaire is %v.  Do you want to delegate it and loose current status?") El estado de este cuestionario es %v. ¿Quieres delegarlo y perder el estatus actual?
+ES("STATUS REPORT OF ALL CLUSTERS ASSIGNED TO TEAM") INFORME DE ESTADO DE TODOS LOS CLÚSTERES ASIGNADOS AL EQUIPO
+ES("Status") Estado
+ES("Status:") Estado:
+ES("Supervisor") Supervisor
+ES("SUPERVISOR: to send data, receive assigments, receive updates") SUPERVISOR: para enviar datos, recibir asignaciones, recibir actualizaciones
+ES("T O T A L") T O T A L 
+ES("The %v questionnaire was undelegated. If you already sync the delegation with interviewer %v:%v, please sync the delegation again with him/her") El cuestionario %v fue desdelegado. Si ya sincronizaste la delegación con el entrevistador %v:%v, por favor sincronice para enviar de nuevo la delegación
+ES("The configuration file found:") El archivo de configuración encontrado:
+ES("The new household will be dwelling number ") El nuevo hogar será el número de vivienda
+ES("There are not delegated questionnaires to intervierwer %04d. \nDo you still want to send an empty delegation to delete a previous delegation?") No hay cuestionarios delegados al entrevistador %04d. \n¿Aún deseas enviar un la delegación vacía para eliminar una delegación previa?
+ES("There are not households in this cluster. Contact central office") No hay hogares en este clúster. Contacte la oficina central
+ES("This %v questionaire was delegated to intervierwer %v:%v.\nAre you sure to undelegate it?") Este %v cuestionario fue delegado al entrevistador %v:%v.\n¿Está seguro de anular su delegación?
+ES("This tablet belongs to %v (staff ID %03d)" Esta tableta pertenece a %v (ID de persona %03d)
+ES("This tablet is not has not been assigned to any team member. Do you want ot assign it?") Esta tableta no ha sido asignada a ningún miembro del equipo. ¿Desea asignarlo?
+ES("To sync with central office you need Internet access. Select 'Yes' to continue") Para sincronizar con la oficina central necesita acceso a Internet. Seleccione 'Sí' para continuar
+ES("TO") A
+ES("Total individual quest. found in this household") Tota de cuest. Individuales encontrados en este hogar
+ES("TOTAL") TOTAL
+ES("TYPE YOUR STAFF ID TO CONFIRM YOU ARE USING THE CORRECT TABLET") ESCRIBA SU ID PERSONAL PARA CONFIRMAR QUE ESTÁ UTILIZANDO LA TABLETA CORRECTA
+ES("Unable to download update files") No se pueden descargar archivos de actualización
+ES("Undelegate questionnaire") Cuestionario desdelegado
+ES("Under 5") Menor 5 años
+ES("Verify household composition") Verificar la composición del 
+ES("Woman > 17 years has Result of Woman quest.=6 (No adult consent)") Mujer > 17 años tiene Resultado de entrev. de Mujer=6 (Sin consentimiento de adulto)
+ES("Woman 15:17 with 'Adult Consent' but Result of Woman quest.=6 (No adult consent)") Mujer de 15:17 años con 'Consentimiento de adulto' tiene Resultado de la entrev. de mujer=6 (Sin consentimiento de adulto)
+ES("Woman 15:17 with 'No Adult Consent' but Result of Woman quest.=%v (it must be 6)") Mujer de 15:17 años sin 'Consentimiento de adulto' tiene Resultado de la entrev. De mujer=%v (debe ser 6)
+ES("WOMAN NOT FOUND IN HOUSEHOLD, AGE NOT IN 15:49 OR SEX IS NOT WOMAN") MUJER NO ENCONTRADA EN EL HOGAR, EDAD NO EN 15:49 O SEXO NO ES MUJER
+ES("Woman") Mujer
+ES("Yes") Sí
+ES("ZONE") ZONA

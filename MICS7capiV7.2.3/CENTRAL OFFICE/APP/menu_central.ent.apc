@@ -1,0 +1,2564 @@
+﻿PROC GLOBAL
+
+//CENTRAL OFFICE APPLICATON 
+
+
+string onfieldfolder, inreviewfolder, cleanedfolder;
+//string reportsfolder;
+string PSUstr, psustatus;
+list string quest_list;  //similar to quest list string, but it includes de Household
+
+string hhfile, //household file
+       VVfile; //household members verification file
+
+file psureport;
+//string psufolder; // datafolder, closedfolder;
+
+list PP_dwel,PP_hh, PP_ln,PP_sex,PP_age, PP_intid; //ID of the individual, sex and each
+list string PP_typeq, PP_name, PP_status;
+numeric index;
+
+numeric structureproblems;   // total number of structure problems
+
+string hhstatus;
+hashmap reportsummary(numeric,string) default(0);
+hashmap indreportsummary(string,string) default(0);
+numeric pendinganthro, pendingwater;
+
+list string idlist; //list of ID of the list of households or individual quest listed for selection to interview. 
+                    // Format HHtLNeeess HH:household, t:0->HH, 1->Wm,etc,  LN:line number eee:interviewer ss:status
+numeric intid;
+string color;
+
+list vvhousehold,  vvstaff;  //to store ID of verified households
+
+//******************common functions **************
+
+function genhtmlrow(list string htmlrow, rowtype, optional string titlebgcolor="LightBlue");
+   string tag_start, tag_end, tag_tr;
+   if rowtype = 0 then
+      psureport.write("<table id='Wtable'>");
+      psureport.write("<style>table {box-sizing: border-box;} table, th, td {border: 1px solid black;border-collapse: collapse;}");
+      psureport.write("th, td {padding: 4px;} th {text-align: center;} td {text-align: left;} </style>");
+      tag_start="<th>";
+	  tag_end="</th>";
+	  tag_tr='<tr style="background-color:'+titlebgcolor+'">';
+	else
+      tag_start="<td>";
+	  tag_end="</td>";
+	  tag_tr='<tr>';
+    endif;	
+    psureport.write(tag_tr);
+    do numeric i=1 while i <=htmlrow.length()
+      psureport.write(tag_start+htmlrow(i)+tag_end);
+    enddo;
+    psureport.write("</tr>");
+end;
+
+function   printindivnotes(indquest,tnotes, array string allnotes(,), totnotes);
+   //indquest 1->woman, 2->Under 5, 3->5-17, 4->man
+   list string htmlrow;
+   
+   do numeric nind=1 while nind <= tnotes
+      htmlrow.clear();
+      allnotes(nind,8)=replace(allnotes(nind,8),"\n","|");
+	  inc(totnotes);
+
+	  htmlrow.add(maketext("%03d",totnotes));
+	  htmlrow.add(allnotes(nind,1)[6:2]);   //household
+	  htmlrow.add(quest(indquest));
+	  htmlrow.add(allnotes(nind,1)[8:3]);   //Interviewer  ,allnotes(nind,1), // CaseID  ccccchhiiill (CLUSTER-household-interviewer-LN)
+	  htmlrow.add(allnotes(nind,1)[11:2]);  //line number 
+	  htmlrow.add(strip(allnotes(nind,3))); //Question
+      htmlrow.add(allnotes(nind,5));        //Roster occurence
+	  htmlrow.add(allnotes(nind,8));        //Note
+	  genhtmlrow(htmlrow,1); 
+
+   enddo;   
+end;
+
+function listnotes(HH);  //HH=0: all households, HH>0: household HH
+   list string htmlrow;
+// Create title line
+	  htmlrow.add("#");
+	  htmlrow.add(tr("Household"));
+	  htmlrow.add(tr("Quest.type"));
+	  htmlrow.add(tr("Interviewer"));  
+	  htmlrow.add(tr("Line number"));  
+	  htmlrow.add(tr("Question"));     
+      htmlrow.add(tr("Occ."));         
+	  htmlrow.add(tr("Note"));         
+	  genhtmlrow(htmlrow,0); 
+
+
+forcase MICS7HH where HH=0 or HH=HH2 do
+
+   string notesquery="select cases.key, notes.* from notes join cases on notes.case_id = cases.id where substr(cases.key,6,2)='"+edit("99",HH2)+"'";
+   numeric tnotes, totnotes;
+   array string allnotes(500,10);
+   totnotes=0;
+   tnotes=sqlquery(MICS7HH,allnotes,notesquery);
+
+   do numeric nind=1 while nind <= tnotes
+      htmlrow.clear();
+      allnotes(nind,8)=replace(allnotes(nind,8),"\n","|");
+	  inc(totnotes);
+
+	  htmlrow.add(maketext("%03d",totnotes));
+	  htmlrow.add(allnotes(nind,1)[6:2]);   //household
+	  htmlrow.add(tr("Household"));
+	  htmlrow.add(allnotes(nind,1)[8:3]);   //Interviewer  ,allnotes(nind,1), // CaseID  ccccchhiiill (CLUSTER-household-interviewer-LN)
+	  htmlrow.add("  ");                    //line number 
+	  htmlrow.add(strip(allnotes(nind,3))); //Question
+      htmlrow.add(allnotes(nind,5));        //Roster occurence
+	  htmlrow.add(allnotes(nind,8));        //Note
+	  genhtmlrow(htmlrow,1); 
+
+   enddo;   
+
+   tnotes=sqlquery(MICS7WM,allnotes,notesquery);  // ***woman****
+   printindivnotes(1,tnotes,allnotes, ref totnotes);
+   tnotes=sqlquery(MICS7CH,allnotes,notesquery);  // ***under 5****
+   printindivnotes(2,tnotes,allnotes, ref totnotes);
+   tnotes=sqlquery(MICS7FS,allnotes,notesquery);  // ***5-17****
+   printindivnotes(3,tnotes,allnotes, ref totnotes);
+   tnotes=sqlquery(MICS7MN,allnotes,notesquery);  // ***man****
+   printindivnotes(4,tnotes,allnotes, ref totnotes);
+
+endfor;
+   psureport.write("</table></html");
+end;
+
+
+//********************central office menu functions**************
+
+
+function ind_loadcase(indquest,interviewer);
+  //indquest 1->woman, 2->Under 5, 3->5-17, 4->man
+  //interviewer 0->	same interviewer as household for runmode=supervisor
+  //               	or the STAFF_ID interviewer for runmode=interviewer
+  //			1->	delegated interviewer, the individual questionnaire must be
+  //				seek with the interviewer code of the delegated interviewer
+  //				that was stored in the interviewer ID of the data record
+
+  //
+numeric ifloaded;
+  if indquest=1 then //woman
+	WM1=SAM_PSU;
+	WM2=SAM_DWNO;
+	if interviewer=0 then 
+	///	if runmode=2 {supervisor} then
+			WMINT=HINT; 
+	///	else
+	///		WMINT=STAFF_ID;
+	///		intid=STAFF_ID;
+	///	endif;
+	else 
+		WMINT=WM5;
+		intid=WM5; 
+	endif;
+	WM3=HL8;
+	ifloaded=loadcase(MICS7WM,WM1,WM2,WMINT,WM3);  
+  elseif indquest=2 then //under 5
+	UF1=SAM_PSU;
+	UF2=SAM_DWNO;
+	if interviewer=0 then 
+	///	if runmode=2 {supervisor} then
+			UFINT=HINT; 
+	///	else
+	///		UFINT=STAFF_ID;
+	///		intid=STAFF_ID;
+	///	endif;
+	else 
+		UFINT=UF5;
+		intid=UF5; 
+	endif;
+	UF3=HL10;
+	ifloaded=loadcase(MICS7CH,UF1,UF2,UFINT,UF3);  
+  elseif indquest=3 then // 5-17
+	FS1=SAM_PSU;
+	FS2=SAM_DWNO;
+	if interviewer=0 then 
+		///if runmode=2 {supervisor} then
+			FSINT=HINT; 
+		///else
+		///	FSINT=STAFF_ID;
+		///	intid=STAFF_ID;
+		///endif;
+	else
+		FSINT=FS5;
+		intid=FS5; 
+	endif;
+	FS3=HH26B;
+	ifloaded=loadcase(MICS7FS,FS1,FS2,FSINT,FS3);  
+  elseif indquest=4 then //man
+	MWM1=SAM_PSU;
+	MWM2=SAM_DWNO;
+	if interviewer=0 then 
+	///	if runmode=2 {supervisor} then
+			MWMINT=HINT; 
+	///	else
+	///		MWMINT=STAFF_ID;
+	///		intid=STAFF_ID;
+	///	endif;
+	else
+		MWMINT=MWM5;
+		intid=MWM5; 
+	endif;
+	MWM3=HL9;
+	ifloaded=loadcase(MICS7MN,MWM1,MWM2,MWMINT,MWM3);  
+  endif;
+  exit ifloaded;
+end;
+
+function ind_ispartial(indquest);
+   //indquest 1->woman, 2->Under 5, 3->5-17, 4->man
+  when indquest;
+	1-> exit ispartial(MICS7WM);
+	2-> exit ispartial(MICS7CH);
+	3-> exit ispartial(MICS7FS);
+	4-> exit ispartial(MICS7MN);
+  endwhen;
+end;
+
+function ind_result(indquest);
+   //indquest 1->woman, 2->Under 5, 3->5-17, 4->man
+  when indquest;
+	1->exit WM17;
+	2->exit UF17;
+	3->exit FS17;
+	4->exit MWM17;
+  endwhen;
+end;
+  
+
+function string ind_status(indquest);
+   //indquest 1->woman, 2->Under 5, 3->5-17, 4->man
+  when indquest;
+	1->exit maketext("%02d:%s",wm17,getlabel(wm17,wm17));
+	2->exit maketext("%02d:%s",UF17,getlabel(uf17,uf17));
+	3->exit maketext("%02d:%s",FS17,getlabel(fs17,fs17));
+	4->exit maketext("%02d:%s",mwm17,getlabel(mwm17,mwm17));
+  endwhen;
+end;
+  
+function individual(indquest,reportflag,firstindividualflag)
+  {when indquest;
+	1->errmsg("%v-%v",wmfile,filename(mics7wm));
+	2->errmsg("%v-%v",chfile,filename(mics7ch));
+	3->errmsg("%v-%v",fsfile,filename(mics7fs));
+	4->errmsg("%v-%v",mnfile,filename(mics7mn));
+  endwhen;}
+   //indquest 1->woman, 2->Under 5, 3->5-17, 4->man
+   //reportflag:0 for create menu, 1 for generate report
+   //firstindividualflag:0 for not create title in table of the individuals, 1 for do it
+	list string htmlrow;
+	string indstatus="";
+	intid=INT_ASSIGNED;
+ 	inc(indreportsummary(quest(indquest),"PPASSIG"));
+	color=""; 
+				 
+	if ind_loadcase(indquest,0) then // load the person from the original interviewer
+		if ind_ispartial(indquest) then
+	        inc(indreportsummary(quest(indquest),"PPPARTIAL"));			
+			indstatus="??:"+tr("Partial saved");
+			color="Gold";
+		else  
+			if ind_result(indquest) <> 97 then
+				indstatus=ind_status(indquest);
+  	            if ind_result(indquest)=1 then 
+					inc(indreportsummary(quest(indquest),"PPCOMP")); 
+ 					color="PaleGreen";
+					
+					//check for anthopometric data for U5
+					if indquest= 2 and AN8=notappl then 
+						//SAM_STATUS=strip(sam_status)+tr("[Pending Antho data]");
+						indstatus=indstatus+" "+tr("[Pending Antho data]");
+						inc(pendinganthro);
+						color="Orange";
+					endif;
+					
+				else
+					color="LightGray";
+				endif;
+            else // it was delegated
+   	             //inc(reportsummary(INT_ASSIGNED,"PPASSIG"),-1); //it has not been counted as assigned
+  	             //inc(reportsummary(WM5,"PPASSIG"));
+				if ind_loadcase(indquest,1) then // load the person from the delegated interviewer
+      				if ind_ispartial(indquest) then
+	                   inc(indreportsummary(quest(indquest),"PPPARTIAL"));			
+						indstatus="??:"+tr("Partial saved");
+						color="Gold";
+					else
+						indstatus=ind_status(indquest);
+						if ind_result(indquest)=1 then 
+							inc(indreportsummary(quest(indquest),"PPCOMP")); 
+							color="PaleGreen";
+
+							//check for anthopometric data for U5
+							if indquest= 2 and AN8=notappl then 
+								//SAM_STATUS=strip(sam_status)+tr("[Pending Antho data]");
+								indstatus=indstatus+" "+tr("[Pending Antho data]");
+								inc(pendinganthro);
+							    color="Orange";
+							endif;
+						else
+							color="LightGray";
+						endif;
+					endif;	
+	            else  //was delegated but it was not started by the delegated interviewer
+                    inc(indreportsummary(quest(indquest),"PPNOTST"));			
+					//indstatus="??:"+tr("DELEGATED TO")+" "+edit("999",intid {wm5});
+					indstatus="97:"+tr("DELEGATED TO")+" "+edit("999",intid {wm5});
+					color="Orchid";//"Lavender";//"LightGray";
+				endif;
+            endif;					
+		endif;  //end of ispartial
+	else  // the person is not started
+        inc(indreportsummary(quest(indquest),"PPNOTST"));			
+		indstatus="**:"+tr("Not started");
+	endif;
+
+    if reportflag then
+		if firstindividualflag=1 then
+			//psureport.write('<table style="margin-left:2%;">');
+			htmlrow.add(tr("Individual Quest."));
+			htmlrow.add(tr("Line number"));
+			htmlrow.add(tr("Name"));
+			htmlrow.add(tr("Sex"));
+			htmlrow.add(tr("Age"));
+			htmlrow.add(tr("Status"));
+			htmlrow.add(tr("Interviewer"));
+			genhtmlrow(htmlrow,0);
+			inc(firstindividualflag);
+		endif;
+		htmlrow.clear();
+		htmlrow.add(quest(indquest));
+		htmlrow.add(maketext("%02d",HL1));
+		htmlrow.add(maketext("%s",strip(HL2)));
+		htmlrow.add(maketext("%d",HL4));
+		htmlrow.add(maketext("%02d",HL6));
+		htmlrow.add(maketext("%s",indstatus));
+		htmlrow.add(maketext("%03d",intid));
+		genhtmlrow(htmlrow,1);
+	else //generate the menu
+	    {///
+		if runmode in 1,3 {interviewer} or length(color) > 0 then //supervisor with color="" does not generate menu line
+		    if color="" then //Individual interviews Not started in interviewer mode
+			   color="Tomato"; 
+
+			   //Review for adult consent
+			   if indquest = 1 {woman} then
+				  if hh33x(HL1) = 2 then
+				     indstatus=indstatus+" "+tr("[No adult consent]");
+					 color="White"; //Do not change this color, it is used in the PROC SELECT_INTERVIEWED
+			      endif;
+			   elseif indquest=2 {U5} then	  
+			      if HL4(HL20(HL1))=2 then //Sex of takecater is woman
+				     if hh33x(HL20(HL1)) = 2 then
+				        indstatus=indstatus+" "+tr("[No adult consent]");
+					    color="White"; //Do not change this color, it is used in the PROC SELECT_INTERVIEWED
+					 endif;	
+			      else //Sex of takecater is man
+				     if hh39x(HL20(HL1)) = 2 then
+				        indstatus=indstatus+" "+tr("[No adult consent]");
+					    color="White"; //Do not change this color, it is used in the PROC SELECT_INTERVIEWED
+					 endif;	
+				  endif;	 
+			   elseif indquest=3 {5-17} and HL20(HH26b)<>90 then	  //here HH26b must be used instead of HL1 (HL1 could be 00)
+			      if HL4(HL20(HH26b))=2 then //Sex of takecater is woman
+				     if hh33x(HL20(HH26b)) = 2 then
+				        indstatus=indstatus+" "+tr("[No adult consent]");
+					    color="White"; //Do not change this color, it is used in the PROC SELECT_INTERVIEWED
+					 endif;	
+			      else //Sex of takecater is man
+				     if hh39x(HL20(HH26b)) = 2 then
+				        indstatus=indstatus+" "+tr("[No adult consent]");
+					    color="White"; //Do not change this color, it is used in the PROC SELECT_INTERVIEWED
+					 endif;	
+				  endif;	 
+			   elseif indquest = 4 {man} then
+				  if hh39x(HL1) = 2 then
+				     indstatus=indstatus+" "+tr("[No adult consent]");
+					 color="White"; //Do not change this color, it is used in the PROC SELECT_INTERVIEWED
+			      endif;
+			   endif;	  
+			  //End of review for adult consent  
+
+			endif; //End of if color=""
+
+		    inc(index);
+			string caretaker="";
+			numeric linenumber=HL1;
+			if indquest in 2,3 then //U5 or FS
+				if HL20 = 90 then //
+					caretaker=tr("Emancipated");
+				else	
+					caretaker=tr("Caretaker LN")+maketext(":%v - %v",HL20,HL2(HL20));
+				endif;
+				if indquest = 3 then //in FS HH26b must be used instead of HL1
+				   linenumber = HH26b;
+				endif;   
+			endif;
+			inputData=inputData+'{'+
+				maketext('"index":%v',index)+ 
+				maketext(',"caption":"'+quest(indquest)+' - '+tr("LN")+' %02d '+tr("Status")+':%v"',linenumber,indstatus)+
+				         ',"image":"'+icon(indquest)+'", "lmargin":30 '+
+				maketext(',"backcolor":"%v"',color)+
+				maketext(',"line2":" '+tr("Name")+': %v"',strip(HL2))+
+				maketext(',"line3":" '+tr("Sex")+': %v '+tr("Age")+': %v %v"',HL4,HL6,caretaker)+
+				maketext(',"line4":" '+tr("Interviewer")+' %v:%04d - '+tr("Household")+':%04d"',quest(indquest),intid,HINT)+
+				"},";	
+			idlist.add(maketext("%02d%1d%02d%03d%02s",SAM_DWNO,indquest,linenumber,intid,indstatus[1:2]));						
+		endif;// end of if runmode in ....
+		///}
+    endif;
+end;
+
+
+
+
+function setHHStatus(reportflag) //reportflag 0=No report 1=Report
+
+   string headname;
+
+   numeric completed;
+   
+   reportsummary.clear();
+   indreportsummary.clear();
+   
+   index=0;
+   idlist.clear();
+ 
+   pendinganthro=0;
+   pendingwater=0;
+
+ /// Added to central office
+	close(MICS7HH);
+	setfile(MICS7HH,VVfile);
+	vvhousehold.clear();
+	vvstaff.clear();
+	forcase MICS7HH do
+	   if strip(HL2(1))<>"" then  //the verified household must have al least the head name
+		  vvhousehold.add(HH2);
+		  vvstaff.add(HINT);
+		endif;
+	endfor;
+	close(MICS7HH);
+	setfile(MICS7HH,HHfile);
+
+  //create a list of verified households
+///   if runmode = 2 {supervisor} then
+///     close(MICS7HH);
+///     setfile(MICS7HH,VVfile);
+///	 forcase MICS7HH do
+///	   if strip(HL2(1))<>"" then
+///		 verifhouseholds.add(HH2);
+///	   endif;
+///     endfor;
+///   endif;
+{
+if runmode=2 {supervisor} then   //concact MICS7XX with all the XXxxxx bases received from other interviewers
+   close(MICS7HH);
+   if fileexist(psufolder+"\HH????.csdb") then  //HH received of all the inteviewers (it must not include the HHall.cdsb)
+      fileconcat(MICS7HH,HHfile,psufolder+"\HH????.csdb");
+   else
+      setfile(MICS7HH,HHfile,create);
+      close(MICS7HH);
+   endif;   
+   setfile(MICS7HH,HHfile);
+
+   close(MICS7WM);  // ***woman***
+   if fileexist(psufolder+"\WM????.csdb") then  
+      fileconcat(MICS7WM,wmfile,psufolder+"\WM????.csdb");
+   else
+      setfile(MICS7WM,wmfile,create);
+      close(MICS7WM);
+   endif;   
+   setfile(MICS7WM,wmfile);
+
+   close(MICS7CH);  // ***under 5*** 
+   if fileexist(psufolder+"\CH????.csdb") then  
+      fileconcat(MICS7CH,chfile,psufolder+"\CH????.csdb");
+   else
+      setfile(MICS7CH,chfile,create);
+      close(MICS7CH);
+   endif;   
+   setfile(MICS7CH,chfile);
+
+   close(MICS7FS);  // *** 5-17*** 
+   if fileexist(psufolder+"\FS????.csdb") then  
+      fileconcat(MICS7FS,fsfile,psufolder+"\FS????.csdb");
+   else
+      setfile(MICS7FS,fsfile,create);
+      close(MICS7FS);
+   endif;   
+   setfile(MICS7FS,fsfile);
+
+   close(MICS7MN);  // ***man*** 
+   if fileexist(psufolder+"\MN????.csdb") then  
+      fileconcat(MICS7MN,mnfile,psufolder+"\MN????.csdb");
+   else
+      setfile(MICS7MN,mnfile,create);
+      close(MICS7MN);
+   endif;   
+   setfile(MICS7MN,mnfile);
+
+else //Interviewer: create HHall with the MICS7HH plus all the DELExxxx bases sent with delegations from other interviewers
+   close(MICS7HH);
+   if fileexist(psufolder+"\DELE*.csdb") then
+      fileconcat(MICS7HH,psufolder+"\HHall.csdb",hhfile,psufolder+"\DELE*.csdb");
+   else
+      filecopy(hhfile,psufolder+"\HHall.csdb");
+   endif;   
+   setfile(MICS7HH,psufolder+"\HHall.csdb");
+endif;
+}
+   forcase HOUSEHOLDS do
+      completed=0;
+	  headname=SAM_HEAD;
+	  if INT_ASSIGNED = notappl then
+	     inc(reportsummary(0,"HHASSIG"));
+         inc(reportsummary(0,"HHNOTST"));			
+		 SAM_STATUS="  :"+tr("Not assigned");
+      else //HH was assigned
+	     inc(reportsummary(INT_ASSIGNED,"HHASSIG"));
+	     if locate(MICS7HH,=,maketext("%05d%02d%03d00",SAM_PSU,SAM_DWNO,{SAM_HHNO,}INT_ASSIGNED)) then
+	        retrieve(MICS7HH);
+			if length(strip(HL2(1))) <> 0 then headname=HL2(1); endif;
+	        if ispartial(MICS7HH) then
+	           inc(reportsummary(INT_ASSIGNED,"HHPARTIAL"));			
+		       SAM_STATUS="??:"+tr("Partial saved");
+			   color="Gold";
+	        else
+			   SAM_STATUS=maketext("%02d:%s",HH46,getlabel(HH46,HH46));
+			   if HH46=1 then  //only households with result=1 are completed
+			      completed=1;
+	              inc(reportsummary(INT_ASSIGNED,"HHCOMP"));		
+	  			  color="PaleGreen";	
+				  // check if the HH was verified
+				  ///if verifhouseholds.seek(HH2) then
+				  if vvhousehold.seek(HH2) then
+				  	    color="LightBlue";
+				  		SAM_STATUS=strip(sam_status)+" "+tr("and verified");
+				  endif;
+				  //check for water quality test
+				  if HH9=1 and WQ31=notappl then 
+					 SAM_STATUS=strip(sam_status)+" "+tr("[Pending WQ test]");
+					 inc(pendingwater);
+					 color="Orange";
+				  endif;
+			   else
+				  color="LightGray";
+			   endif;	  
+		    endif;
+	        ///if runmode in 1,3 {interviewer} and INT_ASSIGNED<>STAFF_ID then  
+		    ///   SAM_STATUS="00:"+tr("DELEGATED BY")+" "+edit("999",HINT);
+			///   color="Gray";
+			///endif;   
+         else // not found
+			///if runmode in 1,3 {interviewer} and INT_ASSIGNED<>STAFF_ID then 
+			///	SAM_STATUS="  ";  //this household does not belong to me neither was delegated to me
+			///else	
+				inc(reportsummary(INT_ASSIGNED,"HHNOTST"));			
+				SAM_STATUS="**:"+tr("Not started");  //the HH was assigned to me but not started yet
+				  color="Tomato";			
+			///endif;	  
+	     endif;	 
+      endif;
+      if reportflag then
+		 ///if runmode = 2 or runmode in 1,3 and SAM_STATUS[1:2] <> " " then
+			//psureport.write(maketext("\n %03d          %s %s",SAM_DWNO,{SAM_HHNO,}SAM_HEAD[1:20],SAM_STATUS));
+			//psureport.write("             "+SAM_ADDRESS+"  "+tr("Interv:")+edit("9999",INT_ASSIGNED));
+
+			psureport.write(maketext('<p style="font-size:25px;"><br><b>&#9751 '+tr("Household")+": %02d  "+tr("Status")+":%s</b></p>",SAM_DWNO,SAM_STATUS));
+			psureport.write(maketext('<p style="line-height:20%">&emsp;<b>'+tr("Head")+":</b> %s</p>",headname));
+			psureport.write(maketext('<p style="line-height:20%">&emsp;<b>'+tr("Address")+":</b> %s</p>",SAM_ADDRESS));
+			if SAM_STATUS[1:2] <> "  " then
+			    STAFF_CODE=INT_ASSIGNED;          /// added for C.O.
+				loadcase(STAFF_DICT,STAFF_CODE);  /// added for C.O.
+				psureport.write(maketext('<p style="line-height:20%">&emsp;<b>'+tr("Interviewer assigned")+":</b> %03d %s</p>",INT_ASSIGNED,staff_name {///getlabel(teammembers,INT_ASSIGNED)}));
+			endif;
+		 ///endif;
+	  else //it is not for report, so it is for menu
+       {///
+	     //create menu line - Interviewers: all HH assigned to hem/her (INT_ASSIGNED=STAFF_ID)
+		 //                   Supersivors: all started households (excludes not started and not assigned)
+		 if runmode=2 {supervisor} and !SAM_STATUS[1:2] in "  ","**" or  
+		    runmode in 1,3 {interviewer} and (INT_ASSIGNED=STAFF_ID or SAM_STATUS[1:2]="00" {delegated}) then
+			inc(index);
+			inputData=inputData+'{'+
+			maketext('"index":%d',index)+
+			maketext(',"caption":"'+tr("HOUSEHOLD")+' %02d '+tr("Status")+': %v"',SAM_DWNO,SAM_STATUS)+
+			         ',"image":"HH.png", "lmargin":0 '+
+			maketext(',"backcolor":"%v"',color)+
+			maketext(',"line2":" '+tr("ADDRESS")+': %v"',strip(SAM_ADDRESS))+
+			maketext(',"line3":" '+tr("HEAD")+': %v"',headname)+
+			maketext(',"line4":" '+tr("Interviewer")+' %v:%v"',INT_ASSIGNED,getlabel(teammembers,INT_ASSIGNED))+
+			"},";
+			idlist.add(maketext("%02d000%03d%02s",sam_dwno,INT_ASSIGNED,SAM_STATUS[1:2])); //hh000ss 
+		 endif;
+         ///}
+      endif;
+      if completed then
+			numeric firstindividualflag=1;
+			for numeric ind in MODHL DO   //In cse of delegated, HL1 and HH26B was put to 00 for the non delegated questionnaires
+
+			  if HL1 > 0 and HL8>0 then  //WOMAN        
+				 individual(1{woman},reportflag, ref firstindividualflag);
+			  endif; 
+			  
+			  if HL1 > 0 and HL10>0 then  //UNDER 5        
+				 individual(2{under 5},reportflag,ref firstindividualflag);
+			  endif; 
+
+			  //if HL1 > 0 and HH26B=HL1 then  //5-17
+			  if ind=HH26B then  //5-17
+				 individual(3{5-17},reportflag,ref firstindividualflag);
+			  endif; 
+
+			  if HL1 > 0 and HL9>0 then  //MAN        
+				 individual(4{man},reportflag,ref firstindividualflag);
+			  endif; 
+			
+		    endfor;
+
+			if firstindividualflag > 1 then
+			   	psureport.write("</table>");
+			endif;
+	  endif;
+
+      //print notes
+      if reportflag and !SAM_STATUS[1:2] in " ","**" then
+		 psureport.write('<h3><p style="line-height:20%">'+tr("NOTES:")+'</p></h3>');   
+	     listnotes(HH2);
+		 psureport.write('<br>');   
+      endif;
+
+      writecase(HOUSEHOLDS);
+   endfor;
+
+end;
+
+
+function printhouse()
+   list string htmlrow;
+   htmlrow.add(tr("LN"));
+   htmlrow.add(tr("Name"));
+   htmlrow.add(tr("Relationship"));
+   htmlrow.add(tr("Sex"));
+   htmlrow.add(tr("Age"));
+   htmlrow.add(tr("DOB(MM/YYYY)"));
+   genhtmlrow(htmlrow,0,"LightGray");
+   htmlrow.clear();
+ 
+   for numeric ind in MODHL do
+      if HL1=HH47 then HL2[18:3]="(*)"; endif;
+      htmlrow.add(maketext("%02d",HL1));
+      htmlrow.add(HL2[1:20]);
+      htmlrow.add(maketext("%2d:%-15s",HL3,getlabel(HL3,HL3)[1:15]));
+      htmlrow.add(maketext("%d",HL4));
+      htmlrow.add(maketext("%02d",HL6));
+      htmlrow.add(maketext("%02d/%4d",HL5M,HL5Y));
+      genhtmlrow(htmlrow,1);
+	  htmlrow.clear();
+   enddo;
+   psureport.write("</table>");
+end;
+
+function printheadbad(indquest);
+//indquest 1->woman, 2->Under 5, 3->5-17, 4->man
+            psureport.write(3060,quest(indquest));  //"\n\n\nINDIVIDUALS WITH RECORD OF 'xxxxx' BUT IN HOUSEHOLD DON'T EXISTS OR NOT MEET THIS CONDITION"
+            psureport.write(      "============================================================================================");
+            psureport.write("");
+            psureport.write(3070); //"House - - - - - - - H o u s e h o l d   d a t a - - - - - - - -    - - - - - - I n d i v i d u a l    d a t a - - - - - -"
+            psureport.write(3080); //" hold Interv. Head                 Name                 Age Sex    Interv. LN Name                 Age Sex Status"
+            psureport.write("---- ------- -------------------- -------------------- --- ---    ------  -- -------------------- --- --- --------------------");
+end;
+
+
+function printheaddup(indquest);
+//indquest 1->woman, 2->Under 5, 3->5-17, 4->man
+            psureport.write(3090,quest(indquest));  //"\n\n\nINDIVIDUALS WITH RECORD OF 'xxxxxx' DUPLICATED"
+            psureport.write(      "==============================================");
+            psureport.write("");
+            psureport.write(3100);  //"House     - - - - - - R E C O R D S   F O U N D  - - - - - -"
+            psureport.write(3110);  //" hold LN  Interv. Name                 Status                        "
+            psureport.write("---- --  ------- -------------------- ------------------------------");
+end;
+
+function checkstructure(print);  
+list result_review_hh, result_review_ln;
+list string result_review_name, result_review_issue;
+list string htmlrow;
+
+  ///if runmode<>2 then
+  ///	   close(MICS7HH);
+  ///     setfile(MICS7HH,HHfile);
+  /// endif;
+   if print then
+      psureport.write(3020);  //"\n\n\n S T R U C T U R E   P R O B L E M S:"
+      psureport.write("<pre>");
+   endif;	  
+   structureproblems=0;
+   // Check for household records in the datafile not belonging to each staff member. 
+   // They may be: -originally assigned to this staff member, the household was initiated but
+   //               later the supervisor changed the assignment to other staff member.  
+   //              -or the household was deleted by the supervisor.
+   // This cases must be deleted by interviewers or reassigned to the corresponding staff member.
+   numeric totindiv=0;
+   numeric badrec=0;
+   numeric located;
+   string recstatus;
+   string issue;
+   index=0;
+   //errmsg("filename of mics7hh %v",filename(mics7hh));
+   forcase MICS7HH do
+      SAM_PSU=HH1;
+	  SAM_DWNO=HH2;
+	  located=loadcase(HOUSEHOLDS,SAM_PSU,SAM_DWNO);
+      if !located or INT_ASSIGNED<>HINT then
+	   ///   or runmode <> 2 and HINT<>STAFF_ID then
+	     inc(badrec); 
+		 inc(structureproblems);
+  	     if ispartial(MICS7HH) then
+	        hhstatus="??:"+tr("Partial saved");
+	     else
+		    hhstatus=maketext("%02v:%s",HH46,getlabel(HH46,HH46));
+	     endif;
+		 if badrec=1 and print then
+			htmlrow.clear();
+			psureport.write("<br>");
+			htmlrow.add(maketext(3030)); //HOUSEHOLDS/INDIVIDUALS FOUND NOT BELONGING TO THE INTERVIEWER ASSIGNED OR NOT IN THE SAMPLE"
+																															   
+			genhtmlrow(htmlrow,0,"Orange");psureport.write("</table>");
+
+            psureport.write(3040); //"HouseInterviewer  Household Head       Status                        I n d i v i d u a l s :"
+            psureport.write(3050); //"hold Assig. Found                                                  Quest.    LN Name                 Age Sex Status"
+            psureport.write("---- -----  ----- -------------------- ----------------------      ------    -- --------------------  --  -  --------------------");
+	     endif;	 
+		 string xassig;
+		 if !located then
+		    xassig=tr("No HH");
+			issue=tr("HOUSEHOLD NOT PRESENT IN THE HOUSEHOLD LISTING");
+		 elseif INT_ASSIGNED=notappl then
+		    xassig=tr("NotAs.");
+			issue=tr("HOUSEHOLD PRESENT BUT NOT YET ASSIGNED");
+		 else
+		    xassig=edit("9999",int_assigned);
+			issue=maketext(tr("HOUSEHOLD ASSIGNED TO ANOTHER INTERVIEWER")+" ("+tr("Assigned")+":%v, "+tr("Found")+":%v)",int_assigned,HINT);
+         endif;		 
+         if print then psureport.write(maketext("\n %02d  %-6s %03d %s %s",HH2,xassig,HINT,HL2(1)[1:20],hhstatus)); endif; 
+
+		 totindiv=0;
+		 // Individual questionnaires of these households:      
+		 //**********woman************
+		 forcase MICS7WM where HH1=WM1 and HH2=WM2 and WMINT=HINT do
+            inc(totindiv);
+		    if ispartial(MICS7WM) then
+			   recstatus="??:"+tr("Partial saved");
+			else
+                recstatus=maketext("%02v:%s",wm17,getlabel(wm17,wm17));
+		        if wm17 = 97 then
+				   recstatus=recstatus+" "+tr("TO")+" "+edit("999",wm5)
+				endif;
+			endif;
+			if print then
+               psureport.write(maketext("                                                                         %9s %02d %s  %2v  %1d  %s",
+			                          quest(1),WM3,WM3A[1:20],WB4,HL4(WM3),recstatus));
+			endif;
+         endfor;	 
+		 //**********under 5************
+		 forcase MICS7CH where HH1=UF1 and HH2=UF2 and UFINT=HINT do
+            inc(totindiv);
+		    if ispartial(MICS7CH) then
+			   recstatus="??:"+tr("Partial saved");
+			else
+                recstatus=maketext("%02v:%s",uf17,getlabel(uf17,uf17));
+		        if uf17 = 97 then
+				   recstatus=recstatus+" "+tr("TO")+" "+edit("999",uf5)
+				endif;
+			endif;
+			if print then
+               psureport.write(maketext("                                                                         %9s %02d %s  %2v  %1d  %s",
+			                          quest(2),uf3,uf3N[1:20],ub2,HL4(uf3),recstatus));
+			endif;
+         endfor;	 
+		 //**********5-17************
+		 forcase MICS7FS where HH1=FS1 and HH2=FS2 and FSINT=HINT do
+            inc(totindiv);
+		    if ispartial(MICS7FS) then
+			   recstatus="??:"+tr("Partial saved");
+			else
+                recstatus=maketext("%02v:%s",fs17,getlabel(fs17,fs17));
+		        if fs17 = 97 then
+				   recstatus=recstatus+" "+tr("TO")+" "+edit("999",fs5)
+				endif;
+			endif;
+			if print then
+				psureport.write(maketext("                                                                         %9s %02d %s  %2v  %1d  %s",
+			                          quest(3),fs3,fs3A[1:20],cb3,HL4(fs3),recstatus));
+			endif;
+         endfor;	 
+		 //**********man************
+		 if menselection then  //if no men is interviewed in the survey this block can be deleted
+		   forcase MICS7MN where HH1=MWM1 and HH2=MWM2 and MWMINT=HINT do
+            inc(totindiv);
+		    if ispartial(MICS7MN) then
+			   recstatus="??:"+tr("Partial saved");
+			else
+                recstatus=maketext("%02v:%s",Mwm17,getlabel(Mwm17,Mwm17));
+		        if Mwm17 = 97 then
+				   recstatus=recstatus+" "+tr("TO")+" "+edit("999",Mwm5)
+				endif;
+			endif;
+			if print then
+				psureport.write(maketext("                                                                         %9s %02d %s  %2v  %1d  %s",
+			                          quest(4),MWM3,MWM3A[1:20],MWB4,HL4(MWM3),recstatus));
+			endif;
+           endfor;	
+		 endif;  
+		 //*********************** end of men block********
+{///
+		inc(index);
+			inputData=inputData+'{'+
+			maketext('"index":%d,',index)+//maketext(',"index":%02d000',SAM_DWNO)+  //index=hhhtnn (hh=HH,t=0->HH,1->wm,...,nn=LN)
+			maketext('"caption":"'+tr("HOUSEHOLD")+' %02d Status: %v"',HH2,hhstatus)+
+			',"image":"HH.png", "lmargin":0 '+
+			maketext(',"backcolor":"%v"',"Tomato")+
+			maketext(',"line2":"'+tr("ISSUE")+': %v"',issue)+
+			maketext(',"line3":"'+tr("HEAD")+': %v"',hl2(1))+
+			maketext(',"line4":"'+tr("Total individual quest. found in this household")+':%v"',totindiv)+
+			"},";
+			idlist.add(maketext("%02d000%03d%02s",HH2,HINT,hhstatus[1:2])); 
+///}
+      endif;
+   endfor;
+ 
+ //Next review:
+ // - Records of individuals questionnaires but do not meet the condition in the H.H.
+ //    (This could happend if after start individual questionnaire the information
+ //      is changed in the HH questionnaire)
+ // - Result codes of individual questionnaires inconsist with permision
+ //    
+ 
+ result_review_hh.clear();
+ result_review_ln.clear();
+ result_review_name.clear();
+ result_review_issue.clear(); 
+ 
+ 
+ /// if runmode<>2 then
+ ///	   close(MICS7HH);
+ ///	   setfile(MICS7HH,psufolder+"\HHall.csdb");
+ ///  endif;
+
+   badrec=0;
+   forcase MICS7WM do  // **women** 
+	  HH1=WM1;
+	  HH2=WM2;
+	  HINT=WMHINT;
+	  HLN=0;
+      located=loadcase(MICS7HH,HH1,HH2,HINT,HLN);
+      if !located
+	     or HL1(WM3) in 0,notappl or !HL6(WM3) in 15:49 or HL4(WM3)<>2 then  
+	     inc(badrec);
+  	     if ispartial(MICS7WM) then
+	        recstatus="??:"+tr("Partial saved");
+	     else
+	        recstatus=maketext("%02d:%s",WM17,getlabel(WM17,WM17));
+			if WM17=97 then
+			   recstatus=recstatus+" "+tr("TO")+" "+edit("9999",WM5)
+			endif;  
+	     endif;
+		 if badrec=1 and print then
+		    printheadbad(1);
+	     endif;	 
+		 if located then
+		    issue=tr("WOMAN NOT FOUND IN HOUSEHOLD, AGE NOT IN 15:49 OR SEX IS NOT WOMAN");
+ 		    if print then 
+			   psureport.write(maketext("\n %02d   %03d    %20s %20s %2v  %1v       %03d    %02d %20s  %2v  %1v  %s",
+		                                   HH2,HINT,HL2(1)[1:20],HL2(WM3)[1:20],HL6(WM3),HL4(WM3),  WM5,WM3,WM3A[1:20],WB4{age},HL4(WM3){sex},recstatus));
+			 endif;
+         else
+		    issue=tr("HOUSEHOLD NOT FOUND");
+ 		    if print then
+			   psureport.write(maketext("\n %02d   %03d    %20s %20s %2v  %1v       %03d    %02d %20s  %2v  %1v  %s",
+		                             WM2,WMHINT," "," ","  "," ", WM5,WM3,WM3A[1:20],WB4{age},"2"{sex},recstatus));
+			   endif;
+         endif;
+{///
+		    inc(index);
+			inputData=inputData+'{'+
+			maketext('"index":%v,',index)+
+			maketext('"caption":"'+quest(1)+' -'+tr("HOUSEHOLD")+':%02d '+tr("LN")+' %02d '+tr("Status")+':%v"',WM2,WM3,recstatus)+
+			',"image":"'+icon(1)+'", "lmargin":0 '+
+			maketext(',"backcolor":"%v"',"Tomato")+
+			maketext(',"line2":"'+tr("Issue")+': %v"',issue)+
+			maketext(',"line3":"'+tr("Name")+': %v -'+tr("Sex")+': %v Age: %v"',strip(WM3A),HL4(WM3),WB4)+
+			maketext(',"line4":" '+tr("Household interviewer")+':%v"',WMHINT)+
+			"},";	
+			idlist.add(maketext("%02d%1d%02d%03d%02s",WM2,1,WM3,WMINT,recstatus[1:2]));	
+///}
+		 inc(structureproblems);
+
+	  elseif !ispartial(MICS7WM) then //household found and everything is fine, check for consist of the result code
+
+			//********** RESULT REVIEW********
+			issue="";
+			if hl6(wm3) in 15:17 then //woman age 15:17 in household
+			   if hl20(wm3) <> 90 then
+			      if hh33x(wm3)=2 and wm17 <> 6 then
+				     issue=maketext(tr("Woman 15:17 with 'No Adult Consent' but Result of Woman quest.=%v (it must be 6)"),wm17);
+				  elseif hh33x(wm3)<>2 and wm17 = 6 then
+				     issue=tr("Woman 15:17 with 'Adult Consent' but Result of Woman quest.=6 (No adult consent)");
+				  endif;
+				else //hl20(wm3)=90
+				   if wm17=6 then
+				     issue=tr("Emancipated Woman 15:17 has Result of Woman quest.=6 (No adult consent)");
+				   endif;
+				endif;   
+			 else //age>17
+				if wm17=6 then
+				   issue=tr("Woman > 17 years has Result of Woman quest.=6 (No adult consent)");
+				endif;
+			endif;
+			if length(issue)>0 then
+			   result_review_hh.add(wm2);
+			   result_review_ln.add(wm3);
+			   result_review_name.add(hl2(wm3));
+			   result_review_issue.add(issue); 
+			endif;
+			//************* END OF RESULT REVIEW **********
+
+      endif;
+   endfor;
+
+   badrec=0;
+   forcase MICS7CH do  // **under 5** 
+	  HH1=UF1;
+	  HH2=UF2;
+	  HINT=UFHINT;
+	  HLN=0;
+      located=loadcase(MICS7HH,HH1,HH2,HINT,HLN);
+      if !located
+	     or HL1(UF3) in 0,notappl or !HL6(UF3) in 0:4  then  
+	     inc(badrec);
+  	     if ispartial(MICS7CH) then
+	        recstatus="??:"+tr("Partial saved");
+	     else
+	        recstatus=maketext("%02d:%s",UF17,getlabel(UF17,UF17));
+			if UF17=97 then
+			   recstatus=recstatus+" "+tr("TO")+" "+edit("9999",UF5)
+			endif;  
+	     endif;
+		 if badrec=1 then
+		    printheadbad(2);
+	     endif;	 
+		 if located then
+		    issue=tr("CHILD UNDER 5 NOT FOUND IN HOUSEHOLD OR AGE NOT IN 0:4");
+ 		    if print then 
+ 		    psureport.write(maketext("\n %02d   %03d    %20s %20s %2v  %1v       %03d    %02d %20s  %2v  %1v  %s",
+		                             HH2,HINT,HL2(1)[1:20],HL2(UF3)[1:20],HL6(UF3),HL4(UF3),  UF5,UF3,UF3N[1:20],UB2{age},HL4(uf3){sex},recstatus));
+			 endif;
+         else
+		    issue=tr("HOUSEHOLD NOT FOUND");
+ 		    if print then
+ 		    psureport.write(maketext("\n %02d   %03d    %20s %20s %2v  %1v       %03d    %02d %20s  %2v  %1v  %s",
+		                             UF2,UFHINT," "," ","  "," ", UF5,UF3,UF3N[1:20],UB2{age},"?"{sex},recstatus));
+			   endif;
+         endif;			 
+{///
+		    inc(index);
+			inputData=inputData+'{'+
+			maketext('"index":%v,',index)+
+			maketext('"caption":"'+quest(2)+' -'+tr("HOUSEHOLD")+':%02d '+tr("LN")+' %02d '+tr("Status")+':%v"',UF2,UF3,recstatus)+
+			',"image":"'+icon(2)+'", "lmargin":0 '+
+			maketext(',"backcolor":"%v"',"Tomato")+
+			maketext(',"line2":"'+tr("Issue")+': %v"',issue)+
+			maketext(',"line3":"'+tr("Name")+': %v -Sex: %v Age: %v"',strip(UF3N),HL4(UF3),UB2)+
+			maketext(',"line4":" '+tr("Household interviewer")+':%v"',UFHINT)+
+			"},";	
+			idlist.add(maketext("%02d%1d%02d%03d%02s",UF2,2,UF3,UFINT,recstatus[1:2]));	
+///}
+		 inc(structureproblems);
+
+	  elseif !ispartial(MICS7CH) then //household found and everything is fine, check for consist of the result code
+
+			//********** RESULT REVIEW********
+			issue="";
+			if hl6(hl20(uf3)) in 15:17 then //U5 child has a caretaker of 15:17 in household
+			   if hl20(hl20(uf3)) = 90 then  //caretaker is emancipated
+				   if uf17=6 then
+				     issue=tr("Caretaker of under 5 child is a emancipated person of 15:17 and the Result of Under5 quest.=6 (No adult consent)");
+				   endif;
+			   else // caretaker is non emancipated
+			      if (hh33x(hl20(uf3))=2 or hh39x(hl20(uf3))=2) and uf17 <> 6 then //Caretaker has no consent
+				     issue=maketext(tr("Caretaker of under 5 child has 'No Adult Consent' but result of Under 5 quest.=%v (it must be 6)"),uf17);
+				  elseif (hh33x(hl20(uf3))=1 or hh39x(hl20(uf3))=1) and uf17 = 6 then //Caretaker has consent
+				     issue=tr("Caretaker of  under 5 child has 'Adult Consent' but Result of Under 5 quest.=6 (No adult consent)");
+				  endif;
+				endif;
+			elseif hl6(hl20(uf3)) > 17 then // Under 5 child has a caretaker with age > 17 in household
+				if uf17=6 then
+				   issue=tr("Caretaker of under 5 child is 18+ years, but Result of Under 5 quest.=6 (No adult consent)");
+				 endif;
+			elseif hl6(hl20(uf3)) < 15 then //Under 5 child has a caretaker with age < 15 in household 
+				if uf17<>6 then
+				   issue=maketext(tr("Caretaker of under 5 child is < 15 years and Result of Under 5 quest.=%v (it must be 6)"),uf17);
+				endif;
+			endif;
+			if length(issue)>0 then
+			   result_review_hh.add(uf2);
+			   result_review_ln.add(uf3);
+			   result_review_name.add(hl2(uf3));
+			   result_review_issue.add(issue); 
+			endif;
+			//************* END OF RESULT REVIEW **********
+
+      endif;
+   endfor;
+
+   badrec=0;
+   forcase MICS7FS do  // **5-17** 
+	  HH1=FS1;
+	  HH2=FS2;
+	  HINT=FSHINT;
+	  HLN=0;
+      located=loadcase(MICS7HH,HH1,HH2,HINT,HLN);
+      if !located
+	     or HL1(FS3) in 0,notappl or !HL6(FS3) in 5:17 or HH26B<>FS3  then  
+	     inc(badrec);
+  	     if ispartial(MICS7FS) then
+	        recstatus="??:"+tr("Partial saved");
+	     else
+	        recstatus=maketext("%02d:%s",FS17,getlabel(FS17,FS17));
+			if FS17=97 then
+			   recstatus=recstatus+" "+tr("TO")+" "+edit("9999",FS5)
+			endif;  
+	     endif;
+		 if badrec=1 then
+		    printheadbad(3);
+	     endif;	 
+		 if located then
+		    issue=tr("CHILD 5-17 NOT FOUND IN HOUSEHOLD, NOT IN 5:17 OR NOT SELECTED");
+ 		    if print then 
+ 		    psureport.write(maketext("\n %02d   %03d    %20s %20s %2v  %1v       %03d    %02d %20s  %2v  %1v  %s",
+		                             HH2,HINT,HL2(1)[1:20],HL2(FS3)[1:20],HL6(FS3),HL4(FS3),  FS5,FS3,FS3A[1:20],CB3{age},HL4(FS3){sex},recstatus));
+			 endif;
+         else
+		    issue=tr("HOUSEHOLD NOT FOUND");
+ 		    if print then
+ 		    psureport.write(maketext("\n %02d   %03d    %20s %20s %2v  %1v       %03d    %02d %20s  %2v  %1v  %s",
+		                             FS2,FSHINT," "," ","  "," ", FS5,FS3,FS3A[1:20],CB3{age},"?"{sex},recstatus));
+			   endif;
+         endif;			 
+{///
+		    inc(index);
+			inputData=inputData+'{'+
+			maketext('"index":%v,',index)+
+			maketext('"caption":"'+quest(3)+' -'+tr("HOUSEHOLD")+':%02d '+tr("LN")+' %02d '+tr("Status")+':%v"',FS2,FS3,recstatus)+
+			',"image":"'+icon(3)+'", "lmargin":0 '+
+			maketext(',"backcolor":"%v"',"Tomato")+
+			maketext(',"line2":"'+tr("Issue")+': %v"',issue)+
+			maketext(',"line3":"'+tr("Name")+': %v -'+tr("Sex")+': %v '+tr("Age")+': %v"',strip(FS3A),HL4(FS3),CB3)+
+			maketext(',"line4":" '+tr("Household interviewer")+':%v"',FSHINT)+
+			"},";	
+			idlist.add(maketext("%02d%1d%02d%03d%02s",FS2,3,FS3,FSINT,recstatus[1:2]));	
+ ///}
+		 inc(structureproblems);
+
+	  elseif !ispartial(MICS7FS) then //household found and everything is fine, check for consist of the result code
+
+			//********** RESULT REVIEW********
+			issue="";
+			if hl20(fs3)=90 then  //Emancipated
+				if fs17=6 then
+				   issue=tr("Emancipated 15-17 child has a Result of 5-17 quest.=6 (No adult consent)");
+				endif;
+			elseif hl6(hl20(fs3)) in 15:17 then //5-17 child has a caretaker of 15:17 in household
+			   if hl20(hl20(fs3)) = 90 then  //caretaker is emancipated
+				   if fs17=6 then
+				     issue=tr("Caretaker of 5-17 child is a emancipated person of 15:17 and the Result of 5-17 quest.=6 (No adult consent)");
+				   endif;
+			   else // caretaker is non emancipated
+			      if (hh33x(hl20(fs3))=2 or hh39x(hl20(fs3))=2) and fs17 <> 6 then //Caretaker has no consent
+				     issue=maketext(tr("Caretaker of 5-17 child has 'No Adult Consent' but result of 5-17 quest.=%v (it must be 6)"),fs17);
+				  elseif (hh33x(hl20(fs3))=1 or hh39x(hl20(fs3))=1) and fs17 = 6 then //Caretaker has consent
+				     issue=tr("Caretaker of 5-17 child has 'Adult Consent' but Result of 5-17 quest.=6 (No adult consent)");
+				  endif;
+				endif;
+			elseif hl6(hl20(fs3)) > 17 then //5-17 child has a caretaker with age > 17 in household
+				if fs17=6 then
+				   issue=tr("Caretaker of 5-17 child is 18+ years, but Result of 5-17 quest.=6 (No adult consent)");
+				 endif;
+			elseif hl6(hl20(fs3)) < 15 then //5-17 child has a caretaker with age < 15 in household (Probably this never happens)
+				if fs17<>6 then
+				   issue=maketext(tr("Caretaker of 5-17 child is < 15 years and Result of 5-17 quest.=%v (it must be 6)"),fs17);
+				endif;
+			endif;
+			if length(issue)>0 then
+			   result_review_hh.add(fs2);
+			   result_review_ln.add(fs3);
+			   result_review_name.add(hl2(fs3));
+			   result_review_issue.add(issue); 
+			endif;
+			//************* END OF RESULT REVIEW **********
+
+      endif;
+   endfor;
+
+   badrec=0;
+   forcase MICS7MN do  // **men** 
+	  HH1=MWM1;
+	  HH2=MWM2;
+	  HINT=MWMHINT;
+	  HLN=0;
+      located=loadcase(MICS7HH,HH1,HH2,HINT,HLN);
+      if !located or HH8 <> 1
+	     or HL1(MWM3) in 0,notappl or !HL6(MWM3) in 15:49 or HL4(MWM3)<>1 then  
+	     inc(badrec);
+  	     if ispartial(MICS7MN) then
+	        recstatus="??:"+tr("Partial saved");
+	     else
+	        recstatus=maketext("%02d:%s",MWM17,getlabel(MWM17,MWM17));
+			if MWM17=97 then
+			   recstatus=recstatus+" "+tr("TO")+" "+edit("9999",MWM5)
+			endif;  
+	     endif;
+		 if badrec=1 then
+		    printheadbad(4);
+	     endif;	 
+		 if located then
+		    issue=tr("MAN NOT FOUND IN HOUSEHOLD, AGE NOT IN 15:49 OR SEX IS NOT MAN");
+ 		    if print then 
+ 		    psureport.write(maketext("\n %02d   %03d    %20s %20s %2v  %1v       %03d    %02d %20s  %2v  %1v  %s",
+		                             HH2,HINT,HL2(1)[1:20],HL2(MWM3)[1:20],HL6(MWM3),HL4(MWM3),  MWM5,MWM3,MWM3A[1:20],MWB4{age},HL4(MWM3){sex},recstatus));
+			 endif;
+         else
+		    issue=tr("HOUSEHOLD NOT FOUND");
+ 		    if print then
+ 		    psureport.write(maketext("\n %02d   %03d    %20s %20s %2v  %1v       %03d    %02d %20s  %2v  %1v  %s",
+		                             MWM2,MWMHINT," "," ","  "," ", MWM5,MWM3,MWM3A[1:20],MWB4{age},"1"{sex},recstatus));
+			   endif;
+         endif;			 
+{///
+		    inc(index);
+			inputData=inputData+'{'+
+			maketext('"index":%v,',index)+
+			maketext('"caption":"'+quest(4)+' -'+tr("HOUSEHOLD")+':%02d '+tr("LN")+' %02d '+tr("Status")+':%v"',MWM2,MWM3,recstatus)+
+			',"image":"'+icon(4)+'", "lmargin":0 '+
+			maketext(',"backcolor":"%v"',"Tomato")+
+			maketext(',"line2":"'+tr("Issue")+': %v"',issue)+
+			maketext(',"line3":"'+tr("Name")+': %v -'+tr("Sex")+': %v '+tr("Age")+': %v"',strip(MWM3A),HL4(MWM3),MWB4)+
+			maketext(',"line4":" '+tr("Household interviewer")+':%v"',MWMHINT)+
+			"},";	
+			idlist.add(maketext("%02d%1d%02d%03d%02s",MWM2,4,MWM3,MWMINT,recstatus[1:2]));	
+///}			
+		 inc(structureproblems);
+
+	  elseif !ispartial(MICS7MN) then //household found and everything is fine, check for consist of the result code
+
+			//********** RESULT REVIEW********
+			issue="";
+			if hl6(mwm3) in 15:17 then //man age 15:17 in household
+			   if hl20(mwm3) <> 90 then
+			      if hh39x(mwm3)=2 and mwm17 <> 6 then
+				     issue=maketext(tr("Man 15:17 with 'No Adult Consent' but Result of Man quest.=%v (it must be 6)"),mwm17);
+				  elseif hh39x(mwm3)<>2 and mwm17 = 6 then
+				     issue=tr("Man 15:17 with 'Adult Consent' but Result of Man quest.=6 (No adult consent)");
+				  endif;
+				else //hl20(mwm3)=90
+				   if mwm17=6 then
+				     issue=tr("Emancipated Man 15:17 has Result of Man quest.=6 (No adult consent)");
+				   endif;
+				endif;   
+			 else //age>17
+				if mwm17=6 then
+				   issue=tr("Man > 17 years has Result of Man quest.=6 (No adult consent)");
+				endif;
+			endif;
+			if length(issue)>0 then
+			   result_review_hh.add(mwm2);
+			   result_review_ln.add(mwm3);
+			   result_review_name.add(hl2(mwm3));
+			   result_review_issue.add(issue); 
+			endif;
+			//************* END OF RESULT REVIEW **********
+
+      endif;
+   endfor;
+
+
+  // Report of duplicated individual questionnaires 
+   badrec=0;
+   list string allindivid, allindivdata;
+   forcase MICS7WM where WM17<>97 do  // **woman**
+     if ispartial(MICS7WM) then
+        recstatus="??:"+tr("Partial saved");
+     else
+        recstatus=maketext("%02d:%s",WM17,getlabel(WM17,WM17));
+     endif;
+	 numeric dupl=allindivid.seek(maketext("%02d%02d",wm2,wm3));
+	 if dupl >0 then
+	     inc(badrec);
+		 if badrec=1 then
+			printheaddup(1);
+         endif;
+			psureport.write("\n %02s  %02s    %03s  %20s %s",allindivid(dupl)[1:2],allindivid(dupl)[3:2],allindivdata(dupl)[1:3],allindivdata(dupl)[4:20],allindivdata(dupl)[24]);
+			psureport.write(  " %02d  %02d    %03d  %20s %s",WM2,WM3,WMINT,WM3A,recstatus);
+		 inc(structureproblems);
+	  else
+		 allindivid.add(maketext("%02d%02d",wm2,wm3));
+		 allindivdata.add(maketext("%03d%20s%s",wmint,wm3a,recstatus));
+      endif;
+   endfor;
+
+   badrec=0;
+   allindivid.clear();
+   allindivdata.clear();
+   forcase MICS7CH where UF17<>97 do  // **under 5**
+     if ispartial(MICS7CH) then
+        recstatus="??:"+tr("Partial saved");
+     else
+        recstatus=maketext("%02d:%s",UF17,getlabel(UF17,UF17));
+     endif;
+	 numeric dupl=allindivid.seek(maketext("%02d%02d",UF2,UF3));
+	 if dupl >0 then
+	     inc(badrec);
+		 if badrec=1 then
+			printheaddup(2);
+         endif;
+			psureport.write("\n %02s  %02s    %03s  %20s %s",allindivid(dupl)[1:2],allindivid(dupl)[3:2],allindivdata(dupl)[1:3],allindivdata(dupl)[4:20],allindivdata(dupl)[24]);
+			psureport.write(  " %02d  %02d    %03d  %20s %s",UF2,UF3,UFINT,UF3N,recstatus);
+		 inc(structureproblems);
+	 else
+		 allindivid.add(maketext("%02d%02d",UF2,UF3));
+		 allindivdata.add(maketext("%03d%20s%s",UFint,UF3N,recstatus));
+     endif;
+   endfor;
+
+   badrec=0;
+   allindivid.clear();
+   allindivdata.clear();
+   forcase MICS7FS where FS17<>97 do  // **5-17**
+     if ispartial(MICS7FS) then
+        recstatus="??:"+tr("Partial saved");
+     else
+        recstatus=maketext("%02d:%s",FS17,getlabel(FS17,FS17));
+     endif;
+	 numeric dupl=allindivid.seek(maketext("%02d%02d",FS2,FS3));
+	 if dupl >0 then
+	     inc(badrec);
+		 if badrec=1 then
+			printheaddup(3);
+         endif;
+			psureport.write("\n %02s  %02s    %03s  %20s %s",allindivid(dupl)[1:2],allindivid(dupl)[3:2],allindivdata(dupl)[1:3],allindivdata(dupl)[4:20],allindivdata(dupl)[24]);
+			psureport.write(  " %02d  %02d    %03d  %20s %s",FS2,FS3,FSINT,FS3A,recstatus);
+		 inc(structureproblems);
+	 else
+		 allindivid.add(maketext("%02d%02d",FS2,FS3));
+		 allindivdata.add(maketext("%03d%20s%s",FSint,FS3A,recstatus));
+     endif;
+   endfor;
+
+   badrec=0;
+   allindivid.clear();
+   allindivdata.clear();
+   forcase MICS7MN where MWM17<>97 do  // **man**
+     if ispartial(MICS7MN) then
+        recstatus="??:"+tr("Partial saved");
+     else
+        recstatus=maketext("%02d:%s",MWM17,getlabel(MWM17,MWM17));
+     endif;
+	 numeric dupl=allindivid.seek(maketext("%02d%02d",Mwm2,Mwm3));
+	 if dupl >0 then
+	     inc(badrec);
+		 if badrec=1 then
+			printheaddup(4);
+         endif;
+			psureport.write("\n %02s  %02s    %03s  %20s %s",allindivid(dupl)[1:2],allindivid(dupl)[3:2],allindivdata(dupl)[1:3],allindivdata(dupl)[4:20],allindivdata(dupl)[24]);
+			psureport.write(  " %02d  %02d    %03d  %20s %s",MWM2,MWM3,MWMINT,MWM3A,recstatus);
+		 inc(structureproblems);
+	  else
+		 allindivid.add(maketext("%02d%02d",Mwm2,Mwm3));
+		 allindivdata.add(maketext("%03d%20s%s",Mwmint,Mwm3a,recstatus));
+      endif;
+   endfor;
+
+
+//  final report of total structural problems found
+
+   if structureproblems then
+      psureport.write(3120,structureproblems);  //"\n\n *** Total structure problems found %d ***"
+   else
+      psureport.write(3130);  //"\n *** No structure problems found ***"
+   endif;
+
+   //Report of Individual questionnaires result inconsistent with permision
+   if result_review_hh.length() > 0 then
+      psureport.write("</pre>");
+      psureport.write(2115);
+	  htmlrow.clear();
+   	  htmlrow.add(tr("Household"));
+   	  htmlrow.add(tr("Line Number"));
+   	  htmlrow.add(tr("Name"));
+   	  htmlrow.add(tr("Issue"));
+ 	  genhtmlrow(htmlrow,0,"Orange");
+	  do numeric i=1 until i>result_review_hh.length()
+	    htmlrow.clear();
+		htmlrow.add(edit("99",result_review_hh(i)));
+		htmlrow.add(edit("99",result_review_ln(i)));
+		htmlrow.add(result_review_name(i));
+		htmlrow.add(result_review_issue(i));
+		genhtmlrow(htmlrow,1);
+	  enddo;
+      psureport.write("</table>");
+   endif;
+
+//***********
+
+///	if runmode <> 2 then  //in interviewer mode the report finishes here
+///       psureport.write("\n\n[Backup folder:%s]",BACKUPFOLDER);  
+///	   psureport.write("</pre>");
+///	   exit;
+///	endif;
+
+
+// report of households verification 
+
+      numeric nverif=0;
+       psureport.write(3140);  //"\n\n\nHOUSEHOLDS VERIFICATIONS: SUPERVISOR VS INTERVIERWER MEMBERS FOUND"
+
+      // vvhousehold and vvstaff lists were filled in sethhstatus function
+	  
+	    do numeric i=1 until i>vvhousehold.length() 
+	       close(MICS7HH);
+		   setfile(MICS7HH,VVfile);
+		   HH1=visualvalue(PSU);
+		   HH2=vvhousehold(i);
+		   HINT=vvstaff(i);
+		   HLN=0;
+ 		   if loadcase(MICS7HH,HH1,HH2,HINT,HLN) then
+		     inc(nverif);
+  		     psureport.write(3150,HH2,HINT);  //"\n\nDWELLING %03d HOUSEHOLD %d - Supervisor's %04d report:"
+		     printhouse();
+  	         close(MICS7HH);
+		     setfile(MICS7HH,HHfile);
+			 locate(MICS7HH,startswith,maketext("%05d%02d",visualvalue(PSU),vvhousehold(i)));  //look for the household whithout the interviewer code
+			 loadcase(MICS7HH);
+		     psureport.write(3160,HH2,HINT);  //"\nDWELLING %03d HOUSEHOLD %d - Interviewers's %04d report:"
+             printhouse();
+			 psureport.write("_________________________________________________________________________________________");
+		   endif;
+	     enddo;
+
+      if nverif then
+         psureport.write(3165); //(*) Interviewed person
+         psureport.write(3170,nverif);  //"\n\n *** Total households verified %d ***"
+      else
+         psureport.write(3180);  //"\n *** No households verified ***"
+     endif;
+
+   psureport.write(3190);  //"S U M M A R Y "
+
+   //psureport.write(3200);  //"\n   Assigned              - - - - - - Household questionnaires - - - - - -   - - - - - - Individual questionnaires- - - - - -"
+   //psureport.write(3210);  //  "  Interviewer            Assigned Not start. Part.saved Completed Compl.%   Assigned Not start. Part.saved Completed Compl.%"
+   //psureport.write(  "  -----------            -------- ---------- ---------- ---(*)--- ------- ");
+
+   psureport.write("<span><b>---"+tr("Household questionnaires")+"---</b></span>");
+   htmlrow.clear();
+   htmlrow.add(tr("Assigned interviewer"));
+   htmlrow.add(tr("Assigned"));
+   htmlrow.add(tr("Not started"));
+   htmlrow.add(tr("Partial saved"));
+   htmlrow.add(tr("Completed")+" (*)");
+   htmlrow.add(tr("Completed")+" %");
+   genhtmlrow(htmlrow,0,"LightGray");
+   htmlrow.clear();
+
+   
+//table of households quest.
+   list numeric intervlist;
+   reportsummary.getkeys(intervlist);
+   intervlist.add(99999);
+  
+   do numeric ind=1 until ind > intervlist.length()
+      string intline;
+	  if intervlist(ind)=99999 then
+	     intline="  "+tr("T O T A L");
+      else
+	     inc(reportsummary(99999,"HHASSIG"),reportsummary(intervlist(ind),"HHASSIG"));
+	     inc(reportsummary(99999,"HHNOTST"),reportsummary(intervlist(ind),"HHNOTST"));
+	     inc(reportsummary(99999,"HHPARTIAL"),reportsummary(intervlist(ind),"HHPARTIAL"));
+	     inc(reportsummary(99999,"HHCOMP"),reportsummary(intervlist(ind),"HHCOMP"));
+	     if intervlist(ind)=0 then
+	        intline=tr("Not assigned yet");
+ 	     else	 
+	        //intline=getlabel(teammembers,intervlist(ind));
+			intline=maketext("[%04v]",intervlist(ind));
+		 endif;	
+	  endif;	 
+     // psureport.write(  " %-25s    %02d         %02d         %02d        %02d   %5.1f %",
+     //          intline[1:25], 
+	 //		   reportsummary(intervlist(ind),"HHASSIG"),reportsummary(intervlist(ind),"HHNOTST"),reportsummary(intervlist(ind),"HHPARTIAL"),reportsummary(intervlist(ind),"HHCOMP"),reportsummary(intervlist(ind),"HHCOMP")*100/reportsummary(intervlist(ind),"HHASSIG"));
+     //           //reportsummary(intervlist(ind),"PPASSIG"),reportsummary(intervlist(ind),"PPNOTST"),reportsummary(intervlist(ind),"PPPARTIAL"),reportsummary(intervlist(ind),"PPCOMP"),reportsummary(intervlist(ind),"PPCOMP")*100/reportsummary(intervlist(ind),"PPASSIG"));
+	   htmlrow.add(intline);
+	   htmlrow.add(maketext("%02d",reportsummary(intervlist(ind),"HHASSIG")));
+	   htmlrow.add(maketext("%02d",reportsummary(intervlist(ind),"HHNOTST")));
+	   htmlrow.add(maketext("%02d",reportsummary(intervlist(ind),"HHPARTIAL")));
+	   htmlrow.add(maketext("%02d",reportsummary(intervlist(ind),"HHCOMP")));
+	   htmlrow.add(maketext("%5.1f %",reportsummary(intervlist(ind),"HHCOMP")*100/reportsummary(intervlist(ind),"HHASSIG")));
+	   genhtmlrow(htmlrow,1);
+	   htmlrow.clear();
+   enddo;
+   psureport.write("</table>");
+
+//table of individual quest.   
+   list string questlist=quest;
+   questlist.add(tr("TOTAL"));
+   //psureport.write(2291);  //"\n   Assigned              - - - - - - Household questionnaires - - - - - -   - - - - - - Individual questionnaires- - - - - -"
+   //psureport.write(2301);  //  "  Interviewer            Assigned Not start. Part.saved Completed Compl.%   Assigned Not start. Part.saved Completed Compl.%"
+   //psureport.write(  "  -----------            -------- ---------- ---------- ---(*)--- ------- ");
+   psureport.write("<span><b>---"+tr("Individual questionnaires")+"---</b></span>");
+   htmlrow.clear();
+   htmlrow.add(tr("Questionnaire type"));
+   htmlrow.add(tr("Found"));
+   htmlrow.add(tr("Not started"));
+   htmlrow.add(tr("Partial saved"));
+   htmlrow.add(tr("Completed (*)"));
+   htmlrow.add(tr("Completed %"));
+   genhtmlrow(htmlrow,0,"LightGray");
+   htmlrow.clear();
+
+
+  
+   do numeric ind=1 until ind > questlist.length()
+	  if questlist(ind)<>tr("TOTAL") then
+	     inc(indreportsummary(tr("TOTAL"),"PPASSIG"),indreportsummary(questlist(ind),"PPASSIG"));
+	     inc(indreportsummary(tr("TOTAL"),"PPNOTST"),indreportsummary(questlist(ind),"PPNOTST"));
+	     inc(indreportsummary(tr("TOTAL"),"PPPARTIAL"),indreportsummary(questlist(ind),"PPPARTIAL"));
+	     inc(indreportsummary(tr("TOTAL"),"PPCOMP"),indreportsummary(questlist(ind),"PPCOMP"));
+	  endif;	 
+      //psureport.write(  " %-25s    %02d         %02d         %02d        %02d   %5.1f %  ",//    %02d         %02d         %02d        %02d   %5.1f %",
+      //         questlist(ind), 
+      //         indreportsummary(questlist(ind),"PPASSIG"),indreportsummary(questlist(ind),"PPNOTST"),indreportsummary(questlist(ind),"PPPARTIAL"),indreportsummary(questlist(ind),"PPCOMP"),indreportsummary(questlist(ind),"PPCOMP")*100/indreportsummary(questlist(ind),"PPASSIG"));
+	   htmlrow.add(questlist(ind));
+	   htmlrow.add(maketext("%02d",indreportsummary(questlist(ind),"PPASSIG")));
+	   htmlrow.add(maketext("%02d",indreportsummary(questlist(ind),"PPNOTST")));
+	   htmlrow.add(maketext("%02d",indreportsummary(questlist(ind),"PPPARTIAL")));
+	   htmlrow.add(maketext("%02d",indreportsummary(questlist(ind),"PPCOMP")));
+	   htmlrow.add(maketext("%5.1f %",indreportsummary(questlist(ind),"PPCOMP")*100/indreportsummary(questlist(ind),"PPASSIG")));
+	   genhtmlrow(htmlrow,1);
+	   htmlrow.clear();
+   enddo;
+   psureport.write("</table>");
+
+   psureport.write(2310);  //"\n (*) Completed questionnaires refers to questionnaires with completion code=01"
+
+   if reportsummary(99999,"HHNOTST")>0 or
+      indreportsummary(tr("TOTAL"),"PPNOTST")>0 or
+      reportsummary(99999,"HHPPARTIAL")>0 or
+      indreportsummary(tr("TOTAL"),"PPPARTIAL")>0 or
+      structureproblems>0 or
+      nverif=0 or
+	  pendinganthro>0 or
+	  pendingwater>0 or
+      result_review_hh.length() > 0
+	                      then
+	   htmlrow.clear();
+	   htmlrow.add(maketext(2320,PSUstr)); //CLUSTER %s can not be closed by the following reasons:
+	   genhtmlrow(htmlrow,0,"Red");
+	   htmlrow.clear();
+	   if reportsummary(99999,"HHNOTST"  )>0 then htmlrow.clear();htmlrow.add(maketext(2330,reportsummary(99999,"HHNOTST"  )));genhtmlrow(htmlrow,1); endif;  //"   -There are %d households questionnaires not started"
+	   if indreportsummary(tr("TOTAL"),"PPNOTST"  )>0 then htmlrow.clear();htmlrow.add(maketext(2340,indreportsummary(tr("TOTAL"),"PPNOTST"  )));genhtmlrow(htmlrow,1); endif;  //"   -There are %d individual questionnares not started"
+	   if reportsummary(99999,"HHPARTIAL")>0 then htmlrow.clear();htmlrow.add(maketext(2350,reportsummary(99999,"HHPARTIAL")));genhtmlrow(htmlrow,1); endif;  //"   -There are %d partial saved household questionnaires"
+	   if indreportsummary(tr("TOTAL"),"PPPARTIAL")>0 then htmlrow.clear();htmlrow.add(maketext(2360,indreportsummary(tr("TOTAL"),"PPPARTIAL")));genhtmlrow(htmlrow,1); endif;  //"   -There are %d partial saved individual questionnaires"
+       if structureproblems>0 then                htmlrow.clear();htmlrow.add(maketext(2370,structureproblems));genhtmlrow(htmlrow,1);endif;                  //"   -There are %d structural errors"
+       if nverif=0 then                           htmlrow.clear();htmlrow.add(maketext(2380));genhtmlrow(htmlrow,1);endif;                                    //"   -There are not households with verified members composition"
+       if pendinganthro>0 then                    htmlrow.clear();htmlrow.add(maketext(2382,pendinganthro));genhtmlrow(htmlrow,1);endif;                                    //"   -There are not households with verified members composition"
+       if pendingwater>0 then                     htmlrow.clear();htmlrow.add(maketext(2384,pendingwater));genhtmlrow(htmlrow,1);endif;                                    //"   -There are not households with verified members composition"
+	   if result_review_hh.length() then          htmlrow.clear();htmlrow.add(maketext(2385,result_review_hh.length()));genhtmlrow(htmlrow,1);endif;  
+       psureport.write("</table>");  
+       checkstructure=0;
+   else
+       if cluster_sel_status = 2 then 
+	      psureport.write(3340,PSUstr);  //"\n\n CLUSTER %s can be closed"
+	   endif;	  
+       checkstructure=1;
+   endif;
+
+   psureport.write("</pre>");
+  
+end;
+
+
+function pffandinterview(typeq);
+  //typeq: 0=Household, 1=women, 2=under 5 3=5-17 4=man
+   pff interview_pff;
+   if typeq=0 then //household
+ 	  interview_pff.setproperty("Application", "..\..\APPS\ENTRY\entryHH.ent");
+	  interview_pff.setproperty("InputData",filename(MICS7HH));
+	  interview_pff.setproperty("ExternalFiles.CLUSTERS",filename(CLUSTERS));
+   elseif typeq=1 then//Woman
+ 	  interview_pff.setproperty("Application", "..\..\APPS\ENTRY\entryWM.ent");
+	  interview_pff.setproperty("InputData", filename(MICS7WM));
+   elseif typeq=2 then//Under 5
+ 	  interview_pff.setproperty("Application", "..\..\APPS\ENTRY\entryCH.ent");
+	  interview_pff.setproperty("InputData", filename(MICS7CH));
+   elseif typeq=3 then//5-17
+ 	  interview_pff.setproperty("Application", "..\..\APPS\ENTRY\entryFS.ent");
+	  interview_pff.setproperty("InputData", filename(MICS7FS));
+   elseif typeq=4 then//Man
+ 	  interview_pff.setproperty("Application", "..\..\APPS\ENTRY\entryMN.ent");
+	  interview_pff.setproperty("InputData", filename(MICS7MN));
+   endif;
+	
+    if typeq<>0 then
+	  interview_pff.setproperty("ExternalFiles.MICS7HH",hhfile);
+	endif;
+	
+	interview_pff.setproperty("MODCENTRAL","1");
+{
+    close(MICS7HH);
+	close(MICS7WM); 
+	close(MICS7CH); 
+	close(MICS7FS); 
+	close(MICS7MN); 
+}
+    //interview_pff.save("pff.pff");
+	execpff(filename(interview_pff),wait);
+{
+	setfile(MICS7HH,HHfile);
+    setfile(MICS7WM,PPfile);  // ***custom***
+}
+	
+end;   
+
+function pffexport(typeq, string folder);
+  //typeq: 1=Household, 2=WM, 3=U5, 4=FS, 5=MN 6 = Verification
+   pff export_pff;
+   if typeq=1 then //household
+ 	  export_pff.setproperty("Application", "..\EXPORTAPPS\ExportHH.bch");
+	  export_pff.setproperty("InputData",folder+"\HHall.csdb");
+  	  export_pff.setproperty("UserFiles.MYHH",folder+"\MYHH.DAT");
+	  export_pff.setproperty("UserFiles.MYHL",folder+"\MYHL.DAT");
+	  export_pff.setproperty("UserFiles.MYHHTS",folder+"\MYHHTS.DAT");
+	  export_pff.setproperty("Listing",reportsfolder+"\ExportHH.lst");
+
+	elseif typeq=2 then //WOMAN
+ 	  export_pff.setproperty("Application", "..\EXPORTAPPS\ExportWM.bch");
+	  export_pff.setproperty("InputData",folder+"\WMall.csdb");
+  	  export_pff.setproperty("UserFiles.MYWM",folder+"\MYWM.DAT");
+  	  export_pff.setproperty("UserFiles.MYBH",folder+"\MYBH.DAT");
+  	  export_pff.setproperty("UserFiles.MYFG",folder+"\MYFG.DAT");
+  	  export_pff.setproperty("UserFiles.MYMM",folder+"\MYMM.DAT");
+	  export_pff.setproperty("UserFiles.MYWMTU",folder+"\MYWMTU.DAT");
+	  export_pff.setproperty("UserFiles.MYWMTS",folder+"\MYWMTS.DAT");
+	  export_pff.setproperty("Listing",reportsfolder+"\ExportWM.lst");
+
+	elseif typeq=3 then //U5
+ 	  export_pff.setproperty("Application", "..\EXPORTAPPS\ExportCH.bch");
+	  export_pff.setproperty("InputData",folder+"\CHall.csdb");
+	  export_pff.setproperty("UserFiles.MYCH",folder+"\MYCH.dat");
+	  export_pff.setproperty("UserFiles.MYCHTS",folder+"\MYCHTS.DAT");
+  	  export_pff.setproperty("ExternalFiles.WHOLMS","..\EXPORTAPPS\WHOlms.dat");
+	  export_pff.setproperty("Listing",reportsfolder+"\ExportCH.lst");
+
+	elseif typeq=4 then //FS
+ 	  export_pff.setproperty("Application", "..\EXPORTAPPS\ExportFS.bch");
+	  export_pff.setproperty("InputData",folder+"\FSall.csdb");
+	  export_pff.setproperty("UserFiles.MYFS",folder+"\MYFS.dat");
+	  export_pff.setproperty("UserFiles.MYFSTU",folder+"\MYFSTU.DAT");
+	  export_pff.setproperty("UserFiles.MYFSTS",folder+"\MYFSTS.DAT");
+	  export_pff.setproperty("Listing",reportsfolder+"\ExportFS.lst");
+
+	elseif typeq=5 then //MN
+ 	  export_pff.setproperty("Application", "..\EXPORTAPPS\ExportMN.bch");
+	  export_pff.setproperty("InputData",folder+"\MNall.csdb");
+	  export_pff.setproperty("UserFiles.MYMN",folder+"\MYMN.dat");
+	  export_pff.setproperty("UserFiles.MYMNTU",folder+"\MYMNTU.DAT");
+	  export_pff.setproperty("UserFiles.MYMNTS",folder+"\MYMNTS.DAT");
+	  export_pff.setproperty("Listing",reportsfolder+"\ExportMN.lst");
+	  
+	elseif typeq=6 then //VV
+ 	  export_pff.setproperty("Application", "..\EXPORTAPPS\ExportVV.bch");
+	  export_pff.setproperty("InputData",folder+"\VVall.csdb");
+	  export_pff.setproperty("UserFiles.MYVV",folder+"\MYVV.dat");
+	  export_pff.setproperty("Listing",reportsfolder+"\ExportVV.lst");
+
+    endif;
+	
+    if typeq<>1 then
+	  export_pff.setproperty("ExternalFiles.MICS7HH",folder+"\HHall.csdb");
+	endif;
+
+	
+    export_pff.save("..\exportapps\export.pff");
+	execpff(filename(export_pff),wait);
+end;
+
+function exporttospss(source,typeq);
+
+// source 0=data from OnField 1= data from Cleaned
+// typeq 0=all questionnaires, 1=household, 2,3,4,5=individual
+   string sourcefolder, targetfolder;
+   if source = 0 then
+      sourcefolder=onfieldfolder;
+      targetfolder="..\FCT";
+   else
+      sourcefolder=cleanedfolder;
+      targetfolder="..\SPSS";
+   endif;
+
+   fileconcat(MICS7HH,targetfolder+"\HHall.csdb",sourcefolder+"\HH*.csdb");  //HH files always has to be created
+   if typeq in 0,1 then
+      pffexport(1,targetfolder);
+   endif;
+   if typeq in 0,2 then   // WOMEN
+      fileconcat(MICS7WM,targetfolder+"\WMall.csdb",sourcefolder+"\WM*.csdb");
+      pffexport(2,targetfolder);
+	  //filedelete(targetfolder+"\WMall.csdb");  //WMall can be deleted, but it will be kept in the folder
+   endif;
+   if typeq in 0,3 then   // UNDER 5
+      fileconcat(MICS7CH,targetfolder+"\CHall.csdb",sourcefolder+"\CH*.csdb");
+      pffexport(3,targetfolder);
+	  //filedelete(targetfolder+"\CHall.csdb");  //CHall can be deleted, but it will be kept in the folder
+   endif;
+   if typeq in 0,4 then   // 5-17
+      fileconcat(MICS7FS,targetfolder+"\FSall.csdb",sourcefolder+"\FS*.csdb");
+      pffexport(4,targetfolder);
+	  //filedelete(targetfolder+"\FSall.csdb");  //FSall can be deleted, but it will be kept in the folder
+   endif;
+   if typeq in 0,5 then   // MAN
+      fileconcat(MICS7MN,targetfolder+"\MNall.csdb",sourcefolder+"\MN*.csdb");
+      pffexport(5,targetfolder);
+	  //filedelete(targetfolder+"\MNall.csdb");  //MNall can be deleted, but it will be kept in the folder
+   endif;
+   if source=1 then  //Verification file is only exported from CLEAN folder (the .csdb files are not in ONFIELD folder)
+      if typeq in 0,6 then   // Verification
+         fileconcat(MICS7HH,targetfolder+"\VVall.csdb",sourcefolder+"\VV*.csdb");
+         pffexport(6,targetfolder);
+	     //filedelete(targetfolder+"\VVall.csdb");  //VVall can be deleted, but it will be kept in the folder
+      endif;
+   endif;
+   //filedelete(targetfolder+"\HHall.csdb");  //HHall file can be deleted, but it will be kept in the folder
+
+end;
+
+function set_psu_status(xpsu)
+   PSUstr=edit("99999",xpsu);
+   if FileExist(cleanedfolder+"\HH"+PSUstr+".csdb") then
+      cluster_sel_status=5;
+   elseif FileExist(inreviewfolder+"\HH"+PSUstr+".csdb") then
+      cluster_sel_status=4;
+   elseif FileExist(closedfolder+"\HH"+PSUstr+".csdb") then
+      cluster_sel_status=3;
+   elseif FileExist(onfieldfolder+"\HH"+PSUstr+".csdb") then
+      cluster_sel_status=2;
+   else
+      cluster_sel_status=1;
+   endif;
+   writecase(CLUSTERS);
+end;
+
+function setindividualfiles(); 
+setfile(MICS7HH,psufolder+"\HH"+PSUstr+".csdb");
+setfile(MICS7WM,psufolder+"\WM"+PSUstr+".csdb");
+setfile(MICS7CH,psufolder+"\CH"+PSUstr+".csdb");
+setfile(MICS7FS,psufolder+"\FS"+PSUstr+".csdb");
+setfile(MICS7MN,psufolder+"\MN"+PSUstr+".csdb");
+end;
+
+function AllPSUreport();
+   array numeric statuscount(5)=0,0,0,0,0;
+{
+   setfile(psureport,reportsfolder+"\allpsureport.tbl",create);
+   psureport.write(3400); //"                   S T A T U S    R E P O R T    O F    A L L   P S U   ");
+   psureport.write("");
+   psureport.write(3410); //" PSU     ZONE        REGION          Area1           Area2           Area3          Area4        TEAM PSU STATUS");
+   psureport.write("----- ---------- --------------- --------------- --------------- --------------- --------------- ---- ----------");
+ }
+   setfile(psureport,reportsfolder+"\allpsureport.html",create);
+   psureport.write('<h2><header style="color:blue"></style>'+tr("STATUS REPORT OF ALL CLUSTERS")+" </h2>");
+   //psureport.write("<table>");
+   list string htmlrow;
+   htmlrow.add(tr("CLUSTER"));
+   htmlrow.add(tr("REGION"));
+   htmlrow.add(tr("ZONE"));
+   htmlrow.add(getlabel(geocode1)); //tr("AREA 1"));
+   htmlrow.add(getlabel(geocode2)); //tr("AREA 2"));
+   htmlrow.add(getlabel(geocode3)); //tr("AREA 3"));
+   htmlrow.add(getlabel(geocode4)); //tr("AREA 4"));
+   htmlrow.add(tr("TEAM ASSIGNED"));
+   htmlrow.add(tr("CLUSTER STATUS"));
+   genhtmlrow(htmlrow,0);
+
+
+  forcase CLUSTERS do
+      htmlrow.clear();
+      set_psu_status(cluster_sel);
+{
+	  psureport.write("%05d %-10s %02d:%-12s %02d:%-12s %02d:%-12s %02d:%-12s %02d:%-12s  %02d  %-15s",
+	              cluster_sel, getlabel(zone,zone), region,getlabel(region,region), geocode1,geoname1[1:12], geocode2,geoname2[1:12], geocode3,geoname3[1:12], geocode4,geoname4[1:12], team_assigned, getlabel(cluster_SEL_STATUS,cluster_SEL_STATUS));
+}
+
+      htmlrow.add(maketext("%v",CLUSTER_SEL));
+      htmlrow.add(maketext("%v:%v",region,getlabel(region,region)));
+      htmlrow.add(getlabel(zone,zone));
+      htmlrow.add(maketext("%v:%v",geocode1,geoname1[1:12]));
+      htmlrow.add(maketext("%v:%v",geocode2,geoname2[1:12]));
+      htmlrow.add(maketext("%v:%v",geocode3,geoname3[1:12]));
+      htmlrow.add(maketext("%v:%v",geocode4,geoname4[1:12]));
+      htmlrow.add(edit("999",team_assigned));
+      htmlrow.add(getlabel(cluster_sel_status,cluster_sel_status));
+      genhtmlrow(htmlrow,1);
+
+      inc(statuscount(cluster_SEL_STATUS));
+   enddo;
+   psureport.write("</table>");
+
+   psureport.write("<h2>"+tr("SUMMARY")+"</h2>");
+   htmlrow.clear();
+   htmlrow.add(tr("STATUS"));
+   htmlrow.add(tr("COUNT"));
+   htmlrow.add("%");
+   genhtmlrow(htmlrow,0);
+   
+   numeric statustotalcount=statuscount(1)+statuscount(2)+statuscount(3)+statuscount(4)+statuscount(5);
+   do numeric i=1 until i=6			
+      htmlrow.clear();
+      htmlrow.add(getlabel(cluster_sel_status,i));
+      htmlrow.add(edit("ZZZ999",statuscount(i)));
+      htmlrow.add(EDIT("999.9",statuscount(i)*100/statustotalcount));
+      genhtmlrow(htmlrow,1);
+   enddo;
+   psureport.write("</table>");
+
+{
+   psureport.write("%15v=%d (%d%)",getlabel(cluster_sel_status,1),statuscount(1),statuscount(1)*100/statustotalcount);
+   psureport.write("%15v=%d (%d%)",getlabel(cluster_sel_status,2),statuscount(2),statuscount(2)*100/statustotalcount);
+   psureport.write("%15v=%d (%d%)",getlabel(cluster_sel_status,3),statuscount(3),statuscount(3)*100/statustotalcount);
+   psureport.write("%15v=%d (%d%)",getlabel(cluster_sel_status,4),statuscount(4),statuscount(4)*100/statustotalcount);
+   psureport.write("%15v=%d (%d%)",getlabel(cluster_sel_status,5),statuscount(5),statuscount(5)*100/statustotalcount);
+}
+   PSUstr="";
+   close(psureport);
+   view(filename(psureport));
+   
+end;
+
+{
+function error(numeric typeq, numeric xln, string errormsg, string xnotes); 
+     // parameters 1-type of quest, 0 for household quest.
+	 //            2-Line number (for individual quest.)
+	 //            3-message to print
+	 //            4-Interviewer notes for the item
+   if index = 0 then //first message of this household
+//      psureport.write("\n***Case id %v *** [PSU:%05v DWEL.:%03v HH:%v Interv.: %v]",KEY(MICS7HH),HHPSU,HHDW,HHNO,HHINTID);
+      psureport.write(3500,HHPSU,HHDW,HHNO,HHINTID);  //"\n***Case id %05d-%03d-%d-%04d [PSU-Dwel-HH-Interv] *** "
+   endif;
+   inc(index);
+   if typeq=0 then
+      psureport.write(errormsg);
+   else	  
+      psureport.write("[%v] LN=%02d:%v",quest(typeq), xln, errormsg);
+   endif;
+   if length(xnotes) > 0 then
+      psureport.write(3510,xnotes); //"     Notes:%v"
+   endif;	  
+end;
+ }
+ 
+function editing();
+
+//Creates .pff to call editing apc
+   pff editing_pff;
+   editing_pff.setproperty("Application", "..\EDITING\editing.bch");
+   editing_pff.setproperty("InputData",hhfile);
+   editing_pff.setproperty("Listing",reportsfolder+"\editing.lst");
+   editing_pff.setproperty("ExternalFiles.MICS7WM",filename(MICS7WM));
+   editing_pff.setproperty("ExternalFiles.MICS7CH",filename(MICS7CH));
+   editing_pff.setproperty("ExternalFiles.MICS7FS",filename(MICS7FS));
+   editing_pff.setproperty("ExternalFiles.MICS7MN",filename(MICS7MN));
+   editing_pff.setproperty("Parameter","1");  //1 for listing warning messages, 0 for not 
+   editing_pff.setproperty("ViewListing","Never");
+	
+   editing_pff.save("..\editing\editing.pff");
+   execpff(filename(editing_pff),wait);
+
+
+  setfile(psureport,reportsfolder+"\editingreport.html",create);
+  psureport.write(3520,PSUstr,psustatus);  //" E D I T I N G    R E P O R T   O F   P S U : %v (%v)"
+  psureport.write("<pre>"); 
+  file editreport;
+  setfile(editreport,reportsfolder+"\editing.lst");
+  list string lines;
+  fileread(editreport,lines);
+  close(editreport);
+  psureport.write(lines);
+
+  psureport.write("</pre><h3>");
+  if cluster_sel_status=2 then
+     psureport.write(3650);//"Warning: this PSU is still 'On Field', so the editing report may show issues"
+     psureport.write(3655);//"         that will be fixed when the PSU will be 'Closed'. For example,"
+     psureport.write(3660);//"         the 'Delegated' individual questionnaires may be reported as duplicated"
+  elseif cluster_sel_status=3 then
+     psureport.write(3665);//"Note: this PSU is 'Closed'.  This editing report may be used to deside"
+     psureport.write(3670);//"      if the PSU can be moved to 'In Review'."
+  elseif cluster_sel_status=4 then
+    psureport.write(3675);//"Note: this PSU is 'In Review'.  Use this editing report to deside"
+    psureport.write(3680);//"      if the PSU can be moved to 'Cleaned'."
+  elseif cluster_sel_status=5 then
+    psureport.write(3685);//"Note: this PSU is 'Cleaned'.  If this editing report still shows important issues"
+    psureport.write(3690);//"      the PSU can be moved back to 'In Review'."
+  endif;
+  psureport.write("</h3>");
+  close(psureport);
+  view(filename(psureport));
+
+{
+setfile(psureport,reportsfolder+"\editingreport.tbl",create);
+psureport.write(3520,PSUstr,psustatus);  //" E D I T I N G    R E P O R T   O F   P S U : %v (%v)"
+   
+forcase MICS7HH do
+   index=0;
+   if ghresult=1 then //completed interview
+      numeric hhsex=demsex(1);
+	  numeric hhage=demag1(1);
+	  numeric npartners=0;
+	  for numeric i in dem_rec do
+	     if demrel(i)=2 then
+		    inc(npartners);
+			if demag1(i)<12 then
+			   error(0,0,maketext(3530,i,strip(name),demag1),getnote(demag1)); //"LN=%v (%v) Age of spouse/parter (%v) less than 12 years"
+			endif;   
+			if demsex(i)=hhsex and i>1 then
+			   error(0,0,maketext(3540,i,strip(name),hhsex),getnote(demsex)); //"LN=%v (%v) Sex of spouse/parter (%v) is the same as the head"
+			endif;   
+	     elseif demrel(i)=3	then
+			if hhage - demag1(i) < 12 then
+			   error(0,0,maketext(3550,i,strip(name),hhage,demag1),getnote(demag1)); //"LN=%v (%v) Age of head (%v) and age of son/daughter (%v) less than 12 years "
+			endif;   
+	     elseif demrel(i)=4	then
+			if demag1(i) - hhage < 12 then
+			   error(0,0,maketext(3560,i,strip(name),demag1,hhage),getnote(demag1)); //"LN=%v (%v) Age of mother/father (%v) and age of head (%v) less than 12 years "
+			endif;   
+         endif;
+
+         //individual questionnaires review
+		 numeric oldintid=0;  //***custom *** start of person cuest
+		 forcase MICS7WM where PPPSU=HHPSU and PPDW=HHDW and PPHHNO=HHNO and PPLN=PPNO(i) do
+		    if oldintid > 0 then
+			   error(1,PPNO(i),maketext(3570,oldintid,PPintid),""); //"Duplicated questionnaire. There is one for interviewer %v and other for %v"
+			endif;
+            oldintid=PPintid;
+			if mwm17=1 then // completed questionnaire
+			   if mwb4 < 10 then
+			      error(1,PPLN,maketext(3580,mwb4),getnote(mwb4)); //"Person questionnaire present for person less than 10 years (age=%v)"
+			   endif;
+            endif;			   
+         endfor;
+
+      endfor;               //  ** end block of person cuest
+
+ 	  if npartners> 1 then
+		 error(0,0,maketext("There are %v spouses/parters",npartners),"");
+	  endif;   
+   endif; // end of completed hh quest	  
+endfor;
+psureport.write("\n--------------------------------------------------------------------");
+if cluster_sel_status=2 then
+   psureport.write(3650);//"Warning: this PSU is still 'On Field', so the editing report may show issues"
+   psureport.write(3655);//"         that will be fixed when the PSU will be 'Closed'. For example,"
+   psureport.write(3660);//"         the 'Delegated' individual questionnaires may be reported as duplicated"
+elseif cluster_sel_status=3 then
+   psureport.write(3665);//"Note: this PSU is 'Closed'.  This editing report may be used to deside"
+   psureport.write(3670);//"      if the PSU can be moved to 'In Review'."
+elseif cluster_sel_status=4 then
+   psureport.write(3675);//"Note: this PSU is 'In Review'.  Use this editing report to deside"
+   psureport.write(3680);//"      if the PSU can be moved to 'Cleaned'."
+elseif cluster_sel_status=5 then
+   psureport.write(3685);//"Note: this PSU is 'Cleaned'.  If this editing report still shows important issues"
+   psureport.write(3690);//"      the PSU can be moved back to 'In Review'."
+endif;
+
+close(psureport);
+view(filename(psureport));
+}
+end;
+
+function movepsu(numeric moveto);
+
+close(MICS7HH);
+close(MICS7WM); 
+close(MICS7CH); 
+close(MICS7FS); 
+close(MICS7MN); 
+
+string movetofolder;  //folder where the psu is going to be moved
+when moveto;
+   3->movetofolder=closedfolder;
+   4->movetofolder=inreviewfolder;
+   5->movetofolder=cleanedfolder;
+endwhen;
+
+if cluster_sel_status > moveto then //psu was downgraded
+   filedelete(psufolder+"\??"+PSUstr+".csdb");
+else  //psu was upgraded
+   if !direxist(movetofolder) then
+      dircreate(movetofolder);
+   endif;	  
+   filecopy(psufolder+"\??"+PSUstr+".csdb",movetofolder+"\");   
+endif;
+psufolder=movetofolder;
+
+hhfile=psufolder+"\HH"+PSUstr+".csdb"; 
+setfile(MICS7HH,HHfile);
+setindividualfiles();  
+
+string oldpsustatus=psustatus;
+cluster_sel_status=moveto;
+writecase(CLUSTERS);
+psustatus=strip(getlabel(cluster_sel_status,cluster_sel_status));
+
+errmsg(3730,PSUstr,oldpsustatus,psustatus); //"PSU %v was move from '%v' to '%v'"
+
+end;
+
+
+function create_mentalhealthreport(); //Function to create the Mental Health Weekly Referrals Report  
+// ****************PLEASE COMMENT ALL THE CONTENT OF THIS FUNCTION IF MENTAL HEALTH MODULE IS NOT USED**************
+   setfile(psureport,reportsfolder+"\MHreport.html",create);
+   psureport.write(maketext("<h3>%v</h3>",project));
+   psureport.write("<h3>MENTAL HEALTH REFERRAL REPORT</h3>");
+   psureport.write("<h3>Report date(dd-mm-yyyy):"+edit("99-99-9999",sysdate("DDMMYYYY"))+"</h3>");
+   list string htmlrow;
+   htmlrow.add("Interview Date");
+   htmlrow.add("Case ID");
+   htmlrow.add("Referral Risk Type");
+   htmlrow.add("Name");
+   htmlrow.add("Sex");
+   htmlrow.add("Age");
+   htmlrow.add("Best way to contact respondent");
+   htmlrow.add("Phone Number");
+   htmlrow.add("Region Name");
+   htmlrow.add("Region Number");
+   htmlrow.add("District Name");
+   htmlrow.add("Village/Town name");
+   htmlrow.add("Description of location");
+   htmlrow.add("Nearby landmark");
+   htmlrow.add("Best weekday/time to contact");
+   
+   genhtmlrow(htmlrow,0,"LightGreen");
+
+   //********create Woman lines************
+   setfile(MICS7WM,"..\FCT\WMall.csdb");
+   forcase MICS7WM where MH49AB1<>notappl do
+      htmlrow.clear();
+      htmlrow.add(maketext("%04d-%02d-%02d",wm6y,wm6m,wm6d)); //Date
+      htmlrow.add(maketext("%v",MH49AB1));                    //Case id
+	  if MH49AB2 = 1 then                                     //Referral Risk Type
+         htmlrow.add("1 - Hight"); 
+	  else
+         htmlrow.add("2 - Low/Moderate");
+      endif;
+      htmlrow.add(strip(WM3a));                               //Name
+      htmlrow.add("2 - Female");                              //Sex
+      htmlrow.add(maketext("%v",WB4));                        //Age
+      string contact;
+      if pos("A",MH49AB6) then contact=contact+"1-By phone/"; endif;  
+      if pos("B",MH49AB6) then contact=contact+"2-In person/"; endif;  
+      if pos("X",MH49AB6) then contact=contact+"9-Other:"+strip(getnote(MH49AB6)); endif;  
+      htmlrow.add(contact);                                   //Best way to contact
+      htmlrow.add(maketext("%v",MH49AB7));                    //Phone number
+      htmlrow.add(strip(MH49AB8N));                           //Region name
+      htmlrow.add(maketext("%v",MH49AB8));                    //Region number
+      htmlrow.add(strip(MH49AB9N));                           //District name	  
+      htmlrow.add(strip(MH49AB10N));                          //Village
+      htmlrow.add(strip(MH49AB11N));                          //Description of location  
+      htmlrow.add(strip(MH49AB12));                           ///Nearby landmark         
+	  htmlrow.add(strip(MH49AB13)+"/"+strip(MH49AB14));       //Best weekday and time
+   // For Belize replace previous three lines with these ones:
+      //htmlrow.add(" ");                          //Description of location  **Not asked in Belize**
+      //htmlrow.add(" ");                           ///Nearby landmark          **Not asked in Belize**
+	  //htmlrow.add(strip(MH49AB11)+"/"+strip(MH49AB12));       //Best weekday and time
+
+      genhtmlrow(htmlrow,1);
+   endfor;
+   close(MICS7WM);
+   //********create Man lines************
+   setfile(MICS7MN,"..\FCT\MNall.csdb");
+   forcase MICS7MN where mMH49AB1<>notappl do
+      htmlrow.clear();
+      htmlrow.add(maketext("%04d-%02d-%02d",mwm6y,mwm6m,mwm6d)); //Date
+      htmlrow.add(maketext("%v",mMH49AB1));                    //Case id
+	  if mMH49AB2 = 1 then                                     //Referral Risk Type
+         htmlrow.add("1 - Hight"); 
+	  else
+         htmlrow.add("2 - Low/Moderate");
+      endif;
+      htmlrow.add(strip(mWM3a));                               //Name
+      htmlrow.add("1 - Male");                                 //Sex
+      htmlrow.add(maketext("%v",mWB4));                        //Age
+      string contact;
+      if pos("A",mMH49AB6) then contact=contact+"1-By phone/"; endif;  
+      if pos("B",mMH49AB6) then contact=contact+"2-In person/"; endif;  
+      if pos("X",mMH49AB6) then contact=contact+"9-Other:"+strip(getnote(mMH49AB6)); endif;  
+      htmlrow.add(contact);                                   //Best way to contact
+      htmlrow.add(maketext("%v",mMH49AB7));                    //Phone number
+      htmlrow.add(strip(mMH49AB8N));                           //Region name
+      htmlrow.add(maketext("%v",mMH49AB8));                    //Region number
+      htmlrow.add(strip(mMH49AB9N));                           //District name	  
+      htmlrow.add(strip(mMH49AB10N));                          //Village
+      htmlrow.add(strip(mMH49AB11N));                          //Description of location  
+      htmlrow.add(strip(mMH49AB12));                           ///Nearby landmark         
+	  htmlrow.add(strip(mMH49AB13)+"/"+strip(mMH49AB14));       //Best weekday and time
+  // For Belize replace previous three lines with these ones:
+      //htmlrow.add(" ");                          //Description of location  **Not asked in Belize**
+      //htmlrow.add(" ");                           ///Nearby landmark          **Not asked in Belize**
+	  //htmlrow.add(strip(mMH49AB11)+"/"+strip(mMH49AB12));       //Best weekday and time
+
+      genhtmlrow(htmlrow,1);
+   endfor;
+   close(MICS7MN);
+
+   psureport.write("</table>");
+   //Sort the table by date of interview
+   psureport.write("<script>");
+   psureport.write("  var table, rows, switching, i, x, y, shouldSwitch;");
+   psureport.write("  table = document.getElementById('Wtable');");
+   psureport.write("  switching = true;");
+   psureport.write("  while (switching) {");
+   psureport.write("    switching = false;");
+   psureport.write("    rows = table.rows;");
+   psureport.write("    for (i = 1; i < (rows.length - 1); i++) {");
+   psureport.write("      shouldSwitch = false;");
+   psureport.write("      x = rows[i].getElementsByTagName('TD')[0];");
+   psureport.write("      y = rows[i + 1].getElementsByTagName('TD')[0];");
+   psureport.write("      if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {");
+   psureport.write("        shouldSwitch = true;");
+   psureport.write("        break;");
+   psureport.write("      }");
+   psureport.write("    }");
+   psureport.write("    if (shouldSwitch) {");
+   psureport.write("      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);");
+   psureport.write("      switching = true;");
+   psureport.write("    }");
+   psureport.write("  }");
+   psureport.write("</script>");
+
+   psureport.close();
+   //view(filename(psureport));
+   //send the report to the server in the folder MHREPORT
+   numeric syncOK;
+   when server_type;
+      1   -> syncOK=syncconnect(CSWeb, server_url, server_user,server_password);
+	  2   -> syncOK=syncconnect(FTP,   server_url, server_user,server_password);
+	  3   -> syncOK=syncconnect(dropbox);
+   endwhen;
+   if !syncOK then
+      errmsg(3845); // "Coudn't sync with server - Please check Internet connection"
+      reenter central_menu;
+   else
+      if !syncfile(Put,filename(psureport),server_root+"/MHREPORT/") then  
+	 	errmsg(3840,filename(psureport));
+	  endif;	
+   endif;
+   //delete report from central office
+   filedelete(filename(psureport));
+
+end;
+
+//-------------------------------------------------- end of functions ------------------------------------------------------------
+
+
+PROC MENU_FF
+preproc;
+
+// to allow to work just one instance of the supervisor application
+if getos()=10 then   //windows
+   file justoneinstance;
+   if !setfile(justoneinstance,"..\justone.tmp",create) then
+      errmsg(3805); //"Error Central Office application already working in this machine"
+      stop(-1);
+   endif;	  
+endif;
+
+setfont(valuesets,"Arial",25);
+setfont(ErrMsg, "Arial",22);
+setlanguage("EN");
+
+quest.add(tr("Woman"));    //1
+quest.add(tr("Under 5"));  //2
+quest.add(tr("5-17"));     //3
+
+quest_list.add(tr("Household"));
+quest_list.add(tr("Woman"));
+quest_list.add(tr("Under 5"));
+quest_list.add(tr("5-17"));
+
+if menselection then
+  quest.add(tr("Man"));      //4
+  quest_list.add(tr("Man"));
+endif;
+
+
+
+//setfile(STAFF_DICT,".\staff.csdb");
+
+datafolder="..\DATAFILES";
+onfieldfolder =datafolder+"\onfield";
+closedfolder  =datafolder+"\closed";
+inreviewfolder=datafolder+"\inreview";
+cleanedfolder =datafolder+"\cleaned";
+reportsfolder ="..\..\reports";
+
+//set_psu_status and creates report;
+AllPSUreport();
+{
+forcase CLUSTERS do
+   set_psu_status(CLUSTER_SEL);
+endfor;
+PSUstr="";
+}
+
+PROC CENTRAL_MENU
+
+if $=1 then        // select PSU
+   skip to PSU; 
+elseif $=2 then    //sync
+   skip to syncwithserver;
+
+elseif $=3 then    // work with PSU
+   if visualvalue(PSU)=notappl then
+       errmsg(3810); //"First you have to select the PSU to work on"
+       reenter central_menu;
+   endif;
+   loadcase(CLUSTERS,PSU);
+   if cluster_sel_status=1 then
+      errmsg(3815,PSUstr,team_assigned);  //"PSU %v status is 'Not Started', it is assigned to team %v"
+      reenter central_menu;
+   endif;
+   skip to workpsu;
+
+elseif $=4 then  // Export
+    skip to exportdata;
+
+elseif $=9 then  //logout 
+   stop(1);
+endif;
+reenter;
+
+
+PROC PSU
+preproc;
+numeric oldpsu=visualvalue($);
+numeric response;
+response= accept(tr("SELECT THE CLUSTER:"),
+				tr("Typing its number"),
+				tr("Chossing it from the list of")+"\n\n- "+getlabel(CLUSTER_SEL_STATUS,1),
+				"- "+getlabel(CLUSTER_SEL_STATUS,2),
+				"- "+getlabel(CLUSTER_SEL_STATUS,3),
+				"- "+getlabel(CLUSTER_SEL_STATUS,4),
+				"- "+getlabel(CLUSTER_SEL_STATUS,5),
+				tr("Cancel"));
+if response in 0,7 then
+   reenter central_menu;
+endif;
+
+if response <> 1 then
+   response=response-1;
+   if countcases(CLUSTERS where cluster_sel_status=response) = 0 then
+      errmsg("There are no clusters with status %v",getlabel(CLUSTER_SEL_STATUS,response));
+	  reenter central_menu;
+   endif; 
+
+   if selcase(tr("Select cluster"),CLUSTERS,"") include(team_assigned,region,zone,geocode1,geocode2,geocode3,geocode4) 
+      where cluster_sel_status=response then
+	  $=CLUSTER_SEL;
+	  noinput;
+   else
+      reenter central_menu;	
+   endif;
+
+{
+response=
+errmsg(3820)  //"Select PSU by Number or from a list depending on Status"
+select (tr("By number"),CONTINUE,tr("From list"),CONTINUE,tr("Cancel"),central_menu);
+if response = 2 then
+   response=
+   errmsg(3821) // "Select PSU from:"
+   select (getlabel(cluster_sel_status,1),CONTINUE, getlabel(cluster_sel_status,2),CONTINUE, getlabel(cluster_sel_status,3),CONTINUE, getlabel(cluster_sel_status,4),CONTINUE, getlabel(cluster_sel_status,5),CONTINUE);
+   if selcase(tr("Select cluster"),CLUSTERS,"") include(team_assigned,region,zone,geocode1,geocode2,geocode3,geocode4) 
+      where cluster_sel_status=response then
+	  $=CLUSTER_SEL;
+	  noinput;
+   else
+      reenter central_menu;	
+   endif;
+}   
+endif;
+
+postproc
+if !loadcase(CLUSTERS, $) then
+   errmsg(3825,$); //"PSU %05d does not exist in the Sample, please check"
+   $=oldpsu;
+else
+   PSUstr=edit("99999",$);
+   psustatus=strip(getlabel(cluster_sel_status,cluster_sel_status));
+endif;
+reenter central_menu;   
+
+PROC SYNCWITHSERVER
+preproc;
+valueset string forsync;
+forsync=SYNCWITHSERVER_VS1;
+forsync.remove("1  ");
+if visualvalue(PSU)<>notappl then
+   forsync.add(tr("Receive data for cluster:")+edit("99999",visualvalue(PSU)),"1  ");
+   forsync.sort(ascending by code);
+endif;   
+setvalueset($,forsync);
+$="   ";
+
+postproc;
+if $="   " then
+   reenter central_menu;
+endif;
+
+if ischecked("4",$) then  // receive all clusters
+   if accept(tr("Are you sure to download ALL clusters from the server (it will take time)"),tr("YES"),tr("NO")) <> 1 then
+      reenter central_menu;
+   endif;
+endif;
+
+if ischecked("1",$) then  // receive data
+   if visualvalue(PSU)=notappl then
+      errmsg(3830); //"Before download PSU data you have to select the PSU to work on"
+      reenter central_menu;
+   elseif cluster_sel_status > 3 then
+      errmsg(3832,PSUstr,psustatus); //Status of PSU %v is %v. For download data of this PSU, first it has to be moved back to 'Closed'
+      reenter central_menu;
+   endif;
+endif;
+
+if ischecked("1",$) & ischecked("4",$) then  // receive one cluster and receive all clusters
+   errmsg(3833,visualvalue(PSU));
+   reenter central_menu;
+endif;
+
+if ischecked("2",$) & ischecked("3",$) then  // send updated sample and system update
+   errmsg(3834);
+   reenter central_menu;
+endif;
+
+string updatename=""; //used for windows update
+
+if ischecked("3",$) then  // send system update
+   if accept(tr("Are you sure to send a system update (it includes STAFF and SAMPLE files)"),tr("YES"),tr("NO")) = 1 then
+		string updstr;
+		if updateplatform = 1 then //Windows
+			updstr="..\DEPLOY MENU APP Windows.pff";  //creates update.zip file in the UPDATES folder
+			updatename=prompt(tr("Type the name of the file to be created with the update (do not use periods or special characters)"),uppercase);
+			updatename=encode(PercentEncoding,updatename);
+		else //Android
+			updstr="..\DEPLOY MENU APP Android.pff";  //this pff sends the update to the server
+		endif;   
+		if execpff(updstr,wait,focus) then
+		   if updateplatform = 2 then  //for windows the update has not been sent yet
+			  errmsg(3835);  //"Updates for apps and staff uploaded - Please ask to supervisor they need update apps"
+		   endif;
+		else
+			errmsg(3840,updstr); // "There was a problem sending the update"
+		endif;   
+	endif;	
+endif;   
+
+if !ischecked("1",$) and !ischecked("2",$) and updatename="" and !ischecked("4",$) then
+   reenter central_menu;
+endif;   
+
+numeric syncOK;
+when server_type;
+      1   -> syncOK=syncconnect(CSWeb, server_url, server_user,server_password);
+	  2   -> syncOK=syncconnect(FTP,   server_url, server_user,server_password);
+	  3   -> syncOK=syncconnect(dropbox);
+endwhen;
+if !syncOK then
+   errmsg(3845); // "Coudn't sync with server - Please check Internet connection"
+   reenter central_menu;
+endif;   
+
+if updatename<>"" then  //send system update for windows system
+   updatename=strip(updatename)+".zip";
+   if filerename(updatesfolder+"\update.zip",updatesfolder+"\"+updatename) = 1 then
+      if syncfile(Put,updatesfolder+"\"+updatename,server_root+"\UPDATES\") then  
+	     errmsg(3835);  //"Updates for apps and staff uploaded - Please ask to supervisor they need update apps"
+	  else	 
+		 errmsg(3840,updatename); // "There was a problem sending the update"
+	  endif;   
+   else
+      errmsg(3847,updatename);  //Problem renaming the update file as '%v'. The update was not uploaded to the server
+   endif
+endif;
+
+if ischecked("2",$) then // send sample: clusters.csdb and households.csdb
+   string filesample=filename(HOUSEHOLDS);
+   string filepsu=filename(CLUSTERS);
+   close(HOUSEHOLDS);
+   close(CLUSTERS);
+   if syncfile(Put,"..\..\PUBLIC\??u*.csdb",server_root+"\PUBLIC\") then  //upload to server files custers.csdb and households.csdb
+      errmsg(3849); // Sample files were uploaded to the server (files cluster.csdb and households.csdb)
+   else
+      errmsg(3850); // "Error uploading sample files sample.csdb and PSUsel.csdb"
+   endif;
+   setfile(HOUSEHOLDS,filesample);
+   setfile(CLUSTERS,filepsu);
+endif;
+
+numeric found=0;
+if ischecked("1",$) then  //download data
+   close(HOUSEHOLDS);
+   close(MICS7HH);
+   close(MICS7WM);  
+   close(MICS7CH);  
+   close(MICS7FS);  
+   close(MICS7MN);  
+
+   string downfile;
+   if syncfile(Get,server_root+"\ONFIELD\???"+PSUstr+".zip",onfieldfolder+"\") then  // download uses ??? to avoid Not Found error message
+      downfile=onfieldfolder+"\ONF"+PSUstr+".zip";
+      if fileexist(downfile) then
+	     inc(found);
+         if decompress(downfile,onfieldfolder) then
+		    //filedelete(downfile);
+		 else
+	        errmsg(3855,downfile);  //Error decompressing file %v
+	     endif;	
+	  endif;
+   else
+      errmsg(3860,PSUstr);//"Error receiving ONFIELD data of PSU %v"
+   endif;
+
+   if syncfile(Get,server_root+"\CLOSED\???"+PSUstr+".zip",closedfolder+"\") then  // download uses ??? to avoid Not Found error message
+      downfile=closedfolder+"\CLO"+PSUstr+".zip";
+      if fileexist(downfile) then
+	     inc(found);
+         if decompress(downfile,closedfolder) then
+		    //filedelete(downfile);
+		 else
+	        errmsg(3855,downfile);
+	     endif;		
+	  endif;
+   else
+      errmsg(3865,PSUstr); // "Error receiving CLOSED data of PSU %v"
+   endif;
+
+endif;
+
+numeric foundonfield=0;
+numeric foundclosed=0;
+if ischecked("4",$) then  //download all clusters
+   close(HOUSEHOLDS);
+   close(MICS7HH);
+   close(MICS7WM);  
+   close(MICS7CH);  
+   close(MICS7FS);  
+   close(MICS7MN);  
+
+   list string zipdownloaded;
+   numeric sync_time=timestamp()-1; //current time minus one second
+   //Download from ONFIELD
+   if syncfile(Get,server_root+"\ONFIELD\*.zip",onfieldfolder+"\") then  
+	   dirlist(zipdownloaded,onfieldfolder,"*.zip");
+	   do numeric ctr = 1 while ctr <= zipdownloaded.length()
+		  if filetime(zipdownloaded(ctr)) > sync_time then //only decrompess files downloaded in this sync
+			 if decompress(zipdownloaded(ctr), onfieldfolder) then
+			    inc(foundonfield);
+				//filedelete(zipdownloaded(ctr));  HHR: now the zip is not deleted, in that way the data is not downloaded if already exists 
+			 else
+			    errmsg(3855,zipdownloaded(ctr));  //Error decompressing file %v);
+			 endif;
+		  endif;
+	   enddo;			   
+   else
+      errmsg(3860,tr("ALL"));//"Error receiving ONFIELD data of PSU %v"
+   endif;
+   //Download from CLOSED
+   zipdownloaded.clear();
+   if syncfile(Get,server_root+"\CLOSED\*.zip",closedfolder+"\") then  
+	  dirlist(zipdownloaded,closedfolder,"*.zip");
+	  do numeric ctr = 1 while ctr <= zipdownloaded.length()
+	 	 if filetime(zipdownloaded(ctr)) > sync_time then //only decrompess files downloaded in this sync
+			if decompress(zipdownloaded(ctr), closedfolder) then
+			    inc(foundclosed);
+			   //filedelete(zipdownloaded(ctr)); HHR: now the zip is not deleted, in that way the data is not downloaded if already exists 
+			else
+		       errmsg(3855,zipdownloaded(ctr));  //Error decompressing file %v);
+			endif;
+		 endif;
+	  enddo;			   
+   else
+      errmsg(3865,tr("ALL")); // "Error receiving CLOSED data of PSU %v"
+   endif;
+
+endif;
+
+syncdisconnect();
+
+if ischecked("1",$) then
+   if found>0 then
+      loadcase(CLUSTERS,edit("99999",visualvalue(PSU)));
+      set_psu_status(visualvalue(PSU));
+      psustatus=strip(getlabel(cluster_sel_status,cluster_sel_status));
+   endif;	  
+   errmsg(3870,PSUstr,found); //"Total zip files downloaded from PSU %v:%v"
+endif;
+
+if ischecked("4",$) then
+   if visualvalue(PSU)>0 then
+      loadcase(CLUSTERS,edit("99999",visualvalue(PSU)));
+      set_psu_status(visualvalue(PSU));
+      psustatus=strip(getlabel(cluster_sel_status,cluster_sel_status));
+   endif;	  
+   errmsg(3872,foundonfield,foundclosed); //Total clusters downloaded from ONFIELD folder: %v and from CLOSED folder: %v
+   AllPSUreport();
+endif;
+
+reenter central_menu;
+
+PROC EXPORTDATA
+preproc;
+numeric ans=errmsg(3875)  //"Select the data to export"
+            select(tr("For fieldwork control"),continue,tr("Final cleaned data"),continue,tr("Cancel"),central_menu);			
+if ans=1 then
+   exporttospss(0,0);
+   if length(strip(getrecord("MH1"))) > 0 then   //create mental health report if MH1 item exists
+      errmsg(4000) select(tr("Yes"),continue,tr("No"),central_menu); //Do you want to create and send to the server the Mental Health Referral report?
+      create_mentalhealthreport();
+   endif;	   
+   reenter central_menu;
+endif;
+
+valueset exportsvs=exportdata_VS1;
+if !menselection then
+   exportsvs.remove(5);
+endif;
+setvalueset($,exportsvs);   
+
+postproc;
+if $<>9 then
+   exporttospss(1,$);
+endif;
+reenter central_menu;
+
+PROC WORKPSU
+preproc;
+when cluster_sel_status;
+  2->psufolder=onfieldfolder;
+  3->psufolder=closedfolder;
+  4->psufolder=inreviewfolder;
+  5->psufolder=cleanedfolder;
+endwhen;
+
+close(HOUSEHOLDS);
+setfile(HOUSEHOLDS,onfieldfolder+"\CLUSTER"+PSUstr+"\sam"+PSUstr+".csdb");
+
+hhfile=psufolder+"\HH"+PSUstr+".csdb"; 
+if cluster_sel_status = 2 then {onfield}
+   VVfile=onfieldfolder+"\CLUSTER"+PSUstr+"\VV"+PSUstr+".csdb";  //if cluster is ONFIELD, the HH verification file is store inside the CLUSTERxxxxx folder
+   if !fileExist(VVfile) then
+      VVfile="|none";
+   endif;
+else   
+   VVfile=closedfolder+"\VV"+PSUstr+".csdb";  //HH verification file only will be kept in the closed folder
+endif;
+
+setindividualfiles(); 
+
+
+postproc;
+  if $=1 then //psu report   
+      setfile(psureport,reportsfolder+"\statusreport.html",create);
+      psureport.write(3740,PSUstr,psustatus); //"\n            C O N T E N T S    R E P O R T    O F    P S U   %v   (S T A T U S : %v )"
+      //psureport.write("");
+      //psureport.write(3750); //"Dwel- House- Household Head       Status                        I n d i v i d u a l s :                In-");
+      //psureport.write(3760); //"ling   hold  Address              Interviewer assigned        Quest.    LN Name                Age Sex terv. Status");
+      //psureport.write("----  -----  -------------------- ----------------------      ------    -- -------------------- --  -  ----- --------------------");
+      setHHStatus(1);
+      numeric readytocleaned=checkstructure(1);
+      close(psureport);
+      view(filename(psureport));
+
+   elseif $=2 then 
+		setfile(psureport,reportsfolder+"\notesreport.html",create);
+		psureport.write('<html><h3><header style="color:blue"></style>');   
+		psureport.write(3700,PSU);  //" NOTES REPORT OF CLUSTER:%v DWELLING:%v HOUSEHOLD:%v INTERVIEWER:%v"
+		psureport.write("</h3>");
+		listnotes(0);
+		close(psureport);
+		view(filename(psureport));
+
+   elseif $=3 then editing();
+   elseif $=4 then //modify questionnaires
+      if cluster_sel_status <> 4 then
+	     errmsg(3880); //"Only questionnaires of PSU with 'In Review' status can be modify."
+		 reenter;
+	  endif;	 
+
+      numeric typeq=accept(tr(3885), //"Select the type of questionnaires to Modify:"
+	          quest_list);
+	  if !typeq in 1:5 then
+         reenter workpsu;
+      endif;		 
+      pffandinterview(typeq-1); //parameter 0= household, 1=Woman, ....
+   elseif $=5 then //change psu status
+      if cluster_sel_status=2 then
+	     errmsg(3890,PSUstr); //"PSU %v is 'On Field', only Supervisor can move it to 'Closed'"
+		 reenter;
+      elseif cluster_sel_status=3 then
+
+	      {errmsg("PSU %v is 'Closed'.  If after checking the Contents and Editing Reports you want to:"
+		         "\n-Go back to 'On Field': the fieldwork team can be working on it and send again this 'Closed' PSU"
+                 "\n-Move it to 'In Review': press the button below",PSUstr)}
+//	      errmsg(3895,PSUstr)
+//		  select(tr("Move to 'In Review'"),continue,tr("Cancel"),workpsu);
+//		  movepsu(4); //movepsu to "In review"
+
+		  if accept(maketext(tr(3895),PSUstr),tr("Advance it to 'In Review'")) = 1 then
+		      movepsu(4);
+		  endif;	  
+
+
+      elseif cluster_sel_status=4 then
+	      numeric answer=
+	      {errmsg("PSU %v is 'In Review'.  If after checking the Contents and Editing Reports you want to"
+		         "\nmove it back to 'Closed' or move it forward to 'Cleaned', select the corresponding Button",PSUstr)}
+	      errmsg(3900,PSUstr)
+		  select(tr("Back to 'Closed'"),continue,tr("Forward to 'Cleaned'"),continue,tr("Cancel"),workpsu);
+		  if answer = 1 then
+		     {errmsg("Are you sure you want to move back PSU to 'Closed'?."
+                       "\nAny changes did to the PSU in Central Office will be lost."
+					   "\nIt will be returned at the state were it was sent by Supervisor."
+					   "\nAlso you have to inform the reasons to sent it back to the supervisor in order it can be fixed on the field")}
+		     errmsg(3905)
+			  select (tr("Move to 'Closed'"),continue,tr("Cancel"),workpsu);
+ 		      movepsu(3); //movepsu to "In review"
+		   else
+              movepsu(5);
+		   endif;	  
+      elseif cluster_sel_status=5 then
+	      {errmsg("PSU %v is 'Cleaned'.  If after checking the Contents and Editing reports you want to"
+		         "\nmove it back to 'In Review' press the Button, otherwise press Cancel",PSUstr)}
+	      errmsg(3910,PSUstr)
+		  select(tr("Back to 'In Review'"),continue,tr("Cancel"),workpsu);
+		  movepsu(4); //movepsu to "In review"
+      endif;
+
+
+
+   elseif $=9 then
+      reenter central_menu;
+   endif;
+   reenter;   

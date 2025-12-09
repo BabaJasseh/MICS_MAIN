@@ -1,0 +1,184 @@
+﻿PROC GLOBAL 
+//set explicit;
+
+file myMN, 	 { men's records }
+	 myMNTU,  {Time use module}
+	 myMNTS; {Timestamp of the Modules}	   
+
+numeric i, j, notoccur, hloccur, edoccur, tnoccur;
+numeric ldob, udob, ldom, udom, ldobfc, udobfc, ldoblc, udoblc;
+numeric minage, maxage, minab, t, x, y, incr;
+
+numeric mminage, mmaxage, mminab, cminage, cmaxage;
+{ --------------------------------------------------------------------------- }
+
+function valid(xvar);
+  valid = (!special(xvar) and xvar < 96)
+end;
+
+{ --------------------------------------------------------------------------- }
+
+
+PROC MICS7_FF
+preproc
+mminage = 15;
+mmaxage = 49;
+mminab = 12;
+
+PROC MN
+postproc
+{ EXPORT MEN }
+
+ HH1=MWM1; HH2=MWM2; HINT=MWMHINT; HLN=0; 
+ IF !loadcase(MICS7HH,HH1,HH2,HINT,HLN)THEN  //NEEDED
+   errmsg("Household %03d%02d data not loaded !!!", hh1, hh2); 
+ ENDIF; 
+
+set behavior() export (SPSS SubitemOnly);
+
+
+  mwdob = notappl;
+  mwdom = notappl;
+
+  mwagem = notappl;
+  mmstatus = notappl;
+ 
+  if MWM17 = 1 then { Complete interviews }
+    mwdoi = cmcode(MWM6M, MWM6Y);
+    mwage = notappl;
+    udob = mwdoi - mminage*12;
+    ldob = mwdoi - mmaxage*12 - 11;
+    if MWB3Y < 9997 then
+      ldob = setlb(MWB3M,MWB3Y,0);
+      udob = setub(MWB3M,MWB3Y,9999);
+      if udob < mwdoi - mmaxage*12 - 11 or ldob > mwdoi - mminage*12 then
+        errmsg("Date of birth %02d/%4d outside bounds of eligibility based on date of interview %02d/%4d",MWB3M,MWB3Y,MWM6M,MWM6Y);
+      endif;
+    endif;
+    if valid(MWB4) then
+      { Lower bound of CMC date of birth }
+      t = adjlba(ldob,udob,mwdoi,mwdoi,MWB4);
+      if t < 0 then
+        errmsg("Date of birth %02d/%4d and age %02d inconsistent with date of interview %02d/%4d",MWB3M,MWB3Y,MWB4,MWM6M,MWM6Y);
+      else
+        ldob = t
+      endif;
+      { Upper bound of CMC date of birth }
+      t = adjuba(ldob,udob,mwdoi,mwdoi,MWB4);
+      if t < 0 then
+        errmsg("Date of birth %02d/%4d and age %02d inconsistent with date of interview %02d/%4d",MWB3M,MWB3Y,MWB4,MWM6M,MWM6Y);
+      else
+        udob = t
+      endif;
+    endif;
+    { Impute date of birth }
+    if ldob = udob then
+      mwdob = ldob
+    else
+      { Correction in case minimum allows age one year older }
+      if int( (mwdoi - ldob ) /12 ) = MWB4+1 then
+        if ldob < udob then
+          ldob = ldob + 1
+        else
+          errmsg("Date of birth (cmc=%4d-%4d) will be imputed as %2d, inconsistent from age reported as %2d",ldob,udob,int((mwdoi-ldob)/12),MWB4)
+        endif;
+      endif;
+      mwdob = random(ldob,udob);
+    endif;
+    { Fix in case imputed as exactly 50 years old }
+    if mwdoi - mwdob = 600 then
+      mwdob = mwdob + 1
+    endif;
+
+    { Age in 5 year groups }
+    if valid(MWB4) then
+      mwage = int(MWB4/5) - 2;
+    else
+      mwage = int((mwdoi - mwdob) / 60) - 2;
+    endif;
+
+    { Marital status }
+    recode MMA1 :: MMA5 -> mmstatus;
+            1,2 ::     -> 1;
+                :: 1,2 -> 2;
+                :: 3   -> 3;
+                ::     -> 9;
+    endrecode;
+    if mmstatus = 9 then
+      errmsg("Marital status not reported, MMA1=%d MMA5=%d",MMA1,MMA5);
+    endif;
+    { Date of marriage }
+    if mmstatus in 1,2 then
+      if MMA8Y < 9997 then
+        ldom = setlb(MMA8M, MMA8Y, mwdob);
+        udom = setub(MMA8M, MMA8Y, mwdoi);
+      else
+        ldom = mwdob;
+        udom = mwdoi;
+      endif;
+      if valid(MMA11) then
+        { Lower bound of CMC date of marriage }
+        t = adjlba(mwdoi-udom,mwdoi-ldom,mwdoi-mwdob,mwdoi-mwdob,MMA11);
+        if t < 0 then
+          errmsg("Date of marriage (%02d/%4d, age at marriage=%2d) inconsistent with date of birth/age (%02d/%4d, age=%2d)",MMA8M,MMA8Y,MMA11,MWB3M,MWB3Y,MWB4);
+        else
+          udom = mwdoi-t
+        endif;
+        { Upper bound of CMC date of marriage }
+        t = adjuba(mwdoi-udom,mwdoi-ldom,mwdoi-mwdob,mwdoi-mwdob,MMA11);
+        if t < 0 then
+          errmsg("Date of marriage (%02d/%4d, age at marriage=%2d) inconsistent with date of birth/age (%02d/%4d, age=%2d)",MMA8M,MMA8Y,MMA11,MWB3M,MWB3Y,MWB4);
+        else
+          ldom = mwdoi-t
+        endif;
+        { Adjustment for over imputing age at marriage }
+        if mwdob+(MMA11*12+11) in ldom,udom-1 then
+          udom = mwdob+(MMA11*12+11);
+        endif;
+      endif;
+      { Impute date of marriage }
+      if ldom = udom then
+        mwdom = ldom
+      else
+        mwdom = random(ldom,udom);
+      endif;
+      { Age at marriage }
+      if valid(MMA11) then
+        if valid(MMA11) & MMA11 <> int((mwdom - mwdob) / 12) then
+          errmsg("Imputed age at marriage %2d differs from reported age at marriage %2d",int((mwdom - mwdob) / 12),MMA11);
+          errmsg("MWB3=%02d/%4d,MWB4=%d cmc=%d-%d=%d MMA8=%02d,%4d,MMA11=%d cmc=%d-%d=%d",MWB3M,MWB3Y,MWB4,ldob,udob,mwdob,MMA8M,MMA8Y,MMA11,ldom,udom,mwdom);
+        endif;
+        mwagem = MMA11;
+      else
+        mwagem = int((mwdom - mwdob) / 12);
+      endif;
+    endif;
+
+   endif; { Complete interview }
+
+ LN = MWM3;
+
+if MWM17<>97 then
+   export to myMN
+      HH1, HH2, LN, MWM1, MWM2, MWM3, MWMINT, 	{ ID vars }
+      MODMWM, MODMWB, MODMMG, MODMIN, MODMNE, MODMIC, MODMTU1, MODMDV, MODMVT,
+      MODMMA, MODMAF, MODMTO, MODMMH, MODMPN,
+      HH4, HH6, HH7,   
+      mwdob, mwdom, mwagem, mmstatus;	 	{ Recoded variables }
+endif;
+if MWM17=1 then
+  { EXPORT Time Use Module }
+  for i in MODMTU2_EDT do
+    export to myMNTU
+      HH1, HH2, LN, MWM1, MWM2, MWM3, MWMINT, { ID vars }
+      MODMTU2(i),
+      HH4, HH6, HH7, MWM6D, MWM6M, MWM6Y, mwdoi, mwdob;
+  enddo;
+endif;
+
+{Timestamp of the Modules}	
+if MWM17<>97 then
+   export to myMNTS
+      HH1, HH2, LN, MWM1, MWM2, MWM3, MWMINT, 	{ ID vars }
+      MODMNTS;	 
+endif;

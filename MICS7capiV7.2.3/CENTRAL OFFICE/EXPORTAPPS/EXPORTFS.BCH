@@ -1,0 +1,18 @@
+﻿[CSPro Application]
+Version=CSPro 7.7
+Label=EXPORTFS
+Name=EXPORTFS
+AppType=Batch
+[External Dictionaries]
+File=.\Recodedvars.dcf
+File=..\..\APPS\SharedDicts\MICS7HH.dcf
+File=.\WHOlms.dcf
+[AppCode]
+File=.\EXPORTFS.apc
+[Order]
+File=.\EXPORTFS.ord
+[Dictionary Types]
+Dict-Type=.\Recodedvars.dcf,External
+Dict-Type=..\..\APPS\SharedDicts\MICS7FS.dcf,Input,.\EXPORTFS.ord
+Dict-Type=..\..\APPS\SharedDicts\MICS7HH.dcf,External
+Dict-Type=.\WHOlms.dcf,External

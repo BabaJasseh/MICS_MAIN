@@ -1,0 +1,24 @@
+﻿[Run Information]
+Version=CSPro 7.7
+AppType=Batch
+
+[Files]
+Application=.\ExportMN.bch
+InputData=..\FCT\MNall.csdb
+Listing=..\..\reports\ExportMN.lst
+
+[ExternalFiles]
+MICS7HH=..\FCT\HHall.csdb
+
+[UserFiles]
+MYMN=..\FCT\MYMN.dat
+MYMNTS=..\FCT\MYMNTS.DAT
+MYMNTU=..\FCT\MYMNTU.DAT
+
+[Parameters]
+ViewListing=Always
+ViewResults=Yes
+ListingWidth=120
+MessageWrap=No
+ErrmsgOverride=No
+InputOrder=Sequential

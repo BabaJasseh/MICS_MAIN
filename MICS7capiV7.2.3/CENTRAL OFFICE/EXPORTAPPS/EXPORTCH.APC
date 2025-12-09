@@ -1,0 +1,978 @@
+﻿PROC GLOBAL
+//set explicit;
+
+file myCH, { children's QRE/records }
+     myCHTS; {Timestamp of the Modules}
+
+numeric i, j, notoccur, hloccur, edoccur, cloccur, tnoccur, wmoccur, choccur;
+numeric ldob, udob, ldom, udom, ldobfc, udobfc, ldoblc, udoblc;
+numeric minage, maxage, minab, t, x, y, incr, cminage, cmaxage;
+numeric zscoeff, zsr, zsb1, zsb2, zsb3, zsb4, zsb5, zsdz, zst,
+ zsdzp, zsfx, zsll, zsul, zsa, zsknot, zsi, zsj, zsk, zsl,
+ zsz, zsc, zsy1, zsy2, zsy3, zssd1, zssd2, zshta,
+ zspmed, zsv, zshac, zshap, zshaz, zswap, zswaz, zswac, zshtw,
+ zswhp, zswhz, zswhc, fhaz, fwaz, fwhz, zsflag, leapday,
+ xdays1, xdays2, hwerr, birthd, birthm, birthy, age, xweight, xheight;
+numeric sd3pos, sd23pos, sd3neg, sd23neg;
+numeric n0,n1,n2,n3,n4,n5,n6,n7,n8,n9,n6f,n7f,n8f,n9f,n6m,n7m,n8m,n9m,e, err;
+numeric agechild,weightch,lengthch,lystand,uselngth,lnhe,agedhw;
+
+{ --------------------------------------------------------------------------- }
+
+function valid(xvar);
+  valid = (!special(xvar) and xvar < 96)
+end;
+
+{ -------------------------------------------------------------------------- }
+{ Anthropometry function         }
+{ Height and Weight Z-score functions }
+
+function zscoef(zsip,zsjp,zskp,zslp);
+  recode zsip::zsjp::zskp::zslp -> zscoeff;
+ 1::1::1::1-> 0.461824*100    ;  1::1::1::2-> 0.401257*10     ;  1::1::1::3->-0.255449        ;  1::1::1::4-> 0.789966*0.01   ;
+ 1::1::2::1-> 0.673630*100    ;  1::1::2::2-> 0.133410*10     ;  1::1::2::3->-0.421583*0.1    ;  1::1::2::4-> 0.101581*0.01   ;
+ 1::1::3::1-> 0.813173*100    ;  1::1::3::2-> 0.755023        ;  1::1::3::3-> 0.355289*0.01   ;  1::1::3::4->-0.590137*0.001  ;
+ 1::2::1::1-> 0.504849*100    ;  1::2::1::2-> 0.438155*10     ;  1::2::1::3->-0.312088        ;  1::2::1::4-> 0.105514*0.1    ;
+ 1::2::2::1-> 0.723318*100    ;  1::2::2::2-> 0.132797*10     ;  1::2::2::3->-0.271990*0.1    ;  1::2::2::4-> 0.448522*0.001  ;
+ 1::2::3::1-> 0.876453*100    ;  1::2::3::2-> 0.814752        ;  1::2::3::3->-0.701552*0.01   ;  1::2::3::4-> 0.609604*0.0001 ;
+ 1::3::1::1-> 0.547862*100    ;  1::3::1::2-> 0.475220*10     ;  1::3::1::3->-0.368845        ;  1::3::1::4-> 0.132042*0.1    ;
+ 1::3::2::1-> 0.773055*100    ;  1::3::2::2-> 0.132163*10     ;  1::3::2::3->-0.123304*0.1    ;  1::3::2::4->-0.113662*0.001  ;
+ 1::3::3::1-> 0.939720*100    ;  1::3::3::2-> 0.874997        ;  1::3::3::3->-0.174451*0.1    ;  1::3::3::4-> 0.693745*0.001  ;
+ 2::1::1::1-> 0.457829*100    ;  2::1::1::2-> 0.367323*10     ;  2::1::1::3->-0.237212        ;  2::1::1::4-> 0.779334*0.01   ;
+ 2::1::2::1-> 0.653091*100    ;  2::1::2::2-> 0.129719*10     ;  2::1::2::3->-0.267922*0.1    ;  2::1::2::4-> 0.466010*0.001  ;
+ 2::1::3::1-> 0.803115*100    ;  2::1::3::2-> 0.807980        ;  2::1::3::3->-0.582173*0.01   ;  2::1::3::4->-0.184636*0.001  ;
+ 2::2::1::1-> 0.498644*100    ;  2::2::1::2-> 0.393746*10     ;  2::2::1::3->-0.262999        ;  2::2::1::4-> 0.884779*0.01   ;
+ 2::2::2::1-> 0.704487*100    ;  2::2::2::2-> 0.135350*10     ;  2::2::2::3->-0.241086*0.1    ;  2::2::2::4-> 0.339627*0.001  ;
+ 2::2::3::1-> 0.864730*100    ;  2::2::3::2-> 0.859488        ;  2::2::3::3->-0.882537*0.01   ;  2::2::3::4-> 0.322490*0.0001 ;
+ 2::3::1::1-> 0.539292*100    ;  2::3::1::2-> 0.421102*10     ;  2::3::1::3->-0.290055        ;  2::3::1::4-> 0.995372*0.01   ;
+ 2::3::2::1-> 0.755903*100    ;  2::3::2::2-> 0.140880*10     ;  2::3::2::3->-0.213041*0.1    ;  2::3::2::4-> 0.210055*0.001  ;
+ 2::3::3::1-> 0.926378*100    ;  2::3::3::2-> 0.911461        ;  2::3::3::3->-0.118516*0.1    ;  2::3::3::4-> 0.242960*0.001  ;
+ 3::1::1::1-> 0.249740*10     ;  3::1::1::2-> 0.462056        ;  3::1::1::3-> 0.481125*0.1    ;  3::1::1::4->-0.458894*0.01   ;
+ 3::1::2::1-> 0.601058*10     ;  3::1::2::2-> 0.543800        ;  3::1::2::3->-0.344885*0.1    ;  3::1::2::4-> 0.973626*0.001  ;
+ 3::1::3::1-> 0.925227*10     ;  3::1::3::2-> 0.136684        ;  3::1::3::3-> 0.562077*0.001  ;  3::1::3::4->-0.236327*0.0001 ;
+ 3::2::1::1-> 0.326804*10     ;  3::2::1::2-> 0.108795*10     ;  3::2::1::3->-0.677657*0.1    ;  3::2::1::4-> 0.226565*0.01   ;
+ 3::2::2::1-> 0.784554*10     ;  3::2::2::2-> 0.519450        ;  3::2::2::3->-0.269840*0.1    ;  3::2::2::4-> 0.738014*0.001  ;
+ 3::2::3::1-> 0.114685*100    ;  3::2::3::2-> 0.190655        ;  3::2::3::3->-0.415541*0.001  ;  3::2::3::4->-0.133747*0.0001 ;
+ 3::3::1::1-> 0.420915*10     ;  3::3::1::2-> 0.145910*10     ;  3::3::1::3->-0.124212        ;  3::3::1::4-> 0.546698*0.01   ;
+ 3::3::2::1-> 0.967299*10     ;  3::3::2::2-> 0.558989        ;  3::3::2::3->-0.258067*0.1    ;  3::3::2::4-> 0.644479*0.001  ;
+ 3::3::3::1-> 0.137784*100    ;  3::3::3::2-> 0.218043        ;  3::3::3::3->-0.260545*0.01   ;  3::3::3::4-> 0.106811*0.001  ;
+ 4::1::1::1-> 0.230235*10     ;  4::1::1::2-> 0.545715        ;  4::1::1::3-> 0.131161*0.1    ;  4::1::1::4->-0.221402*0.01   ;
+ 4::1::2::1-> 0.557059*10     ;  4::1::2::2-> 0.463994        ;  4::1::2::3->-0.267363*0.1    ;  4::1::2::4-> 0.773006*0.001  ;
+ 4::1::3::1-> 0.862425*10     ;  4::1::3::2-> 0.156261        ;  4::1::3::3-> 0.109190*0.01   ;  4::1::3::4->-0.898380*0.0001 ;
+ 4::2::1::1-> 0.322751*10     ;  4::2::1::2-> 0.768817        ;  4::2::1::3->-0.124130*0.1    ;  4::2::1::4->-0.857452*0.001  ;
+ 4::2::2::1-> 0.720834*10     ;  4::2::2::2-> 0.527256        ;  4::2::2::3->-0.278471*0.1    ;  4::2::2::4-> 0.752199*0.001  ;
+ 4::2::3::1-> 0.108252*100    ;  4::2::3::2-> 0.183875        ;  4::2::3::3->-0.767982*0.001  ;  4::2::3::4-> 0.714597*0.00001;
+ 4::3::1::1-> 0.391945*10     ;  4::3::1::2-> 0.115426*10     ;  4::3::1::3->-0.635733*0.1    ;  4::3::1::4-> 0.176581*0.01   ;
+ 4::3::2::1-> 0.893781*10     ;  4::3::2::2-> 0.582092        ;  4::3::2::3->-0.317886*0.1    ;  4::3::2::4-> 0.930288*0.001  ;
+ 4::3::3::1-> 0.129529*100    ;  4::3::3::2-> 0.221049        ;  4::3::3::3-> 0.170173*0.01   ;  4::3::3::4->-0.906913*0.0001 ;
+ 5::1::1::1-> 0.250836*10     ;  5::1::1::2-> 0.681768*0.1    ;  5::1::1::3-> 0.126871*0.1    ;  5::1::1::4->-0.259413*0.001  ;
+ 5::1::2::1-> 0.763160*10     ;  5::1::2::2-> 0.240094        ;  5::1::2::3->-0.521241*0.01   ;  5::1::2::4-> 0.150006*0.001  ;
+ 5::1::3::1-> 0.111393*100    ;  5::1::3::2-> 0.198252        ;  5::1::3::3-> 0.288790*0.01   ;  5::1::3::4->-0.207356*0.0001 ;
+ 5::2::1::1-> 0.314986*10     ;  5::2::1::2-> 0.148592        ;  5::2::1::3-> 0.947678*0.01   ;  5::2::1::4->-0.205609*0.001  ;
+ 5::2::2::1-> 0.907905*10     ;  5::2::2::2-> 0.258223        ;  5::2::2::3->-0.471024*0.01   ;  5::2::2::4-> 0.132953*0.001  ;
+ 5::2::3::1-> 0.129763*100    ;  5::2::3::2-> 0.217885        ;  5::2::3::3-> 0.246924*0.01   ;  5::2::3::4-> 0.104389*0.001  ;
+ 5::3::1::1-> 0.409354*10     ;  5::3::1::2-> 0.188963        ;  5::3::1::3-> 0.873912*0.01   ;  5::3::1::4->-0.193446*0.001  ;
+ 5::3::2::1-> 0.107090*100    ;  5::3::2::2-> 0.283963        ;  5::3::2::3->-0.460866*0.01   ;  5::3::2::4-> 0.113211*0.001  ;
+ 5::3::3::1-> 0.149874*100    ;  5::3::3::2-> 0.228093        ;  5::3::3::3-> 0.150476*0.01   ;  5::3::3::4-> 0.133490*0.001  ;
+ 6::1::1::1-> 0.260988*10     ;  6::1::1::2-> 0.630037*0.1    ;  6::1::1::3-> 0.115431*0.1    ;  6::1::1::4->-0.231559*0.001  ;
+ 6::1::2::1-> 0.734790*10     ;  6::1::2::2-> 0.226503        ;  6::1::2::3->-0.443447*0.01   ;  6::1::2::4-> 0.137357*0.001  ;
+ 6::1::3::1-> 0.107892*100    ;  6::1::3::2-> 0.200373        ;  6::1::3::3-> 0.298280*0.01   ;  6::1::3::4-> 0.891100*0.0001 ;
+ 6::2::1::1-> 0.329545*10     ;  6::2::1::2-> 0.103651        ;  6::2::1::3-> 0.119637*0.1    ;  6::2::1::4->-0.255793*0.001  ;
+ 6::2::2::1-> 0.889598*10     ;  6::2::2::2-> 0.248036        ;  6::2::2::3->-0.568606*0.01   ;  6::2::2::4-> 0.181276*0.001  ;
+ 6::2::3::1-> 0.125756*100    ;  6::2::3::2-> 0.219539        ;  6::2::3::3-> 0.410286*0.01   ;  6::2::3::4->-0.204386*0.0001 ;
+ 6::3::1::1-> 0.393902*10     ;  6::3::1::2-> 0.201926        ;  6::3::1::3-> 0.746380*0.01   ;  6::3::1::4->-0.178154*0.001  ;
+ 6::3::2::1-> 0.103641*100    ;  6::3::2::2-> 0.262530        ;  6::3::2::3->-0.482882*0.01   ;  6::3::2::4-> 0.154783*0.001  ;
+ 6::3::3::1-> 0.144278*100    ;  6::3::3::2-> 0.239142        ;  6::3::3::3-> 0.352948*0.01   ;  6::3::3::4-> 0.139341*0.001  ;
+ 7::1::1::1-> 0.322108*100    ;  7::1::1::2-> 0.258812*10     ;  7::1::1::3->-0.249611        ;  7::1::1::4-> 0.111355*0.1    ;
+ 7::1::2::1-> 0.411588*100    ;  7::1::2::2-> 0.795414        ;  7::1::2::3->-0.491726*0.1    ;  7::1::2::4-> 0.131269*0.01   ;
+ 7::1::3::1-> 0.458912*100    ;  7::1::3::2-> 0.182354        ;  7::1::3::3->-0.191581*0.01   ;  7::1::3::4->-0.463902*0.0001 ;
+ 7::2::1::1-> 0.348510*100    ;  7::2::1::2-> 0.253355*10     ;  7::2::1::3->-0.235109        ;  7::2::1::4-> 0.101480*0.1    ;
+ 7::2::2::1-> 0.437804*100    ;  7::2::2::2-> 0.808235        ;  7::2::2::3->-0.524443*0.1    ;  7::2::2::4-> 0.140200*0.01   ;
+ 7::2::3::1-> 0.483499*100    ;  7::2::3::2-> 0.155234        ;  7::2::3::3->-0.197246*0.01   ;  7::2::3::4->-0.549570*0.00001;
+ 7::3::1::1-> 0.373458*100    ;  7::3::1::2-> 0.284554*10     ;  7::3::1::3->-0.312001        ;  7::3::1::4-> 0.150148*0.1    ;
+ 7::3::2::1-> 0.464302*100    ;  7::3::2::2-> 0.723126        ;  7::3::2::3->-0.417343*0.1    ;  7::3::2::4-> 0.106348*0.01   ;
+ 7::3::3::1-> 0.509357*100    ;  7::3::3::2-> 0.180925        ;  7::3::3::3->-0.344910*0.01   ;  7::3::3::4-> 0.218012*0.0001 ;
+ 8::1::1::1-> 0.320688*100    ;  8::1::1::2-> 0.210232*10     ;  8::1::1::3->-0.165974        ;  8::1::1::4-> 0.640051*0.01   ;
+ 8::1::2::1-> 0.400902*100    ;  8::1::2::2-> 0.801885        ;  8::1::2::3->-0.507646*0.1    ;  8::1::2::4-> 0.138010*0.01   ;
+ 8::1::3::1-> 0.447875*100    ;  8::1::3::2-> 0.179737        ;  8::1::3::3->-0.108106*0.01   ;  8::1::3::4->-0.652464*0.0001 ;
+ 8::2::1::1-> 0.342817*100    ;  8::2::1::2-> 0.231444*10     ;  8::2::1::3->-0.217205        ;  8::2::1::4-> 0.966608*0.01   ;
+ 8::2::2::1-> 0.424368*100    ;  8::2::2::2-> 0.751914        ;  8::2::2::3->-0.432157*0.1    ;  8::2::2::4-> 0.108307*0.01   ;
+ 8::2::3::1-> 0.471083*100    ;  8::2::3::2-> 0.182624        ;  8::2::3::3->-0.422515*0.01   ;  8::2::3::4-> 0.400879*0.0001 ;
+ 8::3::1::1-> 0.359806*100    ;  8::3::1::2-> 0.283176*10     ;  8::3::1::3->-0.317336        ;  8::3::1::4-> 0.154859*0.1    ;
+ 8::3::2::1-> 0.448920*100    ;  8::3::2::2-> 0.696214        ;  8::3::2::3->-0.385893*0.1    ;  8::3::2::4-> 0.942081*0.001  ;
+ 8::3::3::1-> 0.493177*100    ;  8::3::3::2-> 0.177050        ;  8::3::3::3->-0.467440*0.01   ;  8::3::3::4-> 0.903841*0.0001 ;
+ 9::1::1::1-> 0.796017*100    ;  9::1::1::2-> 0.725005        ;  9::1::1::3->-0.394565*0.01   ;  9::1::1::4-> 0.149043*0.0001 ;
+ 9::1::2::1-> 0.133056*1000   ;  9::1::2::2-> 0.406485        ;  9::1::2::3-> 0.115162*0.01   ;  9::1::2::4-> 0.272229*0.0001 ;
+ 9::1::3::1-> 0.147022*1000   ;  9::1::3::2-> 0.549084        ;  9::1::3::3-> 0.360168*0.01   ;  9::1::3::4->-0.162614*0.001  ;
+ 9::1::4::1-> 0.163870*1000   ;  9::1::4::2-> 0.176161        ;  9::1::4::3->-0.139606*0.1    ;  9::1::4::4-> 0.257402*0.001  ;
+ 9::2::1::1-> 0.855931*100    ;  9::2::1::2-> 0.837795        ;  9::2::1::3->-0.533792*0.01   ;  9::2::1::4-> 0.233837*0.0001 ;
+ 9::2::2::1-> 0.146374*1000   ;  9::2::2::2-> 0.532432        ;  9::2::2::3-> 0.265930*0.01   ;  9::2::2::4->-0.599481*0.0001 ;
+ 9::2::3::1-> 0.163122*1000   ;  9::2::3::2-> 0.530131        ;  9::2::3::3->-0.273603*0.01   ;  9::2::3::4->-0.522667*0.0001 ;
+ 9::2::4::1-> 0.176222*1000   ;  9::2::4::2-> 0.129924        ;  9::2::4::3->-0.838083*0.01   ;  9::2::4::4-> 0.143430*0.001  ;
+ 9::3::1::1-> 0.915767*100    ;  9::3::1::2-> 0.950895        ;  9::3::1::3->-0.673349*0.01   ;  9::3::1::4-> 0.318732*0.0001 ;
+ 9::3::2::1-> 0.159692*1000   ;  9::3::2::2-> 0.658332        ;  9::3::2::3-> 0.416714*0.01   ;  9::3::2::4->-0.147054*0.001  ;
+ 9::3::3::1-> 0.179222*1000   ;  9::3::3::2-> 0.511316        ;  9::3::3::3->-0.906767*0.01   ;  9::3::3::4-> 0.577848*0.0001 ;
+ 9::3::4::1-> 0.188574*1000   ;  9::3::4::2-> 0.831110*0.1    ;  9::3::4::3->-0.282691*0.01   ;  9::3::4::4-> 0.382714*0.0001 ;
+10::1::1::1-> 0.784609*100    ; 10::1::1::2-> 0.769969        ; 10::1::1::3->-0.579066*0.01   ; 10::1::1::4-> 0.299200*0.0001 ;
+10::1::2::1-> 0.100071*1000   ; 10::1::2::2-> 0.469370        ; 10::1::2::3->-0.255930*0.01   ; 10::1::2::4-> 0.298134*0.0001 ;
+10::1::3::1-> 0.131726*1000   ; 10::1::3::2-> 0.564490        ; 10::1::3::3-> 0.388040*0.01   ; 10::1::3::4->-0.211730*0.001  ;
+10::1::4::1-> 0.144582*1000   ; 10::1::4::2-> 0.384879        ; 10::1::4::3->-0.113642*0.1    ; 10::1::4::4-> 0.132304*0.001  ;
+10::1::5::1-> 0.149882*1000   ; 10::1::5::2-> 0.810578*0.1    ; 10::1::5::3-> 0.292469*0.01   ; 10::1::5::4->-0.738429*0.0001 ;
+10::2::1::1-> 0.844872*100    ; 10::2::1::2-> 0.877385        ; 10::2::1::3->-0.854191*0.01   ; 10::2::1::4-> 0.726632*0.0001 ;
+10::2::2::1-> 0.105083*1000   ; 10::2::2::2-> 0.561061        ; 10::2::2::3->-0.200222*0.01   ; 10::2::2::4-> 0.171075*0.0001 ;
+10::2::3::1-> 0.144783*1000   ; 10::2::3::2-> 0.560961        ; 10::2::3::3-> 0.200094*0.01   ; 10::2::3::4->-0.164240*0.001  ;
+10::2::4::1-> 0.157128*1000   ; 10::2::4::2-> 0.373200        ; 10::2::4::3->-0.982432*0.01   ; 10::2::4::4-> 0.982153*0.0001 ;
+10::2::5::1-> 0.162413*1000   ; 10::2::5::2-> 0.477105*0.1    ; 10::2::5::3-> 0.782933*0.001  ; 10::2::5::4->-0.217935*0.0001 ;
+10::3::1::1-> 0.905784*100    ; 10::3::1::2-> 0.973526        ; 10::3::1::3->-0.108372*0.1    ; 10::3::1::4-> 0.109954*0.001  ;
+10::3::2::1-> 0.112999*1000   ; 10::3::2::2-> 0.620169        ; 10::3::2::3->-0.941330*0.001  ; 10::3::2::4-> 0.461746*0.00001;
+10::3::3::1-> 0.157837*1000   ; 10::3::3::2-> 0.557600        ; 10::3::3::3-> 0.139156*0.001  ; 10::3::3::4->-0.117406*0.001  ;
+10::3::4::1-> 0.169676*1000   ; 10::3::4::2-> 0.361401        ; 10::3::4::3->-0.831408*0.01   ; 10::3::4::4-> 0.648912*0.0001 ;
+10::3::5::1-> 0.174939*1000   ; 10::3::5::2-> 0.150850*0.1    ; 10::3::5::3->-0.130583*0.01   ; 10::3::5::4-> 0.268575*0.0001 ;
+11::1::1::1-> 0.102271*100    ; 11::1::1::2-> 0.110605        ; 11::1::1::3-> 0.502728*0.001  ; 11::1::1::4->-0.356088*0.00001;
+11::1::2::1-> 0.194677*100    ; 11::1::2::2-> 0.127619        ; 11::1::2::3->-0.266421*0.001  ; 11::1::2::4-> 0.234381*0.0001 ;
+11::1::3::1-> 0.312284*100    ; 11::1::3::2-> 0.348780        ; 11::1::3::3-> 0.395244*0.01   ; 11::1::3::4->-0.674519*0.0001 ;
+11::1::4::1-> 0.496166*100    ; 11::1::4::2-> 0.261986        ; 11::1::4::3->-0.576064*0.01   ; 11::1::4::4-> 0.333672*0.0001 ;
+11::2::1::1-> 0.123424*100    ; 11::2::1::2-> 0.202445        ; 11::2::1::3->-0.116412*0.01   ; 11::2::1::4-> 0.118225*0.0001 ;
+11::2::2::1-> 0.252964*100    ; 11::2::2::2-> 0.218676        ; 11::2::2::3-> 0.138954*0.01   ; 11::2::2::4-> 0.709375*0.00001;
+11::2::3::1-> 0.449515*100    ; 11::2::3::2-> 0.462032        ; 11::2::3::3-> 0.266641*0.01   ; 11::2::3::4->-0.629917*0.0001 ;
+11::2::4::1-> 0.663061*100    ; 11::2::4::2-> 0.282610        ; 11::2::4::3->-0.640439*0.01   ; 11::2::4::4-> 0.619515*0.0001 ;
+11::3::1::1-> 0.154874*100    ; 11::3::1::2-> 0.219986        ; 11::3::1::3->-0.841307*0.001  ; 11::3::1::4-> 0.189821*0.0001 ;
+11::3::2::1-> 0.340501*100    ; 11::3::2::2-> 0.394048        ; 11::3::2::3-> 0.325883*0.01   ; 11::3::2::4->-0.164077*0.0001 ;
+11::3::3::1-> 0.658807*100    ; 11::3::3::2-> 0.607904        ; 11::3::3::3-> 0.305441*0.001  ; 11::3::3::4->-0.377818*0.0001 ;
+11::3::4::1-> 0.915854*100    ; 11::3::4::2-> 0.376078        ; 11::3::4::3->-0.513514*0.01   ; 11::3::4::4->-0.177567*0.0001 ;
+12::1::1::1-> 0.958878*10     ; 12::1::1::2-> 0.162168        ; 12::1::1::3->-0.158785*0.01   ; 12::1::1::4-> 0.141728*0.0001 ;
+12::1::2::1-> 0.166639*100    ; 12::1::2::2-> 0.124691        ; 12::1::2::3-> 0.963245*0.001  ; 12::1::2::4-> 0.307446*0.00001;
+12::1::3::1-> 0.282771*100    ; 12::1::3::2-> 0.273485        ; 12::1::3::3-> 0.151665*0.01   ; 12::1::3::4->-0.370240*0.0001 ;
+12::1::4::1-> 0.408042*100    ; 12::1::4::2-> 0.163173        ; 12::1::4::3->-0.381481*0.01   ; 12::1::4::4-> 0.315956*0.0001 ;
+12::2::1::1-> 0.117963*100    ; 12::2::1::2-> 0.219662        ; 12::2::1::3->-0.262788*0.01   ; 12::2::1::4-> 0.292835*0.0001 ;
+12::2::2::1-> 0.218409*100    ; 12::2::2::2-> 0.220578        ; 12::2::2::3-> 0.264314*0.01   ; 12::2::2::4->-0.141618*0.0001 ;
+12::2::3::1-> 0.415319*100    ; 12::2::3::2-> 0.384808        ; 12::2::3::3-> 0.940228*0.0001 ; 12::2::3::4->-0.391686*0.0001 ;
+12::2::4::1-> 0.558876*100    ; 12::2::4::2-> 0.123101        ; 12::2::4::3->-0.554625*0.01   ; 12::2::4::4-> 0.702252*0.0001 ;
+12::3::1::1-> 0.144385*100    ; 12::3::1::2-> 0.322835        ; 12::3::1::3->-0.438366*0.01   ; 12::3::1::4-> 0.540144*0.0001 ;
+12::3::2::1-> 0.296945*100    ; 12::3::2::2-> 0.380152        ; 12::3::2::3-> 0.533894*0.01   ; 12::3::2::4->-0.449181*0.0001 ;
+12::3::3::1-> 0.620215*100    ; 12::3::3::2-> 0.535709        ; 12::3::3::3->-0.274632*0.01   ; 12::3::3::4->-0.206170*0.0001 ;
+12::3::4::1-> 0.791280*100    ; 12::3::4::2-> 0.129558        ; 12::3::4::3->-0.571516*0.01   ; 12::3::4::4-> 0.648512*0.0001 ;
+13::1::1::1-> 0.288221*10     ; 13::1::1::2-> 0.311757        ; 13::1::1::3->-0.339993*0.01   ; 13::1::1::4-> 0.332712*0.0001 ;
+13::1::2::1-> 0.907104*10     ; 13::1::2::2-> 0.204144        ; 13::1::2::3->-0.904587*0.001  ; 13::1::2::4-> 0.465496*0.0001 ;
+13::1::3::1-> 0.171038*100    ; 13::1::3::2-> 0.311893        ; 13::1::3::3-> 0.398312*0.01   ; 13::1::3::4->-0.276662*0.0001 ;
+13::2::1::1-> 0.431260*10     ; 13::2::1::2-> 0.371447        ; 13::2::1::3->-0.633119*0.01   ; 13::2::1::4-> 0.877037*0.0001 ;
+13::2::2::1-> 0.110122*100    ; 13::2::2::2-> 0.219333        ; 13::2::2::3-> 0.246595*0.001  ; 13::2::2::4-> 0.313171*0.0001 ;
+13::2::3::1-> 0.203336*100    ; 13::2::3::2-> 0.351685        ; 13::2::3::3-> 0.353489*0.01   ; 13::2::3::4-> 0.104383*0.001  ;
+13::3::1::1-> 0.658687*10     ; 13::3::1::2-> 0.352637        ; 13::3::1::3->-0.345830*0.01   ; 13::3::1::4-> 0.293354*0.0001 ;
+13::3::2::1-> 0.136997*100    ; 13::3::2::2-> 0.234726        ; 13::3::2::3->-0.125814*0.01   ; 13::3::2::4-> 0.889698*0.0001 ;
+13::3::3::1-> 0.241885*100    ; 13::3::3::2-> 0.473620        ; 13::3::3::3-> 0.808368*0.01   ; 13::3::3::4-> 0.103298*0.001  ;
+14::1::1::1-> 0.303896*10     ; 14::1::1::2-> 0.276098        ; 14::1::1::3->-0.226928*0.01   ; 14::1::1::4-> 0.201277*0.0001 ;
+14::1::2::1-> 0.982301*10     ; 14::1::2::2-> 0.194286        ; 14::1::2::3->-0.457785*0.001  ; 14::1::2::4-> 0.537775*0.0001 ;
+14::1::3::1-> 0.147037*100    ; 14::1::3::2-> 0.258573        ; 14::1::3::3-> 0.325286*0.01   ; 14::1::3::4-> 0.168530*0.0001 ;
+14::2::1::1-> 0.430208*10     ; 14::2::1::2-> 0.364667        ; 14::2::1::3->-0.629446*0.01   ; 14::2::1::4-> 0.835936*0.0001 ;
+14::2::2::1-> 0.118341*100    ; 14::2::2::2-> 0.212702        ; 14::2::2::3-> 0.122896*0.01   ; 14::2::2::4-> 0.201561*0.0001 ;
+14::2::3::1-> 0.176216*100    ; 14::2::3::2-> 0.301222        ; 14::2::3::3-> 0.261973*0.01   ; 14::2::3::4-> 0.121334*0.001  ;
+14::3::1::1-> 0.658206*10     ; 14::3::1::2-> 0.363970        ; 14::3::1::3->-0.609859*0.01   ; 14::3::1::4-> 0.885250*0.0001 ;
+14::3::2::1-> 0.144026*100    ; 14::3::2::2-> 0.237072        ; 14::3::2::3-> 0.186866*0.01   ; 14::3::2::4-> 0.269321*0.0001 ;
+14::3::3::1-> 0.211715*100    ; 14::3::3::2-> 0.365772        ; 14::3::3::3-> 0.372698*0.01   ; 14::3::3::4-> 0.332188*0.001  ;
+  endrecode;
+  zscoef = zscoeff;
+end;
+
+{ --------------------------------------------------------------------------- }
+{ dabs
+  Returns: the absolute value of input variable                               }
+function dabs(dval);
+  if dval < 0 then dval = - dval endif;
+  dabs = dval;
+end;
+
+{ --------------------------------------------------------------------------- }
+{ Anthropometry function }
+function zspct(zssd);
+  if zssd > 9.985 then
+    zspct = 99.9
+  else
+    zsr  =  0.2316419;
+    zsb1 =  0.31938153;
+    zsb2 = -0.356563782;
+    zsb3 =  1.781477937;
+    zsb4 = -1.821255978;
+    zsb5 =  1.330274429;
+    zsdz = dabs(zssd);
+    zst = 1/(1+zsdz*zsr);
+    zsdzp = zsb1*zst+zsb2*zst^2+zsb3*zst^3+zsb4*zst^4+zsb5*zst^5;
+    zsfx = 1/sqrt(8*0.785398163)*exp(-0.5*zsdz^2);
+                   { ATAN(1.0) }
+    zsdzp = zsdzp*zsfx*100;
+    if zssd >= 0 then zsdzp= 100 - zsdzp endif;
+    if zsdzp > 99.8 then zsdzp = 99.8 endif;
+    zspct = zsdzp;
+  endif;
+end;
+
+{ --------------------------------------------------------------------------- }
+{ Anthropometry function }
+function zseval(zsx,zsy);
+  if (zsx < zsll or zsx > zsul) and zsll <> zsul then
+    zseval = 999.9
+  else
+    recode zsi -> zsk;
+       9,11,12 -> 4;
+            10 -> 5;
+               -> 3;
+    endrecode;
+    zsj = zsy;
+    zsa = -1;
+    while zsk > 0 and zsa < 0 do
+      recode zsi :: zsk -> zsknot;
+            1 :: 1 ->  0;  1 :: 2 ->  9;  1 :: 3 -> 24;
+            2 :: 1 ->  0;  2 :: 2 ->  9;  2 :: 3 -> 24;
+            3 :: 1 ->  0;  3 :: 2 ->  6;  3 :: 3 -> 18;
+            4 :: 1 ->  0;  4 :: 2 ->  6;  4 :: 3 -> 18;
+            5 :: 1 -> 49;  5 :: 2 -> 72;  5 :: 3 -> 90;
+            6 :: 1 -> 49;  6 :: 2 -> 72;  6 :: 3 -> 90;
+         {  7 :: 1 ->  0;  7 :: 2 ->  6;  7 :: 3 -> 18;
+            8 :: 1 ->  0;  8 :: 2 ->  6;  8 :: 3 -> 18; }
+            9 :: 1 -> 24;  9 :: 2 ->138;  9 :: 3 ->168;  9 :: 4 ->204;
+           10 :: 1 -> 24; 10 :: 2 -> 54; 10 :: 3 ->132; 10 :: 4 ->156; 10 :: 5 ->192;
+           11 :: 1 -> 24; 11 :: 2 -> 96; 11 :: 3 ->156; 11 :: 4 ->204;
+           12 :: 1 -> 24; 12 :: 2 -> 84; 12 :: 3 ->144; 12 :: 4 ->192;
+           13 :: 1 -> 55; 13 :: 2 -> 80; 13 :: 3 ->115;
+           14 :: 1 -> 55; 14 :: 2 -> 85; 14 :: 3 ->108;
+              ::   -> default;
+      endrecode;
+      if zsi = 10 and zsj = 1 and zsk = 2 then zsknot = 60 endif;
+      zsa = zsx-zsknot;
+      if zsa < 0 then zsk = zsk-1 endif;
+    enddo;
+    if zsk = 0 then zsk = 1 endif;
+    zsl = 4;
+    zsz = 0;
+    while zsl > 0 do
+      zsz = zsz*zsa+zscoef(zsi,zsj,zsk,zsl);
+      zsl = zsl-1;
+    enddo;
+    zseval=zsz;
+  endif;
+end;
+
+{ --------------------------------------------------------------------------- }
+{ Anthropometry function }
+function zscr(zsx,zsms);
+  if ((zsx < zsll or zsx > zsul) and zsll <> zsul) then
+    zsc=9.99
+  else
+    zsy1=zseval(zsx,1);
+    zsy2=zseval(zsx,2);
+    zsy3=zseval(zsx,3);
+    zssd1=(zsy2-zsy1)/1.8807936; if zssd1 < 0 then zssd1 = -zssd1 endif;
+    zssd2=(zsy2-zsy3)/1.8807936; if zssd2 < 0 then zssd2 = -zssd2 endif;
+    if zsll = zsul then
+      zsc=zsy2;
+      zsll=zssd1;
+      zsul=zssd2;
+    else
+      if zsms < zsy2 then
+        zsc=(zsms-zsy2)/zssd1;
+        if zsc < -9.98 then zsc=-9.98 endif;
+      else
+        zsc=(zsms-zsy2)/zssd2;
+        if zsc > 9.98 then zsc=9.98 endif;
+      endif;
+    endif;
+  endif;
+  zscr = zsc;
+end;
+
+{ --------------------------------------------------------------------------- }
+{ Anthropometry function }
+function zsanth(zsage,zssex,zswt,zsht,zsageok)
+  if zssex = 1 or zssex = 2 then
+    if (zsageok = 1 and zsage >= 24) or (zsageok <> 1 and zsht >= 85) then
+      { FELS REFERENCE THROUGH 36 MONTHS      }
+      { CHANGE TO >= 24 FOR REGULAR REFERENCE }
+      zsi=zssex+8
+    else
+      zsi=zssex
+    endif;
+    if zsageok = 1 then
+      { Ht/Age }
+      if zsage < 24 then
+        zshta = zsht;
+        zsll=0; zsul=36;
+      else
+        zshta = zsht {- 1} ;    { Subtract 1 if lying after 24 months !!! }
+        zsll=24; zsul=216;
+      endif;
+      if zsage < zsll or zsage > zsul or
+         zshta > 999 or zshta <= 0.01 then
+        zspmed=999.9;
+        zsc=9.99;
+      else
+        zsv = zseval(zsage,2);
+        zsc = zscr(zsage,zshta);
+        zspmed = (zshta/zsv)*100;
+      endif;
+      zshap=zspmed;
+      zshaz=zsc;
+      zshac=zspct(zsc);
+    endif;
+    { Wt/Age }
+    zsi = zsi + 2;
+    if zsageok = 1 then
+      if zsage < 24 then
+        zsll=0; zsul=36;
+      else
+        zsll=24; zsul=216;
+      endif;
+      if zsage < zsll or zsage > zsul or
+         zswt > 999 or zswt <= 0.01 then
+        zspmed=999.9;
+        zsc=9.99;
+      else
+        zsv = zseval(zsage,2);
+        zsc = zscr(zsage,zswt);
+        zspmed = (zswt/zsv)*100;
+      endif;
+      zswap=zspmed;
+      zswaz=zsc;
+      zswac=zspct(zsc);
+    endif;
+    { Wt/Ht }
+    zsi = zsi + 2;
+    if (zsageok = 1 and zsage < 24) or (zsageok <> 1 and zshtw < 85) then
+      zshtw = zsht;
+      zsll=49; if zssex = 1 then zsul=103 else zsul=101 endif;
+    else
+      zshtw = zsht {- 1} ;      { Subtract 1 if lying after 24 months !!! }
+      zsll=55; if zssex = 1 then zsul=145 else zsul=137 endif;
+    endif;
+    if zshtw < zsll or zshtw > zsul or
+       zswt > 999 or zswt <= 0.01 then
+      zspmed=999.9;
+      zsc=9.99;
+    else
+      zsv = zseval(zshtw,2);
+      zsc = zscr(zshtw,zswt);
+      zspmed = (zswt/zsv)*100;
+    endif;
+    zswhp=zspmed;
+    zswhz=zsc;
+    zswhc=zspct(zsc);
+    if zsageok = 1 then
+      if zsage < 24 then
+        zsll=0; zsul=36;
+      else
+        zsll=24; if zssex = 1 then zsul=138 else zsul=120 endif;
+      endif;
+      if zsage < zsll or zsage > zsul then
+        zswhc=99.9;
+        zswhp=999.9;
+        zswhz=9.99;
+      endif;
+    endif;
+    zsanth = 1;
+  else
+    zshac=99.9;
+    zshap=999.9;
+    zshaz=9.99;
+    zswac=99.9;
+    zswap=999.9;
+    zswaz=9.99;
+    zswhc=99.9;
+    zswhp=999.9;
+    zswhz=9.99;
+    zsanth = 0;
+  endif;
+  fhaz = 0; fwaz = 0; fwhz = 0;
+  if zshaz <= -6.00 or zshaz >= 6.00 then      { h/a out of range }
+    fhaz = 1;
+  endif;
+  if zswaz <= -6.00 or zswaz >= 6.00 then      { w/a out of range }
+    fwaz = 1;
+  endif;
+  if zswhz <= -4.00 or zswhz >= 6.00 then      { w/h out of range }
+    fwhz = 1;
+  endif;
+  if zshaz <  -3.09 and  zswhz >  3.09 then      { height too low  }
+    fhaz = 1; fwhz = 1;
+  endif;
+  if zshaz >   3.09 and  zswhz < -3.09 then      { height too high }
+    fhaz = 1; fwhz = 1;
+  endif;
+  zsflag = 4*fwaz+2*fwhz+fhaz;
+end;
+
+{ --------------------------------------------------------------------------- }
+{ agemth
+  Calculates most accurate age in months possible (used for anthropometry)
+  Input: Birth day, month, year and interview day, month, year
+  Returns:
+	- Child's age in months if birth day, month and year are valid
+	- Child's age in months using 15 as day if only birth month and year are valid
+	- special if only birth year is valid                                        }
+
+  function agemth(xhwbd,xhwbm,xhwby,xhwmd,xhwmm,xhwmy);
+    { if birth month and year and measurement day, month and year are all valid }
+    if valid(xhwbm) and xhwby < 9996 and valid(xhwmd) and valid(xhwmm) and xhwmy < 9996 then
+      { if day of birth inconsistent, don't know or missing }
+      if not(valid(xhwbd)) then
+        { impute day of birth }
+        xhwbd = 15;
+      endif;
+      leapday = (xhwby % 4 = 0);
+      xdays1 = xhwbd;
+      do x = 1 while x < xhwbm
+        recode x        -> y;
+           1,3,5,7,8,10 -> 31;
+                      2 -> 28+leapday;
+               4,6,9,11 -> 30;
+        endrecode;
+        xdays1 = xdays1 + y;
+      enddo;
+      leapday = (xhwmy % 4 = 0);
+      xdays2 = xhwmd;
+      do x = 1 while x < xhwmm
+        recode x        -> y;
+           1,3,5,7,8,10 -> 31;
+                      2 -> 28+leapday;
+               4,6,9,11 -> 30;
+        endrecode;
+        xdays2 = xdays2 + y;
+      enddo;
+      do x = xhwby while x < xhwmy
+        xdays2 = xdays2 + 365 + (x % 4 = 0);
+      enddo;
+      agemth = int(((xdays2 - xdays1)/30.4375)*100+0.5)/100;
+    else
+      agemth = 9999;
+    endif;
+  end;
+
+{ --------------------------------------------------------------------------- }
+
+  { function to calculate child's age in days }
+  function agedays( xhwbd, xhwbm, xhwby, xhwmd, xhwmm, xhwmy );
+  { if birth month and year and measurement day, month and year are all valid }
+  if valid(xhwbm) and xhwby < 9996 and valid(xhwmd) and valid(xhwmm) and xhwmy < 9996 then
+    if not(valid(xhwbd)) then
+      { impute day of birth }
+      xhwbd = 15;
+    endif;
+    { number of days up to the day of birth in the year of birth }
+    leapday = (xhwby % 4 = 0);
+    xdays1 = xhwbd;
+    do x = 1 while x < xhwbm by 1
+      recode x        -> y;
+         1,3,5,7,8,10 -> 31;
+                    2 -> 28+leapday;
+             4,6,9,11 -> 30;
+      endrecode;
+      xdays1 = xdays1 + y;
+    enddo;
+    { number of days up to the day of interview in the year of interview }
+    leapday = (xhwmy % 4 = 0);
+    xdays2 = xhwmd;
+    do x = 1 while x < xhwmm by 1
+      recode x        -> y;
+         1,3,5,7,8,10 -> 31;
+                    2 -> 28+leapday;
+             4,6,9,11 -> 30;
+      endrecode;
+      xdays2 = xdays2 + y;
+    enddo;
+    { number of days between year of birth (inclusive) and the year before interview }
+    do x = xhwby while x < xhwmy by 1
+      xdays2 = xdays2 + 365 + (x % 4 = 0);
+    enddo;
+    agedays = ( xdays2 - xdays1 );
+  else
+    agedays = 9999;
+  endif;
+  end;
+
+  { function to calculate general Z-score }
+  function genstdev( measure, l, m, s )
+    genstdev = ( ( (measure/m) ^ l) - 1 ) / ( s*l );
+  end
+
+  { function to adjust std dvs when > 3 std }
+  function stdpos3( measure, l, m, s )
+    sd3pos  = m * ( (1+l*s*3) ^ (1/l) );
+    sd23pos = sd3pos - m * ( (1+l*s*2) ^ (1/l) );
+    stdpos3  = 3 + ( (measure - sd3pos) / sd23pos );
+  end
+
+  { function to adjust std dvs when < 3 std }
+  function stdneg3( measure, l, m, s )
+    sd3neg  = m *( (1+l*s*(-3)) ^ ( 1/l ) );
+    sd23neg = m *( (1+l*s*(-2)) ^ ( 1/l ) ) - sd3neg;
+    stdneg3 = (-3) - ( (sd3neg - measure) / sd23neg );
+  end
+
+
+{ --------------------------------------------------------------------------- }
+{ EXPORT CHILDREN }
+PROC MICS7_FF
+preproc 
+cminage = 0;
+cmaxage = 4;
+
+  n0 = 0;
+  n1 = 0;
+  n2 = 0;
+  n3 = 0;
+  n4 = 0;
+  n5 = 0;
+  n6 = 0; n6f = 0; n6m = 0;
+  n7 = 0; n7f = 0; n7m = 0;
+  n8 = 0; n8f = 0; n8m = 0;
+  n9 = 0; n9f = 0; n9m = 0;
+
+postproc
+
+  { print run summary }
+  write( " " );
+  write( "WHO 2005 Anthropometry Standard Summary" );
+  write( "=======================================" );
+  write( "Children with all Z-scores calculated                         %5d", n0 );
+  write( "Observations not measured for weight or height                %5d", n2 );
+  write( "Observations without age in months and years (excluded from H/A, W/A, Z-BMI)                 %5d", n3 );
+  write( "Observations not found in look-up table for height-for-age    %5d, out of range %5d, missing %5d", n6, n6f, n6m );
+  write( "Observations not found in look-up table for BMI               %5d, out of range %5d, missing %5d", n7, n7f, n7m );
+  write( "Observations not found in look-up table for weight-for-age    %5d, out of range %5d, missing %5d", n8, n8f, n8m );
+  write( "Observations not found in look-up table for weight-for-height %5d, out of range %5d, missing %5d", n9, n9f, n9m );
+  write( "Observations with only weight for height calculated           %5d, out of range %5d", n5, n1 );
+
+
+PROC CH
+ { --------------------------------------------------------------------------- }
+{ EXPORT CHILDREN }
+
+ HH1=UF1; HH2=UF2; HINT=UFHINT; HLN=0; 
+ IF !loadcase(MICS7HH,HH1,HH2,HINT,HLN)THEN  //NEEDED
+   errmsg("Household %03d%02d data not loaded !!!", hh1, hh2); 
+ ENDIF;
+ 
+set behavior() export (SPSS SubitemOnly); 
+
+  cdoi = cmcode(UF7M, UF7Y);
+  cdob = notappl;
+  cage = notappl;
+  cage_6 = notappl;
+  cage_11 = notappl;
+  caged = notappl;
+  hap = notappl;
+  haz = notappl;
+  ham = notappl;
+  wap = notappl;
+  waz = notappl;
+  wam = notappl;
+  whp = notappl;
+  whz = notappl;
+  whm = notappl;
+  flag = notappl;
+  bmi  = notappl;
+  zbmi = notappl;
+  haz2 = notappl;
+  waz2 = notappl;
+  whz2 = notappl;
+  hazflag = notappl;
+  wazflag = notappl;
+  whzflag = notappl;
+  bmiflag = notappl;
+  whznoage = notappl;
+
+  if UF17 = 1 then { Complete interviews }
+    udob = cdoi - cminage*12;
+    ldob = cdoi - cmaxage*12 - 11;
+    if UB1Y < 9997 then
+      ldob = setlb(UB1M,UB1Y,0);
+      udob = setub(UB1M,UB1Y,9999);
+      if udob < cdoi - 60 or ldob > cdoi then
+        errmsg("Date of birth %02d/%4d outside bounds of eligibility based on date of interview %02d/%4d",UB1M,UB1Y,UF7M,UF7Y);
+      endif;
+    endif;
+    if valid(UB2) then
+      { Lower bound of CMC date of birth }
+      t = adjlba(ldob,udob,cdoi,cdoi,UB2);
+      if t < 0 then
+        errmsg("Date of birth %02d/%4d and age %02d inconsistent with date of interview %02d/%4d",UB1M,UB1Y,UB2,UF7M,UF7Y);
+      else
+        ldob = t
+      endif;
+      { Upper bound of CMC date of birth }
+      t = adjuba(ldob,udob,cdoi,cdoi,UB2);
+      if t < 0 then
+        errmsg("Date of birth %02d/%4d and age %02d inconsistent with date of interview %02d/%4d",UB1M,UB1Y,UB2,UF7M,UF7Y);
+      else
+        udob = t
+      endif;
+    endif;
+    { Impute date of birth }
+    if ldob = udob then
+      cdob = ldob
+    else
+      { Correction in case minimum allows age one year older }
+      if int( (cdoi - ldob ) /12 ) = UB2+1 then
+        if ldob < udob then
+          ldob = ldob + 1
+        else
+          errmsg("Date of birth (cmc%4d-%4d) will be imputed as %2d, inconsistent from age reported as %2d",ldob,udob,int((cdoi-ldob)/12),UB2)
+        endif;
+      endif;
+      cdob = random(ldob,udob);
+    endif;
+    { Fix in case imputed as exactly 5 years old }
+    if cdoi - cdob = 60 then
+      cdob = cdob + 1
+    endif;
+
+    { Age in 5 year groups }
+  { cage = cdoi - cdob; }
+    birthd = UB1D; if UB1D >= 97 then birthd = missing endif;
+    birthm = UB1M; if UB1M >= 97 then birthm = missing endif;
+    birthy = UB1Y; if UB1Y >= 9997 then birthy = missing endif;
+    age = agemth(birthd,birthm,birthy,UF7D,UF7M,UF7Y);
+    cage = int(age);
+    if cage = 9999 then
+      cage = cdoi - cdob;
+    endif;
+{to fix cage vs UB2 inconsistency}
+	if (cage = 12 and UB2 = 0 and UB1D = UF7D and UB1M = UF7M) then cage = 11; endif; 
+	if (cage = 11 and UB2 = 1 and UB1D = UF7D and UB1M = UF7M) then cage = 12; endif; 
+	if (cage = 24 and UB2 = 1 and UB1D = UF7D and UB1M = UF7M) then cage = 23; endif; 
+	if (cage = 23 and UB2 = 2 and UB1D = UF7D and UB1M = UF7M) then cage = 24; endif; 
+	if (cage = 36 and UB2 = 2 and UB1D = UF7D and UB1M = UF7M) then cage = 35; endif; 
+	if (cage = 35 and UB2 = 3 and UB1D = UF7D and UB1M = UF7M) then cage = 36; endif; 
+	if (cage = 48 and UB2 = 3 and UB1D = UF7D and UB1M = UF7M) then cage = 47; endif; 
+	if (cage = 47 and UB2 = 4 and UB1D = UF7D and UB1M = UF7M) then cage = 48; endif; 
+	if (cage = 60 and UB2 = 4 and UB1D = UF7D and UB1M = UF7M) then cage = 59; endif; 
+	
+    if !cage in 0:59 then
+      errmsg("Imputed age of child (%d) out of range. UB1=%02d/%4d, UB2=%d",cage,UB1M,UB1Y,UB2);
+    endif;
+recode   UB2  :: cage	      -> err;
+          0   :: 0:11         -> 0;   
+          1   :: 12:23        -> 0;
+          2   :: 24:35        -> 0;
+          3   :: 36:47        -> 0;
+          4   :: 48:59        -> 0;		  
+              ::              -> 1;
+endrecode;
+if err then
+ errmsg("Imputed age of child (%d) is inconsistent with the curent age. UB2=%d",cage,UB2);
+endif;
+    {cage = cdoi-cdob;}
+    recode cage -> cage_6;
+           0: 5 -> 1;
+           6:11 -> 2;
+          12:23 -> 3;
+          24:35 -> 4;
+          36:47 -> 5;
+          48:59 -> 6;
+                -> 9;
+    endrecode;
+    cage_11 = cage_6 - 1;
+    if cage_11 = 0 then
+      cage_11 = 1
+    endif;
+
+    { Age of child in days }
+    agechild = agedays(birthd,birthm,birthy,UF7D,UF7M,UF7Y);
+    caged = int(agechild);
+{ --------------------------------------------------------------------------- }
+
+	if AN8 < 99.3  or AN11 < 999.4 then	{ Children measured }
+
+      { Anthropometry calculaltions - old WHO/CDC/NCHS Reference }
+      xweight = AN8; if xweight >= 97.0 then xweight = 999.9 endif;
+      xheight = AN11; if xheight >=997.0 then xheight = 999.9 endif;
+      zsanth(age,HL4(UF3),xweight,xheight,1);
+
+      hap = zshac;
+      haz = zshaz;
+      ham = zshap;
+      wap = zswac;
+      waz = zswaz;
+      wam = zswap;
+      whp = zswhc;
+      whz = zswhz;
+      whm = zswhp;
+      flag = zsflag;
+
+      if AN11 < 997.0 and age <> 9999 and (ZSFLAG in 1,3,5,7) then
+        errmsg("Height or length (%5.1f) out of range. Flag=%d",AN11,zsflag);
+      endif;
+      if AN8 <  97.0 and age <> 9999 and (ZSFLAG in 4,5,6,7) then
+        errmsg("Weight (%4.1f) out of range. Flag=%d",AN8,zsflag);
+      endif;
+      if AN11 < 997.0 and AN8 < 97.0 and (ZSFLAG in 2,3,6,7) then
+        errmsg("Weight (%4.1f) and height (%5.1f) inconsistent. Flag=%d",AN8,AN11,zsflag);
+      endif;
+
+
+      { Anthropometry calculations - new 2005 WHO Reference }
+
+      { height, weight and how child was measured variables }
+      { !!! divide weight(HC2)/height(HC3) by 10 if they are integer in dictionary }
+      weightch = AN8;
+      lengthch = AN11;
+      lystand  = AN12;
+      uselngth = lystand;	{ initialize to the value of AN12 }
+
+      if agechild < 9999 then
+{
+        { disregard how child was measured if: }
+        if lystand in missing,notappl |          { missing, not applicable }
+           lystand = 1 & agechild > 1095 |       { lying and 3+ years (3*365 = 1095) }
+           lystand = 2 & agechild < 240 then     { standing and child < 8 months (8*30 = 240) }
+          lystand = 9
+        endif;
+}
+        { if standing under 2 or lying over 2 }
+        if lystand = 2 & agechild <  731 then                      { standing & age < 24 months }
+          lengthch = lengthch + 0.7;
+          errmsg("Length + 0.7");
+        endif;
+        if lystand = 1 & agechild >= 731 then                      { lying & age >= 24 months }
+          lengthch = lengthch - 0.7;
+          errmsg("Length - 0.7");
+        endif;
+
+        { set uselngth to decide what standard (look-up table) to use: length or height }
+        { uselngth = 1 will use length, uselngth = 2 will use height                    }
+        recode lystand :: agechild -> uselngth;
+                  1    ::   <  731 ->    1;  { lying & age < 24 months              }
+                  1    ::          ->    2;  { lying & age >= 24 months             }
+                  2    ::   <  731 ->    1;  { standing & age < 24 months           }
+                  2    ::          ->    2;  { standing & age >= 24 moths           }
+                  9    ::   <  731 ->    1;  { missing/not plausible & < 24 months  }
+                  9    ::          ->    2;  { missing/not plausible & >= 24 months }
+        endrecode;
+      endif;
+
+      lnhe = int(lengthch*10+0.5);
+
+      { check if Height and Weight given and not missing }
+      if weightch = notappl & lengthch = notappl then
+        haz2 = notappl;
+        waz2 = notappl;
+        whz2 = notappl;
+        zbmi = notappl;
+        bmi  = notappl;
+        n2 = n2 + 1;
+
+      else
+      
+        e = 0; { see if any anthro measurement is flagged }
+          
+        { assign variables for look-up tables }
+        SEXHW  = HL4(UF3);
+        AGEDHW = agechild;
+
+        if agechild < 9999 then
+
+          { calculate height for age }
+          TYPEHW = 1;
+          UNITHW = AGEDHW;
+          if lengthch < 997 then
+            if loadcase( WHOLMS, TYPEHW, SEXHW, UNITHW ) then
+              haz2 = genstdev( lengthch, LHW, MHW, SHW );
+            else
+              haz2 = 99.97;
+              n6 = n6 + 1;
+              e = 1;
+            endif;
+          else
+            haz2 = 99.99;
+            n6m = n6m + 1;
+            e = 1;
+          endif;
+
+          { calculate BMI }
+          TYPEHW = 5;
+          UNITHW = AGEDHW;
+          if lengthch < 997 & weightch < 97 then
+            bmi   = weightch*10000 / (lengthch*lengthch);
+            if loadcase( WHOLMS, TYPEHW, SEXHW, UNITHW ) then
+              zbmi  = genstdev( bmi, LHW, MHW, SHW );
+              if zbmi > 3 then
+                zbmi = stdpos3( bmi, LHW, MHW, SHW );
+              elseif zbmi < (-3) then
+                zbmi = stdneg3( bmi, LHW, MHW, SHW );
+              endif;
+            else
+            { bmi  = 99.97; }
+              zbmi = 99.97;
+              n7 = n7 + 1;
+              e = 1;
+            endif;
+          else
+            bmi = 99.99;
+            zbmi = 99.99;
+            n7m = n7m + 1;
+            e = 1;
+          endif;
+
+          { calculate weight for age }
+          TYPEHW = 2;
+          UNITHW = AGEDHW;
+          if weightch < 97 then
+            if loadcase( WHOLMS, TYPEHW, SEXHW, UNITHW ) then
+              waz2 = genstdev( weightch, LHW, MHW, SHW );
+              if waz2 > 3 then
+                waz2 = stdpos3( weightch, LHW, MHW, SHW );
+              elseif waz2 < (-3) then
+                waz2 = stdneg3( weightch, LHW, MHW, SHW );
+              endif;
+            else
+              waz2 = 99.97;
+              n8 = n8 + 1;
+              e = 1;
+            endif;
+          else
+            waz2 = 99.99;
+            n8m = n8m + 1;
+            e = 1;
+          endif;
+
+        else
+          haz2 = 99.97;
+          waz2 = 99.97;
+          zbmi = 99.97;
+          e = 1;
+          if lengthch < 997 & weightch < 97 then
+            bmi   = weightch*10000 / (lengthch*lengthch);
+          else
+            bmi   = 99.97;
+          endif;
+          n3 = n3 + 1;
+        endif;
+
+          { calculate weight for height/length }
+          TYPEHW = 4-(uselngth=1);
+          UNITHW = lnhe;
+          if lnhe < 9970 then
+            if weightch < 97 then
+              if loadcase( WHOLMS, TYPEHW, SEXHW, UNITHW ) then
+                whz2 = genstdev( weightch, LHW, MHW, SHW );
+                if whz2 > 3 then
+                  whz2 = stdpos3( weightch, LHW, MHW, SHW );
+                elseif whz2 < (-3) then
+                  whz2 = stdneg3( weightch, LHW, MHW, SHW );
+                endif;
+              else
+                whz2 = 99.97;
+                n9 = n9 + 1;
+                e = 1;
+              endif;
+            else
+              whz2 = 99.99;
+              n9m = n9m + 1;
+              e = 1;
+            endif;
+          else
+            whz2 = 99.99;
+            n9m = n9m + 1;
+            e = 1;
+          endif;
+
+          { Round off z-scores before checking cut offs }
+          if whz2 < 99 then whz2 = int(whz2*100+0.5)/100 endif;
+          if haz2 < 99 then haz2 = int(haz2*100+0.5)/100 endif;
+          if waz2 < 99 then waz2 = int(waz2*100+0.5)/100 endif;
+          if zbmi < 99 then zbmi = int(zbmi*100+0.5)/100 endif;
+
+          { Check Z-scores calculated and flag cases }
+          whzflag = (special(whz2) or whz2 < -5 or whz2 > 5);
+          hazflag = (special(haz2) or haz2 < -6 or haz2 > 6);
+          wazflag = (special(waz2) or waz2 < -6 or waz2 > 5);
+          bmiflag = (special(zbmi) or zbmi < -5 or zbmi > 5);
+          whznoage = 0;
+
+        { errmsg("haz2=%5.2f f=%d waz2=%5.2f f=%d whz2=%5.2f f=%d zbmi=%5.2f f=%d",haz2,hazflag,waz2,wazflag,whz2,whzflag,zbmi,bmiflag); }
+          
+          if valid(UB1M) & UB1Y <= 9997 then                        { if month and year of birth given }
+            if whz2 < 99.97 & (whz2 < -5.00 | whz2 > 5.00)  then    { w/h out of range }
+               whz2 = 99.98;
+               n9f = n9f + 1;
+               e = 1;
+            endif;
+            if haz2 < 99.97 & (haz2 < -6.00 | haz2 > 6.00)  then    { h/a out of range }
+               haz2 = 99.98;
+               n6f = n6f + 1;
+               e = 1;
+            endif;
+            if waz2 < 99.97 & (waz2 < -6.00 | waz2 > 5.00)  then    { w/a out of range }
+               waz2 = 99.98;
+               n8f = n8f + 1;
+               e = 1;
+            endif;
+            if zbmi < 99.97 & (zbmi < -5.00 | zbmi > 5.00)  then    { BMI }
+               zbmi = 99.98;
+               n7f = n7f + 1;
+               e = 1;
+            endif;
+          else
+            if whz2 < 99.97 & (whz2 < -5.00 | whz2 > 5.00) then      { w/h out of range }
+              whznoage = 1;
+              whz2  = 99.98;
+              n1 = n1 + 1;
+              n9f = n9f + 1;
+              e = 1;
+            else
+              n5 = n5 + 1;
+              e = 1;
+            endif;
+          endif;
+          
+          if !e then n0 = n0 + 1 endif;		{ All measures calculated for this child }
+
+      endif;     { data given for height and weight }
+
+	else   { Not measured }
+
+      hap = 99.9;
+      haz = 9.99;
+      ham = 999.9;
+      wap = 99.9;
+      waz = 9.99;
+      wam = 999.9;
+      whp = 99.9;
+      whz = 9.99;
+      whm = 999.9;
+      flag = 7;
+
+      haz2 = 99.99;
+      waz2 = 99.99;
+      whz2 = 99.99;
+      zbmi = 99.99;
+      bmi  = 99.9;
+      whzflag = 1;
+      wazflag = 1;
+      hazflag = 1;
+      bmiflag = 1;
+      whznoage = 0;
+      n2 = n2 + 1;
+
+	endif; { Whether child measured }
+
+  endif; { Complete interviews }
+
+ LN = UF3; 
+ 
+ if UF17<>97 then
+    export to myCH
+     HH1, HH2, LN, UF1, UF2, UF3, UFINT, { ID vars }
+     MODUF, MODUB, MODUIN, MODBR, MODEC, MODUCD, MODUCF, MODBD, MODIM, MODDA, MODAR, MODMC, MODCPN, MODAN, MODHF,
+     HH4, HH6, HH7, HL4(UF3), ED5A(UF4), ED5B(UF4), cdoi, cdob, cage, cage_6, cage_11, caged, 
+     Anthro_vars;
+  endif;
+
+{Timestamp of the Modules}	
+ if UF17<>97 then
+    export to myCHTS
+     HH1, HH2, LN, UF1, UF2, UF3, UFINT, { ID vars }
+     MODCHTS;
+  endif;
+
+
+
+

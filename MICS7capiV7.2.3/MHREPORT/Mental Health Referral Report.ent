@@ -1,0 +1,23 @@
+﻿[CSPro Application]
+Version=CSPro 7.7
+Label=MENTAL_HEALTH_REFERRAL_REPORT
+Name=MENTAL_HEALTH_REFERRAL_REPORT
+AppType=DataEntry
+OperatorID=No
+ShowEndCaseDialog=No
+CAPI=Yes
+CaseTree=Never
+CreateListing=No
+CreateLog=No
+ShowErrorMessageNumbers=No
+[AppCode]
+File=.\Mental Health Referral Report.ent.apc
+Include=..\APPS\SETTINGS.APC
+[Message]
+File=.\Mental Health Referral Report.ent.mgf
+[Help]
+File=.\Mental Health Referral Report.ent.qsf
+[Forms]
+File=.\Mental Health Referral Report.fmf
+[Dictionary Types]
+Dict-Type=.\null.dcf,Input,.\Mental Health Referral Report.fmf

@@ -1,0 +1,75 @@
+[Dictionary]
+Version=CSPro 7.7
+Label=WHO anthropometry parameters
+Name=WHOLMS
+RecordTypeStart=0
+RecordTypeLen=0
+Positions=Relative
+ZeroFill=No
+DecimalChar=Yes
+
+[Level]
+Label=WHO anthropometry parameters
+Name=WHOLMS_QUEST
+
+[IdItems]
+
+[Item]
+Label=Type
+Name=TYPEHW
+Start=1
+Len=1
+
+[ValueSet]
+Label=Type
+Name=TYPEHW_VS1
+Value=1;H/A
+Value=2;W/A
+Value=3;W/H length
+Value=4;W/H height
+Value=5;BMI
+
+[Item]
+Label=Sex
+Name=SEXHW
+Start=2
+Len=1
+
+[ValueSet]
+Label=Sex
+Name=SEXHW_VS1
+Value=1;Male
+Value=2;Female
+
+[Item]
+Label=Unit (Age in days, length/height in cm)
+Name=UNITHW
+Start=3
+Len=7
+
+[Record]
+Label=Variables L, M, S
+Name=HAZLMS_REC
+RecordTypeValue=''
+RecordLen=45
+
+[Item]
+Label=Variable l
+Name=LHW
+Start=10
+Len=12
+Decimal=5
+
+[Item]
+Label=Variable m
+Name=MHW
+Start=22
+Len=12
+Decimal=5
+
+[Item]
+Label=Variable s
+Name=SHW
+Start=34
+Len=12
+Decimal=5

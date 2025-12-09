@@ -1,0 +1,23 @@
+﻿[CSPro Application]
+Version=CSPro 7.7
+Label=EDITING
+Name=EDITING
+AppType=Batch
+[External Dictionaries]
+File=..\..\APPS\shareddicts\MICS7WM.dcf
+File=..\..\APPS\shareddicts\MICS7CH.dcf
+File=..\..\APPS\shareddicts\MICS7FS.dcf
+File=..\..\APPS\shareddicts\MICS7MN.dcf
+[AppCode]
+File=.\editing.apc
+Include=..\..\APPS\SETTINGS.APC
+[Message]
+File=.\editing.mgf
+[Order]
+File=.\editing.ord
+[Dictionary Types]
+Dict-Type=..\..\APPS\shareddicts\MICS7HH.dcf,Input,.\editing.ord
+Dict-Type=..\..\APPS\shareddicts\MICS7WM.dcf,External
+Dict-Type=..\..\APPS\shareddicts\MICS7CH.dcf,External
+Dict-Type=..\..\APPS\shareddicts\MICS7FS.dcf,External
+Dict-Type=..\..\APPS\shareddicts\MICS7MN.dcf,External

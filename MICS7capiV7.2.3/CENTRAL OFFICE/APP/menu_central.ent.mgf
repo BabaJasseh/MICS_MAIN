@@ -1,0 +1,268 @@
+﻿Language=EN
+2115 <br><h3>RESULT OF INDIVIDUAL QUESTIONNAIRES INCONSISTENT WITH ADULT PERMISION</h3>
+2291 \n  Questionnaire          - - - - - - Individual questionnaires- - - - - -
+2300 . Interviewer            Assigned Not start. Part.saved Completed Compl.% 
+2301 .                        Found    Not start. Part.saved Completed Compl.%
+2310 </pre><p>(*) Completed questionnaires refers to questionnaires with completion code=01</p><br>
+2320 <h3>Cluster %s can not be closed by the following reasons:</h3>
+2330 -   There are %d households questionnaires not started
+2340 -   There are %d individual questionnares not started
+2350 -   There are %d partial saved household questionnaires
+2360 -   There are %d partial saved individual questionnaires
+2370 -   There are %d structural errors
+2380 -   There are not households with verified members composition
+2382 -   There are %d under 5 questionnaires with pending Anthropometric data 
+2384 -   There are %d household questionnaires with pending water quality info 
+2385 -   There are %d individual questionnaires with result codes inconsistent with adult permision
+
+3010 [LN]Name                 Relationship       Sex Age DOB(DD/MM/YYYY) Education
+3020 <br><h3>STRUCTURAL PROBLEMS</h3>
+3030 \n\nHOUSEHOLDS/INDIVIDUALS FOUND NOT BELONGING TO THE INTERVIEWER ASSIGNED OR NOT IN THE SAMPLE
+3040 House Interviewer  Household Head       Status                        I n d i v i d u a l s :
+3050  hold Assig. Found                                                  Quest.    LN Name                 Age Sex Status
+3060 \n\n\nINDIVIDUALS WITH RECORD OF %v BUT IN HOUSEHOLD DON'T EXISTS OR NOT MEET THIS CONDITION
+3070 House - - - - - - - H o u s e h o l d   d a t a - - - - - - - -    - - - - - - I n d i v i d u a l    d a t a - - - - - -
+3080  hold Interv. Head                 Name                 Age Sex    Interv. LN Name                 Age Sex Status
+3090 \n\n\nINDIVIDUALS WITH RECORD OF %v DUPLICATED"
+3100 Dwel House     - - - - - - R E C O R D S   F O U N D  - - - - - -"
+3110 ling  hold LN  Interv. Name                 Status                        
+3120 \n\n *** Total structure problems found %d ***
+3130 \n *** No structure problems found ***"
+3140 <br><h3>HOUSEHOLDS VERIFICATIONS: SUPERVISOR VS INTERVIERWER MEMBERS FOUND</h3>
+3150 <b>HOUSEHOLD %d - Supervisor's %04d report:</b>
+3160 <br><b>HOUSEHOLD %d - Interviewers's %04d report:</b>
+3165 <p>(*) Interviewed person</p>
+3170 <p>*** Total households verified %d ***</p>
+3180 <p>*** No households verified ***</p>
+3190 <br><h3>S U M M A R Y </h3>
+3200 \n   Assigned              - - - - - - Household questionnaires - - - - - -  
+3210 Interviewer              Assigned Not start. Part.saved Completed  Rate     
+3230 \n (*) Completed questionnaires refers to questionnaires with completion code=01"
+3240 \n\n Cluster %s can not be closed by the following reasons:
+3250 -There are %d households questionnaires not started
+3260 -There are %d individual questionnares not started 
+3270 -There are %d partial saved household questionnaires
+3280 -There are %d partial saved individual questionnaires
+3290 -There are %d structural errors
+3300 -There are not households with verified members composition
+3310 \n\n Cluster %s can not be 'Closed', ask supervisor to check it
+3320 \n\n Cluster %s can not be moved to 'Cleaned'
+3330 \n\n Cluster %s has to be moved back to 'In Review'
+3340 \n\n Cluster %s can be 'closed'
+3350 \n\n Cluster %s can be moved to 'In Review' if completion rates are fine
+3360 \n\n Cluster %s can be moved to 'Cleaned' if Editing report is fine
+3400 \n                   S T A T U S    R E P O R T    O F    A L L   P S U   
+//3410 PSU      ZONE        REGION          Area1           Area2           Area3          Area4        TEAM PSU STATUS
+3500 \n***Case id %05d-%03d-%d-%04d [Cluster-Dwel-HH-Interv] *** 
+3510  >>>>Notes:%v
+3520 <h2>EDITING REPORT OF CLUSTER: %v (%v) </h2>
+3530 LN=%v (%v) Age of spouse/parter (%v) less than 12 years
+3540 LN=%v (%v) Sex of spouse/parter (%v) is the same as the head
+3550 LN=%v (%v) Age of head (%v) and age of son/daughter (%v) less than 12 years 
+3560 LN=%v (%v) Age of mother/father (%v) and age of head (%v) less than 12 years 
+3570 Duplicated questionnaire. There is one for interviewer %v and other for %v
+3580 Person questionnaire present for person less than 10 years (age=%v)
+3650 Warning: this cluster is still 'On Field', so the editing report may show issues
+3655 <dd>that will be fixed when the cluster will be 'Closed'. For example,</dd>
+3660 <dd>the 'Delegated' individual questionnaires may be reported as duplicated</dd>
+3665 Note: this cluster is 'Closed'.  This editing report may be used to deside
+3670 <dd>if the cluster can be moved to 'In Review'.
+3675 Note: this cluster is 'In Review'.  Use this editing report to deside
+3680 <dd>if the cluster can be moved to 'Cleaned'.
+3685 Note: this cluster is 'Cleaned'.  If this editing report still shows important issues
+3690 <dd>the cluster can be moved back to 'In Review'.
+3700 NOTES REPORT OF THE CLUSTER: %v 
+3710 \n    Question.  Dwel House Inter. Line               
+3720 #     type     ling hold   ID    Numb. Question        Occ. Note
+3730 Cluster %v was move from '%v' to '%v' 
+3740 <h2><header style="color:blue">REPORT OF CLUSTER %v (Status: %v)</h2>
+3750 Dwel- House- Household Head       Status                        I n d i v i d u a l s :                In-
+3760 ling   hold  Address              Interviewer assigned        Quest.    LN Name                Age Sex terv. Status
+3805 Error: Central Office application already working in this machine
+3810 First you have to select the Cluster to work on
+3815 Cluster %v status is 'Not Started', it is assigned to team %v
+3820 Select cluster by Number or from a list depending on Status
+3821 Select cluster from:
+3825 Cluster %05d does not exist in the Sample, please check
+3830 Before download cluster data you have to select the cluster to work on
+3832 Status of cluster %v is '%v'. For download data of this cluster, first it has to be moved back to 'Closed'
+3833 You can not download all cluster and download cluster %v at the same time
+3834 You can not sent the updated sample and also the system update because the system update includes the sample
+3835 Updates for apps and staff uploaded - Please ask to supervisor they need update apps
+3840 There was a problem sending the update using: %v
+3847 Problem renaming the update file as '%v'. The update was not uploaded to the server
+3845 Coudn't sync with server - Please check Internet connection
+3849 Sample files were uploaded to the server (files cluster.csdb and households.csdb)
+3850 Error uploading sample files (cluster.csdb/households.csdb)
+3855 Error decompressing file %v
+3860 Error receiving ONFIELD data of cluster %v
+3865 Error receiving CLOSED data of cluster %v
+3870 Total zip files downloaded from cluster %v: %v
+3872 Total clusters downloaded from ONFIELD folder: %v and from CLOSED folder: %v
+3875 Select the data to export
+3880 Only questionnaires of cluster with 'In Review' status can be modify.   
+3885 Select the type of questionnaires to Modify:
+3890 Cluster %v is 'On Field', only Supervisor can move it to 'Closed'
+3895 Cluster %v is 'Closed'.  If after checking the Contents and Editing Reports you want to:\n\n-Send it back to 'On Field': the fieldwork team can be working on it and send it again\n\n-Advance it to 'In Review': press the button below
+3900 Cluster %v is 'In Review'.  If after checking the Contents and Editing Reports you want to\nmove it back to 'Closed' or move it forward to 'Cleaned', select the corresponding Button
+3905 Are you sure you want to move back cluster to 'Closed'?\nAny changes made to the cluster in Central Office will be lost.\nIt will be returned in the state in which it was sent by Supervisor.\nYou must also inform the reasons to send it back to the supervisor so it can be modified in the field.
+3910 Cluster %v is 'Cleaned'. If after checking the Contents and Editing reports you want to\nmove it back to 'In Review' press the Button, otherwise press Cancel
+4000 Do you want to create and send to the server the Mental Health Referral report?
+
+Language=ES
+2115 <br><h3>RESULTADO DE CUESTIONARIOS INDIVIDUALES INCONSISTENTE CON PERMISO DE ADULTO</h3>
+2291 \n  Cuestionario   - - -   - - - - - - Cuestionarios individuales - - - - -
+2300 . Asignado               Asignad. No iniciad Guard.Parc Completo % Compl. 
+2301 .                        Encontr. No iniciad Guard.Parc Completo % Compl.
+2310 </pre><p>(*) Completed questionnaires refers to questionnaires with completion code=01</p><br>
+2320 <h3>Cluster %s no se puede cerrar por las siguientes razones:</h3>
+2330 -   Hay %d cuestionarios de hogar no iniciales
+2340 -   Hay %d cuestionarios individuales no iniciados
+2350 -   Hay %d cuestionarios de hogar parcialmente guardados
+2360 -   Hay %d cuestionarios individuales parcialmente guardados
+2370 -   Hay %d errores estructurales
+2380 -   No hay hogares con verificación de la composición del hogar
+2382 -   Hay %d cuestionario(s) de menores de 5 ños con la información de antropometría pendiente
+2384 -   Hay %d cuestionarios de hogar con la información de calidad de agua pendiente
+2385 -   Hay %d cuestionarios individuales con código de resultado inconsistente con permiso de adulto
+
+3010 [NL]Nombre               Parentezco         Sex Ed. NAC(DD/MM/AAAA) Educación
+3020 <br><h3>PROBLEMAS ESTRUCTURALES</h3>
+3030 \n\nHOGARES/INDIVIDUOS ENCONTRADOS QUE NO PERTENECEN AL ENTREV. ASIGNADO O NO ESTÁN EN LA MUESTRA
+3040 Vivi Hogar Entrevistad. Jefe del hogar       Estado                        I n d i v i d u o s : 
+3050 enda       Asign Encon.                                                  Cuest.    NL Nombre               Ed. Sex Estado
+3060 \n\n\nINDIVIDUOS CON REGISTRE DE %v PERO EN EL HOGAR NO EXISTE O NO CUMPLE ESTA CONDICION   
+3070 Vivi Hogar - - - - - - - D a t o s  d e l  h o g a r - - - - - - - -    - - - - D a t o s   d e  i n d i v i d u o s - - - - -
+3080 enda       Entrev. Jefe                 Nombre               Ed. Sexo   Entrev. NL Nombre               Ed. Sex Estado
+3090 \n\n\nINDIVIDUOS CON REGISTRO DE %v' DUPLICADO 
+3100 Vivi Hogar     - - - - R E G I S T R O S  E N C O N T R . - - - -"
+3110 enda       NL  Entrev. Nombre               Estado                        
+3120 \n\n *** Total de problemas estructurales %d ***
+3130 \n *** No se encontraron problemas estructurales ***
+3140 <br><h3>HOGARES VERIFICADOS: MIEMBROS DEL HOGAR ECONTRADOS POR EL SUPERVISOR Y EL ENTREVISTADOR</h3>
+3150 <b>HOGAR %d - Reporte del suopervisor %04d:</b>
+3160 <br><b>HOGAR %d - Reporte del entrevistador %04d:</b>
+3165 <p>(*) Persona entrevistada</p>
+3170 <p> *** Total de hogares verificados %d ***</p>
+3180 <p> *** No se verificaron hogares ***</p>
+3190 <br><h3>R E S U M E N </h3>
+3200 \nEntrevistador            - - - - - - Cuestionarios de hogar - - - - - - -  
+3210 Asignado                 Asignad. No iniciad Guard.Parc Completad  Tasa     
+3230 \n (*) Cuestionarios completados se refiere a cuestionarios con código de completitud=01
+3240 \n\n Cluster %s no se puede cerrar por las siguientes razones:
+3250 -Hay %d cuestionarios de hogares no iniciados
+3260 -Hay %d cuestionarios individuales no iniciados
+3270 -Hay %d cuestionarios de hogar parcialmente guardados
+3280 -Hay %d cuestionarios individuales parcialmente guardados
+3290 -Hay %d errores estructurales
+3300 -No hay hogares con la verificación de su composición de miembros
+3310 \n\n Cluster %s no se puede 'Cerrar', indicar al supervisor que revise
+3320 \n\n Cluster %s no puede ser clasificada como 'Limpia'
+3330 \n\n Cluster %s debe retrocederse a 'En Revisión'
+3340 <h3 style="color:red"> Cluster %s puede ser 'Cerrado'</h3>
+3350 \n\n Cluster %s puede ser enviado a 'En Revisión' is las tasas de completitud están bien
+3360 \n\n Cluster %s puede ser enviado a 'Limpio' si el reporte de edición no muestra problemas graves
+3400 \n            R E P O R T E   D E L   E S T A D O   D E  T O D A S   L A S   U P M
+//3410 UPM      ZONA        REGION          Area1           Area2           Area3          Area4       GRUPO ESTADO DE LA UPM
+3500 \n***Caso ID %05d-%03d-%d-%04d [Cluster-Viv.-Hogar-Entrev.] *** 
+3510 >>>>Notas:%v
+3520 <h2>REPORTE DE EDICIÓN DEL CLUSTER: %v (%v) </h2>
+3530 LN=%v (%v) Edad de la esposa(o)/compañera(o) (%v) menor de 12 años
+3540 LN=%v (%v) Sexo de la esposa(o)/compañera(o) (%v) es el mismo que la del jefe
+3550 LN=%v (%v) Edad del jefe (%v) y edad del hijo/hija (%v) menor de 12 años
+3560 LN=%v (%v) Edad de la madre/padre (%v) y edad del jefe (%v) menor de 12 años
+3570 Cuestionario duplicado. Existe uno del entrevistador %v y otro del %v
+3580 Cuestionario de persona presente para persona menor de 10 años
+3650 Adventencia: este Cluster aún está 'En el campo', así que el reporte de edición puede mostrar situaciones
+3655 >            que serán corregidas cuando el cluster sea 'Cerrada'.  Por ejemplo,
+3660 >            los cuestionarios de individuos 'Delegados' pueden ser reportados como duplicados.
+3665 Nota: Este cluster está 'Cerrada'. Este reporte de edición puede ser utilizado para decidir
+3670 >     si el cluster puede ser enviado a 'En Revisión'
+3675 Nota: Este cluster está 'En Revisión'.  Use este reporte de edición para decidir
+3680 >     si el cluster puede ser trasladado a 'Limpia'.
+3685 Nota: El estado de este cluster es 'Limpio'.  Si este reporte de edición muestra problemas
+3690 >     importantes el cluster debe devolverse a 'En Revisión'.
+3700 REPORTE DE NOTAS DEL CLUSTER: %v 
+3710 \n    Tipo de    Vivi Hogar Entre  No.de           
+3720 #   Cuestion.  enda       vist.  Línea Pregunta        Occ. Nota
+3730 Cluster %v fue traslado de '%v' hacia '%v' 
+3740 <h2><header style="color:blue">REPORTE DEL CLUSTER %v (Estado: %v)</h2>
+3750 Vivi- Hogar  Jefe del hogar       Estado                        I n d i v i d u a l e s :              Entre
+3760 enda         Dirección            Entrevistador asignado      Cuest.    NL Nombre              Ed. Sex vist. Estado
+3805 Error: La aplicación de Oficina Central ya está ejecutándose en esta máquina
+3810 Primero debe seleccionar el cluster sobre la cual desea trabajar
+3815 El estado del cluster UPM %v es 'No Iniciado', asignado al grupo de trabajo %v
+3820 Seleccione el cluster por número o de una lista dependiendo de su estado
+3821 Seleccione Cluster desde:
+3825 Cluster %05d no existe en la muestra, por favor revise
+3830 Antes de descargar el cluster debe seleccionar el cluster sobre la cual desea trabajar
+3832 El estado del cluster %v es '%v'. Para descargar los datos de este cluster, primero debe ser retrocedida a 'Cerrada'
+3833 No se puede descargar todos los clusters y a la vez descargar el cluster %v 
+3834 No se puede enviar la muestra actualizada y también enviar una actualización del sistema, pues la actualización del sistema incluye la muestra
+3835 Se han subido actualizaciones de las aplicaciones, incluyendo los grupos de trabajo y muestras - Indique a los supervisores que deben actualizar las aplicaciones
+3840 Hubo un problema enviando la actualización usando: %v
+3845 No se pudo sincronizar con el servidor - Revise la conexión a Internet
+3847 No se pudo nombrar el archivo de actualización como '%v'. Actualización no fue subida al servidor
+3849 Achivos de la muestra fueron subidos al servidor (archivos cluster.csdb y households.csdb)
+3850 Error descargando los archivos de muestra (cluster.csdb/households.csdb)
+3855 Error descomprimiendo el archivo %v
+3860 Error al recibir datos ONFIELD del cluster %v
+3865 Error al recibir datos CLOSED del cluster %v
+3870 Total de archivos zip descargados del cluster %v:%v
+3872 Total clusters descargados del folder ONFIELD: %v y del folder CLOSED: %v
+3875 Seleccione los datos a exportar
+3880 Solo cuestionarios de UPM con estado 'En Revisión' pueden ser modificados.
+3885 Seleccione el tipo de cuestionario a Modifcar:
+3890 Cluster %v está 'En Campo', solo el Supervisor puede cambiarla a 'Cerrada'
+3895 Cluster %v está 'Cerrado'.  Si después de revisar los Reportes de Contenido y Edición desea:\n-Retrocederlo a 'En Campo': el equipo de campo puede continuar trabajando en el y enviarlo de nuevo a 'Cerrado'\n-Trasladarlo a 'En Revisión': presione el siguiente botón
+3900 Cluster %v está 'En Revisión'.  Si después de revisar los Reportes de Contenido y Edición desea:\nretrocederlo a 'Cerrado' o adelantarlo a 'Limpio', seleccione el botón correspondiente
+3905 ¿Está seguro de retroceder este cluster a 'Cerrado'?\nCualquier cambio hecho a este cluster en la Oficina Central se perderá.\nEl será devuelto al estado en que fue enviada por el Supervisor.\nTambién debe informar al supervisor las razones por las que fue retrocedido para que pueda ser corregido en el campo
+3910 Cluster %v está 'Limpio'.  Si después de revisar los Reportes de Contenido y Edición desea\nretrocederlo a 'En Revisíon' presione el siguiente botón, de lo contrario presione Cancelar
+4000 ¿Desea crear y enviar al servidor el reporte de Referencia de Salud Mental?
+
+ES("SUMMARY") RESUMEN
+ES("Generic Survey") Encuesta genérica
+ES("Not started") **:No iniciada
+ES("Partial saved") Guardada parcialmente
+ES("Not assigned") No asignado
+ES("Not assigned yet") Aún no asignado
+ES("Interv:") Entrev:
+ES("DELEGATED TO") DELEGADO A
+ES("TO") A
+ES("Household") Hogar
+ES("Individual") Individual
+ES("By number") Por número
+ES("From list") Desde lista
+ES("Cancel") Cancelar
+ES("Select Cluster") Seleccione UPM
+ES("For fieldwork control") Para control de campo
+ES("Final cleaned data") Datos finales limpios
+ES("Move to 'In Review'") Trasladarla a 'En Revisión'
+ES("Back to 'Closed'") Retroceder a 'Cerrada'
+ES("Forward to 'Cleaned'") Adelantarla a 'Limpia'
+ES("Move to 'Closed'") Enviarla a 'Cerrada'
+ES("Back to 'In Review'") Retroceder a 'En Revisión'
+ES("Receive data for Cluster:") Recibir datos de UPM:
+
+ES("Caretaker of  under 5 child has 'Adult Consent' but Result of Under 5 quest.=6 (No adult consent") El cuidador de niño menor de 5 años tiene 'Consentimiento de adulto' pero el Resultado del cuest.  de Menor de 5 años = 6 (Sin consentimiento de adulto)
+ES("Caretaker of 5-17 child has 'Adult Consent' but Result of 5-17 quest.=6 (No adult consent)") El cuidador de niño de 5-17 tiene el 'Consentimiento de adulto' pero el Resultado de la entrev. de 5-17 = 6 (Sin consentimiento de adulto)
+ES("Caretaker of 5-17 child has 'No Adult Consent' but result of 5-17 quest.=%v (it must be 6)") El cuidador de niño de 5-17  no tiene 'Cconsentimiento de adulto' pero el Resultado de la entrev. 5-17 = %v (debería ser 6)
+ES("Caretaker of 5-17 child is < 15 years and Result of 5-17 quest.=%v (it must be 6)") El cuidador de  niño de  5-17  tiene < 15 años y el Resultado de la entrev. 5-17 = %v (debería ser 6)
+ES("Caretaker of 5-17 child is 18+ years, but Result of 5-17 quest.=6 (No adult consent)") El cuidador de niño de 5-17 años tiene más de 18 años, pero el Resultado de la entrev. 5-17 = 6 (sin consentimiento de un adulto)
+ES("Caretaker of 5-17 child is a emancipated person of 15:17 and the Result of 5-17 quest.=6 (No adult consent)") El cuidador de niño de 5-17 es una persona emancipada de 15:17 y el Resultado de la entrev. 5-17 = 6 (sin consentimiento de adulto)
+ES("Caretaker of under 5 child has 'No Adult Consent' but result of Under 5 quest.=%v (it must be 6)") El cuidador de niño menor de 5 años no tiene 'Consentimiento de adulto' pero el Resultado de la entrev. de Menor de 5 años=%v (debe ser 6)
+ES("Caretaker of under 5 child is < 15 years and Result of Under 5 quest.=%v (it must be 6)") El cuidador de niño menor de 5 años es menor de 15 años y el Resultado de la entrev. de menor de 5 años =%v (debe ser 6)
+ES("Caretaker of under 5 child is 18+ years, but Result of Under 5 quest.=6 (No adult consent)") El cuidador de niño menor de 5 años es mayor de 18 años, pero el Resultado de la entrev. de menor de 5 años es 6 (sin consentimiento de adulto)
+ES("Caretaker of under 5 child is a emancipated person of 15:17 and the Result of Under5 quest.=6 (No adult consent)") El cuidador de niño menor de 5 años es una persona emancipada de 15-17 años y el Resultado de la entrev. de menor de 5 años = 6 (sin consentimiento de un adulto)
+ES("Emancipated 15-17 child has a Result of 5-17 quest.=6 (No adult consent)") Joven emancipado de 15 a 17 años tiene Resultado de entrev. de 5-17 = 6 (sin consentimiento de adulto)
+ES("Emancipated Man 15:17 has Result of Man quest.=6 (No adult consent)") Hombre emancipado de 15:17 años tiene el Resultado de la entrev. del hombre= 6 (sin consentimiento de adulto)
+ES("Emancipated Woman 15:17 has Result of Woman quest.=6 (No adult consent)") Mujer emancipada de 15:17 años tiene Resultado de entrev. de Mujer=6 (Sin consentimiento de adulto)
+ES("Man > 17 years has Result of Man quest.=6 (No adult consent)") Hombre > 17 años tiene Resultado de entrev. de hombre.=6 (Sin consentimiento de adulto)
+ES("Man 15:17 with 'Adult Consent' but Result of Man quest.=6 (No adult consent)") Hombre de 15:17 años con 'Consentimiento de adulto' tiene Resultado de entrev. de hombre= 6 (Sin consentimiento de adulto)
+ES("Man 15:17 with 'No Adult Consent' but Result of Man quest.=%v (it must be 6)") Hombre de 15:17 años sin 'Consentimiento de adulto' tiene Resultado de la entrev. de hombre=%v (debe ser 6)
+ES("Woman > 17 years has Result of Woman quest.=6 (No adult consent)") Mujer > 17 años tiene Resultado de entrev. de Mujer=6 (Sin consentimiento de adulto)
+ES("Woman 15:17 with 'Adult Consent' but Result of Woman quest.=6 (No adult consent)") Mujer de 15:17 años con 'Consentimiento de adulto' tiene Resultado de la entrev. de mujer=6 (Sin consentimiento de adulto)
+ES("Woman 15:17 with 'No Adult Consent' but Result of Woman quest.=%v (it must be 6)") Mujer de 15:17 años sin 'Consentimiento de adulto' tiene Resultado de la entrev. De mujer=%v (debe ser 6)
+ES("CHILD 5-17 NOT FOUND IN HOUSEHOLD, NOT IN 5:17 OR NOT SELECTED") NIÑO 5-17 NO ENCONTRADO EN EL HOGAR, NO ES DE 5:17 OR NO FUE SELECCIONADO
+ES("CHILD UNDER 5 NOT FOUND IN HOUSEHOLD OR AGE NOT IN 0:4") NIÑO MENOR DE 5 AÑOS NO ENCONTRADO EN EL HOGAR O EDAD NO EN 0:4
+ES("HOUSEHOLD NOT FOUND") HOGAR NO ENCONTRADO

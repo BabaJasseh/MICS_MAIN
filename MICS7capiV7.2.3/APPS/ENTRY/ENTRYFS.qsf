@@ -1,0 +1,1665 @@
+﻿---
+fileType: Question Text
+version: CSPro 7.7
+languages:
+  - name: ENG
+    label: English
+styles:
+  - name: Qtxt
+    className: Qtxt
+    css: |
+      font-family: Courier New;font-size: 26px;color: #000000;
+  - name: Qnum
+    className: Qnum
+    css: |
+      font-family: Courier New;font-weight: bold;font-size: 26px;color: #000000;
+  - name: Itxt
+    className: Itxt
+    css: |
+      font-family: Courier New;font-style: italic;font-size: 26px;color: #0000ff;
+  - name: Inum
+    className: Inum
+    css: |
+      font-family: Courier New;font-weight: bold;font-style: italic;font-size: 26px;color: #0000ff;
+  - name: QtxtC
+    className: QtxtC
+    css: |
+      font-family: Courier New;font-size: 26px;color: #ff0000;
+  - name: QnumC
+    className: QnumC
+    css: |
+      font-family: Courier New;font-weight: bold;font-size: 26px;color: #ff0000;
+  - name: ItxtC
+    className: ItxtC
+    css: |
+      font-family: Courier New;font-style: italic;font-size: 26px;color: #ff0000;
+  - name: InumC
+    className: InumC
+    css: |
+      font-family: Courier New;font-weight: bold;font-style: italic;font-size: 26px;color: #ff0000;
+  - name: REF
+    className: REF
+    css: |
+      font-family: Courier New;font-style: italic;font-size: 26px;color: #000000;
+questions:
+  - name: MICS7FS.FS9
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">FS9. </span><span class="Itxt">Check completed questionnaires in this household: Have you or another member of your team interviewed this respondent for another questionnaire?</span></p>
+  - name: MICS7FS.FS10
+    conditions:
+      - logic: FS9=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FS10B. </span><span class="Qtxt">Now I would like to talk to you about <span class="REF">~~FS3A~~</span>'s health and well-being in more detail.</span></p>
+            <p><span class="Qtxt">This interview usually takes about <span class="QtxtC">number </span>minutes.</span></p>
+            <p><span class="Qtxt">Again, participation in this survey is voluntary. No payment of incentive will be given to you for answering these questions. However, this survey will help the government and the general public better understand the situation and needs of children and adolescents.</span></p>
+            <p><span class="Qtxt">Please know that all the information you share during the interview will remain strictly confidential and anonymous. No information about you or your child will be made publicly available. We will only produce information about the general population.</span></p>
+            <p><span class="Qtxt">Again, should you wish not to answer a question or wish to stop the interview at any point, please let me know.</span></p>
+            <p><span class="Qtxt">If at any time you have any complaints or concerns about this survey, please use the information on the card I gave you earlier to contact <span class="QtxtC">organisation name</span>.</span></p>
+            <p><span class="Qtxt">May I start the interview?</span></p>
+      - logic: FS9=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FS10A. </span><span class="Qtxt">Hello, my name is <span class="REF">~~STAFF_NAME~~</span>. We are from <span class="QtxtC">National Statistical Office</span>. We are conducting a survey about the situation of children, families and households. I would like to talk to you about <span class="REF">~~FS3A~~</span>'s health and well-being.</span></p>
+            <p><span class="Qtxt">This interview usually takes about <span class="QtxtC">number </span>minutes.</span></p>
+            <p><span class="Qtxt">Participation in this survey is voluntary. No payment or incentive will be given to you or your family members for answering these questions. However, the information gathered will be very helpful for the government and the general public to better understand the situation and needs of children and adolescents.</span></p>
+            <p><span class="Qtxt">Please know that all the information you share during the interview will remain strictly confidential and anonymous. No information about you or your child will be made publicly available. We will only be producing information about the general population.</span></p>
+            <p><span class="Qtxt">Should you feel uncomfortable about any questions and not wish to answer, just let me know and we can skip the question. Also, if you wish to stop the interview at any point just let me know.</span></p>
+            <p><span class="Qtxt">If at any time you have any complaints or concerns about this survey, please use the information provided on this card to contact <span class="QtxtC">organisation name</span>.</span></p>
+            <p><span class="Qtxt">May I start the interview?</span></p>
+  - name: MICS7FS.CB0B
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">CB0B. </span><span class="Qtxt">What is your relationship to <span class="REF">~~FS3A~~</span>?</span></p>
+  - name: MICS7FS.CB2D
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">CB2. </span><span class="Qtxt">On what day, month and year was was <span class="REF">~~FS3A~~</span> born?</span></p>
+            <p><span class="Itxt">Probe: </span><span class="Qtxt">What is his birthday?</span></p>
+            <p><span class="Itxt">If the mother/caregiver knows the exact date of birth, also record the day; otherwise, record '98' for day.</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">CB2. </span><span class="Qtxt">On what day, month and year was <span class="REF">~~FS3A~~</span> born?</span></p>
+            <p><span class="Itxt">Probe: </span><span class="Qtxt">What is her birthday?</span></p>
+            <p><span class="Itxt">If the mother/caregiver knows the exact date of birth, also record the day; otherwise, record '98' for day.</span></p>
+  - name: MICS7FS.CB2M
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">CB2. </span><span class="Qtxt">On what day, month and year was <span class="REF">~~FS3A~~</span> born?</span></p>
+            <p><span class="Itxt">Probe: </span><span class="Qtxt">What is his birthday?</span></p>
+            <p><span class="Itxt">Month and year <u>must</u> be recorded.</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">CB2. </span><span class="Qtxt">On what day, month and year was <span class="REF">~~FS3A~~</span> born?</span></p>
+            <p><span class="Itxt">Probe: </span><span class="Qtxt">What is her birthday?</span></p>
+            <p><span class="Itxt">Month and year <u>must</u> be recorded.</span></p>
+  - name: MICS7FS.CB2Y
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">CB2. </span><span class="Qtxt">On what day, month and year was <span class="REF">~~FS3A~~</span> born?</span></p>
+            <p><span class="Itxt">Probe: </span><span class="Qtxt">What is his birthday?</span></p>
+            <p><span class="Itxt">Month and year <u>must</u> be recorded.</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">CB2. </span><span class="Qtxt">On what day, month and year was <span class="REF">~~FS3A~~</span> born?</span></p>
+            <p><span class="Itxt">Probe: </span><span class="Qtxt">What is her birthday?</span></p>
+            <p><span class="Itxt">Month and year <u>must</u> be recorded.</span></p>
+  - name: MICS7FS.CB3
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">CB3. </span><span class="Qtxt">How old is <span class="REF">~~FS3A~~</span>?</span></p>
+            <p><span class="Itxt">Probe: </span><span class="Qtxt">How old was <span class="REF">~~FS3A~~</span> at his last birthday?</span></p>
+            <p><span class="Itxt">Record age in completed years.</span></p>
+            <p><span class="Itxt">If responses to CB2 and CB3 are inconsistent, probe further and correct.</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">CB3. </span><span class="Qtxt">How old is <span class="REF">~~FS3A~~</span>?</span></p>
+            <p><span class="Itxt">Probe: </span><span class="Qtxt">How old was <span class="REF">~~FS3A~~</span> at her last birthday?</span></p>
+            <p><span class="Itxt">Record age in completed years.</span></p>
+            <p><span class="Itxt">If responses to CB2 and CB3 are inconsistent, probe further and correct.</span></p>
+  - name: MICS7FS.CB5
+    conditions:
+      - logic: ED5A(FS3)>=8
+        questionText:
+          ENG: |
+            <p><span class="Qnum">CB5A. </span><span class="Qtxt">Did <span class="REF">~~FS3A~~</span> ever attend any <span class="QtxtC">Early Childhood Education Programme</span>?</span></p>
+      - logic: ED5A(FS3)>=1 and ED5A(FS3)<=4
+        questionText:
+          ENG: |
+            <p><span class="Qnum">CB5B. </span><span class="Qtxt">According to the information I have, the highest level of education <span class="REF">~~FS3A~~</span> has ever attended is&nbsp;<span style="font-style: italic;">~~getvaluelabel(ED5A(FS3))~~</span>.</span></p>
+            <p><span class="Qtxt">Did <span class="REF">~~FS3A~~</span> ever attend any <span class="QtxtC">Early Childhood Education Programme</span>?</span></p>
+  - name: MICS7FS.FIN1
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FIN1. </span><span class="Qtxt">Is <span class="REF">~~FS3A~~</span> covered by any health insurance?</span></p>
+  - name: MICS7FS.FIN2
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FIN2. </span><span class="Qtxt">What type of health insurance is <span class="REF">~~FS3A~~</span> covered by?</span></p>
+            <p><span class="Itxt">Record all mentioned.</span></p>
+  - name: MICS7FS.CL1A
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">CL1. </span><span class="Qtxt">Now I would like to ask about any work <span class="REF">~~FS3A~~</span> may do.</span></p>
+            <p><span class="Qtxt">Since last&nbsp;<span class="REF">~~daystring~~</span>, did <span class="REF">~~FS3A~~</span> do any of the following activities, even for only one hour?</span></p>
+            <p><span class="Qnum">[A] </span><span class="Qtxt">Did <span class="REF">~~FS3A~~</span> do any work or help on his own or the household's plot, farm, food garden or looked after animals? For example, growing farm produce, harvesting, or feeding, grazing, or milking animals?</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">CL1. </span><span class="Qtxt">Now I would like to ask about any work <span class="REF">~~FS3A~~</span> may do.</span></p>
+            <p><span class="Qtxt">Since last&nbsp;<span class="REF">~~daystring~~</span>, did <span class="REF">~~FS3A~~</span> do any of the following activities, even for only one hour?</span></p>
+            <p><span class="Qnum">[A] </span><span class="Qtxt">Did <span class="REF">~~FS3A~~</span> do any work or help on her own or the household's plot, farm, food garden or looked after animals? For example, growing farm produce, harvesting, or feeding, grazing, or milking animals?</span></p>
+  - name: MICS7FS.CL1B
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">CL1. </span><span class="Qtxt">Since last&nbsp;<span class="REF">~~daystring~~</span>, did <span class="REF">~~FS3A~~</span> do any of the following activities, even for only one hour?</span></p>
+            <p><span class="Qnum">[B] </span><span class="Qtxt">Did <span class="REF">~~FS3A~~</span> help in a family business or a relative's business with or without pay, or run his own business?</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">CL1. </span><span class="Qtxt">Since last&nbsp;<span class="REF">~~daystring~~</span>, did <span class="REF">~~FS3A~~</span> do any of the following activities, even for only one hour?</span></p>
+            <p><span class="Qnum">[B] </span><span class="Qtxt">Did <span class="REF">~~FS3A~~</span> help in a family business or a relative's business with or without pay, or run her own business?</span></p>
+  - name: MICS7FS.CL1C
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">CL1. </span><span class="Qtxt">Since last&nbsp;<span class="REF">~~daystring~~</span>, did <span class="REF">~~FS3A~~</span> do any of the following activities, even for only one hour?</span></p>
+            <p><span class="Qnum">[C] </span><span class="Qtxt">Did <span class="REF">~~FS3A~~</span> produce or sell articles, handicrafts, clothes, food, or agricultural products?</span></p>
+  - name: MICS7FS.CL1X
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">CL1X. </span><span class="Qtxt">Since last&nbsp;<span class="REF">~~daystring~~</span>, did <span class="REF">~~FS3A~~</span> engage in any <u>other</u> activity in return for income in cash or in kind, even for only one  hour?</span></p>
+  - name: MICS7FS.CL3
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">CL3. </span><span class="Qtxt">Since last&nbsp;<span class="REF">~~daystring~~,</span>&nbsp;about how many hours did <span class="REF">~~FS3A~~</span> engage in (this activity/these activities), in total?</span></p>
+            <p><span class="Itxt">If less than one hour, record '00'.</span></p>
+  - name: MICS7FS.CL4
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">CL4. </span><span class="Qtxt">(Does the activity/Do these activities) require carrying heavy loads?</span></p>
+  - name: MICS7FS.CL5
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">CL5. </span><span class="Qtxt">(Does the activity/Do these activities) require working with dangerous tools such as knives and similar or operating heavy machinery?</span></p>
+  - name: MICS7FS.CL6A
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">CL6. </span><span class="Qtxt">How would you describe the work environment of <span class="REF">~~FS3A~~</span>?</span></p>
+            <p><span class="Qnum">[A] </span><span class="Qtxt">Is he exposed to dust, fumes or gas?</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">CL6. </span><span class="Qtxt">How would you describe the work environment of <span class="REF">~~FS3A~~</span>?</span></p>
+            <p><span class="Qnum">[A] </span><span class="Qtxt">Is she exposed to dust, fumes or gas?</span></p>
+  - name: MICS7FS.CL6B
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">CL6. </span><span class="Qtxt">How would you describe the work environment of <span class="REF">~~FS3A~~</span>?</span></p>
+            <p><span class="Qnum">[B] </span><span class="Qtxt">Is he exposed to extreme cold, heat or humidity?</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">CL6. </span><span class="Qtxt">How would you describe the work environment of <span class="REF">~~FS3A~~</span>?</span></p>
+            <p><span class="Qnum">[B] </span><span class="Qtxt">Is she exposed to extreme cold, heat or humidity?</span></p>
+  - name: MICS7FS.CL6C
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">CL6. </span><span class="Qtxt">How would you describe the work environment of <span class="REF">~~FS3A~~</span>?</span></p>
+            <p><span class="Qnum">[C] </span><span class="Qtxt">Is he exposed to loud noise or vibration?</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">CL6. </span><span class="Qtxt">How would you describe the work environment of <span class="REF">~~FS3A~~</span>?</span></p>
+            <p><span class="Qnum">[C] </span><span class="Qtxt">Is she exposed to loud noise or vibration?</span></p>
+  - name: MICS7FS.CL6D
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">CL6. </span><span class="Qtxt">How would you describe the work environment of <span class="REF">~~FS3A~~</span>?</span></p>
+            <p><span class="Qnum">[D] </span><span class="Qtxt">Is he required to work at heights?</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">CL6. </span><span class="Qtxt">How would you describe the work environment of <span class="REF">~~FS3A~~</span>?</span></p>
+            <p><span class="Qnum">[D] </span><span class="Qtxt">Is she required to work at heights?</span></p>
+  - name: MICS7FS.CL6E
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">CL6. </span><span class="Qtxt">How would you describe the work environment of <span class="REF">~~FS3A~~</span>?</span></p>
+            <p><span class="Qnum">[E] </span><span class="Qtxt">Is he required to work with chemicals, such as pesticides, glues and similar, or explosives?</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">CL6. </span><span class="Qtxt">How would you describe the work environment of <span class="REF">~~FS3A~~</span>?</span></p>
+            <p><span class="Qnum">[E] </span><span class="Qtxt">Is she required to work with chemicals, such as pesticides, glues and similar, or explosives?</span></p>
+  - name: MICS7FS.CL6X
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">CL6. </span><span class="Qtxt">How would you describe the work environment of <span class="REF">~~FS3A~~</span>?</span></p>
+            <p><span class="Qnum">[X] </span><span class="Qtxt">Is <span class="REF">~~FS3A~~</span> exposed to other things, processes or conditions bad for his health or safety?</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">CL6. </span><span class="Qtxt">How would you describe the work environment of <span class="REF">~~FS3A~~</span>?</span></p>
+            <p><span class="Qnum">[X] </span><span class="Qtxt">Is <span class="REF">~~FS3A~~</span> exposed to other things, processes or conditions bad for her health or safety?</span></p>
+  - name: MICS7FS.CL7
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">CL7. </span><span class="Qtxt">Since last&nbsp;<span class="REF">~~daystring~~</span>, did <span class="REF">~~FS3A~~</span> fetch water for household use?</span></p>
+  - name: MICS7FS.CL8
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">CL8. </span><span class="Qtxt">In total, how many hours did <span class="REF">~~FS3A~~</span> spend on fetching water for household use, since last&nbsp;<span class="REF">~~daystring~~</span>?</span></p>
+            <p><span class="Itxt">If less than one hour, record '00'.</span></p>
+  - name: MICS7FS.CL9
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">CL9. </span><span class="Qtxt">Since last&nbsp;<span class="REF">~~daystring~~</span>, did <span class="REF">~~FS3A~~</span> collect firewood for household use?</span></p>
+  - name: MICS7FS.CL10
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">CL10. </span><span class="Qtxt">In total, how many hours did <span class="REF">~~FS3A~~</span> spend on collecting firewood for household use, since last&nbsp;<span class="REF">~~daystring~~</span>?</span></p>
+            <p><span class="Itxt">If less than one hour, record '00'.</span></p>
+  - name: MICS7FS.CL11A
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">CL11. </span><span class="Qtxt">Since last&nbsp;<span class="REF">~~daystring~~</span>, did <span class="REF">~~FS3A~~</span> do any of the following for this household?</span></p>
+            <p><span class="Qnum">[A] </span><span class="Qtxt">Shopping for the household?</span></p>
+  - name: MICS7FS.CL11B
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">CL11. </span><span class="Qtxt">Since last&nbsp;<span class="REF">~~daystring~~</span>, did <span class="REF">~~FS3A~~</span> do any of the following for this household?</span></p>
+            <p><span class="Qnum">[B] </span><span class="Qtxt">Cooking?</span></p>
+  - name: MICS7FS.CL11C
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">CL11. </span><span class="Qtxt">Since last&nbsp;<span class="REF">~~daystring~~</span>, did <span class="REF">~~FS3A~~</span> do any of the following for this household?</span></p>
+            <p><span class="Qnum">[C] </span><span class="Qtxt">Washing dishes or cleaning around the house?</span></p>
+  - name: MICS7FS.CL11D
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">CL11. </span><span class="Qtxt">Since last&nbsp;<span class="REF">~~daystring~~</span>, did <span class="REF">~~FS3A~~</span> do any of the following for this household?</span></p>
+            <p><span class="Qnum">[D] </span><span class="Qtxt">Washing clothes?</span></p>
+  - name: MICS7FS.CL11E
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">CL11. </span><span class="Qtxt">Since last&nbsp;<span class="REF">~~daystring~~</span>, did <span class="REF">~~FS3A~~</span> do any of the following for this household?</span></p>
+            <p><span class="Qnum">[E] </span><span class="Qtxt">Caring for children?</span></p>
+  - name: MICS7FS.CL11F
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">CL11. </span><span class="Qtxt">Since last&nbsp;<span class="REF">~~daystring~~</span>, did <span class="REF">~~FS3A~~</span> do any of the following for this household?</span></p>
+            <p><span class="Qnum">[F] </span><span class="Qtxt">Caring for someone old or sick?</span></p>
+  - name: MICS7FS.CL11X
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">CL11. </span><span class="Qtxt">Since last&nbsp;<span class="REF">~~daystring~~</span>, did <span class="REF">~~FS3A~~</span> do any of the following for this household?</span></p>
+            <p><span class="Qnum">[X] </span><span class="Qtxt">Other household tasks?</span></p>
+  - name: MICS7FS.CL13
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">CL13. </span><span class="Qtxt">Since last&nbsp;<span class="REF">~~daystring~~</span>, about how many hours did <span class="REF">~~FS3A~~</span> engage in (this activity/these activities), in total?</span></p>
+            <p><span class="Itxt">If less than one hour, record '00'</span></p>
+  - name: MICS7FS.FCD2A
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCD2. </span><span class="Qtxt">Now I'd like to talk to you about something else.</span></p>
+            <p><span class="Qtxt">Adults use certain ways to teach children the right behavior or to address a behavior problem. I will read various methods that are used.</span></p>
+            <p><span class="Qtxt">Please tell me if <u>you or any other adult in your household</u> has used this method with <span class="REF">~~FS3A~~</span> <u>in the past month</u>.</span></p>
+            <p><span class="Qnum">[A] </span><span class="Qtxt">Took away privileges, forbade something <span class="REF">~~FS3A~~</span> liked or did not allow him to leave the house?</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCD2. </span><span class="Qtxt">Now I'd like to talk to you about something else.</span></p>
+            <p><span class="Qtxt">Adults use certain ways to teach children the right behavior or to address a behavior problem. I will read various methods that are used.</span></p>
+            <p><span class="Qtxt">Please tell me if <u>you or any other adult in your household</u> has used this method with <span class="REF">~~FS3A~~</span> <u>in the past month</u>.</span></p>
+            <p><span class="Qnum">[A] </span><span class="Qtxt">Took away privileges, forbade something <span class="REF">~~FS3A~~</span> liked or did not allow her to leave the house?</span></p>
+  - name: MICS7FS.FCD2B
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FCD2. </span><span class="Qtxt">Please tell me if <u>you or any other adult in your household</u> has used this method with <span class="REF">~~FS3A~~</span> <u>in the past month</u>.</span></p>
+            <p><span class="Qnum">[B] </span><span class="Qtxt">Explained why <span class="REF">~~FS3A~~</span>'s behaviour was wrong?</span></p>
+  - name: MICS7FS.FCD2C
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCD2. </span><span class="Qtxt">Please tell me if <u>you or any other adult in your household</u> has used this method with <span class="REF">~~FS3A~~</span> <u>in the past month</u>.</span></p>
+            <p><span class="Qnum">[C] </span><span class="Qtxt">Shook him?</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCD2. </span><span class="Qtxt">Please tell me if <u>you or any other adult in your household</u> has used this method with <span class="REF">~~FS3A~~</span> <u>in the past month</u>.</span></p>
+            <p><span class="Qnum">[C] </span><span class="Qtxt">Shook her?</span></p>
+  - name: MICS7FS.FCD2D
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCD2. </span><span class="Qtxt">Please tell me if <u>you or any other adult in your household</u> has used this method with <span class="REF">~~FS3A~~</span> <u>in the past month</u>.</span></p>
+            <p><span class="Qnum">[D] </span><span class="Qtxt">Shouted, yelled at or screamed at him?</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCD2. </span><span class="Qtxt">Please tell me if <u>you or any other adult in your household</u> has used this method with <span class="REF">~~FS3A~~</span> <u>in the past month</u>.</span></p>
+            <p><span class="Qnum">[D] </span><span class="Qtxt">Shouted, yelled at or screamed at her?</span></p>
+  - name: MICS7FS.FCD2E
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCD2. </span><span class="Qtxt">Please tell me if <u>you or any other adult in your household</u> has used this method with <span class="REF">~~FS3A~~</span> <u>in the past month</u>.</span></p>
+            <p><span class="Qnum">[E] </span><span class="Qtxt">Gave him something else to do?</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCD2. </span><span class="Qtxt">Please tell me if <u>you or any other adult in your household</u> has used this method with <span class="REF">~~FS3A~~</span> <u>in the past month</u>.</span></p>
+            <p><span class="Qnum">[E] </span><span class="Qtxt">Gave her something else to do?</span></p>
+  - name: MICS7FS.FCD2F
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCD2. </span><span class="Qtxt">Please tell me if <u>you or any other adult in your household</u> has used this method with <span class="REF">~~FS3A~~</span> <u>in the past month</u>.</span></p>
+            <p><span class="Qnum">[F] </span><span class="Qtxt">Spanked, hit or slapped him on the bottom with bare hand?</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCD2. </span><span class="Qtxt">Please tell me if <u>you or any other adult in your household</u> has used this method with <span class="REF">~~FS3A~~</span> <u>in the past month</u>.</span></p>
+            <p><span class="Qnum">[F] </span><span class="Qtxt">Spanked, hit or slapped her on the bottom with bare hand?</span></p>
+  - name: MICS7FS.FCD2G
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCD2. </span><span class="Qtxt">Please tell me if <u>you or any other adult in your household</u> has used this method with <span class="REF">~~FS3A~~</span> <u>in the past month</u>.</span></p>
+            <p><span class="Qnum">[G] </span><span class="Qtxt">Hit him on the bottom or elsewhere on the body with something like a belt, hairbrush, stick or other hard object?</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCD2. </span><span class="Qtxt">Please tell me if <u>you or any other adult in your household</u> has used this method with <span class="REF">~~FS3A~~</span> <u>in the past month</u>.</span></p>
+            <p><span class="Qnum">[G] </span><span class="Qtxt">Hit her on the bottom or elsewhere on the body with something like a belt, hairbrush, stick or other hard object?</span></p>
+  - name: MICS7FS.FCD2H
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCD2. </span><span class="Qtxt">Please tell me if <u>you or any other adult in your household</u> has used this method with <span class="REF">~~FS3A~~</span> <u>in the past month</u>.</span></p>
+            <p><span class="Qnum">[H] </span><span class="Qtxt">Called him dumb, lazy or another name like that?</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCD2. </span><span class="Qtxt">Please tell me if <u>you or any other adult in your household</u> has used this method with <span class="REF">~~FS3A~~</span> <u>in the past month</u>.</span></p>
+            <p><span class="Qnum">[H] </span><span class="Qtxt">Called her dumb, lazy or another name like that?</span></p>
+  - name: MICS7FS.FCD2I
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCD2. </span><span class="Qtxt">Please tell me if <u>you or any other adult in your household</u> has used this method with <span class="REF">~~FS3A~~</span> <u>in the past month</u>.</span></p>
+            <p><span class="Qnum">[I] </span><span class="Qtxt">Hit or slapped him on the face, head or ears?</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCD2. </span><span class="Qtxt">Please tell me if <u>you or any other adult in your household</u> has used this method with <span class="REF">~~FS3A~~</span> <u>in the past month</u>.</span></p>
+            <p><span class="Qnum">[I] </span><span class="Qtxt">Hit or slapped her on the face, head or ears?</span></p>
+  - name: MICS7FS.FCD2J
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCD2. </span><span class="Qtxt">Please tell me if <u>you or any other adult in your household</u> has used this method with <span class="REF">~~FS3A~~</span> <u>in the past month</u>.</span></p>
+            <p><span class="Qnum">[J] </span><span class="Qtxt">Hit or slapped him on the hand, arm, or leg?</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCD2. </span><span class="Qtxt">Please tell me if <u>you or any other adult in your household</u> has used this method with <span class="REF">~~FS3A~~</span> <u>in the past month</u>.</span></p>
+            <p><span class="Qnum">[J] </span><span class="Qtxt">Hit or slapped her on the hand, arm, or leg?</span></p>
+  - name: MICS7FS.FCD2K
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCD2. </span><span class="Qtxt">Please tell me if <u>you or any other adult in your household</u> has used this method with <span class="REF">~~FS3A~~</span> <u>in the past month</u>.</span></p>
+            <p><span class="Qnum">[K] </span><span class="Qtxt">Beat him up, that is hit him over and over as hard as one could?</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCD2. </span><span class="Qtxt">Please tell me if <u>you or any other adult in your household</u> has used this method with <span class="REF">~~FS3A~~</span> <u>in the past month</u>.</span></p>
+            <p><span class="Qnum">[K] </span><span class="Qtxt">Beat her up, that is hit her over and over as hard as one could?</span></p>
+  - name: MICS7FS.FCD4
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">FCD4. </span><span class="Itxt">Check FS4: Has this respondent already responded to the following question (UCD5) for another child?</span></p>
+  - name: MICS7FS.FCD5
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FCD5. </span><span class="Qtxt">Do you believe that in order to bring up, raise, or educate a child properly, the child needs to be physically punished?</span></p>
+  - name: MICS7FS.FCF1
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FCF1. </span><span class="Qtxt">I would like to ask you some questions about difficulties <span class="REF">~~FS3A~~</span> may have.</span></p>
+            <p><span class="Qtxt">Does <span class="REF">~~FS3A~~</span> wear glasses <span class="QtxtC">or contact lenses</span>?</span></p>
+  - name: MICS7FS.FCF2
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FCF2. </span><span class="Qtxt">Does <span class="REF">~~FS3A~~</span> use a hearing aid?</span></p>
+  - name: MICS7FS.FCF3
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FCF3. </span><span class="Qtxt">Does <span class="REF">~~FS3A~~</span> use any equipment or receive assistance for walking?</span></p>
+  - name: MICS7FS.FCF6
+    conditions:
+      - logic: FCF1<>1 and chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCF4. </span><span class="Qtxt">In the following questions, I will ask you to answer by selecting one of four possible answers. For each question, would you say that <span class="REF">~~FS3A~~</span> has: 1) no difficulty, 2) some difficulty, 3) a lot of difficulty, or 4) that he cannot at all.</span></p>
+            <p><span class="Itxt">Repeat the categories during the individual questions whenever the respondent does not use an answer category: </span><span class="Qtxt">Remember the four possible answers: Would you say that <span class="REF">~~FS3A~~</span> has: 1) no difficulty, 2) some difficulty, 3) a lot of difficulty, or 4) that he cannot at all?</span></p>
+            <p><span class="Qnum">FCF6B. </span><span class="Qtxt">Does <span class="REF">~~FS3A~~</span> have difficulty seeing?</span></p>
+      - logic: FCF1=1 and chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCF4. </span><span class="Qtxt">In the following questions, I will ask you to answer by selecting one of four possible answers. For each question, would you say that <span class="REF">~~FS3A~~</span> has: 1) no difficulty, 2) some difficulty, 3) a lot of difficulty, or 4) that he cannot at all.</span></p>
+            <p><span class="Itxt">Repeat the categories during the individual questions whenever the respondent does not use an answer category: </span><span class="Qtxt">Remember the four possible answers: Would you say that <span class="REF">~~FS3A~~</span> has: 1) no difficulty, 2) some difficulty, 3) a lot of difficulty, or 4) that he cannot at all?</span></p>
+            <p><span class="Qnum">FCF6A. </span><span class="Qtxt">When wearing his glasses <span class="QtxtC">or contact lenses</span>, does <span class="REF">~~FS3A~~</span> have difficulty seeing?</span></p>
+      - logic: FCF1<>1 and chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCF4.&nbsp;</span><span class="Qtxt">In the following questions, I will ask you to answer by selecting one of four possible answers. For each question, would you say that&nbsp;<span class="REF">~~FS3A~~</span>&nbsp;has: 1) no difficulty, 2) some difficulty, 3) a lot of difficulty, or 4) that she cannot at all.</span></p><p><span class="Itxt">Repeat the categories during the individual questions whenever the respondent does not use an answer category:&nbsp;</span><span class="Qtxt">Remember the four possible answers: Would you say that&nbsp;<span class="REF">~~FS3A~~</span>&nbsp;has: 1) no difficulty, 2) some difficulty, 3) a lot of difficulty, or 4) that she cannot at all?</span></p><p><span class="Qnum">FCF6B.&nbsp;</span><span class="Qtxt">Does&nbsp;<span class="REF">~~FS3A~~</span>&nbsp;have difficulty seeing?</span></p><p></p>
+      - logic: FCF1=1 and chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCF4.&nbsp;</span><span class="Qtxt">In the following questions, I will ask you to answer by selecting one of four possible answers. For each question, would you say that&nbsp;<span class="REF">~~FS3A~~</span>&nbsp;has: 1) no difficulty, 2) some difficulty, 3) a lot of difficulty, or 4) that she cannot at all.</span></p><p><span class="Itxt">Repeat the categories during the individual questions whenever the respondent does not use an answer category:&nbsp;</span><span class="Qtxt">Remember the four possible answers: Would you say that&nbsp;<span class="REF">~~FS3A~~</span>&nbsp;has: 1) no difficulty, 2) some difficulty, 3) a lot of difficulty, or 4) that she cannot at all?</span></p><p><span class="Qnum">FCF6A.&nbsp;</span><span class="Qtxt">When wearing her glasses&nbsp;<span class="QtxtC">or contact lenses</span>, does&nbsp;<span class="REF">~~FS3A~~</span>&nbsp;have difficulty seeing?</span></p><p></p>
+  - name: MICS7FS.FCF8
+    conditions:
+      - logic: FCF2<>1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCF8B. </span><span class="Qtxt">Does <span class="REF">~~FS3A~~</span> have difficulty hearing sounds like people's voices or music?</span></p>
+      - logic: FCF2=1 and chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCF8A. </span><span class="Qtxt">When using his hearing aid(s), does <span class="REF">~~FS3A~~</span> have difficulty hearing sounds like people's voices or music?</span></p>
+      - logic: FCF2=1 and chsex=2
+        questionText:
+          ENG: |
+            <span class="Qnum">FCF8A.&nbsp;</span><span class="Qtxt">When using her hearing aid(s), does&nbsp;<span class="REF">~~FS3A~~</span>&nbsp;have difficulty hearing sounds like people's voices or music?</span><p></p>
+  - name: MICS7FS.FCF10
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCF10. </span><span class="Qtxt">Without his equipment or assistance, does <span class="REF">~~FS3A~~</span> have difficulty walking 100 <span class="QtxtC">meters/yard </span> on level ground?</span></p>
+            <p><span class="Itxt">Probe: </span><span class="Qtxt">That would be about the length of <span class="QtxtC">1 football field</span>.</span></p>
+            <p><span class="Itxt">Note that category 'No difficulty' is not available, as the child uses equipment or receives assistance for walking.</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCF10. </span><span class="Qtxt">Without her equipment or assistance, does <span class="REF">~~FS3A~~</span> have difficulty walking 100 <span class="QtxtC">meters/yard</span> on level ground?</span></p>
+            <p><span class="Itxt">Probe: </span><span class="Qtxt">That would be about the length of <span class="QtxtC">1 football field</span>.</span></p>
+            <p><span class="Itxt">Note that category 'No difficulty' is not available, as the child uses equipment or receives assistance for walking.</span></p>
+  - name: MICS7FS.FCF11
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCF11. </span><span class="Qtxt">Without his equipment or assistance, does <span class="REF">~~FS3A~~</span> have difficulty walking 500 <span class="QtxtC">meters/yard</span> on level ground?</span></p>
+            <p><span class="Itxt">Probe: </span><span class="Qtxt">That would be about the length of <span class="QtxtC">5 football fields</span>.</span></p>
+            <p><span class="Itxt">Note that category 'No difficulty' is not available, as the child uses equipment or receives assistance for walking.</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCF11. </span><span class="Qtxt">Without her equipment or assistance, does <span class="REF">~~FS3A~~</span> have difficulty walking 500 <span class="QtxtC">meters/yard</span> on level ground?</span></p>
+            <p><span class="Itxt">Probe: </span><span class="Qtxt">That would be about the length of <span class="QtxtC">5 football fields</span>.</span></p>
+            <p><span class="Itxt">Note that category 'No difficulty' is not available, as the child uses equipment or receives assistance for walking.</span></p>
+  - name: MICS7FS.FCF12
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCF12. </span><span class="Qtxt">With his equipment or assistance, does <span class="REF">~~FS3A~~</span> have difficulty walking 100 <span class="QtxtC">meters/yards</span> on level ground?</span></p>
+            <p><span class="Itxt">Probe: </span><span class="Qtxt">That would be about the length of <span class="QtxtC">1 football field</span>.</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCF12. </span><span class="Qtxt">With her equipment or assistance, does <span class="REF">~~FS3A~~</span> have difficulty walking 100 <span class="QtxtC">meters/yards</span> on level ground?</span></p>
+            <p><span class="Itxt">Probe: </span><span class="Qtxt"> That would be about the length of <span class="QtxtC">1 football field</span>.</span></p>
+  - name: MICS7FS.FCF13
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCF13. </span><span class="Qtxt">With his equipment or assistance, does <span class="REF">~~FS3A~~</span> have difficulty walking 500 <span class="QtxtC">meters/yards</span> on level ground?</span></p>
+            <p><span class="Itxt">Probe: </span><span class="Qtxt">That would be about the length of <span class="QtxtC">5 football fields</span>.</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCF13. </span><span class="Qtxt">With her equipment or assistance, does <span class="REF">~~FS3A~~</span> have difficulty walking 500 <span class="QtxtC">meters/yards</span> on level ground?</span></p>
+            <p><span class="Itxt">Probe: </span><span class="Qtxt"> That would be about the length of <span class="QtxtC">5 football fields</span>.</span></p>
+  - name: MICS7FS.FCF14
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FCF14. </span><span class="Qtxt">Compared with children of the same age, does <span class="REF">~~FS3A~~</span> have difficulty walking 100<span class="QtxtC"> meters/yards</span> on level ground?</span></p>
+            <p><span class="Itxt">Probe: </span><span class="Qtxt">That would be about the length of <span class="QtxtC">1 football field</span>.</span></p>
+  - name: MICS7FS.FCF15
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FCF15. </span><span class="Qtxt">Compared with children of the same age, does <span class="REF">~~FS3A~~</span> have difficulty walking 500<span class="QtxtC"> meters/yards</span> on level ground?</span></p>
+            <p><span class="Itxt">Probe: </span><span class="Qtxt">That would be about the length of <span class="QtxtC">5 football fields</span>.</span></p>
+  - name: MICS7FS.FCF16
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCF16. </span><span class="Qtxt">Does <span class="REF">~~FS3A~~</span> have difficulty with self-care such as feeding or dressing himself?</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCF16. </span><span class="Qtxt">Does <span class="REF">~~FS3A~~</span> have difficulty with self-care such as feeding or dressing herself?</span></p>
+  - name: MICS7FS.FCF17
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCF17. </span><span class="Qtxt">When <span class="REF">~~FS3A~~</span> speaks, does he have difficulty being understood by people inside of this household?</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCF17. </span><span class="Qtxt">When <span class="REF">~~FS3A~~</span> speaks, does she have difficulty being understood by people inside of this household?</span></p>
+  - name: MICS7FS.FCF18
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCF18. </span><span class="Qtxt">When <span class="REF">~~FS3A~~</span> speaks, does he have difficulty being understood by people outside of this household?</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCF18. </span><span class="Qtxt">When <span class="REF">~~FS3A~~</span> speaks, does she have difficulty being understood by people outside of this household?</span></p>
+  - name: MICS7FS.FCF19
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FCF19. </span><span class="Qtxt">Compared with children of the same age, does <span class="REF">~~FS3A~~</span> have difficulty learning things?</span></p>
+  - name: MICS7FS.FCF20
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FCF20. </span><span class="Qtxt">Compared with children of the same age, does <span class="REF">~~FS3A~~</span> have difficulty remembering things?</span></p>
+  - name: MICS7FS.FCF21
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCF21. </span><span class="Qtxt">Does <span class="REF">~~FS3A~~</span> have difficulty concentrating on an activity that he enjoys doing?</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCF21. </span><span class="Qtxt">Does <span class="REF">~~FS3A~~</span> have difficulty concentrating on an activity that she enjoys doing?</span></p>
+  - name: MICS7FS.FCF22
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCF22. </span><span class="Qtxt">Does <span class="REF">~~FS3A~~</span> have difficulty accepting changes in his routine?</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCF22. </span><span class="Qtxt">Does <span class="REF">~~FS3A~~</span> have difficulty accepting changes in her routine?</span></p>
+  - name: MICS7FS.FCF23
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCF23. </span><span class="Qtxt">Compared with children of the same age, does <span class="REF">~~FS3A~~</span> have difficulty controlling his behaviour?</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FCF23. </span><span class="Qtxt">Compared with children of the same age, does <span class="REF">~~FS3A~~</span> have difficulty controlling her behaviour?</span></p>
+  - name: MICS7FS.FCF24
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FCF24. </span><span class="Qtxt">Does <span class="REF">~~FS3A~~</span> have difficulty making friends?</span></p>
+  - name: MICS7FS.FCF25
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FCF25. </span><span class="Qtxt">The next questions have different options for answers. I am going to read these to you after each question.</span></p>
+            <p><span class="Qtxt">I would like to know how often <span class="REF">~~FS3A~~</span> seems very anxious, nervous or worried.</span></p>
+            <p><span class="Qtxt">Would you say: daily, weekly, monthly, a few times a year or never?</span></p>
+  - name: MICS7FS.FCF26
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FCF26. </span><span class="Qtxt">I would also like to know how often <span class="REF">~~FS3A~~</span> seems very sad or depressed.</span></p>
+            <p><span class="Qtxt">Would you say: daily, weekly, monthly, a few times a year or never?</span></p>
+  - name: MICS7FS.FTU3
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Itxt"><span class="Inum">FTU2. </span>Begin by asking the respondent what time the child woke up the day before the interview and what time the child went to sleep. Then ask to list the activities the child did during the day in chronological order. For each activity, record the appropriate code in FTU7, ask FTU8-FTU10 and, if applicable, proceed to ask any follow-up questions. After recording all information relative to an activity, you will be led back to FTU7 to ask what the child did next. Once respondent mentions the child went to sleep for the night, do not record anything else. Finally, to ensure everything the child did yesterday has been captured, FTU18 will prompt you to read all activities recorded and ask if anything is missing. If yes, enter the code, time and/or duration for each activity that was not previously mentioned or captured.</span></p><p><span class="Qnum">FTU3.</span> I will now ask you about what&nbsp;<span style="font-style: italic;">~~FS3A~~</span>&nbsp;did yesterday, between waking up in the morning and going to bed at night for sleeping. You can include anything&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>did. These can include active tasks such as studying and eating or passive activities such as relaxing or thinking.</p><div><br></div><p></p>
+  - name: MICS7FS.FTU4
+    conditions:
+      - questionText:
+          ENG: |
+            <b>FTU4.</b>&nbsp;What time did ~~FS3A~~ wake up yesterday?<br><span class="Itxt">record as HH.MM</span><p></p>
+  - name: MICS7FS.FTU5
+    conditions:
+      - questionText:
+          ENG: |
+            <span class="Qnum">FTU5.&nbsp;</span>What time did&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>go to sleep for the night yesterday?<br><span style="color: rgb(0, 0, 255); font-style: italic;">record as HH.MM</span><p></p>
+  - name: MICS7FS.FTU7
+    conditions:
+      - logic: FTU6 = 1
+        questionText:
+          ENG: |
+            <p><b style="text-indent: -9.6px;"><i><font color="#0000ff">First activity starting at ~~stactiv~~</font>&nbsp;</i></b><b style="text-indent: -9.6px;"><br></b></p><p><b style="text-indent: -9.6px;">FTU7.&nbsp;</b><span style="text-indent: -9.6px;">What did&nbsp;</span><span style="font-style: italic;">~~FS3A~~&nbsp;</span><span style="text-indent: -9.6px;">do first?</span></p><p></p>
+      - logic: FTU6 > 1
+        questionText:
+          ENG: |
+            <p><b style="text-indent: -9.6px;"><i><font color="#0000ff">Activity ~~FTU6~~ starting at ~~stactiv~~&nbsp;</font></i></b><b style="text-indent: -9.6px;"><br></b></p><p><b style="text-indent: -9.6px;">FTU7.&nbsp;</b><span style="text-indent: -9.6px;">What did&nbsp;</span><span style="font-style: italic;">~~FS3A~~&nbsp;</span><span style="text-indent: -9.6px;">do next?&nbsp;</span></p><p></p>
+  - name: MICS7FS.FTU9X
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum"><b style="text-indent: -9.6px;"><i><font color="#0000ff">Activity ~~FTU6~~ at ~~stactiv~~ : ~~FTU7A~~</font></i></b><br></span></p><p><span class="Qnum">FTU9.-&nbsp;</span><span class="Qnum">FTU10.</span>&nbsp;<span class="Qnum">&nbsp;</span>How long did&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>do this activity? What time did this activity end?</p><p><span class="Itxt">Select response type</span></p><p></p>
+  - name: MICS7FS.FTU9
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum"><b style="text-indent: -9.6px;"><i><font color="#0000ff">Activity ~~FTU6~~ at ~~stactiv~~ : ~~FTU7A~~</font></i></b><br></span></p><p><span class="Itxt"><span class="Inum"></span></span></p><p><span class="Qnum">FTU9</span><span class="Qnum">.</span>&nbsp;<span class="Qnum">&nbsp;</span>How long did&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>do this activity?&nbsp;</p><p><span style="color: rgb(0, 0, 255); font-style: italic;">Record as HH.MM</span></p><p></p>
+  - name: MICS7FS.FTU10
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum"><b style="text-indent: -9.6px;"><i><font color="#0000ff">Activity ~~FTU6~~ at ~~stactiv~~ : ~~FTU7A~~</font></i></b><br></span></p><span class="Qnum">FTU10.&nbsp;</span>What time did this activity end?<p></p><p><span style="color: rgb(0, 0, 255); font-style: italic;">Record as HH.MM</span></p><p></p>
+  - name: MICS7FS.FTU12
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum"><b style="text-indent: -9.6px;"><i><font color="#0000ff">Activity ~~FTU6~~ at ~~stactiv~~ : ~~FTU7A~~</font></i></b><br></span></p><p><span class="Qnum">FTU12.</span>&nbsp;Did&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>play online?</p><p></p>
+  - name: MICS7FS.FTU13
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum"><b style="text-indent: -9.6px;"><i><font color="#0000ff">Activity ~~FTU6~~ at ~~stactiv~~ : ~~FTU7A~~</font></i></b><br></span></p><p><span class="Qnum">FTU13.&nbsp;</span>With whom did&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>play?</p><p><span class="Itxt">Probe:&nbsp;<span class="Qtxt" style="font-style: normal;">Anyone else?</span></span><br></p><p><span class="Itxt">Record all mentioned. Do not record C, D if FTU12=2</span></p><p></p>
+  - name: MICS7FS.FTU14
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum"><b style="text-indent: -9.6px;"><i><font color="#0000ff">Activity ~~FTU6~~ at ~~stactiv~~ : ~~FTU7A~~</font></i></b><br></span></p><p><span class="Qnum">FTU14.</span>&nbsp;Did&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>watch this online?</p><p></p>
+  - name: MICS7FS.FTU15
+    conditions:
+      - questionText:
+          ENG: |
+            <p></p><div><p><span class="Qnum"><b style="text-indent: -9.6px;"><i><font color="#0000ff">Activity ~~FTU6~~ at ~~stactiv~~ : ~~FTU7A~~</font></i></b><br></span></p><p><span class="Qnum">FTU15.</span>&nbsp;Did&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>get the news online?</p></div>
+  - name: MICS7FS.FTU16
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum"><b style="text-indent: -9.6px;"><i><font color="#0000ff">Activity ~~FTU6~~ at ~~stactiv~~ : ~~FTU7A~~</font></i></b><br></span></p><p><span class="Qnum">FTU16.&nbsp;</span>Did&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>engage in this activity or do this activity online?</p><p></p>
+  - name: MICS7FS.FTU17
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum"><b style="text-indent: -9.6px;"><i><font color="#0000ff">Activity ~~FTU6~~ at ~~stactiv~~ : ~~FTU7A~~</font></i></b><b style="text-indent: -9.6px;"><i><font color="#0000ff">&nbsp;</font></i></b><br></span></p><p><span class="Qnum">FTU17.&nbsp;</span>How were&nbsp;<span style="font-style: italic;">~~FS3A~~</span>'s<span style="font-style: italic;">&nbsp;</span>lessons delivered?</p><p><span class="Itxt">Record all mentioned. Probe:</span>&nbsp;Anything else?</p><p></p>
+  - name: MICS7FS.FTU18
+    conditions:
+      - questionText:
+          ENG: |
+            <p><b>FTU18.&nbsp;</b>Just to make sure I have this right I will now repeat all the activities&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>have listed in chronological order. I would like you to think if there is any activity&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>did yesterday, between waking up in the morning and going to bed at night for sleeping, that you forgot to mention.</p><p><span class="Itxt">Read aloud the list of activities reported and ask:&nbsp;</span>&nbsp;&nbsp;<br></p><p>Did&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>do anything else that we have not recorded yet?</p><p></p>
+  - name: MICS7FS.PR3
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">PR2. </span><span class="Qtxt">Now I am going to ask you a few more questions about <span class="REF">~~FS3A~~</span>'s school and homework.</span></p>
+            <p><span class="Qtxt">Once you have answered those questions, I would like to speak to <span class="REF">~~FS3A~~</span>. If he is at home right now, can you please ask him to stay around? If he is not at home right now, could you please arrange for him to return home now? If it is not possible for him to return home, please let me know when a convenient time for me would be to come back and talk to <span class="REF">~~FS3A~~</span>.</span></p>
+            <p><span class="Qtxt">We can discuss this at the end of the interview.</span></p>
+            <p><span class="Qnum">PR3. </span><span class="Qtxt">Excluding school text books and holy books, how many books do you have for <span class="REF">~~FS3A~~</span> to read at home?</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">PR2. </span><span class="Qtxt">Now I am going to ask you a few more questions about <span class="REF">~~FS3A~~</span>'s school and homework.</span></p>
+            <p><span class="Qtxt">Once you have answered those questions, I would like to speak to <span class="REF">~~FS3A~~</span>. If she is at home right now, can you please ask her to stay around? If she is not at home right now, could you please arrange for her to return home now? If it is not possible for her to return home, please let me know when a convenient time for me would be to come back and talk to <span class="REF">~~FS3A~~</span>.</span></p>
+            <p><span class="Qtxt">We can discuss this at the end of the interview.</span></p>
+            <p><span class="Qnum">PR3. </span><span class="Qtxt">Excluding school text books and holy books, how many books do you have for <span class="REF">~~FS3A~~</span> to read at home?</span></p>
+  - name: MICS7FS.PR5
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">PR5. </span><span class="Qtxt">Does <span class="REF">~~FS3A~~</span> ever have homework?</span></p>
+  - name: MICS7FS.PR6
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">PR6. </span><span class="Qtxt">Does anyone help <span class="REF">~~FS3A~~</span> with homework?</span></p>
+  - name: MICS7FS.PR7
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">PR7. </span><span class="Qtxt">In the last 12 months, have you or any other adult from your household received a <span class="QtxtC">student report card</span> for <span class="REF">~~FS3A~~</span>?</span></p>
+  - name: MICS7FS.PR8
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">PR8. </span><span class="Qtxt">In the last 12 months, have you or any adult from your household discussed <span class="REF">~~FS3A~~</span>’s progress with his teachers?</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">PR8. </span><span class="Qtxt">In the last 12 months, have you or any adult from your household discussed <span class="REF">~~FS3A~~</span>’s progress with her teachers?</span></p>
+  - name: MICS7FS.PR9
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">PR9. </span><span class="Qtxt">Does <span class="REF">~~FS3A~~</span>'s school have a school governing body in which parents can participate such as <span class="QtxtC">parent teacher association</span> or <span class="QtxtC">school management committee</span>?</span></p>
+  - name: MICS7FS.PR10
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">PR10. </span><span class="Qtxt">In the last 12 months, have you or any other adult from your household attended a meeting called by this school governing body?</span></p>
+  - name: MICS7FS.PR11
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">PR11. </span><span class="Qtxt">Does <span class="REF">~~FS3A~~</span>’s school publish school report cards?</span></p>
+            <p><span class="Itxt">Probe: </span><span class="Qtxt">A school report card provides information on how the school is doing, for example, information about school finance, student achievement, teacher qualifications, and other information</span></p>
+  - name: MICS7FS.FL1
+    conditions:
+      - logic: chsex=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL1. </span><span class="Qtxt">Thank you very much for answering my questions. As I mentioned earlier in this interview, now I would like to talk to <span class="REF">~~FS3A~~</span>. I will ask him a few questions about himself, his reading habits, and the language his teachers use at school. Then, I will ask <span class="REF">~~FS3A~~</span> if he wants to complete a few reading and number activities.</span></p>
+            <p><span class="Qtxt">This will take about 20 minutes.</span></p>
+            <p><span class="Qtxt">If you agree, I will ask <span class="REF">~~FS3A~~</span> if he wants to participate. Participation in this activity is voluntary, and there will be no payment or incentive given to you or to your child for answering these questions. However, we are interviewing many children as part of this survey, and <span class="REF">~~FS3A~~</span>’s participation and that of other children like him will help us understand how well children in this country are learning to read and to use numbers. This will help the government improve education.</span></p>
+            <p><span class="Qtxt">Please know that this is not a school test and I am not trained to tell you or your child how well he did.</span></p>
+            <p><span class="Qtxt">All the information your child shares with us during the interview will remain strictly confidential and anonymous. No information about your child will be made publicly available. The results will not be shared with anyone, including other parents or his school.</span></p>
+            <p><span class="Qtxt">May I talk to <span class="REF">~~FS3A~~</span>?</span></p>
+      - logic: chsex=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL1. </span><span class="Qtxt">Thank you very much for answering my questions. As I mentioned earlier in this interview, now I would like to talk to <span class="REF">~~FS3A~~</span>. I will ask her a few questions about herself, her reading habits, and the language her teachers use at school. Then, I will ask <span class="REF">~~FS3A~~</span> if she wants to complete a few reading and number activities.</span></p>
+            <p><span class="Qtxt">This will take about 20 minutes.</span></p>
+            <p><span class="Qtxt">If you agree, I will ask <span class="REF">~~FS3A~~</span> if she wants to participate. Participation in this activity is voluntary, and there will be no payment or incentive given to you or to your child for answering these questions. However, we are interviewing many children as part of this survey, and <span class="REF">~~FS3A~~</span>’s participation and that of other children like her will help us understand how well children in this country are learning to read and to use numbers. This will help the government improve education.</span></p>
+            <p><span class="Qtxt">Please know that this is not a school test and I am not trained to tell you or your child how well she did.</span></p>
+            <p><span class="Qtxt">All the information your child shares with us during the interview will remain strictly confidential and anonymous. No information about your child will be made publicly available. The results will not be shared with anyone, including other parents or her school.</span></p>
+            <p><span class="Qtxt">May I talk to <span class="REF">~~FS3A~~</span>?</span></p>
+  - name: MICS7FS.FL3
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL3. </span><span class="Qtxt">My name is <span class="Itxt">(your name)</span>. I would like to tell you a bit about myself.</span></p>
+            <p><span class="Qtxt">Could you tell me a little bit about yourself?</span></p>
+            <p><span class="Itxt">When the child is comfortable, continue with the verbal assent:</span></p>
+            <p><span class="Qtxt">Let me tell you why I am here today.</span></p>
+            <p><span class="Qtxt">I am from <span class="QtxtC">National Statistical Office</span>. We are talking to children like you across <span class="QtxtC">country</span> to find out how children learn to read and to use numbers.</span></p>
+            <p><span class="Qtxt">We have spoken to (Your mother/Name of caregiver) and (she/he) says you can participate in this activity. So, you get to decide if you want to help us. If you wish to help us, I will ask you some questions and give you some reading and number activities to do. I will explain each activity, and you can ask me questions any time.</span></p>
+            <p><span class="Qtxt">We hope that your participation and the participation of other children like you will help the government improve education in <span class="QtxtC">country</span>.</span></p>
+            <p><span class="Qtxt">After we begin, if you do not want to answer a question or activity, or you do not want to continue, that is alright. No one will be upset.</span></p>
+            <p><span class="Qtxt">Would you like to participate?</span></p>
+  - name: MICS7FS.FL4
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">FL4. </span><span class="Itxt">Before you start with the reading and number activities, tick each box to show that:</span></p>
+            <p><span class="Itxt">- You are not alone with the child unless he/she are at least visible to an adult known to the child.</span></p>
+            <p><span class="Itxt">- You have engaged the child in conversation and built rapport, e.g. using an Icebreaker.</span></p>
+            <p><span class="Itxt">- The child is sat comfortably, able to use the Reading & Numbers Book without difficulty while you can see which page is open.</span></p>
+  - name: MICS7FS.FL6A
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL6A. </span><span class="Qtxt">First, we are going to talk about reading.</span><br></p>
+            <p><span class="Qtxt">Do you read books at home?</span></p>
+  - name: MICS7FS.FL6B
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL6B. </span><span class="Qtxt">Does someone read to you at home?</span></p>
+  - name: MICS7FS.FL7
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL7. </span><span class="Qtxt">Which language do you speak most of the time at home?</span></p>
+            <p><span class="Itxt">Probe if necessary and read the listed languages.</span></p>
+  - name: MICS7FS.FL9
+    conditions:
+      - logic: forFL9=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL9A. </span><span class="Qtxt">What language does your teachers use most of the time when teaching you in class?</span></p>
+            <p><span class="Itxt">Probe if necessary and name the listed languages.</span></p>
+      - logic: forFL9=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL9B. </span><span class="Qtxt">When you were in school, what language did your teachers use most of the time when teaching you in class?</span></p>
+            <p><span class="Itxt">Probe if necessary and name the listed languages.</span></p>
+  - name: MICS7FS.FL10
+    conditions:
+      - logic: ST1LANG=11
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL10. </span><span class="Qtxt">Now I am going to give you a short story to read in <span class="QtxtC">English</span>. Would you like to start reading the story?</span></p>
+      - logic: ST1LANG=12
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL10. </span><span class="Qtxt">Now I am going to give you a short story to read in <span class="QtxtC">French</span>. Would you like to start reading the story?</span></p>
+      - logic: ST1LANG=13
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL10. </span><span class="Qtxt">Now I am going to give you a short story to read in <span class="QtxtC">Spanish</span>. Would you like to start reading the story?</span></p>
+  - name: MICS7FS.FL10C
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL10C. </span><span class="Qtxt">I have short stories in <span class="QtxtC">English, French, and Spanish</span>. The stories are almost the same. Would you like to try to read one of them?</span></p>
+  - name: MICS7FS.FL13
+    conditions:
+      - logic: ST1LANG=11
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL13. </span><span class="Itxt">Give the child the READING & NUMBERS BOOK in <span class="QtxtC">English</span>.</span></p>
+            <p><span class="Itxt">Open the page showing the reading practice item and say: </span><span class="Qtxt">Now we are going to do some reading.</span></p>
+            <p><span class="Itxt">Point to the sentence. </span><span class="Qtxt">I would like you to read this aloud. Then I may ask you a question.</span></p>
+            <p><span class="ItxtC">Sam is a cat. Tina is a dog. Sam is 5 years old. Tina is 6 years old.</span></p>
+      - logic: ST1LANG=12
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL13. </span><span class="Itxt">Give the child the READING & NUMBERS BOOK in <span class="QtxtC">French</span>.</span></p>
+            <p><span class="Itxt">Open the page showing the reading practice item and say: </span><span class="Qtxt">Now we are going to do some reading.</span></p>
+            <p><span class="Itxt">Point to the sentence. </span><span class="Qtxt">I would like you to read this aloud. Then I may ask you a question.</span></p>
+            <p><span class="ItxtC">Sam est un garçon. Tina est une fille. Sam a 5 ans. Tina a 6 ans.</span></p>
+      - logic: ST1LANG=13
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL13. </span><span class="Itxt">Give the child the READING & NUMBERS BOOK in <span class="QtxtC">Spanish</span>.</span></p>
+            <p><span class="Itxt">Open the page showing the reading practice item and say: </span><span class="Qtxt">Now we are going to do some reading.</span></p>
+            <p><span class="Itxt">Point to the sentence. </span><span class="Qtxt">I would like you to read this aloud. Then I may ask you a question.</span></p>
+            <p><span class="ItxtC">Sam es un gato. Tina es una perra. Sam tiene 5 años. Tina tiene 6.</span></p>
+  - name: MICS7FS.FL14
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">FL14. </span><span class="Itxt">Did the child read every word in the practice correctly?</span></p>
+  - name: MICS7FS.FL15
+    conditions:
+      - logic: ST1LANG=11
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL15. </span><span class="Itxt">Once the reading is done, ask: </span><span class="Qtxt"><span class="QtxtC">How old is Sam</span>?</span></p>
+      - logic: ST1LANG=12
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL15. </span><span class="Itxt">Once the reading is done, ask: </span><span class="Qtxt"><span class="QtxtC">How old is Sam</span>?</span></p>
+      - logic: ST1LANG=13
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL15. </span><span class="Itxt">Once the reading is done, ask: </span><span class="Qtxt"><span class="QtxtC">How old is Sam</span>?</span></p>
+  - name: MICS7FS.FL16
+    conditions:
+      - logic: ST1LANG=11
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL16. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC">Sam is 5 years old</span>.</span></p>
+      - logic: ST1LANG=12
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL16. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC">Sam is 5 years old</span>.</span></p>
+      - logic: ST1LANG=13
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL16. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC">Sam is 5 years old</span>.</span></p>
+  - name: MICS7FS.FL17
+    conditions:
+      - logic: ST1LANG=11
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL17. </span><span class="Qtxt">Here is another question: </span><span class="Qtxt"><span class="QtxtC">Who is older: Sam or Tina</span>?</span></p>
+      - logic: ST1LANG=12
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL17. </span><span class="Qtxt">Here is another question: </span><span class="Qtxt"><span class="QtxtC">Who is older: Sam or Tina</span>?</span></p>
+      - logic: ST1LANG=13
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL17. </span><span class="Qtxt">Here is another question: </span><span class="Qtxt"><span class="QtxtC">Who is older: Sam or Tina</span>?</span></p>
+  - name: MICS7FS.FL18
+    conditions:
+      - logic: ST1LANG=11
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL18. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC">Tina is older than Sam. Tina is 6 years old and Sam is 5</span>.</span></p>
+      - logic: ST1LANG=12
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL18. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC">Tina is older than Sam. Tina is 6 years old and Sam is 5</span>.</span></p>
+      - logic: ST1LANG=13
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL18. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC">Tina is older than Sam. Tina is 6 years old and Sam is 5</span>.</span></p>
+  - name: MICS7FS.FL19INTRO
+    conditions:
+      - logic: ED9(FS3)=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL18B. </span><span class="Itxt">Give the child the READING & NUMBERS BOOK in <span class="ItxtC">~~offeredLang~~</span>.</span></p>
+            <p><span class="Itxt">Open the book on the page of reading passage</span></p>
+            <p><span class="Qnum">FL19. </span><span class="Qtxt">Here is a story. I want you to read it aloud as carefully as you can.</span></p>
+            <p><span class="Qtxt">You will start here <span class="Itxt">(point to the first word on the first line) </span>and you will read line by line <span class="Itxt">(point to the direction for reading each line)</span>.</span></p>
+            <p><span class="Qtxt">When you finish I will ask you some questions about what you have read.</span></p>
+            <p><span class="Qtxt">If you come to a word you do not know, go onto the next word.</span></p>
+            <p><span class="Itxt">Put your finger on the first word. </span><span class="Qtxt">Ready? Begin.</span></p>
+      - logic: FL17=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL18A. </span><span class="Itxt">Turn the page to reveal the reading passage.</span></p>
+            <p><span class="Qtxt">Thank you. Now I want you to try this.</span></p>
+            <p><span class="Qnum">FL19. </span><span class="Qtxt">Here is a story. I want you to read it aloud as carefully as you can.</span></p>
+            <p><span class="Qtxt">You will start here <span class="Itxt">(point to the first word on the first line) </span>and you will read line by line <span class="Itxt">(point to the direction for reading each line)</span>.</span></p>
+            <p><span class="Qtxt">When you finish I will ask you some questions about what you have read.</span></p>
+            <p><span class="Qtxt">If you come to a word you do not know, go onto the next word.</span></p>
+            <p><span class="Itxt">Put your finger on the first word. </span><span class="Qtxt"> Ready? Begin.</span></p>              
+  - name: MICS7FS.FL19END
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Itxt">Continue if finished with the reading exercise.</span></p>
+  - name: MICS7FS.FL21BA
+    conditions:
+      - logic: ST1LANG=11
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21B. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Itxt">If the child does not provide a response after a few seconds, repeat the question. If the child seems unable to provide an answer after repeating the question, mark 'No response' and say: </span><span class="Qtxt">Thank you. That is ok. We will move on.</span></p>
+            <p><span class="Itxt">Make sure the child can still see the passage and ask:</span></p>
+            <p><span class="Qnum">[A] </span><span class="Qtxt"><span class="QtxtC">What class is Moses in</span>?</span></p>
+      - logic: ST1LANG=12
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21B. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Itxt">If the child does not provide a response after a few seconds, repeat the question. If the child seems unable to provide an answer after repeating the question, mark 'No response' and say: </span><span class="Qtxt">Thank you. That is ok. We will move on.</span></p>
+            <p><span class="Itxt">Make sure the child can still see the passage and ask:</span></p>
+            <p><span class="Qnum">[A] </span><span class="Qtxt"><span class="QtxtC">What class is Madani in</span>?</span></p>
+      - logic: ST1LANG=13
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21B. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Itxt">If the child does not provide a response after a few seconds, repeat the question. If the child seems unable to provide an answer after repeating the question, mark 'No response' and say: </span><span class="Qtxt">Thank you. That is ok. We will move on.</span></p>
+            <p><span class="Itxt">Make sure the child can still see the passage and ask:</span></p>
+            <p><span class="Qnum">[A] </span><span class="Qtxt"><span class="QtxtC">What class is Moisés in</span>?</span></p>
+  - name: MICS7FS.FL21BB
+    conditions:
+      - logic: ST1LANG=11
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21B. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[B] </span><span class="Qtxt"><span class="QtxtC">What did Moses see on the way home</span>?</span></p>
+      - logic: ST1LANG=12
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21B. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[B] </span><span class="Qtxt"><span class="QtxtC">What did Madani see on the way home</span>?</span></p>
+      - logic: ST1LANG=13
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21B. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[B] </span><span class="Qtxt"><span class="QtxtC">What did Moisés see on the way home</span>?</span></p>
+  - name: MICS7FS.FL21BC
+    conditions:
+      - logic: ST1LANG=11
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21B. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[C] </span><span class="Qtxt"><span class="QtxtC">Why did Moses start crying</span>?</span></p>
+      - logic: ST1LANG=12
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21B. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[C] </span><span class="Qtxt"><span class="QtxtC">Why did Madani start crying</span>?</span></p>
+      - logic: ST1LANG=13
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21B. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[C] </span><span class="Qtxt"><span class="QtxtC">Why did Moisés start crying</span>?</span></p>
+  - name: MICS7FS.FL21BD
+    conditions:
+      - logic: ST1LANG=11
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21B. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[D] </span><span class="Qtxt"><span class="QtxtC">Where did Moses fall</span>?</span></p>
+      - logic: ST1LANG=12
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21B. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[D] </span><span class="Qtxt"><span class="QtxtC">Where did Madani fall</span>?</span></p>
+      - logic: ST1LANG=13
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21B. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[D] </span><span class="Qtxt"><span class="QtxtC">Where did Moisés fall</span>?</span></p>
+  - name: MICS7FS.FL21BE
+    conditions:
+      - logic: ST1LANG=11
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21B. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[E] </span><span class="Qtxt"><span class="QtxtC">Why was Moses happy</span>?</span></p>
+      - logic: ST1LANG=12
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21B. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[E] </span><span class="Qtxt"><span class="QtxtC">Why was Madani happy</span>?</span></p>
+      - logic: ST1LANG=13
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21B. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[E] </span><span class="Qtxt"><span class="QtxtC">Why was Moisés happy</span>?</span></p>
+  - name: MICS7FS.FL21D
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL21D. </span><span class="Qtxt">I have another story in <span class="Itxt">(list languages not yet attempted)</span>. Would you like to try to read <span class="QtxtC">it/one of them</span>?</span></p>
+            <p><span class="Qtxt">The child cannot pick the same language as already attempted</span></p>
+  - name: MICS7FS.FL21G
+    conditions:
+      - logic: ST2LANG=11
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21G. </span><span class="Itxt">Give the child the READING & NUMBERS BOOK in <span class="QtxtC">English</span>.</span></p>
+            <p><span class="Itxt">Open the page showing the reading practice item and say: </span><span class="Qtxt">Just as before I would like you to read this aloud.Then I may ask you a question.</span></p>
+            <p><span class="ItxtC">John is a boy. Anne is a girl. John has 2 eggs. Anne has 3 eggs.</span></p>
+      - logic: ST2LANG=12
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21G. </span><span class="Itxt">Give the child the READING & NUMBERS BOOK in <span class="QtxtC">French</span>.</span></p>
+            <p><span class="Itxt">Open the page showing the reading practice item and say: </span><span class="Qtxt">Just as before I would like you to read this aloud.Then I may ask you a question.</span></p>
+            <p><span class="ItxtC">Jean est un garçon. Anne est une fille. Jean a 2 œufs. Anne a 3 œufs.</span></p>
+      - logic: ST2LANG=13
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21G. </span><span class="Itxt">Give the child the READING & NUMBERS BOOK in <span class="QtxtC">Spanish</span>.</span></p>
+            <p><span class="Itxt">Open the page showing the reading practice item and say: </span><span class="Qtxt">Just as before I would like you to read this aloud.Then I may ask you a question.</span></p>
+            <p><span class="ItxtC">Luis es un niño. Ana es una niña. Luis tiene 2 huevos. Ana tiene 3 huevos.</span></p>
+  - name: MICS7FS.FL21H
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">FL21H. </span><span class="Itxt">Did the child read every word in the practice correctly?</span></span></p>
+  - name: MICS7FS.FL21I
+    conditions:
+      - logic: ST2LANG=11
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21I. </span><span class="Itxt">Once the reading is done, ask: </span><span class="Qtxt"><span class="QtxtC">How many eggs does John have</span>?</span></p>
+      - logic: ST2LANG=12
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21I. </span><span class="Itxt">Once the reading is done, ask: </span><span class="Qtxt"><span class="QtxtC">How many eggs does Jean have</span>?</span></p>
+      - logic: ST2LANG=13
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21I. </span><span class="Itxt">Once the reading is done, ask: </span><span class="Qtxt"><span class="QtxtC">How many eggs does Luis have</span>?</span></p>
+  - name: MICS7FS.FL21J
+    conditions:
+      - logic: ST2LANG=11
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21J. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC">John has 2 eggs</span>.</span></p>
+      - logic: ST2LANG=12
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21J. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC">Jean has 2 eggs</span>.</span></p>
+      - logic: ST2LANG=13
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21J. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC">Luis has 2 eggs</span>.</span></p>
+  - name: MICS7FS.FL21K
+    conditions:
+      - logic: ST2LANG=11
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21K. </span><span class="Qtxt">Here is another question: </span><span class="Qtxt"><span class="QtxtC">Who has more eggs: John or Anne</span>?</span></p>
+      - logic: ST2LANG=12
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21K. </span><span class="Qtxt">Here is another question: </span><span class="Qtxt"><span class="QtxtC">Who has more eggs: Jean or Anne</span>?</span></p>
+      - logic: ST2LANG=13
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21K. </span><span class="Qtxt">Here is another question: </span><span class="Qtxt"><span class="QtxtC">Who has more eggs: Luis or Ana</span>?</span></p>
+  - name: MICS7FS.FL21L
+    conditions:
+      - logic: ST2LANG=11
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21L. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC">Anne has more eggs than John. Anne has 3 eggs and John has 2</span>.</span></p>
+      - logic: ST2LANG=12
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21L. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC">Anne has more eggs than Jean. Anne has 3 eggs and Jean has 2</span>.</span></p>
+      - logic: ST2LANG=13
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21L. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC">Ana has more eggs than Luis. Ana has 3 eggs and Luis has 2</span>.</span></p>
+  - name: MICS7FS.FL21OINTRO
+    conditions:
+      - logic: ED9(FS3)=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21N. </span><span class="Itxt">Give the child the READING & NUMBERS BOOK in <span class="ItxtC">~~offeredLang~~</span>.</span></p>
+            <p><span class="Itxt">Open the book on the page of reading passage</span></p>
+            <p><span class="Qnum">FL21O. </span><span class="Qtxt">Here is a story. I want you to read it aloud as carefully as you can.</span></p>
+            <p><span class="Qtxt">You will start here <span class="Itxt">(point to the first word on the first line) </span>and you will read line by line <span class="Itxt">(point to the direction for reading each line)</span>.</span></p>
+            <p><span class="Qtxt">When you finish I will ask you some questions about what you have read.</span></p>
+            <p><span class="Qtxt">If you come to a word you do not know, go onto the next word.</span></p>
+            <p><span class="Itxt">Put your finger on the first word. </span><span class="Qtxt">Ready? Begin.</span></p>
+      - logic: FL21K=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21M. </span><span class="Itxt">Turn the page to reveal the reading passage.</span></p>
+            <p><span class="Qtxt">Thank you. Now I want you to try this.</span></p>
+            <p><span class="Qnum">FL21O. </span><span class="Qtxt">Here is a story. I want you to read it aloud as carefully as you can.</span></p>
+            <p><span class="Qtxt">You will start here <span class="Itxt">(point to the first word on the first line) </span>and you will read line by line <span class="Itxt">(point to the direction for reading each line)</span>.</span></p>
+            <p><span class="Qtxt">When you finish I will ask you some questions about what you have read.</span></p>
+            <p><span class="Qtxt">If you come to a word you do not know, go onto the next word.</span></p>
+            <p><span class="Itxt">Put your finger on the first word. </span><span class="Qtxt"> Ready? Begin.</span></p>             
+  - name: MICS7FS.FL21OEND
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Itxt">Continue if finished with the reading exercise.</span></p>
+  - name: MICS7FS.FL22A
+    conditions:
+      - logic: ST2LANG=11
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Itxt">If the child does not provide a response after a few seconds, repeat the question. If the child seems unable to provide an answer after repeating the question, mark 'No response' and say: </span><span class="Qtxt">Thank you. That is ok. We will move on.</span></p>
+            <p><span class="Itxt">Make sure the child can still see the passage and ask:</span></p>
+            <p><span class="Qnum">[A] </span><span class="Qtxt"><span class="QtxtC">How old is Mary</span>?</span></p>
+      - logic: ST2LANG=12
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Itxt">If the child does not provide a response after a few seconds, repeat the question. If the child seems unable to provide an answer after repeating the question, mark 'No response' and say: </span><span class="Qtxt">Thank you. That is ok. We will move on.</span></p>
+            <p><span class="Itxt">Make sure the child can still see the passage and ask:</span></p>
+            <p><span class="Qnum">[A] </span><span class="Qtxt"><span class="QtxtC">How old is Marie</span>?</span></p>
+      - logic: ST2LANG=13
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Itxt">If the child does not provide a response after a few seconds, repeat the question. If the child seems unable to provide an answer after repeating the question, mark 'No response' and say: </span><span class="Qtxt">Thank you. That is ok. We will move on.</span></p>
+            <p><span class="Itxt">Make sure the child can still see the passage and ask:</span></p>
+            <p><span class="Qnum">[A] </span><span class="Qtxt"><span class="QtxtC">How old is María</span>?</span></p>
+  - name: MICS7FS.FL22B
+    conditions:
+      - logic: ST2LANG=11
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[B] </span><span class="Qtxt"><span class="QtxtC">Who sent Mary to the market</span>?</span></p>
+      - logic: ST2LANG=12
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[B] </span><span class="Qtxt"><span class="QtxtC">Who sent Marie to the market</span>?</span></p>
+      - logic: ST2LANG=13
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[B] </span><span class="Qtxt"><span class="QtxtC">Who sent María to the market</span>?</span></p>
+  - name: MICS7FS.FL22C
+    conditions:
+      - logic: ST2LANG=11
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[C] </span><span class="Qtxt"><span class="QtxtC">What was Mary asked to buy</span>?</span></p>
+      - logic: ST2LANG=12
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[C] </span><span class="Qtxt"><span class="QtxtC">What was Marie asked to buy</span>?</span></p>
+      - logic: ST2LANG=13
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[C] </span><span class="Qtxt"><span class="QtxtC">What was María asked to buy</span>?</span></p>
+  - name: MICS7FS.FL22D
+    conditions:
+      - logic: ST2LANG=11
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[D] </span><span class="Qtxt"><span class="QtxtC">Why did Mary lose the money</span>?</span></p>
+      - logic: ST2LANG=12
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[D] </span><span class="Qtxt"><span class="QtxtC">Why did Marie lose the money</span>?</span></p>
+      - logic: ST2LANG=13
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[D] </span><span class="Qtxt"><span class="QtxtC">Why did María lose the money</span>?</span></p>
+  - name: MICS7FS.FL22E
+    conditions:
+      - logic: ST2LANG=11
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[E] </span><span class="Qtxt"><span class="QtxtC">Why was Mary happy</span>?</span></p>
+      - logic: ST2LANG=12
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[E] </span><span class="Qtxt"><span class="QtxtC">Why was Marie happy</span>?</span></p>
+      - logic: ST2LANG=13
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[E] </span><span class="Qtxt"><span class="QtxtC">Why was María happy</span>?</span></p>
+  - name: MICS7FS.FL23A
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL23A. </span><span class="Itxt">Turn the page in the READING & NUMBERS BOOK so the child is looking at the list of numbers. Make sure the child is looking at this page. Say: </span><span class="Qtxt">Now here are some numbers. I want you to point to each number and tell me what the number is.</span></p>
+            <p><span class="Itxt">Point to the first number and say: </span><span class="Qtxt">Start here.</span></p>
+            <p><span class="Itxt">If the child stops on a number for a while, tell the child what the number is, record '3', 'No Attempt', point to the next number and say: </span><span class="Qtxt">What is this number?</span></p>
+            <p><span class="Itxt">If the child does not attempt 2 consecutive numbers, record '3', 'No Attempt', for remaining numbers and say: </span><span class="Qtxt">Thank you. That is OK. We will go to the next activity.</span></p>
+  - name: MICS7FS.FL23B
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL23B. </span><span class="Qtxt">What is this number?</span></p>
+            <p><span class="Itxt">If the child stops on a number for a while, tell the child what the number is, record '3', 'No Attempt', point to the next number and say: </span><span class="Qtxt">What is this number?</span></p>
+            <p><span class="Itxt">If the child does not attempt 2 consecutive numbers, record '3', 'No Attempt', for remaining numbers and say: </span><span class="Qtxt">Thank you. That is OK. We will go to the next activity.</span></p>
+  - name: MICS7FS.FL23C
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL23C. </span><span class="Qtxt">What is this number?</span></p>
+            <p><span class="Itxt">If the child stops on a number for a while, tell the child what the number is, record '3', 'No Attempt', point to the next number and say: </span><span class="Qtxt">What is this number?</span></p>
+            <p><span class="Itxt">If the child does not attempt 2 consecutive numbers, record '3', 'No Attempt', for remaining numbers and say: </span><span class="Qtxt">Thank you. That is OK. We will go to the next activity.</span></p>
+  - name: MICS7FS.FL23D
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL23D. </span><span class="Qtxt">What is this number?</span></p>
+            <p><span class="Itxt">If the child stops on a number for a while, tell the child what the number is, record '3', 'No Attempt', point to the next number and say: </span><span class="Qtxt">What is this number?</span></p>
+            <p><span class="Itxt">If the child does not attempt 2 consecutive numbers, record '3', 'No Attempt', for remaining numbers and say: </span><span class="Qtxt">Thank you. That is OK. We will go to the next activity.</span></p>
+  - name: MICS7FS.FL23E
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL23E. </span><span class="Qtxt">What is this number?</span></p>
+            <p><span class="Itxt">If the child stops on a number for a while, tell the child what the number is, record '3', 'No Attempt', point to the next number and say: </span><span class="Qtxt">What is this number?</span></p>
+            <p><span class="Itxt">If the child does not attempt 2 consecutive numbers, record '3', 'No Attempt', for remaining numbers and say: </span><span class="Qtxt">Thank you. That is OK. We will go to the next activity.</span></p>
+  - name: MICS7FS.FL23F
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL23F. </span><span class="Qtxt">What is this number?</span></p>
+            <p><span class="Itxt">If the child stops on a number for a while, tell the child what the number is, record '3', 'No Attempt', point to the next number and say: </span><span class="Qtxt">What is this number?</span></p>
+            <p><span class="Itxt">If the child does not attempt 2 consecutive numbers, record '3', 'No Attempt', for remaining numbers and say: </span><span class="Qtxt">Thank you. That is OK. We will go to the next activity.</span></p>
+  - name: MICS7FS.FL24A
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL24A. </span><span class="Itxt">Turn the page so the child is looking at the first pair of numbers. Make sure the child is looking at this page. Say: </span><span class="Qtxt">Look at these numbers. Tell me which one is bigger.</span></p>
+            <p><span class="Itxt">Record the child's answer before turning the page in the book and repeating the question for the next pair of numbers.</span></p>
+            <p><span class="Itxt">If the child does not provide a response after a few seconds, repeat the question. If the child seems unable to provide an answer after repeating the question, record '3', 'No attempt', for the appropriate pair of numbers, turn the booklet page and show the child the next pair of numbers.</span></p>
+            <p><span class="Itxt">If the child does not attempt 2 consecutive pairs, record '3', 'No attempt', for remaining pairs and say: </span><span class="Qtxt">Thank you. That is ok. We will go to the next activity.</span></p>
+  - name: MICS7FS.FL24B
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL24B. </span><span class="Qtxt">Which one is bigger?</span></p>
+            <p><span class="Itxt">Record the child's answer before turning the page in the book and repeating the question for the next pair of numbers.</span></p>
+            <p><span class="Itxt">If the child does not provide a response after a few seconds, repeat the question. If the child seems unable to provide an answer after repeating the question, record '3', 'No attempt', for the appropriate pair of numbers, turn the booklet page and show the child the next pair of numbers.</span></p>
+            <p><span class="Itxt">If the child does not attempt 2 consecutive pairs, record '3', 'No attempt', for remaining pairs and say: </span><span class="Qtxt">Thank you. That is ok. We will go to the next activity.</span></p>
+  - name: MICS7FS.FL24C
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL24C. </span><span class="Qtxt">Which one is bigger?</span></p>
+            <p><span class="Itxt">Record the child's answer before turning the page in the book and repeating the question for the next pair of numbers.</span></p>
+            <p><span class="Itxt">If the child does not provide a response after a few seconds, repeat the question. If the child seems unable to provide an answer after repeating the question, record '3', 'No attempt', for the appropriate pair of numbers, turn the booklet page and show the child the next pair of numbers.</span></p>
+            <p><span class="Itxt">If the child does not attempt 2 consecutive pairs, record '3', 'No attempt', for remaining pairs and say: </span><span class="Qtxt">Thank you. That is ok. We will go to the next activity.</span></p>
+  - name: MICS7FS.FL24D
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL24D. </span><span class="Qtxt">Which one is bigger?</span></p>
+            <p><span class="Itxt">Record the child's answer before turning the page in the book and repeating the question for the next pair of numbers.</span></p>
+            <p><span class="Itxt">If the child does not provide a response after a few seconds, repeat the question. If the child seems unable to provide an answer after repeating the question, record '3', 'No attempt', for the appropriate pair of numbers, turn the booklet page and show the child the next pair of numbers.</span></p>
+            <p><span class="Itxt">If the child does not attempt 2 consecutive pairs, record '3', 'No attempt', for remaining pairs and say: </span><span class="Qtxt">Thank you. That is ok. We will go to the next activity.</span></p>
+  - name: MICS7FS.FL24E
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL24E. </span><span class="Qtxt">Which one is bigger?</span></p>
+            <p><span class="Itxt">Record the child's answer before turning the page in the book and repeating the question for the next pair of numbers.</span></p>
+            <p><span class="Itxt">If the child does not provide a response after a few seconds, repeat the question. If the child seems unable to provide an answer after repeating the question, record '3', 'No attempt', for the appropriate pair of numbers, turn the booklet page and show the child the next pair of numbers.</span></p>
+            <p><span class="Itxt">If the child does not attempt 2 consecutive pairs, record '3', 'No attempt', for remaining pairs and say: </span><span class="Qtxt">Thank you. That is ok. We will go to the next activity.</span></p>
+  - name: MICS7FS.FL25A
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL25A. </span><span class="Itxt">Give the child a pencil and paper. Turn the page so the child is looking at the first addition. Make sure the child is looking at this page. Say: </span><span class="Qtxt">Look at this sum. How much is <span class="QtxtC">(number plus number)</span>? Tell me the answer. You can use the pencil and paper if it helps you.</span></p>
+            <p><span class="Itxt">Record the child's answer before turning the page in the book and repeating the question for the next sum.</span></p>
+            <p><span class="Itxt">If the child does not provide a response after a few seconds, repeat the question. If the child seems unable to provide an answer after repeating the question, record '3', 'No attempt, for the appropriate sum, turn the booklet page and show the child the next addition.</span></p>
+            <p><span class="Itxt">If the child does not attempt 2 consecutive sums, record '3', 'No attempt', for remaining sums and say: </span><span class="Qtxt">Thank you. That is ok. We will go to the next activity.</span></p>
+  - name: MICS7FS.FL25B
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL25A. </span><span class="Itxt">Give the child a pencil and paper. Turn the page so the child is looking at the first addition. Make sure the child is looking at this page. Say: </span><span class="Qtxt">Look at this sum. How much is <span class="QtxtC">(number plus number)</span>? Tell me the answer. You can use the pencil and paper if it helps you.</span></p>
+            <p><span class="Itxt">Record the child's answer before turning the page in the book and repeating the question for the next sum.</span></p>
+            <p><span class="Itxt">If the child does not provide a response after a few seconds, repeat the question. If the child seems unable to provide an answer after repeating the question, record '3', 'No attempt, for the appropriate sum, turn the booklet page and show the child the next addition.</span></p>
+            <p><span class="Itxt">If the child does not attempt 2 consecutive sums, record '3', 'No attempt', for remaining sums and say: </span><span class="Qtxt">Thank you. That is ok. We will go to the next activity.</span></p>
+  - name: MICS7FS.FL25C
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL25C. </span><span class="Qtxt">How much is <span class="QtxtC">(number plus number)</span>? Tell me the answer. You can use the pencil and paper if it helps you.</span></p>
+            <p><span class="Itxt">Record the child's answer before turning the page in the book and repeating the question for the next sum.</span></p>
+            <p><span class="Itxt">If the child does not provide a response after a few seconds, repeat the question. If the child seems unable to provide an answer after repeating the question, record '3', 'No attempt, for the appropriate sum, turn the booklet page and show the child the next addition.</span></p>
+            <p><span class="Itxt">If the child does not attempt 2 consecutive sums, record '3', 'No attempt', for remaining sums and say: </span><span class="Qtxt">Thank you. That is ok. We will go to the next activity.</span></p>
+  - name: MICS7FS.FL25D
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL25D. </span><span class="Qtxt">How much is <span class="QtxtC">(number plus number)</span>? Tell me the answer. You can use the pencil and paper if it helps you.</span></p>
+            <p><span class="Itxt">Record the child's answer before turning the page in the book and repeating the question for the next sum.</span></p>
+            <p><span class="Itxt">If the child does not provide a response after a few seconds, repeat the question. If the child seems unable to provide an answer after repeating the question, record '3', 'No attempt, for the appropriate sum, turn the booklet page and show the child the next addition.</span></p>
+            <p><span class="Itxt">If the child does not attempt 2 consecutive sums, record '3', 'No attempt', for remaining sums and say: </span><span class="Qtxt">Thank you. That is ok. We will go to the next activity.</span></p>
+  - name: MICS7FS.FL25E
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL25E. </span><span class="Qtxt">How much is <span class="QtxtC">(number plus number)</span>? Tell me the answer. You can use the pencil and paper if it helps you.</span></p>
+            <p><span class="Itxt">Record the child's answer before turning the page in the book and repeating the question for the next sum.</span></p>
+            <p><span class="Itxt">If the child does not provide a response after a few seconds, repeat the question. If the child seems unable to provide an answer after repeating the question, record '3', 'No attempt, for the appropriate sum, turn the booklet page and show the child the next addition.</span></p>
+            <p><span class="Itxt">If the child does not attempt 2 consecutive sums, record '3', 'No attempt', for remaining sums and say: </span><span class="Qtxt">Thank you. That is ok. We will go to the next activity.</span></p>
+  - name: MICS7FS.FL26
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL26. </span><span class="Itxt">Turn to the first practice sheet for pattern recognition and Say: </span><span class="Qtxt">Here are some numbers. 1, 2, __, and 4.</span></p>
+            <p><span class="Itxt">Point to each number and blank space and say: </span><span class="Qtxt">What number goes here?</span></p>
+  - name: MICS7FS.FL26A
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL26A. </span><span class="Qtxt">That's correct, 3. Let's do another one.</span></p>
+  - name: MICS7FS.FL26B
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL26B. </span><span class="Itxt">Do not explain how to get the correct answer. Just say: </span><span class="Qtxt">The number 3 goes here. Say the numbers with me. <span class="Itxt">(Point to each number) </span>1, 2, 3, 4. 3 goes here. Let's do another one.</span></p>
+  - name: MICS7FS.FL26C
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL26C. </span><span class="Qtxt">Here are some more numbers. 5, 10, 15 and __.</span></p>
+            <p><span class="Itxt">Point to each number and blank space and say: </span><span class="Qtxt">What number goes here?</span></p>
+  - name: MICS7FS.FL26D
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL26D. </span><span class="Qtxt">That's correct, 20.</span></p>
+  - name: MICS7FS.FL26E
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL26E. </span><span class="Itxt">Do not explain how to get the correct answer. Just say: </span><span class="Qtxt">The number 20 goes here. Say the numbers with me. <span class="Itxt">(Point to each number) </span>5, 10, 15, 20. 20 goes here.</span></p>
+  - name: MICS7FS.FL27A
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL27A. </span><span class="Qtxt">Now I want you to try this on your own. Here are some more numbers. Tell me what number goes here <span class="Itxt">(pointing to the missing number)</span>.</span></p>
+            <p><span class="Itxt">Record the child's answer before turning the page in the book and repeating the question.</span></p>
+            <p><span class="Itxt">If the child does not provide a response after a few seconds, repeat the question. If the child seems unable to provide an answer after repeating the question, record '3', 'No attempt', for the appropriate question, turn the page and show the child next question.</span></p>
+            <p><span class="Itxt">If the child does not attempt 2 consecutive patterns, record '3', 'No attempt', for remaining patterns and say: </span><span class="Qtxt">Thank you. That is OK.</span></p>
+  - name: MICS7FS.FL27B
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL27B. </span><span class="Qtxt">What number goes here <span class="Itxt">(pointing to the missing number)</span>?</span></p>
+            <p><span class="Itxt">Record the child's answer before turning the page in the book and repeating the question.</span></p>
+            <p><span class="Itxt">If the child does not provide a response after a few seconds, repeat the question. If the child seems unable to provide an answer after repeating the question, record '3', 'No attempt', for the appropriate question, turn the page and show the child next question.</span></p>
+            <p><span class="Itxt">If the child does not attempt 2 consecutive patterns, record '3', 'No attempt', for remaining patterns and say: </span><span class="Qtxt">Thank you. That is OK.</span></p>
+  - name: MICS7FS.FL27C
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL27C. </span><span class="Qtxt">What number goes here <span class="Itxt">(pointing to the missing number)</span>?</span></p>
+            <p><span class="Itxt">Record the child's answer before turning the page in the book and repeating the question.</span></p>
+            <p><span class="Itxt">If the child does not provide a response after a few seconds, repeat the question. If the child seems unable to provide an answer after repeating the question, record '3', 'No attempt', for the appropriate question, turn the page and show the child next question.</span></p>
+            <p><span class="Itxt">If the child does not attempt 2 consecutive patterns, record '3', 'No attempt', for remaining patterns and say: </span><span class="Qtxt">Thank you. That is OK.</span></p>
+  - name: MICS7FS.FL27D
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL27D. </span><span class="Qtxt">What number goes here <span class="Itxt">(pointing to the missing number)</span>?</span></p>
+            <p><span class="Itxt">Record the child's answer before turning the page in the book and repeating the question.</span></p>
+            <p><span class="Itxt">If the child does not provide a response after a few seconds, repeat the question. If the child seems unable to provide an answer after repeating the question, record '3', 'No attempt', for the appropriate question, turn the page and show the child next question.</span></p>
+            <p><span class="Itxt">If the child does not attempt 2 consecutive patterns, record '3', 'No attempt', for remaining patterns and say: </span><span class="Qtxt">Thank you. That is OK.</span></p>
+  - name: MICS7FS.FL27E
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL27E. </span><span class="Qtxt">What number goes here <span class="Itxt">(pointing to the missing number)</span>?</span></p>
+            <p><span class="Itxt">Record the child's answer before turning the page in the book and repeating the question.</span></p>
+            <p><span class="Itxt">If the child does not provide a response after a few seconds, repeat the question. If the child seems unable to provide an answer after repeating the question, record '3', 'No attempt', for the appropriate question, turn the page and show the child next question.</span></p>
+            <p><span class="Itxt">If the child does not attempt 2 consecutive patterns, record '3', 'No attempt', for remaining patterns and say: </span><span class="Qtxt">Thank you. That is OK.</span></p>
+  - name: MICS7FS.FL28
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL27A. </span><span class="Qtxt">That was my last question. I really enjoyed talking to you. It was very nice of you to help us out. Thank you very much.</span></p>
+            <p><span class="Itxt">﻿If you are asked by the child or the mother/caregiver how well the child has done, praise the child for effort but do not comment on performance. You may say: </span><span class="Qtxt">I am not trained to tell you how (you have/your child has) performed but (your/his/her) participation will help the authorities understand how much children are learning in <span class="QtxtC">country</span>.</span></p>
+            <p><span class="Inum">FL28. </span><span class="Itxt">Result of interview with child.</span></p>
+            <p><span class="Itxt">Discuss any result not completed with Supervisor.</span></p>
+  - name: MICS7FS.FS12
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">FS12. </span><span class="Itxt">Language of the Questionnaire.</span></p>
+  - name: MICS7FS.FS13
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">FS13. </span><span class="Itxt">Language of the Interview.</span></p>
+  - name: MICS7FS.FS14
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">FS14. </span><span class="Itxt">Native language of the Respondent.</span></p>
+  - name: MICS7FS.FS15
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FS15. </span><span class="Itxt">Was a translator used for any parts of this questionnaire?</span></p>
+  - name: MICS7FS.FS15C
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">FS15C. </span><span class="Itxt">Has this respondent already been interviewed with any individual questionnaires?</span></p>
+  - name: MICS7FS.FS15EF
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FS15E. </span><span class="Qtxt">Thank you for your participation.</span></p>
+            <p><span class="Qtxt">The <span class="QtxtC">National Statistical Office</span> will be conducting a phone survey about the situation of children, families, and households in the future. We may call a few times over a period of a few months, for about 15 minutes at a time.</span></p>
+            <p><span class="Qtxt">Participation is voluntary. If you agree to participate now, you can still withdraw later. It will not cost you anything to participate. Your phone number and all the information you share during these phone interviews will not be shared with anyone outside our team.</span></p>
+            <p><span class="Qtxt">Would you like to participate?</span></p>
+      - logic: HC7A<>1 and HC12<>1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FS15F. </span><span class="Qtxt">Thank you for your participation.</span></p>
+            <p><span class="Qtxt">The <span class="QtxtC">National Statistical Office</span> will be conducting a follow-up survey about the situation of children, families, and households in the future. We may contact you a few times over a period of a few months, for about 15 minutes at a time.</span></p>
+            <p><span class="Qtxt">Participation is voluntary. If you agree to participate now, you can still withdraw later. It will not cost you anything to participate. All the information you share during these interviews will not be shared with anyone outside our team.</span></p>
+            <p><span class="Qtxt">Would you like to participate?</span></p>
+  - name: MICS7FS.FS15GH
+    conditions:
+      - logic: HC7A=2 and HC12=2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FS15G. </span><span class="Qtxt">You have told me that there are no phones in your household. Just to confirm, do you have a personal telephone number or is there a phone number for the household?</span></p>
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FS15H. </span><span class="Qtxt">Do you have a personal phone number or is there a phone number for the household?</span></p>
+  - name: MICS7FS.FS15I
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FS15I. </span><span class="Qtxt">You may share your household’s number, but please, do not share any personal phone numbers that belong to other members of your household or to people outside your household. Please, tell me which phone number to call.</span></p>
+  - name: MICS7FS.FS15J
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">FS15J. </span><span class="Itxt">Ask for and record phone number.</span></p>
+  - name: MICS7FS.FS15K
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FS15K. </span><span class="Qtxt">Just to confirm, the number is <span class="REF">~~FS15J~~ </span>?</span></p>
+            <p><span class="Itxt">If no, return to UF15J and correct entry.</span></p>
+  - name: MICS7FS.FS15L
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FS15L. </span><span class="Qtxt">Remember, you may share your household’s number, but please, do not share any personal phone numbers that belong to other members of your household or to people outside your household. Do you have another personal or shared phone number where you can be reached.</span></p>
+  - name: MICS7FS.FS17
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">FS17. </span><span class="Itxt">Result of interview for child age 5-17 years</span></p>
+            <p><span class="Itxt">Codes refer to the respondent.</span></p>
+            <p><span class="Itxt">Discuss any result not completed with Supervisor.</span></p>
+  - name: MICS7FS.FSFIN
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Itxt">End of Questionnaire for Children age 5-17.</span></p>
+            <p><span class="Itxt">Review Questionnaire OR Add notes OR Save Questionnaire and Finish</span></p>
+  - name: MICS7FS.FA7
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">FA7. </span><span class="Itxt">Measurer number</span></p>
+  - name: MICS7FS.FA8
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">FA8. </span><span class="Itxt">Record the result of weight measurement as read out by the Measurer:
+            <br></span></p><p><span class="Itxt">Read the record back to the Measurer and also ensure that he/she verifies your record.
+            <br></span></p><p><span class="Itxt">Later, when recording paper form in CAPI, also ensure that records are verified by Measurer.
+            </span></p>
+            <p><span class="Itxt">If 'Child not present after revisits' record '99.3'.</span></p>
+            <p><span class="Itxt">If 'Child refused' record '99.4'.</span></p>
+            <p><span class="Itxt">If 'Respondent refused' record '99.5'.</span></p>
+            <p><span class="Itxt">If 'Other' record '99.6' and specify the reason.</span></p>
+  - name: MICS7FS.FA9
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">FA9. </span><span class="Itxt">Was the child undressed to the minimum, that is, no more than very light clothing or undergarments only?</span></p>
+  - name: MICS7FS.FA11
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">FA11. </span><span class="Itxt">Record the result of height measurement as read out by the Measurer:
+            </span></p><p><span class="Itxt">
+            	Read the record back to the Measurer and also ensure that he/she verifies your record.
+            </span></p><p><span class="Itxt">
+            	Later, when&nbsp;</span><span style="color: rgb(0, 0, 255); font-style: italic;">recording paper form in CAPI, also ensure that records are verified by Measurer.
+            .</span></p>
+            <p><span class="Itxt">If 'Child refused' record '999.4'.</span></p>
+            <p><span class="Itxt">If 'Respondent refused' record '999.5'.</span></p>
+            <p><span class="Itxt">If 'Other' record '999.6' and specify the reason.</span></p>
+  - name: MICS7FS.FA13
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">FA13. </span><span class="Itxt">Was the recorded measurement interfered with by braided or ornamented hair?</span></p>
+  - name: MICS7FS.FA14D
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">FA14. </span><span class="Itxt">Measurement date: day</span></p>
+  - name: MICS7FS.FA14M
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">FA14. </span><span class="Itxt">Measurement date: month</span></p>
+  - name: MICS7FS.FA14Y
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">FA14. </span><span class="Itxt">Measurement date: year</span></p>
+...

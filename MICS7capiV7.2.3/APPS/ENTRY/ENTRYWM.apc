@@ -1,0 +1,4157 @@
+﻿{ Based on MICS7 Base Questionnaire for Women 7.1.22
+           MICS7 ComTops - Migration - WM 7.1.2
+		   MICS7 ComTops - Health Insurance - WM 7.1.1
+		   MICS7 ComTops - NEET - WM 7.1.3
+		   MICS7 ComTops - RC: Desire For Last Birth - WM 7.1.1
+		   MICS7 ComTops - Malaria: IPTP - WM 7.1.1
+		   MICS7 ComTops - PN&NC: Thermal Care - WM 7.1.1
+		   MICS7 ComTops - PN&NC: Cord Care - WM 7.1.1
+		   MICS7 ComTops - PN&NC: Birthweight - WM 7.1.3
+		   MICS7 ComTops - RC: Period Return - WM 7.1.2
+		   MICS7 ComTops - IYCF - WM 7.1.1
+		   MICS7 ComTops - PN&NC: PNC for Newborns and Mothers - WM 7.1.2
+		   MICS7 ComTops - PN&NC: Signal Care Functions - WM 7.1.1
+		   MICS7 ComTops - RC: Contraception - WM 7.1.2
+		   MICS7 ComTops - RC: Unmet Need - WM 7.1.2
+		   MICS7 ComTops - Menstrual Health and Hygiene - WM 7.1.6
+		   MICS7 ComTops - FGM - WM 7.1.0
+		   MICS7 ComTops - HPV - WM 7.1.0
+		   MICS7 ComTops - Time Use - WM 7.1.7
+		   MICS7 ComTops - Attitudes toward Domestic Violence - WM 7.1.0
+		   MICS7 ComTops - SDG16 Safety - WM 7.1.1
+		   MICS7 ComTops - SDG16 Discrimination - WM 7.2.5
+		   MICS7 ComTops - Adult Functioning - WM 7.1.2
+		   MICS7 ComTops - RC: Sexual Activity - WM 7.1.5
+		   MICS7 ComTops - RC: Decision-Making on Reproductive Health - WM 7.1.5
+		   MICS7 ComTops - Maternal Mortality - WM 7.1.1
+		   MICS7 ComTops - Tobacco Use - WM 7.1.0
+		   MICS7 ComTops - Mental Health - WM 7.2.10 (not yet on website)
+		   MICS7 ComTops - Violence Against Women WM 7.1.5 (full) (not yet on website) }
+{ v 12 May 2025 }
+{ --------------------------------------------------------------------------- }
+
+ 
+PROC GLOBAL
+	{ Definitions of working variables }
+	alpha(26) alphavar;	    { Alpha working variable used in checking alpha vars }
+	alpha(26) alphanew;     { Alpha working variable used in checking alpha vars }
+	alpha(62) alphalst;     { The alphabet }
+
+	array codes(50);
+	array alpha(50) labels(50);
+
+	alpha(900) strnotes;    { for editnote at the end of the interview }
+
+	numeric addmode, 
+	  minage, maxage, minab, minam,
+	  err,
+	  di, diwm, xline, 
+	  udob, ldob,
+	  births2,
+	  age,
+	  a, e, i, j, l, lx, n, t, x, y, z, qmark, totlen, aok, alphsize ;
+
+	numeric hasHH;
+	numeric inEntry, xmodcent, xhintnum;
+	string stactiv;
+
+	array twincode(20); 	{ For checking twins }
+	array ldc(20);			{ Lower bound of date of birth of child }
+	array udc(20);			{ Upper bound of date of birth of child }
+	alpha(60) prevname;     { Previous name in birth history }
+	alpha(255) textstr1;    { Alpha variable to get customize text for questions }
+	numeric reorder, reorder2;
+	numeric adeath, ldb, maxchild, lb, maxd, mind, prev;
+
+	string worklabel, MN20Text, MN19Text, TA8Text, TA12Text, dateminus4weeks, dateminus1year, dateminus1month, yyyymmminus3, yyyymmminus1;
+	numeric chsex;
+	numeric isLb;
+	numeric births;
+	numeric noPartFlag; //flag that allows for partial save
+	numeric taskStatus; //individual task status
+	
+	numeric selection, xx1;
+	numeric MH3to6, MH7to12, MH47filtersum, MH48filtersum, MH47filter, MH48filter;
+	numeric xmin;
+	numeric mstatus, currmarstat;
+	
+	list string month;
+
+	{ User defined functions }
+
+	function showCalc()
+		execsystem("calc");
+	end;
+
+	function ensureNotBlank(string value, numeric min_length = 1)	
+		if length(strip(value)) < min_length then
+			errmsg("You must enter text with %d+ characters for field %s", min_length, getsymbol());
+			reenter;
+		endif;
+	end;
+	
+	function goto()
+		selection = accept(tr("Go to section"),
+						   tr("Women Information Panel"),
+						   tr("Women Background"),
+						   tr("Migration"),
+						   tr("Health Insurance"),
+						   tr("Employment and Training"),
+						   tr("ICT Use"),
+						   tr("Fertility"),
+						   tr("Birth History"),
+						   tr("Desire for Last Birth"),
+						   tr("Antenatal Care"),
+						   tr("Malaria: IPTP"),
+						   tr("Delivery Care"),
+						   tr("PN&NC: Thermal Care"),
+						   tr("PN&NC: Cord Care"),
+						   tr("PN&NC: Birthweight"),
+						   tr("RC: Period Return"),
+						   tr("IYCF: Initial Breastfeeding"),
+						   tr("PN&NC: PNC for Babies and Mothers"),
+						   tr("PN&NC: Signal Care Functions"),
+						   tr("Contraception"),
+						   tr("Unmet Need"),
+						   tr("Menstrual Health and Hygiene"),
+						   tr("Female Genital Mutilation/Cutting"),
+						   tr("HPV"),
+						   tr("Time-Use"),
+						   tr("Attitides Toward Domestic Violence"),
+						   tr("SDG16: Safety"),
+						   tr("SDG16: Discrimination"),
+						   tr("Marriage/Union"),
+						   tr("Adult Functioning"),
+						   tr("RC: Sexual Activity"),
+						   tr("RC: Decision-making on Reproductive Health"),
+						   tr("Maternal Mortality - Initial 1"),
+						   tr("Maternal Mortality - Initial 2"),
+						   tr("Maternal Mortality"),
+						   tr("Tobacco Use"),
+						   tr("Mental Health"),
+						   tr("Mental Health: Suicidal Thoughts and Behaviours"),
+						   tr("Violence Against Woman"),
+						   tr("End of Interview"));
+									  
+		if selection = 1 then
+			move to FORMWM advance;
+		elseif selection = 2 then
+			move to FORMWB advance;
+		elseif selection = 3 then
+			move to FORMMG advance;
+		elseif selection = 4 then
+			move to FORMIN advance;
+		elseif selection = 5 then
+			move to FORMNE advance;
+		elseif selection = 6 then
+			move to FORMIC advance;
+		elseif selection = 7 then
+			move to FORMCM advance;
+		elseif selection = 8 then
+			move to FORMBH advance;
+		elseif selection = 9 then
+			move to FORMDB advance;
+		elseif selection = 10 then
+			move to FORMMN advance;
+		elseif selection = 11 then
+			move to FORMMN2 advance;
+		elseif selection = 12 then
+			move to FORMMN3 advance;
+		elseif selection = 13 then
+			move to FORMMN4 advance;
+		elseif selection = 14 then
+			move to FORMMN5 advance;
+		elseif selection = 15 then
+			move to FORMMN6 advance;
+		elseif selection = 16 then
+			move to FORMMN7 advance;
+		elseif selection = 17 then
+			move to FORMMN8 advance;
+		elseif selection = 18 then
+			move to FORMPN advance;
+		elseif selection = 19 then
+			move to FORMMN2 advance;
+		elseif selection = 20 then
+			move to FORMCP advance;
+		elseif selection = 21 then
+			move to FORMUN advance;
+		elseif selection = 22 then
+			move to FORMUN2 advance;
+		elseif selection = 23 then
+			move to FORMFG advance;
+		elseif selection = 24 then
+			move to FORMHP advance;
+		elseif selection = 25 then
+			move to FORMTU advance;
+		elseif selection = 26 then
+			move to FORMDV advance;
+		elseif selection = 27 then
+			move to FORMVT1 advance;
+		elseif selection = 28 then
+			move to FORMVT2 advance;
+		elseif selection = 29 then
+			move to FORMMA advance;
+		elseif selection = 30 then
+			move to FORMAF advance;
+		elseif selection = 31 then
+			move to FORMSB advance;	
+		elseif selection = 32 then
+			move to FORMDM advance
+		elseif selection = 33 then
+			move to FORMMX advance;		
+		elseif selection = 34 then
+			move to FORMMY advance;	
+		elseif selection = 35 then
+			move to FORMMM advance;			
+		elseif selection = 36 then
+			move to FORMTO advance;
+		elseif selection = 37 then
+			move to FORMMH advance;
+		elseif selection = 38 then
+			move to FORMMH2 advance;
+		elseif selection = 39 then
+			move to FORMVW advance;
+		elseif selection = 40 then
+			move to FORMEND advance;
+		endif;
+	end;
+
+	{ setup basic user bar }
+	function userbase();
+		userbar( clear );
+		userbar( add button, "<",    do("PreviousField") );
+		userbar( add button, ">",    do("NextField") );
+		userbar( add button, ">>|",  do("AdvanceToEnd") );
+		userbar( add button, tr("Note"), do("EditNote") );
+		userbar( add button, tr("Lang"), do("ChangeLanguage") );
+		userbar( add button, tr("Calc"), showCalc );
+		userbar( add button, tr("Section"), goto );
+	end;
+
+	{ valid
+	Checks that a variable has a valid value.
+	A valid value is less than 96 and not a special value e.g notappl/missing
+	Returns: 1 if valid, 0 if not valid                                        }
+	function valid(xvar);
+		valid = (!special(xvar) and xvar < 96)
+	end;
+
+	{ NAtoZero
+	Converts notappl (and 99 - for child labour module) values to zero while not changing other values.
+	Returns: 0 if input variable is notappl, else returns it unchanged         }
+	function NAtoZero(xvar);
+		if xvar = notappl or xvar=99 then
+			xvar = 0
+		endif;
+		NAtoZero = xvar;
+	end;
+
+	function NAtoZero9(xvar);
+		if xvar = notappl or xvar=9 then
+			xvar = 0
+		endif;
+		NAtoZero9 = xvar;
+	end;
+
+	{ noteq
+	Tests for inequality, but treating NA as zero                              }
+	function noteq( xvar, dvar );
+		noteq = (xvar <> NAtoZero(dvar));
+	end;
+
+	{ function to clear codes and labels for household members }
+	function clean_labels();
+		do i = 1 while i <= 50 by 1
+			codes(i) = notappl;
+			labels(i) = "";
+		enddo;
+	end;
+
+	{ endmess
+	If user is in addmode, it displays a menu with the options
+	"Review Questionnaire" and "Next Questionnaire"
+	Returns: 1 if user is in addmode or selects Next Questionnaire, 0 otherwise }
+	function endmess();
+		{ Returns true if response is REVIEW }
+		endmess = (accept(tr("End of Questionnaire"),
+						  tr("Check Questionnaire"),
+						  tr("New Quest./Questionnaire after")) <> 2);
+	end;
+
+	{ Function to check entry of alpha string variables }
+	{ alphachk
+	Function to check entry of alpha string variables.
+    Requirement: preceed with the statment alphavar = $
+    Input variables:
+    alphamask - The characters allowed and the order and position of these
+    alphavar (set before calling the function) - the variable to be checked
+
+    Checks that all the characters in the alphavar variable is found in alphamask
+    and that they are in correct order. Repositions the characters before returning.
+    If ? is found in string, makes sure that no other characters are present
+    Returns: Repositioned string if valid, else 0
+
+    Examples:
+    alphavar    alphamask     returns
+    "ABC"		  "ABCDEX"      "ABC   "
+    "AC"		  "ABCDEX"      "A C   "
+    "BEX"		  "ABCDEX"      " B  EX"
+    "?"		  "ABCDEX"      "??????"
+    "J"		  "ABCDEX"      0
+     "ABQ"		  "ABCDEX"      0
+    "?A"		  "ABCDEX"      0
+    "BA"		  "ABCDEX"      0 (wrong order)                 }
+	function alphachk(alpha(26) alphamask);
+		{  russian_convert();}
+		{ first remove all blanks, and duplicate question marks }
+		alphanew = "";
+		qmark = 0;
+		lx = 1;
+		do l = 1 while l <= length(strip(alphavar))
+			if alphavar[l:1] <> " " and (alphavar[l:1] <> "?" or not qmark) then
+				alphanew[lx:1] = alphavar[l:1];
+				lx = lx + 1;
+				if alphavar[l:1] = "?" then
+					qmark = 1;
+				endif;
+			endif;
+		enddo;
+		{ aok = 0 - string is bad, aok = 1 - string is good }
+		totlen = length(strip(alphamask));
+		aok = 0;           { assume string is bad - for empty string }
+		alphsize = length(strip(alphanew));
+		if alphsize then   { not empty string }
+			{ check for "?" as only character }
+			aok = (alphanew[1:1] = "?" and alphsize = 1);
+			if !aok then     { if not a single "?", check string }
+				aok = 1;       { now assume string is good until we know otherwise }
+				l = 1;         { l is position in string of acceptable values }
+				a = 1;         { a is position in input string }
+				{ loop while the string is still good and there are more letters }
+				while aok and a <= alphsize do
+					aok = pos(alphanew[a:1],alphamask[l:totlen-l+1]);
+					if aok then     { letter is acceptable }
+						l = l + aok;  { increment l to position after letter in string of acceptable values }
+						a = a + 1     { increment a to next letter in input string }
+					endif;
+				enddo;
+			endif;
+		endif;
+		alphachk = (!aok);    { alphachk = 0 - if string is good, = 1 - if string is bad }
+		{ now expand variables }
+		if aok then
+			do l = 1 while l <= length(strip(alphamask))
+				if pos(alphamask[l:1],alphanew) then
+					alphavar[l:1] = alphamask[l:1]
+				elseif pos("?",alphanew) then
+					alphavar[l:1] = "?"
+				else
+					alphavar[l:1] = " "
+				endif;
+			enddo;
+		endif;
+	end;
+
+	{ badspecial
+	Check special answers for questions with units and numbers
+	!!! make sure to correctly adjust the ranges of the
+    questions involved, for the function to work properly                  }
+	function badspecial( units, number )
+		x = 0;
+		if (units  = 9 & number <= 90) |
+		   (units <> 9 & number in 90:98) |
+		   (units  > 1 & number = 0  ) then
+			x = 1;
+		endif;
+		badspecial = x;
+	end;
+
+	{ Birth History functions }
+	{ validyr
+	Checks that a 4 digit variable has a valid value.
+	A valid value is less than 9996 and not a special value e.g notappl/missing
+	Returns: 1 if valid, 0 if not valid                                        }
+	function validyr(xvar);
+		validyr = (!special(xvar) and xvar < 9996)
+	end;
+
+	{ afterint
+	to check that no date is after the date of interview                       }
+	function afterint( vcheckm, vchecky );
+		x = 0;
+		if validyr(vchecky) & vchecky > WM6Y |
+		   vchecky = WM6Y & valid(vcheckm) & vcheckm > WM6M then
+			x = 1
+		endif;
+		afterint = x;
+	end;
+
+	{ ndjlba
+	Revised function to adjust dates based on age                              }
+
+	function ndjlba(lowera,uppera,lowerb,upperb,agetofit)
+		{ calculate new possible lower bound for a = lower bound of b - age - 12 months }
+		x = lowerb - 12 * (agetofit + 1);
+		{ if new lower bound > upper bound then we have an inconsistency }
+		if x > uppera then
+			x = -1
+		else
+			{ if new lower bound is less than upper bound, change new lower bound to be
+			lower bound of b - age - 11 months }
+			if x < uppera then
+				x = x + 1
+			endif;
+			{ if new lower bound is less than old lower bound for a, leave with old value }
+			if lowera > x then
+				x = lowera
+			endif
+		endif;
+		{ return value of lower bound of a }
+		ndjlba = x
+	end;
+
+	function copybirth( birthn1, birthn2 );
+		if birthn1 in 1:maxchild and birthn2 in 1:maxchild then
+			BH1(birthn2)  = BH1(birthn1);
+			BH2 (birthn2) = visualvalue(BH2 (birthn1));
+			BH3 (birthn2) = visualvalue(BH3 (birthn1));
+			BH4D(birthn2) = visualvalue(BH4D(birthn1));
+			BH4M(birthn2) = visualvalue(BH4M(birthn1));
+			BH4Y(birthn2) = visualvalue(BH4Y(birthn1));
+			BH5 (birthn2) = visualvalue(BH5 (birthn1));
+			BH6 (birthn2) = visualvalue(BH6 (birthn1));
+			BH7 (birthn2) = visualvalue(BH7 (birthn1));
+			BH8 (birthn2) = visualvalue(BH8 (birthn1));
+			BH9U(birthn2) = visualvalue(BH9U(birthn1));
+			BH9N(birthn2) = visualvalue(BH9N(birthn1));
+			BH10(birthn2) = visualvalue(BH10 (birthn1));
+		endif;
+	end;
+
+	function insertbirth( birthn );
+		do n = totocc(FORMBX_ROSTER) while n >= birthn by (-1)
+			copybirth(n, n+1);
+		enddo;
+		if n+1 in 1:maxchild then
+			BHB  (n+1) = "";
+			BHD  (n+1) = notappl;
+		endif;
+		reorder = 0;
+	end;
+
+	function deletebirth( birthn );
+		do n = birthn while n <= totocc(FORMBH_ROSTER)
+			copybirth(n+1, n);
+		enddo;
+		if n in 1:maxchild then
+			BH1  (n+1) = "";
+			BH2  (n+1) = notappl;
+			BH3  (n+1) = notappl;
+			BH4D (n+1) = notappl;
+			BH4M (n+1) = notappl;
+			BH4Y (n+1) = notappl;
+			BH5  (n+1) = notappl;
+			BH6  (n+1) = notappl;
+			BH7  (n+1) = notappl;
+			BH8  (n+1) = notappl;
+			BH9U (n+1) = notappl;
+			BH9N (n+1) = notappl;
+			BH10 (n+1) = notappl;
+		endif;
+		reorder = 0;
+	end;
+
+	function movebirth( birthn1, birthn2 );
+		insertbirth( birthn2 );
+		if birthn1 > birthn2 then birthn1 = birthn1+1 endif;
+		copybirth( birthn1, birthn2 );
+		deletebirth( birthn1 );
+	end;
+
+	function showbh();
+		showbh = show( FORMBH_ROSTER, BH0, BH1, BH2, BH3, BH4D, BH4M, BH4Y, BH5, BH6, BH7, BH8, BH9U, BH9N
+				title( "#", tr("Name"), tr("Mult"), tr("Sex"), tr("D"), tr("M"), tr("Y"), tr("Alive"), tr("Age"), tr("With R"), tr("HH"), tr("Death"), tr("Unit")) where BH1 <> "" );
+	end;
+  
+	function onStop();
+		if noPartFlag | xmodcent then
+			xx1 = errmsg(9980) select(tr("Yes"), continue, tr("No"), continue);
+			if xx1 = 1 then
+				advance;
+			else
+				if !xmodcent then
+					stop(-1);
+				endif;
+			endif;
+		else
+			savepartial();
+			stop(-1);
+		endif;
+	end;
+ 
+ 	function setEDlabels(edlevel);
+		valueset educgrades;
+		if edlevel = 1 then         //primary
+		   educgrades.add(tr("GRADE/YEAR") + " 1",1);
+		   educgrades.add(tr("GRADE/YEAR") + " 2",2);
+		   educgrades.add(tr("GRADE/YEAR") + " 3",3);
+		   educgrades.add(tr("GRADE/YEAR") + " 4",4);
+		   educgrades.add(tr("GRADE/YEAR") + " 5",5);
+		   educgrades.add(tr("GRADE/YEAR") + " 6",6);
+		elseif edlevel = 2 then      //lower secondary
+		   educgrades.add(tr("GRADE/YEAR") + " 1",1);
+		   educgrades.add(tr("GRADE/YEAR") + " 2",2);
+		   educgrades.add(tr("GRADE/YEAR") + " 3",3);
+		elseif edlevel = 3 then      //upper secondary
+		   educgrades.add(tr("GRADE/YEAR") + " 1",1);
+		   educgrades.add(tr("GRADE/YEAR") + " 2",2);
+		   educgrades.add(tr("GRADE/YEAR") + " 3",3);
+		elseif edlevel in 4,9 then      //higher
+		   educgrades.add(tr("GRADE/YEAR") + " 1",1);
+		   educgrades.add(tr("GRADE/YEAR") + " 2",2);
+		   educgrades.add(tr("GRADE/YEAR") + " 3",3);
+		   educgrades.add(tr("GRADE/YEAR") + " 4",4);
+		   educgrades.add(tr("GRADE/YEAR") + " 5",5);
+		   educgrades.add(tr("GRADE/YEAR") + " 6",6);
+		   educgrades.add(tr("GRADE/YEAR") + " 7",7);	   
+		   educgrades.add(tr("GRADE/YEAR") + " 8",8);
+		endif;
+		   educgrades.add(tr("NO RESPONSE"),99);	
+		setvalueset(@getsymbol(),educgrades);
+	end
+
+
+PROC FL_ENTRYWM
+preproc
+  
+	setfont(All,"Consolas",30);
+  
+	setlanguage("ENG");  
+	//setlanguage("FRA");  // to set French language
+	//setlanguage("ARB");  // to set Arabic language
+	//setlanguage("SPA");  // to set Spanish language
+	//setlanguage("RUS");  // to set Russian language
+	//setlanguage("CS");  // to set Country-Specific language
+
+	minage = 15;      { minimum age of eligible women }
+	maxage = 49;      { maximum age of eligible women }
+	minab  = 144;     { minimum age at birth in months = 12 years }
+	minam  = 48;      { minimum age at first marriage = 4 years }  
+	maxchild = 20;    { !!! maximum number of children in birth history }
+	addmode = (demode() = ADD);
+
+  alphalst = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzÃÇÅÄÁÆÈÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÝÞßáãäåæíÉìÂ";
+  inEntry = (demode() = add | demode() = modify);   { to run data entry in batch }
+  
+  xhintnum = tonumber(sysparm("HHINT"));
+  xmodcent = tonumber(sysparm("MODCENTRAL"));
+
+  month.add(tr("January"));
+  month.add(tr("February"));
+  month.add(tr("March"));
+  month.add(tr("April"));
+  month.add(tr("May"));
+  month.add(tr("June"));
+  month.add(tr("July"));
+  month.add(tr("August"));
+  month.add(tr("September"));
+  month.add(tr("October"));
+  month.add(tr("November"));
+  month.add(tr("December"));
+  string ii=maketext("%v",dateadd(sysdate("YYYYMMDD"),-28,"d"));
+  dateminus4weeks=maketext("%v %v %v", ii[7:2], month(tonumber(ii[5:2])), ii[1:4]);
+  ii=maketext("%v",dateadd(sysdate("YYYYMMDD"),-1,"y"));
+  dateminus1year=maketext("%v %v %v", ii[7:2], month(tonumber(ii[5:2])), ii[1:4]);
+  ii=maketext("%v",dateadd(sysdate("YYYYMMDD"),-1,"m"));
+  dateminus1month=maketext("%v %v %v", ii[7:2], month(tonumber(ii[5:2])), ii[1:4]);
+  ii=maketext("%v",dateadd(sysdate("YYYYMMDD"),-3,"y"));
+  yyyymmminus3=maketext("%v %v", month(tonumber(ii[5:2])), ii[1:4]); 
+  ii=maketext("%v",dateadd(sysdate("YYYYMMDD"),-1,"y"));
+  yyyymmminus1=maketext("%v %v", month(tonumber(ii[5:2])), ii[1:4]);  
+  
+	{ settings for CAPI }
+	if !xmodcent then      { central office desn't have to exit after reviewing one HH }
+		set behavior() exit on;
+	else
+		set behavior() exit off;
+		addmode = 0;
+		noPartFlag = 1;
+	endif;
+
+    setproperty(MICS7WM, "ShowExtendedControlTitle", "No");  //To not show the question title
+  
+	{ set up minimal user bar }
+	userbase();
+	userbar( show );
+	set behavior(MM11) canenter(notappl) on (noconfirm); //HH for MM module
+	
+	setfile(STAFF_DICT,publicfolder+"\staff.csdb");
+
+
+postproc
+	if !xmodcent then      { central office desn't have to exit after reviewing one HH }
+		stop(-1);
+    endif;
+
+PROC WM
+preproc
+	numeric xxx = 0;//this instruction is needed here, otherwise the code below it doesn't work...
+	if ispartial() then
+		advance to getsymbol(savepartial);
+	endif;
+
+postproc
+	endlevel;
+
+PROC FORMWM
+preproc
+if visualvalue (WMWMTSTMPS) = notappl then
+   WMWMTSTMPS = timestamp (); 
+   endif; 
+
+postproc
+if visualvalue (WMWMTSTMPE) = notappl then
+   WMWMTSTMPE = timestamp (); 
+   endif; 
+PROC WM1
+
+
+PROC WM2
+preproc
+	{ Load the case from the household file }
+	open( MICS7HH );                                                                                                                              
+		HH1 = WM1;
+		HH2 = visualvalue(WM2);
+
+		if xhintnum > 0 then
+			HINT = xhintnum;
+		else
+			HINT = visualvalue(WMINT);
+		endif;
+
+		HLN = 0;
+		hasHH = loadcase( MICS7HH, HH1, HH2, HINT, HLN );
+
+	if !hasHH then
+		errmsg(0009, HH1, HH2, HINT, HLN);
+		stop(-1);
+	endif;
+
+    if hh33x(visualvalue(WM3)) = 2 then
+       taskstatus=7;
+    else
+       taskstatus=0;   
+    endif;
+	
+	close( MICS7HH);
+
+	if visualvalue(WM5)=notappl then
+       WM3A  = HL2(visualvalue(WM3));
+       WM4   = HH4;
+       WMHINT = xhintnum;
+       if sysparm("INTERVIEWERID") <> "" then
+          WM5 = tonumber(sysparm("INTERVIEWERID"));
+       endif;
+	endif;
+	if tonumber(sysparm("DELEGATEDTO")) > 0 then
+       WM5 = tonumber(sysparm("DELEGATEDTO"));
+	endif;
+
+
+PROC WM6D
+preproc
+  if visualvalue(WM6D)=notappl then
+		WM6D = sysdate( "DD" );
+		WM6M = sysdate( "MM" );
+		WM6Y = sysdate( "YYYY" );
+  endif;
+PROC WM6Y
+diwm = cmcode(WM6M,WM6Y);
+
+PROC WM7H
+preproc
+  if visualvalue(WM7H)=notappl then
+	 x = systime();
+	 if WM7H=notappl then WM7H = int(x / 10000);endif;
+	 if WM7M=notappl then WM7M= int(x / 100) % 100;endif;   
+   endif;
+
+PROC WM8
+preproc
+
+ 	//household respondent (gardian) refused
+  if taskStatus = 7 or tonumber(sysparm("DELEGATEDTO")) > 0 then 
+	 $ = 2;
+	 noinput;
+  endif;
+
+if HH47 = WM3 then
+ $ = 1;
+  advance to WM9;
+endif;
+PROC WM9
+preproc
+  STAFF_CODE  = WMINT;
+  loadcase( STAFF_DICT, STAFF_CODE ) ;
+  
+	//! household respondent refused
+  if taskStatus = 7 or tonumber(sysparm("DELEGATEDTO")) > 0 then 
+	 $ = 2;
+	 noinput;
+  endif;
+
+postproc
+	if $ <> 1 then
+		skip to WM17
+	endif;  
+
+PROC FORMWB
+preproc
+if visualvalue (WMWBTSTMPS) = notappl then
+   WMWBTSTMPS = timestamp (); 
+   endif; 
+   
+postproc
+if visualvalue (WMWBTSTMPE) = notappl then
+   WMWBTSTMPE = timestamp (); 
+   endif; 
+   
+PROC WB3M
+preproc
+	if WM3 = HH47 then
+		$ = HL5M(WM3); 
+		WB3Y = HL5Y(WM3); 
+		WB4 = HL6(WM3); 
+		set attributes (
+			WB3M,
+			WB3Y,
+			WB4
+			) protect;
+	endif;
+
+postproc
+	if $ <> HL5M(WM3) then
+		errmsg(1004,$,HL5M(WM3));
+	endif;
+
+PROC WB3Y
+if $ <> HL5Y(WM3) then
+	errmsg(1005,$,HL5Y(WM3));
+endif;
+
+udob = diwm - minage*12;
+ldob = diwm - maxage*12 - 11;
+if $ < 9997 then
+	ldob = setlb(WB3M,$,0);
+	udob = setub(WB3M,$,9999) + (WB3M=WM6M);	//udob = setub(WB3M,$,9999);
+	if udob < diwm - maxage * 12 - 11 or ldob > diwm - minage * 12 then
+		errmsg(1001);
+		reenter
+	endif;
+endif;
+
+PROC WB4
+if $ <> HL6(WM3) then
+	errmsg(1002,$,HL6(WM3));   
+endif;
+
+{ Set up CMC for date of interview }
+di = cmcode(WM6M, WM6Y);
+{ Lower bound of CMC date of birth }
+t = adjlba(ldob,udob,diwm,diwm,WB4);
+if t < 0 then
+	errmsg(1003) select(tr("Age"), $, tr("Year of birth"), WB3Y, tr("Month of birth"), WB3M, tr("Continue"), continue);
+	{reenter} 
+else
+	ldob = t;
+endif;
+{ Upper bound of CMC date of birth }
+t = adjuba(ldob,udob,diwm,diwm,WB4);
+if t < 0 then
+	errmsg(1003) select(tr("Age"), $, tr("Year of birth"), WB3Y, tr("Month of birth"), WB3M, tr("Continue"), continue);
+	{reenter} 
+else
+	udob = t
+endif;
+
+PROC WB5
+
+if $ = 2 then
+	skip to WB6;
+endif;
+
+if $ in 8,9 then
+	skip to WB7;
+endif;
+
+PROC WB5A
+skip to WB7;
+
+PROC WB6
+if $ = 976 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+PROC WB7
+if $ = 2 then
+	skip to WB7B1;
+endif;
+
+if $ > 2 then
+	endgroup;
+endif;
+
+PROC WB7A
+
+if $ <> 1 then
+	endgroup;
+endif;
+PROC WB7B1
+if $ = 976 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+if $ = 999 then
+	endgroup;
+endif;
+PROC WB7B2
+if $ = 976 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+if $ in 0,999 then
+	endgroup;
+endif;
+if $ = WB7B1 then
+      errmsg("Country selected cannot be the same as previous country selected.");
+	  reenter;
+endif;
+PROC WB7B3
+if $ = 976 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+if $ in 0,999 then
+	endgroup;
+endif;
+if $ = WB7B1 or $ = WB7B2 then
+      errmsg("Country selected cannot be the same as previous country selected.");
+	  reenter;
+endif;
+PROC FORMMG
+preproc
+if visualvalue (WMMGTSTMPS) = notappl then
+   WMMGTSTMPS = timestamp (); 
+   endif; 
+   
+postproc
+if visualvalue (WMMGTSTMPE) = notappl then
+   WMMGTSTMPE = timestamp (); 
+   endif; 
+   
+PROC WB8
+preproc
+if addmode then 
+	savepartial(); 
+endif;
+
+postproc
+if $ > WB4 and $ < 95 then
+	errmsg(1020);
+	reenter;
+elseif $ = WB4 then
+	errmsg(tr("Is the woman living there since birth? If so, there is code 95 for it."));
+	reenter;
+endif;
+
+if $ = 95 then
+  endgroup;
+endif;
+PROC WB9
+if $ = 5 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+PROC WB10
+if $ = 96 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+PROC FORMIN
+preproc
+if visualvalue (WMINTSTMPS) = notappl then
+   WMINTSTMPS = timestamp (); 
+   endif; 
+   
+postproc
+if visualvalue (WMINTSTMPE) = notappl then
+   WMINTSTMPE = timestamp (); 
+   endif; 
+   
+PROC IN1
+preproc
+if addmode then 
+	savepartial(); 
+endif;
+
+postproc
+if $ <> 1 then
+  endgroup;
+endif;
+PROC IN2
+alphavar = $;
+if alphachk("ABCDX?") then
+	errmsg(9998);
+	reenter
+else
+	$ = alphavar;
+endif;
+{ Check "No response" is only response }
+if pos("?",$) & alphsize > 1 then
+	errmsg(9995);
+	reenter
+endif;
+{ Open notes if answer is "Other" }
+if pos("X",$)  and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+PROC FORMNE
+preproc
+if visualvalue (WMNETSTMPS) = notappl then
+   WMNETSTMPS = timestamp (); 
+   endif; 
+   
+postproc
+if visualvalue (WMNETSTMPE) = notappl then
+   WMNETSTMPE = timestamp (); 
+   endif; 
+   
+PROC NE3
+preproc; 
+if addmode then 
+	savepartial(); 
+endif;
+
+{NE1 Filter}
+if WB4 in 25:49 then 
+	endgroup;
+endif;
+ {NE2 Filter}
+if ED9(WM3) <> 1 then 
+	skip to NE4;
+endif;
+ 
+postproc;
+if $ in 1,3 then
+	endgroup;
+endif; 
+	
+PROC NE4
+if $ in 1,9 then
+	endgroup;
+endif; 
+	
+PROC NE6
+if $ in 1,9 then
+	endgroup;
+endif; 
+PROC NE8
+if $ in 1,9 then
+	endgroup;
+endif; 
+PROC NE9
+if $ = 1 then
+	skip to NE18A;
+endif; 
+PROC NE10
+if $ = 1 then
+	skip to NE18A;
+endif; 
+PROC NE11
+if $ <> 1 then
+	skip to NE20;
+endif; 
+
+PROC NE12A
+if $ = 1 then
+	skip to NE18A;
+endif; 
+PROC NE12B
+if $ = 1 then
+	skip to NE18A;
+endif; 
+PROC NE12C
+if $ = 1 then
+	skip to NE18A;
+endif; 
+PROC NE12D
+if $ = 1 then
+	skip to NE18A;
+endif; 
+
+PROC NE13
+if $ <> 2 then
+	skip to NE20;
+endif; 
+PROC NE14
+if $ <> 1 then
+	skip to NE16;
+endif; 
+PROC NE15
+if $ = 1 then
+	skip to NE18A;
+else 
+	skip to NE20;
+endif; 
+PROC NE16
+if $ = 1 then
+	skip to NE18A;
+endif; 
+PROC NE17
+if $ <> 1 then
+	skip to NE20;
+endif; 
+
+PROC NE18X
+if NE18A <> 1 and NE18B <> 1 and NE18X <> 1 then
+	errmsg("At least one ‘yes’ must be recorded in question [A], [B] or [X]");
+	reenter;
+ endif; 
+PROC NE20
+preproc;
+{NE19 filter}
+if NE18X=1 then
+	endgroup;
+else if NE18X in 2,9 then
+	skip to NE21;
+	endif
+endif;
+
+postproc;
+if $ <> 1 then
+	endgroup;
+endif; 
+PROC NE21
+if $ in 1:2 then
+	endgroup;
+elseif $ in 3:4 then
+	skip to NE23;
+endif; 
+PROC NE22
+if $ in 1:2  then
+	endgroup;
+endif; 
+
+PROC FORMIC
+preproc
+if visualvalue (WMICTSTMPS) = notappl then
+   WMICTSTMPS = timestamp (); 
+   endif; 
+   
+postproc
+if visualvalue (WMICTSTMPE) = notappl then
+   WMICTSTMPE = timestamp (); 
+   endif; 
+   
+PROC IC1
+preproc
+if addmode then 
+	savepartial(); 
+endif; 
+
+postproc
+if $ <> 1 then
+	skip to IC3
+endif;  
+
+PROC IC4
+if $ <> 1 then
+	if IC3 in 0,9 then
+		skip to IC10;	
+	 else
+		skip to IC7B;
+	endif;
+endif; 
+	
+PROC IC5
+if $ in 0,9 then
+	if IC3 in 0,9 then
+		skip to IC10;	
+	 endif;
+endif;
+PROC IC10
+preproc
+{filter IC8 and IC9}
+if IC7F=1 or IC7K=1 then
+	skip to IC11;	
+ endif;
+ 
+postproc
+if $ <> 1 then
+	endgroup;
+endif; 
+PROC FORMCM
+preproc
+if visualvalue (WMCMTSTMPS) = notappl then
+   WMCMTSTMPS = timestamp (); 
+   endif; 
+   
+postproc
+if visualvalue (WMCMTSTMPE) = notappl then
+   WMCMTSTMPE = timestamp (); 
+   endif; 
+   
+PROC CM1
+preproc
+	if addmode then
+		savepartial();
+	endif;
+
+postproc
+	if $ <> 1 then
+		skip to CM8
+	endif;
+
+PROC CM2
+if $ <> 1 then
+	skip to CM5
+endif;  
+
+PROC CM4
+{ Check for at least one child living at home - otherwise CM2 must be 2 }
+if CM2 = 1 then
+	if CM3 = 0 and $ = 0 then
+		errmsg(1110, "CM2");
+		reenter
+	endif;
+endif;
+
+PROC CM5
+if $ <> 1 then
+	skip to CM8
+endif;  
+
+PROC CM7
+{ Check for at least one child living away - otherwise CM5 must be 2 }
+if CM5 = 1 then
+	if CM6 = 0 and $ = 0 then
+		errmsg(1110, "CM5");
+		reenter
+	endif;
+endif;
+
+PROC CM8
+if $ <> 1 and CM5 <> 1 and CM2 <> 1 and CM1 = 1 then
+	errmsg(1111);
+	reenter;
+endif;	
+ 
+if $ <> 1 then
+	skip to CM11
+endif;
+
+PROC CM10
+{ Check for at least one child who died - otherwise CM8 must be 2 }
+if CM8 = 1 then
+	if CM9 = 0 and $ = 0 then
+		errmsg(1110, "CM8");
+		reenter
+	endif;
+endif;
+
+PROC CM11
+preproc
+	{ Count up total children ever born }
+	CM11 = NAtoZero(CM3)+NAtoZero(CM4)+
+		   NAtoZero(CM6)+NAtoZero(CM7)+
+		   NAtoZero(CM9)+NAtoZero(CM10);
+
+postproc
+	if $ = 0 then
+		i = 1;
+		while i <= HH48 do
+			if HL14(i) = WM3 then
+				errmsg(1133,i);
+				reenter CM1
+			endif;
+			i = i + 1; 
+		enddo;
+	endif;
+	
+PROC CM12
+if $ <> 1 then
+	if CM11 > 0 then
+		errmsg(1112) select( tr("Children at home"), CM2, tr("Children elsewhere"), CM5, tr("Boys and girls who died"), CM8 );
+	else
+		errmsg(1112) select( tr("Whether ever given birth"), CM1, tr("Boys and girls who died"), CM8 );
+	endif;
+endif;
+
+PROC FORMBX
+preproc
+if visualvalue (WMBHTSTMPS) = notappl then
+   WMBHTSTMPS = timestamp (); 
+   endif; 
+   
+PROC INTROBX
+preproc 
+	if CM11 = 0 then
+		endgroup;
+	endif;
+ 
+if addmode then 
+	savepartial(); 
+endif;
+PROC BHA
+onfocus
+	{ Initialize line numbers of each child ... }
+	if inEntry then
+		do i = 1 while i <= maxchild
+			if i <= CM11 then
+				BHA(i) = i;
+			else
+				BHA(i) = notappl;        { blank out unused lines }
+			endif;
+		enddo;
+	endif;
+
+	{ Check for end of birth history }
+	if curocc() > CM11 then    { to run in-Batch }
+		endgroup
+	endif;
+
+postproc
+	if reorder in 101:199 then { Insertion }
+		insertbirth( reorder-100 );
+	elseif reorder in 201:299 then { Deletion }
+		deletebirth( reorder-200 );
+	elseif reorder in 301:399 then { Move }
+		movebirth( reorder-300, reorder2 );
+	endif;
+	reorder = 0;
+
+PROC BHB
+{ Check that response is alphabetic and starts in the first column }
+if length(strip($)) = 0 then
+	errmsg(9991);
+	reenter
+endif;
+  
+if BHA > 1 then 
+	prevname = BHB (BHA-1);
+endif;  
+
+PROC BHC
+{ Set up twin code variable coded as follows:
+    0 - Single birth
+    1 - 1st of multiple
+    2 - 2nd of multiple
+    3 - 3rd of multiple
+    etc.
+    This variable easier to use in controlling twins.
+}
+if $ = 1 then
+	twincode(BHA) = 0
+elseif BHA = 1 then
+	twincode(1)    = 1
+else
+	twincode(BHA) = twincode(BHA-1) + 1
+endif;
+
+PROC BHD
+onfocus
+	if BHA = 1 then
+	{  skip to next BH0 }
+	else
+		textstr1 = BHB(curocc()-1);
+	endif;
+
+postproc
+	if $ = 1 then
+		if curocc() < CM11 then
+			errmsg(2100);
+			x = accept( tr("Correct total births or insert new birth before") + strip(BHB),
+						tr("Correct total births"),
+						tr("Insert new birth before") + strip(BHB),
+						tr("Change this response"));
+		else
+			errmsg(2101);
+			x = accept(tr("Correct total births"),
+					   tr("Yes, correct total births"),
+					   tr("No, change this response"));
+			if x = 2 then x = 3 endif;
+		endif;
+		$ = notappl;
+		if x = 1 then
+			reenter CM1
+		elseif x = 2 then
+			insertbirth( curocc() );
+			$( curocc() + 1 ) = notappl;
+			move to BHA;
+		else
+			$ = 2;
+			reenter
+		endif;
+	endif;
+
+PROC BHAUX
+preproc
+	if addmode then
+		savepartial();
+	endif;
+
+postproc
+	if $ = 1 then
+		errmsg(2101);
+		x = accept(tr("Correct total births"),
+				   tr("Yes, correct total births"),
+				   tr("No, change this response"));
+		$ = notappl;
+		if x = 1 then
+			reenter CM1
+		else
+			$ = 2;
+			reenter
+		endif;
+	endif;
+  
+PROC FORMBH
+postproc
+if visualvalue (WMBHTSTMPE) = notappl then
+   WMBHTSTMPE = timestamp (); 
+   endif; 
+   
+n = totocc(FORMBH_ROSTER);
+
+{ Check counts of children living at home }
+x = count( FORMBH_ROSTER where BH3 = 1 & BH5 = 1 & BH7 = 1 );
+if noteq( x, CM3 ) then
+	errmsg(1156, tr("Sons living at home"), "CM3", CM3, x );
+	reenter BH5(n)
+endif;
+x = count( FORMBH_ROSTER where BH3 = 2 & BH5 = 1 & BH7 = 1 );
+if noteq( x, CM4 ) then
+	errmsg(1156, tr("Daughters living at home"), "CM4", CM4, x );
+	reenter BH5(n)
+endif;
+
+{ Check counts of children living away }
+x = count( FORMBH_ROSTER where BH3 = 1 & BH5 = 1 & BH7 = 2 );
+if noteq( x, CM6 ) then
+	errmsg(1156, tr("Sons living away from home"), "CM6", CM6, x );
+	reenter BH5(n)
+endif;
+x = count( FORMBH_ROSTER where BH3 = 2 & BH5 = 1 & BH7 = 2 );
+if noteq( x, CM7 ) then
+	errmsg(1156, tr("Daughters living away from home"), "CM7", CM7, x );
+	reenter BH5(n)
+endif;
+
+{ Check counts of children who have died }
+x = count( FORMBH_ROSTER where BH3 = 1 & BH5 = 2 );
+if noteq( x, CM9 ) then
+	errmsg(1156, tr("Boys who died"), "CM9", CM9, x );
+	reenter BH5(n)
+endif;
+x = count( FORMBH_ROSTER  where BH3 = 2 & BH5 = 2 );
+if noteq( x, CM10 ) then
+	errmsg(1156, tr("Girls who died"), "CM10", CM10, x );
+	reenter BH5(n)
+endif;
+
+if CM11 then
+	{ Checking of minimum interval between births }
+	lb = CM11 - twincode(CM11) - (twincode(CM11) = 0);
+	do i = 1 while i <= lb by 1
+		do j = i + 1 while twincode(j) > 1 enddo;
+		t = adjlbi( ldc(i), udc(i), ldc(j), udc(j), 7 );
+		if t < 0 then
+			errmsg(1157, i, BH4M(i), BH4Y(i), j, BH4M(j), BH4Y(j) );
+		else
+			ldc(j) = t;
+		endif;
+		t = adjubi( ldc(i), udc(i), ldc(j), udc(j), 7 );
+		if t < 0 then
+			errmsg(1157, i, BH4M(i), BH4Y(i), j, BH4M(j), BH4Y(j) );
+		else
+			udc(i) = t;
+		endif;
+	enddo;
+endif;
+
+do i = 1 while i <= HH48
+	if HL14(i) = WM3 & count( FORMBH_ROSTER where BH8 = i ) <> 1 then
+		if addmode then
+			errmsg(1152, i )
+		endif;
+	endif;
+enddo;
+
+PROC INTROBH
+preproc 
+	if CM11 = 0 then
+		endgroup;
+	endif;
+ 
+PROC FORMBH_ROSTER
+preproc
+	for i in FORMBX_ROSTER
+		BH0(i) = BHA(i);
+		BH1(i) = BHB(i);
+		BH2(i) = BHC(i);
+	enddo;
+
+PROC BH0
+onfocus
+	if addmode then
+		savepartial();
+	endif;
+
+	{ Initialize line numbers of each child ... }
+	do i = 1 while i <= maxchild by 1
+		if i <= CM11 then
+			BH0(i) = i;
+		elseif inEntry then 
+			BH0(i) = notappl;    { blank out unused lines }
+		endif;
+	enddo;
+
+	{ Check for end of birth history }
+	if curocc() > CM11 then    { to run in-Batch }
+		
+		endgroup
+	endif;
+
+PROC BH4Y
+{ Check date of birth before interview }
+if afterint( BH4M, $ ) then
+	errmsg(1142);
+	reenter;
+endif;
+
+prev = BH0 - 1; 
+{ Update twin code variable in case of two pairs of twins together } 
+{ Twincode is 0-Single birth, 1-1st of multiple, 2-2nd of multiple, ... } 
+if BH2 = 2 & prev & twincode(prev) >= 2 then 
+    if ($ <> $(prev) | BH4M <> BH4M(prev)) then 
+        twincode(BH0) = 1 
+    else 
+        twincode(BH0) = twincode(prev) + 1;  
+    endif 
+elseif BH2 = 2 & prev & twincode(prev) >= 1 then  
+    if ($ = $(prev) and BH4M = BH4M(prev)) then  
+        twincode(BH0) = twincode(prev) + 1;  
+    endif;  
+endif;
+
+{ Check twin codes }
+{ Last child can not be 1st of multiple birth }
+if twincode(BH0) = 1 then
+	if BH0 = CM11 then
+		errmsg(1140);
+		reenter BH2
+	endif
+  { Current twin code must be 1 higher than previous }
+elseif twincode(BH0) >= 2 then
+	if BH0 = 1 | twincode(prev) <> twincode(BH0) - 1 then
+		errmsg(1140);
+		reenter BH2
+	endif
+{ Previous birth is first of multiple, but current is single birth }
+elseif BH0 > 1 & twincode(prev) = 1 then
+	errmsg(1140);
+	reenter BH2
+endif;
+
+{ Check months and years match for twins }
+if twincode(BH0) > 1 & (BH4M <> BH4M(prev) | $ <> $(prev)) then
+	errmsg(1143);
+	reenter
+endif;
+
+{ Find prior birth with year of birth to check order }
+do i = BH0-1 while i & ($(i) = 9999{missing} | $(i) > WM6Y) by (-1) enddo;
+{ Check births are given in order }
+if i & validyr($) &
+   ( $ < $(i) |
+   ($ = $(i) & valid(BH4M(i)) & BH4M < BH4M(i))
+   ) then
+	errmsg(1144);
+	reenter;
+endif;
+
+{ Check that twin code is correct when dates are identical }
+if BH0 > 1 & validyr($) & valid(BH4M) &
+   ($ = $(prev) & BH4M = BH4M(prev)) & BH2 = 1 then
+	errmsg(1145);
+	reenter BH2
+endif;
+
+{ Initialize logical ranges for date of birth of child }
+if validyr($) then
+	ldc(BH0) = setlb( BH4M, $, 0 );
+	udc(BH0) = setub( BH4M, $, 9999 );
+else
+	ldc(BH0) = ldb + minab;
+	udc(BH0) = di;
+endif;
+
+PROC BH5
+if $ <> 1 then
+	skip to BH9U
+endif;
+
+PROC BH6
+{ Check that twins have same age if both are alive }
+if twincode(BH0) >= 2 then
+	j = default;
+	do i = BH0 - twincode(BH0) + 1 while i < BH0
+		if BH5(i) = 1 then
+			j = $(i);
+		endif;
+	enddo;
+	if j <> default & j <> $ then
+		errmsg(1146) select( tr("Age"), $, tr("Twin code"), BH6 ); 
+		reenter
+	endif;
+endif;
+
+{ Adjust ranges for date of birth of child }
+if valid($) then
+	{ Lower bound of CMC date of birth }
+	t = ndjlba( ldc(BH0), udc(BH0), di, di, $ );
+	if t < 0 then
+		errmsg(1147) select( tr("Age"), $, tr("Year of birth"), BH4Y, tr("Month of birth"), BH4M, tr("Day of birth"), BH4D ); 
+		reenter
+	else
+		ldc(BH0) = t
+	endif;
+	{ Upper bound of CMC date of birth }
+	t = adjuba( ldc(BH0), udc(BH0), di, di, $ );
+	if t < 0 then
+		errmsg(1147) select( tr("Age"), $, tr("Year of birth"), BH4Y, tr("Month of birth"), BH4M, tr("Day of birth"), BH4D ); 
+		reenter
+	else
+		udc(BH0) = t
+	endif;
+endif;
+
+PROC BH8
+onfocus
+	if hasHH then
+		clean_labels();
+		codes(0)  = 0;
+		labels(0) = tr("Not a member of the household"); 
+		j = 1;
+		do i = 1 while i <= HH48
+			if HL1(i) <> WM3 & HL6(i) < WB4 & (count(FORMBH_ROSTER where BH8 = i & BH0 <> curocc()) = 0) then
+				codes(j)  = i;
+				labels(j) = strip(HL2(i)) + " (" + tr("Age") + " " + edit("Z9",HL6(i)) + ")";
+				j = j + 1;
+			endif;
+		enddo;
+		SetValueSet( @GetSymbol(), codes, labels );
+	endif;
+
+postproc
+	{ Check child's line number is not greater than max }
+	if hasHH & $ > HH48 then
+		errmsg(1149);
+		reenter
+	{ If child is listed in HH }
+	elseif $ > 0 then
+		{ check for duplicates }
+		do i = 1 while i < curocc()
+			if BH8(i) = $ then
+				errmsg(1151);
+				reenter;
+			endif;
+		enddo;
+		if hasHH then
+			{ Check mother's line number agrees with line number of mother in household questionnaire }
+			if HL12($) <> notappl & HL14($) <> WM3 then
+				if addmode then
+					errmsg(1150, HL14($), WM3 ) select( tr("Line number"), $, tr("Continue"), continue ); 
+				endif
+			endif;
+			{ Check sex of child against sex in household questionnaire }
+			if BH3 <> HL4($) then
+				if addmode then
+					errmsg(1148, HL4($), BH3 ) select( tr("Line number"), $, tr("Sex of child"), BH3, tr("Continue"), continue ); 
+				endif;
+			endif;
+			{ Check age of child against age in household questionnaire }
+			if !special(BH6) & !special(BH7($)) then
+				if {!( (BH6-HL6($)) in (-2):2 )} BH6 <> HL6($) then
+					if addmode then
+						errmsg(1148, HL6($), BH6 ) select( tr("Line number"), $, tr("Age of child"), BH6, tr("Continue"), continue ); 
+					endif;
+				endif
+			endif;
+		endif;
+	endif;
+  
+	{Check consistency between BH7 and BH8}
+	if (BH7 <> 1 and BH8 > 0) or (BH7 = 1 and BH8 = 0) then
+		errmsg(1160); 
+		reenter;
+	endif;     
+  
+	skip to BH10;
+
+PROC BH9N
+{ check unit is for special answer, number must be a special answer,
+  but special answers are allowed for number when unit is given }
+if badspecial( BH9U, BH9N ) then
+	errmsg(1153);
+	reenter
+endif;
+
+{ Check maximum and mininum values }
+recode BH9U -> maxd;
+          1 -> 30;       { 0-30 days   }
+          2 -> 23;       { 1-23 months }
+          3 -> 40;       { 2-40 years  }
+            -> 99;
+endrecode;
+mind = BH9U-1;
+if BH9U = 9 then mind = 0 endif;
+{ if BH9U = 3 then mind = 1 endif; } { Change to allow 1 year to be entered - checked in editing }
+
+if !( BH9N in mind:maxd ) & addmode then
+	if (BH9U = 3 and BH9N = 1) then
+		errmsg(1159) select( tr("Age at death"), BH9N, tr("Units"), BH9U ); 
+		reenter BH9N;
+	else
+		errmsg(1154, BH9N, mind, maxd, getlabel(BH9U,BH9U) ) select( tr("Age at death"), BH9N, tr("Units"), BH9U ); 
+		reenter BH9N;
+	endif;
+endif;
+
+if addmode & (BH9U = 2 and BH9N = 12) then
+	errmsg(1159) select( tr("Age at death"), BH9N, tr("Units"), BH9U, tr("Continue"), continue ); 
+endif;
+
+{ Check age at death plausible considering date of birth }
+recode BH9U :: BH9N          -> adeath;
+            :: missing,97:99 -> 0;
+          1 ::               -> int(BH9N/30);
+          2 ::               -> BH9N;
+          3 ::               -> BH9N*12;
+            ::               -> 0;
+endrecode;
+if ldc(BH0) + adeath > di then
+	if addmode then
+		errmsg(1155, ldc(BH0), adeath, di ) select( tr("Age at death"), BH9N, tr("Units"), BH9U, tr("Date of birth"), BH4D ); 
+		reenter;
+	endif
+elseif udc(BH0) + adeath > di then
+	udc(BH0) = di - adeath
+endif;
+
+PROC BH10
+onfocus
+	if BH0 = 1 then
+	{  skip to next BH0 }
+	else
+		textstr1 = BHB(curocc()-1);
+	endif;
+
+	if BH0 > 1 then
+		prevname = BHB(curocc()-1);
+	endif;
+
+
+postproc
+	if $ = 1 then
+		if curocc() < CM11 then
+			errmsg(2100);
+			x = accept( tr("Correct total births or insert new birth before") + strip(BH1),
+						tr("Correct total births"),
+						tr("Insert new birth before") + strip(BH1),
+						tr("Change this response"));
+		else
+			errmsg(2101);
+			x = accept(tr("Correct total births"),
+					   tr("Yes, correct total births"),
+					   tr("No, change this response"));
+			if x = 2 then x = 3 endif;
+		endif;
+		$ = notappl;
+		if x = 1 then
+			reenter CM1
+		elseif x = 2 then
+			reenter BHB(1);
+		else
+			$ = 2;
+			reenter
+		endif;
+	endif;
+
+PROC BH11
+preproc
+	if addmode then
+		savepartial();
+	endif;
+
+postproc
+	if $ = 1 then
+		errmsg(2101);
+		x = accept(tr("Correct total births"),
+				   tr("Yes, correct total births"),
+				   tr("No, change this response"));
+		$ = notappl;
+		if x = 1 then
+			reenter CM1
+		else
+			$ = 2;
+			reenter
+		endif;
+	endif;
+  
+PROC CM15
+preproc
+	CM15 = 1;
+
+PROC CM17
+preproc
+	{ Check if birth in last 24 months          }
+	{ Note use of parentheses for correct check }
+
+	{ using birth history -> BH }
+	births2 = ( count( FORMBH_ROSTER where BH4Y in WM6Y,WM6Y-1) |
+                count( FORMBH_ROSTER where BH4Y = WM6Y-2 & BH4M in WM6M:12) );
+
+	if births2 then
+		CM17 = 1;
+	else 
+		CM17 = 0;  
+	endif;   
+
+postproc
+	if CM17 = 0 then
+		endgroup
+	endif;
+
+PROC CM18
+preproc
+	$ = BH1 (totocc(FORMBH_ROSTER)) ;
+	chsex = BH3 (totocc(FORMBH_ROSTER)) ;
+  
+PROC FORMDB
+preproc
+if visualvalue (WMDBTSTMPS) = notappl then
+   WMDBTSTMPS = timestamp (); 
+   endif; 
+   
+postproc
+if visualvalue (WMDBTSTMPE) = notappl then
+   WMDBTSTMPE = timestamp (); 
+   endif; 
+   
+PROC DB2
+preproc 
+	if CM17 <> 1 then
+		endgroup;
+	endif;
+ 
+postproc
+	if $ in 1,9 then
+		endgroup;
+	endif;
+
+PROC FORMMN
+preproc
+if visualvalue (WMMN1TSTMPS) = notappl then
+   WMMN1TSTMPS = timestamp (); 
+   endif; 
+   
+postproc
+if visualvalue (WMMN1TSTMPE) = notappl then
+   WMMN1TSTMPE = timestamp (); 
+   endif; 
+   
+PROC MN2
+preproc 
+	if CM17 <> 1 then
+		endgroup;
+	endif;
+
+postproc
+	if $ <> 1 then
+		endgroup;
+	endif;      
+
+PROC MN3
+alphavar = $;
+if alphachk("ABCFGX?") then
+	errmsg(9998);
+	reenter
+else
+	$ = alphavar;
+endif;
+{ Check "Missing" is only response }
+if pos("?",$) & alphsize > 1 then
+	errmsg(9995);
+	reenter
+endif;
+{ Display the note entry dialog box for recording "Other" answer }
+if pos("X",$)  and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+PROC MN4AN
+recode MN4AU ::                   $ -> aok;
+         1   :: 0:42,98,99{missing} -> 1;
+         2   :: 0:10,98,99{missing} -> 1;
+         9   ::      98,99{missing} -> 1;
+             ::                     -> 0;
+endrecode;
+if !aok then
+	errmsg(9992);
+	reenter;
+endif;
+
+PROC FORMMN2
+preproc
+if visualvalue (WMMN2TSTMPS) = notappl then
+   WMMN2TSTMPS = timestamp (); 
+   endif; 
+   
+postproc
+if visualvalue (WMMN2TSTMPE) = notappl then
+   WMMN2TSTMPE = timestamp (); 
+   endif; 
+   
+PROC MN16
+preproc 
+if CM17 <> 1 then
+	endgroup;
+endif;
+
+if addmode then 
+	savepartial(); 
+endif;
+
+postproc
+if $ <> 1 then
+	endgroup;
+endif;    
+
+PROC MN18
+alphavar = $;
+if alphachk("ABX?") then
+	errmsg(9998);
+	reenter
+else
+	$ = alphavar;
+endif;
+{ Check "Missing" is only response }
+if pos("?",$) & alphsize > 1 then
+	errmsg(9995);
+	reenter
+endif;
+{ Display the note entry dialog box for recording "Other" answer }
+if pos("X",$)  and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+PROC FORMMN3
+preproc
+if visualvalue (WMMN3TSTMPS) = notappl then
+   WMMN3TSTMPS = timestamp (); 
+   endif; 
+   
+postproc
+if visualvalue (WMMN3TSTMPE) = notappl then
+   WMMN3TSTMPE = timestamp (); 
+   endif; 
+   
+PROC MN19
+preproc 
+if CM17 <> 1 then
+	endgroup;
+endif;
+
+if addmode then 
+	savepartial(); 
+endif;
+
+postproc
+alphavar = $;
+if alphachk("ABCFGHXY?") then
+	errmsg(9998);
+	reenter
+else
+	$ = alphavar;
+endif;
+{ Check "No one" is only response }
+if pos("Y",$) & alphsize > 1 then
+	errmsg(9995);
+	reenter
+endif;
+{ Check "Missing" is only response }
+if pos("?",$) & alphsize > 1 then
+	errmsg(9995);
+	reenter
+endif;
+{ Display the note entry dialog box for recording "Other" answer }
+if pos("X",$)  and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+  
+MN19Text="";
+if pos("A",$) then MN19Text= MN19Text + getlabel(MN19,"A") + ","; endif;
+if pos("B",$) then MN19Text= MN19Text + getlabel(MN19,"B") + ","; endif;
+if pos("C",$) then MN19Text= MN19Text + getlabel(MN19,"C") + ","; endif;
+if pos("F",$) then MN19Text= MN19Text + getlabel(MN19,"F") + ","; endif;
+if pos("G",$) then MN19Text= MN19Text + getlabel(MN19,"G") + ","; endif;
+if pos("H",$) then MN19Text= MN19Text + getlabel(MN19,"H") + ","; endif;
+if pos("X",$) then MN19Text= MN19Text + getlabel(MN19,"X") + ","; endif;
+if pos("Y",$) then MN19Text= MN19Text + getlabel(MN19,"Y") + ","; endif;
+
+PROC MN20
+MN20Text=getlabel(MN20,MN20);
+
+if $ in 11, 12, 96 then
+	skip to MN23
+endif;  
+
+if $ in 26, 36, 46, 96 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+PROC MN21
+if $ <> 1 then
+	endgroup
+endif;  
+
+PROC FORMMN4
+preproc
+if visualvalue (WMMN4TSTMPS) = notappl then
+   WMMN4TSTMPS = timestamp (); 
+   endif; 
+
+postproc
+if visualvalue (WMMN4TSTMPE) = notappl then
+   WMMN4TSTMPE = timestamp (); 
+   endif; 
+   
+PROC MN23
+preproc 
+if CM17 <> 1 then
+	endgroup;
+endif;
+
+if addmode then 
+	savepartial(); 
+endif;
+	
+postproc
+{execsystem("view:/storage/emulated/0/csentry/SSC photo");}
+{execsystem('"C:\Program Files (x86)\Internet Explorer\iexplore.exe" "C:\MICS6\Applications\Entry\SSC photo.jpg"');}
+
+if $ <> 1 then 
+	skip to MN25
+endif;  
+
+PROC MN26N
+recode MN26U  :: $           -> err;
+          0   :: 0           -> 0;   { Immediately }
+          1   :: 1:23,98,99  -> 0;   { Hours }
+          2   :: 1:90,98,99  -> 0;   { Days }
+          9   :: 97,98,99    -> 0;   { Never Bathed, DK, Missing }
+              ::             -> 1;
+endrecode;
+if err then
+	errmsg(9992);
+	reenter;
+endif;
+
+PROC FORMMN5
+preproc
+if visualvalue (WMMN5TSTMPS) = notappl then
+   WMMN5TSTMPS = timestamp (); 
+   endif; 
+   
+postproc
+if visualvalue (WMMN5TSTMPE) = notappl then
+   WMMN5TSTMPE = timestamp (); 
+   endif; 
+   
+PROC MN28
+preproc
+if CM17 <> 1 then
+	endgroup;
+endif;
+	
+if MN20 in 21:46,76 then
+	skip to MN30
+endif;  
+
+if addmode then 
+	savepartial(); 
+endif;
+
+postproc
+	if $ = 6 and !inadvance() then
+		string other = editnote();
+		ensureNotBlank(other);
+	endif;
+	
+PROC MN30
+if $ <> 1 then 
+	endgroup
+endif;  
+
+PROC MN31
+alphavar = $;
+if alphachk("ABCDEXZ?") then
+	errmsg(9998);
+	reenter
+else
+	$ = alphavar;
+endif;
+{ Check "DK" is only response }
+if pos("Z",$) & alphsize > 1 then
+	errmsg(9995);
+	reenter
+endif;
+{ Check "Missing" is only response }
+if pos("?",$) & alphsize > 1 then
+	errmsg(9995);
+	reenter
+endif;
+{ Display the note entry dialog box for recording "Other" answer }
+if pos("X",$)  and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+PROC FORMMN6
+preproc
+if visualvalue (WMMN6TSTMPS) = notappl then
+   WMMN6TSTMPS = timestamp (); 
+   endif; 
+   
+postproc
+if visualvalue (WMMN6TSTMPE) = notappl then
+   WMMN6TSTMPE = timestamp (); 
+   endif; 
+   
+PROC MN32
+preproc
+if CM17 <> 1 then
+	endgroup;
+endif;
+	
+if addmode then 
+	savepartial(); 
+endif;
+PROC MN33
+if $ <> 1 then 
+	endgroup
+endif;  
+
+PROC MN34
+{ Check special answers }
+if (MN34A = 9 <=> MN34 < 9.997) then
+	errmsg(1301);
+	reenter
+endif;
+
+PROC FORMMN7
+preproc
+if visualvalue (WMMN7TSTMPS) = notappl then
+   WMMN7TSTMPS = timestamp (); 
+   endif; 
+   
+postproc
+if visualvalue (WMMN7TSTMPE) = notappl then
+   WMMN7TSTMPE = timestamp (); 
+   endif; 
+   
+PROC MN35
+preproc
+if CM17 <> 1 then
+	endgroup;
+endif;
+	
+if addmode then 
+	savepartial(); 
+endif;
+PROC FORMMN8
+preproc
+if visualvalue (WMMN8TSTMPS) = notappl then
+   WMMN8TSTMPS = timestamp (); 
+   endif; 
+   
+postproc
+if visualvalue (WMMN8TSTMPE) = notappl then
+   WMMN8TSTMPE = timestamp (); 
+   endif; 
+   
+PROC MN36
+preproc
+if CM17 <> 1 then
+	endgroup;
+endif;
+
+if addmode then 
+	savepartial(); 
+endif;
+
+postproc	
+if $ <> 1 then
+	endgroup;
+endif;  
+
+PROC MN37N
+recode MN37U  :: $	         -> err;
+          0   :: 0           -> 0;   { Immediately }
+          1   :: 1:23,98,99  -> 0;   { Hours }
+          2   :: 1:90,98,99  -> 0;   { Days }
+          9   :: 98:99       -> 0;   { DK, Missing }
+              ::             -> 1;
+endrecode;
+if err then
+	errmsg(9992);
+	reenter;
+endif;
+
+PROC FORMPN
+preproc
+if visualvalue (WMPN1TSTMPS) = notappl then
+   WMPN1TSTMPS = timestamp (); 
+   endif; 
+   
+postproc
+if visualvalue (WMPN1TSTMPE) = notappl then
+   WMPN1TSTMPE = timestamp (); 
+   endif; 
+   
+PROC PN3U
+preproc   
+	{PN1 Filter}
+	if CM17 <> 1 then
+		endgroup;
+	endif;
+  
+	{PN1 PN2 Filter}
+	{if child is not  delivered in a health facility skip to PN6}
+	if MN20 in 11:12 or MN20 >= 96 then
+		skip to PN8;
+	endif;
+  
+if addmode then 
+	savepartial(); 
+endif;
+PROC PN3N
+recode PN3U  ::  $      -> err;
+         1   :: 0:23,98,99 -> 0;   { Hours }
+         2   :: 1:6,98,99  -> 0;   { Days }
+         3   :: 1:90,98,99 -> 0;   { Weeks }
+         9   :: 98:99   -> 0;   { DK, Missing }
+             ::         -> 1;
+endrecode;
+if err then
+	errmsg(9992);
+	reenter;
+endif;
+
+PROC PN6
+if $ = 1 then
+	skip to PN12
+else 
+	skip to PN17
+endif;  
+
+PROC PN8
+preproc
+{PN7 Filter}
+if MN19A <> "A" and MN19B <> "B" and MN19C <> "C" and MN19F <> "F" and MN19G <> "G" then
+	skip to PN11;
+endif;
+
+PROC PN10
+if $ = 1 then
+	skip to PN12
+else
+	skip to PN19;
+endif;
+
+PROC PN11
+if $ <> 1 then
+	skip to PN20
+endif;  
+
+PROC PN13N
+recode PN13U  ::  $      -> err;
+          1   :: 0:23,98,99 -> 0;   { Hours }
+          2   :: 1:6,98,99  -> 0;   { Days }
+          3   :: 1:90,98,99 -> 0;   { Weeks }
+          9   :: 98:99   -> 0;   { DK, Missing }
+              ::         -> 1;
+endrecode;
+if err then
+	errmsg(9992);
+	reenter;
+endif;
+  
+{Check if PNC visit took place after leaving health facility}
+if PN3U <> 9{missing} and PN3N <> 99{missing} and (PN3U > PN13U or (PN3U = PN13U and PN3N > PN13N)) then
+	errmsg(1902,PN13U, PN13N, PN3U, PN3N);
+endif;	
+
+PROC PN14
+alphavar = $;
+if alphachk("ABCFGHX?") then
+	errmsg(9998);
+	reenter
+else
+	$ = alphavar;
+endif;
+{ Check "Missing" is only response }
+if pos("?",$) & alphsize > 1 then
+	errmsg(9995);
+	reenter
+endif;
+{ Display the note entry dialog box for recording "Other" answer }
+if pos("X",$)  and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+PROC PN15
+if $ in 26, 36, 46, 96 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+PROC PN17
+preproc
+if PN6 <> 1 then
+    //PN16 filter
+	if MN20 in 11:12 or MN20 >=96 then
+	    //PN18 filter
+		if MN19A = "A" or MN19B = "B" or MN19C = "C" or MN19F = "F" or MN19G = "G" then
+			skip to PN19;
+		else
+			skip to PN20;
+		endif;
+	endif;
+endif;
+	
+postproc
+	if $ = 1 then
+		skip to PN21;
+	else
+		skip to PN25A;
+	endif;
+
+PROC PN19
+if $ = 1 then
+	skip to PN21;
+else
+	endgroup
+endif;
+
+PROC PN20
+if $ <> 1 then
+	endgroup
+endif;
+
+PROC PN22N
+recode PN22U :: $       -> err;
+         1   :: 0:23,98,99 -> 0;   { Hours }
+         2   :: 1:6,98,99  -> 0;   { Days }
+         3   :: 1:90,98,99 -> 0;   { Weeks }
+         9   :: 98:99   -> 0;   { DK, Missing }
+             ::         -> 1;
+endrecode;
+if err then
+	errmsg(9992);
+	reenter;
+endif;
+
+if PN3U <> 9{missing} and PN3N <> 99{missing} and (PN3U > PN22U or (PN3U = PN22U and PN3N > PN22N)) then
+	errmsg(1903,PN22U, PN22N, PN3U, PN3N);
+endif;
+
+PROC PN23
+alphavar = $;
+if alphachk("ABCFGHX?") then
+	errmsg(9998);
+	reenter
+else
+	$ = alphavar;
+endif;
+{ Check "Missing" is only response }
+if pos("?",$) & alphsize > 1 then
+	errmsg(9995);
+	reenter
+endif;
+{ Display the note entry dialog box for recording "Other" answer }
+if pos("X",$)  and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+PROC PN24
+if $ in 26, 36, 46, 96 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+PROC FORMPN2
+preproc
+if visualvalue (WMPN2TSTMPS) = notappl then
+   WMPN2TSTMPS = timestamp (); 
+   endif; 
+   
+postproc
+if visualvalue (WMPN2TSTMPE) = notappl then
+   WMPN2TSTMPE = timestamp (); 
+   endif; 
+   
+PROC PN25A
+preproc   
+	{PN1 Filter}
+	if CM17 <> 1 then
+		endgroup;
+	endif;
+ 
+ if addmode then 
+	savepartial(); 
+endif;
+PROC PN27
+preproc
+   {PN26 Filter}
+	if MN36 <> 1 then
+		skip to PN29
+	endif;  
+
+PROC FORMCP
+preproc
+if visualvalue (WMCPTSTMPS) = notappl then
+   WMCPTSTMPS = timestamp (); 
+   endif; 
+   
+postproc
+if visualvalue (WMCPTSTMPE) = notappl then
+   WMCPTSTMPE = timestamp (); 
+   endif; 
+   
+PROC CP1
+if $ = 1 then
+	skip to CP3
+endif;
+
+if addmode then 
+	savepartial(); 
+endif;
+PROC CP2
+if $ = 1 then
+	skip to CP4
+endif;
+
+PROC CP3
+endgroup;
+
+PROC CP4
+alphavar = $;
+if alphachk("ABCDEFGHIJKLMX?") then
+	errmsg(9998);
+	reenter
+else
+	$ = alphavar;
+endif;
+{ Check "Missing" is only response }
+if pos("?",$) & alphsize > 1 then
+	errmsg(9995);
+	reenter
+endif;
+{ Display the note entry dialog box for recording "Other" answer }
+if pos("X",$)  and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+PROC FORMUN
+preproc
+if visualvalue (WMUN1TSTMPS) = notappl then
+   WMUN1TSTMPS = timestamp (); 
+   endif; 
+   
+postproc
+if visualvalue (WMUN1TSTMPE) = notappl then
+   WMUN1TSTMPE = timestamp (); 
+   endif; 
+   
+PROC UN2
+preproc
+	if CP1 <> 1 then
+		skip to UN7
+	endif;
+
+if addmode then 
+	savepartial(); 
+endif;
+
+postproc
+	if $ in 1,9 then
+		skip to UN5
+	endif;
+
+PROC UN5
+if $ = 1 then
+	skip to UN8U;
+else
+	skip to UN14U;
+endif;
+
+PROC UN7
+preproc
+	if pos("A",CP4) then
+		skip to UN14U
+	endif;
+
+postproc
+	if $ in 2, 8, 9 then
+		skip to UN11;
+	endif;
+
+	if $ = 3 then
+		skip to UN12;
+	endif
+
+PROC UN8N
+if badspecial(UN8U,UN8N) then
+	errmsg(9992);
+	reenter
+endif;
+
+if $ = 94 then
+	skip to UN12
+endif;
+
+if $ = 96 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+PROC UN11
+preproc
+	if CP1 = 1 and !UN7 in 2,8 then
+		skip to UN14U
+	endif;
+
+	if CP2 = 1 then
+		skip to UN14U
+	endif;
+
+postproc
+	if $ <> 2 then
+		skip to UN14U
+	endif;
+
+PROC UN12
+alphavar = $;
+if alphachk("ABCDEFGHIXZ?") then
+	errmsg(9998);
+	reenter
+else
+	$ = alphavar;
+endif;
+{ Check "Don't Know" is only response }
+if pos("Z",$) & alphsize > 1 then
+	errmsg(9996);
+	reenter
+endif;
+{ Check "Missing" is only response }
+if pos("?",$) & alphsize > 1 then
+	errmsg(9995);
+	reenter
+endif;
+{ Display the note entry dialog box for recording "Other" answer }
+if pos("X",$)  and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+if pos("C",$) then
+	endgroup
+endif;
+
+PROC UN14N
+if badspecial(UN14U,UN14N) then
+	errmsg(9992);
+	reenter
+endif;
+
+if $ > 90 or (UN14U = 4 and $ >= 1) or (UN14U = 3 and $ >= 12) then
+	endgroup
+endif;   
+
+PROC FORMUN2
+preproc
+if visualvalue (WMUN2TSTMPS) = notappl then
+   WMUN2TSTMPS = timestamp (); 
+   endif; 
+   
+postproc
+if visualvalue (WMUN2TSTMPE) = notappl then
+   WMUN2TSTMPE = timestamp (); 
+   endif; 
+   
+PROC UN16A
+preproc
+{UN15A filter}
+if pos("C",UN12) then
+	endgroup
+endif;
+
+{UN15B filter}	
+if UN14U = 9 or 
+  (UN14U = 4 and $ >= 1) or 
+  (UN14U = 3 and $ >= 12) or 
+  (UN14U = 2 and $ >= 52) then
+	endgroup
+endif;   
+
+if addmode then 
+	savepartial(); 
+endif;
+PROC FORMFG
+preproc
+if visualvalue (WMFGTSTMPS) = notappl then
+   WMFGTSTMPS = timestamp (); 
+   endif; 
+   
+postproc
+if visualvalue (WMFGTSTMPE) = notappl then
+   WMFGTSTMPE = timestamp (); 
+   endif; 
+   
+PROC FG1
+if $ in 1,9 then
+	skip to FG3
+endif;
+
+if addmode then 
+	savepartial(); 
+endif;
+PROC FG2
+if $ <> 1 then
+	endgroup
+endif;
+
+PROC FG3
+if $ <> 1 then
+	skip to FG9
+endif;
+
+PROC FG4
+if $ = 1 then
+	skip to FG6
+endif;
+
+PROC FG7
+if $ in 15:49 & $ > WB4 then
+	errmsg(1603,$,WB4);
+	reenter;
+endif;
+
+PROC FG8
+if $ in 16, 26 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+PROC FG9
+preproc
+	{ Count up total number of living daughters}
+	FG9 = NAtoZero(CM4)+NAtoZero(CM7);
+
+PROC FG10
+if $ <> 1 then
+	reenter CM1;
+endif;
+
+PROC FORMFG_ROSTER
+preproc
+	if FG9 = 0 then
+		skip to FG24;
+	endif;
+
+PROC FGLN
+preproc
+	if curocc(FORMFG_ROSTER) > FG9 then
+		endgroup
+	endif;
+
+	if inEntry then
+		do i = 1 while i <= FG9
+			if i <= FG9 then
+				FGLN(i) = i;
+			else
+				FGLN(i) = notappl;
+			endif;
+		enddo;
+	endif;
+
+PROC FG15
+if valid($) and $ + (minab/12) > WB4 then
+	errmsg(1601,WB4,minab/12,tr("Age"),  $)
+endif;
+
+i = NAtoZero(CM11);
+z = 0;
+while i do
+	if BH3(i) = 2 & BH5(i) = 1 then                  { female and alive }
+		z = z + 1;
+		if z = curocc(FORMFG_ROSTER) then
+			age = BH6(i);
+			if $ <> age then
+				errmsg(1604,$,i,age);
+			endif;
+		endif;
+	endif;
+	i = i - 1;
+enddo;
+
+PROC FG17
+preproc
+	if FG15 >= 15 then
+		skip to next FGLN
+	endif;
+
+postproc
+	if $ <> 1 then
+		skip to next FGLN
+	endif;
+
+PROC FG18
+if valid($) and $ + (minab/12) > WB4 then
+	errmsg(1601,WB4,minab/12,tr("Age at circumsision"), $)
+endif;
+
+if $ < 98 and $ > FG15 then
+	errmsg(1602); 
+	reenter;
+endif;
+
+PROC FG19
+if $ = 1 then
+	skip to FG21;
+endif;
+
+PROC FG22
+if $ in 16, 26 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+skip to next FGLN;
+
+PROC FORMHP
+preproc
+if visualvalue (WMHPTSTMPS) = notappl then
+   WMHPTSTMPS = timestamp (); 
+   endif; 
+   
+postproc
+if visualvalue (WMHPTSTMPE) = notappl then
+   WMHPTSTMPE = timestamp (); 
+   endif; 
+   
+PROC HP2
+preproc
+{HP1 filter}
+if WB4 in 18:49 then
+	endgroup;
+endif;
+
+if addmode then 
+	savepartial(); 
+endif;
+
+postproc
+if $ = 1 then
+	skip to HP4;
+endif;
+PROC HP3
+if $ <> 1 then
+	endgroup;
+endif;
+PROC HP6
+if $ in 76, 96 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+PROC FORMTU
+preproc
+if visualvalue (WMTUTSTMPS) = notappl then
+   WMTUTSTMPS = timestamp (); 
+   endif; 
+   
+postproc
+if visualvalue (WMTUTSTMPE) = notappl then
+   WMTUTSTMPE = timestamp (); 
+   endif; 
+   
+PROC TU3
+preproc
+	if addmode then
+		savepartial();
+	endif;
+	
+	{TU1 filter}
+	if WB4 in 18:49 then
+		endgroup
+	endif;
+PROC TU4
+if !TU4H in 0:23 or !TU4M in 0:59 then
+   errmsg(tr("Incorrect time %v, Hour to be between 0-23, Minutes to be between 0-59"),$);
+   reenter;
+endif;   
+PROC TU5
+if !TU5H in 0:23 or !TU5M in 0:59 then
+   errmsg(tr("Incorrect time %v, Hour to be between 0-23, Minutes to be between 0-59"),$);
+   reenter;
+endif;  
+if TU4H*60 + TU4M >= TU5H*60 + TU5M then 
+   errmsg(2301);
+   reenter;
+endif;
+PROC TU6
+preproc
+if curocc() >1 and TU10(curocc ()-1) >= TU5 then
+ endgroup;
+endif; 
+
+$ = curocc ();
+if curocc() = 1 then 
+	TU8=TU4;
+	stactiv=edit("99",TU4H)+":"+edit("99",TU4M);
+else
+	TU8 = TU10(curocc ()-1);
+	stactiv=edit("99",TU10H(curocc ()-1))+":"+edit("99",TU10M(curocc ()-1));
+endif;
+PROC TU7
+if $ = 996 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+PROC TU7A
+$ = getvaluelabel(TU7)
+PROC TU9X
+if $=1 then
+   protect(TU9,false);
+   protect(TU10,true);
+else
+   protect(TU9,true);
+   protect(TU10,false);
+   skip to TU10;
+endif;   
+PROC TU9
+if !TU9H in 0:23 or !TU9M in 0:59 then
+   errmsg(tr("Incorrect time %v, Hour to be between 0-23, Minutes to be between 0-59"),$);
+   reenter;
+endif; 
+
+if TU8H*60+TU8M + TU9H*60+TU9M > TU5H*60+TU5M then
+   errmsg(2302);
+   reenter;
+endif;  
+PROC TU10
+preproc;
+if TU9X=1 then
+	TU10=00.00;
+	if TU8M+TU9M>59 then
+		TU10H =  TU8H + TU9H + 1;
+		TU10M =  TU8M + TU9M - 60;
+	else
+		TU10H =  TU8H + TU9H;
+		TU10M =  TU8M + TU9M;
+	endif;
+endif;
+
+postproc
+if TU9X=2 then
+   if TU10<TU8 then
+      errmsg(2303);
+	  reenter;
+   endif;
+   TU9=00.00;
+   if TU8M<=TU10M then
+      TU9H =  TU10H-TU8H;
+      TU9M =  TU10M-TU8M;
+   else
+     TU9H =  TU10H-TU8H-1;
+     TU9M =  TU10M-TU8M+60;
+   endif;
+endif;
+PROC TU12
+preproc;
+if     TU7=080 then
+elseif TU7=090 then skip to TU14
+elseif TU7=110 then skip to TU15
+elseif TU7 in 120,130,150 then skip to TU16
+elseif TU7=042 then skip to TU17
+else skip to next TU6
+endif;
+PROC TU13
+alphavar = $;
+if alphachk("ABCD?") then
+	errmsg(9998);
+	reenter
+else
+	$ = alphavar;
+endif;
+if pos("?",$) & alphsize > 1 then
+	errmsg(9995);
+	reenter
+endif;
+
+if pos("C",$) or pos("D",$) then
+	if TU12 = 2 then
+		errmsg(2304);
+		reenter;
+	endif;
+endif;
+skip to next TU6;
+PROC TU14
+skip to next TU6;
+PROC TU15
+skip to next TU6;
+PROC TU16
+skip to next TU6;
+PROC TU17
+alphavar = $;
+if alphachk("ABCDEX?") then
+	errmsg(9998);
+	reenter
+else
+	$ = alphavar;
+endif;
+if pos("?",$) & alphsize > 1 then
+	errmsg(9995);
+	reenter
+endif;
+if pos("X",$) and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+PROC TU18
+preproc;
+list string activities;
+for FORMTU_ROSTER do 
+    activities.add(maketext("%v - %v/%v: %v",TU6,TU8,TU10,TU7A));
+endfor;
+
+postproc;
+if $=0 then
+   activities.show(tr("Activity"));
+   reenter;
+elseif $=1 then
+   numeric act=accept(tr("Please select where the missed activity should start"),activities);
+   if act > 0 then
+      reenter TU6(act);
+   else
+      reenter;
+   endif;
+endif;
+PROC FORMDV
+preproc
+if visualvalue (WMDVTSTMPS) = notappl then
+   WMDVTSTMPS = timestamp (); 
+   endif; 
+   
+postproc
+if visualvalue (WMDVTSTMPE) = notappl then
+   WMDVTSTMPE = timestamp (); 
+   endif; 
+   
+PROC FORMVT1
+preproc
+if visualvalue (WMVT1TSTMPS) = notappl then
+   WMVT1TSTMPS = timestamp (); 
+   endif; 
+   
+postproc
+if visualvalue (WMVT1TSTMPE) = notappl then
+   WMVT1TSTMPE = timestamp (); 
+   endif; 
+   
+PROC FORMVT2
+preproc
+if visualvalue (WMVT2TSTMPS) = notappl then
+   WMVT2TSTMPS = timestamp (); 
+   endif; 
+   
+postproc
+if visualvalue (WMVT2TSTMPE) = notappl then
+   WMVT2TSTMPE = timestamp (); 
+   endif; 
+   
+PROC VT23A
+if $ <> 1 then
+	skip to VT23B;
+endif;
+PROC VT23B
+if $ <> 1 then
+	skip to VT23C;
+endif;
+PROC VT23C
+if $ <> 1 then
+	skip to VT23D;
+endif;
+PROC VT23D
+if $ <> 1 then
+	skip to VT23E;
+endif;
+PROC VT23E
+if $ <> 1 then
+	skip to VT23F;
+endif;
+PROC VT23F
+if $ <> 1 then
+	skip to VT23G;
+endif;
+PROC VT23G
+if $ <> 1 then
+	skip to VT23H;
+endif;
+PROC VT23H
+if $ <> 1 then
+	skip to VT23I;
+endif;
+PROC VT23I
+if $ <> 1 then
+	skip to VT23J;
+endif;
+PROC VT23J
+if $ <> 1 then
+	skip to VT23K;
+endif;
+PROC VT23K
+if $ <> 1 then
+	skip to VT23X;
+endif;
+PROC VT23X
+if $ <> 1 then
+	endgroup;
+endif;
+if $ = 1 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+PROC FORMMA
+preproc
+if visualvalue (WMMATSTMPS) = notappl then
+   WMMATSTMPS = timestamp (); 
+   endif; 
+   
+postproc
+if visualvalue (WMMATSTMPE) = notappl then
+   WMMATSTMPE = timestamp (); 
+endif; 
+
+    recode MA1 :: MA5 -> currmarstat;
+             1 ::     -> 1; {currently married}
+		     2 ::     -> 2; {currently living with a partner}
+               :: 1   -> 3; {formerly married}
+               :: 2   -> 4; {formerly lived with a partner}
+               :: 3   -> 5; {never married not in relationship}
+               ::     -> 9;
+    endrecode;
+	
+    recode MA1 :: MA5 -> mstatus;
+           1,2 ::     -> 1; {currently married / living with a partner}
+               :: 1,2 -> 2; {formerly married / lived with a partner}
+               ::  3  -> 3; {never married not in relationship}
+               ::     -> 9;
+    endrecode;
+
+PROC MA1
+preproc
+	if addmode then
+		savepartial();
+	endif;
+
+postproc  
+	if $ = 3 then
+		skip to MA5
+	endif;
+
+PROC MA3
+if $ <> 1 then
+	skip to MA7
+endif;
+
+PROC MA4
+skip to MA7;
+
+PROC MA5
+if $ in 3,9 then 
+	endgroup;
+endif;
+
+PROC MA8Y
+if validyr($) & validyr(WB3Y) & $ <= WB3Y then
+	errmsg(1115,WB3M,WB3Y,MA8M,$); 
+	reenter;
+endif;
+
+{ Check woman at least 4 when married (minam=min. age at marriage) }
+if MA8Y < 9996 and WB3Y < 9996 then
+	if valid(MA8M) and valid(WB3M) then
+		if cmcode(MA8M,MA8Y) - cmcode(WB3M,WB3Y) < 0 then
+			errmsg(1401,WB3M,WB3Y,MA8M,MA8Y,0);
+		elseif cmcode(MA8M,MA8Y) - cmcode(WB3M,WB3Y) < minam then
+			errmsg(1401,WB3M,WB3Y,MA8M,MA8Y,minam/12);
+		endif;
+	else
+		if MA8Y - WB3Y < 0 then
+			errmsg(1401,WB3M,WB3Y,MA8M,MA8Y,0);
+		elseif MA8Y - WB3Y < int(minam/12)-1 then
+			errmsg(1401,WB3M,WB3Y,MA8M,MA8Y,minam/12);
+		endif;
+	endif;
+endif;
+
+if MA8Y < 9997 then
+  if $ > WM6Y or $ = WM6Y and MA8M in WM6M+1:12 then
+	errmsg(1402,MA8M,MA8Y);
+	reenter;
+  endif;
+  endgroup;
+endif;
+PROC MA11
+if $ > WB4 and valid($) then
+	errmsg(1701,$,WB4);
+	reenter;
+endif;
+
+if $ < minam/12 then
+	errmsg(1403,$, minam/12);
+	reenter;
+endif;
+PROC FORMAF
+preproc
+if visualvalue (WMAFTSTMPS) = notappl then
+   WMAFTSTMPS = timestamp (); 
+   endif; 
+   
+postproc
+if visualvalue (WMAFTSTMPE) = notappl then
+   WMAFTSTMPE = timestamp (); 
+   endif; 
+   
+PROC AF2
+preproc
+if WB4 < 18 then
+	endgroup
+endif;
+
+if addmode then
+	savepartial();
+endif;
+PROC AF15
+if $ in 5,9 then
+	skip to AF17;
+endif;
+PROC AF17
+if $ in 5,9 then
+	endgroup;
+endif;
+PROC FORMSB
+preproc
+if visualvalue (WMSBTSTMPS) = notappl then
+   WMSBTSTMPS = timestamp (); 
+   endif; 
+   
+postproc
+if visualvalue (WMSBTSTMPE) = notappl then
+   WMSBTSTMPE = timestamp (); 
+   endif; 
+   
+PROC SB1
+preproc
+if MA1 in 1,2 then
+	endgroup;
+endif;
+
+
+postproc
+if $ in WB4+1:49 then
+	errmsg(1801,SB1,WB4);
+	reenter
+endif;
+
+if $ = 0 then
+	if CM11 > 0 | CP1 <> 2 then
+		errmsg(1810);
+		reenter
+	elseif MA1 in 1,2 | MA5 in 1,2 then
+		if addmode then
+			errmsg(1811);
+		endif
+	endif;
+endif;
+
+if $ = 0 then
+	endgroup
+endif;
+
+if $ = 95 then
+	if MA5 = 3 then
+		errmsg(1812);
+		reenter
+	endif;
+endif;
+
+PROC SB2N
+if badspecial(SB2U,SB2N) or
+             (SB2U = 3 & SB2N in 12:98) or
+             (SB2U = 2 & SB2N in 52:98) then
+	errmsg(9992);
+	reenter
+endif;
+
+if SB1 < 95 & SB2U = 4 & WB4-SB2N < SB1 then
+	errmsg(1802,WB4-SB2N,SB1);
+endif;
+
+if SB2U = 4 then
+	endgroup
+endif;
+
+PROC FORMDM
+preproc
+if visualvalue (WMDMTSTMPS) = notappl then
+   WMDMTSTMPS = timestamp (); 
+   endif; 
+   
+postproc
+if visualvalue (WMDMTSTMPE) = notappl then
+   WMDMTSTMPE = timestamp (); 
+   endif; 
+   
+PROC DM3
+preproc
+	if MA1 > 2 then
+		endgroup
+	endif;
+postproc
+if $ = 6 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+PROC DM4
+if $ = 6 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+PROC DM4A
+
+	
+PROC DM6
+preproc
+	if CP1 = 1 then
+		endgroup;
+	else
+		if UN11 = 2 or UN7 = 3 or UN8 = 994 then
+			endgroup;
+		endif;
+	endif;
+	
+postproc
+if $ = 6 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+PROC FORMMX
+preproc
+if visualvalue (WMMMTSTMPS) = notappl then
+   WMMMTSTMPS = timestamp (); 
+   endif; 
+   
+PROC INTROMM
+if $ <> 1 then 
+		skip to TO1;
+endif;
+
+PROC MX1
+preproc
+	if addmode then
+		savepartial ();
+	endif;	
+  
+	$ = curocc ();
+
+PROC MX2
+if length(strip($)) = 0 then
+	errmsg(9991);
+	reenter
+endif;
+  
+PROC MX0
+if $ <> 1 then
+	endgroup
+endif;
+
+PROC MMAUX
+if $ = 1 then
+	reenter MX0(totocc(FORMMX_ROSTER))
+endif;
+  
+PROC MM3
+if $ = 1 then
+	reenter MX0(totocc(FORMMX_ROSTER))
+endif;
+  
+PROC MM4
+if $ = 1 then
+	reenter MX0(totocc(FORMMX_ROSTER))
+endif;
+  
+PROC MM5
+if $ = 1 then
+	reenter MX0(totocc(FORMMX_ROSTER))
+endif;
+  
+PROC MM6
+if $ = 1 then
+	reenter MX0(totocc(FORMMX_ROSTER))
+endif;
+  
+PROC MM7
+preproc
+	$ = totocc(FORMMX_ROSTER);
+
+PROC MM8
+if $ <> 1 then
+	errmsg(2200);
+  reenter;
+endif;
+
+PROC FORMMY_ROSTER
+preproc
+	for i in FORMMX_ROSTER
+		MYLN(i) = MX1(i);
+		MYNM(i) = MX2(i);
+	enddo;
+
+postproc
+	for i in FORMMX_ROSTER
+		if MM11(i) = notappl then reenter MM11 (i); endif;
+	enddo;
+
+	for i in FORMMX_ROSTER
+		for j in FORMMX_ROSTER
+			if i <> j and MM11(i) = MM11 (j) then
+				errmsg(2201);
+				reenter MM11(i);
+			endif;
+		enddo;
+	enddo; 
+
+PROC MYLN
+preproc
+	if curocc() > MM7 then
+		endgroup
+	endif;
+
+PROC MM11
+if $ > MM7 then 
+	errmsg(2202);
+	reenter;
+endif;
+
+PROC MM12
+if $ > totocc(FORMMY_ROSTER) then
+	errmsg("Cannot be more than the total number of siblings.");
+	reenter
+endif;
+PROC FORMMM
+postproc
+if visualvalue (WMMMTSTMPE) = notappl then
+   WMMMTSTMPE = timestamp (); 
+   endif; 
+   
+PROC FORMMM_ROSTER
+preproc
+	for i in FORMMY_ROSTER
+		for j in  FORMMY_ROSTER
+			if i = MM11 (j) then 
+				MMLN (i) = i;
+				MM14 (i) = MYNM (j);
+			endif;   
+		enddo;
+	enddo;
+
+PROC MMLN
+preproc
+	if addmode then
+		savepartial();
+	endif;
+
+	if curocc() > MM7 then
+		endgroup
+	endif;
+
+PROC MM16
+if $ = 2 then
+	skip to MM18
+elseif $ = 8 or $ = 9 then
+	skip to next MMLN;
+endif;
+
+PROC MM17
+skip to next MMLN;
+
+PROC MM22
+preproc:
+	if MM15 <> 2 then skip to MM26
+	elseif MM19 < 12 then skip to MM26;
+	endif;
+
+postproc:
+	if $ = 1 then
+		skip to MM26
+	endif;
+
+PROC MM23
+if $ = 1 then
+	skip to next MMLN
+endif;
+
+PROC MM24
+if $ <> 1 then
+	skip to MM26
+endif;
+
+PROC MM26
+if $ = 1 then
+	skip to next MMLN;
+endif;
+
+
+PROC FORMTO
+preproc
+if visualvalue (WMTOTSTMPS) = notappl then
+   WMTOTSTMPS = timestamp (); 
+   endif; 
+   
+postproc
+if visualvalue (WMTOTSTMPE) = notappl then
+   WMTOTSTMPE = timestamp (); 
+   endif; 
+   
+PROC TO1
+preproc
+if addmode then 
+	savepartial(); 
+endif;
+
+postproc
+if $ <> 1 then 
+	skip to TO6;
+endif;
+PROC TO2
+if $ = 0 then 
+	skip to TO6;
+endif;
+PROC TO3
+if $ = 2 then 
+	skip to TO5;
+else if $ >= 3 then
+	skip to TO6;
+endif;
+endif;
+PROC TO4
+endgroup;
+PROC TO6
+if $ <> 1 then 
+	skip to TO9;
+endif;
+PROC TO7
+if $ = 1 then
+	endgroup;
+else if $>=3 then
+	skip to TO9;
+endif;
+endif;
+PROC TO9
+if $ = 1 then
+	endgroup;
+else if $>=3 then
+	skip to TO11;
+endif;
+endif;
+PROC TO10
+if $ = 1 then
+	endgroup;
+endif;
+PROC TO11
+if $ in 1, 3 then
+	endgroup;
+endif;
+PROC FORMMH
+preproc
+if visualvalue (WMMHTSTMPS) = notappl then
+   WMMHTSTMPS = timestamp (); 
+   endif; 
+   
+PROC MH1
+preproc
+if addmode then 
+	savepartial(); 
+endif;
+
+{MH0 filter}
+if !WB4 in 15:24 then
+	skip to VW1;
+endif;
+
+postproc
+if $ = 2 then
+	skip to VW1;
+endif;
+PROC MH15
+preproc
+{MH13 filter}
+if (MH3 in 2:3) or (MH4 in 2:3) or (MH5 in 2:3) or (MH6 in 2:3) then
+	MH3to6=1;
+	else
+	MH3to6=2;
+endif;
+
+ {MH14 filter}
+if (MH7 in 2:3) or (MH8 in 2:3) or (MH9 in 2:3) or (MH10 in 2:3) or (MH11 in 2:3) or (MH12 in 2:3) then			
+	MH7to12=1;
+	else
+	MH7to12=2;
+endif;
+if MH3to6=2 and MH7to12=1 then
+	skip to MH23;
+endif;
+if MH3to6=2 and MH7to12=2 then
+	skip to MH36{wm10h};
+endif;
+PROC MH27
+preproc
+{MH27 filter}
+if {MH3to6=2 and} MH7to12=2 then
+	skip to MH33;
+endif;
+PROC MH33
+preproc;
+{MH31 filter}
+{if NAtozero9(MH3)+NAtozero9(MH4)+NAtozero9(MH5)+NAtozero9(MH6)+
+   NAtozero9(MH7)+NAtozero9(MH8)+NAtozero9(MH9)+NAtozero9(MH10)+
+   NAtozero9(MH11)+NAtozero9(MH12)+
+   NAtozero9(MH15)+NAtozero9(MH16)+NAtozero9(MH17)+NAtozero9(MH18)+
+   NAtozero9(MH19)+NAtozero9(MH20)+NAtozero9(MH21)+NAtozero9(MH22)+
+   NAtozero9(MH23)+NAtozero9(MH24)+NAtozero9(MH25)+
+   NAtozero9(MH27)+NAtozero9(MH28)+NAtozero9(MH29)+NAtozero9(MH30)
+   < 2 then
+	skip to MH36;
+endif;
+}
+
+if MH3to6=2 and MH7to12=2 then
+	skip to MH36;
+endif;
+
+
+PROC MH36
+if $ <> 0 then
+	skip to MH37;
+endif;
+PROC MH36A
+if $ = 0 then
+	skip to MH40;
+endif;
+PROC MH37
+if $ = 1 then
+	skip to MH38;
+endif;
+PROC MH37A
+if $ <> 1 then
+	skip to MH40;
+endif;
+PROC MH38
+alphavar = $;
+if alphachk("ABCDEFGHIJX?") then
+	errmsg(9998);
+	reenter
+else
+	$ = alphavar;
+endif;
+{ Check "Missing" is only response }
+if pos("?",$) & alphsize > 1 then
+	errmsg(9995);
+	reenter
+endif;
+{ Display the note entry dialog box for recording "Other" answer }
+if pos("X",$)  and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+PROC FORMMH2
+postproc
+if visualvalue (WMMHTSTMPE) = notappl then
+   WMMHTSTMPE = timestamp (); 
+   endif; 
+   
+PROC MH40
+if $ = 2 then
+	skip to MH49D
+endif;
+PROC MH43
+if $ <> 1 then
+	skip to MH46;
+endif;
+PROC MH45
+preproc
+{MH44 filter}
+if (MH42 <> 1) then
+	skip to MH48;
+endif;
+
+postproc
+if $ = 1 then
+	skip to MH49AB;
+	else
+	skip to MH49C;
+endif; 
+PROC MH46
+preproc
+{MH46 filter}
+
+if ( NAtoZero9(MH3)+  NAtoZero9(MH4)+ NAtoZero9(MH5)+ NAtoZero9(MH6)+ 
+                 NAtoZero9(MH15)+ NAtoZero9(MH16)+ NAtoZero9(MH17)+ NAtoZero9(MH18)+ 
+				 NAtoZero9(MH19)+ NAtoZero9(MH20)+ NAtoZero9(MH21)+ NAtoZero9(MH22)+ 
+				 NAtoZero9(MH23)+ NAtoZero9(MH24)+ NAtoZero9(MH25)) > 17 then
+   $=1;
+else
+   $=2;
+endif;
+
+postproc;
+if $=1 then
+   skip to MH48;
+endif;
+PROC MH47
+preproc
+{MH47 filter}
+if (NAtoZero9(MH7)+ NAtoZero9(MH8)+ NAtoZero9(MH9)+ NAtoZero9(MH10)+ NAtoZero9(MH11)+ NAtoZero9(MH12)+ 
+               NAtoZero9(MH23)+ NAtoZero9(MH24)+ NAtoZero9(MH25)+ 
+			   NAtoZero9(MH27)+ NAtoZero9(MH28)+ NAtoZero9(MH29)+ NAtoZero9(MH30))>19 then
+   $=1;
+else
+   $=2;
+endif;
+
+postproc;
+if $=2 then
+   skip to MH49D;
+endif;
+PROC MH48
+if $ = 1 then
+	skip to MH49AB;
+else
+	skip to MH49C;
+endif;
+PROC MH49AB
+
+if visualvalue(MH49AB1)=notappl then
+	MH49AB1 = HH1*10000+HH2*100+WM3;
+endif;
+if MH45=1 then
+	MH49AB2 = 1;
+else
+	MH49AB2 = 2;
+ endif; 
+MH49AB3 = WM3A;
+MH49AB4 = 2;
+MH49AB5 = WB4; 
+PROC MH49AB1
+//preproc
+{creating random/unique number for referral}
+ {  if visualvalue($)=notappl then
+		x = systime();
+		if $=notappl then $ = int(x / 10000)*10000 + (WM3*100) + HH2 ;endif;
+	endif;
+	}
+ //  if visualvalue($)=notappl then
+//		$ = HH1*10000+HH2*100+WM3;
+//	endif;
+PROC MH49AB2
+{preproc
+if MH45=1 then
+	$ = 1;
+	else
+	$ = 2;
+ endif; }
+PROC MH49AB3
+
+PROC MH49AB4
+{preproc
+$ = 2; }
+PROC MH49AB5
+{preproc; 
+$ = WB4; }
+PROC MH49AB6
+alphavar = $;
+if alphachk("ABX") then
+	errmsg(9998);
+	reenter
+else
+	$ = alphavar;
+endif;
+
+
+if pos("X",$)  and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+PROC MH49AB8N
+preproc;
+$=getlabel(MH49AB8,MH49AB8);
+PROC MH49C
+preproc
+if MH45 =1 or MH48 =1 then
+	skip to MH49D;
+endif; 
+
+postproc
+skip to MH51;
+
+PROC FORMVW
+preproc
+if visualvalue (WMVWTSTMPS) = notappl then
+   WMVWTSTMPS = timestamp (); 
+   endif; 
+
+postproc
+if visualvalue (WMVWTSTMPE) = notappl then
+   WMVWTSTMPE = timestamp (); 
+   endif; 
+   
+PROC VW1
+preproc
+{VW0 filter}
+if HH30HB <> WM3 then
+	endgroup;
+endif;
+
+postproc
+if $ <>1 then
+	skip to VW37;
+endif;
+PROC VW4
+preproc
+{Vw3 filter}
+if MA5 <> 3 then
+	skip to VW6A1;
+endif;
+
+postproc
+if $ = 1 then
+	skip to VW6A1;
+endif;
+
+PROC VW5
+if $ <> 1 then
+	skip to VW20;
+endif;
+PROC VW6A1
+if $ <> 1 then
+	skip to VW6B1;
+endif;
+PROC VW6B1
+if $ <> 1 then
+	skip to VW6C1;
+endif;
+PROC VW6C1
+if $ <> 1 then
+	skip to VW6D1;
+endif;
+PROC VW6D1
+if $ <> 1 then
+	skip to VW6E1;
+endif;
+PROC VW6E1
+if $ <> 1 then
+	skip to VW7A1;
+endif;
+PROC VW7A1
+if $ <> 1 then
+	skip to VW7B1;
+endif;
+PROC VW7B1
+if $ <> 1 then
+	skip to VW7C1;
+endif;
+PROC VW7C1
+if $ <> 1 then
+	skip to VW8A1;
+endif;
+PROC VW8A1
+if $ <> 1 then
+	skip to VW8B1;
+endif;
+PROC VW8B1
+if $ <> 1 then
+	skip to VW8C1;
+endif;
+PROC VW8C1
+if $ <> 1 then
+	skip to VW8D1;
+endif;
+PROC VW8D1
+if $ <> 1 then
+	skip to VW8E1;
+endif;
+PROC VW8E1
+if $ <> 1 then
+	skip to VW8F1;
+endif;
+PROC VW8F1
+if $ <> 1 then
+	skip to VW8G1;
+endif;
+PROC VW8G1
+if $ <> 1 then
+	skip to VW8H1;
+endif;
+PROC VW8H1
+if $ <> 1 then
+	skip to VW8I1;
+endif;
+PROC VW8I1
+if $ <> 1 then
+	skip to VW8J1;
+endif;
+PROC VW8J1
+if $ <> 1 then
+	skip to VW10A;
+endif;
+PROC VW10A
+preproc
+	if (VW8A1 <> 1 and VW8B1 <> 1 and VW8C1 <> 1 and VW8D1 <> 1 and VW8E1 <> 1 and VW8F1 <> 1 and VW8G1 <> 1 and VW8H1 <> 1 and VW8I1 <> 1 and VW8J1 <> 1) then
+		skip to VW11;
+	endif;
+	
+	
+PROC VW11
+if $ <> 1 then
+	skip to VW13;
+endif;
+PROC VW13
+if $ <> 1 then
+	skip to VW15;
+endif;
+PROC VW16A1
+if $ = 2 then
+	skip to VW16B1;
+else if $ = 3 then
+	skip to VW18;
+else if $ = 9 then
+	skip to VW16B1;
+endif;
+endif;
+endif;
+PROC VW16B1
+if $ <> 1 then
+	skip to VW16C1;
+endif;
+PROC VW16C1
+if $ <> 1 then
+	skip to VW18;
+endif;
+PROC VW18
+preproc
+if VW8H1 <>1 and VW8I1 <>1 and VW8J1 <> 1 and VW16B1 <> 1 then
+	skip to VW20;
+endif; 
+
+postproc
+if $ > WB4 and $ < 98 then
+   errmsg("Age at first time (%v) can not be greather than woman age (%v)",$,WB4);
+   reenter;
+endif; 
+PROC VW20
+preproc
+	if (CP1 <> 1 and CM11 = 0) then
+		skip to VW22A;
+	endif;
+	
+postproc
+	if $ <> 1 then
+		skip to VW22A;
+	endif;
+PROC VW21
+alphavar = $;
+if alphachk("ABCDEFGHIJKLMNOPX?") then
+	errmsg(9998);
+	reenter
+else
+	$ = alphavar;
+endif;
+{ Check "Missing" is only response }
+if pos("?",$) & alphsize > 1 then
+	errmsg(9995);
+	reenter
+endif;
+{ Display the note entry dialog box for recording "Other" answer }
+if pos("X",$)  and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+PROC VW22A
+if $ <> 1 then
+	skip to VW26;
+endif
+PROC VW23
+alphavar = $;
+if alphachk("ABCDEFGHIJKLMNX?") then
+	errmsg(9998);
+	reenter
+else
+	$ = alphavar;
+endif;
+{ Check "Missing" is only response }
+if pos("?",$) & alphsize > 1 then
+	errmsg(9995);
+	reenter
+endif;
+{ Display the note entry dialog box for recording "Other" answer }
+if pos("X",$)  and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+PROC VW26
+preproc
+if MA5=3 AND VW4=2 AND VW5=2 then
+	skip to VW27;
+endif;
+
+postproc
+if $=1 then
+	skip to VW28A
+else
+	skip to VW32;
+endif;
+
+
+PROC VW27
+if $ <> 1 then
+	skip to VW32;
+endif;
+PROC VW28A
+if $ > WB4 and $ < 98 then
+   errmsg("Age at first time (%v) can not be greather than woman age (%v)",$,WB4);
+   reenter;
+endif; 
+PROC VW29
+alphavar = $;
+if alphachk("ABCDEFGHIJKLMNX?") then
+	errmsg(9998);
+	reenter
+else
+	$ = alphavar;
+endif;
+{ Check "Missing" is only response }
+if pos("?",$) & alphsize > 1 then
+	errmsg(9995);
+	reenter
+endif;
+{ Display the note entry dialog box for recording "Other" answer }
+if pos("X",$)  and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+PROC VW32
+preproc
+if (VW8A1 <> 1 and 
+    VW8B1 <> 1 and
+	VW8C1 <> 1 and
+	VW8D1 <> 1 and
+	VW8E1 <> 1 and
+	VW8F1 <> 1 and
+	VW8G1 <> 1 and
+	VW8H1 <> 1 and
+	VW8I1 <> 1 and
+	VW8J1 <> 1 and
+	VW16A1 <> 1 and
+	VW16B1 <> 1 and
+	VW20 <> 1 and
+	VW22A <> 1 and
+	VW26 <> 1 and
+	VW27 <> 1 ) then
+	skip to VW35;
+endif;
+
+postproc
+if $ <> 1 then
+	skip to VW34;
+endif;
+PROC VW33
+alphavar = $;
+if alphachk("ABCDEFGHIJKX?") then
+	errmsg(9998);
+	reenter
+else
+	$ = alphavar;
+endif;
+{ Check "Missing" is only response }
+if pos("?",$) & alphsize > 1 then
+	errmsg(9995);
+	reenter
+endif;
+{ Display the note entry dialog box for recording "Other" answer }
+if pos("X",$)  and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+
+skip to VW35;
+PROC VW35B
+preproc
+{VW35A filter}
+if (VW7A2 <> 1 and 
+	VW7B2 <> 1 and 
+	VW7C2 <> 1 and 
+    VW8A2 <> 1 and
+    VW8B2 <> 1 and
+	VW8C2 <> 1 and
+	VW8D2 <> 1 and
+	VW8E2 <> 1 and
+	VW8F2 <> 1 and
+	VW8G2 <> 1 and
+	VW8H2 <> 1 and
+	VW8I2 <> 1 and
+	VW8J2 <> 1 and
+	VW15 <> 1 and	
+	VW16A2 <> 1 and
+	VW16B2 <> 1 and
+	VW24 in 3,9,notappl and
+	VW30A <> 1 ) then
+	skip to VW35E;
+endif;
+
+postproc
+if $ =2 then
+	skip to VW35D;
+endif; 
+
+PROC VW35C
+if visualvalue(VW35C1)=notappl then
+	VW35C1 = HH1*10000+HH2*100+WM3;
+endif;
+VW35C2 = 1;
+VW35C3 = WM3A;
+VW35C5 = WB4; 
+
+PROC VW35C6
+alphavar = $;
+if alphachk("ABX") then
+	errmsg(9998);
+	reenter
+else
+	$ = alphavar;
+endif;
+
+if pos("X",$)  and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+PROC VW35C8N
+preproc
+$ = getvaluelabel(VW35C8)
+PROC VW35D
+preproc
+if VW35B = 1 then
+skip to VW35I;
+endif; 
+
+postproc
+skip to VW35I;
+
+PROC VW35E
+if $ = 2 then
+	skip to VW35H;
+endif; 
+PROC VW35F
+if $ = 2 then
+	skip to VW35H;
+endif; 
+PROC VW35G
+if visualvalue(VW35G1)=notappl then
+	VW35G1 = HH1*10000+HH2*100+WM3;
+endif;
+VW35G2 = 2;
+VW35G3 = WM3A;
+VW35G5 = WB4; 
+
+PROC VW35G6
+alphavar = $;
+if alphachk("ABX") then
+	errmsg(9998);
+	reenter
+else
+	$ = alphavar;
+endif;
+
+if pos("X",$)  and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+PROC VW35G8N
+preproc
+$ = getvaluelabel(VW35G8)
+PROC VW35H
+preproc
+if VW35E = 1 then
+skip to VW35I;
+endif; 
+ 
+PROC FORMEND
+preproc
+if visualvalue (WMENDTSTMPS) = notappl then
+   WMENDTSTMPS = timestamp (); 
+   endif; 
+   
+postproc
+if visualvalue (WMENDTSTMPE) = notappl then
+   WMENDTSTMPE = timestamp (); 
+   endif; 
+   
+if endmess() then
+	reenter WM17
+endif;
+endlevel;
+
+PROC WM10H
+preproc
+   if visualvalue(WM10H)=notappl then
+		x = systime();
+		if WM10H=notappl then WM10H = int(x / 10000);endif;
+		if WM10M=notappl then WM10M= int(x / 100) % 100;endif;
+	endif;
+
+PROC WM11
+if $ = 3 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+PROC WM13
+if $ = 6 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+PROC WM14
+if $ = 6 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+PROC WM15
+if WB4 in 15:17 then
+	skip to WM17;
+endif; 
+
+PROC WM15C
+if $=1 then
+	skip to WM17;
+endif;
+PROC WM15EF
+if $ = 2 then
+	skip to WM17;
+endif;
+
+PROC WM15GH
+if $ = 2 then
+	skip to WM17;
+endif;
+PROC WM15K
+if $ = 2 then
+	errmsg("Return to WM15J to correct the phone number");
+	reenter WM15J;
+endif;
+PROC WM15L
+if $ = 1 then
+    skip to next WM15J
+else
+    skip to WM17
+endif;
+PROC WM17
+preproc 
+valueset resultvs;
+if tonumber(sysparm("DELEGATEDTO")) > 0 then
+   resultvs.add(tr("Delegated to:")+sysparm("DELEGATEDTO"),97);
+   $ = 97;
+   noinput;
+else
+   resultvs=WM17_VST;
+   resultvs.remove(97);
+endif;
+
+if WB4 > 17 then
+resultvs.remove (6);
+endif; 
+setvalueset($,resultvs);
+  //household respondent refused
+  if taskStatus = 7 then
+    $=6;
+    noinput;
+  endif;
+
+
+postproc
+
+	if $ in 6,97 then  //If there not adult consent or this questionnaire was delegated, the entry must be closed
+	   errmsg(tr("Woman questionnaire finished due to %v"),getlabel($,$));
+	   endlevel;
+	endif;
+	
+	if WM9 <> 1 then
+		if $ = 1 then
+			errmsg(9970);
+			reenter;
+		endif;
+	elseif WM9 = 1 then
+		if !($ in 1,4) then
+			errmsg(9970);
+			reenter;
+		endif;
+	endif;
+
+	if $ = 96 and !inadvance() then
+		string other = editnote();
+		ensureNotBlank(other);
+	endif;
+	
+
+	 
+	if WM17 <> 1 & taskStatus <> 7 then
+		if endmess() then
+			reenter WM17
+		else
+			endlevel
+		endif;
+	endif;
+
+PROC WMFIN
+if $ = 1 then
+	goto ()
+elseif $ = 2 then
+	strnotes = editnote();
+	reenter
+endif;

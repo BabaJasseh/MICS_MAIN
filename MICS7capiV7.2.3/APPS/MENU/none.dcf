@@ -1,0 +1,29 @@
+﻿[Dictionary]
+Version=CSPro 7.7
+Label=none
+Name=NONE_DICT
+RecordTypeStart=1
+RecordTypeLen=1
+Positions=Relative
+ZeroFill=No
+DecimalChar=Yes
+SecurityOptions=C34250BEE28310E63A5F01F9CF1EDAF65050E6DD57F61DE7337961447B3E6AB9
+
+[Level]
+Label=none Level
+Name=NONE_LEVEL
+
+[IdItems]
+
+[Item]
+Label=none Identification
+Name=NONE_ID
+Start=2
+Len=1
+DataType=Numeric
+
+[Record]
+Label=none Record
+Name=NONE_REC
+RecordTypeValue='1'
+RecordLen=1

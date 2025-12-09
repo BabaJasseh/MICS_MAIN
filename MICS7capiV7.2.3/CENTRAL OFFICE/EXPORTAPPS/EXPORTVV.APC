@@ -1,0 +1,38 @@
+﻿PROC GLOBAL
+//set explicit;
+
+file myVV;	{ singly-occuring HH records }
+	
+
+numeric i, j, notoccur, hloccur;
+
+{ --------------------------------------------------------------------------- }
+
+PROC MICS7_FF
+preproc
+notoccur = 999;       { HH member's occurrence number if not listed in module  }
+
+postproc
+
+PROC HH
+preproc
+{ EXPORT HH }
+set behavior() export (SPSS SubitemOnly);
+
+{ --------------------------------------------------------------------------- }
+{ EXPORT HH MEMBERS }
+for i in MODHL_EDT do
+
+  hloccur = i;      	 { HH member's occurrence number in the HL module  }
+  
+
+  { Export the HH member }
+  export to myVV    HH1, HH2, 	{ ID vars, + the first variable of the MODHL record, i.e., HL1, the person's line # }
+    MODHL(hloccur);
+ enddo;
+
+
+
+
+
+

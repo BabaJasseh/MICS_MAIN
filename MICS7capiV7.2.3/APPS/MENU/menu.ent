@@ -1,0 +1,46 @@
+﻿[CSPro Application]
+Version=CSPro 7.7
+Label=menu
+Name=menu
+AppType=DataEntry
+OperatorID=No
+ShowEndCaseDialog=No
+CAPI=Yes
+CaseTree=Never
+CreateListing=No
+CreateLog=No
+ShowFieldLabels=No
+ShowErrorMessageNumbers=No
+VerifyFrequency=1
+VerifyStart=RANDOM
+[External Dictionaries]
+File=..\shareddicts\MICS7HH.dcf
+File=..\shareddicts\Staff.dcf
+File=..\shareddicts\HOUSEHOLDS.DCF
+File=..\shareddicts\CLUSTERS.DCF
+File=..\shareddicts\MICS7WM.dcf
+File=..\shareddicts\MICS7CH.dcf
+File=..\shareddicts\MICS7FS.dcf
+File=..\shareddicts\MICS7MN.dcf
+[AppCode]
+File=.\menu.ent.apc
+Include=..\SETTINGS.APC
+Include=.\maps_settings.apc
+[Message]
+File=.\menu.ent.mgf
+[Help]
+File=.\menu.ent.qsf
+[Forms]
+File=.\menu.fmf
+[Resources]
+Folder=.\Resources
+[Dictionary Types]
+Dict-Type=..\shareddicts\MICS7HH.dcf,External
+Dict-Type=..\shareddicts\Staff.dcf,External
+Dict-Type=..\shareddicts\HOUSEHOLDS.DCF,External
+Dict-Type=.\menu.dcf,Input,.\menu.fmf
+Dict-Type=..\shareddicts\MICS7WM.dcf,External
+Dict-Type=..\shareddicts\CLUSTERS.DCF,External
+Dict-Type=..\shareddicts\MICS7CH.dcf,External
+Dict-Type=..\shareddicts\MICS7FS.dcf,External
+Dict-Type=..\shareddicts\MICS7MN.dcf,External

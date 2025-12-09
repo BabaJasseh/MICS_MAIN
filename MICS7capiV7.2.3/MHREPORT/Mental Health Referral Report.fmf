@@ -1,0 +1,47 @@
+﻿[FormFile]
+Version=CSPro 7.7
+Name=NULL_FF
+Label=Mental Health Referral Report
+DefaultTextFont=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
+FieldEntryFont=0018 0000 0000 0000 0600 0000 0000 0000 0000 0000 0000 0000 0000 Courier New
+Type=SystemControlled
+  
+[Dictionaries]
+File=.\null.dcf
+  
+[Form]
+Name=FORM000
+Label=(Id Items)
+QuestionTextHeight=302
+Level=1
+Size=1579,300
+  
+Item=SELECTION
+  
+[EndForm]
+  
+[Level]
+Name=NULL_LEVEL
+Label=null Level
+  
+[Group]
+Required=Yes
+Name=IDS0_FORM
+Label=(Id Items)
+Form=1
+Max=1
+  
+[Field]
+Name=SELECTION
+Position=145,27,160,47
+Item=SELECTION,NULL_DICT
+FieldLabelType=DictionaryName
+DataCaptureType=RadioButton
+Form=1
+  
+[Text]
+Position=50,30,123,46
+Text=SELECTION
+ 
+[EndGroup]
+  

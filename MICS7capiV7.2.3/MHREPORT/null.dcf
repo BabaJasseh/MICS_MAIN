@@ -1,0 +1,35 @@
+﻿[Dictionary]
+Version=CSPro 7.7
+Label=null
+Name=NULL_DICT
+RecordTypeStart=0
+RecordTypeLen=0
+Positions=Relative
+ZeroFill=No
+DecimalChar=Yes
+SecurityOptions=935C4D29F63D9F4E778CB7EC871D963CF7D02E0D744DC90B7A55CBE04AD6E8F0
+
+[Level]
+Label=null Level
+Name=NULL_LEVEL
+
+[IdItems]
+
+[Item]
+Label=Selection
+Name=SELECTION
+Start=1
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Selection
+Name=SELECTION_VS1
+Value=1;Download and view the report
+Value=9;Exit
+
+[Record]
+Label=Record 0-0
+Name=RECORD_0_0
+RecordTypeValue=''
+RecordLen=1

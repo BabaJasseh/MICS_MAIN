@@ -1,0 +1,26 @@
+﻿Application     C:\Users\Lenovo\AppData\Local\Temp\CSExpRun45384.bch
+Type            BATCH
+Input Data      <<CSPro DB>> D:\Unicef\MICS7capiV7.2.3\MICS7capiV7.2.3\PUBLIC\households.csdb
+<File>          cspro_export_file_var_f=
+
+Date            Dec 08, 2025
+Start Time      09:04:27
+End Time        09:04:28
+
+CSPro Process Summary
+
+      ╔══════════════════════════════════════════════════════╗
+      ║        27 Records Read   100% of input file          ║
+      ║         0 Ignored:       0 Unknown         0 Erased  ║
+      ║         0 Messages:      0 E      0 W      0 User    ║
+      ╠═════════╦══════════════╦══════════════╦══════════════╣
+      ║  Level  ║  Input Case  ║  Bad Struct  ║  Level Post  ║
+      ╠═════════╬══════════════╬══════════════╬══════════════╣
+      ║      1  ║          27  ║           0  ║          27  ║
+      ╚═════════╩══════════════╩══════════════╩══════════════╝
+
+Process Messages
+
+
+CSPro Executor Normal End
+------------------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,5720 @@
+﻿[Dictionary]
+Version=CSPro 7.7
+Label=MICS7 Household Questionnaire
+Name=MICS7HH
+RecordTypeStart=11
+RecordTypeLen=3
+Positions=Relative
+ZeroFill=Yes
+DecimalChar=No
+SecurityOptions=1DB005EC1D90D57463939D81D9995E26757D0E10BF8E4538CBC3E60370AE13C4
+
+[Languages]
+ENG=English
+
+[Level]
+Label=Household
+Name=HH
+
+[IdItems]
+
+[Item]
+Label=Cluster number
+Name=HH1
+Start=1
+Len=5
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Household number
+Name=HH2
+Start=6
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Household interviewer number
+Name=HINT
+Start=8
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Household line number
+Name=HLN
+Start=14
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Record]
+Label=Household Information Panel
+Name=MODHH
+RecordTypeValue='0HH'
+RecordLen=250
+
+[Item]
+Label=Interviewer number
+Name=HH3
+Start=16
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Supervisor number
+Name=HH4
+Start=19
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Date of interview
+Name=HH5
+Start=22
+Len=8
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Day of interview
+Name=HH5D
+Start=22
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of interview
+Name=HH5D_VST
+Value=1:31
+
+[Item]
+Label=Month of interview
+Name=HH5M
+Start=24
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of interview
+Name=HH5M_VST
+Value=1:12
+
+[Item]
+Label=Year of interview
+Name=HH5Y
+Start=26
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of interview
+Name=HH5Y_VST
+Value=2025:2028
+
+[Item]
+Label=Location
+Name=HH6
+Start=30
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Location
+Name=HH6_VST
+Value=1;URBAN
+Value=2;RURAL
+
+[Item]
+Label=Region
+Name=HH7
+Start=31
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Region
+Name=HH7_VST
+Value=1;REGION 1
+Value=2;REGION 2
+Value=3;REGION 3
+Value=4;REGION 4
+Value=5;REGION 5
+
+[Item]
+Label=HH selected for Questionnaire for Men
+Name=HH8
+Start=32
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=HH selected for Questionnaire for Men
+Name=HH8_VST
+Value=1;YES
+Value=2;NO
+
+[Item]
+Label=HH selected for Water Quality Testing
+Name=HH9
+Start=33
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=HH selected for Water Quality Testing
+Name=HH9_VST
+Value=1;YES
+Value=2;NO
+
+[Item]
+Label=HH selected for Blank Testing
+Name=HH10
+Start=34
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=HH selected for Blank Testing
+Name=HH10_VST
+Value=1;YES
+Value=2;NO
+
+[Item]
+Label=Name of household head
+Name=HHNAME
+Start=35
+Len=20
+DataType=Alpha
+
+[Item]
+Label=Time of start of interview
+Name=HH11
+Start=55
+Len=4
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Start of interview - Hour
+Name=HH11H
+Start=55
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Start of interview - Hour
+Name=HH11H_VST
+Value=6:23
+
+[Item]
+Label=Start of interview - Minutes
+Name=HH11M
+Start=57
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Start of interview - Minutes
+Name=HH11M_VST
+Value=0:59
+
+[Item]
+Label=Respondent age confirmation
+Name=HH11C
+Start=59
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Respondent age confirmation
+Name=HH11C_VS1
+Value=1;CONTINUE
+
+[Item]
+Label=Consent
+Name=HH12
+Start=60
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Consent
+Name=HH12_VST
+Value=1;YES
+Value=2;NO / NOT ASKED
+
+[Item]
+Label=Result of HH interview
+Name=HH46
+Start=61
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Result of HH interview
+Name=HH46_VST
+Value=1;COMPLETED
+Value=2;NO HOUSEHOLD MEMBER AT HOME OR NO COMPETENT RESPONDENT AT HOME AT TIME OF VISIT
+Value=3;ENTIRE HOUSEHOLD ABSENT FOR EXTENDED PERIOD OF TIME
+Value=4;REFUSED
+Value=5;DWELLING VACANT OR ADDRESS NOT A DWELLING
+Value=6;DWELLING DESTROYED
+Value=7;DWELLING NOT FOUND
+Value=96;OTHER
+
+[Item]
+Label=Time of end of interview
+Name=HH13
+Start=63
+Len=4
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=End of interview - Hour
+Name=HH13H
+Start=63
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=End of interview - Hour
+Name=HH13H_VST
+Value=6:23
+
+[Item]
+Label=End of interview - Minutes
+Name=HH13M
+Start=65
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=End of interview - Minutes
+Name=HH13M_VST
+Value=0:59
+
+[Item]
+Label=Language of the Questionnaire
+Name=HH14
+Start=67
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Language of the Questionnaire
+Name=HH14_VST
+Value=1;ENGLISH
+Value=2;LANGUAGE 2
+Value=3;LANGUAGE 3
+
+[Item]
+Label=Language of the Interview
+Name=HH15
+Start=68
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Language of the Interview
+Name=HH15_VST
+Value=1;ENGLISH
+Value=2;LANGUAGE 2
+Value=3;LANGUAGE 3
+Value=6;OTHER LANGUAGE
+
+[Item]
+Label=Native language of the Respondent
+Name=HH16
+Start=69
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Native language of the Respondent
+Name=HH16_VST
+Value=1;ENGLISH
+Value=2;LANGUAGE 2
+Value=3;LANGUAGE 3
+Value=6;OTHER LANGUAGE
+
+[Item]
+Label=Translator used
+Name=HH17
+Start=70
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Translator used
+Name=HH17_VST
+Value=1;YES, ENTIRE QUESTIONNAIRE
+Value=2;YES, PART OF QUESTIONNAIRE
+Value=3;NO, NOT USED
+
+[Item]
+Label=Rank number of the selected child
+Name=HH26A
+Start=71
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Rank number of the selected child
+Name=HH26A_VST
+Value=1:8
+
+[Item]
+Label=Child line number
+Name=HH26B
+Start=72
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child line number
+Name=HH26B_VST
+Value=1:50
+Value=97;Inconsistent
+
+[Item]
+Label=Child's age
+Name=HH26C
+Start=74
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Rank number of the selected woman for the VW module
+Name=HH30HA
+Start=76
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Rank number of the selected woman for the VW module
+Name=HH30HA_VS1
+Value=1:8
+
+[Item]
+Label=Woman line number for the VW module
+Name=HH30HB
+Start=77
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Woman line number for the VW module
+Name=HH30HB_VS1
+Value=1:50
+Value=97;Inconsistent
+
+[Item]
+Label=Woman's age (selected for the VW module)
+Name=HH30HC
+Start=79
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Roster to check the consent for interview girls 15-17
+Name=HH33X
+Start=81
+Len=1
+DataType=Numeric
+Occurrences=50
+ZeroFill=Yes
+
+[ValueSet]
+Label=Roster to check the consent for interview girls 15-17
+Name=HH33X_VST
+Value=1;YES, PERMISSION IS GIVEN
+Value=2;NO, PERMISSION IS NOT GIVEN
+
+[Item]
+Label=Consent for interview girls 15-17
+Name=HH33
+Start=131
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Consent for interview girls 15-17
+Name=HH33_VST
+Value=1;YES for all girls age 15-17
+Value=2;NO for at least one girl age 15-17 and Yes to at least one girl age 15-17
+Value=3;NO for all girls age 15-17
+
+[Item]
+Label=Roster to check the consent for interview boys 15-17
+Name=HH39X
+Start=132
+Len=1
+DataType=Numeric
+Occurrences=50
+ZeroFill=Yes
+
+[ValueSet]
+Label=Roster to check the consent for interview boys 15-17
+Name=HH39X_VST
+Value=1;YES, PERMISSION IS GIVEN
+Value=2;NO, PERMISSION IS NOT GIVEN
+
+[Item]
+Label=Consent for interview boys 15-17
+Name=HH39
+Start=182
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Consent for interview boys 15-17
+Name=HH39_VST
+Value=1;YES for all boys age 15-17
+Value=2;NO for at least one boy age 15-17 and Yes to at least one boy age 15-17
+Value=3;NO for all boys age 15-17
+
+[Item]
+Label=Consent for Water Quality Testing
+Name=HH44
+Start=183
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Consent for Water Quality Testing
+Name=HH44_VST
+Value=1;YES, PERMISSION IS GIVEN
+Value=2;NO, PERMISSION IS NOT GIVEN
+
+[Item]
+Label=Respondent to HH questionnaire
+Name=HH47
+Start=184
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Respondent to HH questionnaire
+Name=HH47_VST
+Value=1:50
+
+[Item]
+Label=Number of HH members
+Name=HH48
+Start=186
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Number of HH members
+Name=HH48_VST
+Value=1:50
+
+[Item]
+Label=Number of women 15-49 years
+Name=HH49
+Start=188
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Number of women 15-49 years
+Name=HH49_VST
+Value=0:50
+
+[Item]
+Label=Number of woman's questionnaires completed
+Name=HH53
+Start=190
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Number of woman's questionnaires completed
+Name=HH53_VST
+Value=0:50
+
+[Item]
+Label=Number of men 15-49 years [If household is selected for Questionnaire for Men]
+Name=HH50
+Start=192
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Number of men 15-49 years [If household is selected for Questionnaire for Men]
+Name=HH50_VST
+Value=0:50
+
+[Item]
+Label=Number of man's questionnaires completed [If household is selected for Questionnaire for Men]
+Name=HH54
+Start=194
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Number of man's questionnaires completed [If household is selected for Questionnaire for Men]
+Name=HH54_VST
+Value=0:50
+
+[Item]
+Label=Number of children under age 5
+Name=HH51
+Start=196
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Number of children under age 5
+Name=HH51_VST
+Value=0:50
+
+[Item]
+Label=Number of under-5 questionnaires completed
+Name=HH55
+Start=198
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Number of under-5 questionnaires completed
+Name=HH55_VST
+Value=0:50
+
+[Item]
+Label=Number of children age 5-17
+Name=HH52
+Start=200
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Number of children age 5-17
+Name=HH52_VST
+Value=0:50
+
+[Item]
+Label=Number of 5-17 questionnaires completed
+Name=HH56
+Start=202
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Number of 5-17 questionnaires completed
+Name=HH56_VST
+Value=0;ZERO
+Value=1;ONE
+
+[Item]
+Label=Introduction HH Listing
+Name=INTROHL
+Start=204
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Introduction HH Listing
+Name=INTROHL_VST
+Value=1;CONTINUE
+
+[Item]
+Label=Other household members
+Name=HHAUX
+Start=205
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Other household members
+Name=HHAUX_VST
+Value=1;YES
+Value=2;NO
+
+[Item]
+Label=Household address
+Name=HHADDR
+Start=206
+Len=40
+DataType=Alpha
+
+[Item]
+Label=Water Quality prompt
+Name=HHWQ
+Start=246
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Water Quality prompt
+Name=HHWQ_VST
+Value=1;CONTINUE
+
+[Item]
+Label=Consent for phone survey
+Name=HH44BC
+Start=247
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Consent for phone survey
+Name=HH44BC_VS1
+Value=1;YES
+Value=2;NO
+
+[Item]
+Label=Have personal phone number or phone number for the household
+Name=HH44DE
+Start=248
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Have personal phone number or phone number for the household
+Name=HH44DE_VS1
+Value=1;YES
+Value=2;NO
+
+[Item]
+Label=Note on sharing phone number for the household
+Name=HH44F
+Start=249
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Note on sharing phone number for the household
+Name=HH44F_VS1
+Value=1;CONTINUE
+
+[Item]
+Label=Finish
+Name=HHFIN
+Start=250
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Finish
+Name=HHFIN_VST
+Value=1;REVIEW QUESTIONNAIRE
+Value=2;ADD NOTES
+Value=3;SAVE QUESTIONNAIRE AND FINISH
+
+[Record]
+Label=List of Household Members (1)
+Name=MODHX
+RecordTypeValue='0HX'
+Required=No
+MaxRecords=50
+RecordLen=41
+
+[Item]
+Label=Line Number
+Name=HX1
+Start=16
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Line Number
+Name=HX1_VST
+Value=1:50
+
+[Item]
+Label=Name
+Name=HX2
+Start=18
+Len=20
+DataType=Alpha
+
+[Item]
+Label=Relationship to the head
+Name=HX3
+Start=38
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Relationship to the head
+Name=HX3_VST
+Value=1;HEAD
+Value=2;SPOUSE / PARTNER
+Value=3;SON / DAUGHTER
+Value=4;SON-IN-LAW / DAUGHTER-IN-LAW
+Value=5;GRANDCHILD
+Value=6;PARENT
+Value=7;PARENT-IN-LAW
+Value=8;BROTHER / SISTER
+Value=9;BROTHER-IN-LAW / SISTER-IN-LAW
+Value=10;UNCLE / AUNT
+Value=11;NIECE / NEPHEW
+Value=12;OTHER RELATIVE
+Value=13;ADOPTED / FOSTER / STEPCHILD
+Value=14;SERVANT (LIVE-IN)
+Value=96;OTHER (NOT RELATED)
+Value=98;DK
+
+[Item]
+Label=Sex
+Name=HX4
+Start=40
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Sex
+Name=HX4_VST
+Value=1;MALE
+Value=2;FEMALE
+
+[Item]
+Label=Other member
+Name=HX0
+Start=41
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Other member
+Name=HX0_VST
+Value=1;YES
+Value=2;NO
+
+[Record]
+Label=List of Household Members
+Name=MODHL
+RecordTypeValue='0HL'
+Required=No
+MaxRecords=50
+RecordLen=68
+
+[Item]
+Label=Line number
+Name=HL1
+Start=16
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Line number
+Name=HL1_VST
+Value=1:50
+
+[Item]
+Label=Name
+Name=HL2
+Start=18
+Len=20
+DataType=Alpha
+
+[Item]
+Label=Relationship to the head
+Name=HL3
+Start=38
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Relationship to the head
+Name=HL3_VST
+Value=1;HEAD
+Value=2;SPOUSE / PARTNER
+Value=3;SON / DAUGHTER
+Value=4;SON-IN-LAW / DAUGHTER-IN-LAW
+Value=5;GRANDCHILD
+Value=6;PARENT
+Value=7;PARENT-IN-LAW
+Value=8;BROTHER / SISTER
+Value=9;BROTHER-IN-LAW / SISTER-IN-LAW
+Value=10;UNCLE / AUNT
+Value=11;NIECE / NEPHEW
+Value=12;OTHER RELATIVE
+Value=13;ADOPTED / FOSTER / STEPCHILD
+Value=14;SERVANT (LIVE-IN)
+Value=96;OTHER (NOT RELATED)
+Value=98;DK
+
+[Item]
+Label=Sex
+Name=HL4
+Start=40
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Sex
+Name=HL4_VST
+Value=1;MALE
+Value=2;FEMALE
+
+[Item]
+Label=Date of birth
+Name=HL5
+Start=41
+Len=6
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Month of birth
+Name=HL5M
+Start=41
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of birth
+Name=HL5M_VST
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of birth
+Name=HL5Y
+Start=43
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of birth
+Name=HL5Y_VST
+Value=1900:2025
+Value=9998;DK
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Age
+Name=HL6
+Start=47
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Age
+Name=HL6_VST
+Value=0:94
+Value=95;95+
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Member stayed in the household last night
+Name=HL7
+Start=49
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Member stayed in the household last night
+Name=HL7_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Line number of woman age 15-49
+Name=HL8
+Start=50
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Line number of woman age 15-49
+Name=HL8_VST
+Value=0;NOT ELIGIBLE
+Value=1:50
+
+[Item]
+Label=Line number of man age 15-49
+Name=HL9
+Start=52
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Line number of man age 15-49
+Name=HL9_VST
+Value=0;NOT ELIGIBLE
+Value=1:50
+
+[Item]
+Label=Line number for children age 0-4
+Name=HL10
+Start=54
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Line number for children age 0-4
+Name=HL10_VST
+Value=0;NOT ELIGIBLE
+Value=1:50
+
+[Item]
+Label=Member age 0-17
+Name=HL11
+Start=56
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Member age 0-17
+Name=HL11_VST
+Value=1;YES
+Value=2;NO
+
+[Item]
+Label=Is natural mother alive
+Name=HL12
+Start=57
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Is natural mother alive
+Name=HL12_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Does natural mother live in HH
+Name=HL13
+Start=58
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Does natural mother live in HH
+Name=HL13_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Natural mother's line number in HH
+Name=HL14
+Start=59
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Natural mother's line number in HH
+Name=HL14_VST
+Value=1:50
+Value=99;NO RESPONSE
+
+[Item]
+Label=Where does natural mother live
+Name=HL15
+Start=61
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Where does natural mother live
+Name=HL15_VST
+Value=1;ABROAD
+Value=2;IN ANOTHER HOUSEHOLD IN THE SAME REGION
+Value=3;IN ANOTHER HOUSEHOLD IN ANOTHER REGION
+Value=4;INSTITUTION IN THIS COUNTRY
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Is natural father alive
+Name=HL16
+Start=62
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Is natural father alive
+Name=HL16_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Does natural father live in HH
+Name=HL17
+Start=63
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Does natural father live in HH
+Name=HL17_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Natural father's line number in HH
+Name=HL18
+Start=64
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Natural father's line number in HH
+Name=HL18_VST
+Value=1:50
+Value=99;NO RESPONSE
+
+[Item]
+Label=Where does natural father live
+Name=HL19
+Start=66
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Where does natural father live
+Name=HL19_VST
+Value=1;ABROAD
+Value=2;IN ANOTHER HOUSEHOLD IN THE SAME REGION
+Value=3;IN ANOTHER HOUSEHOLD IN ANOTHER REGION
+Value=4;INSTITUTION IN THIS COUNTRY
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Line number of mother or primary caretaker for children 0-17 years of age
+Name=HL20
+Start=67
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Line number of mother or primary caretaker for children 0-17 years of age
+Name=HL20_VST
+Value=1:50
+Value=90;NO ONE
+
+[Record]
+Label=Education: Attainment and Attendance
+Name=MODED
+RecordTypeValue='0ED'
+Required=No
+MaxRecords=50
+RecordLen=66
+
+[Item]
+Label=Line number
+Name=ED1
+Start=16
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Line number
+Name=ED1_VST
+Value=1:50
+
+[Item]
+Label=Name
+Name=ED2
+Start=18
+Len=20
+DataType=Alpha
+
+[Item]
+Label=Age
+Name=ED2A
+Start=38
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Age 3 or above
+Name=ED3
+Start=40
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Age 3 or above
+Name=ED3_VST
+Value=1;YES
+Value=2;NO
+
+[Item]
+Label=Ever attended school or any Early Childhood Education programme
+Name=ED4
+Start=41
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Ever attended school or any Early Childhood Education programme
+Name=ED4_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Highest level of education attended
+Name=ED5A
+Start=42
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Highest level of education attended
+Name=ED5A_VST
+Value=0;EARLY CHILDHOOD EDUCATION
+Value=1;PRIMARY
+Value=2;LOWER SECONDARY
+Value=3;UPPER SECONDARY
+Value=4;HIGHER
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Highest grade attended at that level
+Name=ED5B
+Start=43
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Highest grade attended at that level
+Name=ED5B_VST
+Value=1;GRADE/YEAR 1
+Value=2;GRADE/YEAR 2
+Value=3;GRADE/YEAR 3
+Value=4;GRADE/YEAR 4
+Value=5;GRADE/YEAR 5
+Value=6;GRADE/YEAR 6
+Value=7;GRADE/YEAR 7
+Value=8;GRADE/YEAR 8
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Ever completed that grade/year
+Name=ED6
+Start=45
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Ever completed that grade/year
+Name=ED6_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Age 3-24
+Name=ED7
+Start=46
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Age 3-24
+Name=ED7_VST
+Value=1;YES
+Value=2;NO
+
+[Item]
+Label=Check: Ever attended school or any Early Childhood Education programme
+Name=ED8
+Start=47
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Check: Ever attended school or any Early Childhood Education programme
+Name=ED8_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Attended school during current school year
+Name=ED9
+Start=48
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Attended school during current school year
+Name=ED9_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Level of education attended during current school year
+Name=ED10A
+Start=49
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Level of education attended during current school year
+Name=ED10A_VST
+Value=0;EARLY CHILDHOOD EDUCATION
+Value=1;PRIMARY
+Value=2;LOWER SECONDARY
+Value=3;UPPER SECONDARY
+Value=4;HIGHER
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Grade attended at that level during current school year
+Name=ED10B
+Start=50
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Grade attended at that level during current school year
+Name=ED10B_VST
+Value=1;GRADE/YEAR 1
+Value=2;GRADE/YEAR 2
+Value=3;GRADE/YEAR 3
+Value=4;GRADE/YEAR 4
+Value=5;GRADE/YEAR 5
+Value=6;GRADE/YEAR 6
+Value=7;GRADE/YEAR 7
+Value=8;GRADE/YEAR 8
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Attended public school during current school year
+Name=ED11
+Start=52
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Attended public school during current school year
+Name=ED11_VS1
+Value=1;GOVT./ PUBLIC
+Value=2;RELIGIOUS/ FAITH ORG.
+Value=3;PRIVATE
+Value=6;OTHER
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=School tuition support in the current school year
+Name=ED12
+Start=53
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=School tuition support in the current school year
+Name=ED12_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=School tuition support was sufficient for paying the costs
+Name=ED12A
+Start=54
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=School tuition support was sufficient for paying the costs
+Name=ED12A_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Tuition support provided
+Name=ED13
+Start=55
+Len=6
+DataType=Alpha
+
+[ValueSet]
+Label=Tuition support provided
+Name=ED13_VS1
+Value='A     ';GOVT./ PUBLIC
+Value='B     ';RELIGIOUS/ FAITH ORG.
+Value='C     ';PRIVATE
+Value='X     ';OTHER
+Value='Z     ';DK
+Value='?     ';NO RESPONSE
+
+[Item]
+Label=Tuition support provided: Govt./public
+Name=ED13A
+Start=55
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Tuition support provided: Govt./public
+Name=ED13A_VS1
+Value='A';GOVT./ PUBLIC
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Tuition support provided: Religious/faith org.
+Name=ED13B
+Start=56
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Tuition support provided: Religious/faith org.
+Name=ED13B_VS1
+Value='B';RELIGIOUS/ FAITH ORG.
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Tuition support provided: Private
+Name=ED13C
+Start=57
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Tuition support provided: Private
+Name=ED13C_VS1
+Value='C';PRIVATE
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Tuition support provided: Other
+Name=ED13X
+Start=58
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Tuition support provided: Other
+Name=ED13X_VS1
+Value='X';OTHER
+Value='?';NO RESPONSE
+
+[Item]
+Label=Tuition support provided: DK
+Name=ED13Z
+Start=59
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Tuition support provided: DK
+Name=ED13Z_VS1
+Value='Z';DK
+Value='?';NO RESPONSE
+
+[Item]
+Label=Tuition support provided: No response
+Name=ED13NR
+Start=60
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Tuition support provided: No response
+Name=ED13NR_VS1
+Value='?';NO RESPONSE
+Value=' '
+
+[Item]
+Label=Material support in the current school year
+Name=ED14
+Start=61
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Material support in the current school year
+Name=ED14_VS1
+Value=1;YES, CASH ONLY
+Value=2;YES, IN KIND ONLY
+Value=3;YES, BOTH
+Value=4;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Material support was sufficient
+Name=ED14A
+Start=62
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Material support was sufficient
+Name=ED14A_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Attended school during previous school year
+Name=ED15
+Start=63
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Attended school during previous school year
+Name=ED15_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Level of education attended during previous school year
+Name=ED16A
+Start=64
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Level of education attended during previous school year
+Name=ED16A_VST
+Value=0;EARLY CHILDHOOD EDUCATION
+Value=1;PRIMARY
+Value=2;LOWER SECONDARY
+Value=3;UPPER SECONDARY
+Value=4;HIGHER
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Grade attended at that level during previous school year
+Name=ED16B
+Start=65
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Grade attended at that level during previous school year
+Name=ED16B_VST
+Value=1;GRADE/YEAR 1
+Value=2;GRADE/YEAR 2
+Value=3;GRADE/YEAR 3
+Value=4;GRADE/YEAR 4
+Value=5;GRADE/YEAR 5
+Value=6;GRADE/YEAR 6
+Value=7;GRADE/YEAR 7
+Value=8;GRADE/YEAR 8
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Record]
+Label=Household Characteristics
+Name=MODHC
+RecordTypeValue='0HC'
+Required=No
+RecordLen=80
+
+[Item]
+Label=Religion of household head
+Name=HC1A
+Start=16
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Religion of household head
+Name=HC1A_VS1
+Value=1;RELIGION 1
+Value=2;RELIGION 2
+Value=3;RELIGION 3
+Value=6;OTHER RELIGION
+Value=7;NO RELIGION
+Value=9;NO RESPONSE
+
+[Item]
+Label=Language of household head
+Name=HC1B
+Start=17
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Language of household head
+Name=HC1B_VS1
+Value=1;LANGUAGE 1
+Value=2;LANGUAGE 2
+Value=3;LANGUAGE 3
+Value=6;OTHER LANGUAGE
+Value=9;NO RESPONSE
+
+[Item]
+Label=Ethnic group of household head
+Name=HC2
+Start=18
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Ethnic group of household head
+Name=HC2_VST
+Value=1;ETHNIC GROUP 1
+Value=2;ETHNIC GROUP 2
+Value=3;ETHNIC GROUP 3
+Value=6;OTHER
+Value=9;NO RESPONSE
+
+[Item]
+Label=Number of rooms used for sleeping
+Name=HC3
+Start=19
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Number of rooms used for sleeping
+Name=HC3_VST
+Value=1:90
+Value=99;NO RESPONSE
+
+[Item]
+Label=Main material of floor
+Name=HC4
+Start=21
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Main material of floor
+Name=HC4_VST
+Value=11;NATURAL FLOOR: EARTH/ SAND
+Value=12;NATURAL FLOOR: DUNG
+Value=21;RUDIMENTARY FLOOR: WOOD PLANKS
+Value=22;RUDIMENTARY FLOOR: PALM / BAMBOO
+Value=31;FINISHED FLOOR: PARQUET OR POLISHED WOOD
+Value=32;FINISHED FLOOR: VINYL OR ASPHALT STRIPS
+Value=33;FINISHED FLOOR: CERAMIC TILES
+Value=34;FINISHED FLOOR: CEMENT
+Value=35;FINISHED FLOOR: CARPET
+Value=96;OTHER
+
+[Item]
+Label=Main material of roof
+Name=HC5
+Start=23
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Main material of roof
+Name=HC5_VST
+Value=11;NO ROOF
+Value=12;NATURAL ROOFING: THATCH / PALM LEAF
+Value=13;NATURAL ROOFING: SOD
+Value=21;RUDIMENTARY ROOFING: RUSTIC MAT
+Value=22;RUDIMENTARY ROOFING: PALM / BAMBOO
+Value=23;RUDIMENTARY ROOFING: WOOD PLANKS
+Value=24;RUDIMENTARY ROOFING: CARDBOARD
+Value=31;FINISHED ROOFING: METAL / TIN
+Value=32;FINISHED ROOFING: WOOD
+Value=33;FINISHED ROOFING: CALAMINE / CEMENT FIBRE
+Value=34;FINISHED ROOFING: CERAMIC TILES
+Value=35;FINISHED ROOFING: CEMENT
+Value=36;FINISHED ROOFING: ROOFING SHINGLES
+Value=96;OTHER
+
+[Item]
+Label=Main material of exterior wall
+Name=HC6
+Start=25
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Main material of exterior wall
+Name=HC6_VST
+Value=11;NO WALLS
+Value=12;NATURAL WALLS: CANE / PALM / TRUNKS
+Value=13;NATURAL WALLS: DIRT
+Value=21;RUDIMENTARY WALLS: BAMBOO WITH MUD
+Value=22;RUDIMENTARY WALLS: STONE WITH MUD
+Value=23;RUDIMENTARY WALLS: UNCOVERED ADOBE
+Value=24;RUDIMENTARY WALLS: PLYWOOD
+Value=25;RUDIMENTARY WALLS: CARDBOARD
+Value=26;RUDIMENTARY WALLS: REUSED WOOD
+Value=31;FINISHED WALLS: CEMENT
+Value=32;FINISHED WALLS: STONE WITH LIME / CEMENT
+Value=33;FINISHED WALLS: BRICKS
+Value=34;FINISHED WALLS: CEMENT BLOCKS
+Value=35;FINISHED WALLS: COVERED ADOBE
+Value=36;FINISHED WALLS: WOOD PLANKS / SHINGLES
+Value=96;OTHER
+
+[Item]
+Label=Household have: Fixed telephone line
+Name=HC7A
+Start=27
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Fixed telephone line
+Name=HC7A_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have: Radio
+Name=HC7B
+Start=28
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Radio
+Name=HC7B_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have: Country Specific Items That Do Not Run On Electricity
+Name=HC7C
+Start=29
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Country Specific Items That Do Not Run On Electricity
+Name=HC7C_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have electricity
+Name=HC8
+Start=30
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have electricity
+Name=HC8_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Source of electricity for the household
+Name=HC8A
+Start=31
+Len=10
+DataType=Alpha
+
+[ValueSet]
+Label=Source of electricity for the household
+Name=HC8A_VS1
+Value='A         ';NATIONAL / INTERCONNECTED GRID
+Value='B         ';LOCAL MINI GRID
+Value='C         ';SOLAR HOME SYSTEM
+Value='D         ';SOLAR LANTERN
+Value='E         ';ELECTRIC GENERATOR
+Value='F         ';RECHARGEABLE BATTERY
+Value='G         ';DRY CELL BATTERY / TORCH
+Value='X         ';OTHER
+Value='Z         ';DK
+Value='?         ';NO RESPONSE
+
+[Item]
+Label=Source of electricity for the household: National / Interconnected grid
+Name=HC8AA
+Start=31
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Source of electricity for the household: National / Interconnected grid
+Name=HC8AA_VS1
+Value='A';NATIONAL / INTERCONNECTED GRID
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Source of electricity for the household: Local mini grid
+Name=HC8AB
+Start=32
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Source of electricity for the household: Local mini grid
+Name=HC8AB_VS1
+Value='B';LOCAL MINI GRID
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Source of electricity for the household: Solar home system
+Name=HC8AC
+Start=33
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Source of electricity for the household: Solar home system
+Name=HC8AC_VS1
+Value='C';SOLAR HOME SYSTEM
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Source of electricity for the household: Solar lantern
+Name=HC8AD
+Start=34
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Source of electricity for the household: Solar lantern
+Name=HC8AD_VS1
+Value='D';SOLAR LANTERN
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Source of electricity for the household: Electric generator
+Name=HC8AE
+Start=35
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Source of electricity for the household: Electric generator
+Name=HC8AE_VS1
+Value='E';ELECTRIC GENERATOR
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Source of electricity for the household: Rechargeable battery
+Name=HC8AF
+Start=36
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Source of electricity for the household: Rechargeable battery
+Name=HC8AF_VS1
+Value='F';RECHARGEABLE BATTERY
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Source of electricity for the household: Dry cell battery / torch
+Name=HC8AG
+Start=37
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Source of electricity for the household: Dry cell battery / torch
+Name=HC8AG_VS1
+Value='G';DRY CELL BATTERY / TORCH
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Source of electricity for the household: Other
+Name=HC8AX
+Start=38
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Source of electricity for the household: Other
+Name=HC8AX_VS1
+Value='X';OTHER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Source of electricity for the household: DK
+Name=HC8AZ
+Start=39
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Source of electricity for the household: DK
+Name=HC8AZ_VS1
+Value='Z';DK
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Source of electricity for the household: No response
+Name=HC8ANR
+Start=40
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Source of electricity for the household: No response
+Name=HC8ANR_VS1
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Most used source of electricity
+Name=HC8B
+Start=41
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Most used source of electricity
+Name=HC8B_VS1
+Value=11;NATIONAL / INTERCONNECTED GRID
+Value=21;LOCAL MINI GRID
+Value=31;SOLAR HOME SYSTEM
+Value=32;SOLAR LANTERN
+Value=41;ELECTRIC GENERATOR
+Value=51;RECHARGEABLE BATTERY
+Value=52;DRY CELL BATTERY / TORCH
+Value=96;OTHER
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Household have: Television
+Name=HC9A
+Start=43
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Television
+Name=HC9A_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have: Refrigerator
+Name=HC9B
+Start=44
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Refrigerator
+Name=HC9B_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have: Country Specific Items That Run On Electricity
+Name=HC9C
+Start=45
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Country Specific Items That Run On Electricity
+Name=HC9C_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Any member of household own: Wristwatch
+Name=HC10A
+Start=46
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Any member of household own: Wristwatch
+Name=HC10A_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Any member of household own: Bicycle
+Name=HC10B
+Start=47
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Any member of household own: Bicycle
+Name=HC10B_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Any member of household own: Motorcycle or scooter
+Name=HC10C
+Start=48
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Any member of household own: Motorcycle or scooter
+Name=HC10C_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Any member of household own: Animal-drawn cart
+Name=HC10D
+Start=49
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Any member of household own: Animal-drawn cart
+Name=HC10D_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Any member of household own: Car, truck or van
+Name=HC10E
+Start=50
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Any member of household own: Car, truck or van
+Name=HC10E_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Any member of household own: Boat with motor
+Name=HC10F
+Start=51
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Any member of household own: Boat with motor
+Name=HC10F_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Any member of household own: Country Specific Items
+Name=HC10G
+Start=52
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Any member of household own: Country Specific Items
+Name=HC10G_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Any member have a computer
+Name=HC11
+Start=53
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Any member have a computer
+Name=HC11_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Any member have a mobile telephone
+Name=HC12
+Start=54
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Any member have a mobile telephone
+Name=HC12_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Any member have a smart telephone
+Name=HC12A
+Start=55
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Any member have a smart telephone
+Name=HC12A_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Internet access at home
+Name=HC13
+Start=56
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Internet access at home
+Name=HC13_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Internet access via smart phone
+Name=HC13B
+Start=57
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Internet access via smart phone
+Name=HC13B_VS1
+Value=1;YES, SMART PHONE CAN ACCESS INTERNET AT HOME
+Value=2;NO, SMARTPHONE CANNOT ACCESS INTERNET AT HOME
+Value=8;DK IF SMARTPHONE CAN ACCESS INTERNET AT HOME
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household owns the dwelling
+Name=HC14
+Start=58
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household owns the dwelling
+Name=HC14_VST
+Value=1;OWN
+Value=2;RENT
+Value=6;OTHER
+Value=9;NO RESPONSE
+
+[Item]
+Label=Any household member own land that can be used for agriculture
+Name=HC15
+Start=59
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Any household member own land that can be used for agriculture
+Name=HC15_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Hectares of agricultural land members of household owns
+Name=HC16
+Start=60
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Hectares of agricultural land members of household owns
+Name=HC16_VST
+Value=0:94
+Value=95;95+
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Household own any animals
+Name=HC17
+Start=62
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household own any animals
+Name=HC17_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Milk cows or bulls
+Name=HC18A
+Start=63
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Milk cows or bulls
+Name=HC18A_VS1
+Value=0:94
+Value=95;95+
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Other cattle
+Name=HC18B
+Start=65
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Other cattle
+Name=HC18B_VS1
+Value=0:94
+Value=95;95+
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Horses, donkeys or mules
+Name=HC18C
+Start=67
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Horses, donkeys or mules
+Name=HC18C_VS1
+Value=0:94
+Value=95;95+
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Goats
+Name=HC18D
+Start=69
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Goats
+Name=HC18D_VS1
+Value=0:94
+Value=95;95+
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Sheep
+Name=HC18E
+Start=71
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Sheep
+Name=HC18E_VS1
+Value=0:94
+Value=95;95+
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Chickens
+Name=HC18F
+Start=73
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Chickens
+Name=HC18F_VS1
+Value=0:94
+Value=95;95+
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Pigs
+Name=HC18G
+Start=75
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Pigs
+Name=HC18G_VS1
+Value=0:94
+Value=95;95+
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Country Specific Additions
+Name=HC18H
+Start=77
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Country Specific Additions
+Name=HC18H_VS1
+Value=0:94
+Value=95;95+
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Any household member own bank account
+Name=HC19
+Start=79
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Any household member own bank account
+Name=HC19_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Any household member makes financial transactions via mobile phone
+Name=HC20
+Start=80
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Any household member makes financial transactions via mobile phone
+Name=HC20_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Record]
+Label=Household Energy Use
+Name=MODEU
+RecordTypeValue='0EU'
+Required=No
+RecordLen=32
+
+[Item]
+Label=Type of cookstove mainly used for cooking
+Name=EU1
+Start=16
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Type of cookstove mainly used for cooking
+Name=EU1_VS1
+Value=1;SOLAR COOKER (THERMAL ENERGY, NOT SOLAR PANELS)
+Value=2;ELECTRIC STOVE
+Value=3;PIPED NATURAL GAS STOVE
+Value=4;BIOGAS STOVE
+Value=5;LIQUEFIED PETROLEUM GAS (LPG)/ COOKING GAS STOVE
+Value=6;MANUFACTURED SOLID FUEL STOVE
+Value=7;TRADITIONAL SOLID FUEL STOVE (NON-MANUFACTURED)
+Value=8;LIQUID FUEL STOVE
+Value=9;MOVEABLE FIREPAN
+Value=10;THREE STONE STOVE / OPEN FIRE
+Value=96;OTHER
+Value=97;NO FOOD COOKED IN HOUSEHOLD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Name of the stove brand
+Name=EU1A
+Start=18
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Name of the stove brand
+Name=EU1A_VS1
+Value=1;NAME/BRAND 1
+Value=2;NAME/BRAND 2
+Value=3;NAME/BRAND 3
+Value=96;OTHER
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Type of energy source for cookstove
+Name=EU4
+Start=20
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Type of energy source for cookstove
+Name=EU4_VS1
+Value=1;ALCOHOL / ETHANOL
+Value=2;GASOLINE / DIESEL (NOT IN GENERATOR)
+Value=3;KEROSENE / PARAFFIN
+Value=4;COAL / LIGNITE UNPROCESSED
+Value=5;COAL / LIGNITE BRIQUETTES / PELLETS
+Value=6;CHARCOAL UNPROCESSED
+Value=7;CHARCOAL BRIQUETTES / PELLETS
+Value=8;WOOD
+Value=9;AGRICULTURAL OR CROP RESIDUE / 	GRASS / STRAW / SHRUBS / CORN COBS
+Value=10;ANIMAL DUNG / WASTE
+Value=11;PROCESSED BIOMASS PELLETS / BRIQUETTES
+Value=12;WOODCHIPS
+Value=13;GARBAGE / PLASTIC
+Value=14;SAWDUST
+Value=96;OTHER
+Value=99;NO RESPONSE
+
+[Item]
+Label=Type of space heating in household
+Name=EU6
+Start=22
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Type of space heating in household
+Name=EU6_VS1
+Value=0;SPACE HEATING NEVER NEEDED
+Value=1;CENTRAL HEATING
+Value=2;MANUFACTURED SPACE HEATER
+Value=3;TRADITIONAL SPACE HEATER
+Value=4;MANUFACTURED COOKSTOVE
+Value=5;TRADITIONAL COOKSTOVE (NON-MANUFACTURED)
+Value=6;MOVEABLE HEATING PAN
+Value=7;OPEN FIRE / THREE STONE STOVE
+Value=8;HEAT PUMP
+Value=96;OTHER
+Value=97;NO SPACE HEATING IN HOUSEHOLD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Name of the space heater brand
+Name=EU6A
+Start=24
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Name of the space heater brand
+Name=EU6A_VS1
+Value=1;NAME/BRAND 1
+Value=2;NAME/BRAND 2
+Value=3;NAME/BRAND 3
+Value=96;OTHER
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Type of energy source for heater
+Name=EU8
+Start=26
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Type of energy source for heater
+Name=EU8_VS1
+Value=1;ELECTRICITY (INCLUDING SOLAR PANELS)
+Value=2;PIPED NATURAL GAS
+Value=3;LIQUEFIED PETROLEUM GAS (LPG) / COOKING GAS
+Value=4;BIOGAS
+Value=5;ALCOHOL / ETHANOL
+Value=6;GASOLINE / DIESEL (NOT IN GENERATOR)
+Value=7;KEROSENE / PARAFFIN
+Value=8;COAL / LIGNITE UNPROCESSED
+Value=9;COAL / LIGNITE BRIQUETTES / PELLETS
+Value=10;CHARCOAL UNPROCESSED
+Value=11;CHARCOAL BRIQUETTES / PELLETS
+Value=12;WOOD
+Value=13;AGRICULTURAL OR CROP RESIDUE / 	GRASS / STRAW / SHRUBS / CORN COBS
+Value=14;ANIMAL WASTE / DUNG
+Value=15;PROCESSED BIOMASS PELLETS / BRIQUETTES
+Value=16;WOODCHIPS
+Value=17;GARBAGE / PLASTIC
+Value=18;SAWDUST
+Value=96;OTHER
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Type of lighting in household
+Name=EU9
+Start=28
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Type of lighting in household
+Name=EU9_VS1
+Value=1;ELECTRICITY (INCLUDING SOLAR PANELS)
+Value=2;SOLAR-POWERED LANTERN OR FLASHLIGHT
+Value=3;RECHARGEABLE FLASHLIGHT, MOBILE, 	TORCH OR LANTERN
+Value=4;BATTERY POWERED FLASHLIGHT, TORCH OR LANTERN
+Value=5;BIOGAS LAMP
+Value=6;LIQUEFIED PETROLEUM GAS (LPG) LAMP
+Value=7;GASOLINE LAMP
+Value=8;KEROSENE / PARAFFIN LAMP
+Value=9;OIL LAMP
+Value=10;CANDLE
+Value=11;OPEN FIRE
+Value=96;OTHER
+Value=97;NO LIGHTING IN HOUSEHOLD
+Value=99;NO RESPONSE
+
+[Item]
+Label=Household has mosquito nets
+Name=TN1
+Start=30
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household has mosquito nets
+Name=TN1_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Number of mosquito nets
+Name=TN2
+Start=31
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Number of mosquito nets
+Name=TN2_VS1
+Value=1:10
+
+[Record]
+Label=Malaria: ITNS
+Name=MODTN
+RecordTypeValue='0TN'
+Required=No
+MaxRecords=10
+RecordLen=37
+
+[Item]
+Label=Net number
+Name=TNLN
+Start=16
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Net number
+Name=TNLN_VST
+Value=1:10
+
+[Item]
+Label=Mosquito net observed
+Name=TN3
+Start=18
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Mosquito net observed
+Name=TN3_VST
+Value=1;OBSERVED
+Value=2;NOT OBSERVED
+
+[Item]
+Label=Months ago net obtained
+Name=TN4
+Start=19
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Months ago net obtained
+Name=TN4_VST
+Value=0:36
+Value=95;MORE THAN 36 MONTHS AGO
+Value=98;DK / NOT SURE
+Value=99;NO RESPONSE
+
+[Item]
+Label=Brand/type of observed net
+Name=TN5
+Start=21
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Brand/type of observed net
+Name=TN5_VST
+Value=11;LONG-LASTING INSECTICIDE TREATED NETS (LLIN): BRAND A
+Value=12;LONG-LASTING INSECTICIDE TREATED NETS (LLIN): BRAND B
+Value=13;LONG-LASTING INSECTICIDE TREATED NETS (LLIN): BRAND C
+Value=16;LONG-LASTING INSECTICIDE TREATED NETS (LLIN): OTHER / DK BRAND
+Value=36;OTHER TYPE (NOT LLIN)
+Value=98;DK TYPE
+Value=99;NO RESPONSE
+
+[Item]
+Label=Way net was obtained
+Name=TN10
+Start=23
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Way net was obtained
+Name=TN10_VST
+Value=1;YES, NAME OF CAMPAIGN
+Value=2;YES, ANC
+Value=3;YES, IMMUNIZATION
+Value=4;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Place where net was obtained
+Name=TN12
+Start=25
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Place where net was obtained
+Name=TN12_VST
+Value=11;GOVERNMENT HEALTH FACILITY
+Value=12;COMMUNITY HEALTH WORKER
+Value=21;PRIVATE HEALTH FACILITY
+Value=22;PHARMACY
+Value=31;NGO HEALTH FACILITY
+Value=61;SHOP / MARKET /	STREET
+Value=62;RELIGIOUS INSTITUTION
+Value=63;SCHOOL
+Value=96;OTHER
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Persons slept under mosquito net last night
+Name=TN13
+Start=27
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Persons slept under mosquito net last night
+Name=TN13_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Main reason this net was not used last night
+Name=TN14A
+Start=28
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Main reason this net was not used last night
+Name=TN14A_VS1
+Value=1;TOO HOT
+Value=2;DON’T LIKE NET SHAPE / COLOUR / SIZE
+Value=3;DON’T LIKE SMELL
+Value=4;UNABLE TO HANG THE NET
+Value=5;SLEPT OUTDOORS
+Value=6;USUAL USER DIDN’T SLEEP HERE LAST NIGHT
+Value=7;NO MOSQUITOES / NO MALARIA
+Value=8;EXTRA NET / SAVING IT FOR LATER
+Value=96;OTHER
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Person 1 who slept under net
+Name=TN15_1
+Start=30
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Person 1 who slept under net
+Name=TN15_1_VST
+Value=0;PERSON WHO SLEPT UNDER NET NOT IN HH LISTING
+Value=1:50
+
+[Item]
+Label=Person 2 who slept under net
+Name=TN15_2
+Start=32
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Person 2 who slept under net
+Name=TN15_2_VST
+Value=0;PERSON WHO SLEPT UNDER NET NOT IN HH LISTING
+Value=1:50
+Value=90;NO ONE ELSE
+
+[Item]
+Label=Person 3 who slept under net
+Name=TN15_3
+Start=34
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Person 3 who slept under net
+Name=TN15_3_VST
+Value=0;PERSON WHO SLEPT UNDER NET NOT IN HH LISTING
+Value=1:50
+Value=90;NO ONE ELSE
+
+[Item]
+Label=Person 4 who slept under net
+Name=TN15_4
+Start=36
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Person 4 who slept under net
+Name=TN15_4_VST
+Value=0;PERSON WHO SLEPT UNDER NET NOT IN HH LISTING
+Value=1:50
+Value=90;NO ONE ELSE
+
+[Record]
+Label=Social Transfers
+Name=MODST
+RecordTypeValue='0ST'
+Required=No
+MaxRecords=5
+RecordLen=220
+
+[Item]
+Label=Aware of (name of programme)
+Name=ST2
+Start=16
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Aware of (name of programme)
+Name=ST2_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Received assistance through (name of programme)
+Name=ST3
+Start=17
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Received assistance through (name of programme)
+Name=ST3_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Assistance intended for
+Name=ST4
+Start=18
+Len=100
+DataType=Alpha
+
+[ValueSet]
+Label=Assistance intended for
+Name=ST4_VS1
+Value='95                                                                                                  ';ALL MEMBERS
+Value='98                                                                                                  ';DK
+Value='99                                                                                                  ';NO RESPONSE
+
+[Item]
+Label=Person 1 (needed to force CSPRO put 0 at beginning)
+Name=ST4_1
+Start=18
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Person 1 (needed to force CSPRO put 0 at beginning)
+Name=ST4_1_VS1
+Value=95;ALL MEMBERS
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Person 2 (needed to force CSPRO put 0 at beginning)
+Name=ST4_2
+Start=20
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Person 3 (needed to force CSPRO put 0 at beginning)
+Name=ST4_3
+Start=22
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Person 4 (needed to force CSPRO put 0 at beginning)
+Name=ST4_4
+Start=24
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Person 5 (needed to force CSPRO put 0 at beginning)
+Name=ST4_9
+Start=26
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Person 6 (needed to force CSPRO put 0 at beginning)
+Name=ST4_5
+Start=28
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Person 7 (needed to force CSPRO put 0 at beginning)
+Name=ST4_6
+Start=30
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Person 8 (needed to force CSPRO put 0 at beginning)
+Name=ST4_7
+Start=32
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Person 9 (needed to force CSPRO put 0 at beginning)
+Name=ST4_8
+Start=34
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Person authorised to receive or collect the assistance
+Name=ST5
+Start=118
+Len=100
+DataType=Alpha
+
+[ValueSet]
+Label=Person authorised to receive or collect the assistance
+Name=ST5_VS1
+Value='00                                                                                                  ';NO ONE IN THIS HOUSEHOLD
+Value='95                                                                                                  ';ALL MEMBERS
+Value='98                                                                                                  ';DK
+Value='99                                                                                                  ';NO RESPONSE
+
+[Item]
+Label=Person 1 (needed to force CSPRO put 0 at beginning)
+Name=ST5_1
+Start=118
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Person 1 (needed to force CSPRO put 0 at beginning)
+Name=ST5_1_VS1
+Value=0;NO ONE IN THIS HOUSEHOLD
+Value=95;ALL MEMBERS
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Person 2 (needed to force CSPRO put 0 at beginning)
+Name=ST5_2
+Start=120
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Person 3 (needed to force CSPRO put 0 at beginning)
+Name=ST5_3
+Start=122
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Person 4 (needed to force CSPRO put 0 at beginning)
+Name=ST5_4
+Start=124
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Person 5 (needed to force CSPRO put 0 at beginning)
+Name=ST5_5
+Start=126
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Person 6 (needed to force CSPRO put 0 at beginning)
+Name=ST5_6
+Start=128
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Person 7 (needed to force CSPRO put 0 at beginning)
+Name=ST5_7
+Start=130
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Person 8 (needed to force CSPRO put 0 at beginning)
+Name=ST5_8
+Start=132
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Person 9 (needed to force CSPRO put 0 at beginning)
+Name=ST5_9
+Start=134
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Last time assistance was received (unit)
+Name=ST6U
+Start=218
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Last time assistance was received (unit)
+Name=ST6U_VS1
+Value=1;MONTHS AGO
+Value=2;YEARS AGO
+Value=9;DK / NO RESPONSE
+
+[Item]
+Label=Last time assistance was received (number)
+Name=ST6N
+Start=219
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Last time assistance was received (number)
+Name=ST6N_VS1
+Value=0:90
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Record]
+Label=Post Emergency
+Name=MODPE
+RecordTypeValue='0PE'
+Required=No
+RecordLen=52
+
+[Item]
+Label=New household member post emergency
+Name=PE1
+Start=16
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=New household member post emergency
+Name=PE1_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Number of new household members post emergency
+Name=PE2
+Start=17
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Number of new household members post emergency
+Name=PE2_VS1
+Value=1:15
+Value=99;NO RESPONSE
+
+[Item]
+Label=All members of the household moves somewhere else because of the emergency
+Name=PE3
+Start=19
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=All members of the household moves somewhere else because of the emergency
+Name=PE3_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=How long did all the members of this household live in that other place(s): Unit
+Name=PE4U
+Start=20
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=How long did all the members of this household live in that other place(s): Unit
+Name=PE4U_VS1
+Value=1;DAYS
+Value=2;WEEKS
+Value=3;MONTHS
+Value=9;SPECIAL
+
+[Item]
+Label=How long did all the members of this household live in that other place(s): Number
+Name=PE4N
+Start=21
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=How long did all the members of this household live in that other place(s): Number
+Name=PE4N_VS1
+Value=1:36
+Value=95;NOT YET RETURNED
+Value=98;DK / NOT SURE
+Value=99;NO RESPONSE
+
+[Item]
+Label=House damaged or destroyed due to emergency
+Name=PE5
+Start=23
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=House damaged or destroyed due to emergency
+Name=PE5_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Anyone who was living in the household during the emergency died as a direct result of the emergency
+Name=PE6
+Start=24
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Anyone who was living in the household during the emergency died as a direct result of the emergency
+Name=PE6_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK / NOT SURE
+Value=9;NO RESPONSE
+
+[Item]
+Label=Any of the members of this household needed medical care for any reason at the time of the emergency
+Name=PE7
+Start=25
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Any of the members of this household needed medical care for any reason at the time of the emergency
+Name=PE7_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK / NOT SURE
+Value=9;NO RESPONSE
+
+[Item]
+Label=All members that needed medical care receive this care
+Name=PE8
+Start=26
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=All members that needed medical care receive this care
+Name=PE8_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK / NOT SURE
+Value=9;NO RESPONSE
+
+[Item]
+Label=Any member of household became seriously ill at the time of the emergency
+Name=PE9
+Start=27
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Any member of household became seriously ill at the time of the emergency
+Name=PE9_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK / NOT SURE
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household member was unable to perform usual daily activities
+Name=PE10
+Start=28
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household member was unable to perform usual daily activities
+Name=PE10_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK / NOT SURE
+Value=9;NO RESPONSE
+
+[Item]
+Label=Anyone in this household becme seriously injured due to the emergency
+Name=PE11
+Start=29
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Anyone in this household becme seriously injured due to the emergency
+Name=PE11_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK / NOT SURE
+Value=9;NO RESPONSE
+
+[Item]
+Label=Any household members were separated from the household
+Name=PE12
+Start=30
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Any household members were separated from the household
+Name=PE12_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Number of household members that were separated
+Name=PE13
+Start=31
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Number of household members that were separated
+Name=PE13_VS1
+Value=1:50
+Value=99;NO RESPONSE
+
+[Item]
+Label=Any of the separated household members were less than 18 years old at the time of separation
+Name=PE14
+Start=33
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Any of the separated household members were less than 18 years old at the time of separation
+Name=PE14_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK / NOT SURE
+Value=9;NO RESPONSE
+
+[Item]
+Label=Children age 5-17 years living in this household during the emergency
+Name=PE15
+Start=34
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Children age 5-17 years living in this household during the emergency
+Name=PE15_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Before the emergency, any of children age 5-17 were attending school
+Name=PE16
+Start=35
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Before the emergency, any of children age 5-17 were attending school
+Name=PE16_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=During the emergency, any children age 5 to 17 years stopped attending school
+Name=PE17
+Start=36
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=During the emergency, any children age 5 to 17 years stopped attending school
+Name=PE17_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK / NOT SURE
+Value=9;NO RESPONSE
+
+[Item]
+Label=During the emergency, the household’s main source of drinking water was unusable
+Name=PE18
+Start=37
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=During the emergency, the household’s main source of drinking water was unusable
+Name=PE18_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK / NOT SURE
+Value=9;NO RESPONSE
+
+[Item]
+Label=During the emergency, the household’s main toilet facility was unusable
+Name=PE19
+Start=38
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=During the emergency, the household’s main toilet facility was unusable
+Name=PE19_VS1
+Value=1;YES
+Value=2;NO
+Value=7;NO TOILET FACILITY
+Value=8;DK / NOT SURE
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household income affected by the emergency
+Name=PE20
+Start=39
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household income affected by the emergency
+Name=PE20_VS1
+Value=1;YES, INCREASED
+Value=2;YES, DECREASED
+Value=3;NO, NO CHANGE
+Value=8;DK / NOT SURE
+Value=9;NO RESPONSE
+
+[Item]
+Label=Why did your household’s income decrease
+Name=PE21
+Start=40
+Len=12
+DataType=Alpha
+
+[ValueSet]
+Label=Why did your household’s income decrease
+Name=PE21_VS1
+Value='A           ';LOST JOB
+Value='B           ';REDUCTION IN WORK HOURS / EARNINGS
+Value='C           ';UNABLE TO HARVEST OR PLANT
+Value='D           ';UNABLE TO MAINTAIN LIVESTOCK
+Value='E           ';COULD NOT GO TO WORK
+Value='F           ';COULD NOT OPEN BUSINESS
+Value='G           ';LOSS OF BUSINESS LOCATION
+Value='H           ';LOSS OF BUSINESS INVENTORY
+Value='I           ';LOSS OF BUSINESS EQUIPMENT / ASSETS
+Value='J           ';DEATH / INJURY / INJURY OF FAMILY MEMBER
+Value='X           ';OTHER
+Value='?           ';NO RESPONSE
+
+[Item]
+Label=Why did your household's income decrease: Lost job
+Name=PE21A
+Start=40
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Why did your household's income decrease: Lost job
+Name=PE21A_VS1
+Value='A';LOST JOB
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Why did your household's income decrease: Reduction in work hours / Earnings
+Name=PE21B
+Start=41
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Why did your household's income decrease: Reduction in work hours / Earnings
+Name=PE21B_VS1
+Value='B';REDUCTION IN WORK HOURS / EARNINGS
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Why did your household's income decrease: Unable to harvest or plant
+Name=PE21C
+Start=42
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Why did your household's income decrease: Unable to harvest or plant
+Name=PE21C_VS1
+Value='C';UNABLE TO HARVEST OR PLANT
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Why did your household's income decrease: Unable to maintain livestock
+Name=PE21D
+Start=43
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Why did your household's income decrease: Unable to maintain livestock
+Name=PE21D_VS1
+Value='D';UNABLE TO MAINTAIN LIVESTOCK
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Why did your household's income decrease: Could not go to work
+Name=PE21E
+Start=44
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Why did your household's income decrease: Could not go to work
+Name=PE21E_VS1
+Value='E';COULD NOT GO TO WORK
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Why did your household's income decrease: Could not open business
+Name=PE21F
+Start=45
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Why did your household's income decrease: Could not open business
+Name=PE21F_VS1
+Value='F';COULD NOT OPEN BUSINESS
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Why did your household's income decrease: Loss of business location
+Name=PE21G
+Start=46
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Why did your household's income decrease: Loss of business location
+Name=PE21G_VS1
+Value='G';LOSS OF BUSINESS LOCATION
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Why did your household's income decrease: Loss of business inventory
+Name=PE21H
+Start=47
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Why did your household's income decrease: Loss of business inventory
+Name=PE21H_VS1
+Value='H';LOSS OF BUSINESS INVENTORY
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Why did your household's income decrease: Loss of business equipment/assets
+Name=PE21I
+Start=48
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Why did your household's income decrease: Loss of business equipment/assets
+Name=PE21I_VS1
+Value='I';LOSS OF BUSINESS EQUIPMENT / ASSETS
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Why did your household's income decrease: Death/injury / injury of family member
+Name=PE21J
+Start=49
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Why did your household's income decrease: Death/injury / injury of family member
+Name=PE21J_VS1
+Value='J';DEATH / INJURY / INJURY OF FAMILY MEMBER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Why did your household's income decrease: Other
+Name=PE21X
+Start=50
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Why did your household's income decrease: Other
+Name=PE21X_VS1
+Value='X';OTHER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Why did your household's income decrease: No response
+Name=PE21NR
+Start=51
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Why did your household's income decrease: No response
+Name=PE21NR_VS1
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Any items of value in the home, farm or business, either damaged, destroyed or stolen
+Name=PE22
+Start=52
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Any items of value in the home, farm or business, either damaged, destroyed or stolen
+Name=PE22_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Record]
+Label=Food Insecurity Experience
+Name=MODFE
+RecordTypeValue='0FE'
+Required=No
+RecordLen=23
+
+[Item]
+Label=Food security concern in past year
+Name=FE1
+Start=16
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Food security concern in past year
+Name=FE1_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Access to healthy food in past year
+Name=FE2
+Start=17
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Access to healthy food in past year
+Name=FE2_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Limited food variety due to resource constraints
+Name=FE3
+Start=18
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Limited food variety due to resource constraints
+Name=FE3_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Meal skipping due to resource constraints
+Name=FE4
+Start=19
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Meal skipping due to resource constraints
+Name=FE4_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Eating less due to resource constraints in past year
+Name=FE5
+Start=20
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Eating less due to resource constraints in past year
+Name=FE5_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Running out of food due to resource constraints
+Name=FE6
+Start=21
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Running out of food due to resource constraints
+Name=FE6_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Hunger without eating due to resource constraints
+Name=FE7
+Start=22
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Hunger without eating due to resource constraints
+Name=FE7_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Going without eating for a whole day due to resource constraints in past year
+Name=FE8
+Start=23
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Going without eating for a whole day due to resource constraints in past year
+Name=FE8_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Record]
+Label=Water and Sanitation
+Name=MODWS
+RecordTypeValue='0WS'
+Required=No
+RecordLen=66
+
+[Item]
+Label=Main source of drinking water
+Name=WS1
+Start=16
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Main source of drinking water
+Name=WS1_VS1
+Value=11;PIPED WATER: PIPED INTO DWELLING
+Value=12;PIPED WATER: PIPED TO YARD / PLOT
+Value=13;PIPED WATER: PIPED TO NEIGHBOUR
+Value=14;PIPED WATER: PUBLIC TAP / STANDPIPE
+Value=21;TUBE WELL / BOREHOLE
+Value=31;DUG WELL: PROTECTED WELL
+Value=32;DUG WELL: UNPROTECTED WELL
+Value=41;SPRING: PROTECTED SPRING
+Value=42;SPRING: UNPROTECTED SPRING
+Value=51;RAINWATER
+Value=61;TANKER-TRUCK
+Value=71;CART WITH SMALL TANK
+Value=72;WATER KIOSK
+Value=81;SURFACE WATER (RIVER, DAM, LAKE, POND, STREAM, CANAL, IRRIGATION CHANNEL)
+Value=91;PACKAGED WATER: BOTTLED WATER
+Value=92;PACKAGED WATER: SACHET WATER
+Value=93;LARGE BOTTLE / DISPENSER REFILL
+Value=96;OTHER
+Value=99;NO RESPONSE
+
+[Item]
+Label=Main source of water used for other purposes (if bottled water used for drinking)
+Name=WS2
+Start=18
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Main source of water used for other purposes (if bottled water used for drinking)
+Name=WS2_VS1
+Value=11;PIPED WATER: PIPED INTO DWELLING
+Value=12;PIPED WATER: PIPED TO YARD / PLOT
+Value=13;PIPED WATER: PIPED TO NEIGHBOUR
+Value=14;PIPED WATER: PUBLIC TAP / STANDPIPE
+Value=21;TUBE WELL / BOREHOLE
+Value=31;DUG WELL: PROTECTED WELL
+Value=32;DUG WELL: UNPROTECTED WELL
+Value=41;SPRING: PROTECTED SPRING
+Value=42;SPRING: UNPROTECTED SPRING
+Value=51;RAINWATER
+Value=61;TANKER-TRUCK
+Value=71;CART WITH SMALL TANK
+Value=72;WATER KIOSK
+Value=81;SURFACE WATER (RIVER, DAM, LAKE, POND, STREAM, CANAL, IRRIGATION CHANNEL)
+Value=96;OTHER
+Value=99;NO RESPONSE
+
+[Item]
+Label=Location of the water source
+Name=WS3
+Start=20
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Location of the water source
+Name=WS3_VS1
+Value=1;IN OWN DWELLING
+Value=2;IN OWN YARD / PLOT
+Value=3;ELSEWHERE
+Value=9;NO RESPONSE
+
+[Item]
+Label=Time (in minutes) to get water and come back
+Name=WS4
+Start=21
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Time (in minutes) to get water and come back
+Name=WS4_VS1
+Value=0;MEMBERS DO NOT COLLECT
+Value=1:990
+Value=998;DK
+Value=999;NO RESPONSE
+
+[Item]
+Label=Person collecting water
+Name=WS5
+Start=24
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Person collecting water
+Name=WS5_VS1
+Value=1:50
+Value=99;NO RESPONSE
+
+[Item]
+Label=Number of times person collected water in the last seven days
+Name=WS6
+Start=26
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Number of times person collected water in the last seven days
+Name=WS6_VS1
+Value=0:90
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=There been any time in the last month without sufficient water
+Name=WS7
+Start=28
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=There been any time in the last month without sufficient water
+Name=WS7_VS1
+Value=1;YES, AT LEAST ONCE
+Value=2;NO, ALWAYS SUFFICIENT
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=There been any time in the last 12 months without sufficient water
+Name=WS7A
+Start=29
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=There been any time in the last 12 months without sufficient water
+Name=WS7A_VS1
+Value=1;YES, AT LEAST ONCE
+Value=2;NO, ALWAYS SUFFICIENT
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Main reason without sufficient water
+Name=WS8
+Start=30
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Main reason without sufficient water
+Name=WS8_VS1
+Value=1;WATER SOURCE NOT FUNCTIONAL
+Value=2;WATER NOT AVAILABLE
+Value=3;WATER TOO EXPENSIVE
+Value=4;WATER SOURCE NOT ACCESSIBLE
+Value=6;OTHER
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Treat water to make safer for drinking
+Name=WS9
+Start=31
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Treat water to make safer for drinking
+Name=WS9_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Water treatment
+Name=WS10
+Start=32
+Len=9
+DataType=Alpha
+
+[ValueSet]
+Label=Water treatment
+Name=WS10_VS1
+Value='A        ';BOIL
+Value='B        ';ADD BLEACH / CHLORINE
+Value='C        ';STRAIN IT THROUGH A CLOTH
+Value='D        ';USE WATER FILTER (CERAMIC, SAND, COMPOSITE, ETC.)
+Value='E        ';SOLAR DISINFECTION
+Value='F        ';LET IT STAND AND SETTLE
+Value='X        ';OTHER
+Value='Z        ';DK
+Value='?        ';NO RESPONSE
+
+[Item]
+Label=Water treatment: Boil
+Name=WS10A
+Start=32
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Water treatment: Boil
+Name=WS10A_VS1
+Value='A';BOIL
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Water treatment: Add bleach/chlorine
+Name=WS10B
+Start=33
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Water treatment: Add bleach/chlorine
+Name=WS10B_VS1
+Value='B';ADD BLEACH / CHLORINE
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Water treatment: Strain it through a cloth
+Name=WS10C
+Start=34
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Water treatment: Strain it through a cloth
+Name=WS10C_VS1
+Value='C';STRAIN IT THROUGH A CLOTH
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Water treatment: Use water filter
+Name=WS10D
+Start=35
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Water treatment: Use water filter
+Name=WS10D_VS1
+Value='D';USE WATER FILTER (CERAMIC, SAND, COMPOSITE, ETC.)
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Water treatment: Solar disinfection
+Name=WS10E
+Start=36
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Water treatment: Solar disinfection
+Name=WS10E_VS1
+Value='E';SOLAR DISINFECTION
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Water treatment: Let it stand and settle
+Name=WS10F
+Start=37
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Water treatment: Let it stand and settle
+Name=WS10F_VS1
+Value='F';LET IT STAND AND SETTLE
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Water treatment: Other
+Name=WS10X
+Start=38
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Water treatment: Other
+Name=WS10X_VS1
+Value='X';OTHER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Water treatment: DK
+Name=WS10Z
+Start=39
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Water treatment: DK
+Name=WS10Z_VS1
+Value='Z';DK
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Water treatment: No response
+Name=WS10NR
+Start=40
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Water treatment: No response
+Name=WS10NR_VS1
+Value='?';NO RESPONSE
+Value=' '
+
+[Item]
+Label=Water supply management entity
+Name=WS10AA
+Start=41
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Water supply management entity
+Name=WS10AA_VS1
+Value=1;OWN HOUSEHOLD
+Value=2;LOCAL OR COMMUNITY ORGANISATION
+Value=3;A PUBLIC OR PRIVATE UTILITY
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Consistency of main drinking water source in wet season
+Name=WS10BB
+Start=42
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Consistency of main drinking water source in wet season
+Name=WS10BB_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Main drinking water source in wet season
+Name=WS10CC
+Start=43
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Main drinking water source in wet season
+Name=WS10CC_VS1
+Value=11;PIPED WATER: PIPED INTO DWELLING
+Value=12;PIPED WATER: PIPED TO YARD / PLOT
+Value=13;PIPED WATER: PIPED TO NEIGHBOUR
+Value=14;PIPED WATER: PUBLIC TAP / STANDPIPE
+Value=21;TUBE WELL / BOREHOLE
+Value=31;DUG WELL: PROTECTED WELL
+Value=32;DUG WELL: UNPROTECTED WELL
+Value=41;SPRING: PROTECTED SPRING
+Value=42;SPRING: UNPROTECTED SPRING
+Value=51;RAINWATER
+Value=61;TANKER-TRUCK
+Value=71;CART WITH SMALL TANK
+Value=72;WATER KIOSK
+Value=81;SURFACE WATER (RIVER, DAM, LAKE, POND, STREAM, CANAL, IRRIGATION CHANNEL)
+Value=91;PACKAGED WATER: BOTTLED WATER
+Value=92;PACKAGED WATER: SACHET WATER
+Value=93;LARGE BOTTLE / DISPENSER REFILL
+Value=96;OTHER
+Value=99;NO RESPONSE
+
+[Item]
+Label=Location of the water source that is used during wet season
+Name=WS10DD
+Start=45
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Location of the water source that is used during wet season
+Name=WS10DD_VS1
+Value=1;IN OWN DWELLING
+Value=2;IN OWN YARD / PLOT
+Value=3;ELSEWHERE
+Value=9;NO RESPONSE
+
+[Item]
+Label=Time (in minutes) to get water and come back from the water source that is used during wet season
+Name=WS10EE
+Start=46
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Time (in minutes) to get water and come back from the water source that is used during wet season
+Name=WS10EE_VS1
+Value=0;MEMBERS DO NOT COLLECT
+Value=1:990
+Value=998;DK
+Value=999;NO RESPONSE
+
+[Item]
+Label=Type of toilet facility
+Name=WS11
+Start=49
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Type of toilet facility
+Name=WS11_VS1
+Value=11;FLUSH / POUR FLUSH: PIPED SEWER SYSTEM
+Value=12;FLUSH / POUR FLUSH: SEPTIC TANK
+Value=13;FLUSH / POUR FLUSH: PIT / CESSPOOL
+Value=14;FLUSH / POUR FLUSH: OPEN DRAIN
+Value=18;FLUSH / POUR FLUSH: DK WHERE
+Value=21;PIT LATRINE: VENTILATED IMPROVED PIT LATRINE (WITH SLAB)
+Value=22;PIT LATRINE: SINGLE PIT LATRINE WITH SLAB
+Value=24;PIT LATRINE: TWIN PIT LATRINE WITH SLAB
+Value=23;PIT LATRINE: PIT LATRINE WITHOUT SLAB / OPEN PIT
+Value=31;COMPOSTING TOILET
+Value=32;CONTAINER BASED SANITATION
+Value=41;BUCKET
+Value=51;HANGING TOILET / HANGING LATRINE
+Value=95;NO FACILITY / BUSH / FIELD
+Value=96;OTHER
+Value=99;NO RESPONSE
+
+[Item]
+Label=Outlet pipe for liquid waste
+Name=WS11B
+Start=51
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Outlet pipe for liquid waste
+Name=WS11B_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Destination of outlet pipe for liquid waste
+Name=WS11C
+Start=52
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Destination of outlet pipe for liquid waste
+Name=WS11C_VS1
+Value=11;TO A LEACH FIELD, SOAK PIT
+Value=21;TO A SEWER / CLOSED DRAIN THAT LEADS TO: A WASTEWATER TREATMENT PLANT (WWTP)
+Value=22;TO A SEWER / CLOSED DRAIN THAT LEADS TO: A WATERBODY (NOT CONNECTED TO WWTP)
+Value=23;TO A SEWER / CLOSED DRAIN THAT LEADS TO: DK WHERE
+Value=31;TO AN OPEN DRAIN
+Value=32;TO A WATERBODY / SURFACE
+Value=96;OTHER
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Excreta release events from water source: Overflowed
+Name=WS11DA
+Start=54
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Excreta release events from water source: Overflowed
+Name=WS11DA_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Excreta release events from water source: Flooded
+Name=WS11DB
+Start=55
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Excreta release events from water source: Flooded
+Name=WS11DB_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Excreta release events from water source: Containment collapsed
+Name=WS11DC
+Start=56
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Excreta release events from water source: Containment collapsed
+Name=WS11DC_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Excreta release events from water source: Other event
+Name=WS11DD
+Start=57
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Excreta release events from water source: Other event
+Name=WS11DD_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Pit latrine or septic tank ever been emptied
+Name=WS12
+Start=58
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Pit latrine or septic tank ever been emptied
+Name=WS12_VS1
+Value=1;YES, EMPTIED
+Value=4;NO, NEVER EMPTIED
+Value=5;NO, NOT EMPTIED BUT COVERED AND LEFT UNDISTURBED WHEN FULL
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Entity responsible for the last emptying of water source
+Name=WS12A
+Start=59
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Entity responsible for the last emptying of water source
+Name=WS12A_VS1
+Value=11;SERVICE PROVIDER: PUBLIC / MUNICIPALITY / GOVERNMENT
+Value=12;SERVICE PROVIDER: PRIVATE COMPANY / NGO
+Value=13;SERVICE PROVIDER: INFORMAL EMPTIER (E.G., UNLICENSED)
+Value=21;NOT SERVICE PROVIDER: SELF EMPTIED
+Value=22;NOT SERVICE PROVIDER: NEIGHBOUR, FAMILY MEMBER, FRIEND
+Value=96;OTHER
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Place the contents were emptied
+Name=WS13
+Start=61
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Place the contents were emptied
+Name=WS13_VS1
+Value=1;REMOVED OFF-SITE (TO TREATMENT / UNKNOWN)
+Value=2;REMOVED TO A WATERBODY, OPEN 	GROUND, FIELD OR ELSEWHERE
+Value=3;BURIED IN A COVERED PIT AT OR NEAR HOUSEHOLD (IN-SITU)
+Value=4;BURIED IN A COVERED PIT / TRENCH ELSEWHERE (OFF-SITE)
+Value=5;EMPTIED INTO AN UNCOVERED PIT
+Value=6;OTHER
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Location of the toilet faciltity
+Name=WS14
+Start=62
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Location of the toilet faciltity
+Name=WS14_VS1
+Value=1;IN OWN DWELLING
+Value=2;IN OWN YARD / PLOT
+Value=3;ELSEWHERE
+Value=9;NO RESPONSE
+
+[Item]
+Label=Toilet facility shared
+Name=WS15
+Start=63
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Toilet facility shared
+Name=WS15_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Toilet shared with other household or with general public
+Name=WS16
+Start=64
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Toilet shared with other household or with general public
+Name=WS16_VS1
+Value=1;SHARED WITH KNOWN HOUSEHOLDS (NOT PUBLIC)
+Value=2;SHARED WITH GENERAL PUBLIC
+Value=9;NO RESPONSE
+
+[Item]
+Label=Households using this toilet facility
+Name=WS17
+Start=65
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Households using this toilet facility
+Name=WS17_VS1
+Value=2;TWO
+Value=3;THREE
+Value=4;FOUR
+Value=5;FIVE
+Value=6;SIX
+Value=7;SEVEN
+Value=8;EIGHT
+Value=9;NINE
+Value=10;TEN OR MORE HOUSEHOLDS
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Record]
+Label=Hygiene
+Name=MODHW
+RecordTypeValue='0HW'
+Required=No
+RecordLen=24
+
+[Item]
+Label=Place where household members most often wash their hands
+Name=HW1
+Start=16
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Place where household members most often wash their hands
+Name=HW1_VST
+Value=1;OBSERVED: FIXED FACILITY OBSERVED (SINK / TAP) IN DWELLING
+Value=2;OBSERVED: FIXED FACILITY OBSERVED (SINK / TAP) IN YARD /PLOT
+Value=3;OBSERVED: MOBILE OBJECT (BUCKET / JUG / KETTLE)
+Value=4;NOT OBSERVED: NO HANDWASHING PLACE IN DWELLING / YARD / PLOT
+Value=5;NOT OBSERVED: NO PERMISSION TO SEE
+Value=6;OTHER REASON
+
+[Item]
+Label=Water available at the place for handwashing
+Name=HW2
+Start=17
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Water available at the place for handwashing
+Name=HW2_VST
+Value=1;WATER IS AVAILABLE
+Value=2;WATER IS NOT AVAILABLE
+
+[Item]
+Label=Soap/other material present at the place for hand washing
+Name=HW3
+Start=18
+Len=5
+DataType=Alpha
+
+[ValueSet]
+Label=Soap/other material present at the place for hand washing
+Name=HW3_VS1
+Value='A    ';BAR OR LIQUID SOAP
+Value='B    ';DETERGENT (POWDER / LIQUID / PASTE)
+Value='C    ';ASH
+Value='D    ';MUD / SAND
+Value='Y    ';NONE OF THESE PRESENT
+
+[Item]
+Label=Bar soap
+Name=HW3A
+Start=18
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Bar soap
+Name=HW3A_VS1
+Value='A';BAR OR LIQUID SOAP
+Value=' '
+
+[Item]
+Label=Detergent (Powder / Liquid / Paste)
+Name=HW3B
+Start=19
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Detergent (Powder / Liquid / Paste)
+Name=HW3B_VS1
+Value='B';DETERGENT (POWDER / LIQUID / PASTE)
+Value=' '
+
+[Item]
+Label=Ash / Mud / Sand
+Name=HW3C
+Start=20
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Ash / Mud / Sand
+Name=HW3C_VS1
+Value='C';ASH
+Value=' '
+
+[Item]
+Label=Mud / Sand
+Name=HW3D
+Start=21
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Mud / Sand
+Name=HW3D_VS1
+Value='D';MUD / SAND
+Value=' '
+
+[Item]
+Label=None of these present
+Name=HW3Y
+Start=22
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=None of these present
+Name=HW3Y_VS1
+Value='Y';NONE OF THESE PRESENT
+Value=' '
+
+[Item]
+Label=House or yard have a bathtub, shower
+Name=HW4A
+Start=23
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=House or yard have a bathtub, shower
+Name=HW4A_VS1
+Value=1;YES, IN THE DWELLING
+Value=2;YES, IN THE YARD OR PLOT
+Value=3;NO,  ELSEWHERE
+Value=4;NO, NONE
+Value=9;NO RESPONSE
+
+[Item]
+Label=Water available for a bathtub or a shower
+Name=HW5A
+Start=24
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Water available for a bathtub or a shower
+Name=HW5A_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Record]
+Label=MICS Plus Consent
+Name=MODHPN
+RecordTypeValue='HPN'
+Required=No
+MaxRecords=5
+RecordLen=25
+
+[Item]
+Label=Shared phone number
+Name=HH44G
+Start=16
+Len=8
+DataType=Numeric
+
+[Item]
+Label=Confirm shared number
+Name=HH44H
+Start=24
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Confirm shared number
+Name=HH44H_VS1
+Value=1;YES
+Value=2;NO
+
+[Item]
+Label=Another personal or shared phone number where can be reached
+Name=HH44I
+Start=25
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Another personal or shared phone number where can be reached
+Name=HH44I_VS1
+Value=1;YES
+Value=2;NO
+
+[Record]
+Label=Water quality testing
+Name=MODWQ
+RecordTypeValue='0WQ'
+Required=No
+RecordLen=90
+
+[Item]
+Label=Cluster number
+Name=WQ1
+Start=16
+Len=5
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Household number
+Name=WQ2
+Start=21
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Measurer number
+Name=WQ3
+Start=23
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Interviewer number
+Name=WQ4
+Start=26
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Date of water quality test
+Name=WQ5
+Start=29
+Len=8
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Day of water quality test
+Name=WQ5D
+Start=29
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of water quality test
+Name=WQ5D_VST
+Value=1:31
+
+[Item]
+Label=Month of water quality test
+Name=WQ5M
+Start=31
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of water quality test
+Name=WQ5M_VST
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+
+[Item]
+Label=Year of water quality test
+Name=WQ5Y
+Start=33
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of water quality test
+Name=WQ5Y_VST
+Value=2025;2025
+
+[Item]
+Label=HH selected for blank testing
+Name=WQ6
+Start=37
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=HH selected for blank testing
+Name=WQ6_VST
+Value=1;YES
+Value=2;NO
+
+[Item]
+Label=Respondent to WQT questionnaire
+Name=WQ7
+Start=38
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Respondent to WQT questionnaire
+Name=WQ7_VS1
+Value=1:50
+
+[Item]
+Label=Consent for water quality test
+Name=WQ8
+Start=40
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Consent for water quality test
+Name=WQ8_VST
+Value=1;YES, PERMISSION IS GIVEN
+Value=2;NO, PERMISSION IS NOT GIVEN
+
+[Item]
+Label=Result of water quality test
+Name=WQ31
+Start=41
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Result of water quality test
+Name=WQ31_VST
+Value=1;COMPLETED
+Value=2;PERMISSION NOT GIVEN
+Value=3;GLASS OF WATER NOT GIVEN
+Value=4;PARTLY COMPLETED
+Value=96;OTHER
+
+[Item]
+Label=Time of start of water quality test
+Name=WQ10
+Start=43
+Len=4
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Start of water quality test - Hour
+Name=WQ10H
+Start=43
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Start of water quality test - Hour
+Name=WQ10H_VST
+Value=6:23
+
+[Item]
+Label=Start of water quality test - Minutes
+Name=WQ10M
+Start=45
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Start of water quality test - Minutes
+Name=WQ10M_VST
+Value=0:59
+
+[Item]
+Label=Time of end of water quality test
+Name=WQ23
+Start=47
+Len=4
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=End of water quality test - Hour
+Name=WQ23H
+Start=47
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=End of water quality test - Hour
+Name=WQ23H_VST
+Value=6:23
+
+[Item]
+Label=End of water quality test - Minutes
+Name=WQ23M
+Start=49
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=End of water quality test - Minutes
+Name=WQ23M_VST
+Value=0:59
+
+[Item]
+Label=A glass of water that members of household usually drink was provided
+Name=WQ11
+Start=51
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=A glass of water that members of household usually drink was provided
+Name=WQ11_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Observed the source from where water was collected
+Name=WQ12
+Start=52
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Observed the source from where water was collected
+Name=WQ12_VST
+Value=1;DIRECT FROM SOURCE
+Value=2;COVERED CONTAINER
+Value=3;UNCOVERED CONTAINER
+Value=8;UNABLE TO OBSERVE
+
+[Item]
+Label=From where water was poured
+Name=WQ12A
+Start=53
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=From where water was poured
+Name=WQ12A_VS1
+Value=1;DIRECT FROM SOURCE
+Value=2;COVERED CONTAINER
+Value=3;UNCOVERED CONTAINER
+
+[Item]
+Label=Done anything to the water to make it safer to drink
+Name=WQ14
+Start=54
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Done anything to the water to make it safer to drink
+Name=WQ14_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Water treatment to make it safer to drink
+Name=WQ15
+Start=55
+Len=9
+DataType=Alpha
+
+[ValueSet]
+Label=Water treatment to make it safer to drink
+Name=WQ15_VST
+Value='A        ';BOIL
+Value='B        ';ADD BLEACH / CHLORINE
+Value='C        ';STRAIN IT THROUGH A CLOTH
+Value='D        ';USE A WATER FILTER (CERAMIC, SAND, COMPOSITE, OR MEMBRANE FILTRATION)
+Value='E        ';SOLAR DISINFECTION
+Value='F        ';LET IT STAND AND SETTLE
+Value='X        ';OTHER
+Value='Z        ';DK
+Value='?        ';NO RESPONSE
+
+[Item]
+Label=Water treatment: Boil
+Name=WQ15A
+Start=55
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Water treatment: Boil
+Name=WQ15A_VST
+Value='A';BOIL
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Water treatment: Add bleach/chlorine
+Name=WQ15B
+Start=56
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Water treatment: Add bleach/chlorine
+Name=WQ15B_VST
+Value='B';ADD BLEACH / CHLORINE
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Water treatment: Strain it through a cloth
+Name=WQ15C
+Start=57
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Water treatment: Strain it through a cloth
+Name=WQ15C_VST
+Value='C';STRAIN IT THROUGH A CLOTH
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Water treatment: Use water filter
+Name=WQ15D
+Start=58
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Water treatment: Use water filter
+Name=WQ15D_VST
+Value='D';USE A WATER FILTER (CERAMIC, SAND, COMPOSITE, OR MEMBRANE FILTRATION)
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Water treatment: Solar disinfection
+Name=WQ15E
+Start=59
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Water treatment: Solar disinfection
+Name=WQ15E_VST
+Value='E';SOLAR DISINFECTION
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Water treatment: Let it stand and settle
+Name=WQ15F
+Start=60
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Water treatment: Let it stand and settle
+Name=WQ15F_VST
+Value='F';LET IT STAND AND SETTLE
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Water treatment: Other
+Name=WQ15X
+Start=61
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Water treatment: Other
+Name=WQ15X_VST
+Value='X';OTHER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Water treatment: DK
+Name=WQ15Z
+Start=62
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Water treatment: DK
+Name=WQ15Z_VST
+Value='Z';DK
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Water treatment: No response
+Name=WQ15NR
+Start=63
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Water treatment: No response
+Name=WQ15NR_VST
+Value='?';NO RESPONSE
+Value=' '
+
+[Item]
+Label=Source of water where the glass of water was collected
+Name=WQ17
+Start=64
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Source of water where the glass of water was collected
+Name=WQ17_VST
+Value=11;PIPED WATER: PIPED INTO DWELLING
+Value=12;PIPED WATER: PIPED TO YARD / PLOT
+Value=13;PIPED WATER: PIPED TO NEIGHBOUR
+Value=14;PIPED WATER: PUBLIC TAP / STANDPIPE
+Value=21;TUBE WELL / BOREHOLE
+Value=31;DUG WELL: PROTECTED WELL
+Value=32;DUG WELL: UNPROTECTED WELL
+Value=41;SPRING: PROTECTED SPRING
+Value=42;SPRING: UNPROTECTED SPRING
+Value=51;RAINWATER
+Value=61;TANKER-TRUCK
+Value=71;CART WITH SMALL TANK
+Value=72;WATER KIOSK
+Value=81;SURFACE WATER (RIVER, DAM, LAKE, POND, STREAM, CANAL, IRRIGATION CHANNEL)
+Value=91;PACKAGED WATER: BOTTLED WATER
+Value=92;PACKAGED WATER: SACHET WATER
+Value=93;LARGE BOTTLE / DISPENSER REFILL
+Value=96;OTHER
+Value=99;NO RESPONSE
+
+[Item]
+Label=Main source of water was shown
+Name=WQ18
+Start=66
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Main source of water was shown
+Name=WQ18_VST
+Value=1;YES, SHOWN OR TOLD
+Value=2;NO, UNABLE TO SHOW OR TELL
+Value=9;NO RESPONSE
+
+[Item]
+Label=Source water sample collected
+Name=WQ19
+Start=67
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Source water sample collected
+Name=WQ19_VST
+Value=1;SOURCE WATER COLLECTED
+Value=2;SOURCE WATER NOT COLLECTED: NO WATER AVAILABLE AT SOURCE
+Value=3;SOURCE WATER NOT COLLECTED: WATER SOURCE TOO FAR
+Value=4;SOURCE WATER NOT COLLECTED: UNABLE TO ACCESS SOURCE
+Value=5;SOURCE WATER NOT COLLECTED: PERMISSION NOT GIVEN TO COLLECT SAMPLE
+
+[Item]
+Label=HH selected for blank testing
+Name=WQ20
+Start=68
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=HH selected for blank testing
+Name=WQ20_VST
+Value=1;YES
+Value=2;NO
+
+[Item]
+Label=Blank water test available
+Name=WQ21
+Start=69
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Blank water test available
+Name=WQ21_VST
+Value=1;BLANK WATER SAMPLE AVAILABLE
+Value=2;BLANK WATER SAMPLE NOT AVAILABLE
+Value=9;NO RESPONSE
+
+[Item]
+Label=Date of recording test results
+Name=WQ24
+Start=70
+Len=8
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Day of recording test results
+Name=WQ24D
+Start=70
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of recording test results
+Name=WQ24D_VST
+Value=1:31
+
+[Item]
+Label=Month of recording test results
+Name=WQ24M
+Start=72
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of recording test results
+Name=WQ24M_VST
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+
+[Item]
+Label=Year of recording test results
+Name=WQ24Y
+Start=74
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of recording test results
+Name=WQ24Y_VST
+Value=2025;2025
+
+[Item]
+Label=Time of recording test results
+Name=WQ25
+Start=78
+Len=4
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Time of recording test results - Hour
+Name=WQ25H
+Start=78
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Time of recording test results - Hour
+Name=WQ25H_VST
+Value=6:23
+
+[Item]
+Label=Time of recording test results - Minutes
+Name=WQ25M
+Start=80
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Time of recording test results - Minutes
+Name=WQ25M_VST
+Value=0:59
+
+[Item]
+Label=Household water test (100ml)
+Name=WQ26
+Start=82
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household water test (100ml)
+Name=WQ26_VST
+Value=0:100
+Value=101;MORE THAN 100
+Value=991;NOT POSSIBLE TO READ THE RESULTS
+Value=992;THE RESULTS HAVE BEEN LOST
+
+[Item]
+Label=Source water test (100ml)
+Name=WQ27
+Start=85
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Source water test (100ml)
+Name=WQ27_VST
+Value=0:100
+Value=101;MORE THAN 100
+Value=991;NOT POSSIBLE TO READ THE RESULTS
+Value=992;THE RESULTS HAVE BEEN LOST
+
+[Item]
+Label=Blank water test (100ml)
+Name=WQ29
+Start=88
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Blank water test (100ml)
+Name=WQ29_VST
+Value=0:100
+Value=101;MORE THAN 100
+Value=991;NOT POSSIBLE TO READ THE RESULTS
+Value=992;THE RESULTS HAVE BEEN LOST
+
+[Record]
+Label=Time Stamps of the HH Questionnaire Modules
+Name=MODHHTS
+RecordTypeValue='HTS'
+RecordLen=405
+
+[Item]
+Label=Timestamp of start of HH Questionnaire - Household information panel
+Name=HHHHTSTMPS
+Start=16
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of HH Questionnaire - Household information panel
+Name=HHHHTSTMPE
+Start=31
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of start of Module HL List of household members
+Name=HHHLTSTMPS
+Start=46
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of Module HL List of household members
+Name=HHHLTSTMPE
+Start=61
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of start of Module ED Education: Attainment [3+] and Attendance [3-24]
+Name=HHEDTSTMPS
+Start=76
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of Module ED Education: Attainment [3+] and Attendance [3-24]
+Name=HHEDTSTMPE
+Start=91
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of start of Module HC Household characteristics
+Name=HHHCTSTMPS
+Start=106
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of Module HC Household characteristics
+Name=HHHCTSTMPE
+Start=121
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of start of Module EU Household energy use
+Name=HHEUTSTMPS
+Start=136
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of Module EU Household energy use
+Name=HHEUTSTMPE
+Start=151
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of start of Module TN Malaria: ITNs
+Name=HHTNTSTMPS
+Start=166
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of Module TN Malaria: ITNs
+Name=HHTNTSTMPE
+Start=181
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of start of Module ST Social transfers
+Name=HHSTTSTMPS
+Start=196
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of Module ST Social transfers
+Name=HHSTTSTMPE
+Start=211
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of start of Module PE Post-emergency
+Name=HHPETSTMPS
+Start=226
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of Module PE Post-emergency
+Name=HHPETSTMPE
+Start=241
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of start of Module FE Food insecurity experience
+Name=HHFETSTMPS
+Start=256
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of Module FE Food insecurity experience
+Name=HHFETSTMPE
+Start=271
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of start of Module WS Water
+Name=HHWS1TSTMPS
+Start=286
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of Module WS Water
+Name=HHWS1TSTMPE
+Start=301
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of start of Module WS Sanitation
+Name=HHWS2TSTMPS
+Start=316
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of Module WS Sanitation
+Name=HHWS2TSTMPE
+Start=331
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of start of Module HW Hygiene
+Name=HHHWTSTMPS
+Start=346
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of Module HW Hygiene
+Name=HHHWTSTMPE
+Start=361
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of start of HH - End of Interview
+Name=HHENDTSTMPS
+Start=376
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of HH  - End of Interview
+Name=HHENDTSTMPE
+Start=391
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes

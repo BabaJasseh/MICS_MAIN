@@ -1,0 +1,111 @@
+﻿[Dictionary]
+Version=CSPro 7.7
+Label=SAMPLE Dictionary
+Name=HOUSEHOLDS
+RecordTypeStart=0
+RecordTypeLen=0
+Positions=Relative
+ZeroFill=Yes
+DecimalChar=Yes
+SecurityOptions=3263023F0729A75FC1F0D1404940A0FBA33B02495D9BE24F22364F605CE57347
+
+[Level]
+Label=SAMPLE Level
+Name=SAMPLE_LEVEL
+
+[IdItems]
+
+[Item]
+Label=PSU
+Name=SAM_PSU
+Start=1
+Len=5
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Dwelling unit number
+Name=SAM_DWNO
+Start=6
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Record]
+Label=SAMPLE Record
+Name=SAMPLE_REC
+RecordTypeValue=''
+RecordLen=218
+
+[Item]
+Label=Household address
+Name=SAM_ADDRESS
+Start=8
+Len=80
+DataType=Alpha
+
+[Item]
+Label=Household head name
+Name=SAM_HEAD
+Start=88
+Len=40
+DataType=Alpha
+
+[Item]
+Label=Household contact phone
+Name=SAM_PHONE
+Start=128
+Len=15
+DataType=Alpha
+
+[Item]
+Label=Assigned interviewer
+Name=INT_ASSIGNED
+Start=143
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Original household (for supervisor added households)
+Name=SAM_DWNO_ORIG
+Start=146
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Status
+Name=SAM_STATUS
+Start=149
+Len=30
+DataType=Alpha
+
+[Item]
+Label=sam longitude
+Name=SAM_LON
+Start=179
+Len=15
+DataType=Numeric
+Decimal=9
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=sam latitude
+Name=SAM_LAT
+Start=194
+Len=15
+DataType=Numeric
+Decimal=9
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Subsamples
+Name=SAM_SUBSAMPLE
+Start=209
+Len=1
+DataType=Numeric
+Occurrences=10
+ZeroFill=Yes

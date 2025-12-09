@@ -1,0 +1,171 @@
+﻿{**************************************************NUMBERED ERROR MESSAGES*********************************************************************************************}
+
+Language=ENG
+{ HH level, HH listing module }
+ 0009 D Cluster %05d, Household %02d, Interviewer %02d, # %02d
+ 0030 D Age and date of birth inconsistent
+ 0031 D Age of the household member cannot be DK or No response
+ 0060 W Please confirm if the sex of spouse %s (%s) is the same as the sex of %s (%s)
+ 0061 D The %s of the household head with sex %d is more than 1=%s at the household list
+ 0071 W The spouse in row %s of the head of household in row %d should be of the opposite sex from head %s
+ 0072 W The head of household is less than %02d years older than his/her child (HL1=%02d)
+ 0073 W The head of household is less than %02d years older than his/her grandchild (HL1=%02d)
+ 0074 W The head of household is less than %02d years younger than his/her parent (HL1=%02d)
+ 0075 W Head of the HH on line #%d is younger than 15 years old (%d)
+ 0080 D %s line number (%s=%02d) greater than number of household members (HH48=%02d)
+ 0081 D %s line number (%s=%02d) is the same as the child's line number (HL1=%02d)
+ 0082 D HL1=%02d: Either sex (HL4=%01d) or age (HL6=%02d) of %s (%s=%02d) incorrect
+ 0083 D Caretaker of child %v (LN %v) is %v (LN %v) but he/she is %v years old, the minimum age is 15, please check 
+{ HH level, Education module }
+ 0091 D Current level of education (%s=%02d) greater than highest level (%s=%02d)
+ 0092 D Current grade of education (%s=%02d) greater than highest grade (%s=%02d) 
+ 0093 D Previous year's level of education (%s=%02d) greater than highest level (%s=%02d)
+ 0094 D Previous year's grade of education (%s=%02d) greater than highest grade (%s=%02d) 
+ 0095 D Previous year's education (%s/%s=%02d/%02d) greater than current year (%s/%s=%02d/%02d)
+ 0096 D Previous year's education (%s/%s=%02d/%02d) lower than current year (%s/%s=%02d/%02d) minus one
+ 0097 E Current level/grade of education (%s/%s=%02d/%02d) equal to highest grade (%s/%s=%02d/%02d), which is reported to be completed (%s=%d)
+ 0098 D Current level of education (%s=%02d) lower than highest level (%s=%02d). Please check!
+
+{ HH level, HH characteristics }
+ 0100 D  Please confirm this household has %d rooms used for sleeping
+ 0101 D If the HH owns animals (HC17=1) then one of the HC18 responses must equal a non-zero value
+{ HH level, Energy use }
+ 0102 W Answer inconsistent with the previous answer: household reported not to have electricity
+{ ITN - mosquito nets }
+ 0201 D Line number (TN15=%02d) of household member who slept under the net is greater than number of household members (%d household members)  
+ 0202 D Member already listed under this net                           
+ 0203 D Person (%02d) list as sleeping under net last night did not sleep in household (HL7=%1d)
+ 0204 D Line number (TN15=%02d) equal to line number for different net
+ 0205 W Result of number of people sleeping under the net inconsistent with previous question
+{ WQ  - water quality }
+ 0501 D Please check the dates, water test can not happen before Household Questionnaire
+ 0502 D Result code = 01 (Completed) but permission in WQ8 or HH44 was 'Not Given' - Please check
+ 0503 D Result code is not 01 (Not Completed) but permission in WQ8 or HH44 was 'Given', and a glass of water was given - Please check
+ 0504 D If glass of water is not provided (WQ11 <> 1) you have to go back to WQ31 and record 03
+ 0505 W Please check the dates, water test results should be recorded 24 hours after incubation has started
+ 0506 D End time of water testing cannot be before the start time of water testing  
+ 0507 D Result code = %d not consistent with WQ11=2 (a glass of the water was Not Given) - Please check
+{ Woman questionnaire error messages }
+ 1001 W Woman either too young or too old to be interviewed
+ 1002 W Woman's age (WB4=%02d) different from household (HL6=%02d)
+ 1003 D Age of woman and her date of birth inconsistent
+ 1004 W Woman's month of birth (WB3M=%02d) different from household month of birth (HL5M=%02d)
+ 1005 W Woman's year of birth (WB3Y=%04d) different from household year of birth (HL5Y=%04d)
+ 1011 W School attendance different in household (%s=%02d) and women's questionnaires (%s=%02d)
+ 1012 W Woman's level of education different in household (%s=%02d) than her questionnaire (%s=%02d)
+ 1013 W Woman's grade of education different in household (%s=%02d) than her questionnaire (%s=%02d)
+ 1015 W Woman's completion grade/year different in household (%s=%01d) than her questionnaire (%s=%01d)
+ 1020 W Cannot be more than the current age 
+ 1110 D Number of boys and girls must be greater than zero %s = 1
+ 1111 D Answers CM1, CM2, CM5 and CM8 inconsistent. Answer on CM1 can not be <Yes> if all other answers are <No>
+ 1112 D Probe and correct CM2-CM10 as necessary 
+ 1115 D Given the date of birth of respondent (%d/%d) this is not a possible date (%d/%d)
+ 1133 D According to the Household Listing, the woman is natural mother of at least one of the household members (e.i, LN=%d)
+ 1140 D Multiple birth code incorrect
+ 1142 D Child's date of birth after date of interview
+ 1143 D Date of birth of child and twin are different
+ 1144 D Date of birth of child not in order
+ 1145 D Child should be coded as multiple birth if born on same date as previous child
+ 1146 D Age of child and age of twin different
+ 1147 E Child's age inconsistent with date of birth
+ 1148 W Child has different age or sex in household (HL6=%02d, BH3/BH6=%02d)
+ 1149 D Household line number of child invalid
+ 1150 W Child has different mother in household (HL14=%02d, Woman's Line=%02d)
+ 1151 D Line number of child from household already used
+ 1152 W Mother has child %02d listed in household, but not in birth history
+ 1153 E Age at death invalid for units=9
+ 1154 D Age at death %d out of range %1d-%2d for the units=%s
+ 1155 W Age at death and date of birth inconsistent: dc=%04d, death=%03d, date of interview=%04d
+ 1156 D %s inconsistent: %s=%02d, count=%02d
+ 1157 W Interval between birth %02d (%02d/%04d) and birth %02d (%02d/%04d) too small
+ 1159 D Age at death reported as 12 months or 1 year. Probe to determine exact number of months. 
+ 1160 D Inconsistency between questions BH7 and BH8, check values recoded
+ 1301 D Special answers inconsistent
+ 1401 W According to DOB (WB3=%02d/%04d) and DOM (%02d/%04d), woman less than age %02d when married
+ 1402 D Date of first union (%02d/%04d) cannot be after date of interview
+ 1403 D Age at first union %02d is less than age %02d
+ 1501 D Smoked cigarette in last 24 hours, but number of days of smoking is 0
+ 1601 W Mother (age=%02d) less than %02d years older than daughter (%s=%02d)
+ 1602 W Age at circumsision higher than age
+ 1603 W Age at circumcision (FG7=%d) larger than current age (WB4=%2d)
+ 1604 W Age at of daughter (FG13=%d) different from age found in birth history (Line %d. Age=%d) 
+ 1701 W Age at marriage (MA11=%02d) exceeds current age of respondent (WB4=%02d)
+ 1801 W Woman's age at first sex (SB1=%02d) greater than her current age (WB4=%02d)
+ 1802 W Maximum age at last sex (WB4-SB3N=%02d) younger than age at first sex (SB1=%02d)
+ 1810 E Never had sex, but either has children or is currently pregnant   
+ 1811 W Never had sex, but was in union or lived with a men 
+ 1812 D Had sex first time when started living with husband/partner, but never married
+ 1813 D Relationship is husband/partner, but never married                      
+ 1901 E Age at first %s use exceeds current age (%d - %d)                           
+ 1902 W Postnatal health check (PN13U =%d and PN13N = %d) has to be after leaving health facility (PN3U = %d and PN3U = %d)  
+ 1903 W Postnatal health check (PN22U =%d and PN22N = %d) has to be after leaving health facility (PN3U = %d and PN3U = %d)   
+ 2100 D Check, and correct if needed, the total number of births, then insert the new birth  
+ 2101 D Total number of children at CM11 is not same as entered at the Birth History list. Check and correct the total number of births, or change this response and insert new births
+ 2200 D Probe and check sum in MM7 and list of siblings in MM1. Make corrections as necessary until response in MM8 is ‘Yes’
+ 2201 D Duplicate order number
+ 2202 D Order number cannot be higher than total number of siblings
+ 2301 D Wake up activity is after hour of when to sleep - Please check
+ 2302 D Ending of the activity is after the time went to sleep - Please check
+ 2303 D Ending time of the activity is before its starting time - Please check
+ 2304 D Mentioned not play online at previous question but recorded played online at this question - Please check
+{ Child questionnaire error messages }
+ 2001 W Child either too young or too old to be interviewed
+ 2002 W Age of child (%s =%02d) and age in household (HL6=%02d) different
+ 2003 W Age of child inconsistent with date of birth
+ 2005 W Month of birth of child (%s =%02d) different from month of birth in the household listing (HL5M=%02d)
+ 2006 W Year of birth of child (%s=%04d) different from year of birth in the household listing (HL5Y=%04d)
+ 2011 W School attendance different in household (%s=%d) and his/her questionnaires (%s=%d)
+ 2012 W Child's level of education different in household (%s=%02d) than his/her questionnaire (%s=%02d) 
+ 2013 W Child's grade of education different in household (%s=%02d) than her questionnaire (%s=%02d) 
+ 2015 W Child's completion grade/year different in household (%s=%01d) than his/her questionnaire (%s=%01d) 
+ 2701 W Date of %s vaccination (%02d/%02d/%04d) invalid
+ 2702 W Date of %s vaccination (%02d/%02d/%04d) after date of interview (UF7=%02d/%02d/%04d)
+ 2703 W Date of %s vaccination (%02d/%02d/%04d) before date of birth (UB1=%02d/%02d/%04d)
+ 2704 W Date of %s vaccination (%02d/%02d/%04d) after date of %s vaccination (%02d/%02d/%04d)
+ 2901 W Total number of hours worked cannot be this much 
+ 2910 W Measurement / Health facility visit cannot be before the interview
+ 2950 W Be sure that all 3 conditions are marked
+ 2951 W This language is already attempted. Please offer the story in another language available
+{ Men..}
+ 3001 W Man either too young or too old to be interviewed
+ 3002 W Man's age (MWB4=%02d) different from household (HL6=%02d)
+ 3003 W Age of man and his date of birth inconsistent
+ 3004 W Man's month of birth (MWB3M=%02d) different from household month of birth (HL5M=%02d)
+ 3005 W Man's year of birth (MWB3Y=%04d) different from household year of birth (HL5Y=%04d)
+ 3011 W School attendance different in household (%s=%d) and men's questionnaires (%s=%d)
+ 3012 W Man's level of education different in household (%s=%d) than his questionnaire (%s=%d)
+ 3013 W Man's grade of education different in household (%s=%d) than his questionnaire (%s=%d)
+ 3015 W Man's completion grade/year different in household (%s=%01d) than his questionnaire (%s=%01d)
+ 3110 D Number of boys and girls must be greater than zero %s = 1
+ 3111 D Answers MCM1, MCM2, MCM5 and MCM8 inconsistent. Answer on CM1 can not be <Yes> if all other answers are <No>
+ 3112 D Probe and correct MCM2-MCM10 as necessary 
+ 3120 W Age at first child bearing (MCM17=%02d) exceeds current age of respondent (MWB4=%02d) 
+ 3121 W Date of birth of last child before age %1d
+ 3122 W Date of birth of last child after date of interview
+ 3133 D According to the Household Listing, the man is natural father of at least one of the household members (e.i, LN=%d)
+ 3134 D Cannot be more than the total number of live births fathered
+ 3135 D Given the date of birth of respondent (%d/%d) this is not a possible date (%d/%d)
+ 3401 W According to DOB (MWB3=%02d/%04d) and DOM (%02d/%04d), man less than age %02d when married
+ 3402 W Date of first union (%02d/%04d) cannot be after date of interview
+ 3501 D Smoked cigarette in last 24 hours, but number of days of smoking is 0
+ 3701 W Age at marriage (MMA11=%02d) exceeds current age of respondent (MWB4=%02d)
+ 3801 W Man's age at first sex (MSB1=%02d) greater than his current age (MWB4=%02d)
+ 3802 W Maximum age at last sex (MWB4-MSB3N=%02d) younger than age at first sex (MSB1=%02d)
+ 3810 E Never had sex, but either has children                                                   
+ 3811 W Never had sex, but was in union or lived with a woman                                   
+ 3812 D Had sex first time when started living with wife/partner, but never married
+ 3813 D Relationship is wife/partner, but never married 
+ 3901 E Age at first %s exceeds current age (%d - %d)                                            
+{ Error messages used throughout }
+ 9970 D Result code inconsistent with permission 
+ 9971 D Result is Not completed, but there are data collected
+ 9980 Save changes?
+ 9988 D Date of the tablet outside dates of fieldwork (HH5Y:%d-%d), please check, interview stopped
+ 9989 D Time of the tablet outside of the time for interview (HH11:%d-%d), please check, interview stopped
+ 9991 D Record the name
+ 9992 D Unit and number inconsistent; check questionnaire's coding instructions
+ 9995 D If "No one/No response" circled, cannot select other alpha responses
+ 9996 D Response "Don't know" inconsistent with other answers
+ 9998 D Code given for alpha variable not acceptable
+
+{**************************************************************************************************************************************************************}

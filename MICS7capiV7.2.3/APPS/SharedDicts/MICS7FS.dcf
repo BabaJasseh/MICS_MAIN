@@ -1,0 +1,6231 @@
+﻿[Dictionary]
+Version=CSPro 7.7
+Label=MICS7 Questionnaire for Children and Adolescents Age 5-17
+Name=MICS7FS
+RecordTypeStart=11
+RecordTypeLen=3
+Positions=Relative
+ZeroFill=Yes
+DecimalChar=No
+SecurityOptions=726BD28A272F0479B3CFAC38AA4A24D078728048D7297863DE1598BAE983A472
+
+[Languages]
+ENG=English
+
+[Level]
+Label=Children and Adolescents Age 5-17
+Name=FS
+
+[IdItems]
+
+[Item]
+Label=Cluster number
+Name=FS1
+Start=1
+Len=5
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Household number
+Name=FS2
+Start=6
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Interviewer number
+Name=FSINT
+Start=8
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Child's line number
+Name=FS3
+Start=14
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child's line number
+Name=FS3_VST
+Value=1:50
+
+[Record]
+Label=Five-Seventeen Child Information Panel
+Name=MODFS
+RecordTypeValue='0FS'
+RecordLen=95
+
+[Item]
+Label=Child's name
+Name=FS3A
+Start=16
+Len=20
+DataType=Alpha
+
+[Item]
+Label=Mother / Caregiver's name
+Name=FS4A
+Start=36
+Len=20
+DataType=Alpha
+
+[Item]
+Label=Mother / Caregiver's line number
+Name=FS4
+Start=56
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Mother / Caregiver's line number
+Name=FS4_VST
+Value=1:50
+Value=90
+
+[Item]
+Label=Interviewer number
+Name=FS5
+Start=58
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Supervisor number
+Name=FS6
+Start=61
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Date of Interview
+Name=FS7
+Start=64
+Len=8
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Day of interview
+Name=FS7D
+Start=64
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of interview
+Name=FS7D_VST
+Value=1:31
+
+[Item]
+Label=Month of interview
+Name=FS7M
+Start=66
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of interview
+Name=FS7M_VST
+Value=1:12
+
+[Item]
+Label=Year of interview
+Name=FS7Y
+Start=68
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of interview
+Name=FS7Y_VST
+Value=2025:2028
+
+[Item]
+Label=Respondent to another questionnaire
+Name=FS9
+Start=72
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Respondent to another questionnaire
+Name=FS9_VST
+Value=1;YES, INTERVIEWED ALREADY
+Value=2;NO, FIRST INTERVIEW
+
+[Item]
+Label=Consent
+Name=FS10
+Start=73
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Consent
+Name=FS10_VST
+Value=1;YES
+Value=2;NO / NOT ASKED
+
+[Item]
+Label=Result of interview for children and adolescents age 5-17
+Name=FS17
+Start=74
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Result of interview for children and adolescents age 5-17
+Name=FS17_VST
+Value=1;COMPLETED
+Value=2;NOT AT HOME
+Value=3;REFUSED
+Value=4;PARTLY COMPLETED
+Value=5;INCAPACITATED
+Value=6;NO ADULT CONSENT FOR MOTHER / CAREGIVER AGE 15-17
+Value=96;OTHER
+
+[Item]
+Label=Time of start of interview
+Name=FS8
+Start=76
+Len=4
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Start of interview - Hour
+Name=FS8H
+Start=76
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Start of interview - Hour
+Name=FS8H_VST
+Value=6:23
+
+[Item]
+Label=Start of interview - Minutes
+Name=FS8M
+Start=78
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Start of interview - Minutes
+Name=FS8M_VST
+Value=0:59
+
+[Item]
+Label=Time of end of interview
+Name=FS11
+Start=80
+Len=4
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=End of interview - Hour
+Name=FS11H
+Start=80
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=End of interview - Hour
+Name=FS11H_VST
+Value=6:23
+
+[Item]
+Label=End of interview - Minutes
+Name=FS11M
+Start=82
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=End of interview - Minutes
+Name=FS11M_VST
+Value=0:59
+
+[Item]
+Label=Language of the questionnaire
+Name=FS12
+Start=84
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Language of the questionnaire
+Name=FS12_VST
+Value=1;ENGLISH
+Value=2;LANGUAGE 2
+Value=3;LANGUAGE 3
+
+[Item]
+Label=Language of the interview
+Name=FS13
+Start=85
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Language of the interview
+Name=FS13_VST
+Value=1;ENGLISH
+Value=2;LANGUAGE 2
+Value=3;LANGUAGE 3
+Value=6;OTHER LANGUAGE
+
+[Item]
+Label=Native language of the respondent
+Name=FS14
+Start=86
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Native language of the respondent
+Name=FS14_VST
+Value=1;ENGLISH
+Value=2;LANGUAGE 2
+Value=3;LANGUAGE 3
+Value=6;OTHER LANGUAGE
+
+[Item]
+Label=Translator used
+Name=FS15
+Start=87
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Translator used
+Name=FS15_VST
+Value=1;YES, ENTIRE QUESTIONNAIRE
+Value=2;YES, PART OF QUESTIONNAIRE
+Value=3;NO, NOT USED
+
+[Item]
+Label=Has been interviewed for any individual questionnaires
+Name=FS15C
+Start=88
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Has been interviewed for any individual questionnaires
+Name=FS15C_VS1
+Value=1;YES, ALREADY INTERVIEWED
+Value=2;NO, NOT ALREADY INTERVIEWED
+
+[Item]
+Label=Consent for phone survey
+Name=FS15EF
+Start=89
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Consent for phone survey
+Name=FS15EF_VS1
+Value=1;YES
+Value=2;NO
+
+[Item]
+Label=Have personal phone number or phone number for the household
+Name=FS15GH
+Start=90
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Have personal phone number or phone number for the household
+Name=FS15GH_VS1
+Value=1;YES
+Value=2;NO
+
+[Item]
+Label=Note on sharing phone number for the household
+Name=FS15I
+Start=91
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Note on sharing phone number for the household
+Name=FS15I_VS1
+Value=1;CONTINUE
+
+[Item]
+Label=Household interviewer
+Name=FSHINT
+Start=92
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Finish
+Name=FSFIN
+Start=95
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Finish
+Name=FSFIN_VST
+Value=1;REVIEW QUESTIONNAIRE
+Value=2;ADD NOTES
+Value=3;SAVE QUESTIONNAIRE AND FINISH
+
+[Record]
+Label=Child's Background
+Name=MODCB
+RecordTypeValue='0CB'
+Required=No
+RecordLen=29
+
+[Item]
+Label=Biological mother/father of child
+Name=CB0A
+Start=16
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Biological mother/father of child
+Name=CB0A_VS1
+Value=1;BIOLOGICAL MOTHER
+Value=2;BIOLOGICAL FATHER
+Value=3;CHILD IS RESPONDENT
+Value=6;OTHER
+
+[Item]
+Label=Relationship of caregiver to child
+Name=CB0B
+Start=17
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Relationship of caregiver to child
+Name=CB0B_VS1
+Value=1;GRANDPARENT
+Value=2;AUNT/UNCLE
+Value=3;BROTHER/SISTER
+Value=6;OTHER RELATIVE OF CHILD
+Value=11;STEPMOTHER/FATHER
+Value=12;STEPSISTER/BROTHER
+Value=16;OTHER RELATIVE OF STEPPARENT
+Value=21;FORMAL FOSTER/ADOPTED PARENT
+Value=31;FRIEND
+Value=96;OTHER
+Value=99;NO RESPONSE
+
+[Item]
+Label=Date of birth of child
+Name=CB2
+Start=19
+Len=8
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Day of birth of child
+Name=CB2D
+Start=19
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of birth of child
+Name=CB2D_VS1
+Value=1:31
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of birth of child
+Name=CB2M
+Start=21
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of birth of child
+Name=CB2M_VST
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of birth of child
+Name=CB2Y
+Start=23
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of birth of child
+Name=CB2Y_VST
+Value=2007;2007
+Value=2008;2008
+Value=2009;2009
+Value=2010;2010
+Value=2011;2011
+Value=2012;2012
+Value=2013;2013
+Value=2014;2014
+Value=2015;2015
+Value=2016;2016
+Value=2017;2017
+Value=2018;2018
+Value=2019;2019
+Value=2020;2020
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Age of child
+Name=CB3
+Start=27
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Age of child
+Name=CB3_VST
+Value=5;5 years old
+Value=6;6 years old
+Value=7;7 years old
+Value=8;8 years old
+Value=9;9 years old
+Value=10;10 years old
+Value=11;11 years old
+Value=12;12 years old
+Value=13;13 years old
+Value=14;14 years old
+Value=15;15 years old
+Value=16;16 years old
+Value=17;17 years old
+
+[Item]
+Label=Ever attended early childhood education programme
+Name=CB5
+Start=29
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Ever attended early childhood education programme
+Name=CB5_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Record]
+Label=Health Insurance
+Name=MODFIN
+RecordTypeValue='FIN'
+Required=No
+RecordLen=22
+
+[Item]
+Label=Covered by any health insurance
+Name=FIN1
+Start=16
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Covered by any health insurance
+Name=FIN1_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Type of health insurance
+Name=FIN2
+Start=17
+Len=6
+DataType=Alpha
+
+[ValueSet]
+Label=Type of health insurance
+Name=FIN2_VS1
+Value='A     ';MUTUAL HEALTH ORGANIZATION / COMMUNITY-BASED HEALTH INSURANCE
+Value='B     ';HEALTH INSURANCE THROUGH EMPLOYER
+Value='C     ';SOCIAL SECURITY
+Value='D     ';OTHER PRIVATELY PURCHASED COMMERCIAL HEALTH INSURANCE
+Value='X     ';OTHER
+Value='?     ';NO RESPONSE
+
+[Item]
+Label=Type of health insurance - Mutual health organization / Community-based health insurance
+Name=FIN2A
+Start=17
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Type of health insurance - Mutual health organization / Community-based health insurance
+Name=FIN2A_VS1
+Value='A';MUTUAL HEALTH ORGANIZATION / COMMUNITY-BASED HEALTH INSURANCE
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Type of health insurance - Health insurance through employer
+Name=FIN2B
+Start=18
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Type of health insurance - Health insurance through employer
+Name=FIN2B_VS1
+Value='B';HEALTH INSURANCE THROUGH EMPLOYER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Type of health insurance - Social security
+Name=FIN2C
+Start=19
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Type of health insurance - Social security
+Name=FIN2C_VS1
+Value='C';SOCIAL SECURITY
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Type of health insurance - Other privately purchased commercial health insurance
+Name=FIN2D
+Start=20
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Type of health insurance - Other privately purchased commercial health insurance
+Name=FIN2D_VS1
+Value='D';OTHER PRIVATELY PURCHASED COMMERCIAL HEALTH INSURANCE
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Type of health insurance - Other
+Name=FIN2X
+Start=21
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Type of health insurance - Other
+Name=FIN2X_VS1
+Value='X';OTHER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Type of health insurance - No response
+Name=FIN2NR
+Start=22
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Type of health insurance - No response
+Name=FIN2NR_VS1
+Value='?';NO RESPONSE
+Value=' '
+
+[Record]
+Label=Child Labour
+Name=MODCL
+RecordTypeValue='0CL'
+Required=No
+RecordLen=44
+
+[Item]
+Label=Worked or helped on garden in past week
+Name=CL1A
+Start=16
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Worked or helped on garden in past week
+Name=CL1A_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Helped in family business in past week
+Name=CL1B
+Start=17
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Helped in family business in past week
+Name=CL1B_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Produced or sold articles in past week
+Name=CL1C
+Start=18
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Produced or sold articles in past week
+Name=CL1C_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Engaged in any other activity for income in past week
+Name=CL1X
+Start=19
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Engaged in any other activity for income in past week
+Name=CL1X_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Hours worked in past week
+Name=CL3
+Start=20
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Hours worked in past week
+Name=CL3_VST
+Value=0:80
+Value=99;NO RESPONSE
+
+[Item]
+Label=Activities required carrying heavy loads
+Name=CL4
+Start=22
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Activities required carrying heavy loads
+Name=CL4_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Activities required working with dangerous tools or heavy machinery
+Name=CL5
+Start=23
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Activities required working with dangerous tools or heavy machinery
+Name=CL5_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Description of work:  exposed to dust, fumes, or gas
+Name=CL6A
+Start=24
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Description of work:  exposed to dust, fumes, or gas
+Name=CL6A_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Description of work:  exposed to extreme temperatures or humidity
+Name=CL6B
+Start=25
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Description of work:  exposed to extreme temperatures or humidity
+Name=CL6B_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Description of work:  exposed to loud noise or vibration
+Name=CL6C
+Start=26
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Description of work:  exposed to loud noise or vibration
+Name=CL6C_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Description of work:  required to work at heights
+Name=CL6D
+Start=27
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Description of work:  required to work at heights
+Name=CL6D_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Description of work:  required to work with chemicals
+Name=CL6E
+Start=28
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Description of work:  required to work with chemicals
+Name=CL6E_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Description of work:  exposed to other bad for health/safety
+Name=CL6X
+Start=29
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Description of work:  exposed to other bad for health/safety
+Name=CL6X_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Fetched water in past week
+Name=CL7
+Start=30
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Fetched water in past week
+Name=CL7_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Hours spent fetching water  in past week
+Name=CL8
+Start=31
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Hours spent fetching water  in past week
+Name=CL8_VST
+Value=0:80
+Value=99;NO RESPONSE
+
+[Item]
+Label=Collected firewood  in past week
+Name=CL9
+Start=33
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Collected firewood  in past week
+Name=CL9_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Hours spent collecting firewood  in past week
+Name=CL10
+Start=34
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Hours spent collecting firewood  in past week
+Name=CL10_VST
+Value=0:80
+Value=99;NO RESPONSE
+
+[Item]
+Label=Household chores in past week:  shopping
+Name=CL11A
+Start=36
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household chores in past week:  shopping
+Name=CL11A_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household chores in past week:  cooking
+Name=CL11B
+Start=37
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household chores in past week:  cooking
+Name=CL11B_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household chores in past week:  washing dishes  or cleaning around the house
+Name=CL11C
+Start=38
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household chores in past week:  washing dishes  or cleaning around the house
+Name=CL11C_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household chores in past week:  washing clothes
+Name=CL11D
+Start=39
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household chores in past week:  washing clothes
+Name=CL11D_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household chores in past week:  caring for children
+Name=CL11E
+Start=40
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household chores in past week:  caring for children
+Name=CL11E_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household chores in past week:  caring for old or sick
+Name=CL11F
+Start=41
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household chores in past week:  caring for old or sick
+Name=CL11F_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household chores in past week:  other household tasks
+Name=CL11X
+Start=42
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household chores in past week:  other household tasks
+Name=CL11X_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Number of hours engaged in past week
+Name=CL13
+Start=43
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Number of hours engaged in past week
+Name=CL13_VST
+Value=0:80
+Value=99;NO RESPONSE
+
+[Record]
+Label=Child Discipline
+Name=MODFCD
+RecordTypeValue='FCD'
+Required=No
+RecordLen=29
+
+[Item]
+Label=Took away privileges from child
+Name=FCD2A
+Start=16
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Took away privileges from child
+Name=FCD2A_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Explained to child why behaviour was wrong
+Name=FCD2B
+Start=17
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Explained to child why behaviour was wrong
+Name=FCD2B_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Shook child
+Name=FCD2C
+Start=18
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Shook child
+Name=FCD2C_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Shouted, yelled or screamed at child
+Name=FCD2D
+Start=19
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Shouted, yelled or screamed at child
+Name=FCD2D_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Gave child something else to do
+Name=FCD2E
+Start=20
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Gave child something else to do
+Name=FCD2E_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Spanked, hit or slapped child on bottom with bare hand
+Name=FCD2F
+Start=21
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Spanked, hit or slapped child on bottom with bare hand
+Name=FCD2F_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Hit child on the bottom or elsewhere with belt, brush, stick, etc.
+Name=FCD2G
+Start=22
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Hit child on the bottom or elsewhere with belt, brush, stick, etc.
+Name=FCD2G_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Called child dumb, lazy or another name
+Name=FCD2H
+Start=23
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Called child dumb, lazy or another name
+Name=FCD2H_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Hit or slapped child on the face, head or ears
+Name=FCD2I
+Start=24
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Hit or slapped child on the face, head or ears
+Name=FCD2I_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Hit or slapped child on the hand, arm or leg
+Name=FCD2J
+Start=25
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Hit or slapped child on the hand, arm or leg
+Name=FCD2J_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Beat child up as hard as one could
+Name=FCD2K
+Start=26
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Beat child up as hard as one could
+Name=FCD2K_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Mother / Caregiver of another child age under 5
+Name=FCD3
+Start=27
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Mother / Caregiver of another child age under 5
+Name=FCD3_VST
+Value=1;YES
+Value=2;NO
+
+[Item]
+Label=Already responded to question UCD5
+Name=FCD4
+Start=28
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Already responded to question UCD5
+Name=FCD4_VST
+Value=1;YES
+Value=2;NO
+
+[Item]
+Label=Child needs to be physically punished to be brought up properly
+Name=FCD5
+Start=29
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child needs to be physically punished to be brought up properly
+Name=FCD5_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK / NO OPINION
+Value=9;NO RESPONSE
+
+[Record]
+Label=Child Functioning
+Name=MODFCF
+RecordTypeValue='FCF'
+Required=No
+RecordLen=37
+
+[Item]
+Label=Child wear glasses or contact lenses
+Name=FCF1
+Start=16
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child wear glasses or contact lenses
+Name=FCF1_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child uses hearing aid
+Name=FCF2
+Start=17
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child uses hearing aid
+Name=FCF2_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child uses any equipment or receive assistance for walking
+Name=FCF3
+Start=18
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child uses any equipment or receive assistance for walking
+Name=FCF3_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child has difficulty seeing
+Name=FCF6
+Start=19
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child has difficulty seeing
+Name=FCF6_VST
+Value=1;NO DIFFICULTY
+Value=2;SOME DIFFICULTY
+Value=3;A LOT OF DIFFICULTY
+Value=4;CANNOT SEE AT ALL
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child has difficulty hearing sounds like people voices or music
+Name=FCF8
+Start=20
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child has difficulty hearing sounds like people voices or music
+Name=FCF8_VST
+Value=1;NO DIFFICULTY
+Value=2;SOME DIFFICULTY
+Value=3;A LOT OF DIFFICULTY
+Value=4;CANNOT HEAR AT ALL
+Value=9;NO RESPONSE
+
+[Item]
+Label=Without using equipment or assistance child has difficulty walking 100 yards
+Name=FCF10
+Start=21
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Without using equipment or assistance child has difficulty walking 100 yards
+Name=FCF10_VST
+Value=2;SOME DIFFICULTY
+Value=3;A LOT OF DIFFICULTY
+Value=4;CANNOT WALK 100 M/Y AT ALL
+Value=9;NO RESPONSE
+
+[Item]
+Label=Without using equipment or assistance child has difficulty walking 500 yards
+Name=FCF11
+Start=22
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Without using equipment or assistance child has difficulty walking 500 yards
+Name=FCF11_VST
+Value=2;SOME DIFFICULTY
+Value=3;A LOT OF DIFFICULTY
+Value=4;CANNOT WALK 500 M/Y AT ALL
+Value=9;NO RESPONSE
+
+[Item]
+Label=When using equipment or assistance child has difficulty walking 100 yards
+Name=FCF12
+Start=23
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=When using equipment or assistance child has difficulty walking 100 yards
+Name=FCF12_VST
+Value=1;NO DIFFICULTY
+Value=2;SOME DIFFICULTY
+Value=3;A LOT OF DIFFICULTY
+Value=4;CANNOT WALK 100 M/Y AT ALL
+Value=9;NO RESPONSE
+
+[Item]
+Label=When using equipment or assistance child has difficulty walking 500 yards
+Name=FCF13
+Start=24
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=When using equipment or assistance child has difficulty walking 500 yards
+Name=FCF13_VST
+Value=1;NO DIFFICULTY
+Value=2;SOME DIFFICULTY
+Value=3;A LOT OF DIFFICULTY
+Value=4;CANNOT WALK 500 M/Y AT ALL
+Value=9;NO RESPONSE
+
+[Item]
+Label=Compared with children of the same age, child has difficulty walking 100 yards
+Name=FCF14
+Start=25
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Compared with children of the same age, child has difficulty walking 100 yards
+Name=FCF14_VST
+Value=1;NO DIFFICULTY
+Value=2;SOME DIFFICULTY
+Value=3;A LOT OF DIFFICULTY
+Value=4;CANNOT WALK 100 M/Y AT ALL
+Value=9;NO RESPONSE
+
+[Item]
+Label=Compared with children of the same age, child has difficulty walking 500 yards
+Name=FCF15
+Start=26
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Compared with children of the same age, child has difficulty walking 500 yards
+Name=FCF15_VST
+Value=1;NO DIFFICULTY
+Value=2;SOME DIFFICULTY
+Value=3;A LOT OF DIFFICULTY
+Value=4;CANNOT WALK 500 M/Y AT ALL
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child has difficulty with self-care such as feeding or dressing
+Name=FCF16
+Start=27
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child has difficulty with self-care such as feeding or dressing
+Name=FCF16_VST
+Value=1;NO DIFFICULTY
+Value=2;SOME DIFFICULTY
+Value=3;A LOT OF DIFFICULTY
+Value=4;CANNOT CARE FOR SELF AT ALL
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child has difficulty being understood by people inside of this household
+Name=FCF17
+Start=28
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child has difficulty being understood by people inside of this household
+Name=FCF17_VST
+Value=1;NO DIFFICULTY
+Value=2;SOME DIFFICULTY
+Value=3;A LOT OF DIFFICULTY
+Value=4;CANNOT BE UNDERSTOOD AT ALL
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child has difficulty being understood by people outside of this household
+Name=FCF18
+Start=29
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child has difficulty being understood by people outside of this household
+Name=FCF18_VST
+Value=1;NO DIFFICULTY
+Value=2;SOME DIFFICULTY
+Value=3;A LOT OF DIFFICULTY
+Value=4;CANNOT BE UNDERSTOOD AT ALL
+Value=9;NO RESPONSE
+
+[Item]
+Label=Compared with children of the same age, child has difficulty learning things
+Name=FCF19
+Start=30
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Compared with children of the same age, child has difficulty learning things
+Name=FCF19_VST
+Value=1;NO DIFFICULTY
+Value=2;SOME DIFFICULTY
+Value=3;A LOT OF DIFFICULTY
+Value=4;CANNOT LEARN THINGS AT ALL
+Value=9;NO RESPONSE
+
+[Item]
+Label=Compared with children of the same age, child has difficulty remembering things
+Name=FCF20
+Start=31
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Compared with children of the same age, child has difficulty remembering things
+Name=FCF20_VST
+Value=1;NO DIFFICULTY
+Value=2;SOME DIFFICULTY
+Value=3;A LOT OF DIFFICULTY
+Value=4;CANNOT REMEMBER THINGS AT ALL
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child has difficulty concentrating on an activity that he/she enjoys
+Name=FCF21
+Start=32
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child has difficulty concentrating on an activity that he/she enjoys
+Name=FCF21_VST
+Value=1;NO DIFFICULTY
+Value=2;SOME DIFFICULTY
+Value=3;A LOT OF DIFFICULTY
+Value=4;CANNOT CONCENTRATE AT ALL
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child has difficulty accepting changes in his/her routine
+Name=FCF22
+Start=33
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child has difficulty accepting changes in his/her routine
+Name=FCF22_VST
+Value=1;NO DIFFICULTY
+Value=2;SOME DIFFICULTY
+Value=3;A LOT OF DIFFICULTY
+Value=4;CANNOT ACCEPT CHANGES AT ALL
+Value=9;NO RESPONSE
+
+[Item]
+Label=Compared with children of the same age, child have difficulty controlling his/her behaviour
+Name=FCF23
+Start=34
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Compared with children of the same age, child have difficulty controlling his/her behaviour
+Name=FCF23_VST
+Value=1;NO DIFFICULTY
+Value=2;SOME DIFFICULTY
+Value=3;A LOT OF DIFFICULTY
+Value=4;CANNOT CONTROL BEHAVIOUR AT ALL
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child has difficulty making friends
+Name=FCF24
+Start=35
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child has difficulty making friends
+Name=FCF24_VST
+Value=1;NO DIFFICULTY
+Value=2;SOME DIFFICULTY
+Value=3;A LOT OF DIFFICULTY
+Value=4;CANNOT MAKE FRIENDS AT ALL
+Value=9;NO RESPONSE
+
+[Item]
+Label=How often child seems very anxious, nervous or worried
+Name=FCF25
+Start=36
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=How often child seems very anxious, nervous or worried
+Name=FCF25_VST
+Value=1;DAILY
+Value=2;WEEKLY
+Value=3;MONTHLY
+Value=4;A FEW TIMES A YEAR
+Value=5;NEVER
+Value=9;NO RESPONSE
+
+[Item]
+Label=How often child seems very sad or depressed
+Name=FCF26
+Start=37
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=How often child seems very sad or depressed
+Name=FCF26_VST
+Value=1;DAILY
+Value=2;WEEKLY
+Value=3;MONTHLY
+Value=4;A FEW TIMES A YEAR
+Value=5;NEVER
+Value=9;NO RESPONSE
+
+[Record]
+Label=Time Use
+Name=MODFTU1
+RecordTypeValue='FTX'
+Required=No
+RecordLen=27
+
+[Item]
+Label=Introduction
+Name=FTU3
+Start=16
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Introduction
+Name=FTU3_VS1
+Value=1;CONTINUE
+
+[Item]
+Label=Time woke up yesterday
+Name=FTU4
+Start=17
+Len=5
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Time woke up yesterday - Hour
+Name=FTU4H
+Start=17
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Time woke up yesterday - Hour
+Name=FTU4H_VS1
+Value=0:23
+Value='  '
+Name=NOTAPPL,Special
+
+[Item]
+Label=Time woke up yesterday - Decimal
+Name=FTU4DEC
+Start=19
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[Item]
+Label=Time woke up yesterday - Minutes
+Name=FTU4M
+Start=20
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Time woke up yesterday - Minutes
+Name=FTU4M_VS1
+Value=0:59
+Value='  '
+Name=NOTAPPL,Special
+
+[Item]
+Label=Time went to sleep yesterday
+Name=FTU5
+Start=22
+Len=5
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Time went to sleep yesterday - Hour
+Name=FTU5H
+Start=22
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Time went to sleep yesterday - Hour
+Name=FTU5H_VS1
+Value=0:23
+Value='  '
+Name=NOTAPPL,Special
+
+[Item]
+Label=Time went to sleep yesterday - Decimal
+Name=FTU5DEC
+Start=24
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[Item]
+Label=Time went to sleep yesterday - Minutes
+Name=FTU5M
+Start=25
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Time went to sleep yesterday - Minutes
+Name=FTU5M_VS1
+Value=0:59
+Value='  '
+Name=NOTAPPL,Special
+
+[Item]
+Label=Did anything else other than mentioned
+Name=FTU18
+Start=27
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Did anything else other than mentioned
+Name=FTU18_VS1
+Value=0;Show list of activities to read them
+Value=1;YES
+Value=2;NO
+
+[Record]
+Label=Time Use Activities
+Name=MODFTU2
+RecordTypeValue='FTU'
+Required=No
+MaxRecords=100
+RecordLen=83
+
+[Item]
+Label=Activity order
+Name=FTU6
+Start=16
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Activity code
+Name=FTU7
+Start=19
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Activity code
+Name=FTU7_VS1
+Value=10;SLEEPING
+Value=20;EATING AND DRINKING
+Value=30;TAKING CARE OF PERSONAL HYGIENE AND HEALTH CARE
+Value=41;SCHOOL ATTENDANCE (IN PERSON) - FORMAL EDUCATION
+Value=42;SCHOOL ATTENDANCE (REMOTE) - FORMAL EDUCATION
+Value=43;HOMEWORK AND STUDYING AFTER SCHOOL HOURS - FORMAL EDUCATION
+Value=44;TRAVEL TO / FROM SCHOOL - FORMAL EDUCATION
+Value=51;SOCIAL RELATIONSHIPS - IN-PERSON, FACE-TO-FACE
+Value=52;SOCIAL RELATIONSHIPS - USING SOCIAL MEDIA AND CHAT-BASED PLATFORMS
+Value=60;WORK ACTIVITIES AND CHORES
+Value=70;PLAYING (EXCLUDING GAMING)
+Value=80;GAMING
+Value=90;WATCHING TV SHOWS OR MOVIES AS ENTERTAINMENT
+Value=100;SOCIAL MEDIA AS ENTERTAINMENT
+Value=110;FOLLOWING THE NEWS
+Value=120;CIVIC ENGAGEMENT ACTIVITIES
+Value=130;ARTS, CRAFTS, AND OTHER CREATIVE ACTIVITIES
+Value=140;PLAYING SPORTS, EXERCISING AND PHYSICAL ACTIVITY
+Value=150;READING FOR LEISURE
+Value=996;OTHER  ACTIVITIES NOT CAPTURED ELSEWHERE
+
+[Item]
+Label=Activity label
+Name=FTU7A
+Start=22
+Len=30
+DataType=Alpha
+
+[Item]
+Label=Activity start time
+Name=FTU8
+Start=52
+Len=5
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[ValueSet]
+Label=Activity start time
+Name=FTU8_VS1
+Value=0.00:23.59
+Value='     '
+Name=NOTAPPL,Special
+
+[Item]
+Label=Activity start time - Hour
+Name=FTU8H
+Start=52
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Activity start time - Hour
+Name=FTU8H_VS1
+Value=0:23
+Value='  '
+Name=NOTAPPL,Special
+
+[Item]
+Label=Activity start time - Decimal
+Name=FTU8DEC
+Start=54
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[Item]
+Label=Activity start time - Minutes
+Name=FTU8M
+Start=55
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Activity start time - Minutes
+Name=FTU8M_VS1
+Value=0:59
+Value='  '
+Name=NOTAPPL,Special
+
+[Item]
+Label=Duration and End Time
+Name=FTU9X
+Start=57
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Duration and End Time
+Name=FTU9X_VS1
+Value=1;DURATION
+Value=2;END TIME
+
+[Item]
+Label=Duration of activity
+Name=FTU9
+Start=58
+Len=5
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Duration of activity - Hour
+Name=FTU9H
+Start=58
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Duration of activity - Hour
+Name=FTU9H_VS1
+Value=0:23
+Value='  '
+Name=NOTAPPL,Special
+
+[Item]
+Label=Duration of activity - Decimal
+Name=FTU9DEC
+Start=60
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[Item]
+Label=Duration of activity - Minutes
+Name=FTU9M
+Start=61
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Duration of activity - Minutes
+Name=FTU9M_VS1
+Value=0:59
+Value='  '
+Name=NOTAPPL,Special
+
+[Item]
+Label=Activity end time
+Name=FTU10
+Start=63
+Len=5
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Activity end time - Hour
+Name=FTU10H
+Start=63
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Activity end time - Hour
+Name=FTU10H_VS1
+Value=0:23
+Value='  '
+Name=NOTAPPL,Special
+
+[Item]
+Label=Activity end time - Decimal
+Name=FTU10DEC
+Start=65
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[Item]
+Label=Activity end time - Minutes
+Name=FTU10M
+Start=66
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Activity end time - Minutes
+Name=FTU10M_VS1
+Value=0:59
+Value='  '
+Name=NOTAPPL,Special
+
+[Item]
+Label=Played online
+Name=FTU12
+Start=68
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Played online
+Name=FTU12_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Played with whom
+Name=FTU13
+Start=69
+Len=5
+DataType=Alpha
+
+[ValueSet]
+Label=Played with whom
+Name=FTU13_VS1
+Value='A    ';ALONE (ONLINE / OFFLINE)
+Value='B    ';WITH FRIENDS IN PERSON (ONLINE / OFFLINE)
+Value='C    ';WITH FRIENDS ONLINE
+Value='D    ';WITH OTHERS ONLINE
+Value='?    ';NO RESPONSE
+
+[Item]
+Label=Played with whom - Alone
+Name=FTU13A
+Start=69
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Played with whom - Alone
+Name=FTU13A_VS1
+Value='A';ALONE (ONLINE / OFFLINE)
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Played with whom - With friends in person
+Name=FTU13B
+Start=70
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Played with whom - With friends in person
+Name=FTU13B_VS1
+Value='B';WITH FRIENDS IN PERSON (ONLINE / OFFLINE)
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Played with whom - With friends online
+Name=FTU13C
+Start=71
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Played with whom - With friends online
+Name=FTU13C_VS1
+Value='C';WITH FRIENDS ONLINE
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Played with whom - With others online
+Name=FTU13D
+Start=72
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Played with whom - With others online
+Name=FTU13D_VS1
+Value='D';WITH OTHERS ONLINE
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Played with whom - No response
+Name=FTU13NR
+Start=73
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=Played with whom - No response
+Name=FTU13NR_VS1
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Watched online
+Name=FTU14
+Start=74
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Watched online
+Name=FTU14_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Got the news online
+Name=FTU15
+Start=75
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Got the news online
+Name=FTU15_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Engaged in the civic activities online
+Name=FTU16
+Start=76
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Engaged in the civic activities online
+Name=FTU16_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=How lessons delivered
+Name=FTU17
+Start=77
+Len=7
+DataType=Alpha
+
+[ValueSet]
+Label=How lessons delivered
+Name=FTU17_VS1
+Value='A      ';SELF-STUDY WITH MATERIALS PROVIDED BY SCHOOL / TEACHERS
+Value='B      ';RADIO-BASED LESSON
+Value='C      ';TV-BASED LESSON
+Value='D      ';INTERNET-BASED LESSON
+Value='E      ';FACE-TO-FACE LESSON (AT CHILD’S HOME OR OUTSIDE SCHOOL)
+Value='X      ';OTHER
+Value='?      ';NO RESPONSE
+
+[Item]
+Label=How lessons delivered - Self study
+Name=FTU17A
+Start=77
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=How lessons delivered - Self study
+Name=FTU17A_VS1
+Value='A';SELF-STUDY WITH MATERIALS PROVIDED BY SCHOOL / TEACHERS
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=How lessons delivered - Radio-based lesson
+Name=FTU17B
+Start=78
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=How lessons delivered - Radio-based lesson
+Name=FTU17B_VS1
+Value='B';RADIO-BASED LESSON
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=How lessons delivered - TV-based lesson
+Name=FTU17C
+Start=79
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=How lessons delivered - TV-based lesson
+Name=FTU17C_VS1
+Value='C';TV-BASED LESSON
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=How lessons delivered - Internet-based lesson
+Name=FTU17D
+Start=80
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=How lessons delivered - Internet-based lesson
+Name=FTU17D_VS1
+Value='D';INTERNET-BASED LESSON
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=How lessons delivered - Face-to-face lesson
+Name=FTU17E
+Start=81
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=How lessons delivered - Face-to-face lesson
+Name=FTU17E_VS1
+Value='E';FACE-TO-FACE LESSON (AT CHILD’S HOME OR OUTSIDE SCHOOL)
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=How lessons delivered - Other
+Name=FTU17X
+Start=82
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=How lessons delivered - Other
+Name=FTU17X_VS1
+Value='X';OTHER
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=How lessons delivered - No response
+Name=FTU17NR
+Start=83
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=How lessons delivered - No response
+Name=FTU17NR_VS1
+Value=' '
+Value='?';NO RESPONSE
+
+[Record]
+Label=Household Involvement in Education
+Name=MODPR
+RecordTypeValue='0PR'
+Required=No
+RecordLen=24
+
+[Item]
+Label=Number of books for child to read at home except school textbooks or holy books
+Name=PR3
+Start=16
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Number of books for child to read at home except school textbooks or holy books
+Name=PR3_VST
+Value=0;NONE
+Value=1;ONE
+Value=2;TWO
+Value=3;THREE
+Value=4;FOUR
+Value=5;FIVE
+Value=6;SIX
+Value=7;SEVEN
+Value=8;EIGHT
+Value=9;NINE
+Value=10;TEN OR MORE BOOKS
+Value=99;NO RESPONSE
+
+[Item]
+Label=Child ever had homework
+Name=PR5
+Start=18
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child ever had homework
+Name=PR5_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Anyone helps child with homework
+Name=PR6
+Start=19
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Anyone helps child with homework
+Name=PR6_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=In the last 12 months - received student report card for child
+Name=PR7
+Start=20
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=In the last 12 months - received student report card for child
+Name=PR7_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=In the last 12 months - discussed child's progress with child's teachers
+Name=PR8
+Start=21
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=In the last 12 months - discussed child's progress with child's teachers
+Name=PR8_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child's school has a School Governing Body in which parents can participate
+Name=PR9
+Start=22
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child's school has a School Governing Body in which parents can participate
+Name=PR9_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=In the last 12 months - attended meeting called by school governing body
+Name=PR10
+Start=23
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=In the last 12 months - attended meeting called by school governing body
+Name=PR10_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child's school publishes school report cards
+Name=PR11
+Start=24
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child's school publishes school report cards
+Name=PR11_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Record]
+Label=Foundational Learning Skills
+Name=MODFL
+RecordTypeValue='0FL'
+Required=No
+RecordLen=260
+
+[Item]
+Label=Consent from mother / caregiver
+Name=FL1
+Start=16
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Consent from mother / caregiver
+Name=FL1_VST
+Value=1;YES, CONSENT IS GIVEN
+Value=2;NO, CONSENT IS NOT GIVEN
+
+[Item]
+Label=Time of start of interview with child
+Name=FL2
+Start=17
+Len=4
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Start of interview with child - Hour
+Name=FL2H
+Start=17
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Start of interview with child - Hour
+Name=FL2H_VST
+Value=6:23
+
+[Item]
+Label=Start of interview with child - Minutes
+Name=FL2M
+Start=19
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Start of interview with child - Minutes
+Name=FL2M_VST
+Value=0:59
+
+[Item]
+Label=Consent from child
+Name=FL3
+Start=21
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Consent from child
+Name=FL3_VST
+Value=1;YES
+Value=2;NO / NOT ASKED
+
+[Item]
+Label=Before starting reading and number activities, tick each box
+Name=FL4
+Start=22
+Len=3
+DataType=Alpha
+
+[ValueSet]
+Label=Before starting reading and number activities, tick each box
+Name=FL4_VST
+Value='A  ';You are not alone with the child unless he/she is at least visible to an adult known to the child
+Value='B  ';You have engaged the child in conversation and built rapport, e.g. using  and icebreaker
+Value='C  ';The child is sat comfortably, able to use the READING & NUMBERS book without difficulty while you can see which page is open
+Value='?  ';NO RESPONSE
+
+[Item]
+Label=You are not alone with the child unless they are at least visible to an adult known to the child
+Name=FL4A
+Start=22
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=You are not alone with the child unless they are at least visible to an adult known to the child
+Name=FL4A_VST
+Value='A';You are not alone with the child unless he/she is at least visible to an adult known to the child
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=You have engaged the child in conversation and built rapport e.g. using an Icebreaker
+Name=FL4B
+Start=23
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=You have engaged the child in conversation and built rapport e.g. using an Icebreaker
+Name=FL4B_VST
+Value='B';You have engaged the child in conversation and built rapport, e.g. using  and icebreaker
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=The child is sat comfortably, able to use the Reading & Numbers Book without difficulty while you can see which page is open
+Name=FL4C
+Start=24
+Len=1
+ItemType=SubItem
+DataType=Alpha
+
+[ValueSet]
+Label=The child is sat comfortably, able to use the Reading & Numbers Book without difficulty while you can see which page is open
+Name=FL4C_VST
+Value='C';The child is sat comfortably, able to use the READING & NUMBERS book without difficulty while you can see which page is open
+Value=' '
+Value='?';NO RESPONSE
+
+[Item]
+Label=Child read books at home
+Name=FL6A
+Start=25
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child read books at home
+Name=FL6A_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Someone read books to child at home
+Name=FL6B
+Start=26
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Someone read books to child at home
+Name=FL6B_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Language child speaks most of the time at home
+Name=FL7
+Start=27
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Language child speaks most of the time at home
+Name=FL7_VST
+Value=11;READING TEST AVAILABLE: ENGLISH
+Value=12;READING TEST AVAILABLE: FRENCH
+Value=13;READING TEST AVAILABLE: SPANISH
+Value=21;READING TEST NOT AVAILABLE: LANGUAGE
+Value=96;OTHER
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Language teachers use most of the time when teaching child in class
+Name=FL9
+Start=29
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Language teachers use most of the time when teaching child in class
+Name=FL9_VS1
+Value=11;READING TEST AVAILABLE: ENGLISH
+Value=12;READING TEST AVAILABLE: FRENCH
+Value=13;READING TEST AVAILABLE: SPANISH
+Value=21;READING TEST NOT AVAILABLE: LANGUAGE
+Value=96;OTHER
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Like to read story
+Name=FL10
+Start=31
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Like to read story
+Name=FL10_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Like to read story
+Name=FL10C
+Start=32
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Like to read story
+Name=FL10C_VS1
+Value=11;ENGLISH
+Value=12;FRENCH
+Value=13;SPANISH
+Value=95;DOES NOT WANT TO TRY
+Value=99;NO RESPONSE
+
+[Item]
+Label=Giving the Child book - Manual introduction
+Name=FL13
+Start=34
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Giving the Child book - Manual introduction
+Name=FL13_VST
+Value=1;CONTINUE
+
+[Item]
+Label=Child read every word in the practice correctly
+Name=FL14
+Start=35
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child read every word in the practice correctly
+Name=FL14_VST
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Reading done:
+Name=FL15
+Start=36
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Reading done:
+Name=FL15_VST
+Value=1;CORRECT
+Value=2;OTHER ANSWERS
+Value=3;NO ANSWER AFTER 5 SECONDS
+Value=9;NO RESPONSE
+
+[Item]
+Label=FL16. Say:
+Name=FL16
+Start=37
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=FL16. Say:
+Name=FL16_VST
+Value=1;CONTINUE
+
+[Item]
+Label=Another question:
+Name=FL17
+Start=38
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Another question:
+Name=FL17_VST
+Value=1;CORRECT
+Value=2;OTHER ANSWERS
+Value=3;NO ANSWER AFTER 5 SECONDS
+Value=9;NO RESPONSE
+
+[Item]
+Label=FL18. Say
+Name=FL18
+Start=39
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=FL18. Say
+Name=FL18_VST
+Value=1;CONTINUE
+
+[Item]
+Label=FL19. INTRO
+Name=FL19INTRO
+Start=40
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=FL19. INTRO
+Name=FL19INTRO_VST
+Value=1;CONTINUE
+
+[Item]
+Label=Word1
+Name=FL19W1
+Start=41
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word1
+Name=FL19W1_VST
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word2
+Name=FL19W2
+Start=42
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word2
+Name=FL19W2_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word3
+Name=FL19W3
+Start=43
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word3
+Name=FL19W3_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word4
+Name=FL19W4
+Start=44
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word4
+Name=FL19W4_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word5
+Name=FL19W5
+Start=45
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word5
+Name=FL19W5_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word6
+Name=FL19W6
+Start=46
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word6
+Name=FL19W6_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word7
+Name=FL19W7
+Start=47
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word7
+Name=FL19W7_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word8
+Name=FL19W8
+Start=48
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word8
+Name=FL19W8_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word9
+Name=FL19W9
+Start=49
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word9
+Name=FL19W9_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word10
+Name=FL19W10
+Start=50
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word10
+Name=FL19W10_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word11
+Name=FL19W11
+Start=51
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word11
+Name=FL19W11_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word12
+Name=FL19W12
+Start=52
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word12
+Name=FL19W12_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word13
+Name=FL19W13
+Start=53
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word13
+Name=FL19W13_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word14
+Name=FL19W14
+Start=54
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word14
+Name=FL19W14_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word15
+Name=FL19W15
+Start=55
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word15
+Name=FL19W15_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word16
+Name=FL19W16
+Start=56
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word16
+Name=FL19W16_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word17
+Name=FL19W17
+Start=57
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word17
+Name=FL19W17_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word18
+Name=FL19W18
+Start=58
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word18
+Name=FL19W18_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word19
+Name=FL19W19
+Start=59
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word19
+Name=FL19W19_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word20
+Name=FL19W20
+Start=60
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word20
+Name=FL19W20_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word21
+Name=FL19W21
+Start=61
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word21
+Name=FL19W21_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word22
+Name=FL19W22
+Start=62
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word22
+Name=FL19W22_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word23
+Name=FL19W23
+Start=63
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word23
+Name=FL19W23_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word24
+Name=FL19W24
+Start=64
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word24
+Name=FL19W24_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word25
+Name=FL19W25
+Start=65
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word25
+Name=FL19W25_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word26
+Name=FL19W26
+Start=66
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word26
+Name=FL19W26_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word27
+Name=FL19W27
+Start=67
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word27
+Name=FL19W27_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word28
+Name=FL19W28
+Start=68
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word28
+Name=FL19W28_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word29
+Name=FL19W29
+Start=69
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word29
+Name=FL19W29_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word30
+Name=FL19W30
+Start=70
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word30
+Name=FL19W30_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word31
+Name=FL19W31
+Start=71
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word31
+Name=FL19W31_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word32
+Name=FL19W32
+Start=72
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word32
+Name=FL19W32_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word33
+Name=FL19W33
+Start=73
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word33
+Name=FL19W33_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word34
+Name=FL19W34
+Start=74
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word34
+Name=FL19W34_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word35
+Name=FL19W35
+Start=75
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word35
+Name=FL19W35_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word36
+Name=FL19W36
+Start=76
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word36
+Name=FL19W36_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word37
+Name=FL19W37
+Start=77
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word37
+Name=FL19W37_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word38
+Name=FL19W38
+Start=78
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word38
+Name=FL19W38_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word39
+Name=FL19W39
+Start=79
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word39
+Name=FL19W39_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word40
+Name=FL19W40
+Start=80
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word40
+Name=FL19W40_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word41
+Name=FL19W41
+Start=81
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word41
+Name=FL19W41_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word42
+Name=FL19W42
+Start=82
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word42
+Name=FL19W42_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word43
+Name=FL19W43
+Start=83
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word43
+Name=FL19W43_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word44
+Name=FL19W44
+Start=84
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word44
+Name=FL19W44_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word45
+Name=FL19W45
+Start=85
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word45
+Name=FL19W45_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word46
+Name=FL19W46
+Start=86
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word46
+Name=FL19W46_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word47
+Name=FL19W47
+Start=87
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word47
+Name=FL19W47_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word48
+Name=FL19W48
+Start=88
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word48
+Name=FL19W48_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word49
+Name=FL19W49
+Start=89
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word49
+Name=FL19W49_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word50
+Name=FL19W50
+Start=90
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word50
+Name=FL19W50_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word51
+Name=FL19W51
+Start=91
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word51
+Name=FL19W51_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word52
+Name=FL19W52
+Start=92
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word52
+Name=FL19W52_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word53
+Name=FL19W53
+Start=93
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word53
+Name=FL19W53_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word54
+Name=FL19W54
+Start=94
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word54
+Name=FL19W54_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word55
+Name=FL19W55
+Start=95
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word55
+Name=FL19W55_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word56
+Name=FL19W56
+Start=96
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word56
+Name=FL19W56_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word57
+Name=FL19W57
+Start=97
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word57
+Name=FL19W57_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word58
+Name=FL19W58
+Start=98
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word58
+Name=FL19W58_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word59
+Name=FL19W59
+Start=99
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word59
+Name=FL19W59_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word60
+Name=FL19W60
+Start=100
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word60
+Name=FL19W60_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word61
+Name=FL19W61
+Start=101
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word61
+Name=FL19W61_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word62
+Name=FL19W62
+Start=102
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word62
+Name=FL19W62_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word63
+Name=FL19W63
+Start=103
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word63
+Name=FL19W63_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word64
+Name=FL19W64
+Start=104
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word64
+Name=FL19W64_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word65
+Name=FL19W65
+Start=105
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word65
+Name=FL19W65_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word66
+Name=FL19W66
+Start=106
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word66
+Name=FL19W66_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word67
+Name=FL19W67
+Start=107
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word67
+Name=FL19W67_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word68
+Name=FL19W68
+Start=108
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word68
+Name=FL19W68_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word69
+Name=FL19W69
+Start=109
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word69
+Name=FL19W69_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word70
+Name=FL19W70
+Start=110
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word70
+Name=FL19W70_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word71
+Name=FL19W71
+Start=111
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word71
+Name=FL19W71_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word72
+Name=FL19W72
+Start=112
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word72
+Name=FL19W72_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word73
+Name=FL19W73
+Start=113
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word73
+Name=FL19W73_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word74
+Name=FL19W74
+Start=114
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word74
+Name=FL19W74_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word75
+Name=FL19W75
+Start=115
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word75
+Name=FL19W75_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word76
+Name=FL19W76
+Start=116
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word76
+Name=FL19W76_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word77
+Name=FL19W77
+Start=117
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word77
+Name=FL19W77_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word78
+Name=FL19W78
+Start=118
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word78
+Name=FL19W78_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word79
+Name=FL19W79
+Start=119
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word79
+Name=FL19W79_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word80
+Name=FL19W80
+Start=120
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word80
+Name=FL19W80_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word81
+Name=FL19W81
+Start=121
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word81
+Name=FL19W81_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word82
+Name=FL19W82
+Start=122
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word82
+Name=FL19W82_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word83
+Name=FL19W83
+Start=123
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word83
+Name=FL19W83_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word84
+Name=FL19W84
+Start=124
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word84
+Name=FL19W84_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word85
+Name=FL19W85
+Start=125
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word85
+Name=FL19W85_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word86
+Name=FL19W86
+Start=126
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word86
+Name=FL19W86_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=FL19. END
+Name=FL19END
+Start=127
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=FL19. END
+Name=FL19END_VS1
+Value=1;CONTINUE
+
+[Item]
+Label=Total number of words attempted
+Name=FL20A
+Start=128
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Total number of words attempted
+Name=FL20A_VST
+Value=0:86
+Value=99;NO RESPONSE
+
+[Item]
+Label=Total number of words incorrect or missed
+Name=FL20B
+Start=130
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Total number of words incorrect or missed
+Name=FL20B_VST
+Value=0:86
+Value=99;NO RESPONSE
+
+[Item]
+Label=Story comprehension: 1
+Name=FL21BA
+Start=132
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Story comprehension: 1
+Name=FL21BA_VS1
+Value=1;CORRECT
+Value=2;INCORRECT
+Value=3;NO RESPONSE / SAYS "I DON'T KNOW"
+Value=9;NO RESPONSE
+
+[Item]
+Label=Story comprehension: 2
+Name=FL21BB
+Start=133
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Story comprehension: 2
+Name=FL21BB_VS1
+Value=1;CORRECT
+Value=2;INCORRECT
+Value=3;NO RESPONSE / SAYS "I DON'T KNOW"
+Value=9;NO RESPONSE
+
+[Item]
+Label=Story comprehension: 3
+Name=FL21BC
+Start=134
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Story comprehension: 3
+Name=FL21BC_VS1
+Value=1;CORRECT
+Value=2;INCORRECT
+Value=3;NO RESPONSE / SAYS "I DON'T KNOW"
+Value=9;NO RESPONSE
+
+[Item]
+Label=Story comprehension: 4
+Name=FL21BD
+Start=135
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Story comprehension: 4
+Name=FL21BD_VS1
+Value=1;CORRECT
+Value=2;INCORRECT
+Value=3;NO RESPONSE / SAYS "I DON'T KNOW"
+Value=9;NO RESPONSE
+
+[Item]
+Label=Story comprehension: 5
+Name=FL21BE
+Start=136
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Story comprehension: 5
+Name=FL21BE_VS1
+Value=1;CORRECT
+Value=2;INCORRECT
+Value=3;NO RESPONSE / SAYS "I DON'T KNOW"
+Value=9;NO RESPONSE
+
+[Item]
+Label=Like to read story in other language
+Name=FL21D
+Start=137
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Like to read story in other language
+Name=FL21D_VS1
+Value=11;ENGLISH
+Value=12;FRENCH
+Value=13;SPANISH
+Value=95;DOES NOT WANT TO TRY
+Value=99;NO RESPONSE
+
+[Item]
+Label=Giving the Child book - Manual introduction
+Name=FL21G
+Start=139
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Giving the Child book - Manual introduction
+Name=FL21G_VS1
+Value=1;CONTINUE
+
+[Item]
+Label=Child read every word in the practice correctly
+Name=FL21H
+Start=140
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child read every word in the practice correctly
+Name=FL21H_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Reading done:
+Name=FL21I
+Start=141
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Reading done:
+Name=FL21I_VS1
+Value=1;CORRECT
+Value=2;OTHER ANSWERS
+Value=3;NO ANSWER AFTER 5 SECONDS
+Value=9;NO RESPONSE
+
+[Item]
+Label=FL21J. Say:
+Name=FL21J
+Start=142
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=FL21J. Say:
+Name=FL21J_VS1
+Value=1;CONTINUE
+
+[Item]
+Label=Another question:
+Name=FL21K
+Start=143
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Another question:
+Name=FL21K_VS1
+Value=1;CORRECT
+Value=2;OTHER ANSWERS
+Value=3;NO ANSWER AFTER 5 SECONDS
+Value=9;NO RESPONSE
+
+[Item]
+Label=FL21. Say:
+Name=FL21L
+Start=144
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=FL21. Say:
+Name=FL21L_VS1
+Value=1;CONTINUE
+
+[Item]
+Label=FL21O. INTRO
+Name=FL21OINTRO
+Start=145
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=FL21O. INTRO
+Name=FL21OINTRO_VS1
+Value=1;CONTINUE
+
+[Item]
+Label=Word1
+Name=FL21OW1
+Start=146
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word1
+Name=FL21OW1_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word2
+Name=FL21OW2
+Start=147
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word2
+Name=FL21OW2_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word3
+Name=FL21OW3
+Start=148
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word3
+Name=FL21OW3_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word4
+Name=FL21OW4
+Start=149
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word4
+Name=FL21OW4_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word5
+Name=FL21OW5
+Start=150
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word5
+Name=FL21OW5_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word6
+Name=FL21OW6
+Start=151
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word6
+Name=FL21OW6_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word7
+Name=FL21OW7
+Start=152
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word7
+Name=FL21OW7_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word8
+Name=FL21OW8
+Start=153
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word8
+Name=FL21OW8_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word9
+Name=FL21OW9
+Start=154
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word9
+Name=FL21OW9_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word10
+Name=FL21OW10
+Start=155
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word10
+Name=FL21OW10_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word11
+Name=FL21OW11
+Start=156
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word11
+Name=FL21OW11_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word12
+Name=FL21OW12
+Start=157
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word12
+Name=FL21OW12_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word13
+Name=FL21OW13
+Start=158
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word13
+Name=FL21OW13_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word14
+Name=FL21OW14
+Start=159
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word14
+Name=FL21OW14_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word15
+Name=FL21OW15
+Start=160
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word15
+Name=FL21OW15_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word16
+Name=FL21OW16
+Start=161
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word16
+Name=FL21OW16_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word17
+Name=FL21OW17
+Start=162
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word17
+Name=FL21OW17_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word18
+Name=FL21OW18
+Start=163
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word18
+Name=FL21OW18_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word19
+Name=FL21OW19
+Start=164
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word19
+Name=FL21OW19_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word20
+Name=FL21OW20
+Start=165
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word20
+Name=FL21OW20_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word21
+Name=FL21OW21
+Start=166
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word21
+Name=FL21OW21_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word22
+Name=FL21OW22
+Start=167
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word22
+Name=FL21OW22_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word23
+Name=FL21OW23
+Start=168
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word23
+Name=FL21OW23_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word24
+Name=FL21OW24
+Start=169
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word24
+Name=FL21OW24_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word25
+Name=FL21OW25
+Start=170
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word25
+Name=FL21OW25_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word26
+Name=FL21OW26
+Start=171
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word26
+Name=FL21OW26_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word27
+Name=FL21OW27
+Start=172
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word27
+Name=FL21OW27_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word28
+Name=FL21OW28
+Start=173
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word28
+Name=FL21OW28_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word29
+Name=FL21OW29
+Start=174
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word29
+Name=FL21OW29_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word30
+Name=FL21OW30
+Start=175
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word30
+Name=FL21OW30_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word31
+Name=FL21OW31
+Start=176
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word31
+Name=FL21OW31_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word32
+Name=FL21OW32
+Start=177
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word32
+Name=FL21OW32_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word33
+Name=FL21OW33
+Start=178
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word33
+Name=FL21OW33_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word34
+Name=FL21OW34
+Start=179
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word34
+Name=FL21OW34_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word35
+Name=FL21OW35
+Start=180
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word35
+Name=FL21OW35_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word36
+Name=FL21OW36
+Start=181
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word36
+Name=FL21OW36_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word37
+Name=FL21OW37
+Start=182
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word37
+Name=FL21OW37_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word38
+Name=FL21OW38
+Start=183
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word38
+Name=FL21OW38_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word39
+Name=FL21OW39
+Start=184
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word39
+Name=FL21OW39_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word40
+Name=FL21OW40
+Start=185
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word40
+Name=FL21OW40_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word41
+Name=FL21OW41
+Start=186
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word41
+Name=FL21OW41_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word42
+Name=FL21OW42
+Start=187
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word42
+Name=FL21OW42_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word43
+Name=FL21OW43
+Start=188
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word43
+Name=FL21OW43_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word44
+Name=FL21OW44
+Start=189
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word44
+Name=FL21OW44_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word45
+Name=FL21OW45
+Start=190
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word45
+Name=FL21OW45_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word46
+Name=FL21OW46
+Start=191
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word46
+Name=FL21OW46_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word47
+Name=FL21OW47
+Start=192
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word47
+Name=FL21OW47_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word48
+Name=FL21OW48
+Start=193
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word48
+Name=FL21OW48_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word49
+Name=FL21OW49
+Start=194
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word49
+Name=FL21OW49_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word50
+Name=FL21OW50
+Start=195
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word50
+Name=FL21OW50_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word51
+Name=FL21OW51
+Start=196
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word51
+Name=FL21OW51_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word52
+Name=FL21OW52
+Start=197
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word52
+Name=FL21OW52_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word53
+Name=FL21OW53
+Start=198
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word53
+Name=FL21OW53_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word54
+Name=FL21OW54
+Start=199
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word54
+Name=FL21OW54_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word55
+Name=FL21OW55
+Start=200
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word55
+Name=FL21OW55_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word56
+Name=FL21OW56
+Start=201
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word56
+Name=FL21OW56_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word57
+Name=FL21OW57
+Start=202
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word57
+Name=FL21OW57_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word58
+Name=FL21OW58
+Start=203
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word58
+Name=FL21OW58_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word59
+Name=FL21OW59
+Start=204
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word59
+Name=FL21OW59_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word60
+Name=FL21OW60
+Start=205
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word60
+Name=FL21OW60_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word61
+Name=FL21OW61
+Start=206
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word61
+Name=FL21OW61_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word62
+Name=FL21OW62
+Start=207
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word62
+Name=FL21OW62_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word63
+Name=FL21OW63
+Start=208
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word63
+Name=FL21OW63_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word64
+Name=FL21OW64
+Start=209
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word64
+Name=FL21OW64_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word65
+Name=FL21OW65
+Start=210
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word65
+Name=FL21OW65_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word66
+Name=FL21OW66
+Start=211
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word66
+Name=FL21OW66_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word67
+Name=FL21OW67
+Start=212
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word67
+Name=FL21OW67_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=Word68
+Name=FL21OW68
+Start=213
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=Word68
+Name=FL21OW68_VS1
+Value=' ';CORRECT
+Value=1;INCORRECT
+Value='!';NOT REACHED
+
+[Item]
+Label=FL21O. END
+Name=FL21OEND
+Start=214
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=FL21O. END
+Name=FL21OEND_VS1
+Value=1;CONTINUE
+
+[Item]
+Label=Total number of words attempted
+Name=FL21PA
+Start=215
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Total number of words attempted
+Name=FL21PA_VS1
+Value=0:68
+Value=99;NO RESPONSE
+
+[Item]
+Label=Total number of words incorrect or missed
+Name=FL21PB
+Start=217
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Total number of words incorrect or missed
+Name=FL21PB_VS1
+Value=0:68
+Value=99;NO RESPONSE
+
+[Item]
+Label=Story comprehension: 1
+Name=FL22A
+Start=219
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Story comprehension: 1
+Name=FL22A_VST
+Value=1;CORRECT
+Value=2;INCORRECT
+Value=3;NO RESPONSE / SAYS "I DON'T KNOW"
+Value=9;NO RESPONSE
+
+[Item]
+Label=Story comprehension: 2
+Name=FL22B
+Start=220
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Story comprehension: 2
+Name=FL22B_VST
+Value=1;CORRECT
+Value=2;INCORRECT
+Value=3;NO RESPONSE / SAYS "I DON'T KNOW"
+Value=9;NO RESPONSE
+
+[Item]
+Label=Story comprehension: 3
+Name=FL22C
+Start=221
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Story comprehension: 3
+Name=FL22C_VST
+Value=1;CORRECT
+Value=2;INCORRECT
+Value=3;NO RESPONSE / SAYS "I DON'T KNOW"
+Value=9;NO RESPONSE
+
+[Item]
+Label=Story comprehension: 4
+Name=FL22D
+Start=222
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Story comprehension: 4
+Name=FL22D_VST
+Value=1;CORRECT
+Value=2;INCORRECT
+Value=3;NO RESPONSE / SAYS "I DON'T KNOW"
+Value=9;NO RESPONSE
+
+[Item]
+Label=Story comprehension: 5
+Name=FL22E
+Start=223
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Story comprehension: 5
+Name=FL22E_VST
+Value=1;CORRECT
+Value=2;INCORRECT
+Value=3;NO RESPONSE / SAYS "I DON'T KNOW"
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child recognizes symbol: 9
+Name=FL23A
+Start=224
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child recognizes symbol: 9
+Name=FL23A_VST
+Value=1;CORRECT (9)
+Value=2;INCORRECT
+Value=3;NO ATTEMPT
+
+[Item]
+Label=Child recognizes symbol: 12
+Name=FL23B
+Start=225
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child recognizes symbol: 12
+Name=FL23B_VST
+Value=1;CORRECT (12)
+Value=2;INCORRECT
+Value=3;NO ATTEMPT
+
+[Item]
+Label=Child recognizes symbol: 30
+Name=FL23C
+Start=226
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child recognizes symbol: 30
+Name=FL23C_VST
+Value=1;CORRECT (30)
+Value=2;INCORRECT
+Value=3;NO ATTEMPT
+
+[Item]
+Label=Child recognizes symbol: 48
+Name=FL23D
+Start=227
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child recognizes symbol: 48
+Name=FL23D_VST
+Value=1;CORRECT (48)
+Value=2;INCORRECT
+Value=3;NO ATTEMPT
+
+[Item]
+Label=Child recognizes symbol: 74
+Name=FL23E
+Start=228
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child recognizes symbol: 74
+Name=FL23E_VST
+Value=1;CORRECT (74)
+Value=2;INCORRECT
+Value=3;NO ATTEMPT
+
+[Item]
+Label=Child recognizes symbol: 731
+Name=FL23F
+Start=229
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child recognizes symbol: 731
+Name=FL23F_VST
+Value=1;CORRECT (731)
+Value=2;INCORRECT
+Value=3;NO ATTEMPT
+
+[Item]
+Label=Child identities bigger of two numbers: 7-5
+Name=FL24A
+Start=230
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child identities bigger of two numbers: 7-5
+Name=FL24A_VST
+Value=1;CORRECT (7)
+Value=2;INCORRECT
+Value=3;NO ATTEMPT
+
+[Item]
+Label=Child identities bigger of two numbers: 11-24
+Name=FL24B
+Start=231
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child identities bigger of two numbers: 11-24
+Name=FL24B_VST
+Value=1;CORRECT (24)
+Value=2;INCORRECT
+Value=3;NO ATTEMPT
+
+[Item]
+Label=Child identities bigger of two numbers: 58-49
+Name=FL24C
+Start=232
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child identities bigger of two numbers: 58-49
+Name=FL24C_VST
+Value=1;CORRECT (58)
+Value=2;INCORRECT
+Value=3;NO ATTEMPT
+
+[Item]
+Label=Child identities bigger of two numbers: 65-67
+Name=FL24D
+Start=233
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child identities bigger of two numbers: 65-67
+Name=FL24D_VST
+Value=1;CORRECT (67)
+Value=2;INCORRECT
+Value=3;NO ATTEMPT
+
+[Item]
+Label=Child identities bigger of two numbers: 146-154
+Name=FL24E
+Start=234
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child identities bigger of two numbers: 146-154
+Name=FL24E_VST
+Value=1;CORRECT (154)
+Value=2;INCORRECT
+Value=3;NO ATTEMPT
+
+[Item]
+Label=Child adds numbers correctly: 3+2
+Name=FL25A
+Start=235
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child adds numbers correctly: 3+2
+Name=FL25A_VST
+Value=1;CORRECT (5)
+Value=2;INCORRECT
+Value=3;NO ATTEMPT
+
+[Item]
+Label=Child adds numbers correctly: 8+6
+Name=FL25B
+Start=236
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child adds numbers correctly: 8+6
+Name=FL25B_VST
+Value=1;CORRECT (14)
+Value=2;INCORRECT
+Value=3;NO ATTEMPT
+
+[Item]
+Label=Child adds numbers correctly: 7+3
+Name=FL25C
+Start=237
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child adds numbers correctly: 7+3
+Name=FL25C_VST
+Value=1;CORRECT (10)
+Value=2;INCORRECT
+Value=3;NO ATTEMPT
+
+[Item]
+Label=Child adds numbers correctly: 13+6
+Name=FL25D
+Start=238
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child adds numbers correctly: 13+6
+Name=FL25D_VST
+Value=1;CORRECT (19)
+Value=2;INCORRECT
+Value=3;NO ATTEMPT
+
+[Item]
+Label=Child adds numbers correctly: 12+24
+Name=FL25E
+Start=239
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child adds numbers correctly: 12+24
+Name=FL25E_VST
+Value=1;CORRECT (36)
+Value=2;INCORRECT
+Value=3;NO ATTEMPT
+
+[Item]
+Label=Manual intro
+Name=FL26
+Start=240
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Manual intro
+Name=FL26_VST
+Value=1;CORRECT (3)
+Value=2;INCORRECT
+Value=3;NO ATTEMPT
+
+[Item]
+Label=Manual intro
+Name=FL26A
+Start=241
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Manual intro
+Name=FL26A_VS1
+Value=1;CONTINUE
+
+[Item]
+Label=Manual intro
+Name=FL26B
+Start=242
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Manual intro
+Name=FL26B_VS1
+Value=1;CONTINUE
+
+[Item]
+Label=Manual intro
+Name=FL26C
+Start=243
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Manual intro
+Name=FL26C_VS1
+Value=1;CORRECT (20)
+Value=2;INCORRECT
+Value=3;NO ATTEMPT
+
+[Item]
+Label=Manual intro
+Name=FL26D
+Start=244
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Manual intro
+Name=FL26D_VS1
+Value=1;CONTINUE
+
+[Item]
+Label=Manual intro
+Name=FL26E
+Start=245
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Manual intro
+Name=FL26E_VS1
+Value=1;CONTINUE
+
+[Item]
+Label=Child identifies next number: 5-6-7-X
+Name=FL27A
+Start=246
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child identifies next number: 5-6-7-X
+Name=FL27A_VST
+Value=1;CORRECT (8)
+Value=2;INCORRECT
+Value=3;NO ATTEMPT
+
+[Item]
+Label=Child identifies next number: 14-15-X-17
+Name=FL27B
+Start=247
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child identifies next number: 14-15-X-17
+Name=FL27B_VST
+Value=1;CORRECT (16)
+Value=2;INCORRECT
+Value=3;NO ATTEMPT
+
+[Item]
+Label=Child identifies next number: 20-X-40-50
+Name=FL27C
+Start=248
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child identifies next number: 20-X-40-50
+Name=FL27C_VST
+Value=1;CORRECT (30)
+Value=2;INCORRECT
+Value=3;NO ATTEMPT
+
+[Item]
+Label=Child identifies next number: 2-4-6-X
+Name=FL27D
+Start=249
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child identifies next number: 2-4-6-X
+Name=FL27D_VST
+Value=1;CORRECT (8)
+Value=2;INCORRECT
+Value=3;NO ATTEMPT
+
+[Item]
+Label=Child identifies next number: 5-8-11-X
+Name=FL27E
+Start=250
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child identifies next number: 5-8-11-X
+Name=FL27E_VST
+Value=1;CORRECT (14)
+Value=2;INCORRECT
+Value=3;NO ATTEMPT
+
+[Item]
+Label=Result of interview with child
+Name=FL28
+Start=251
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Result of interview with child
+Name=FL28_VST
+Value=1;COMPLETED
+Value=2;NOT AT HOME
+Value=3;MOTHER / CAREGIVER REFUSED
+Value=4;CHILD REFUSED
+Value=5;PARTLY COMPLETED
+Value=6;INCAPACITATED
+Value=96;OTHER
+
+[Item]
+Label=Story 1 that child has read - Language
+Name=ST1LANG
+Start=253
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Story 1 that child has read - Language
+Name=ST1LANG_VS1
+Value=0;WAS NOT NECESSARY TO OFFER
+Value=11;ENGLISH
+Value=12;FRENCH
+Value=13;SPANISH
+Value=95;DOES NOT WANT TO TRY
+
+[Item]
+Label=Story 1 that child has read - Target number of words
+Name=ST1WNUM
+Start=255
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Story 2 that child has read - Language
+Name=ST2LANG
+Start=257
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Story 2 that child has read - Language
+Name=ST2LANG_VS1
+Value=0;WAS NOT NECESSARY TO OFFER
+Value=11;ENGLISH
+Value=12;FRENCH
+Value=13;SPANISH
+Value=95;DOES NOT WANT TO TRY
+
+[Item]
+Label=Story 2 that child has read - Target number of words
+Name=ST2WNUM
+Start=259
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Record]
+Label=MICS plus consent
+Name=MODFPN
+RecordTypeValue='FPN'
+Required=No
+MaxRecords=5
+RecordLen=25
+
+[Item]
+Label=Shared phone number
+Name=FS15J
+Start=16
+Len=8
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Confirm shared number
+Name=FS15K
+Start=24
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Confirm shared number
+Name=FS15K_VS1
+Value=1;YES
+Value=2;NO
+
+[Item]
+Label=Another personal or shared phone number where can be reached
+Name=FS15L
+Start=25
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Another personal or shared phone number where can be reached
+Name=FS15L_VS1
+Value=1;YES
+Value=2;NO
+
+[Record]
+Label=Anthropometric Measurements Form
+Name=MODFA
+RecordTypeValue='0FA'
+Required=No
+RecordLen=92
+
+[Item]
+Label=Cluster number
+Name=FA1
+Start=16
+Len=5
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Household number
+Name=FA2
+Start=21
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Child's name
+Name=FA3N
+Start=23
+Len=20
+DataType=Alpha
+
+[Item]
+Label=Child's line number
+Name=FA3
+Start=43
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child's line number
+Name=FA3_VS1
+Value=1:50
+
+[Item]
+Label=Age of child
+Name=FA4
+Start=45
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Age of child
+Name=FA4_VS1
+Value=5:9
+
+[Item]
+Label=Mother / Caregiver's name
+Name=FA5N
+Start=46
+Len=20
+DataType=Alpha
+
+[Item]
+Label=Mother / Caregiver's line number
+Name=FA5
+Start=66
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Mother / Caregiver's line number
+Name=FA5_VS1
+Value=1:50
+
+[Item]
+Label=Interviewer number
+Name=FA6
+Start=68
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Measurer number
+Name=FA7
+Start=71
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Child's weight (kilograms)
+Name=FA8
+Start=74
+Len=4
+DataType=Numeric
+Decimal=1
+DecimalChar=Yes
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child's weight (kilograms)
+Name=FA8_VS1
+Value=10.0:90.0
+Value=99.3;CHILD NOT PRESENT AFTER REVISITS
+Value=99.4;CHILD REFUSED
+Value=99.5;RESPONDENT REFUSED
+Value=99.6;OTHER
+
+[Item]
+Label=Child undressed to the minimum
+Name=FA9
+Start=78
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child undressed to the minimum
+Name=FA9_VS1
+Value=1;YES
+Value=2;NO, THE CHILD COULD NOT BE UNDRESSED TO THE MINIMUM
+
+[Item]
+Label=Child's length or height (centimetres)
+Name=FA11
+Start=79
+Len=5
+DataType=Numeric
+Decimal=1
+DecimalChar=Yes
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child's length or height (centimetres)
+Name=FA11_VS1
+Value=20.0:170.0
+Value=999.4;CHILD REFUSED
+Value=999.5;RESPONDENT REFUSED
+Value=999.6;OTHER
+
+[Item]
+Label=Measurement interfered with by braided or ornamented hair
+Name=FA13
+Start=84
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Measurement interfered with by braided or ornamented hair
+Name=FA13_VS1
+Value=1;YES, HAIR INTERFERED WITH MEASUREMENT
+Value=2;NO
+
+[Item]
+Label=Date of measurment
+Name=FA14
+Start=85
+Len=8
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Day of measurement
+Name=FA14D
+Start=85
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of measurement
+Name=FA14D_VS1
+Value=1:31
+
+[Item]
+Label=Month of measurement
+Name=FA14M
+Start=87
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of measurement
+Name=FA14M_VS1
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+
+[Item]
+Label=Year of measurement
+Name=FA14Y
+Start=89
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of measurement
+Name=FA14Y_VS1
+Value=2025;2025
+
+[Record]
+Label=Time Stamps - Five-Seventeen Questionnaire Modules
+Name=MODFSTS
+RecordTypeValue='FTS'
+RecordLen=315
+
+[Item]
+Label=Timestamp of start of FS Questionnaire - 5-17 child information panel
+Name=FSFSTSTMPS
+Start=16
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of FS Questionnaire - 5-17 child information panel
+Name=FSFSTSTMPE
+Start=31
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of start of Module CB 5-17 child’s background
+Name=FSCBTSTMPS
+Start=46
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of Module CB 5-17 child’s background
+Name=FSCBTSTMPE
+Start=61
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of start of Module FIN Health insurance [5-14]
+Name=FSFINTSTMPS
+Start=76
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of Module FIN Health insurance [5-14]
+Name=FSFINTSTMPE
+Start=91
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of start of Module CL Child labour
+Name=FSCLTSTMPS
+Start=106
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of Module CL Child labour
+Name=FSCLTSTMPE
+Start=121
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of start of Module FCD Child discipline [5-14]
+Name=FSFCDTSTMPS
+Start=136
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of Module FCD Child discipline [5-14]
+Name=FSFCDTSTMPE
+Start=151
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of start of Module FCF Child functioning
+Name=FSFCFTSTMPS
+Start=166
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of Module FCF Child functioning
+Name=FSFCFTSTMPE
+Start=181
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of start of Module FTU Time-use [10-14]
+Name=FSFTUTSTMPS
+Start=196
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of Module FTU Time-use [10-14]
+Name=FSFTUTSTMPE
+Start=211
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of start of Module PR Household involvement in education [7-14]
+Name=FSPRTSTMPS
+Start=226
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of Module PR Household involvement in education [7-14]
+Name=FSPRTSTMPE
+Start=241
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of start of Module FL Foundational learning skills [7-14]
+Name=FSFLTSTMPS
+Start=256
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of Module FL Foundational learning skills [7-14]
+Name=FSFLTSTMPE
+Start=271
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of start of FS - End of Interview
+Name=FSENDTSTMPS
+Start=286
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=Timestamp of end of FS - End of Interview
+Name=FSENDTSTMPE
+Start=301
+Len=15
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes

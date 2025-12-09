@@ -1,0 +1,130 @@
+﻿{+EN}
+{Household level messages}
+0071 M The spouse in row %s of the head of household in row %d should be of the opposite gender from head %s
+0090 E LN=%02d: Level (%s=%01d) and grade (%s=%02d) of education inconsistent
+0091 E LN=%02d: Current level of education (%s=%02d) greater than highest level (%s=%02d)
+0092 E LN=%02d: Current grade of education (%s=%02d) greater than highest grade (%s=%02d)
+0093 E LN=%02d: Previous year's level of education (ED16A=%02d) greater than highest level (ED5A=%02d)
+0094 E LN=%02d: Previous year's grade of education (ED16B=%02d) greater than highest grade (ED5B=%02d) 
+0095 E LN=%02d: Previous year's education (ED16A/B=%02d/%02d) greater than current year (ED10A/B=%02d/%02d)
+0096 E LN=%02d: Previous year's education (ED16A/B=%02d/%02d) lower than current year (ED10A/B=%02d/%02d) minus one 
+0097 E LN=%02d: Current level/grade of education (%s/%s=%02d/%02d) equal to highest grade (%s/%s=%02d/%02d), which is reported to be completed (%s=%d)
+
+{Women level messages}
+1002 M LN=%02d: Age of woman(WB4=%02d) and age in household different (HL6=%02d)
+1003 E LN=%02d: Age of woman(WB4=%02d) and her date of birth (WB3=%02d/%04d) inconsistent [WM6=%02d/%04d]
+1004 M LN=%02d: Month of birth of a woman(WB3M=%02d) and month of birth in household different (HL5M=%02d)
+1005 M LN=%02d: Year of birth of a woman(WB3Y=%04d) and year of birth in household different (HL5Y=%04d)
+1011 M LN=%02d: School attendance different in household (%s=%01d) and women's questionnaires (%s=%01d)
+1012 M LN=%02d: Woman's level of education different in household (%s=%01d) and women's questionnaires (%s=%01d)
+1013 M LN=%02d: Woman's grade of education different in household (%s=%02d) and women's questionnaires (%s=%02d)
+1014 E LN=%02d: Level (%s=%01d) and grade of education (%s=%02d) inconsistent
+1015 M LN=%02d: Woman's completion grade/year different in household (ED6=%01d) than her questionnaire (WB7=%01d)
+1063 E LN=%02d: Date of birth(WB3=%02d/%04d) is out of range with respect to the interview date (%02d/%04d, range=%02d/%04d-%02d/%04d) 
+1064 E LN=%02d: Month of birth (WB3=%d) inconsistent with other information: cmc=%04d-%04d [%02d/%04d-%02d/%04d] 
+1101 E LN=%02d:Date of birth (%02d/%04d) of first child before age %1d, (WB4=%2d)
+1102 E LN=%02d:Date of birth (%02d/%04d) of first child after date of interview (%02d/%04d)
+1103 E LN=%02d:Had first birth when less than %02d years old: WB4=%02d, yrs since 1st birth =%02d
+1110 E LN=%02d:Number of boys and girls must be greater than zero: %s=1 but %s=0
+1111 E LN=%02d:Number of children ever born incorrect: CM11=%02d but CM3+CM4+CM6+CM7+CM9+CM10=%02d
+1141 E LN=%02d:BirthHist: Child %d's sex in birth history (BH3)=%d, but sex in household (HL4)=%d
+1171 E LN=%02d:BirthHist: Child %d's age (BH6=%02d) and DOB (BH4=%02d/%04d) inconsistent with date of interview=%02d/%04d 
+1172 E LN=%02d:BirthHist: Child %d's month of birth (BH4M=%02d) inconsistent with other information: cmc=%04d-%04d [%02d/%04d-%02d/%04d] 
+1173 E LN=%02d:BirthHist: Child %d is %d years old in birth history (BH6) but %d years in household (HL6)  
+1182 E LN=%02d:BirthHist: Child %d has different mother in household (HL14=%02d, mother's line=%02d) 
+1184 E LN=%02d:BirthHist: Child %d with HH#=/BH8=%02d has already been referenced by this woman 
+1185 E LN=%02d: BirthHist: Child with HH#%d not found in woman's birth history 
+1191 E LN=%02d: BirthHist: Child %d: Age at death BH9N=%02d out of range %1d-%02d for the unit BH9U=%1d 
+1192 E LN=%02d:BirthHist: Child %d: Age at death (BH9=%1d/%02d) and DOB (BH4=%02d/%04d) inconsistent with date of interview=%02d/%04d 
+1200 E LN=%02d:BirthHist: Child %d with HH#/BH8=%d also referenced in woman #%d's questionnaire 
+1201 M LN=%02d:Last tetanus dose (MN14=%02d) came when woman was less than %02d (WB3=%02d/%04d,WB4=%02d
+1301 E LN=%02d:Special answers inconsistent: MN34A=%01d, MN34=%4.3f
+1401 M LN=%02d:According to WB3 (%02d/%04d) and MA8 (%02d/%04d), woman less than age %d when married
+1403 E LN=%02d:Age at first marriage (%02d) and date of first marriage (%02d/%04d) inconsistent (DOB=%02d/%04d)
+1404 E LN=%02d:Age at first marriage (%02d) greater than current age (%02d)
+1601 E LN=%02d:Mother (age WB4=%02d) less than %02d years older than daughter (age at circumcision FG13=%02d)
+1602 E LN=%02d:Number of circumcised daughters (FG9=%02d) greater than number of daughters (CM5B+CM7B=%02d)
+1801 E LN=%02d:Woman's age at first sex (SB1=%02d) greater than her current age (WB4=%02d)
+1802 E LN=%02d:Maximum age at last sex (WB4-SB2N=%02d) less than age at first sex (SB1=%02d); (SB2U=4)
+1920 E First union after date of interview: DOU (MA8)=%02d/%04d, age at u (MA11)=%02d, interview=%02d/%04d, DOB (WB3)=%02d/%04d, age (WB4)=%02d 
+1921 M First union for women under line number LN=%02d is before age %02d: DOB (WB3)=%02d/%04d, age (WB4)=%02d, DOU (MA8)=%02d/%04d, age at u (MA11)=%02d 
+1926 E Month of first union (MA8M=%02d) inconsistent with other information: cmc=%04d-%04d [%02d/%04d-%02d/%04d] 
+1930 E Age at first union (MA11=%02d) exceeds current age (WB4=%02d) interview date=%02d/%04d, DOB (WB3)=%02d/%04d, DOU (MA8)=%02d/%04d
+1932 E Age at first union LN=%02d (MA11=%02d) and date of first union (MA8=%02d/%04d) inconsistent with date of interview (%02d/%04d), age (WB4=%02d), and/or DOB (WB3=%02d/%04d) 
+1933 E Age at first union (MA11=%d) and date of first union (MA8=%02d/%04d) inconsistent after imputing DOB (WB3=%02d/%04d): interview=%02d/%04d, age (WB4)=%02d 
+1934 E Age at first union LN=%02d (MA11=%d) and date of first union (MA8=%02d/%04d) inconsistent with interview=%02d/%04d, age (WB4)=%02d, and/or DOB (WB3)=%02d/%04d 
+1935 E LN=%02d No information given for date of first union: age at u (MA11)=%2d, DOU (MA8)=%2d/%4d 
+1950 E Never had sexual intercourse (SB1=%d), but has children (CM10=%02d) or is currently pregnant (CP1=%1d) 
+1951 E Never had sexual intercourse (SB1=%1d), but has been in union (MA1=%1d) or lived with a man (MA5=%1d)  
+1952 E Last sex before last birth (SB3=%d/%d), but currently pregnant (CP1=%1d) 
+1953 E LN=%02d: Time since last sex exceeds interval: child %02d cmc(%02d)=%04d-%04d [%02d/%04d-%02d/%04d] interview=%04d [%02d/%04d] last sex (SB3)=%1d/%02d
+1958 E Last sex before last birth (SB3=%d/%d), but never given birth (CM10=%02d) 
+1991 M LN=%02d:Age at first sex (SB1=%02d) after age at first conception: child's DOB (BH4)=%02d/%04d, woman's DOB (WB3)=%02d/%04d 
+1993 M LN=%02d:Age at first sex (SB1=%02d) after date of marriage (MA8=%02d/%04d); age at marriage (MA9)=%02d, DOB (WB3)=%02d/%04d   
+1994 M LN=%02d: Age at first sex (SB1=%d) was at time of marriage (MA8=%02d/%04d), but this is after age at first conception: first child born %02d/%04d (BH4), age at u (MA11)=%02d 
+
+{2001 E LN=%02d:Child either too young or too old to be interviewed: %s=%02d/%04d, %s=%02d/%04d}
+2002 M LN=%02d:Age of child (%s=%02d) and age in household different (HL6=%02d)
+2003 E LN=%02d:Age of child (UB2=%02d) and date of birth (UB1=%02d/%02d/%04d) inconsistent (UF7=%02d/%02d/%04d)
+2004 E LN=%02d:Line number of caretaker (%s=%02d) must be the same as in the household (HL20(%02d)=%02d)
+2005 E LN=%02d:Age of child (CB3=%02d) and date of birth (CB2=%02d/%04d) inconsistent (FS7=%02d/%04d)
+2011 M LN=%02d:School attendance different in household (%s=%01d) and men's questionnaires (%s=%01d)
+2012 M LN=%02d:Child's level of education different in household (%s=%01d) and men's questionnaires (%s=%01d)
+2013 M LN=%02d:Child's grade of education different in household (%s=%02d) and men's questionnaires (%s=%02d)
+2014 E LN=%02d:Level (%s=%01d) and grade of education (%s=%02d) inconsistent
+2015 M LN=%02d:Child's completion grade/year different in household (ED6=%01d) than her questionnaire (CB6=%01d)
+2301 E LN=%02d:Vitamin A received %02d months ago (VA2) but child is only %02d months old
+2701 E LN=%02d:Date of %s vaccination (%02d/%02d/%04d) invalid
+2702 E LN=%02d:Date of %s vaccination (%02d/%02d/%04d) after date of interview (%02d/%02d/%04d)
+2703 E LN=%02d:Date of %s vaccination (%02d/%02d/%04d) before date of birth (%02d/%02d/%04d)
+2704 E LN=%02d:Date of %s vaccination (%02d/%02d/%04d) after date of %s vaccination (%02d/%02d/%04d)
+2705 M LN=%02d:Date of %s vaccination (%02d/%02d/%04d) and date of %s vaccination (%02d/%02d/%04d) different
+2706 M LN=%02d:Vaccination card, but no vaccinations received
+2707 M LN=%02d:Receipt of other vaccinations inconsistent with vaccinations recorded
+2801 M LN=%02d:Weight (%4.1f) outside range expected
+2802 M LN=%02d:Height (length) (%5.1f) outside range expected
+2803 M LN=%02d:Children under 2 are usually measured lying down, 2+ standing up: age in months=%02d, AN12=%01d
+2804 M LN=%02d:Height (AN11=%5.1f) and weight (AN8=%4.1f) are outside range expected
+2810 M LN=%02d: Hight not measured
+2811 M LN=%02d: Child not weighed
+
+{3001 E LN=%02d:Man either too young or too old to be interviewed: MWM6=%02d/%04d, MWB3=%02d/%04d}
+3002 M LN=%02d:Age of man (MWB4=%02d) and age in household different (HL6=%02d)
+3003 E LN=%02d:Age of man (MWB4=%02d) and her date of birth (MWB3=%02d/%04d) inconsistent [MWM6=%02d/%04d]
+3011 M LN=%02d:School attendance different in household (%s=%01d) and men's questionnaires (%s=%01d)
+3012 M LN=%02d:Man's level of education different in household (%s=%01d) and men's questionnaires (%s=%01d)
+3013 M LN=%02d:Man's grade of education different in household (%s=%02d) and men's questionnaires (%s=%02d)
+3014 E LN=%02d:Level (%s=%01d) and grade of education (%s=%02d) inconsistent
+3015 M LN=%02d: Man's completion grade/year different in household (ED6=%01d) than his questionnaire (MWB7=%01d)
+{3103 E LN=%02d:Had first birth when less than %02d years old: MWB4=%02d, yrs since 1st birth MCM3=%02d}
+3110 E LN=%02d:Number of boys and girls must be greater than zero: %s=1 but %s=0
+3111 E LN=%02d:Number of children ever fathered incorrect: MCM11=%02d but MCM3+MCM4+MCM6+MCM7+MCM9+MCM10=%02d
+{3121 E LN=%02d:Date of birth of last child (MCM12=%02d/%04d) before age %1d
+3122 E LN=%02d:Date of birth of last child (MCM12=%02d/%04d) after date of interview (MWM6=%02d/%04d)}
+3401 M LN=%02d:According to MWB3 (%02d/%04d) and MMA8 (%02d/%04d), man less than age %d when married
+3403 E LN=%02d:Age at first marriage (%02d) and date of first marriage (%02d/%04d) inconsistent (DOB=%02d/%04d)
+3404 E LN=%02d:Age at first marriage (%02d) greater than current age (%02d)
+3801 E LN=%02d:Man's age at first sex (MSB1=%02d) greater than her current age (MWB4=%02d)
+3802 E LN=%02d:Maximum age at last sex (MWB4-MSB3N=%02d) less than age at first sex (MSB1=%02d); (MSB2U=4)
+
+9000 E Siblings listed out of order: Sibling %02d years since birth=%02d, Sibling %02d years since birth=%02d
+9001 W More than 30 years between oldest (%02d) and youngest (%02d) sibling
+
+9900 E %s date of interview (%02d/%02d/%04d) impossible
+9901 E Interval between birth and first union inconsistent: cmc(%02d)=%04d-%04d [%02d/%04d-%02d/%04d], cmc(%02d)=%04d-%04d [%02d/%04d-%02d/%04d], interval=%03d 
+9902 E LN=%02d: Interval between birth and first birth inconsistent: cmc(%02d)=%04d-%04d [%02d/%04d-%02d/%04d], cmc(%02d)=%04d-%04d [%02d/%04d-%02d/%04d], interval=%03d 
+9903 E LN=%02d:Interval between first union and first birth inconsistent: cmc(%02d)=%04d-%04d [%02d/%04d-%02d/%04d], cmc(%02d)=%04d-%04d [%02d/%04d-%02d/%04d], interval=%03d 
+9904 E LN=%02d:Interval between birth or union and later event inconsistent: cmc(%02d)=%04d-%04d [%02d/%04d-%02d/%04d], cmc(%02d)=%04d-%04d [%02d/%04d-%02d/%04d], interval=%03d 
+9905 E LN=%02d:Interval between births inconsistent: child %02d: cmc(%02d)=%04d-%04d [%02d/%04d-%02d/%04d] child %02d: cmc(%02d)=%04d-%04d [%02d/%04d-%02d/%04d], interval=%03d 
+9906 E LN=%02d:Interval between last birth and later event inconsistent: cmc(%02d)=%04d-%04d [%02d/%04d-%02d/%04d], cmc(%02d)=%04d-%04d [%02d/%04d-%02d/%04d], interval=%03d 
+9907 E LN=%02d:Interval between events inconsistent: cmc(%02d)=%04d-%04d [%02d/%04d-%02d/%04d], cmc(%02d)=%04d-%04d [%02d/%04d-%02d/%04d], interval=%03d 
+9914 E LN=%02d:Duration of amenorrhea between events inconsistent: child %02d cmc(%02d)=%04d-%04d [%02d/%04d-%02d/%04d], cmc(%02d)=%04d-%04d [%02d/%04d-%02d/%04d], amenorrhea=%03d, interval=%03d 
+9915 E LN=%02d:Duration of abstinence between events inconsistent: child %02d cmc(%02d)=%04d-%04d [%02d/%04d-%02d/%04d], cmc(%02d)=%04d-%04d [%02d/%04d-%02d/%04d], abstinence=%03d, interval=%03d 
+9916 E LN=%02d:Duration of breastfeeding between events inconsistent: child %02d cmc(%02d)=%04d-%04d [%02d/%04d-%02d/%04d], cmc(%02d)=%04d-%04d [%02d/%04d-%02d/%04d], breastfeeding=%03d 
+9917 E LN=%02d:Duration of contraceptive use between events inconsistent: child %02d cmc(%02d)=%04d-%04d [%02d/%04d-%02d/%04d], cmc(%02d)=%04d-%04d [%02d/%04d-%02d/%04d], contraceptive use=%03d, interval=%03d
+9918 E LN=%02d:Cannot create gap between events: cmc(%02d)=%04d-%04d [%02d/%04d-%02d/%04d], cmc(%02d)=%04d-%04d [%02d/%04d-%02d/%04d], interval=%03d 
+9919 E LN=%02d:Minimum and maximum date of event %02d cross over: cmc=%04d-%04d [%02d/%04d-%02d/%04d] 
+9920 E LN=%02d:Minimum and maximum date of birth of twins %02d cross over: cmc=%04d-%04d [%02d/%04d-%02d/%04d] 
+9921 E LN=%02d:Event %02d: Month of event (%02d) inconsistent with final range for event: cmc=%04d-%04d [%02d/%04d-%02d/%04d] imputed=%04d [%02d/%04d] 
+9992 E LN=%02d:Unit (%s=%01d) and number (%s=%02d) inconsistent; check questionnaire's coding instructions
+{EN}

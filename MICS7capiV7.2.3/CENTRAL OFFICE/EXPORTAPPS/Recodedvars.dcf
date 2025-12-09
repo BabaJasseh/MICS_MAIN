@@ -1,0 +1,667 @@
+﻿[Dictionary]
+Version=CSPro 7.7
+Label=Recoded variables
+Name=RECODEDVARS_DICT
+RecordTypeStart=2
+RecordTypeLen=1
+Positions=Relative
+ZeroFill=No
+DecimalChar=Yes
+SecurityOptions=89B892FBEEFF3FA705F86A5968A44619533A41824DA8DD2CF61FABC55DCC9D1E
+
+[Level]
+Label=Recoded variables level
+Name=RECODEDVARS_LEVEL
+
+[IdItems]
+
+[Item]
+Label=Recoded variables ID
+Name=RECODEDVARS_ID
+Start=1
+Len=1
+DataType=Numeric
+
+[Record]
+Label=Recoded variables record
+Name=RECODEDVARS_REC
+RecordTypeValue='1'
+RecordLen=91
+
+[Item]
+Label=Sex of household head
+Name=HHSEX
+Start=3
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Sex of household head
+Name=HHSEX_VS1
+Value=1;Male
+Value=2;Female
+Value=9;Missing
+
+[Item]
+Label=Age of household head
+Name=HHAGE
+Start=4
+Len=2
+DataType=Numeric
+
+[Item]
+Label=Primary sampling unit
+Name=PSU
+Start=6
+Len=3
+DataType=Numeric
+
+[Item]
+Label=Stratum
+Name=STRATA
+Start=9
+Len=2
+DataType=Numeric
+
+[Item]
+Label=Mother's line number
+Name=MLINE
+Start=11
+Len=2
+DataType=Numeric
+
+[ValueSet]
+Label=Mother's line number
+Name=MLINE_VS1
+Value=0;Not in household
+Value=1:50;Line number
+
+[Item]
+Label=Father's line number
+Name=FLINE
+Start=13
+Len=2
+DataType=Numeric
+
+[ValueSet]
+Label=Father's line number
+Name=FLINE_VS1
+Value=0;Not in household
+Value=1:50;Line number
+
+[Item]
+Label=Date of birth of woman (CMC)
+Name=WDOB
+Start=15
+Len=4
+DataType=Numeric
+
+[Item]
+Label=Date of birth of first child (CMC)
+Name=WDOBFC
+Start=19
+Len=4
+DataType=Numeric
+
+[Item]
+Label=Date of birth of last child (CMC)
+Name=WDOBLC
+Start=23
+Len=4
+DataType=Numeric
+
+[Item]
+Label=Sex of first born chid
+Name=BH3_FIRST
+Start=27
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Sex of first born chid
+Name=BH3_FIRST_VS1
+Value=1;BOY
+Value=2;GIRL
+Value=9;NO RESPONSE
+
+[Item]
+Label=Sex of last born child
+Name=BH3_LAST
+Start=28
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Sex of last born child
+Name=BH3_LAST_VS1
+Value=1;BOY
+Value=2;GIRL
+Value=9;NO RESPONSE
+
+[Item]
+Label=Date of marriage of woman (CMC)
+Name=WDOM
+Start=29
+Len=4
+DataType=Numeric
+
+[Item]
+Label=Age at first marriage/union of woman
+Name=WAGEM
+Start=33
+Len=2
+DataType=Numeric
+
+[Item]
+Label=Marital/Union status of woman
+Name=MSTATUS
+Start=35
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Marital/Union status of woman
+Name=MSTATUS_VS1
+Value=1;Currently married/in union
+Value=2;Formerly married/in union
+Value=3;Never married/in union
+
+[Item]
+Label=Children ever born
+Name=CEB
+Start=36
+Len=2
+DataType=Numeric
+
+[Item]
+Label=Children surviving
+Name=CSURV
+Start=38
+Len=2
+DataType=Numeric
+
+[Item]
+Label=Children dead
+Name=CDEAD
+Start=40
+Len=2
+DataType=Numeric
+
+[Item]
+Label=Date of birth of man (CMC)
+Name=MWDOB
+Start=42
+Len=4
+DataType=Numeric
+
+[Item]
+Label=Date of marriage of man (CMC)
+Name=MWDOM
+Start=46
+Len=4
+DataType=Numeric
+
+[Item]
+Label=Age at first marriage/union of man
+Name=MWAGEM
+Start=50
+Len=2
+DataType=Numeric
+
+[Item]
+Label=Marital/Union status of man
+Name=MMSTATUS
+Start=52
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Marital/Union status of man
+Name=MMSTATUS_VS1
+Value=1;Currently married/in union
+Value=2;Formerly married/in union
+Value=3;Never married/in union
+
+[Item]
+Label=Date of interview of child (CMC)
+Name=CDOI
+Start=53
+Len=4
+DataType=Numeric
+
+[Item]
+Label=Date of birth of child (CMC)
+Name=CDOB
+Start=57
+Len=4
+DataType=Numeric
+
+[Item]
+Label=Age (in months)
+Name=CAGE
+Start=61
+Len=2
+DataType=Numeric
+
+[Item]
+Label=Age (in months)
+Name=CAGE_6
+Start=63
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Age (in months)
+Name=CAGE_6_VS1
+Value=1;0-5
+Value=2;6-11
+Value=3;12-23
+Value=4;24-35
+Value=5;36-47
+Value=6;48-59
+
+[Item]
+Label=Age (in months)
+Name=CAGE_11
+Start=64
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Age (in months)
+Name=CAGE_11_VS1
+Value=1;0-11
+Value=2;12-23
+Value=3;24-35
+Value=4;36-47
+Value=5;48-59
+
+[Item]
+Label=Age (in days)
+Name=CAGED
+Start=65
+Len=4
+DataType=Numeric
+
+[Item]
+Label=Age
+Name=FSAGE
+Start=69
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Age
+Name=FSAGE_VS1
+Value=1;5-9
+Value=2;10-14
+Value=3;15-17
+
+[Item]
+Label=Date of interview child 5-17 (CMC)
+Name=FSDOI
+Start=70
+Len=4
+DataType=Numeric
+
+[Item]
+Label=Date of birth of child 5-17 (CMC)
+Name=FSDOB
+Start=74
+Len=4
+DataType=Numeric
+
+[Item]
+Label=Line number
+Name=LN
+Start=78
+Len=2
+DataType=Numeric
+
+[Item]
+Label=Social transfer:eligible for assistence
+Name=ST4ELI
+Start=80
+Len=1
+DataType=Numeric
+Occurrences=6
+
+[ValueSet]
+Label=Social transfer:eligible for assistence
+Name=ST4ELI_VS1
+Value=1;Eligible
+Value=2;Not eligible
+
+[Item]
+Label=Social transfer:entitled for assistence
+Name=ST5ENT
+Start=86
+Len=1
+DataType=Numeric
+Occurrences=6
+
+[ValueSet]
+Label=Social transfer:entitled for assistence
+Name=ST5ENT_VS1
+Value=1;Entitled
+Value=2;Not entitled
+
+[Record]
+Label=Anthropometry variables
+Name=ANTHRO_VARS
+RecordTypeValue='2'
+RecordLen=75
+
+[Item]
+Label=Height for age percentile NCHS
+Name=HAP
+Start=3
+Len=4
+DataType=Numeric
+Decimal=1
+DecimalChar=Yes
+ZeroFill=Yes
+
+[ValueSet]
+Label=Height for age percentile NCHS
+Name=HAP_VS1
+Value=0.0:99.9
+
+[Item]
+Label=Height for age z-score NCHS
+Name=HAZ
+Start=7
+Len=5
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[ValueSet]
+Label=Height for age z-score NCHS
+Name=HAZ_VS1
+Value=-9.99:9.99
+
+[Item]
+Label=Height for age percent of reference median NCHS
+Name=HAM
+Start=12
+Len=5
+DataType=Numeric
+Decimal=1
+DecimalChar=Yes
+ZeroFill=Yes
+
+[ValueSet]
+Label=Height for age percent of reference median NCHS
+Name=HAM_VS1
+Value=0.0:999.9
+
+[Item]
+Label=Weight for age percentile NCHS
+Name=WAP
+Start=17
+Len=4
+DataType=Numeric
+Decimal=1
+DecimalChar=Yes
+ZeroFill=Yes
+
+[ValueSet]
+Label=Weight for age percentile NCHS
+Name=WAP_VS1
+Value=0.0:99.9
+
+[Item]
+Label=Weight for age z-score NCHS
+Name=WAZ
+Start=21
+Len=5
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[ValueSet]
+Label=Weight for age z-score NCHS
+Name=WAZ_VS1
+Value=-9.99:9.99
+
+[Item]
+Label=Weight for age percent of reference median NCHS
+Name=WAM
+Start=26
+Len=5
+DataType=Numeric
+Decimal=1
+DecimalChar=Yes
+ZeroFill=Yes
+
+[ValueSet]
+Label=Weight for age percent of reference median NCHS
+Name=WAM_VS1
+Value=0.0:999.9
+
+[Item]
+Label=Weight for height percentile NCHS
+Name=WHP
+Start=31
+Len=4
+DataType=Numeric
+Decimal=1
+DecimalChar=Yes
+ZeroFill=Yes
+
+[ValueSet]
+Label=Weight for height percentile NCHS
+Name=WHP_VS1
+Value=0.0:99.9
+
+[Item]
+Label=Weight for height z-score NCHS
+Name=WHZ
+Start=35
+Len=5
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[ValueSet]
+Label=Weight for height z-score NCHS
+Name=WHZ_VS1
+Value=-9.99:9.99
+
+[Item]
+Label=Weight for height percent of reference median NCHS
+Name=WHM
+Start=40
+Len=5
+DataType=Numeric
+Decimal=1
+DecimalChar=Yes
+ZeroFill=Yes
+
+[ValueSet]
+Label=Weight for height percent of reference median NCHS
+Name=WHM_VS1
+Value=0.0:999.9
+
+[Item]
+Label=Flag for anthropometric indicators
+Name=FLAG
+Start=45
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Flag for anthropometric indicators
+Name=FLAG_VS1
+Value=0;No flag
+Value=1;Height for age
+Value=2;Weight for height
+Value=3;Weight for height, Height for age
+Value=4;Weight for age
+Value=5;Weight for age, Height for age
+Value=6;Weight for age, Weight for height
+Value=7;Weight for age, Weight for height, Height for age
+
+[Item]
+Label=Body Mass Index WHO
+Name=BMI
+Start=46
+Len=5
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[ValueSet]
+Label=Body Mass Index WHO
+Name=BMI_VS1
+Value=0.00:98.00
+Value=99.97;Measurement out of range
+Value=99.99;Not measured
+
+[Item]
+Label=Body Mass Index z-score WHO
+Name=ZBMI
+Start=51
+Len=5
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[ValueSet]
+Label=Body Mass Index z-score WHO
+Name=ZBMI_VS1
+Value=-9.99:9.99
+Value=99.97;Measurement out of range
+Value=99.98;Z-score out of range
+Value=99.99;Not measured
+
+[Item]
+Label=Height for age z-score WHO
+Name=HAZ2
+Start=56
+Len=5
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[ValueSet]
+Label=Height for age z-score WHO
+Name=HAZ2_VS1
+Value=-9.99:9.99
+Value=99.97;Measurement out of range
+Value=99.98;Z-score out of range
+Value=99.99;Not measured
+
+[Item]
+Label=Weight for age z-score WHO
+Name=WAZ2
+Start=61
+Len=5
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[ValueSet]
+Label=Weight for age z-score WHO
+Name=WAZ2_VS1
+Value=-9.99:9.99
+Value=99.97;Measurement out of range
+Value=99.98;Z-score out of range
+Value=99.99;Not measured
+
+[Item]
+Label=Weight for height z-score WHO
+Name=WHZ2
+Start=66
+Len=5
+DataType=Numeric
+Decimal=2
+DecimalChar=Yes
+ZeroFill=Yes
+
+[ValueSet]
+Label=Weight for height z-score WHO
+Name=WHZ2_VS1
+Value=-9.99:9.99
+Value=99.97;Measurement out of range
+Value=99.98;Z-score out of range
+Value=99.99;Not measured
+
+[Item]
+Label=Height for age flag WHO
+Name=HAZFLAG
+Start=71
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Height for age flag WHO
+Name=HAZFLAG_VS1
+Value=0;No error
+Value=1;Error flag
+
+[Item]
+Label=Weight for age flag WHO
+Name=WAZFLAG
+Start=72
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Weight for age flag WHO
+Name=WAZFLAG_VS1
+Value=0;No error
+Value=1;Error flag
+
+[Item]
+Label=Weight for height flag WHO
+Name=WHZFLAG
+Start=73
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Weight for height flag WHO
+Name=WHZFLAG_VS1
+Value=0;No error
+Value=1;Error flag
+
+[Item]
+Label=BMI flag WHO
+Name=BMIFLAG
+Start=74
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=BMI flag WHO
+Name=BMIFLAG_VS1
+Value=0;No error
+Value=1;Error flag
+
+[Item]
+Label=Weight for height - Age flag WHO
+Name=WHZNOAGE
+Start=75
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Weight for height - Age flag WHO
+Name=WHZNOAGE_VS1
+Value=0;Age given - all measurements calculated
+Value=1;No age - only weight for height calculated

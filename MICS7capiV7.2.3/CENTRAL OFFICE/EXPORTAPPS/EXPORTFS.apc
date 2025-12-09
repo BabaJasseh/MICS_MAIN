@@ -1,0 +1,316 @@
+﻿PROC GLOBAL
+//set explicit;
+
+file myFS, 	 { children age 5 - 17 records }
+	 myFSTU, {Time Use module}
+	 myFSTS; {Timestamp of the Modules}
+	 
+numeric i, j, tnoccur;
+numeric ldob, udob, ldom, udom;
+numeric t, x, y, incr;
+
+numeric fsminage, fsmaxage;
+{ --------------------------------------------------------------------------- }
+
+function valid(xvar);
+  valid = (!special(xvar) and xvar < 96)
+end;
+
+{ --------------------------------------------------------------------------- }
+
+function zscores(); //HHR Anthro variables
+// This function calculates BMI and z-scores for children 5-9 years old.
+// It uses the WHO 2007 LMS parameters.
+// The logic follows the WHO AnthroPlus software, that includes the interpolation steps
+// when the age in months of the child has decimal parts. In the case of MICS, if the
+// age in months is calculated as FSDO-FSDOB, the interpolation it is not necessary, however,
+// the logic was kept with interpolation in the case the age in months is calculated in another way.
+
+	numeric weight2 = FA8;
+	numeric sex= HL4(FS3);
+	numeric agemos = FSDOI-FSDOB;
+	numeric height= FA11;
+
+	if weight2 >= 99.3 then weight2=notappl; endif;
+	if height >= 999.4 then height=notappl; endif;
+
+	//======== interpolate using age =======.
+	// determine exact z score using exact age.
+	// since the LMS charts are only whole age in months numbers.
+	// the interp variable =1 if we need to interpolate.
+	numeric interp=0;
+	numeric agelow, agehigh;
+	if abs(agemos - round(agemos)) > 0.01 then interp=1; endif;
+	//if it does then interpolate on lms table.
+	//first we will find the lower level on LMS chart.
+	if interp=1 then
+		agelow=int(agemos);
+	elseif interp=0 then
+		agelow=round(agemos);
+		//above makes double sure it will match lms chart.
+	endif;
+	//next we will find the upper level on LMS chart.
+
+	if interp=1 then
+		agehigh=round((agemos+0.5));
+	elseif interp=0 then
+		agehigh=round(agemos);
+	endif;
+
+	// we will be doing many calculations with agemos .
+	// so we will remember the original values here.
+	numeric agemosx=agemos;
+	numeric agemos9=agehigh;
+	numeric agemos1=agelow;
+
+	//============================  HAZ  =================================.
+	// ===============agehigh LMS calculations============.
+
+	TYPEHW=1; //Height by age
+	SEXHW=sex;
+	UNITHW=agehigh;
+	loadcase(WHOLMS,TYPEHW,SEXHW,UNITHW);
+	numeric haz2hi=(((height/mhw)^lhw)-1)/(shw*lhw); 
+
+	TYPEHW=1; //Height by age
+	SEXHW=sex;
+	UNITHW=agelow;
+	loadcase(WHOLMS,TYPEHW,SEXHW,UNITHW);	 
+	numeric haz2lo=(((height/mhw)^lhw)-1)/(shw*lhw);
+
+	// agemosx is somewhere between agelow and agehigh.
+	// find the ratios with agemos like 90point2 between 90 and 91.
+	numeric aboveage=agemosx-agelow;
+	numeric ratioage=aboveage;
+	// note that the greater the age, the less the z.
+	haz2= haz2lo-((haz2lo-haz2hi)*ratioage);
+
+	//============================ BMI Z ===================================.
+	// ===============agehigh LMS calculations============.
+	agemos=agemosx;
+	agehigh=agemos9;
+	agelow=agemos1;
+
+	TYPEHW=5;  //BMI by age
+	SEXHW=sex;
+	UNITHW=agehigh;
+	loadcase(WHOLMS,TYPEHW,SEXHW,UNITHW);
+
+	BMI= weight2*10000/(height*height);
+	numeric zBMIhi=(((BMI/mhw)^lhw)-1)/(shw*lhw);
+	numeric sd3pos=mhw*((1+lhw*shw*3)^(1/lhw));
+	numeric sd23pos=sd3pos- mhw*((1+lhw*shw*2)^(1/lhw));
+	if (zBMIhi>3) then zBMIhi=3+((BMI-sd3pos)/sd23pos); endif;
+
+	numeric sd3neg=mhw*((1+lhw*shw*(-3))^(1/lhw));
+	numeric sd23neg= mhw*((1+lhw*shw*(-2))^(1/lhw))-sd3neg;
+	if (zBMIhi<-3) then zBMIhi=(-3)-((sd3neg-BMI)/sd23neg); endif;
+
+	TYPEHW=5;  //BMI by age
+	SEXHW=sex;
+	UNITHW=agelow;
+	loadcase(WHOLMS,TYPEHW,SEXHW,UNITHW);
+
+	BMI= weight2*10000/(height*height);
+	numeric zBMIlo=(((BMI/mhw)^lhw)-1)/(shw*lhw);
+	sd3pos=mhw*((1+lhw*shw*3)^(1/lhw));
+	sd23pos=sd3pos- mhw*((1+lhw*shw*2)^(1/lhw));
+	if (zBMIlo>3) then zBMIlo=3+((BMI-sd3pos)/sd23pos); endif;
+
+	sd3neg=mhw*((1+lhw*shw*(-3))^(1/lhw));
+	sd23neg= mhw*((1+lhw*shw*(-2))^(1/lhw))-sd3neg;
+	if (zBMIlo<-3) then zBMIlo=(-3)-((sd3neg-BMI)/sd23neg); endif;
+
+	// =====now do interpolation =====.
+
+	// agemosx is somewhere between agelow and agehigh.
+	// find the ratios with agemos like 90point2 between 90 and 91.
+	aboveage=agemosx-agelow;
+	ratioage=aboveage;
+	// note that the greater the age, the less the z.
+	zbmi= zbmilo-((zbmilo-zbmihi)*ratioage);
+
+	// ======================== WAZ =====================================.
+	// ===============agehigh LMS calculations============.
+
+	agemos=agemosx;
+	agehigh=agemos9;
+	agelow=agemos1;
+
+	TYPEHW=2;  //Weight by age
+	SEXHW=sex;
+	UNITHW=agehigh;
+	loadcase(WHOLMS,TYPEHW,SEXHW,UNITHW);
+
+	numeric waz2hi=(((weight2/mhw)^lhw)-1)/(shw*lhw);
+	sd3pos=mhw*((1+lhw*shw*3)^(1/lhw));
+	sd23pos=sd3pos- mhw*((1+lhw*shw*2)^(1/lhw));
+	if (waz2hi>3) then waz2hi=3+((weight2-sd3pos)/sd23pos); endif;
+
+	sd3neg=mhw*((1+lhw*shw*(-3))^(1/lhw));
+	sd23neg= mhw*((1+lhw*shw*(-2))^(1/lhw))-sd3neg;
+	if (waz2hi<-3) then waz2hi=(-3)-((sd3neg-weight2)/sd23neg); endif;
+
+	// ===============agelow LMS calculations============.
+
+	TYPEHW=2;  //Weight by age
+	SEXHW=sex;
+	UNITHW=agelow;
+	loadcase(WHOLMS,TYPEHW,SEXHW,UNITHW);
+
+	numeric waz2lo=(((weight2/mhw)^lhw)-1)/(shw*lhw);
+	sd3pos=mhw*((1+lhw*shw*3)^(1/lhw));
+	sd23pos=sd3pos- mhw*((1+lhw*shw*2)^(1/lhw));
+	if (waz2lo>3) then waz2lo=3+((weight2-sd3pos)/sd23pos); endif;
+
+	sd3neg=mhw*((1+lhw*shw*(-3))^(1/lhw));
+	sd23neg= mhw*((1+lhw*shw*(-2))^(1/lhw))-sd3neg;
+	if (waz2lo<-3) then waz2lo=(-3)-((sd3neg-weight2)/sd23neg); endif;
+
+	// =====now do interpolation =====.
+
+	// agemosx is somewhere between agelow and agehigh.
+	// find the ratios with agemos like 90point2 between 90 and 91.
+	aboveage=agemosx-agelow;
+	ratioage=aboveage;
+	// note that the greater the age, the less the z.
+	waz2= waz2lo-((waz2lo-waz2hi)*ratioage);
+
+	// ================ compute BMI ========================================.
+	BMI= weight2*10000/(height*height);
+	if BMI > 98 then BMI=99.97; endif;
+	if special(weight2) or special(height) then BMI=99.99; endif;
+	// ================ convert Z scores to 2 decimals =====================.
+	haz2=(round(haz2*100))/100;
+	waz2=(round(waz2*100))/100;
+	zbmi=(round(zbmi*100))/100;
+
+	//======================== Flags for missing values ====================.
+	hazflag=0;
+	wazflag=0;
+	bmiflag=0;
+
+	if (haz2 < -6 or haz2 > 6 or special(haz2)) then hazflag=1; endif;
+	if (waz2 < -6 or waz2 > 5 or special(waz2)) then wazflag=1; endif;
+	if (zbmi < -5 or zbmi > 5 or special(zbmi)) then bmiflag=1; endif;
+
+	// Cant take weight to age scores over 120 months.
+	if (agemos1>120) then waz2=999.99; endif;
+
+	// ==================declare flagged values missing=========================.
+
+	if (haz2 < -6 or haz2 > 6 or special(haz2)) then haz2=99.99; endif;
+	if (waz2 < -6 or waz2 > 5 or special(waz2)) then waz2=99.99; endif;
+	if (zbmi < -5 or zbmi > 5 or special(zbmi)) then zbmi=99.99; endif;
+
+end;
+
+PROC MICS7FS_FF
+preproc
+fsminage =  5;
+fsmaxage = 17;
+
+PROC FS
+postproc
+{ EXPORT CHILDREN 5-17 }
+
+ HH1=FS1; HH2=FS2; HINT=FSHINT; HLN=0; 
+ IF !loadcase(MICS7HH,HH1,HH2,HINT,HLN)THEN  //NEEDED
+   errmsg("Household %03d%02d data not loaded !!!", hh1, hh2); 
+ ENDIF; 
+
+set behavior() export (SPSS SubitemOnly);
+ 
+  fsdoi = cmcode(FS7M, FS7Y);
+  fsdob = notappl;
+  fsage = notappl;  
+  HAZ2 = notappl;
+  WAZ2 = notappl;
+  BMI  = notappl;
+  ZBMI = notappl;
+  HAZFLAG = notappl;
+  WAZFLAG = notappl;
+  BMIFLAG = notappl;
+ 
+  if FS17 = 1 then { Complete interviews }
+    udob = fsdoi - fsminage*12;
+    ldob = fsdoi - fsmaxage*12 - 11;
+    if CB2Y < 9997 then
+      ldob = setlb(CB2M,CB2Y,0);
+      udob = setub(CB2M,CB2Y,9999);
+      if udob < fsdoi - fsmaxage*12 - 11 or ldob > fsdoi - fsminage*12 then
+        errmsg("Date of birth %02d/%4d outside bounds of eligibility based on date of interview %02d/%4d",CB2M,CB2Y,FS7M,FS7Y);
+      endif;
+    endif;
+    if valid(CB3) then
+      { Lower bound of CMC date of birth }
+      t = adjlba(ldob,udob,fsdoi,fsdoi,CB3);
+      if t < 0 then
+        errmsg("Date of birth %02d/%4d and age %02d inconsistent with date of interview %02d/%4d",CB2M,CB2Y,CB3,FS7M,FS7Y);
+      else
+        ldob = t
+      endif;
+      { Upper bound of CMC date of birth }
+      t = adjuba(ldob,udob,fsdoi,fsdoi,CB3);
+      if t < 0 then
+        errmsg("Date of birth %02d/%4d and age %02d inconsistent with date of interview %02d/%4d",CB2M,CB2Y,CB3,FS7M,FS7Y);
+      else
+        udob = t
+      endif;
+    endif;
+    { Impute date of birth }
+    if ldob = udob then
+      fsdob = ldob
+    else
+      { Correction in case minimum allows age one year older }
+      if int( (fsdoi - ldob ) /12 ) = CB3+1 then
+        if ldob < udob then
+          ldob = ldob + 1
+        else
+          errmsg("Date of birth (cmc=%4d-%4d) will be imputed as %2d, inconsistent from age reported as %2d",ldob,udob,int((fsdoi-ldob)/12),CB3)
+        endif;
+      endif;
+      fsdob = random(ldob,udob);
+    endif;
+
+    if valid(CB3) then
+    recode CB3 -> fsage;
+           5: 9 -> 1;
+          10:14 -> 2;
+          15:17 -> 3;
+    endrecode;
+    endif;
+
+	if CB3 <= 9 then  // HHR: anthropometric calculation for children 5-9 years old
+	   zscores();
+	endif;
+   endif; { Complete interview }
+
+ LN = FS3; 
+if FS17<>97 then
+   export to myFS
+      HH1, HH2, LN, FS1, FS2, FS3, FSINT,	{ ID vars }
+      MODFS, MODCB, MODFIN, MODCL, MODFCD, MODFCF, MODFTU1, MODPR, MODFL, MODFPN, MODFA,
+      HH4, HH6, HH7, HH52, HL4(FS3), ED5A(FS4), ED5B(FS4), 
+      fsage, fsdoi, fsdob,	 	{ Recoded variables }
+      BMI, ZBMI, HAZ2, WAZ2, HAZFLAG, WAZFLAG, BMIFLAG; {Anthro vars}
+endif;
+if FS17=1 then
+    { EXPORT Time Use Module }
+  for i in MODFTU2_EDT do
+    export to myFSTU
+      HH1, HH2, LN, FS1, FS2, FS3, FSINT, { ID vars }
+      MODFTU2(i),
+      HH4, HH6, HH7, FS7D, FS7M, FS7Y, fsage, fsdoi, fsdob;
+  enddo;
+
+endif; 
+
+{Timestamp of the Modules}	
+ if FS17<>97 then
+    export to myFSTS
+     HH1, HH2, LN, FS1, FS2, FS3, FSINT,{ ID vars }
+     MODFSTS;
+  endif;   
+
+

@@ -1,0 +1,55 @@
+﻿
+// ----------Customization starts here -------------
+string project="Country, 202X";     // Put your country name and year
+
+numeric server_type=1;				// Select the server type to use
+									// 1->CSweb  
+									// 2->FTP
+									// 3->Dropbox
+
+// Server data and credentials for csweb 
+string server_url="http://185.135.137.220/api"; // Put the URL of your server
+string server_user="test";              // Put the username, if you are using UNICEF's server, ask the MICS team for it
+string server_password="test1234";               // Put the password
+string server_root="MICS7/CAPITEST";                   // Put the folder in the server where information is stored
+                                                       // If you are using UNICEF's server, the standard name is MICS7/countryname
+
+string preferedlanguage="EN";    // Put the letters used in the Dictionary and capi questions for
+                                 // the preferred language. Ex.: "EN" for English, "ES" for Spanish.
+								 // This letters must be the same used for language in dictionary and CAPI questions
+
+
+numeric updateplatform = 1;  // This variable is used for central office system to select the kind of update used:
+                             // 1-> Windows 
+							 // 2-> Android
+							 // On windows a zip file is created in the UPDATES folder in the server
+							 // On android the updated is created in the server and handled by Cspro deploy procedure
+
+numeric menselection=1;  // This variable is used to determine if men are interviewed in the survey.
+						 // 1->men are interviewed
+						 // 0->men are not interviewed
+
+numeric BTSyncMode=1;	//This variable is used to determine if the Bluetooth name of the tables contains
+						//the staff code of its user (BTname=IDnnn). The options are:
+						// 1->tablet BT name is IDnnn, where nnn is the staff code of the user. This name
+						//    was created by the MENU system when the tablet was assigned to the user.
+						//	  This is the preferred method, because in the BT sync process is done
+						//    automatically, without selecting the BT name of all the nearby devices, but
+						//    only can be used with Android system or Windows with Administrator Rights in
+						//    the tablet assigning process.
+						// 2->tabLet BT name cannot be modified in the users assigning process.  This option
+						//    only must be selected when Windows tablets are used and there was no Admin Rights
+						//    when they were assigned to the supervisors and interviewers.
+
+
+// ----------Customization finishes here -------------
+
+
+string publicfolder  ="..\..\PUBLIC";
+string datafolder    ="..\..\DATA";
+string manualsfolder  ="..\..\Manuals";
+string reportsfolder ="..\..\REPORTS";
+string updatesfolder ="..\..\UPDATES";
+string backupfolder  ="";
+string psufolder, closedfolder;
+list string quest; 

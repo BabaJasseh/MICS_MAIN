@@ -1,0 +1,28 @@
+﻿[CSPro Application]
+Version=CSPro 7.7
+Label=MICS7WM
+Name=MICS7 WM
+AppType=DataEntry
+OperatorID=No
+ShowEndCaseDialog=No
+CAPI=Yes
+ParadataCollection=AllEvents
+ParadataDeviceStateMinutes=5
+[External Dictionaries]
+File=..\SharedDicts\MICS7HH.dcf
+File=..\shareddicts\Staff.dcf
+[AppCode]
+File=.\entrywm.apc
+Include=..\SETTINGS.APC
+[Message]
+File=.\entry.mgf
+[Help]
+File=.\ENTRYWM.qsf
+[Forms]
+File=.\entrywm.fmf
+[Resources]
+Folder=.\Resources
+[Dictionary Types]
+Dict-Type=..\SharedDicts\MICS7WM.dcf,Input,.\entrywm.fmf
+Dict-Type=..\shareddicts\Staff.dcf,External
+Dict-Type=..\SharedDicts\MICS7HH.dcf,External

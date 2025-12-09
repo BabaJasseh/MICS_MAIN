@@ -1,0 +1,68 @@
+﻿string mapExtension = ".mbtiles"; ///".tpk";
+string pathMaps  ="../maps/";
+function closeMap(map m)
+	m.hide();
+	move to MAIN;
+end;
+
+function baseMaps(map m,  string fileMap)
+	numeric choice=0;
+	list string choix = tr("Google Maps"),"Satellite",  "offline";
+	
+	choice=accept("BaseMap modele",choix);			
+	if choice =1 then 
+		m.setbasemap(Normal);
+	elseif choice =2 then 
+		m.setbasemap(Hybrid);
+	elseif choice =3 then
+		m.setbasemap(None);
+	else
+		m.setbasemap(fileMap);
+	endif;
+end;
+
+
+function checkMapFormat(string mapfileName, string mapFileName_zip)
+	
+	if	! fileexist(mapfileName) then
+		if fileexist(mapFileName_zip) then 
+			decompress(mapFileName_zip);
+		endif;
+	endif;
+end;
+function close_map(map m)
+	m.hide();
+end;
+
+
+
+function setStructureMarkersColors(Map m, numeric id_marker)
+	if INT_ASSIGNED = notappl then 
+		m.setMarkerText(id_marker, maketext("%03d", SAM_DWNO), "gray", "white");
+	else
+		m.setMarkerText(id_marker, maketext("%03d", SAM_DWNO), "green", "white");
+	endif;
+end;
+
+
+
+
+function setStructureMarkersDescription(Map m, numeric markerID, string enumerator_text)
+	string infobull = maketext("<b> %s </b>: %s <br/>", tr("Adress"), strip(SAM_ADDRESS))+ 
+					  maketext("<b> %s </b>: %s<br/>",  tr("Household head "), strip(SAM_HEAD))+
+					  maketext("<b> %s </b>: %s<br/>",  tr("Phone number"), SAM_PHONE) +
+					  maketext("<b> %s </b>: %s <br/>", tr("Enumerator"), enumerator_text);;
+	m.setMarkerDescription(markerId,infobull);
+end;
+
+function string fix_base_maps(string id)	
+	string baseMapfile = pathmaps + "map_" + id + mapExtension;
+	string mapfileDownload = pathname(downloads) + "map_" + id + mapExtension;
+	if fileexist(baseMapfile) then 
+		exit baseMapfile;
+	elseif fileexist(mapfileDownload) then 
+		exit mapfileDownload;
+	else
+		exit "Satellite";
+	endif;
+end;

@@ -1,0 +1,16 @@
+﻿[CSPro Application]
+Version=CSPro 7.7
+Label=EXPORT_123
+Name=EXPORT_123
+AppType=Batch
+[External Dictionaries]
+File=.\Recodedvars.dcf
+File=..\..\APPS\SharedDicts\MICS7HH.dcf
+[AppCode]
+File=.\exportmn.apc
+[Order]
+File=.\exportmn.ord
+[Dictionary Types]
+Dict-Type=.\Recodedvars.dcf,Working
+Dict-Type=..\..\APPS\SharedDicts\MICS7MN.dcf,Input,.\exportmn.ord
+Dict-Type=..\..\APPS\SharedDicts\MICS7HH.dcf,External

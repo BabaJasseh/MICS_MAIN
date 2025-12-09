@@ -1,0 +1,146 @@
+﻿[Dictionary]
+Version=CSPro 7.7
+Label=Psu's slected
+Name=CLUSTERS
+RecordTypeStart=0
+RecordTypeLen=0
+Positions=Relative
+ZeroFill=Yes
+DecimalChar=Yes
+SecurityOptions=D8779A7F7AEBA9BF6EE7A03C9F2BE4A7FB3A0319F62986AF148B6323E829D02F
+
+[Languages]
+EN=English
+ES=Español
+
+[Level]
+Label=PSU selected
+Name=PSU_LEVEL
+
+[IdItems]
+
+[Item]
+Label=Cluster
+Name=CLUSTER_SEL
+Start=1
+Len=5
+DataType=Numeric
+ZeroFill=Yes
+
+[Record]
+Label=Menu record
+Name=PSU_REC
+RecordTypeValue=''
+RecordLen=100
+
+[Item]
+Label=Region|Región
+Name=REGION
+Start=6
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Region|Región
+Name=REGION_VS1
+Value=1;Region 1
+Value=2;Region 2
+Value=3;Region 3
+
+[Item]
+Label=Zone|Zona
+Name=ZONE
+Start=8
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Zone|Zona
+Name=ZONE_VS1
+Value=1;Urban
+Value=2;Rural
+
+[Item]
+Label=Supervisor assigned|Supervisor asignado
+Name=TEAM_ASSIGNED
+Start=9
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Department|Departmento
+Name=GEOCODE1
+Start=12
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Parish|Municipio
+Name=GEOCODE2
+Start=14
+Len=2
+DataType=Numeric
+
+[Item]
+Label=Distict|Distrito
+Name=GEOCODE3
+Start=16
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=County|Barrio
+Name=GEOCODE4
+Start=18
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Department|Departmento
+Name=GEONAME1
+Start=20
+Len=20
+DataType=Alpha
+
+[Item]
+Label=Municipio|Municipio
+Name=GEONAME2
+Start=40
+Len=20
+DataType=Alpha
+
+[Item]
+Label=District|Distrito
+Name=GEONAME3
+Start=60
+Len=20
+DataType=Alpha
+
+[Item]
+Label=County|Barrio
+Name=GEONAME4
+Start=80
+Len=20
+DataType=Alpha
+
+[Item]
+Label=Status of selected PSU|Estado del custer seleccionado
+Name=CLUSTER_SEL_STATUS
+Start=100
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Status of selected PSU|Estado del custer seleccionado
+Name=CLUSTER_SEL_STATUS_VS1
+Value=1;Not Started|No iniciada
+Value=2;On Field|En Campo
+Value=3;Closed|Cerrada
+Value=4;In Review|En Revisión
+Value=5;Cleaned|Limpia
