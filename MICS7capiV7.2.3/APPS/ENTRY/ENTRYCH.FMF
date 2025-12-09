@@ -539,9 +539,9 @@ Color=6472704
 [Form]
 Name=FORM008
 Label=Breastfeeding and Dietary Intake (Cont)
-QuestionTextHeight=316
+QuestionTextHeight=215
 Level=1
-Size=1359,1687
+Size=3031,1470
 Color=15400917
   
 Item=BD8A
@@ -565,6 +565,7 @@ Item=BD8P
 Item=BD8Q
 Item=BD8X
 Item=BD8I
+Item=BD8B1
   
 Box=50,157,1234,157,Etched
   
@@ -3709,8 +3710,20 @@ Keyboard=1033
 Form=9
   
 [Text]
-Position=94,352,1114,416
-Text=B. Porridge, bread, rice, noodles, pasta, or [insert other commonly \n   consumed grains and foods made from grains]?
+Position=96,342,3006,374
+Text=B. Bread, rice, noodles, pasta such as macaroni and spaghetti,chereh made from grains like millet, wheat or maize, any groundnut paste mixed to prepare porridge like Gidiyoo or Ogi/Gisuma Monoo?
+ 
+  
+[Field]
+Name=BD8B1
+Position=1592,333,1611,367
+Item=BD8B1,MICS7CH
+DataCaptureType=RadioButton
+Form=9
+  
+[Text]
+Position=93,435,903,467
+Text=B1. Any fortified baby food such as Cerelac, Nutrilac?
  
   
 [Field]
@@ -3722,7 +3735,7 @@ Keyboard=1033
 Form=9
   
 [Text]
-Position=94,419,1069,483
+Position=85,511,1060,575
 Text=C. Pumpkin, carrots, sweet red peppers, squash, or sweet potatoes\n   that are yellow or orange inside?
  
   
@@ -3735,7 +3748,7 @@ Keyboard=1033
 Form=9
   
 [Text]
-Position=94,488,1144,584
+Position=88,586,1138,682
 Text=D. Plantains, white potatoes, white yams, manioc, cassava, or [insert \n   other commonly consumedstarchy tubers or starchy tuberous roots \n   that are white or pale inside]?
  
   
@@ -3748,7 +3761,7 @@ Keyboard=1033
 Form=9
   
 [Text]
-Position=94,588,1099,652
+Position=89,685,1094,749
 Text=E. Dark green, leafy vegetables, such as [insert commonly consumed \n   vitamin A-rich dark green leafy vegetables]?
  
   
@@ -3761,7 +3774,7 @@ Keyboard=1033
 Form=9
   
 [Text]
-Position=94,654,1159,686
+Position=91,743,1156,775
 Text=F. Any other vegetables, such as [insert commonly consumed vegetables]?
  
   
@@ -3774,7 +3787,7 @@ Keyboard=1033
 Form=9
   
 [Text]
-Position=94,700,994,764
+Position=89,782,989,846
 Text=G. Ripe mangoes, ripe papayas, or [insert commonly consumed \n   vitamin A-rich fruits]?
  
   
@@ -3787,7 +3800,7 @@ Keyboard=1033
 Form=9
   
 [Text]
-Position=94,775,1024,807
+Position=91,847,1021,879
 Text=H. Any other fruits such as [insert commonly consumed fruits]?
  
   
@@ -3800,7 +3813,7 @@ Keyboard=1033
 Form=9
   
 [Text]
-Position=94,819,1189,851
+Position=92,888,1187,920
 Text=I. Liver, kidney, heart, or [insert other commonly consumed organ meats]?
  
   
@@ -3813,7 +3826,7 @@ Keyboard=1033
 Form=9
   
 [Text]
-Position=94,858,1099,922
+Position=92,927,1097,991
 Text=J. Sausages, hot dogs, ham, bacon, salami, canned meat, or [insert \n   other commonly consumed processed meats]
  
   
@@ -3826,7 +3839,7 @@ Keyboard=1033
 Form=9
   
 [Text]
-Position=94,923,1069,987
+Position=92,994,1067,1058
 Text=K. Any other meat, such as beef, pork, lamb, goat, chicken, duck \n   or [insert other commonly consumed meat]?
  
   
@@ -3839,7 +3852,7 @@ Keyboard=1033
 Form=9
   
 [Text]
-Position=94,992,214,1024
+Position=94,1048,214,1080
 Text=L. Eggs?
  
   
@@ -3852,7 +3865,7 @@ Keyboard=1033
 Form=9
   
 [Text]
-Position=94,1034,694,1066
+Position=96,1080,696,1112
 Text=M. Fresh fish, dried fish, or shellfish?
  
   
@@ -3865,7 +3878,7 @@ Keyboard=1033
 Form=9
   
 [Text]
-Position=94,1064,1099,1128
+Position=94,1113,1099,1177
 Text=N. Beans, peas, lentils, nuts, seeds, or [insert commonly consumed \n   foods made from these]?
  
   
@@ -3878,7 +3891,7 @@ Keyboard=1033
 Form=9
   
 [Text]
-Position=94,1128,1204,1160
+Position=94,1173,1204,1205
 Text=O. Hard or soft cheese such as [insert commonly consumed types of cheese]?
  
   
@@ -3891,7 +3904,7 @@ Keyboard=1033
 Form=9
   
 [Text]
-Position=94,1158,1159,1254
+Position=95,1207,1160,1303
 Text=P. Sweet foods such as chocolates, candies, pastries, cakes, biscuits, \n   or frozen treats like ice cream and popsicles, or [insert other \n   commonly consumed sentinel sweet foods]?
  
   
@@ -3904,7 +3917,7 @@ Keyboard=1033
 Form=9
   
 [Text]
-Position=94,1256,1144,1320
+Position=94,1299,1144,1363
 Text=Q. Chips, crisps, puffs, French fries, fried dough, instant noodles, \n   or [insert other commonly consumed sentinel fried and salty foods]?
  
   
@@ -3917,13 +3930,13 @@ Keyboard=1033
 Form=9
   
 [Text]
-Position=94,1329,709,1361
+Position=95,1365,710,1397
 Text=X. Other solid, semi-solid, or soft food?
  
   
 [Field]
 Name=BD9
-Position=145,1375,164,1409
+Position=143,1408,162,1442
 Item=BD9,MICS7CH
 UpperCase=Yes
 DataCaptureType=RadioButton
@@ -3931,7 +3944,7 @@ Keyboard=1033
 Form=9
   
 [Text]
-Position=51,1374,96,1406
+Position=50,1413,95,1445
 Text=BD9
 Form=10
 Color=4210688
