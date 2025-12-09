@@ -1741,7 +1741,7 @@ Value=95;ALWAYS / SINCE BIRTH
 Value=99;NO RESPONSE
 
 [Item]
-Label=Type of place before move
+Label=Just before you moved here, did you live in Banjul, in another Urban Area or in a Rural Area?Type of place before move
 Name=WB9
 Start=18
 Len=1
@@ -1749,17 +1749,17 @@ DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Type of place before move
+Label=Just before you moved here, did you live in Banjul, in another Urban Area or in a Rural Area?Type of place before move
 Name=WB9_VS1
-Value=1;CITY
-Value=2;TOWN
+Value=1;BANJUL
+Value=2;OTHER URBAN
 Value=3;RURAL AREA
 Value=5;UNABLE TO DETERMINE IF CITY/TOWN/RURAL
-Value=8;DK/ DON'T REMEMBER
+Value=8;OUTSIDE THE GAMBIA (Specify)
 Value=9;NO RESPONSE
 
 [Item]
-Label=Region lived before move
+Label=Before you moved here, in which Local Government Area did you live in?
 Name=WB10
 Start=19
 Len=2
@@ -1767,14 +1767,16 @@ DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Region lived before move
-Name=WB10_VS1
-Value=1;REGION 1
-Value=2;REGION 2
-Value=3;REGION 3
-Value=4;REGION 4
-Value=5;REGION 5
-Value=96;OUTSIDE OF COUNTRY
+Label=Before you moved here, in which Local Government Area did you live in?
+Name=WB10_VS2
+Value=1;BANJUL
+Value=2;KANIFING
+Value=3;BRIKAMA
+Value=4;MANSAKONKO
+Value=5;KEREWAN
+Value=6;KUNTAUR
+Value=7;JANJANBUREH
+Value=8;BASSE
 Value=99;NO RESPONSE
 
 [Record]
