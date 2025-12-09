@@ -480,7 +480,6 @@ Item=UCF15
 Item=UCF16
 Item=UCF17
 Item=UCF18
-Item=UCF19
   
 Box=49,156,356,157,Etched
   
@@ -3315,22 +3314,6 @@ Form=7
 [Text]
 Position=242,461,317,493
 Text=UCF18
-Color=4210688
- 
-  
-[Field]
-Name=UCF19
-Position=336,512,355,546
-Item=UCF19,MICS7CH
-UpperCase=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=7
-  
-[Text]
-Position=242,513,317,545
-Text=UCF19
 Color=4210688
  
 [EndGroup]
