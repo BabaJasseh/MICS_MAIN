@@ -2854,6 +2854,7 @@ Label=Antenatal care provider
 Name=MN3_VST
 Value='A      ';DOCTOR
 Value='B      ';NURSE / MIDWIFE
+Value='C      ';AUXILIARY NURSE/NURSE ATTENDANT
 Value='F      ';COMMUNITY BIRTH COMPANION
 Value='G      ';COMMUNITY HEALTH WORKER
 Value='X      ';OTHER
@@ -2900,7 +2901,7 @@ DataType=Alpha
 [ValueSet]
 Label=Antenatal care provider: Other qualified
 Name=MN3C_VST
-Value='C';OTHER QUALIFIED
+Value='C';AUXILIARY NURSE/NURSE ATTENDANT
 Value=' '
 Value='?';NO RESPONSE
 
@@ -2915,7 +2916,7 @@ DataType=Alpha
 [ValueSet]
 Label=Antenatal care provider: Traditional birth attendant
 Name=MN3F_VST
-Value='F';TRADITIONAL BIRTH ATTENDANT
+Value='F';COMMUNITY BIRTH COMMUNITY
 Value=' '
 Value='?';NO RESPONSE
 
@@ -3230,8 +3231,8 @@ Label=Assistance at delivery
 Name=MN19_VST
 Value='A        ';DOCTOR
 Value='B        ';NURSE / MIDWIFE
-Value='C        ';OTHER QUALIFIED
-Value='F        ';TRADITIONAL BIRTH ATTENDANT
+Value='C        ';AUXILIARY NURSE /NURSE ATTENDANT	
+Value='F        ';COMMUNITY BIRTH COMPANION
 Value='G        ';COMMUNITY HEALTH WORKER
 Value='H        ';RELATIVE / FRIEND
 Value='X        ';OTHER
@@ -3279,7 +3280,7 @@ DataType=Alpha
 [ValueSet]
 Label=Assistance at delivery: Other qualified
 Name=MN19C_VST
-Value='C';OTHER QUALIFIED
+Value='C';AUXILIARY NURSE /NURSE ATTENDANT	
 Value=' '
 Value='?';NO RESPONSE
 
@@ -3294,7 +3295,7 @@ DataType=Alpha
 [ValueSet]
 Label=Assistance at delivery: Traditional birth attendant
 Name=MN19F_VST
-Value='F';TRADITIONAL BIRTH ATTENDANT
+Value='F';COMMUNITY BIRTH COMPANION
 Value=' '
 Value='?';NO RESPONSE
 
@@ -3393,7 +3394,6 @@ Value=31;PRIVATE HOSPITAL
 Value=32;PRIVATE CLINIC
 Value=33;PRIVATE MATERNITY HOME
 Value=36;OTHER PRIVATE
-Value=41;NGO HOSPITAL
 Value=42;NGO CLINIC
 Value=46;OTHER NGO
 Value=76;DK PUBLIC, PRIVATE, OR NGO
@@ -3594,9 +3594,9 @@ Label=What was applied to the cord
 Name=MN31_VST
 Value='A       ';CHLORHEXIDINE
 Value='B       ';OTHER ANTISEPTIC (ALCOHOL, SPIRIT, GENTIAN VIOLET)
-Value='C       ';MUSTARD OIL
-Value='D       ';ASH
-Value='E       ';ANIMAL DUNG
+Value='F       ';SHEA BUTTER
+Value='G       ';WATER
+Value='H       ';VASELINE
 Value='X       ';OTHER
 Value='Z       ';DK / DON’T REMEMBER
 Value='?       ';NO RESPONSE
@@ -3632,47 +3632,47 @@ Value=' '
 Value='?';NO RESPONSE
 
 [Item]
-Label=What was applied to the cord: Mustard oil
-Name=MN31C
+Label=What was applied to the cord: Shea Butter
+Name=MN31F
 Start=67
 Len=1
 ItemType=SubItem
 DataType=Alpha
 
 [ValueSet]
-Label=What was applied to the cord: Mustard oil
-Name=MN31C_VST
-Value='C';MUSTARD OIL
+Label=What was applied to the cord: Shea Butter
+Name=MN31F_VS1
+Value='F';SHEA BUTTER
 Value=' '
 Value='?';NO RESPONSE
 
 [Item]
-Label=What was applied to the cord: Ash
-Name=MN31D
+Label=What was applied to the cord: Water
+Name=MN31G
 Start=68
 Len=1
 ItemType=SubItem
 DataType=Alpha
 
 [ValueSet]
-Label=What was applied to the cord: Ash
-Name=MN31D_VST
-Value='D';ASH
+Label=What was applied to the cord: Water
+Name=MN31G_VS1
+Value='G';WATER
 Value=' '
 Value='?';NO RESPONSE
 
 [Item]
-Label=What was applied to the cord: Animal dung
-Name=MN31E
+Label=What was applied to the cord: Vaseline
+Name=MN31H
 Start=69
 Len=1
 ItemType=SubItem
 DataType=Alpha
 
 [ValueSet]
-Label=What was applied to the cord: Animal dung
-Name=MN31E_VST
-Value='E';ANIMAL DUNG
+Label=What was applied to the cord: Vaseline
+Name=MN31H_VS1
+Value='H';VASELINE
 Value=' '
 Value='?';NO RESPONSE
 
@@ -3766,7 +3766,7 @@ ZeroFill=Yes
 [ValueSet]
 Label=Weight from card or recall
 Name=MN34A_VST
-Value=1;FROM CARD
+Value=1;FROM INFANT WELFARE (IWC) CARD/ ANTENATAL CARD (ANC)
 Value=2;FROM RECALL
 Value=9;DK / NO RESPONSE
 
