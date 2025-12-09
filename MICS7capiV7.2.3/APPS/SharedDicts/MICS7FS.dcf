@@ -286,8 +286,6 @@ ZeroFill=Yes
 Label=Language of the questionnaire
 Name=FS12_VST
 Value=1;ENGLISH
-Value=2;LANGUAGE 2
-Value=3;LANGUAGE 3
 
 [Item]
 Label=Language of the interview
