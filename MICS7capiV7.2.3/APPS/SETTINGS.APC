@@ -1,6 +1,6 @@
 ﻿
 // ----------Customization starts here -------------
-string project="Country, 202X";     // Put your country name and year
+string project="Gambia, 2026";     // Put your country name and year
 
 numeric server_type=1;				// Select the server type to use
 									// 1->CSweb  
@@ -12,7 +12,7 @@ string server_url="http://185.135.137.220/api"; // Put the URL of your server
 string server_user="test";              // Put the username, if you are using UNICEF's server, ask the MICS team for it
 string server_password="test1234";               // Put the password
 string server_root="MICS7/CAPITEST";                   // Put the folder in the server where information is stored
-                                                       // If you are using UNICEF's server, the standard name is MICS7/countryname
+                                                       // If you are using UNICEF's server, the standard name is MICS7/Gambia
 
 string preferedlanguage="EN";    // Put the letters used in the Dictionary and capi questions for
                                  // the preferred language. Ex.: "EN" for English, "ES" for Spanish.

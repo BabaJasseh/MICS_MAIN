@@ -15,7 +15,7 @@ Name=FORM001
 Label=Women's Information Panel
 QuestionTextHeight=292
 Level=1
-Size=1146,702
+Size=1146,1010
 Color=14680063
 CapturePos=634,80
   
@@ -106,7 +106,7 @@ Color=4210688
   
 [Text]
 Name=TEXT66
-Position=51,174,501,211
+Position=52,176,502,213
 Text=WOMEN'S INFORMATION PANEL
 Form=1
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
@@ -934,7 +934,7 @@ Name=FORM010
 Label=Female Genital Mutilation/Cutting
 QuestionTextHeight=205
 Level=1
-Size=1173,762
+Size=1169,1347
 Color=14680063
 CapturePos=634,80
   
