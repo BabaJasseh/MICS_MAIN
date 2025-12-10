@@ -15,7 +15,7 @@ Name=FORM001
 Label=Women's Information Panel
 QuestionTextHeight=292
 Level=1
-Size=1146,702
+Size=1146,1010
 Color=14680063
 CapturePos=634,80
   
@@ -106,7 +106,7 @@ Color=4210688
   
 [Text]
 Name=TEXT66
-Position=51,174,501,211
+Position=52,176,502,213
 Text=WOMEN'S INFORMATION PANEL
 Form=1
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
@@ -255,52 +255,6 @@ Color=49087
 [EndForm]
   
 [Form]
-Name=FORM025
-Label=Employment and Training
-QuestionTextHeight=291
-Level=1
-Size=735,589
-Color=14680063
-  
-Item=NE3
-Item=NE4
-Item=NE5
-Item=NE6
-Item=NE7
-Item=NE8
-Item=NE9
-Item=NE10
-Item=NE11
-Item=NE12A
-Item=NE12B
-Item=NE12C
-Item=NE12D
-Item=NE13
-Item=NE14
-Item=NE15
-Item=NE16
-Item=NE17
-Item=NE18A
-Item=NE18B
-Item=NE18X
-Item=NE20
-Item=NE21
-Item=NE22
-Item=NE23
-  
-Box=78,183,598,184,Etched
-  
-[Text]
-Name=TEXT36
-Position=81,141,495,178
-Text=EMPLOYMENT AND TRAINING
-Form=5
-Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
-Color=49087
- 
-[EndForm]
-  
-[Form]
 Name=FORM000
 Label=ICT Use
 QuestionTextHeight=249
@@ -334,7 +288,7 @@ Box=48,154,568,155,Etched
 Name=TEXT3
 Position=51,111,177,148
 Text=ICT USE
-Form=6
+Form=5
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
 Color=49087
  
@@ -368,7 +322,7 @@ Box=51,153,530,154,Etched
 Name=TEXT10
 Position=51,111,501,148
 Text=FERTILITY / BIRTH HISTORY
-Form=7
+Form=6
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
 Color=49087
  
@@ -393,7 +347,7 @@ Box=51,154,754,155,Etched
 Name=TEXT11
 Position=51,111,501,148
 Text=BIRTH HISTORY - BH1 - BH2
-Form=8
+Form=7
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
 Color=49087
  
@@ -421,7 +375,7 @@ Box=50,153,1090,154,Etched
 Name=TEXT12
 Position=51,111,285,148
 Text=BIRTH HISTORY
-Form=9
+Form=8
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
 Color=49087
  
@@ -445,7 +399,7 @@ Box=49,153,435,154,Etched
 Name=TEXT25
 Position=51,113,501,150
 Text=RC: DESIRE FOR LAST BIRTH
-Form=10
+Form=9
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
 Color=49087
  
@@ -479,7 +433,7 @@ Box=48,153,1210,154,Etched
 Name=TEXT40
 Position=173,308,188,340
 Text=U
-Form=11
+Form=10
 Color=4210688
  
   
@@ -487,7 +441,7 @@ Color=4210688
 Name=TEXT41
 Position=200,307,230,339
 Text=NN
-Form=11
+Form=10
 Color=4210688
  
   
@@ -495,7 +449,7 @@ Color=4210688
 Name=TEXT8
 Position=51,111,303,148
 Text=ANTENATAL CARE
-Form=11
+Form=10
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
 Color=49087
  
@@ -519,7 +473,7 @@ Box=78,183,598,184,Etched
 Name=TEXT37
 Position=81,141,315,178
 Text=MALARIA: IPTP
-Form=12
+Form=11
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
 Color=49087
  
@@ -544,7 +498,7 @@ Box=88,193,608,194,Etched
 Name=TEXT38
 Position=91,151,325,188
 Text=DELIVERY CARE
-Form=13
+Form=12
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
 Color=49087
  
@@ -570,7 +524,7 @@ Box=98,203,618,204,Etched
 Name=TEXT39
 Position=101,161,443,198
 Text=PN&NC: THERMAL CARE
-Form=14
+Form=13
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
 Color=49087
  
@@ -579,7 +533,7 @@ Color=49087
 Name=TEXT65
 Position=248,403,263,435
 Text=U
-Form=14
+Form=13
 Color=4210688
  
   
@@ -587,7 +541,7 @@ Color=4210688
 Name=TEXT70
 Position=274,403,304,435
 Text=NN
-Form=14
+Form=13
 Color=4210688
  
 [EndForm]
@@ -611,7 +565,7 @@ Box=67,110,587,111,Etched
 Name=TEXT42
 Position=70,68,358,105
 Text=PN&NC: CORD CARE
-Form=15
+Form=14
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
 Color=49087
  
@@ -636,7 +590,7 @@ Box=80,108,600,109,Etched
 Name=TEXT43
 Position=286,226,301,258
 Text=U
-Form=16
+Form=15
 Color=4210688
  
   
@@ -644,7 +598,7 @@ Color=4210688
 Name=TEXT44
 Position=315,226,390,258
 Text=N.NNN
-Form=16
+Form=15
 Color=4210688
  
   
@@ -652,7 +606,7 @@ Color=4210688
 Name=TEXT45
 Position=83,66,425,103
 Text=PN&NC:  BIRTHWEIGHT
-Form=16
+Form=15
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
 Color=49087
  
@@ -674,7 +628,7 @@ Box=83,103,603,104,Etched
 Name=TEXT71
 Position=86,61,410,98
 Text=RC:  PERIOD RETURN
-Form=17
+Form=16
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
 Color=49087
  
@@ -699,7 +653,7 @@ Box=96,105,616,106,Etched
 Name=TEXT72
 Position=99,63,585,100
 Text=IYCF: INITIAL BREASTFEEDING
-Form=18
+Form=17
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
 Color=49087
  
@@ -708,7 +662,7 @@ Color=49087
 Name=TEXT14
 Position=213,184,228,216
 Text=U
-Form=18
+Form=17
 Color=4210688
  
   
@@ -716,7 +670,7 @@ Color=4210688
 Name=TEXT26
 Position=239,184,269,216
 Text=NN
-Form=18
+Form=17
 Color=4210688
  
 [EndForm]
@@ -759,7 +713,7 @@ Box=46,153,803,154,Etched
 Name=TEXT46
 Position=108,206,123,238
 Text=U
-Form=19
+Form=18
 Color=4210688
  
   
@@ -767,7 +721,7 @@ Color=4210688
 Name=TEXT47
 Position=134,206,164,238
 Text=NN
-Form=19
+Form=18
 Color=4210688
  
   
@@ -775,7 +729,7 @@ Color=4210688
 Name=TEXT48
 Position=428,206,443,238
 Text=U
-Form=19
+Form=18
 Color=4210688
  
   
@@ -783,7 +737,7 @@ Color=4210688
 Name=TEXT49
 Position=454,206,484,238
 Text=NN
-Form=19
+Form=18
 Color=4210688
  
   
@@ -791,7 +745,7 @@ Color=4210688
 Name=TEXT50
 Position=738,206,753,238
 Text=U
-Form=19
+Form=18
 Color=4210688
  
   
@@ -799,7 +753,7 @@ Color=4210688
 Name=TEXT51
 Position=764,206,794,238
 Text=NN
-Form=19
+Form=18
 Color=4210688
  
   
@@ -807,7 +761,7 @@ Color=4210688
 Name=TEXT27
 Position=51,111,681,148
 Text=PN&NC: PNC FOR NEWBORNS AND MOTHERS
-Form=19
+Form=18
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
 Color=49087
  
@@ -834,7 +788,7 @@ Box=56,163,813,164,Etched
 Name=TEXT73
 Position=61,121,565,158
 Text=PN&NC: SIGNAL CARE FUNCTIONS
-Form=20
+Form=19
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
 Color=49087
  
@@ -860,7 +814,7 @@ Box=51,156,382,157,Etched
 Name=009
 Position=56,228,101,260
 Text=CP1
-Form=21
+Form=20
 Color=4210688
  
   
@@ -868,7 +822,7 @@ Color=4210688
 Name=010
 Position=56,277,101,309
 Text=CP2
-Form=21
+Form=20
 Color=4210688
  
   
@@ -876,7 +830,7 @@ Color=4210688
 Name=TEXT15
 Position=51,111,357,148
 Text=RC: CONTRACEPTION
-Form=21
+Form=20
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
 Color=49087
  
@@ -908,7 +862,7 @@ Box=49,154,566,155,Etched
 Name=TEXT52
 Position=113,411,128,443
 Text=U
-Form=22
+Form=21
 Color=4210688
  
   
@@ -916,7 +870,7 @@ Color=4210688
 Name=TEXT53
 Position=140,411,170,443
 Text=NN
-Form=22
+Form=21
 Color=4210688
  
   
@@ -924,7 +878,7 @@ Color=4210688
 Name=TEXT54
 Position=503,263,518,295
 Text=U
-Form=22
+Form=21
 Color=4210688
  
   
@@ -932,7 +886,7 @@ Color=4210688
 Name=TEXT55
 Position=529,263,559,295
 Text=NN
-Form=22
+Form=21
 Color=4210688
  
   
@@ -940,7 +894,7 @@ Color=4210688
 Name=TEXT16
 Position=51,111,303,148
 Text=RC: UNMET NEED
-Form=22
+Form=21
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
 Color=49087
  
@@ -969,7 +923,7 @@ Box=59,164,576,165,Etched
 Name=TEXT75
 Position=61,121,565,158
 Text=MENSTRUAL HEALTH AND HYGIENE
-Form=23
+Form=22
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
 Color=49087
  
@@ -980,7 +934,7 @@ Name=FORM010
 Label=Female Genital Mutilation/Cutting
 QuestionTextHeight=205
 Level=1
-Size=1173,762
+Size=1169,789
 Color=14680063
 CapturePos=634,80
   
@@ -996,6 +950,7 @@ Item=FG10
 Item=FG7
 Item=FORMFG_ROSTER
 Item=FG24
+Item=FG24A
   
 Box=50,154,1144,155,Etched
   
@@ -1003,68 +958,9 @@ Box=50,154,1144,155,Etched
 Name=TEXT17
 Position=51,111,501,148
 Text=FEMALE GENITAL MUTILATION
-Form=24
+Form=23
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
 Color=49087
- 
-[EndForm]
-  
-[Form]
-Name=FORM035
-Label=HPV
-QuestionTextHeight=180
-Level=1
-Size=393,417
-Color=14680063
-  
-Item=HP2
-Item=HP3
-Item=HP4
-Item=HP5
-Item=HP6
-  
-Box=59,164,368,166,Etched
-  
-[Text]
-Name=TEXT74
-Position=61,121,115,158
-Text=HPV
-Form=25
-Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
-Color=49087
- 
-[EndForm]
-  
-[Form]
-Name=FORM037
-Label=Time Use
-QuestionTextHeight=180
-Level=1
-Size=1781,993
-Color=14680063
-  
-Item=FORMTU_ROSTER
-Item=TU3
-Item=TU4
-Item=TU5
-Item=TU18
-  
-Box=71,143,380,145,Etched
-  
-[Text]
-Name=TEXT76
-Position=73,100,217,137
-Text=TIME-USE
-Form=26
-Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
-Color=49087
- 
-  
-[Text]
-Name=TEXT22
-Position=172,224,247,256
-Text=HH.MM
-Form=26
  
 [EndForm]
   
@@ -1089,7 +985,7 @@ Box=49,154,670,155,Etched
 Name=021
 Position=54,214,114,246
 Text=DV1A
-Form=27
+Form=24
 Color=4210688
  
   
@@ -1097,7 +993,7 @@ Color=4210688
 Name=022
 Position=54,262,114,294
 Text=DV1B
-Form=27
+Form=24
 Color=4210688
  
   
@@ -1105,7 +1001,7 @@ Color=4210688
 Name=023
 Position=54,311,114,343
 Text=DV1C
-Form=27
+Form=24
 Color=4210688
  
   
@@ -1113,7 +1009,7 @@ Color=4210688
 Name=024
 Position=54,360,114,392
 Text=DV1D
-Form=27
+Form=24
 Color=4210688
  
   
@@ -1121,7 +1017,7 @@ Color=4210688
 Name=025
 Position=54,411,114,443
 Text=DV1E
-Form=27
+Form=24
 Color=4210688
  
   
@@ -1129,75 +1025,7 @@ Color=4210688
 Name=TEXT13
 Position=51,111,663,148
 Text=ATTITUDES TOWARD DOMESTIC VIOLENCE
-Form=27
-Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
-Color=49087
- 
-[EndForm]
-  
-[Form]
-Name=FORM038
-Label=SDG16: Safety
-QuestionTextHeight=180
-Level=1
-Size=704,301
-Color=14680063
-  
-Item=VT20
-Item=VT21
-  
-Box=59,163,679,164,Etched
-  
-[Text]
-Name=TEXT80
-Position=61,121,295,158
-Text=SDG16: SAFETY
-Form=28
-Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
-Color=49087
- 
-[EndForm]
-  
-[Form]
-Name=FORM039
-Label=SDG16: Discrimination
-QuestionTextHeight=180
-Level=1
-Size=1508,711
-Color=14680063
-  
-Item=VT23A
-Item=VT23A1
-Item=VT23B
-Item=VT23B1
-Item=VT23C
-Item=VT23C1
-Item=VT23D
-Item=VT23D1
-Item=VT23E
-Item=VT23E1
-Item=VT23F
-Item=VT23F1
-Item=VT23G
-Item=VT23G1
-Item=VT23H
-Item=VT23H1
-Item=VT23I
-Item=VT23I1
-Item=VT23J
-Item=VT23J1
-Item=VT23K
-Item=VT23K1
-Item=VT23X
-Item=VT23X2
-  
-Box=56,142,531,143,Etched
-  
-[Text]
-Name=TEXT79
-Position=55,99,433,136
-Text=SDG16: DISCRIMINATION
-Form=29
+Form=24
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
 Color=49087
  
@@ -1229,7 +1057,7 @@ Box=48,153,455,154,Etched
 Name=000
 Position=53,262,98,294
 Text=MA2
-Form=30
+Form=25
 Color=4210688
  
   
@@ -1237,7 +1065,7 @@ Color=4210688
 Name=001
 Position=53,417,98,449
 Text=MA5
-Form=30
+Form=25
 Color=4210688
  
   
@@ -1245,7 +1073,7 @@ Color=4210688
 Name=002
 Position=258,213,303,245
 Text=MA6
-Form=30
+Form=25
 Color=4210688
  
   
@@ -1253,7 +1081,7 @@ Color=4210688
 Name=003
 Position=258,262,303,294
 Text=MA7
-Form=30
+Form=25
 Color=4210688
  
   
@@ -1261,7 +1089,7 @@ Color=4210688
 Name=006
 Position=258,394,318,426
 Text=MA11
-Form=30
+Form=25
 Color=4210688
  
   
@@ -1269,7 +1097,7 @@ Color=4210688
 Name=TEXT118000000
 Position=258,340,303,372
 Text=MA8
-Form=30
+Form=25
 Color=4210688
  
   
@@ -1277,7 +1105,7 @@ Color=4210688
 Name=TEXT56
 Position=359,339,374,371
 Text=/
-Form=30
+Form=25
 Color=4210688
  
   
@@ -1285,7 +1113,7 @@ Color=4210688
 Name=TEXT57
 Position=322,307,352,339
 Text=MM
-Form=30
+Form=25
 Color=4210688
  
   
@@ -1293,7 +1121,7 @@ Color=4210688
 Name=TEXT58
 Position=385,307,445,339
 Text=YYYY
-Form=30
+Form=25
 Color=4210688
  
   
@@ -1301,43 +1129,7 @@ Color=4210688
 Name=TEXT1
 Position=51,111,303,148
 Text=MARRIAGE/UNION
-Form=30
-Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
-Color=49087
- 
-[EndForm]
-  
-[Form]
-Name=FORM006
-Label=Adult Functioning
-QuestionTextHeight=425
-Level=1
-Size=633,477
-Color=14680063
-CapturePos=634,80
-  
-Item=AF2
-Item=AF3
-Item=AF6
-Item=AF8
-Item=AF9
-Item=AF10
-Item=AF11
-Item=AF12
-Item=AF13
-Item=AF14
-Item=AF15
-Item=AF16
-Item=AF17
-Item=AF18
-  
-Box=49,155,358,156,Etched
-  
-[Text]
-Name=TEXT19
-Position=51,111,357,148
-Text=ADULT FUNCTIONING
-Form=31
+Form=25
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
 Color=49087
  
@@ -1362,7 +1154,7 @@ Box=50,154,369,155,Etched
 Name=TEXT59
 Position=109,254,124,286
 Text=U
-Form=32
+Form=26
 Color=4210688
  
   
@@ -1370,7 +1162,7 @@ Color=4210688
 Name=TEXT60
 Position=137,254,167,286
 Text=NN
-Form=32
+Form=26
 Color=4210688
  
   
@@ -1378,7 +1170,7 @@ Color=4210688
 Name=TEXT4
 Position=51,111,393,148
 Text=RC: SEXUAL ACTIVITY
-Form=32
+Form=26
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
 Color=49087
  
@@ -1403,7 +1195,7 @@ Box=60,164,379,165,Etched
 Name=TEXT20
 Position=61,121,817,158
 Text=RC: DECISION-MAKING ON REPRODUCTIVE HEALTH
-Form=33
+Form=27
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
 Color=49087
  
@@ -1434,7 +1226,7 @@ Box=49,155,714,156,Etched
 Name=TEXT21
 Position=51,111,375,148
 Text=MATERNAL MORTALITY
-Form=34
+Form=28
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
 Color=49087
  
@@ -1458,7 +1250,7 @@ Box=50,154,535,155,Etched
 Name=TEXT61
 Position=51,111,519,148
 Text=MATERNAL MORTALITY - Cont.
-Form=35
+Form=29
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
 Color=49087
  
@@ -1481,143 +1273,7 @@ Box=49,154,1212,155,Etched
 Name=TEXT62
 Position=51,111,519,148
 Text=MATERNAL MORTALITY - Cont.
-Form=36
-Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
-Color=49087
- 
-[EndForm]
-  
-[Form]
-Name=FORM040
-Label=Tobacco Use
-QuestionTextHeight=274
-Level=1
-Size=704,587
-Color=14680063
-  
-Item=TO1
-Item=TO2
-Item=TO3
-Item=TO4
-Item=TO5
-Item=TO6
-Item=TO7
-Item=TO8
-Item=TO9
-Item=TO10
-Item=TO11
-Item=TO12
-  
-Box=59,163,679,164,Etched
-  
-[Text]
-Name=TEXT81
-Position=61,121,259,158
-Text=TOBACCO USE
-Form=37
-Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
-Color=49087
- 
-[EndForm]
-  
-[Form]
-Name=FORM016
-Label=Mental Health 1
-QuestionTextHeight=198
-Level=1
-Size=1109,662
-Color=14680063
-  
-Item=MH1
-Item=MH2
-Item=MH3
-Item=MH4
-Item=MH5
-Item=MH6
-Item=MH7
-Item=MH8
-Item=MH9
-Item=MH10
-Item=MH11
-Item=MH12
-Item=MH15
-Item=MH16
-Item=MH17
-Item=MH18
-Item=MH19
-Item=MH20
-Item=MH21
-Item=MH22
-Item=MH23
-Item=MH24
-Item=MH25
-Item=MH27
-Item=MH28
-Item=MH29
-Item=MH30
-Item=MH33
-Item=MH34
-Item=MH35
-Item=MH36
-Item=MH37
-Item=MH38
-Item=MH36A
-Item=MH37A
-  
-Box=68,174,688,175,Etched
-  
-[Text]
-Name=TEXT24
-Position=68,131,338,168
-Text=MENTAL HEALTH 1
-Form=38
-Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
-Color=49087
- 
-[EndForm]
-  
-[Form]
-Name=FORM041
-Label=Mental Health 2
-QuestionTextHeight=397
-Level=1
-Size=1337,873
-Color=14680063
-  
-Item=MH40
-Item=MH42
-Item=MH43
-Item=MH45
-Item=MH46
-Item=MH48
-Item=MH49AB
-Item=MH49AB1
-Item=MH49AB2
-Item=MH49AB3
-Item=MH49AB4
-Item=MH49AB5
-Item=MH49AB6
-Item=MH49AB7
-Item=MH49AB8
-Item=MH49AB8N
-Item=MH49AB9N
-Item=MH49AB10N
-Item=MH49AB11N
-Item=MH49AB12
-Item=MH49AB13
-Item=MH49AB14
-Item=MH49C
-Item=MH49D
-Item=MH51
-Item=MH47
-  
-Box=78,185,925,186,Etched
-  
-[Text]
-Name=TEXT82
-Position=80,142,350,179
-Text=MENTAL HEALTH 2
-Form=39
+Form=30
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
 Color=49087
  
@@ -1631,116 +1287,6 @@ Level=1
 Size=4348,1010
 Color=14680063
   
-Item=VW1
-Item=VW4
-Item=VW5
-Item=VW6A1
-Item=VW6A2
-Item=VW6B1
-Item=VW6B2
-Item=VW6C1
-Item=VW6C2
-Item=VW6D1
-Item=VW6D2
-Item=VW6E1
-Item=VW6E2
-Item=VW7A1
-Item=VW7A2
-Item=VW7B1
-Item=VW7B2
-Item=VW7C1
-Item=VW7C2
-Item=VW8A1
-Item=VW8A2
-Item=VW8B1
-Item=VW8B2
-Item=VW8C1
-Item=VW8C2
-Item=VW8D1
-Item=VW8D2
-Item=VW8E1
-Item=VW8E2
-Item=VW8F1
-Item=VW8F2
-Item=VW8G1
-Item=VW8G2
-Item=VW8H1
-Item=VW8H2
-Item=VW8I1
-Item=VW8I2
-Item=VW8J1
-Item=VW8J2
-Item=VW16A1
-Item=VW16A2
-Item=VW16B1
-Item=VW16B2
-Item=VW16C1
-Item=VW16C2
-Item=VW18
-Item=VW22A
-Item=VW23
-Item=VW24
-Item=VW26
-Item=VW27
-Item=VW28A
-Item=VW29
-Item=VW30A
-Item=VW32
-Item=VW33
-Item=VW34
-Item=VW36A
-Item=VW36B
-Item=VW36C
-Item=VW37
-Item=VW2
-Item=VW15
-Item=VW35B
-Item=VW35C
-Item=VW35C1
-Item=VW35C2
-Item=VW35C3
-Item=VW35C5
-Item=VW35C6
-Item=VW35C7
-Item=VW35C8
-Item=VW35C8N
-Item=VW35C9
-Item=VW35C9N
-Item=VW35C10N
-Item=VW35C11N
-Item=VW35C12
-Item=VW35C13
-Item=VW35E
-Item=VW35F
-Item=VW35G
-Item=VW35G1
-Item=VW35G2
-Item=VW35G3
-Item=VW35G5
-Item=VW35G6
-Item=VW35G7
-Item=VW35G8
-Item=VW35G8N
-Item=VW35G9
-Item=VW35G9N
-Item=VW35G10N
-Item=VW35G11N
-Item=VW35G12
-Item=VW35G13
-Item=VW35H
-Item=VW35I
-Item=VW36AA
-Item=VW35D
-Item=VW10A
-Item=VW10B
-Item=VW10C
-Item=VW11
-Item=VW12
-Item=VW13
-Item=VW14
-Item=VW20
-Item=VW21
-Item=VW35
   
 Box=57,153,532,154,Etched
   
@@ -1748,7 +1294,7 @@ Box=57,153,532,154,Etched
 Name=TEXT18
 Position=56,110,452,147
 Text=VIOLENCE AGAINST WOMEN
-Form=40
+Form=31
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
 Color=49087
  
@@ -1784,7 +1330,7 @@ Box=52,154,527,155,Etched
 Name=TEXT9
 Position=428,200,458,232
 Text=HH
-Form=41
+Form=32
 Color=4210688
  
   
@@ -1792,7 +1338,7 @@ Color=4210688
 Name=TEXT23
 Position=489,200,519,232
 Text=MM
-Form=41
+Form=32
 Color=4210688
  
   
@@ -1800,7 +1346,7 @@ Color=4210688
 Name=TEXT63
 Position=466,234,481,266
 Text=:
-Form=41
+Form=32
 Color=4210688
  
   
@@ -1808,7 +1354,7 @@ Color=4210688
 Name=TEXT64
 Position=51,111,339,148
 Text=END OF INTERVIEW
-Form=41
+Form=32
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
 Color=49087
  
@@ -2273,367 +1819,9 @@ Text=IN2
   
 [Group]
 Required=Yes
-Name=FORMNE
-Label=Employment and Training
-Form=5
-Max=1
-  
-[Field]
-Name=NE3
-Position=189,226,208,260
-Item=NE3,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=5
-  
-[Text]
-Position=84,229,129,261
-Text=NE3
- 
-  
-[Field]
-Name=NE4
-Position=189,262,208,296
-Item=NE4,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=5
-  
-[Text]
-Position=84,265,129,297
-Text=NE4
- 
-  
-[Field]
-Name=NE5
-Position=189,298,208,332
-Item=NE5,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=5
-  
-[Text]
-Position=84,301,129,333
-Text=NE5
- 
-  
-[Field]
-Name=NE6
-Position=189,334,208,368
-Item=NE6,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=5
-  
-[Text]
-Position=84,337,129,369
-Text=NE6
- 
-  
-[Field]
-Name=NE7
-Position=189,370,208,404
-Item=NE7,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=5
-  
-[Text]
-Position=84,373,129,405
-Text=NE7
- 
-  
-[Field]
-Name=NE8
-Position=189,406,208,440
-Item=NE8,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=5
-  
-[Text]
-Position=84,409,129,441
-Text=NE8
- 
-  
-[Field]
-Name=NE9
-Position=189,442,208,476
-Item=NE9,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=5
-  
-[Text]
-Position=84,445,129,477
-Text=NE9
- 
-  
-[Field]
-Name=NE10
-Position=189,478,208,512
-Item=NE10,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=5
-  
-[Text]
-Position=84,481,144,513
-Text=NE10
- 
-  
-[Field]
-Name=NE11
-Position=189,514,208,548
-Item=NE11,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=5
-  
-[Text]
-Position=84,517,144,549
-Text=NE11
- 
-  
-[Field]
-Name=NE12A
-Position=425,225,444,259
-Item=NE12A,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=5
-  
-[Text]
-Position=320,228,395,260
-Text=NE12A
- 
-  
-[Field]
-Name=NE12B
-Position=425,263,444,297
-Item=NE12B,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=5
-  
-[Text]
-Position=320,266,395,298
-Text=NE12B
- 
-  
-[Field]
-Name=NE12C
-Position=425,301,444,335
-Item=NE12C,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=5
-  
-[Text]
-Position=320,304,395,336
-Text=NE12C
- 
-  
-[Field]
-Name=NE12D
-Position=425,339,444,373
-Item=NE12D,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=5
-  
-[Text]
-Position=320,342,395,374
-Text=NE12D
- 
-  
-[Field]
-Name=NE13
-Position=425,377,444,411
-Item=NE13,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=5
-  
-[Text]
-Position=320,380,380,412
-Text=NE13
- 
-  
-[Field]
-Name=NE14
-Position=425,415,444,449
-Item=NE14,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=5
-  
-[Text]
-Position=320,418,380,450
-Text=NE14
- 
-  
-[Field]
-Name=NE15
-Position=425,453,444,487
-Item=NE15,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=5
-  
-[Text]
-Position=320,456,380,488
-Text=NE15
- 
-  
-[Field]
-Name=NE16
-Position=425,491,444,525
-Item=NE16,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=5
-  
-[Text]
-Position=320,494,380,526
-Text=NE16
- 
-  
-[Field]
-Name=NE17
-Position=425,529,444,563
-Item=NE17,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=5
-  
-[Text]
-Position=320,532,380,564
-Text=NE17
- 
-  
-[Field]
-Name=NE18A
-Position=636,225,655,259
-Item=NE18A,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=5
-  
-[Text]
-Position=531,224,606,256
-Text=NE18A
- 
-  
-[Field]
-Name=NE18B
-Position=636,263,655,297
-Item=NE18B,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=5
-  
-[Text]
-Position=531,262,606,294
-Text=NE18B
- 
-  
-[Field]
-Name=NE18X
-Position=636,301,655,335
-Item=NE18X,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=5
-  
-[Text]
-Position=531,300,606,332
-Text=NE18X
- 
-  
-[Field]
-Name=NE20
-Position=636,339,655,373
-Item=NE20,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=5
-  
-[Text]
-Position=531,338,591,370
-Text=NE20
- 
-  
-[Field]
-Name=NE21
-Position=636,377,655,411
-Item=NE21,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=5
-  
-[Text]
-Position=531,376,591,408
-Text=NE21
- 
-  
-[Field]
-Name=NE22
-Position=636,415,655,449
-Item=NE22,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=5
-  
-[Text]
-Position=531,418,591,450
-Text=NE22
- 
-  
-[Field]
-Name=NE23
-Position=636,453,655,487
-Item=NE23,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=5
-  
-[Text]
-Position=531,456,591,488
-Text=NE23
- 
-[EndGroup]
-  
-[Group]
-Required=Yes
 Name=FORMIC
 Label=ICT Use
-Form=6
+Form=5
 Max=1
   
 [Field]
@@ -2643,7 +1831,7 @@ Item=IC1,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=6
+Form=5
   
 [Text]
 Position=70,219,115,251
@@ -2657,7 +1845,7 @@ Item=IC2,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=6
+Form=5
   
 [Text]
 Position=70,268,115,300
@@ -2671,7 +1859,7 @@ Item=IC3,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=6
+Form=5
   
 [Text]
 Position=70,317,115,349
@@ -2685,7 +1873,7 @@ Item=IC4,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=6
+Form=5
   
 [Text]
 Position=70,366,115,398
@@ -2699,7 +1887,7 @@ Item=IC5,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=6
+Form=5
   
 [Text]
 Position=70,415,115,447
@@ -2713,7 +1901,7 @@ Item=IC7B,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=6
+Form=5
   
 [Text]
 Position=241,219,301,251
@@ -2727,7 +1915,7 @@ Item=IC7C,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=6
+Form=5
   
 [Text]
 Position=241,256,301,288
@@ -2741,7 +1929,7 @@ Item=IC7D,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=6
+Form=5
   
 [Text]
 Position=241,294,301,326
@@ -2755,7 +1943,7 @@ Item=IC7E,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=6
+Form=5
   
 [Text]
 Position=241,332,301,364
@@ -2769,7 +1957,7 @@ Item=IC7F,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=6
+Form=5
   
 [Text]
 Position=241,370,301,402
@@ -2783,7 +1971,7 @@ Item=IC7G,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=6
+Form=5
   
 [Text]
 Position=241,408,301,440
@@ -2797,7 +1985,7 @@ Item=IC7H,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=6
+Form=5
   
 [Text]
 Position=241,446,301,478
@@ -2811,7 +1999,7 @@ Item=IC7I,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=6
+Form=5
   
 [Text]
 Position=241,484,301,516
@@ -2825,7 +2013,7 @@ Item=IC7J,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=6
+Form=5
   
 [Text]
 Position=241,522,301,554
@@ -2839,7 +2027,7 @@ Item=IC7K,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=6
+Form=5
   
 [Text]
 Position=241,560,301,592
@@ -2853,7 +2041,7 @@ Item=IC7L,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=6
+Form=5
   
 [Text]
 Position=241,598,301,630
@@ -2867,7 +2055,7 @@ Item=IC10,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=6
+Form=5
   
 [Text]
 Position=420,219,480,251
@@ -2881,7 +2069,7 @@ Item=IC11,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=6
+Form=5
   
 [Text]
 Position=420,256,480,288
@@ -2893,7 +2081,7 @@ Text=IC11
 Required=Yes
 Name=FORMCM
 Label=Fertility/Birth History
-Form=7
+Form=6
 Max=1
   
 [Field]
@@ -2903,7 +2091,7 @@ Item=CM1,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=7
+Form=6
   
 [Text]
 Position=56,219,101,251
@@ -2919,7 +2107,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=7
+Form=6
   
 [Text]
 Position=56,269,101,301
@@ -2935,7 +2123,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=7
+Form=6
   
 [Text]
 Position=56,320,101,352
@@ -2951,7 +2139,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=7
+Form=6
   
 [Text]
 Position=56,372,101,404
@@ -2967,7 +2155,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=7
+Form=6
   
 [Text]
 Position=56,424,101,456
@@ -2983,7 +2171,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=7
+Form=6
   
 [Text]
 Position=56,476,101,508
@@ -2999,7 +2187,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=7
+Form=6
   
 [Text]
 Position=56,529,101,561
@@ -3015,7 +2203,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=7
+Form=6
   
 [Text]
 Position=269,219,314,251
@@ -3031,7 +2219,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=7
+Form=6
   
 [Text]
 Position=269,269,314,301
@@ -3047,7 +2235,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=7
+Form=6
   
 [Text]
 Position=269,320,329,352
@@ -3063,7 +2251,7 @@ Protected=Yes
 UpperCase=Yes
 DataCaptureType=TextBox
 Keyboard=1033
-Form=7
+Form=6
   
 [Text]
 Position=269,372,524,500
@@ -3078,7 +2266,7 @@ Item=CM12,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=7
+Form=6
   
 [Text]
 Position=269,529,329,561
@@ -3092,7 +2280,7 @@ Color=4210688
 Required=Yes
 Name=FORMBX
 Label=Fertility/Birth History BH1 - BH2
-Form=8
+Form=7
 Max=1
   
 [Field]
@@ -3101,7 +2289,7 @@ Position=171,219,190,253
 Item=INTROBX,MICS7WM
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=8
+Form=7
   
 [Text]
 Position=56,220,131,252
@@ -3112,7 +2300,7 @@ Color=4210688
 [Grid]
 Name=FORMBX_ROSTER
 Label=Fertility/Birth History (initial)
-Form=8
+Form=7
 Required=No
 Type=Record
 TypeName=MODBX
@@ -3348,7 +2536,7 @@ Position=386,684,405,718
 Item=BHAUX,MICS7WM
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=8
+Form=7
   
 [Text]
 Position=56,685,341,717
@@ -3361,7 +2549,7 @@ Color=4210688
 Required=Yes
 Name=FORMBH
 Label=Fertility/Birth History
-Form=9
+Form=8
 Max=1
   
 [Field]
@@ -3370,7 +2558,7 @@ Position=153,196,172,230
 Item=INTROBH,MICS7WM
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=9
+Form=8
   
 [Text]
 Position=55,197,130,229
@@ -3381,7 +2569,7 @@ Color=4210688
 [Grid]
 Name=FORMBH_ROSTER
 Label=Birth history
-Form=9
+Form=8
 Required=No
 Type=Record
 TypeName=MODBH
@@ -3819,7 +3007,7 @@ Item=BH11,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=9
+Form=8
   
 [Text]
 Position=55,676,115,708
@@ -3835,7 +3023,7 @@ Protected=Yes
 UpperCase=Yes
 DataCaptureType=TextBox
 Keyboard=1033
-Form=9
+Form=8
   
 [Text]
 Position=55,728,1060,760
@@ -3852,7 +3040,7 @@ Protected=Yes
 UpperCase=Yes
 DataCaptureType=TextBox
 Keyboard=1033
-Form=9
+Form=8
   
 [Text]
 Position=55,784,805,816
@@ -3870,7 +3058,7 @@ UpperCase=Yes
 UseUnicodeTextBox=Yes
 DataCaptureType=TextBox
 Keyboard=1033
-Form=9
+Form=8
   
 [Text]
 Position=55,842,415,874
@@ -3884,7 +3072,7 @@ Color=4210688
 Required=Yes
 Name=FORMDB
 Label=Desire for Last Birth
-Form=10
+Form=9
 Max=1
   
 [Field]
@@ -3895,7 +3083,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=10
+Form=9
   
 [Text]
 Position=54,211,99,243
@@ -3911,7 +3099,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=10
+Form=9
   
 [Text]
 Position=54,272,99,304
@@ -3924,7 +3112,7 @@ Color=4210688
 Required=Yes
 Name=FORMMN
 Label=Antenatal Care
-Form=11
+Form=10
 Max=1
   
 [Field]
@@ -3934,7 +3122,7 @@ Item=MN2,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=11
+Form=10
   
 [Text]
 Position=53,212,98,244
@@ -3949,7 +3137,7 @@ Item=MN3,MICS7WM
 UpperCase=Yes
 DataCaptureType=CheckBox
 Keyboard=1033
-Form=11
+Form=10
   
 [Text]
 Position=53,262,98,294
@@ -3964,7 +3152,7 @@ Item=MN4AU,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=11
+Form=10
   
 [Text]
 Position=53,338,98,370
@@ -3979,7 +3167,7 @@ Item=MN4AN,MICS7WM
 UpperCase=Yes
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=11
+Form=10
   
   
 [Field]
@@ -3989,7 +3177,7 @@ Item=MN5,MICS7WM
 UpperCase=Yes
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=11
+Form=10
   
 [Text]
 Position=52,390,97,422
@@ -4004,7 +3192,7 @@ Item=MN6A,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=11
+Form=10
   
 [Text]
 Position=53,443,113,475
@@ -4019,7 +3207,7 @@ Item=MN6B,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=11
+Form=10
   
 [Text]
 Position=53,492,113,524
@@ -4034,7 +3222,7 @@ Item=MN6C,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=11
+Form=10
   
 [Text]
 Position=53,543,113,575
@@ -4049,7 +3237,7 @@ Item=MN6D,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=11
+Form=10
   
 [Text]
 Position=53,601,113,633
@@ -4063,7 +3251,7 @@ Item=MN6E,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=11
+Form=10
   
 [Text]
 Position=53,658,113,690
@@ -4077,7 +3265,7 @@ Item=MN6F,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=11
+Form=10
   
 [Text]
 Position=53,703,113,735
@@ -4091,7 +3279,7 @@ Item=MN6G,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=11
+Form=10
   
 [Text]
 Position=53,753,113,785
@@ -4103,7 +3291,7 @@ Text=MN6G
 Required=Yes
 Name=FORMMN2
 Label=Malaria: IPTP
-Form=12
+Form=11
 Max=1
   
 [Field]
@@ -4113,7 +3301,7 @@ Item=MN16,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=12
+Form=11
   
 [Text]
 Position=91,243,151,275
@@ -4127,7 +3315,7 @@ Item=MN17,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=12
+Form=11
   
 [Text]
 Position=91,290,151,322
@@ -4136,13 +3324,13 @@ Text=MN17
   
 [Field]
 Name=MN18
-Position=186,335,277,369
+Position=186,335,259,369
 Item=MN18,MICS7WM
 UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=CheckBox
 Keyboard=1033
-Form=12
+Form=11
   
 [Text]
 Position=91,338,151,370
@@ -4154,7 +3342,7 @@ Text=MN18
 Required=Yes
 Name=FORMMN3
 Label=Delivery Care
-Form=13
+Form=12
 Max=1
   
 [Field]
@@ -4165,7 +3353,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=CheckBox
 Keyboard=1033
-Form=13
+Form=12
   
 [Text]
 Position=97,255,157,287
@@ -4179,7 +3367,7 @@ Item=MN20,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=13
+Form=12
   
 [Text]
 Position=97,325,157,357
@@ -4193,7 +3381,7 @@ Item=MN21,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=13
+Form=12
   
 [Text]
 Position=97,384,157,416
@@ -4207,7 +3395,7 @@ Item=MN22,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=13
+Form=12
   
 [Text]
 Position=97,434,157,466
@@ -4219,7 +3407,7 @@ Text=MN22
 Required=Yes
 Name=FORMMN4
 Label=PN&NC: Thermal Care
-Form=14
+Form=13
 Max=1
   
 [Field]
@@ -4229,7 +3417,7 @@ Item=MN23,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=14
+Form=13
   
 [Text]
 Position=105,247,165,279
@@ -4243,7 +3431,7 @@ Item=MN24,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=14
+Form=13
   
 [Text]
 Position=105,299,165,331
@@ -4257,7 +3445,7 @@ Item=MN25,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=14
+Form=13
   
 [Text]
 Position=105,354,165,386
@@ -4271,7 +3459,7 @@ Item=MN26U,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=14
+Form=13
   
 [Text]
 Position=105,439,180,471
@@ -4284,7 +3472,7 @@ Position=274,436,311,470
 Item=MN26N,MICS7WM
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=14
+Form=13
   
 [EndGroup]
   
@@ -4292,7 +3480,7 @@ Form=14
 Required=Yes
 Name=FORMMN5
 Label=PN&NC: Cord Care
-Form=15
+Form=14
 Max=1
   
 [Field]
@@ -4302,7 +3490,7 @@ Item=MN28,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=15
+Form=14
   
 [Text]
 Position=77,147,137,179
@@ -4318,7 +3506,7 @@ Item=MN29,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=15
+Form=14
   
 [Text]
 Position=77,200,137,232
@@ -4334,7 +3522,7 @@ Item=MN30,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=15
+Form=14
   
 [Text]
 Position=77,249,137,281
@@ -4350,7 +3538,7 @@ Item=MN31,MICS7WM
 UpperCase=Yes
 DataCaptureType=CheckBox
 Keyboard=1033
-Form=15
+Form=14
   
 [Text]
 Position=77,300,137,332
@@ -4364,7 +3552,7 @@ Color=4210688
 Required=Yes
 Name=FORMMN6
 Label=PN&NC: Birthweight
-Form=16
+Form=15
 Max=1
   
 [Field]
@@ -4374,7 +3562,7 @@ Item=MN32,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=16
+Form=15
   
 [Text]
 Position=97,131,157,163
@@ -4391,7 +3579,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=16
+Form=15
   
 [Text]
 Position=97,181,157,213
@@ -4407,7 +3595,7 @@ Item=MN34A,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=16
+Form=15
   
   
 [Field]
@@ -4418,7 +3606,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=16
+Form=15
   
 [Text]
 Position=97,257,157,289
@@ -4432,7 +3620,7 @@ Color=4210688
 Required=Yes
 Name=FORMMN7
 Label=RC: Period Return
-Form=17
+Form=16
 Max=1
   
 [Field]
@@ -4442,7 +3630,7 @@ Item=MN35,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=17
+Form=16
   
 [Text]
 Position=79,137,139,169
@@ -4456,7 +3644,7 @@ Color=4210688
 Required=Yes
 Name=FORMMN8
 Label=IYCF: Initial Breastfeeding
-Form=18
+Form=17
 Max=1
   
 [Field]
@@ -4466,7 +3654,7 @@ Item=MN36,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=18
+Form=17
   
 [Text]
 Position=101,137,161,169
@@ -4482,7 +3670,7 @@ Item=MN37U,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=18
+Form=17
   
 [Text]
 Position=101,213,161,245
@@ -4498,7 +3686,7 @@ Item=MN37N,MICS7WM
 UpperCase=Yes
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=18
+Form=17
   
   
 [Field]
@@ -4508,7 +3696,7 @@ Item=MN38,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=18
+Form=17
   
 [Text]
 Position=101,266,161,298
@@ -4522,7 +3710,7 @@ Color=4210688
 Required=Yes
 Name=FORMPN
 Label=PN&NC: PNC for Newborns and Mothers
-Form=19
+Form=18
 Max=1
   
 [Field]
@@ -4532,7 +3720,7 @@ Item=PN3U,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=19
+Form=18
   
 [Text]
 Position=50,238,95,270
@@ -4547,7 +3735,7 @@ Item=PN3N,MICS7WM
 UpperCase=Yes
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=19
+Form=18
   
   
 [Field]
@@ -4557,7 +3745,7 @@ Item=PN4,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=19
+Form=18
   
 [Text]
 Position=51,289,96,321
@@ -4572,7 +3760,7 @@ Item=PN5,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=19
+Form=18
   
 [Text]
 Position=51,339,96,371
@@ -4587,7 +3775,7 @@ Item=PN6,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=19
+Form=18
   
 [Text]
 Position=51,386,96,418
@@ -4602,7 +3790,7 @@ Item=PN8,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=19
+Form=18
   
 [Text]
 Position=51,437,96,469
@@ -4617,7 +3805,7 @@ Item=PN9,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=19
+Form=18
   
 [Text]
 Position=51,486,96,518
@@ -4632,7 +3820,7 @@ Item=PN10,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=19
+Form=18
   
 [Text]
 Position=51,534,111,566
@@ -4647,7 +3835,7 @@ Item=PN11,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=19
+Form=18
   
 [Text]
 Position=51,583,111,615
@@ -4662,7 +3850,7 @@ Item=PN12,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=19
+Form=18
   
 [Text]
 Position=51,632,111,664
@@ -4677,7 +3865,7 @@ Item=PN13U,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=19
+Form=18
   
 [Text]
 Position=275,238,335,270
@@ -4692,7 +3880,7 @@ Item=PN13N,MICS7WM
 UpperCase=Yes
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=19
+Form=18
   
   
 [Field]
@@ -4702,7 +3890,7 @@ Item=PN14,MICS7WM
 UpperCase=Yes
 DataCaptureType=CheckBox
 Keyboard=1033
-Form=19
+Form=18
   
 [Text]
 Position=275,289,335,321
@@ -4717,7 +3905,7 @@ Item=PN15,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=19
+Form=18
   
 [Text]
 Position=275,339,335,371
@@ -4732,7 +3920,7 @@ Item=PN17,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=19
+Form=18
   
 [Text]
 Position=275,386,335,418
@@ -4747,7 +3935,7 @@ Item=PN19,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=19
+Form=18
   
 [Text]
 Position=275,437,335,469
@@ -4762,7 +3950,7 @@ Item=PN20,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=19
+Form=18
   
 [Text]
 Position=275,486,335,518
@@ -4777,7 +3965,7 @@ Item=PN21,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=19
+Form=18
   
 [Text]
 Position=275,534,335,566
@@ -4792,7 +3980,7 @@ Item=PN22U,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=19
+Form=18
   
 [Text]
 Position=584,238,644,270
@@ -4807,7 +3995,7 @@ Item=PN22N,MICS7WM
 UpperCase=Yes
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=19
+Form=18
   
   
 [Field]
@@ -4817,7 +4005,7 @@ Item=PN23,MICS7WM
 UpperCase=Yes
 DataCaptureType=CheckBox
 Keyboard=1033
-Form=19
+Form=18
   
 [Text]
 Position=584,289,644,321
@@ -4832,7 +4020,7 @@ Item=PN24,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=19
+Form=18
   
 [Text]
 Position=584,339,644,371
@@ -4845,7 +4033,7 @@ Color=4210688
 Required=Yes
 Name=FORMPN2
 Label=PN&NC: Signal Care Functions
-Form=20
+Form=19
 Max=1
   
 [Field]
@@ -4856,7 +4044,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=20
+Form=19
   
 [Text]
 Position=64,188,139,220
@@ -4873,7 +4061,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=20
+Form=19
   
 [Text]
 Position=64,239,139,271
@@ -4890,7 +4078,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=20
+Form=19
   
 [Text]
 Position=64,288,139,320
@@ -4907,7 +4095,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=20
+Form=19
   
 [Text]
 Position=64,336,124,368
@@ -4924,7 +4112,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=20
+Form=19
   
 [Text]
 Position=64,385,124,417
@@ -4941,7 +4129,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=20
+Form=19
   
 [Text]
 Position=64,434,124,466
@@ -4955,7 +4143,7 @@ Color=4210688
 Required=Yes
 Name=FORMCP
 Label=Contraception
-Form=21
+Form=20
 Max=1
   
 [Field]
@@ -4965,7 +4153,7 @@ Item=CP1,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=21
+Form=20
   
   
 [Field]
@@ -4975,7 +4163,7 @@ Item=CP2,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=21
+Form=20
   
   
 [Field]
@@ -4985,7 +4173,7 @@ Item=CP3,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=21
+Form=20
   
 [Text]
 Position=56,328,101,360
@@ -5001,7 +4189,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=CheckBox
 Keyboard=1033
-Form=21
+Form=20
   
 [Text]
 Position=56,381,101,413
@@ -5014,7 +4202,7 @@ Color=4210688
 Required=Yes
 Name=FORMUN
 Label=Unmet Need
-Form=22
+Form=21
 Max=1
   
 [Field]
@@ -5025,7 +4213,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=22
+Form=21
   
 [Text]
 Position=52,219,97,251
@@ -5041,7 +4229,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=22
+Form=21
   
 [Text]
 Position=52,267,97,299
@@ -5057,7 +4245,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=22
+Form=21
   
 [Text]
 Position=52,319,97,351
@@ -5073,7 +4261,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=22
+Form=21
   
 [Text]
 Position=52,367,97,399
@@ -5088,7 +4276,7 @@ Item=UN8U,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=22
+Form=21
   
 [Text]
 Position=52,444,97,476
@@ -5103,7 +4291,7 @@ Item=UN8N,MICS7WM
 UpperCase=Yes
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=22
+Form=21
   
   
 [Field]
@@ -5114,7 +4302,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=22
+Form=21
   
 [Text]
 Position=52,493,112,525
@@ -5130,7 +4318,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=CheckBox
 Keyboard=1033
-Form=22
+Form=21
   
 [Text]
 Position=268,216,328,248
@@ -5145,7 +4333,7 @@ Item=UN14U,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=22
+Form=21
   
 [Text]
 Position=268,296,328,328
@@ -5160,7 +4348,7 @@ Item=UN14N,MICS7WM
 UpperCase=Yes
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=22
+Form=21
   
 [EndGroup]
   
@@ -5168,7 +4356,7 @@ Form=22
 Required=Yes
 Name=FORMUN2
 Label=Menstural Health and Hygene
-Form=23
+Form=22
 Max=1
   
 [Field]
@@ -5178,7 +4366,7 @@ Item=UN16A,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=23
+Form=22
   
 [Text]
 Position=75,233,150,265
@@ -5192,7 +4380,7 @@ Item=UN16B,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=23
+Form=22
   
 [Text]
 Position=75,282,150,314
@@ -5206,7 +4394,7 @@ Item=UN16C,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=23
+Form=22
   
 [Text]
 Position=75,338,150,370
@@ -5220,7 +4408,7 @@ Item=UN17,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=23
+Form=22
   
 [Text]
 Position=75,400,135,432
@@ -5234,7 +4422,7 @@ Item=UN18,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=23
+Form=22
   
 [Text]
 Position=75,454,135,486
@@ -5248,7 +4436,7 @@ Item=UN19,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=23
+Form=22
   
 [Text]
 Position=75,507,135,539
@@ -5262,7 +4450,7 @@ Item=UN20,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=23
+Form=22
   
 [Text]
 Position=75,561,135,593
@@ -5276,7 +4464,7 @@ Item=UN21,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=23
+Form=22
   
 [Text]
 Position=409,230,469,262
@@ -5288,7 +4476,7 @@ Text=UN21
 Required=Yes
 Name=FORMFG
 Label=Female Genital Mutilation/Cutting
-Form=24
+Form=23
 Max=1
   
 [Field]
@@ -5298,7 +4486,7 @@ Item=FG1,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=24
+Form=23
   
 [Text]
 Position=53,218,98,250
@@ -5313,7 +4501,7 @@ Item=FG2,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=24
+Form=23
   
 [Text]
 Position=53,265,98,297
@@ -5328,7 +4516,7 @@ Item=FG3,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=24
+Form=23
   
 [Text]
 Position=53,313,98,345
@@ -5343,7 +4531,7 @@ Item=FG4,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=24
+Form=23
   
 [Text]
 Position=53,361,98,393
@@ -5358,7 +4546,7 @@ Item=FG5,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=24
+Form=23
   
 [Text]
 Position=53,408,98,440
@@ -5373,7 +4561,7 @@ Item=FG6,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=24
+Form=23
   
 [Text]
 Position=53,456,98,488
@@ -5388,7 +4576,7 @@ Item=FG7,MICS7WM
 UpperCase=Yes
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=24
+Form=23
   
 [Text]
 Position=53,504,98,536
@@ -5403,7 +4591,7 @@ Item=FG8,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=24
+Form=23
   
 [Text]
 Position=53,552,98,584
@@ -5419,7 +4607,7 @@ Protected=Yes
 UpperCase=Yes
 DataCaptureType=TextBox
 Keyboard=1033
-Form=24
+Form=23
   
 [Text]
 Position=53,613,773,677
@@ -5434,7 +4622,7 @@ Item=FG10,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=24
+Form=23
   
 [Text]
 Position=53,702,113,734
@@ -5445,7 +4633,7 @@ Color=4210688
 [Grid]
 Name=FORMFG_ROSTER
 Label=Female genital mutilation/cutting
-Form=24
+Form=23
 Required=No
 Type=Record
 TypeName=MODFC
@@ -5794,969 +4982,24 @@ Item=FG24,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=24
+Form=23
   
 [Text]
 Position=1050,702,1110,734
 Text=FG24
 Color=4210688
  
-[EndGroup]
-  
-[Group]
-Required=Yes
-Name=FORMHP
-Label=HPV
-Form=25
-Max=1
   
 [Field]
-Name=HP2
-Position=159,201,178,235
-Item=HP2,MICS7WM
-FieldLabelType=DictionaryName
+Name=FG24A
+Position=884,730,903,764
+Item=FG24A,MICS7WM
 DataCaptureType=RadioButton
-Keyboard=1033
-Form=25
+Form=23
   
 [Text]
-Position=66,204,111,236
-Text=HP2
- 
-  
-[Field]
-Name=HP3
-Position=159,240,178,274
-Item=HP3,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=25
-  
-[Text]
-Position=66,243,111,275
-Text=HP3
- 
-  
-[Field]
-Name=HP4
-Position=159,279,178,313
-Item=HP4,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=25
-  
-[Text]
-Position=66,282,111,314
-Text=HP4
- 
-  
-[Field]
-Name=HP5
-Position=159,318,178,352
-Item=HP5,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=25
-  
-[Text]
-Position=66,321,111,353
-Text=HP5
- 
-  
-[Field]
-Name=HP6
-Position=141,357,178,391
-Item=HP6,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=25
-  
-[Text]
-Position=66,360,111,392
-Text=HP6
- 
-[EndGroup]
-  
-[Group]
-Required=Yes
-Name=FORMTU
-Label=Time Use
-Form=26
-Max=1
-  
-[Field]
-Name=TU3
-Position=168,172,187,206
-Item=TU3,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Form=26
-  
-[Text]
-Position=77,172,122,204
-Text=TU3
-Form=26
- 
-  
-[Field]
-Name=TU4
-Position=168,260,259,294
-Item=TU4,MICS7WM
-DataCaptureType=NumberPad
-Form=26
-  
-[Text]
-Position=77,262,122,294
-Text=TU4
-Form=26
- 
-  
-[Field]
-Name=TU5
-Position=168,311,259,345
-Item=TU5,MICS7WM
-DataCaptureType=NumberPad
-Form=26
-  
-[Text]
-Position=77,313,122,345
-Text=TU5
-Form=26
- 
-  
-[Grid]
-Name=FORMTU_ROSTER
-Label=Time-Use Roster
-Form=26
-Required=No
-Type=Record
-TypeName=MODTU2
-Max=100
-DisplaySize=81,374,1706,881
-Orientation=Horizontal
-FieldRowHeight=42
-HeadingRowHeight=0
-FreeMovement=No
- 
-[Text]
-Position=0,0,53,42
-Text=1
-VerticalAlignment=Top
- 
-  
-[Text]
-Position=0,0,53,42
-Text=2
- 
-  
-[Text]
-Position=0,0,53,42
-Text=3
- 
-  
-[Text]
-Position=0,0,53,42
-Text=4
- 
-  
-[Text]
-Position=0,0,53,42
-Text=5
- 
-  
-[Text]
-Position=0,0,53,42
-Text=6
- 
-  
-[Text]
-Position=0,0,53,42
-Text=7
- 
-  
-[Text]
-Position=0,0,53,42
-Text=8
- 
-  
-[Text]
-Position=0,0,53,42
-Text=9
- 
-  
-[Text]
-Position=0,0,53,42
-Text=10
- 
-  
-[Text]
-Position=0,0,53,42
-Text=11
- 
-  
-[Text]
-Position=0,0,53,42
-Text=12
- 
-  
-[Text]
-Position=0,0,53,42
-Text=13
- 
-  
-[Text]
-Position=0,0,53,42
-Text=14
- 
-  
-[Text]
-Position=0,0,53,42
-Text=15
- 
-  
-[Text]
-Position=0,0,53,42
-Text=16
- 
-  
-[Text]
-Position=0,0,53,42
-Text=17
- 
-  
-[Text]
-Position=0,0,53,42
-Text=18
- 
-  
-[Text]
-Position=0,0,53,42
-Text=19
- 
-  
-[Text]
-Position=0,0,53,42
-Text=20
- 
-  
-[Text]
-Position=0,0,53,42
-Text=21
- 
-  
-[Text]
-Position=0,0,53,42
-Text=22
- 
-  
-[Text]
-Position=0,0,53,42
-Text=23
- 
-  
-[Text]
-Position=0,0,53,42
-Text=24
- 
-  
-[Text]
-Position=0,0,53,42
-Text=25
- 
-  
-[Text]
-Position=0,0,53,42
-Text=26
- 
-  
-[Text]
-Position=0,0,53,42
-Text=27
- 
-  
-[Text]
-Position=0,0,53,42
-Text=28
- 
-  
-[Text]
-Position=0,0,53,42
-Text=29
- 
-  
-[Text]
-Position=0,0,53,42
-Text=30
- 
-  
-[Text]
-Position=0,0,53,42
-Text=31
- 
-  
-[Text]
-Position=0,0,53,42
-Text=32
- 
-  
-[Text]
-Position=0,0,53,42
-Text=33
- 
-  
-[Text]
-Position=0,0,53,42
-Text=34
- 
-  
-[Text]
-Position=0,0,53,42
-Text=35
- 
-  
-[Text]
-Position=0,0,53,42
-Text=36
- 
-  
-[Text]
-Position=0,0,53,42
-Text=37
- 
-  
-[Text]
-Position=0,0,53,42
-Text=38
- 
-  
-[Text]
-Position=0,0,53,42
-Text=39
- 
-  
-[Text]
-Position=0,0,53,42
-Text=40
- 
-  
-[Text]
-Position=0,0,53,42
-Text=41
- 
-  
-[Text]
-Position=0,0,53,42
-Text=42
- 
-  
-[Text]
-Position=0,0,53,42
-Text=43
- 
-  
-[Text]
-Position=0,0,53,42
-Text=44
- 
-  
-[Text]
-Position=0,0,53,42
-Text=45
- 
-  
-[Text]
-Position=0,0,53,42
-Text=46
- 
-  
-[Text]
-Position=0,0,53,42
-Text=47
- 
-  
-[Text]
-Position=0,0,53,42
-Text=48
- 
-  
-[Text]
-Position=0,0,53,42
-Text=49
- 
-  
-[Text]
-Position=0,0,53,42
-Text=50
- 
-  
-[Text]
-Position=0,0,53,42
-Text=51
- 
-  
-[Text]
-Position=0,0,53,42
-Text=52
- 
-  
-[Text]
-Position=0,0,53,42
-Text=53
- 
-  
-[Text]
-Position=0,0,53,42
-Text=54
- 
-  
-[Text]
-Position=0,0,53,42
-Text=55
- 
-  
-[Text]
-Position=0,0,53,42
-Text=56
- 
-  
-[Text]
-Position=0,0,53,42
-Text=57
- 
-  
-[Text]
-Position=0,0,53,42
-Text=58
- 
-  
-[Text]
-Position=0,0,53,42
-Text=59
- 
-  
-[Text]
-Position=0,0,53,42
-Text=60
- 
-  
-[Text]
-Position=0,0,53,42
-Text=61
- 
-  
-[Text]
-Position=0,0,53,42
-Text=62
- 
-  
-[Text]
-Position=0,0,53,42
-Text=63
- 
-  
-[Text]
-Position=0,0,53,42
-Text=64
- 
-  
-[Text]
-Position=0,0,53,42
-Text=65
- 
-  
-[Text]
-Position=0,0,53,42
-Text=66
- 
-  
-[Text]
-Position=0,0,53,42
-Text=67
- 
-  
-[Text]
-Position=0,0,53,42
-Text=68
- 
-  
-[Text]
-Position=0,0,53,42
-Text=69
- 
-  
-[Text]
-Position=0,0,53,42
-Text=70
- 
-  
-[Text]
-Position=0,0,53,42
-Text=71
- 
-  
-[Text]
-Position=0,0,53,42
-Text=72
- 
-  
-[Text]
-Position=0,0,53,42
-Text=73
- 
-  
-[Text]
-Position=0,0,53,42
-Text=74
- 
-  
-[Text]
-Position=0,0,53,42
-Text=75
- 
-  
-[Text]
-Position=0,0,53,42
-Text=76
- 
-  
-[Text]
-Position=0,0,53,42
-Text=77
- 
-  
-[Text]
-Position=0,0,53,42
-Text=78
- 
-  
-[Text]
-Position=0,0,53,42
-Text=79
- 
-  
-[Text]
-Position=0,0,53,42
-Text=80
- 
-  
-[Text]
-Position=0,0,53,42
-Text=81
- 
-  
-[Text]
-Position=0,0,53,42
-Text=82
- 
-  
-[Text]
-Position=0,0,53,42
-Text=83
- 
-  
-[Text]
-Position=0,0,53,42
-Text=84
- 
-  
-[Text]
-Position=0,0,53,42
-Text=85
- 
-  
-[Text]
-Position=0,0,53,42
-Text=86
- 
-  
-[Text]
-Position=0,0,53,42
-Text=87
- 
-  
-[Text]
-Position=0,0,53,42
-Text=88
- 
-  
-[Text]
-Position=0,0,53,42
-Text=89
- 
-  
-[Text]
-Position=0,0,53,42
-Text=90
- 
-  
-[Text]
-Position=0,0,53,42
-Text=91
- 
-  
-[Text]
-Position=0,0,53,42
-Text=92
- 
-  
-[Text]
-Position=0,0,53,42
-Text=93
- 
-  
-[Text]
-Position=0,0,53,42
-Text=94
- 
-  
-[Text]
-Position=0,0,53,42
-Text=95
- 
-  
-[Text]
-Position=0,0,53,42
-Text=96
- 
-  
-[Text]
-Position=0,0,53,42
-Text=97
- 
-  
-[Text]
-Position=0,0,53,42
-Text=98
- 
-  
-[Text]
-Position=0,0,53,42
-Text=99
- 
-  
-[Text]
-Position=0,0,53,42
-Text=100
- 
-  
-[Cell]
-Row=1
-Col=3
-[EndCell]
-  
-[Column]
-Width=10
-  
-[HeaderText]
-Position=30,0,53,40
-Text=1
- 
-[EndColumn]
-  
-[Column]
-Width=63
-  
-[HeaderText]
-Position=5,0,58,40
-Text=TU6
-HorizontalAlignment=Center
-VerticalAlignment=Middle
- 
-[Field]
-Name=TU6
-Position=0,0,55,34
-Item=TU6,MICS7WM
-Protected=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=TextBox
-  
-[Text]
-Position=0,0,26,16
-Text=TU6
- 
-[EndColumn]
-  
-[Column]
-Width=63
-  
-[HeaderText]
-Position=5,0,58,40
-Text=TU7
-HorizontalAlignment=Center
-VerticalAlignment=Middle
- 
-[Field]
-Name=TU7
-Position=0,0,55,34
-Item=TU7,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=TU7
- 
-[EndColumn]
-  
-[Column]
-Width=549
-  
-[HeaderText]
-Position=240,0,308,40
-Text=TU7A
-HorizontalAlignment=Center
-VerticalAlignment=Middle
- 
-[Field]
-Name=TU7A
-Position=0,0,541,34
-Item=TU7A,MICS7WM
-Protected=Yes
-UpperCase=Yes
-UseUnicodeTextBox=Yes
-DataCaptureType=TextBox
-  
-[Text]
-Position=481,0,515,16
-Text=TU7A
-HorizontalAlignment=Center
- 
-[EndColumn]
-  
-[Column]
-Width=99
-  
-[HeaderText]
-Position=23,0,76,40
-Text=TU8
-HorizontalAlignment=Center
-VerticalAlignment=Middle
- 
-[Field]
-Name=TU8
-Position=0,0,91,34
-Item=TU8,MICS7WM
-Protected=Yes
-DataCaptureType=TextBox
-  
-[Text]
-Position=0,0,26,16
-Text=TU8
- 
-[EndColumn]
-  
-[Column]
-Width=68
-  
-[HeaderText]
-Position=0,0,68,40
-Text=TU9X
-HorizontalAlignment=Center
-VerticalAlignment=Middle
- 
-[Field]
-Name=TU9X
-Position=22,0,41,34
-Item=TU9X,MICS7WM
-DataCaptureType=RadioButton
-  
-[Text]
-Position=0,0,35,16
-Text=TU9X
- 
-[EndColumn]
-  
-[Column]
-Width=99
-  
-[HeaderText]
-Position=23,0,76,40
-Text=TU9
-HorizontalAlignment=Center
-VerticalAlignment=Middle
- 
-[Field]
-Name=TU9
-Position=0,0,91,34
-Item=TU9,MICS7WM
-DataCaptureType=NumberPad
-  
-[Text]
-Position=0,0,26,16
-Text=TU9
- 
-[EndColumn]
-  
-[Column]
-Width=99
-  
-[HeaderText]
-Position=15,0,83,40
-Text=TU10
-HorizontalAlignment=Center
-VerticalAlignment=Middle
- 
-[Field]
-Name=TU10
-Position=0,0,91,34
-Item=TU10,MICS7WM
-DataCaptureType=NumberPad
-  
-[Text]
-Position=0,0,34,16
-Text=TU10
- 
-[EndColumn]
-  
-[Column]
-Width=68
-  
-[HeaderText]
-Position=0,0,68,40
-Text=TU12
-HorizontalAlignment=Center
-VerticalAlignment=Middle
- 
-[Field]
-Name=TU12
-Position=20,0,39,34
-Item=TU12,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Position=0,0,34,16
-Text=TU12
- 
-[EndColumn]
-  
-[Column]
-Width=99
-  
-[HeaderText]
-Position=15,0,83,40
-Text=TU13
-HorizontalAlignment=Center
-VerticalAlignment=Middle
- 
-[Field]
-Name=TU13
-Position=0,0,91,34
-Item=TU13,MICS7WM
-UpperCase=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=CheckBox
-  
-[Text]
-Text=TU13
- 
-[EndColumn]
-  
-[Column]
-Width=68
-  
-[HeaderText]
-Position=0,0,68,40
-Text=TU14
-HorizontalAlignment=Center
-VerticalAlignment=Middle
- 
-[Field]
-Name=TU14
-Position=25,0,44,34
-Item=TU14,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=TU14
- 
-[EndColumn]
-  
-[Column]
-Width=68
-  
-[HeaderText]
-Position=0,0,68,40
-Text=TU15
-HorizontalAlignment=Center
-VerticalAlignment=Middle
- 
-[Field]
-Name=TU15
-Position=23,0,42,34
-Item=TU15,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=TU15
- 
-[EndColumn]
-  
-[Column]
-Width=68
-  
-[HeaderText]
-Position=0,0,68,40
-Text=TU16
-HorizontalAlignment=Center
-VerticalAlignment=Middle
- 
-[Field]
-Name=TU16
-Position=22,0,41,34
-Item=TU16,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=TU16
- 
-[EndColumn]
-  
-[Column]
-Width=135
-  
-[HeaderText]
-Position=41,0,94,40
-Text=TU6
-HorizontalAlignment=Center
-VerticalAlignment=Middle
- 
-[Field]
-Name=TU17
-Position=0,0,127,34
-Item=TU17,MICS7WM
-UpperCase=Yes
-DataCaptureType=CheckBox
-  
-[Text]
-Position=5,0,58,40
-Text=TU6
-HorizontalAlignment=Center
-VerticalAlignment=Middle
- 
-[EndColumn]
-  
-[EndGrid]
- 
-  
-[Field]
-Name=TU18
-Position=168,916,187,950
-Item=TU18,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Form=26
-  
-[Text]
-Position=77,916,137,948
-Text=TU18
-Form=26
+Position=196,732,871,764
+Text=Awareness of the law prohibiting FGM practice
  
 [EndGroup]
   
@@ -6764,7 +5007,7 @@ Form=26
 Required=Yes
 Name=FORMDV
 Label=Attitudes Toward Domestic Violence
-Form=27
+Form=24
 Max=1
   
 [Field]
@@ -6774,7 +5017,7 @@ Item=DV1A,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=27
+Form=24
   
   
 [Field]
@@ -6784,7 +5027,7 @@ Item=DV1B,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=27
+Form=24
   
   
 [Field]
@@ -6794,7 +5037,7 @@ Item=DV1C,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=27
+Form=24
   
   
 [Field]
@@ -6804,7 +5047,7 @@ Item=DV1D,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=27
+Form=24
   
   
 [Field]
@@ -6814,399 +5057,15 @@ Item=DV1E,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=27
+Form=24
   
-[EndGroup]
-  
-[Group]
-Required=Yes
-Name=FORMVT1
-Label=SDG16: Safety
-Form=28
-Max=1
-  
-[Field]
-Name=VT20
-Position=186,195,205,229
-Item=VT20,MICS7WM
-UpperCase=Yes
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=28
-  
-[Text]
-Position=61,196,121,228
-Text=VT20
-Form=39
-Color=4210688
- 
-  
-[Field]
-Name=VT21
-Position=186,242,205,276
-Item=VT21,MICS7WM
-UpperCase=Yes
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=28
-  
-[Text]
-Position=61,243,121,275
-Text=VT21
-Form=39
-Color=4210688
- 
-[EndGroup]
-  
-[Group]
-Required=Yes
-Name=FORMVT2
-Label=SDG16: Discrimination
-Form=29
-Max=1
-  
-[Field]
-Name=VT23A
-Position=185,177,204,211
-Item=VT23A,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=29
-  
-[Text]
-Position=64,180,139,212
-Text=VT23A
- 
-  
-[Field]
-Name=VT23A1
-Position=184,215,203,249
-Item=VT23A1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=29
-  
-[Text]
-Position=64,218,154,250
-Text=VT23A1
- 
-  
-[Field]
-Name=VT23B
-Position=184,253,203,287
-Item=VT23B,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=29
-  
-[Text]
-Position=64,256,139,288
-Text=VT23B
- 
-  
-[Field]
-Name=VT23B1
-Position=184,291,203,325
-Item=VT23B1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=29
-  
-[Text]
-Position=64,294,154,326
-Text=VT23B1
- 
-  
-[Field]
-Name=VT23C
-Position=184,329,203,363
-Item=VT23C,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=29
-  
-[Text]
-Position=64,332,139,364
-Text=VT23C
- 
-  
-[Field]
-Name=VT23C1
-Position=184,367,203,401
-Item=VT23C1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=29
-  
-[Text]
-Position=64,370,154,402
-Text=VT23C1
- 
-  
-[Field]
-Name=VT23D
-Position=184,406,203,440
-Item=VT23D,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=29
-  
-[Text]
-Position=64,409,139,441
-Text=VT23D
- 
-  
-[Field]
-Name=VT23D1
-Position=183,445,202,479
-Item=VT23D1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=29
-  
-[Text]
-Position=63,448,153,480
-Text=VT23D1
- 
-  
-[Field]
-Name=VT23E
-Position=445,177,464,211
-Item=VT23E,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=29
-  
-[Text]
-Position=325,180,400,212
-Text=VT23E
- 
-  
-[Field]
-Name=VT23E1
-Position=445,215,464,249
-Item=VT23E1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=29
-  
-[Text]
-Position=325,218,415,250
-Text=VT23E1
- 
-  
-[Field]
-Name=VT23F
-Position=445,253,464,287
-Item=VT23F,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=29
-  
-[Text]
-Position=325,256,400,288
-Text=VT23F
- 
-  
-[Field]
-Name=VT23F1
-Position=445,291,464,325
-Item=VT23F1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=29
-  
-[Text]
-Position=325,294,415,326
-Text=VT23F1
- 
-  
-[Field]
-Name=VT23G
-Position=445,329,464,363
-Item=VT23G,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=29
-  
-[Text]
-Position=325,332,400,364
-Text=VT23G
- 
-  
-[Field]
-Name=VT23G1
-Position=445,367,464,401
-Item=VT23G1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=29
-  
-[Text]
-Position=325,370,415,402
-Text=VT23G1
- 
-  
-[Field]
-Name=VT23H
-Position=445,406,464,440
-Item=VT23H,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=29
-  
-[Text]
-Position=325,409,400,441
-Text=VT23H
- 
-  
-[Field]
-Name=VT23H1
-Position=444,445,463,479
-Item=VT23H1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=29
-  
-[Text]
-Position=325,448,415,480
-Text=VT23H1
- 
-  
-[Field]
-Name=VT23I
-Position=445,484,464,518
-Item=VT23I,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=29
-  
-[Text]
-Position=325,487,400,519
-Text=VT23I
- 
-  
-[Field]
-Name=VT23I1
-Position=445,523,464,557
-Item=VT23I1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=29
-  
-[Text]
-Position=325,526,415,558
-Text=VT23I1
- 
-  
-[Field]
-Name=VT23J
-Position=445,562,464,596
-Item=VT23J,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=29
-  
-[Text]
-Position=325,565,400,597
-Text=VT23J
- 
-  
-[Field]
-Name=VT23J1
-Position=445,601,464,635
-Item=VT23J1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=29
-  
-[Text]
-Position=325,604,415,636
-Text=VT23J1
- 
-  
-[Field]
-Name=VT23K
-Position=668,177,687,211
-Item=VT23K,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=29
-  
-[Text]
-Position=548,180,623,212
-Text=VT23K
- 
-  
-[Field]
-Name=VT23K1
-Position=668,215,687,249
-Item=VT23K1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=29
-  
-[Text]
-Position=548,218,638,250
-Text=VT23K1
- 
-  
-[Field]
-Name=VT23X
-Position=668,253,687,287
-Item=VT23X,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=29
-  
-[Text]
-Position=548,256,623,288
-Text=VT23X
- 
-  
-[Field]
-Name=VT23X2
-Position=668,291,687,325
-Item=VT23X2,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=29
-  
-[Text]
-Position=548,294,638,326
-Text=VT23X2
- 
 [EndGroup]
   
 [Group]
 Required=Yes
 Name=FORMMA
 Label=Marriage/Union
-Form=30
+Form=25
 Max=1
   
 [Field]
@@ -7217,7 +5076,7 @@ SkipTo=MA5
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=30
+Form=25
   
 [Text]
 Position=53,213,98,245
@@ -7232,7 +5091,7 @@ Item=MA2,MICS7WM
 UpperCase=Yes
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=30
+Form=25
   
   
 [Field]
@@ -7242,7 +5101,7 @@ Item=MA3,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=30
+Form=25
   
 [Text]
 Position=53,312,98,344
@@ -7257,7 +5116,7 @@ Item=MA4,MICS7WM
 UpperCase=Yes
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=30
+Form=25
   
 [Text]
 Position=53,364,98,396
@@ -7272,7 +5131,7 @@ Item=MA5,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=30
+Form=25
   
   
 [Field]
@@ -7282,7 +5141,7 @@ Item=MA6,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=30
+Form=25
   
   
 [Field]
@@ -7292,7 +5151,7 @@ Item=MA7,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=30
+Form=25
   
   
 [Field]
@@ -7302,7 +5161,7 @@ Item=MA8M,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=30
+Form=25
   
   
 [Field]
@@ -7312,7 +5171,7 @@ Item=MA8Y,MICS7WM
 UpperCase=Yes
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=30
+Form=25
   
   
 [Field]
@@ -7322,235 +5181,15 @@ Item=MA11,MICS7WM
 UpperCase=Yes
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=30
+Form=25
   
-[EndGroup]
-  
-[Group]
-Required=Yes
-Name=FORMAF
-Label=Adult Functioning
-Form=31
-Max=1
-  
-[Field]
-Name=AF2
-Position=113,211,132,245
-Item=AF2,MICS7WM
-UpperCase=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=31
-  
-[Text]
-Position=52,212,97,244
-Text=AF2
-Color=4210688
- 
-  
-[Field]
-Name=AF3
-Position=113,260,132,294
-Item=AF3,MICS7WM
-UpperCase=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=31
-  
-[Text]
-Position=52,261,97,293
-Text=AF3
-Color=4210688
- 
-  
-[Field]
-Name=AF6
-Position=113,311,132,345
-Item=AF6,MICS7WM
-UpperCase=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=31
-  
-[Text]
-Position=52,312,97,344
-Text=AF6
-Color=4210688
- 
-  
-[Field]
-Name=AF8
-Position=113,361,132,395
-Item=AF8,MICS7WM
-UpperCase=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=31
-  
-[Text]
-Position=52,362,97,394
-Text=AF8
-Color=4210688
- 
-  
-[Field]
-Name=AF9
-Position=327,211,346,245
-Item=AF9,MICS7WM
-UpperCase=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=31
-  
-[Text]
-Position=249,212,294,244
-Text=AF9
-Color=4210688
- 
-  
-[Field]
-Name=AF10
-Position=327,260,346,294
-Item=AF10,MICS7WM
-UpperCase=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=31
-  
-[Text]
-Position=249,261,309,293
-Text=AF10
-Color=4210688
- 
-  
-[Field]
-Name=AF11
-Position=327,311,346,345
-Item=AF11,MICS7WM
-UpperCase=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=31
-  
-[Text]
-Position=249,312,309,344
-Text=AF11
-Color=4210688
- 
-  
-[Field]
-Name=AF12
-Position=327,361,346,395
-Item=AF12,MICS7WM
-UpperCase=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=31
-  
-[Text]
-Position=249,362,309,394
-Text=AF12
-Color=4210688
- 
-  
-[Field]
-Name=AF13
-Position=539,211,558,245
-Item=AF13,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=31
-  
-[Text]
-Position=449,212,509,244
-Text=AF13
- 
-  
-[Field]
-Name=AF14
-Position=539,250,558,284
-Item=AF14,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=31
-  
-[Text]
-Position=449,253,509,285
-Text=AF14
- 
-  
-[Field]
-Name=AF15
-Position=539,291,558,325
-Item=AF15,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=31
-  
-[Text]
-Position=449,294,509,326
-Text=AF15
- 
-  
-[Field]
-Name=AF16
-Position=539,332,558,366
-Item=AF16,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=31
-  
-[Text]
-Position=449,335,509,367
-Text=AF16
- 
-  
-[Field]
-Name=AF17
-Position=539,373,558,407
-Item=AF17,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=31
-  
-[Text]
-Position=449,376,509,408
-Text=AF17
- 
-  
-[Field]
-Name=AF18
-Position=539,414,558,448
-Item=AF18,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=31
-  
-[Text]
-Position=449,417,509,449
-Text=AF18
- 
 [EndGroup]
   
 [Group]
 Required=Yes
 Name=FORMSB
 Label=RC: Sexual Activity
-Form=32
+Form=26
 Max=1
   
 [Field]
@@ -7560,7 +5199,7 @@ Item=SB1,MICS7WM
 UpperCase=Yes
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=32
+Form=26
   
 [Text]
 Position=51,210,96,242
@@ -7575,7 +5214,7 @@ Item=SB2U,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=32
+Form=26
   
 [Text]
 Position=51,286,96,318
@@ -7590,7 +5229,7 @@ Item=SB2N,MICS7WM
 UpperCase=Yes
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=32
+Form=26
   
 [EndGroup]
   
@@ -7598,7 +5237,7 @@ Form=32
 Required=Yes
 Name=FORMDM
 Label=Decision-making on Reproductive Health
-Form=33
+Form=27
 Max=1
   
 [Field]
@@ -7606,7 +5245,7 @@ Name=DM3
 Position=142,205,161,239
 Item=DM3,MICS7WM
 DataCaptureType=RadioButton
-Form=33
+Form=27
   
 [Text]
 Position=67,204,112,236
@@ -7618,7 +5257,7 @@ Name=DM4
 Position=142,260,161,294
 Item=DM4,MICS7WM
 DataCaptureType=RadioButton
-Form=33
+Form=27
   
 [Text]
 Position=67,259,112,291
@@ -7630,7 +5269,7 @@ Name=DM4A
 Position=142,315,161,349
 Item=DM4A,MICS7WM
 DataCaptureType=RadioButton
-Form=33
+Form=27
   
 [Text]
 Position=67,314,127,346
@@ -7642,7 +5281,7 @@ Name=DM6
 Position=142,363,161,397
 Item=DM6,MICS7WM
 DataCaptureType=RadioButton
-Form=33
+Form=27
   
 [Text]
 Position=67,362,112,394
@@ -7654,7 +5293,7 @@ Text=DM6
 Required=Yes
 Name=FORMMX
 Label=Maternal Mortality - Initial1
-Form=34
+Form=28
 Max=1
   
 [Field]
@@ -7664,7 +5303,7 @@ Item=INTROMM,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=34
+Form=28
   
 [Text]
 Position=51,196,126,228
@@ -7675,7 +5314,7 @@ Color=4210688
 [Grid]
 Name=FORMMX_ROSTER
 Label=Maternal Mortality - Initial1
-Form=34
+Form=28
 Required=No
 Type=Record
 TypeName=MODMX
@@ -7900,7 +5539,7 @@ Item=MMAUX,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=34
+Form=28
   
 [Text]
 Position=51,660,291,692
@@ -7915,7 +5554,7 @@ Item=MM3,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=34
+Form=28
   
 [Text]
 Position=51,719,96,751
@@ -7930,7 +5569,7 @@ Item=MM4,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=34
+Form=28
   
 [Text]
 Position=194,719,239,751
@@ -7945,7 +5584,7 @@ Item=MM5,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=34
+Form=28
   
 [Text]
 Position=339,719,384,751
@@ -7960,7 +5599,7 @@ Item=MM6,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=34
+Form=28
   
 [Text]
 Position=474,719,519,751
@@ -7976,7 +5615,7 @@ Protected=Yes
 UpperCase=Yes
 DataCaptureType=TextBox
 Keyboard=1033
-Form=34
+Form=28
   
 [Text]
 Position=51,778,486,810
@@ -7991,7 +5630,7 @@ Item=MM8,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=34
+Form=28
   
 [Text]
 Position=51,839,96,871
@@ -8004,13 +5643,13 @@ Color=4210688
 Required=Yes
 Name=FORMMY
 Label=Maternal Mortality - Initial2
-Form=35
+Form=29
 Max=1
   
 [Grid]
 Name=FORMMY_ROSTER
 Label=Maternal Mortality - Initial2
-Form=35
+Form=29
 Required=No
 Type=Record
 TypeName=MODMY
@@ -8231,7 +5870,7 @@ Item=MM12,MICS7WM
 UpperCase=Yes
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=35
+Form=29
   
 [Text]
 Position=51,637,111,669
@@ -8245,13 +5884,13 @@ Color=4210688
 Required=Yes
 Name=FORMMM
 Label=Maternal Mortality
-Form=36
+Form=30
 Max=1
   
 [Grid]
 Name=FORMMM_ROSTER
 Label=Maternal mortality
-Form=36
+Form=30
 Required=No
 Type=Record
 TypeName=MODMM
@@ -8697,2625 +6336,73 @@ Color=4210688
   
 [Group]
 Required=Yes
-Name=FORMTO
-Label=Tobacco Use
-Form=37
-Max=1
-  
-[Field]
-Name=TO1
-Position=172,194,191,228
-Item=TO1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=37
-  
-[Text]
-Position=64,197,109,229
-Text=TO1
- 
-  
-[Field]
-Name=TO2
-Position=154,231,191,265
-Item=TO2,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=NumberPad
-Keyboard=1033
-Form=37
-  
-[Text]
-Position=64,234,109,266
-Text=TO2
- 
-  
-[Field]
-Name=TO3
-Position=172,268,191,302
-Item=TO3,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=37
-  
-[Text]
-Position=64,271,109,303
-Text=TO3
- 
-  
-[Field]
-Name=TO4
-Position=154,305,191,339
-Item=TO4,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=NumberPad
-Keyboard=1033
-Form=37
-  
-[Text]
-Position=64,308,109,340
-Text=TO4
- 
-  
-[Field]
-Name=TO5
-Position=172,342,191,376
-Item=TO5,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=37
-  
-[Text]
-Position=64,345,109,377
-Text=TO5
- 
-  
-[Field]
-Name=TO6
-Position=172,379,191,413
-Item=TO6,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=37
-  
-[Text]
-Position=64,382,109,414
-Text=TO6
- 
-  
-[Field]
-Name=TO7
-Position=172,416,191,450
-Item=TO7,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=37
-  
-[Text]
-Position=64,419,109,451
-Text=TO7
- 
-  
-[Field]
-Name=TO8
-Position=172,453,191,487
-Item=TO8,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=37
-  
-[Text]
-Position=64,456,109,488
-Text=TO8
- 
-  
-[Field]
-Name=TO9
-Position=172,490,191,524
-Item=TO9,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=37
-  
-[Text]
-Position=64,493,109,525
-Text=TO9
- 
-  
-[Field]
-Name=TO10
-Position=172,527,191,561
-Item=TO10,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=37
-  
-[Text]
-Position=64,530,124,562
-Text=TO10
- 
-  
-[Field]
-Name=TO11
-Position=395,197,414,231
-Item=TO11,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=37
-  
-[Text]
-Position=305,200,365,232
-Text=TO11
- 
-  
-[Field]
-Name=TO12
-Position=395,237,414,271
-Item=TO12,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=37
-  
-[Text]
-Position=305,240,365,272
-Text=TO12
- 
-[EndGroup]
-  
-[Group]
-Required=Yes
-Name=FORMMH
-Label=Mental Health 1
-Form=38
-Max=1
-  
-[Field]
-Name=MH1
-Position=164,206,183,240
-Item=MH1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=38
-  
-[Text]
-Position=73,209,118,241
-Text=MH1
- 
-  
-[Field]
-Name=MH2
-Position=164,248,183,282
-Item=MH2,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=38
-  
-[Text]
-Position=74,251,119,283
-Text=MH2
- 
-  
-[Field]
-Name=MH3
-Position=164,290,183,324
-Item=MH3,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=38
-  
-[Text]
-Position=74,293,119,325
-Text=MH3
- 
-  
-[Field]
-Name=MH4
-Position=164,332,183,366
-Item=MH4,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=38
-  
-[Text]
-Position=74,335,119,367
-Text=MH4
- 
-  
-[Field]
-Name=MH5
-Position=164,375,183,409
-Item=MH5,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=38
-  
-[Text]
-Position=74,378,119,410
-Text=MH5
- 
-  
-[Field]
-Name=MH6
-Position=164,418,183,452
-Item=MH6,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=38
-  
-[Text]
-Position=74,421,119,453
-Text=MH6
- 
-  
-[Field]
-Name=MH7
-Position=339,209,358,243
-Item=MH7,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=38
-  
-[Text]
-Position=249,212,294,244
-Text=MH7
- 
-  
-[Field]
-Name=MH8
-Position=339,250,358,284
-Item=MH8,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=38
-  
-[Text]
-Position=249,253,294,285
-Text=MH8
- 
-  
-[Field]
-Name=MH9
-Position=339,292,358,326
-Item=MH9,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=38
-  
-[Text]
-Position=249,295,294,327
-Text=MH9
- 
-  
-[Field]
-Name=MH10
-Position=339,334,358,368
-Item=MH10,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=38
-  
-[Text]
-Position=249,337,309,369
-Text=MH10
- 
-  
-[Field]
-Name=MH11
-Position=339,376,358,410
-Item=MH11,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=38
-  
-[Text]
-Position=249,379,309,411
-Text=MH11
- 
-  
-[Field]
-Name=MH12
-Position=339,418,358,452
-Item=MH12,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=38
-  
-[Text]
-Position=249,421,309,453
-Text=MH12
- 
-  
-[Field]
-Name=MH15
-Position=339,460,358,494
-Item=MH15,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=38
-  
-[Text]
-Position=249,463,309,495
-Text=MH15
- 
-  
-[Field]
-Name=MH16
-Position=339,502,358,536
-Item=MH16,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=38
-  
-[Text]
-Position=249,505,309,537
-Text=MH16
- 
-  
-[Field]
-Name=MH17
-Position=527,210,546,244
-Item=MH17,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=38
-  
-[Text]
-Position=437,213,497,245
-Text=MH17
- 
-  
-[Field]
-Name=MH18
-Position=527,259,546,293
-Item=MH18,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=38
-  
-[Text]
-Position=437,262,497,294
-Text=MH18
- 
-  
-[Field]
-Name=MH19
-Position=527,308,546,342
-Item=MH19,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=38
-  
-[Text]
-Position=437,311,497,343
-Text=MH19
- 
-  
-[Field]
-Name=MH20
-Position=527,357,546,391
-Item=MH20,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=38
-  
-[Text]
-Position=437,360,497,392
-Text=MH20
- 
-  
-[Field]
-Name=MH21
-Position=527,406,546,440
-Item=MH21,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=38
-  
-[Text]
-Position=437,409,497,441
-Text=MH21
- 
-  
-[Field]
-Name=MH22
-Position=527,455,546,489
-Item=MH22,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=38
-  
-[Text]
-Position=437,458,497,490
-Text=MH22
- 
-  
-[Field]
-Name=MH23
-Position=527,504,546,538
-Item=MH23,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=38
-  
-[Text]
-Position=437,507,497,539
-Text=MH23
- 
-  
-[Field]
-Name=MH24
-Position=527,553,546,587
-Item=MH24,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=38
-  
-[Text]
-Position=437,556,497,588
-Text=MH24
- 
-  
-[Field]
-Name=MH25
-Position=529,602,548,636
-Item=MH25,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=38
-  
-[Text]
-Position=439,605,499,637
-Text=MH25
- 
-  
-[Field]
-Name=MH27
-Position=695,210,714,244
-Item=MH27,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=38
-  
-[Text]
-Position=605,213,665,245
-Text=MH27
- 
-  
-[Field]
-Name=MH28
-Position=695,260,714,294
-Item=MH28,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=38
-  
-[Text]
-Position=605,263,665,295
-Text=MH28
- 
-  
-[Field]
-Name=MH29
-Position=695,310,714,344
-Item=MH29,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=38
-  
-[Text]
-Position=605,313,665,345
-Text=MH29
- 
-  
-[Field]
-Name=MH30
-Position=695,360,714,394
-Item=MH30,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=38
-  
-[Text]
-Position=605,363,665,395
-Text=MH30
- 
-  
-[Field]
-Name=MH33
-Position=697,411,716,445
-Item=MH33,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=38
-  
-[Text]
-Position=607,414,667,446
-Text=MH33
- 
-  
-[Field]
-Name=MH34
-Position=867,210,886,244
-Item=MH34,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=38
-  
-[Text]
-Position=777,213,837,245
-Text=MH34
- 
-  
-[Field]
-Name=MH35
-Position=867,260,886,294
-Item=MH35,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=38
-  
-[Text]
-Position=777,263,837,295
-Text=MH35
- 
-  
-[Field]
-Name=MH36
-Position=867,310,886,344
-Item=MH36,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=38
-  
-[Text]
-Position=777,313,837,345
-Text=MH36
- 
-  
-[Field]
-Name=MH36A
-Position=867,358,886,392
-Item=MH36A,MICS7WM
-DataCaptureType=RadioButton
-Form=38
-  
-[Text]
-Position=777,361,852,393
-Text=MH36A
- 
-  
-[Field]
-Name=MH37
-Position=867,406,886,440
-Item=MH37,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=38
-  
-[Text]
-Position=777,409,837,441
-Text=MH37
- 
-  
-[Field]
-Name=MH37A
-Position=867,456,886,490
-Item=MH37A,MICS7WM
-DataCaptureType=RadioButton
-Form=38
-  
-[Text]
-Position=777,459,852,491
-Text=MH37A
- 
-  
-[Field]
-Name=MH38
-Position=867,510,1084,544
-Item=MH38,MICS7WM
-UpperCase=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=CheckBox
-Keyboard=1033
-Form=38
-  
-[Text]
-Position=777,513,837,545
-Text=MH38
- 
-[EndGroup]
-  
-[Group]
-Required=Yes
-Name=FORMMH2
-Label=Mental Health 2
-Form=39
-Max=1
-  
-[Field]
-Name=MH40
-Position=181,239,200,273
-Item=MH40,MICS7WM
-DataCaptureType=RadioButton
-Form=39
-  
-[Text]
-Position=77,242,137,274
-Text=MH40
- 
-  
-[Field]
-Name=MH42
-Position=181,297,200,331
-Item=MH42,MICS7WM
-DataCaptureType=RadioButton
-Form=39
-  
-[Text]
-Position=77,300,137,332
-Text=MH42
- 
-  
-[Field]
-Name=MH43
-Position=181,355,200,389
-Item=MH43,MICS7WM
-DataCaptureType=RadioButton
-Form=39
-  
-[Text]
-Position=77,358,137,390
-Text=MH43
- 
-  
-[Field]
-Name=MH45
-Position=181,409,200,443
-Item=MH45,MICS7WM
-DataCaptureType=RadioButton
-Form=39
-  
-[Text]
-Position=77,412,137,444
-Text=MH45
- 
-  
-[Field]
-Name=MH46
-Position=181,468,200,502
-Item=MH46,MICS7WM
-Protected=Yes
-DataCaptureType=TextBox
-Form=39
-  
-[Text]
-Position=77,471,137,503
-Text=MH46
- 
-  
-[Field]
-Name=MH47
-Position=181,527,200,561
-Item=MH47,MICS7WM
-Protected=Yes
-DataCaptureType=TextBox
-Form=39
-  
-[Text]
-Position=77,530,137,562
-Text=MH47
- 
-  
-[Field]
-Name=MH48
-Position=181,581,200,615
-Item=MH48,MICS7WM
-DataCaptureType=RadioButton
-Form=39
-  
-[Text]
-Position=77,584,137,616
-Text=MH48
- 
-  
-[Field]
-Name=MH49AB
-Position=478,239,497,273
-Item=MH49AB,MICS7WM
-DataCaptureType=RadioButton
-Form=39
-  
-[Text]
-Position=333,242,423,274
-Text=MH49AB
- 
-  
-[Field]
-Name=MH49AB1
-Position=478,297,605,331
-Item=MH49AB1,MICS7WM
-Protected=Yes
-DataCaptureType=TextBox
-Form=39
-  
-[Text]
-Position=333,300,438,332
-Text=MH49AB1
- 
-  
-[Field]
-Name=MH49AB2
-Position=478,355,497,389
-Item=MH49AB2,MICS7WM
-Protected=Yes
-DataCaptureType=RadioButton
-Form=39
-  
-[Text]
-Position=333,358,438,390
-Text=MH49AB2
- 
-  
-[Field]
-Name=MH49AB3
-Position=478,409,648,443
-Item=MH49AB3,MICS7WM
-Protected=Yes
-UpperCase=Yes
-UseUnicodeTextBox=Yes
-DataCaptureType=TextBox
-Form=39
-  
-[Text]
-Position=333,412,438,444
-Text=MH49AB3
- 
-  
-[Field]
-Name=MH49AB4
-Position=478,468,497,502
-Item=MH49AB4,MICS7WM
-Protected=Yes
-DataCaptureType=RadioButton
-Form=39
-  
-[Text]
-Position=333,471,438,503
-Text=MH49AB4
- 
-  
-[Field]
-Name=MH49AB5
-Position=478,527,515,561
-Item=MH49AB5,MICS7WM
-Protected=Yes
-DataCaptureType=TextBox
-Form=39
-  
-[Text]
-Position=333,530,438,562
-Text=MH49AB5
- 
-  
-[Field]
-Name=MH49AB6
-Position=478,584,533,618
-Item=MH49AB6,MICS7WM
-UpperCase=Yes
-DataCaptureType=CheckBox
-Form=39
-  
-[Text]
-Position=333,587,438,619
-Text=MH49AB6
- 
-  
-[Field]
-Name=MH49AB7
-Position=478,650,552,684
-Item=MH49AB7,MICS7WM
-UpperCase=Yes
-UseUnicodeTextBox=Yes
-DataCaptureType=TextBox
-Form=39
-  
-[Text]
-Position=333,653,438,685
-Text=MH49AB7
- 
-  
-[Field]
-Name=MH49AB8
-Position=902,239,939,273
-Item=MH49AB8,MICS7WM
-DataCaptureType=TextBox
-Form=39
-  
-[Text]
-Position=737,242,842,274
-Text=MH49AB8
- 
-  
-[Field]
-Name=MH49AB8N
-Position=902,297,1312,331
-Item=MH49AB8N,MICS7WM
-Protected=Yes
-UpperCase=Yes
-UseUnicodeTextBox=Yes
-DataCaptureType=TextBox
-Form=39
-  
-[Text]
-Position=737,300,857,332
-Text=MH49AB8N
- 
-  
-[Field]
-Name=MH49AB9N
-Position=902,355,1312,389
-Item=MH49AB9N,MICS7WM
-UpperCase=Yes
-UseUnicodeTextBox=Yes
-DataCaptureType=TextBox
-Form=39
-  
-[Text]
-Position=737,358,857,390
-Text=MH49AB9N
- 
-  
-[Field]
-Name=MH49AB10N
-Position=902,409,1312,443
-Item=MH49AB10N,MICS7WM
-UpperCase=Yes
-UseUnicodeTextBox=Yes
-DataCaptureType=TextBox
-Form=39
-  
-[Text]
-Position=737,412,872,444
-Text=MH49AB10N
- 
-  
-[Field]
-Name=MH49AB11N
-Position=902,468,1312,502
-Item=MH49AB11N,MICS7WM
-UpperCase=Yes
-UseUnicodeTextBox=Yes
-DataCaptureType=TextBox
-Form=39
-  
-[Text]
-Position=737,471,872,503
-Text=MH49AB11N
- 
-  
-[Field]
-Name=MH49AB12
-Position=902,527,1312,561
-Item=MH49AB12,MICS7WM
-UpperCase=Yes
-UseUnicodeTextBox=Yes
-DataCaptureType=TextBox
-Form=39
-  
-[Text]
-Position=737,530,857,562
-Text=MH49AB12
- 
-  
-[Field]
-Name=MH49AB13
-Position=902,584,1312,618
-Item=MH49AB13,MICS7WM
-UpperCase=Yes
-UseUnicodeTextBox=Yes
-DataCaptureType=TextBox
-Form=39
-  
-[Text]
-Position=737,587,857,619
-Text=MH49AB13
- 
-  
-[Field]
-Name=MH49AB14
-Position=902,650,1232,684
-Item=MH49AB14,MICS7WM
-UpperCase=Yes
-UseUnicodeTextBox=Yes
-DataCaptureType=TextBox
-Form=39
-  
-[Text]
-Position=737,653,857,685
-Text=MH49AB14
- 
-  
-[Field]
-Name=MH49C
-Position=902,707,921,741
-Item=MH49C,MICS7WM
-DataCaptureType=RadioButton
-Form=39
-  
-[Text]
-Position=737,710,812,742
-Text=MH49C
- 
-  
-[Field]
-Name=MH49D
-Position=902,755,921,789
-Item=MH49D,MICS7WM
-DataCaptureType=RadioButton
-Form=39
-  
-[Text]
-Position=737,758,812,790
-Text=MH49D
- 
-  
-[Field]
-Name=MH51
-Position=902,813,1312,847
-Item=MH51,MICS7WM
-UpperCase=Yes
-UseUnicodeTextBox=Yes
-DataCaptureType=TextBox
-Form=39
-  
-[Text]
-Position=737,816,797,848
-Text=MH51
- 
-[EndGroup]
-  
-[Group]
-Required=Yes
 Name=FORMVW
 Label=Violence Against Woman
-Form=40
+Form=31
 Max=1
   
-[Field]
-Name=VW1
-Position=178,187,197,221
-Item=VW1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
   
-[Text]
-Position=58,190,103,222
-Text=VW1
- 
   
-[Field]
-Name=VW2
-Position=178,239,197,273
-Item=VW2,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
   
-[Text]
-Position=58,242,103,274
-Text=VW2
- 
   
-[Field]
-Name=VW4
-Position=178,292,197,326
-Item=VW4,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
   
-[Text]
-Position=58,295,103,327
-Text=VW4
- 
   
-[Field]
-Name=VW5
-Position=178,336,197,370
-Item=VW5,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
   
-[Text]
-Position=58,339,103,371
-Text=VW5
- 
-  
-[Field]
-Name=VW6A1
-Position=178,381,197,415
-Item=VW6A1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=58,384,133,416
-Text=VW6A1
- 
-  
-[Field]
-Name=VW6A2
-Position=178,426,197,460
-Item=VW6A2,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=58,429,133,461
-Text=VW6A2
- 
-  
-[Field]
-Name=VW6B1
-Position=178,471,197,505
-Item=VW6B1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=58,474,133,506
-Text=VW6B1
- 
-  
-[Field]
-Name=VW6B2
-Position=178,516,197,550
-Item=VW6B2,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=58,519,133,551
-Text=VW6B2
- 
-  
-[Field]
-Name=VW6C1
-Position=438,186,457,220
-Item=VW6C1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=318,189,393,221
-Text=VW6C1
- 
-  
-[Field]
-Name=VW6C2
-Position=438,228,457,262
-Item=VW6C2,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=318,231,393,263
-Text=VW6C2
- 
-  
-[Field]
-Name=VW6D1
-Position=438,270,457,304
-Item=VW6D1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=318,273,393,305
-Text=VW6D1
- 
-  
-[Field]
-Name=VW6D2
-Position=438,312,457,346
-Item=VW6D2,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=318,315,393,347
-Text=VW6D2
- 
-  
-[Field]
-Name=VW6E1
-Position=438,354,457,388
-Item=VW6E1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=318,357,393,389
-Text=VW6E1
- 
-  
-[Field]
-Name=VW6E2
-Position=438,396,457,430
-Item=VW6E2,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=318,399,393,431
-Text=VW6E2
- 
-  
-[Field]
-Name=VW7A1
-Position=438,438,457,472
-Item=VW7A1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=318,441,393,473
-Text=VW7A1
- 
-  
-[Field]
-Name=VW7A2
-Position=438,480,457,514
-Item=VW7A2,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=318,483,393,515
-Text=VW7A2
- 
-  
-[Field]
-Name=VW7B1
-Position=438,523,457,557
-Item=VW7B1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=318,526,393,558
-Text=VW7B1
- 
-  
-[Field]
-Name=VW7B2
-Position=438,566,457,600
-Item=VW7B2,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=318,569,393,601
-Text=VW7B2
- 
-  
-[Field]
-Name=VW7C1
-Position=438,609,457,643
-Item=VW7C1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=318,612,393,644
-Text=VW7C1
- 
-  
-[Field]
-Name=VW7C2
-Position=438,652,457,686
-Item=VW7C2,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=318,655,393,687
-Text=VW7C2
- 
-  
-[Field]
-Name=VW8A1
-Position=438,695,457,729
-Item=VW8A1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=318,698,393,730
-Text=VW8A1
- 
-  
-[Field]
-Name=VW8A2
-Position=439,738,458,772
-Item=VW8A2,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=319,741,394,773
-Text=VW8A2
- 
-  
-[Field]
-Name=VW8B1
-Position=670,188,689,222
-Item=VW8B1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=547,191,622,223
-Text=VW8B1
- 
-  
-[Field]
-Name=VW8B2
-Position=670,224,689,258
-Item=VW8B2,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=547,227,622,259
-Text=VW8B2
- 
-  
-[Field]
-Name=VW8C1
-Position=670,260,689,294
-Item=VW8C1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=547,263,622,295
-Text=VW8C1
- 
-  
-[Field]
-Name=VW8C2
-Position=670,296,689,330
-Item=VW8C2,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=547,299,622,331
-Text=VW8C2
- 
-  
-[Field]
-Name=VW8D1
-Position=670,332,689,366
-Item=VW8D1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=547,335,622,367
-Text=VW8D1
- 
-  
-[Field]
-Name=VW8D2
-Position=670,368,689,402
-Item=VW8D2,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=547,371,622,403
-Text=VW8D2
- 
-  
-[Field]
-Name=VW8E1
-Position=670,404,689,438
-Item=VW8E1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=547,407,622,439
-Text=VW8E1
- 
-  
-[Field]
-Name=VW8E2
-Position=670,441,689,475
-Item=VW8E2,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=547,444,622,476
-Text=VW8E2
- 
-  
-[Field]
-Name=VW8F1
-Position=670,478,689,512
-Item=VW8F1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=547,481,622,513
-Text=VW8F1
- 
-  
-[Field]
-Name=VW8F2
-Position=670,515,689,549
-Item=VW8F2,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=547,518,622,550
-Text=VW8F2
- 
-  
-[Field]
-Name=VW8G1
-Position=670,552,689,586
-Item=VW8G1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=547,555,622,587
-Text=VW8G1
- 
-  
-[Field]
-Name=VW8G2
-Position=670,589,689,623
-Item=VW8G2,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=547,592,622,624
-Text=VW8G2
- 
-  
-[Field]
-Name=VW8H1
-Position=670,626,689,660
-Item=VW8H1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=547,629,622,661
-Text=VW8H1
- 
-  
-[Field]
-Name=VW8H2
-Position=670,663,689,697
-Item=VW8H2,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=547,666,622,698
-Text=VW8H2
- 
-  
-[Field]
-Name=VW8I1
-Position=670,700,689,734
-Item=VW8I1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=547,703,622,735
-Text=VW8I1
- 
-  
-[Field]
-Name=VW8I2
-Position=670,737,689,771
-Item=VW8I2,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=547,740,622,772
-Text=VW8I2
- 
-  
-[Field]
-Name=VW8J1
-Position=914,188,933,222
-Item=VW8J1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=794,191,869,223
-Text=VW8J1
- 
-  
-[Field]
-Name=VW8J2
-Position=914,224,933,258
-Item=VW8J2,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=794,227,869,259
-Text=VW8J2
- 
-  
-[Field]
-Name=VW10A
-Position=914,260,933,294
-Item=VW10A,MICS7WM
-DataCaptureType=RadioButton
-Form=40
-  
-[Text]
-Position=794,263,869,295
-Text=VW10A
- 
-  
-[Field]
-Name=VW10B
-Position=914,296,933,330
-Item=VW10B,MICS7WM
-DataCaptureType=RadioButton
-Form=40
-  
-[Text]
-Position=794,299,869,331
-Text=VW10B
- 
-  
-[Field]
-Name=VW10C
-Position=914,332,933,366
-Item=VW10C,MICS7WM
-DataCaptureType=RadioButton
-Form=40
-  
-[Text]
-Position=794,335,869,367
-Text=VW10C
- 
-  
-[Field]
-Name=VW11
-Position=914,368,933,402
-Item=VW11,MICS7WM
-DataCaptureType=RadioButton
-Form=40
-  
-[Text]
-Position=794,371,854,403
-Text=VW11
- 
-  
-[Field]
-Name=VW12
-Position=914,404,933,438
-Item=VW12,MICS7WM
-DataCaptureType=RadioButton
-Form=40
-  
-[Text]
-Position=794,407,854,439
-Text=VW12
- 
-  
-[Field]
-Name=VW13
-Position=914,441,933,475
-Item=VW13,MICS7WM
-DataCaptureType=RadioButton
-Form=40
-  
-[Text]
-Position=794,444,854,476
-Text=VW13
- 
-  
-[Field]
-Name=VW14
-Position=914,478,933,512
-Item=VW14,MICS7WM
-DataCaptureType=RadioButton
-Form=40
-  
-[Text]
-Position=794,481,854,513
-Text=VW14
- 
-  
-[Field]
-Name=VW15
-Position=914,515,933,549
-Item=VW15,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Form=40
-  
-[Text]
-Position=794,518,854,550
-Text=VW15
- 
-  
-[Field]
-Name=VW16A1
-Position=914,552,933,586
-Item=VW16A1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=794,555,884,587
-Text=VW16A1
- 
-  
-[Field]
-Name=VW16A2
-Position=914,589,933,623
-Item=VW16A2,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=794,592,884,624
-Text=VW16A2
- 
-  
-[Field]
-Name=VW16B1
-Position=914,626,933,660
-Item=VW16B1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=794,629,884,661
-Text=VW16B1
- 
-  
-[Field]
-Name=VW16B2
-Position=914,663,933,697
-Item=VW16B2,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=794,666,884,698
-Text=VW16B2
- 
-  
-[Field]
-Name=VW16C1
-Position=914,700,933,734
-Item=VW16C1,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=794,703,884,735
-Text=VW16C1
- 
-  
-[Field]
-Name=VW16C2
-Position=914,737,933,771
-Item=VW16C2,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=794,740,884,772
-Text=VW16C2
- 
-  
-[Field]
-Name=VW18
-Position=914,778,951,812
-Item=VW18,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=NumberPad
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=794,781,854,813
-Text=VW18
- 
-  
-[Field]
-Name=VW20
-Position=1132,189,1151,223
-Item=VW20,MICS7WM
-DataCaptureType=RadioButton
-Form=40
-  
-[Text]
-Position=1012,192,1072,224
-Text=VW20
- 
-  
-[Field]
-Name=VW21
-Position=1132,232,1457,266
-Item=VW21,MICS7WM
-UpperCase=Yes
-DataCaptureType=CheckBox
-Form=40
-  
-[Text]
-Position=1012,235,1072,267
-Text=VW21
- 
-  
-[Field]
-Name=VW22A
-Position=1132,279,1151,313
-Item=VW22A,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=1012,282,1087,314
-Text=VW22A
- 
-  
-[Field]
-Name=VW23
-Position=1132,324,1421,358
-Item=VW23,MICS7WM
-UpperCase=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=CheckBox
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=1012,327,1072,359
-Text=VW23
- 
-  
-[Field]
-Name=VW24
-Position=1132,369,1151,403
-Item=VW24,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=1012,372,1072,404
-Text=VW24
- 
-  
-[Field]
-Name=VW26
-Position=1132,414,1151,448
-Item=VW26,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=1012,417,1072,449
-Text=VW26
- 
-  
-[Field]
-Name=VW27
-Position=1132,459,1151,493
-Item=VW27,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=1012,462,1072,494
-Text=VW27
- 
-  
-[Field]
-Name=VW28A
-Position=1132,507,1169,541
-Item=VW28A,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=NumberPad
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=1012,510,1087,542
-Text=VW28A
- 
-  
-[Field]
-Name=VW29
-Position=1132,551,1421,585
-Item=VW29,MICS7WM
-UpperCase=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=CheckBox
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=1012,554,1072,586
-Text=VW29
- 
-  
-[Field]
-Name=VW30A
-Position=1132,595,1151,629
-Item=VW30A,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=1012,598,1087,630
-Text=VW30A
- 
-  
-[Field]
-Name=VW32
-Position=1679,199,1698,233
-Item=VW32,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=1538,202,1598,234
-Text=VW32
- 
-  
-[Field]
-Name=VW33
-Position=1679,237,1914,271
-Item=VW33,MICS7WM
-UpperCase=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=CheckBox
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=1538,240,1598,272
-Text=VW33
- 
-  
-[Field]
-Name=VW34
-Position=2111,204,2130,238
-Item=VW34,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=1946,207,2006,239
-Text=VW34
- 
-  
-[Field]
-Name=VW35
-Position=2111,246,2130,280
-Item=VW35,MICS7WM
-DataCaptureType=RadioButton
-Form=40
-  
-[Text]
-Position=1946,249,2006,281
-Text=VW35
- 
-  
-[Field]
-Name=VW35B
-Position=2111,291,2130,325
-Item=VW35B,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Form=40
-  
-[Text]
-Position=1946,294,2021,326
-Text=VW35B
- 
-  
-  
-[Field]
-Name=VW35C
-Position=2111,328,2130,362
-Item=VW35C,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Form=40
-  
-[Text]
-Position=1946,331,2021,363
-Text=VW35C
- 
-  
-[Field]
-Name=VW35C1
-Position=2111,365,2238,399
-Item=VW35C1,MICS7WM
-Protected=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=TextBox
-Form=40
-  
-[Text]
-Position=1946,368,2036,400
-Text=VW35C1
- 
-  
-[Field]
-Name=VW35C2
-Position=2111,402,2130,436
-Item=VW35C2,MICS7WM
-Protected=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Form=40
-  
-[Text]
-Position=1946,405,2036,437
-Text=VW35C2
- 
-  
-[Field]
-Name=VW35C3
-Position=2111,439,2281,473
-Item=VW35C3,MICS7WM
-Protected=Yes
-UpperCase=Yes
-FieldLabelType=DictionaryName
-UseUnicodeTextBox=Yes
-DataCaptureType=TextBox
-Form=40
-  
-[Text]
-Position=1946,442,2036,474
-Text=VW35C3
- 
-  
-[Field]
-Name=VW35C5
-Position=2111,476,2148,510
-Item=VW35C5,MICS7WM
-Protected=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=TextBox
-Form=40
-  
-[Text]
-Position=1946,479,2036,511
-Text=VW35C5
- 
-  
-[Field]
-Name=VW35C6
-Position=2111,513,2166,547
-Item=VW35C6,MICS7WM
-UpperCase=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=CheckBox
-Form=40
-  
-[Text]
-Position=1946,516,2036,548
-Text=VW35C6
- 
-  
-  
-[Field]
-Name=VW35C7
-Position=2111,550,2256,584
-Item=VW35C7,MICS7WM
-UpperCase=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=TextBox
-Form=40
-  
-[Text]
-Position=1946,553,2036,585
-Text=VW35C7
- 
-  
-[Field]
-Name=VW35C8
-Position=2111,587,2148,621
-Item=VW35C8,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Form=40
-  
-[Text]
-Position=1946,590,2036,622
-Text=VW35C8
- 
-  
-  
-[Field]
-Name=VW35C8N
-Position=2111,624,2521,658
-Item=VW35C8N,MICS7WM
-Protected=Yes
-UpperCase=Yes
-FieldLabelType=DictionaryName
-UseUnicodeTextBox=Yes
-DataCaptureType=TextBox
-Form=40
-  
-[Text]
-Position=1946,627,2051,659
-Text=VW35C8N
- 
-  
-[Field]
-Name=VW35C9
-Position=2111,661,2148,695
-Item=VW35C9,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=TextBox
-Form=40
-  
-[Text]
-Position=1946,664,2036,696
-Text=VW35C9
- 
-  
-[Field]
-Name=VW35C9N
-Position=2111,698,2521,732
-Item=VW35C9N,MICS7WM
-UpperCase=Yes
-FieldLabelType=DictionaryName
-UseUnicodeTextBox=Yes
-DataCaptureType=TextBox
-Form=40
-  
-[Text]
-Position=1946,701,2051,733
-Text=VW35C9N
- 
-  
-[Field]
-Name=VW35C10N
-Position=2111,735,2521,769
-Item=VW35C10N,MICS7WM
-UpperCase=Yes
-FieldLabelType=DictionaryName
-UseUnicodeTextBox=Yes
-DataCaptureType=TextBox
-Form=40
-  
-[Text]
-Position=1946,738,2066,770
-Text=VW35C10N
- 
-  
-[Field]
-Name=VW35C11N
-Position=2111,772,2521,806
-Item=VW35C11N,MICS7WM
-UpperCase=Yes
-FieldLabelType=DictionaryName
-UseUnicodeTextBox=Yes
-DataCaptureType=TextBox
-Form=40
-  
-[Text]
-Position=1946,775,2066,807
-Text=VW35C11N
- 
-  
-  
-[Field]
-Name=VW35C12
-Position=2111,810,2521,844
-Item=VW35C12,MICS7WM
-UpperCase=Yes
-FieldLabelType=DictionaryName
-UseUnicodeTextBox=Yes
-DataCaptureType=TextBox
-Form=40
-  
-[Text]
-Position=1946,812,2051,844
-Text=VW35C12
- 
-  
-[Field]
-Name=VW35C13
-Position=2111,848,2521,882
-Item=VW35C13,MICS7WM
-UpperCase=Yes
-FieldLabelType=DictionaryName
-UseUnicodeTextBox=Yes
-DataCaptureType=TextBox
-Form=40
-  
-[Text]
-Position=1946,849,2051,881
-Text=VW35C13
- 
-  
-[Field]
-Name=VW35D
-Position=2111,924,2130,958
-Item=VW35D,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Form=40
-  
-[Text]
-Position=1946,927,2021,959
-Text=VW35D
- 
-  
-[Field]
-Name=VW35E
-Position=2705,169,2724,203
-Item=VW35E,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Form=40
-  
-[Text]
-Position=2576,172,2651,204
-Text=VW35E
- 
-  
-[Field]
-Name=VW35F
-Position=2705,210,2724,244
-Item=VW35F,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Form=40
-  
-[Text]
-Position=2576,213,2651,245
-Text=VW35F
- 
-  
-  
-[Field]
-Name=VW35G
-Position=2705,251,2724,285
-Item=VW35G,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Form=40
-  
-[Text]
-Position=2576,254,2651,286
-Text=VW35G
- 
-  
-[Field]
-Name=VW35G1
-Position=2705,292,2832,326
-Item=VW35G1,MICS7WM
-Protected=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=TextBox
-Form=40
-  
-[Text]
-Position=2576,295,2666,327
-Text=VW35G1
- 
-  
-[Field]
-Name=VW35G2
-Position=2705,333,2724,367
-Item=VW35G2,MICS7WM
-Protected=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Form=40
-  
-[Text]
-Position=2576,336,2666,368
-Text=VW35G2
- 
-  
-[Field]
-Name=VW35G3
-Position=2705,374,2875,408
-Item=VW35G3,MICS7WM
-Protected=Yes
-UpperCase=Yes
-FieldLabelType=DictionaryName
-UseUnicodeTextBox=Yes
-DataCaptureType=TextBox
-Form=40
-  
-[Text]
-Position=2576,377,2666,409
-Text=VW35G3
- 
-  
-[Field]
-Name=VW35G5
-Position=2705,415,2742,449
-Item=VW35G5,MICS7WM
-Protected=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=TextBox
-Form=40
-  
-[Text]
-Position=2576,418,2666,450
-Text=VW35G5
- 
-  
-[Field]
-Name=VW35G6
-Position=2705,457,2760,491
-Item=VW35G6,MICS7WM
-UpperCase=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=CheckBox
-Form=40
-  
-[Text]
-Position=2576,460,2666,492
-Text=VW35G6
- 
-  
-  
-[Field]
-Name=VW35G7
-Position=2705,499,2850,533
-Item=VW35G7,MICS7WM
-UpperCase=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=TextBox
-Form=40
-  
-[Text]
-Position=2576,502,2666,534
-Text=VW35G7
- 
-  
-[Field]
-Name=VW35G8
-Position=2705,541,2742,575
-Item=VW35G8,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Form=40
-  
-[Text]
-Position=2576,544,2666,576
-Text=VW35G8
- 
-  
-  
-[Field]
-Name=VW35G8N
-Position=2705,583,3115,617
-Item=VW35G8N,MICS7WM
-Protected=Yes
-UpperCase=Yes
-FieldLabelType=DictionaryName
-UseUnicodeTextBox=Yes
-DataCaptureType=TextBox
-Form=40
-  
-[Text]
-Position=2576,586,2681,618
-Text=VW35G8N
- 
-  
-[Field]
-Name=VW35G9
-Position=2705,625,2742,659
-Item=VW35G9,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=TextBox
-Form=40
-  
-[Text]
-Position=2576,628,2666,660
-Text=VW35G9
- 
-  
-[Field]
-Name=VW35G9N
-Position=2705,667,3115,701
-Item=VW35G9N,MICS7WM
-UpperCase=Yes
-FieldLabelType=DictionaryName
-UseUnicodeTextBox=Yes
-DataCaptureType=TextBox
-Form=40
-  
-[Text]
-Position=2576,670,2681,702
-Text=VW35G9N
- 
-  
-[Field]
-Name=VW35G10N
-Position=2705,709,3115,743
-Item=VW35G10N,MICS7WM
-UpperCase=Yes
-FieldLabelType=DictionaryName
-UseUnicodeTextBox=Yes
-DataCaptureType=TextBox
-Form=40
-  
-[Text]
-Position=2576,712,2696,744
-Text=VW35G10N
- 
-  
-[Field]
-Name=VW35G11N
-Position=2705,751,3115,785
-Item=VW35G11N,MICS7WM
-UpperCase=Yes
-FieldLabelType=DictionaryName
-UseUnicodeTextBox=Yes
-DataCaptureType=TextBox
-Form=40
-  
-[Text]
-Position=2576,754,2696,786
-Text=VW35G11N
- 
-  
-  
-[Field]
-Name=VW35G12
-Position=2705,793,3115,827
-Item=VW35G12,MICS7WM
-UpperCase=Yes
-FieldLabelType=DictionaryName
-UseUnicodeTextBox=Yes
-DataCaptureType=TextBox
-Form=40
-  
-[Text]
-Position=2576,796,2681,828
-Text=VW35G12
- 
-  
-[Field]
-Name=VW35G13
-Position=2705,835,3115,869
-Item=VW35G13,MICS7WM
-UpperCase=Yes
-FieldLabelType=DictionaryName
-UseUnicodeTextBox=Yes
-DataCaptureType=TextBox
-Form=40
-  
-[Text]
-Position=2576,838,2681,870
-Text=VW35G13
- 
-  
-[Field]
-Name=VW35H
-Position=2704,919,2723,953
-Item=VW35H,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Form=40
-  
-[Text]
-Position=2575,922,2650,954
-Text=VW35H
- 
-  
-[Field]
-Name=VW35I
-Position=3353,165,3372,199
-Item=VW35I,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Form=40
-  
-[Text]
-Position=3218,168,3293,200
-Text=VW35I
- 
-  
-[Field]
-Name=VW36A
-Position=3353,211,3372,245
-Item=VW36A,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=3218,214,3293,246
-Text=VW36A
- 
-  
-[Field]
-Name=VW36B
-Position=3353,250,3372,284
-Item=VW36B,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=3218,253,3293,285
-Text=VW36B
- 
-  
-[Field]
-Name=VW36C
-Position=3353,289,3372,323
-Item=VW36C,MICS7WM
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=3218,292,3293,324
-Text=VW36C
- 
-  
-[Field]
-Name=VW36AA
-Position=3353,341,3763,375
-Item=VW36AA,MICS7WM
-UpperCase=Yes
-FieldLabelType=DictionaryName
-UseUnicodeTextBox=Yes
-DataCaptureType=TextBox
-Form=40
-  
-[Text]
-Position=3218,344,3308,376
-Text=VW36AA
- 
-  
-[Field]
-Name=VW37
-Position=3353,393,4323,427
-Item=VW37,MICS7WM
-UpperCase=Yes
-FieldLabelType=DictionaryName
-UseUnicodeTextBox=Yes
-DataCaptureType=TextBox
-Keyboard=1033
-Form=40
-  
-[Text]
-Position=3218,396,3278,428
-Text=VW37
- 
 [Block]
 Name=BLOCK000
 Label=New Block
 DisplayTogether=Yes
-Position=70
-Length=6
+Position=0
+Length=0
   
 [Block]
 Name=BLOCK001
 Label=New Block
 DisplayTogether=Yes
-Position=77
-Length=2
+Position=1
+Length=0
   
 [Block]
 Name=BLOCK002
 Label=New Block
 DisplayTogether=Yes
-Position=80
-Length=5
+Position=2
+Length=0
   
 [Block]
 Name=BLOCK003
 Label=New Block
 DisplayTogether=Yes
-Position=86
-Length=2
+Position=3
+Length=0
   
 [Block]
 Name=BLOCK004
 Label=New Block
 DisplayTogether=Yes
-Position=92
-Length=6
+Position=4
+Length=0
   
 [Block]
 Name=BLOCK005
 Label=New Block
 DisplayTogether=Yes
-Position=99
-Length=2
+Position=5
+Length=0
   
 [Block]
 Name=BLOCK006
 Label=New Block
 DisplayTogether=Yes
-Position=102
-Length=5
+Position=6
+Length=0
   
 [Block]
 Name=BLOCK007
 Label=New Block
 DisplayTogether=Yes
-Position=108
-Length=2
+Position=7
+Length=0
   
 [EndGroup]
   
@@ -11323,7 +6410,7 @@ Length=2
 Required=Yes
 Name=FORMEND
 Label=End of Interview
-Form=41
+Form=32
 Max=1
   
 [Field]
@@ -11334,7 +6421,7 @@ Protected=Yes
 UpperCase=Yes
 DataCaptureType=TextBox
 Keyboard=1033
-Form=41
+Form=32
   
 [Text]
 Position=51,235,411,267
@@ -11351,7 +6438,7 @@ Protected=Yes
 UpperCase=Yes
 DataCaptureType=TextBox
 Keyboard=1033
-Form=41
+Form=32
   
   
 [Field]
@@ -11362,7 +6449,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=41
+Form=32
   
 [Text]
 Position=51,312,111,344
@@ -11379,7 +6466,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=41
+Form=32
   
 [Text]
 Position=51,364,111,396
@@ -11390,13 +6477,13 @@ Color=4210688
   
 [Field]
 Name=WM13
-Position=141,410,160,444
+Position=141,410,178,444
 Item=WM13,MICS7WM
 UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=41
+Form=32
   
 [Text]
 Position=51,411,111,443
@@ -11407,13 +6494,13 @@ Color=4210688
   
 [Field]
 Name=WM14
-Position=141,461,160,495
+Position=141,461,178,495
 Item=WM14,MICS7WM
 UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=41
+Form=32
   
 [Text]
 Position=51,462,111,494
@@ -11430,7 +6517,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=41
+Form=32
   
 [Text]
 Position=51,517,111,549
@@ -11446,7 +6533,7 @@ Item=WM15C,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=41
+Form=32
   
 [Text]
 Position=292,344,367,376
@@ -11460,7 +6547,7 @@ Item=WM15EF,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=41
+Form=32
   
 [Text]
 Position=292,401,382,433
@@ -11474,7 +6561,7 @@ Item=WM15GH,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=41
+Form=32
   
 [Text]
 Position=292,453,382,485
@@ -11488,7 +6575,7 @@ Item=WM15I,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=41
+Form=32
   
 [Text]
 Position=292,508,367,540
@@ -11498,7 +6585,7 @@ Text=WM15I
 [Grid]
 Name=MODWPN000
 Label=MICS plus consent
-Form=41
+Form=32
 Required=No
 Type=Record
 TypeName=MODWPN
@@ -11611,7 +6698,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=41
+Form=32
   
 [Text]
 Position=53,771,113,803
@@ -11627,7 +6714,7 @@ Item=WMFIN,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=41
+Form=32
   
 [Text]
 Position=53,818,128,850

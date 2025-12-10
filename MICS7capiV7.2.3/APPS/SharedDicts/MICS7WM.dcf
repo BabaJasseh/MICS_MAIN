@@ -4122,7 +4122,7 @@ Label=Person checking on baby's health
 Name=PN14_VST
 Value='A       ';DOCTOR
 Value='B       ';NURSE / MIDWIFE
-Value='C       ';AUXILIARY NURSE/NURSE ATTENDANT	
+Value='C       ';AUXILIARY NURSE/NURSE ATTENDANT
 Value='F       ';COMMUNITY BIRTH COMPANION
 Value='G       ';COMMUNITY HEALTH WORKER
 Value='H       ';RELATIVE / FRIEND
@@ -5626,7 +5626,7 @@ Name=MODFC
 RecordTypeValue='0FC'
 Required=No
 MaxRecords=20
-RecordLen=48
+RecordLen=47
 
 [Item]
 Label=Line Number
@@ -5760,16 +5760,23 @@ Value=26;OTHER TRADITIONAL
 Value=98;DK
 Value=99;NO RESPONSE
 
+[Record]
+Label=Awareness of law prohibiting FGM in Gambia
+Name=FG24AA
+RecordTypeValue='0FL'
+Required=No
+RecordLen=16
+
 [Item]
-Label=Awareness of the law that prohibits FGM
+Label=Awareness of the law prohibiting FGM practice
 Name=FG24A
-Start=48
+Start=16
 Len=1
 DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Awareness of the law that prohibits FGM
+Label=Awareness of the law prohibiting FGM practice
 Name=FG24A_VS1
 Value=1;Yes
 Value=2;No
