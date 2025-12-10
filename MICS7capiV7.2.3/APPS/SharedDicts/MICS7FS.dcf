@@ -653,7 +653,7 @@ DataType=Alpha
 [ValueSet]
 Label=Type of health insurance - National Health Insurance Authority (NHIA)
 Name=FIN2C_VS1
-Value='C';SOCIAL SECURITY
+Value='C';NATIONAL HEALTH INSURANCE AUTHORITY (NHIA)
 Value=' '
 Value='?';NO RESPONSE
 
@@ -1671,639 +1671,6 @@ Value=5;NEVER
 Value=9;NO RESPONSE
 
 [Record]
-Label=Time Use
-Name=MODFTU1
-RecordTypeValue='FTX'
-Required=No
-RecordLen=27
-
-[Item]
-Label=Introduction
-Name=FTU3
-Start=16
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Introduction
-Name=FTU3_VS1
-Value=1;CONTINUE
-
-[Item]
-Label=Time woke up yesterday
-Name=FTU4
-Start=17
-Len=5
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Time woke up yesterday - Hour
-Name=FTU4H
-Start=17
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Time woke up yesterday - Hour
-Name=FTU4H_VS1
-Value=0:23
-Value='  '
-Name=NOTAPPL,Special
-
-[Item]
-Label=Time woke up yesterday - Decimal
-Name=FTU4DEC
-Start=19
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[Item]
-Label=Time woke up yesterday - Minutes
-Name=FTU4M
-Start=20
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Time woke up yesterday - Minutes
-Name=FTU4M_VS1
-Value=0:59
-Value='  '
-Name=NOTAPPL,Special
-
-[Item]
-Label=Time went to sleep yesterday
-Name=FTU5
-Start=22
-Len=5
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Time went to sleep yesterday - Hour
-Name=FTU5H
-Start=22
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Time went to sleep yesterday - Hour
-Name=FTU5H_VS1
-Value=0:23
-Value='  '
-Name=NOTAPPL,Special
-
-[Item]
-Label=Time went to sleep yesterday - Decimal
-Name=FTU5DEC
-Start=24
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[Item]
-Label=Time went to sleep yesterday - Minutes
-Name=FTU5M
-Start=25
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Time went to sleep yesterday - Minutes
-Name=FTU5M_VS1
-Value=0:59
-Value='  '
-Name=NOTAPPL,Special
-
-[Item]
-Label=Did anything else other than mentioned
-Name=FTU18
-Start=27
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Did anything else other than mentioned
-Name=FTU18_VS1
-Value=0;Show list of activities to read them
-Value=1;YES
-Value=2;NO
-
-[Record]
-Label=Time Use Activities
-Name=MODFTU2
-RecordTypeValue='FTU'
-Required=No
-MaxRecords=100
-RecordLen=83
-
-[Item]
-Label=Activity order
-Name=FTU6
-Start=16
-Len=3
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Activity code
-Name=FTU7
-Start=19
-Len=3
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Activity code
-Name=FTU7_VS1
-Value=10;SLEEPING
-Value=20;EATING AND DRINKING
-Value=30;TAKING CARE OF PERSONAL HYGIENE AND HEALTH CARE
-Value=41;SCHOOL ATTENDANCE (IN PERSON) - FORMAL EDUCATION
-Value=42;SCHOOL ATTENDANCE (REMOTE) - FORMAL EDUCATION
-Value=43;HOMEWORK AND STUDYING AFTER SCHOOL HOURS - FORMAL EDUCATION
-Value=44;TRAVEL TO / FROM SCHOOL - FORMAL EDUCATION
-Value=51;SOCIAL RELATIONSHIPS - IN-PERSON, FACE-TO-FACE
-Value=52;SOCIAL RELATIONSHIPS - USING SOCIAL MEDIA AND CHAT-BASED PLATFORMS
-Value=60;WORK ACTIVITIES AND CHORES
-Value=70;PLAYING (EXCLUDING GAMING)
-Value=80;GAMING
-Value=90;WATCHING TV SHOWS OR MOVIES AS ENTERTAINMENT
-Value=100;SOCIAL MEDIA AS ENTERTAINMENT
-Value=110;FOLLOWING THE NEWS
-Value=120;CIVIC ENGAGEMENT ACTIVITIES
-Value=130;ARTS, CRAFTS, AND OTHER CREATIVE ACTIVITIES
-Value=140;PLAYING SPORTS, EXERCISING AND PHYSICAL ACTIVITY
-Value=150;READING FOR LEISURE
-Value=996;OTHER  ACTIVITIES NOT CAPTURED ELSEWHERE
-
-[Item]
-Label=Activity label
-Name=FTU7A
-Start=22
-Len=30
-DataType=Alpha
-
-[Item]
-Label=Activity start time
-Name=FTU8
-Start=52
-Len=5
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[ValueSet]
-Label=Activity start time
-Name=FTU8_VS1
-Value=0.00:23.59
-Value='     '
-Name=NOTAPPL,Special
-
-[Item]
-Label=Activity start time - Hour
-Name=FTU8H
-Start=52
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Activity start time - Hour
-Name=FTU8H_VS1
-Value=0:23
-Value='  '
-Name=NOTAPPL,Special
-
-[Item]
-Label=Activity start time - Decimal
-Name=FTU8DEC
-Start=54
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[Item]
-Label=Activity start time - Minutes
-Name=FTU8M
-Start=55
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Activity start time - Minutes
-Name=FTU8M_VS1
-Value=0:59
-Value='  '
-Name=NOTAPPL,Special
-
-[Item]
-Label=Duration and End Time
-Name=FTU9X
-Start=57
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Duration and End Time
-Name=FTU9X_VS1
-Value=1;DURATION
-Value=2;END TIME
-
-[Item]
-Label=Duration of activity
-Name=FTU9
-Start=58
-Len=5
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Duration of activity - Hour
-Name=FTU9H
-Start=58
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Duration of activity - Hour
-Name=FTU9H_VS1
-Value=0:23
-Value='  '
-Name=NOTAPPL,Special
-
-[Item]
-Label=Duration of activity - Decimal
-Name=FTU9DEC
-Start=60
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[Item]
-Label=Duration of activity - Minutes
-Name=FTU9M
-Start=61
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Duration of activity - Minutes
-Name=FTU9M_VS1
-Value=0:59
-Value='  '
-Name=NOTAPPL,Special
-
-[Item]
-Label=Activity end time
-Name=FTU10
-Start=63
-Len=5
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Activity end time - Hour
-Name=FTU10H
-Start=63
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Activity end time - Hour
-Name=FTU10H_VS1
-Value=0:23
-Value='  '
-Name=NOTAPPL,Special
-
-[Item]
-Label=Activity end time - Decimal
-Name=FTU10DEC
-Start=65
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[Item]
-Label=Activity end time - Minutes
-Name=FTU10M
-Start=66
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Activity end time - Minutes
-Name=FTU10M_VS1
-Value=0:59
-Value='  '
-Name=NOTAPPL,Special
-
-[Item]
-Label=Played online
-Name=FTU12
-Start=68
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Played online
-Name=FTU12_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Played with whom
-Name=FTU13
-Start=69
-Len=5
-DataType=Alpha
-
-[ValueSet]
-Label=Played with whom
-Name=FTU13_VS1
-Value='A    ';ALONE (ONLINE / OFFLINE)
-Value='B    ';WITH FRIENDS IN PERSON (ONLINE / OFFLINE)
-Value='C    ';WITH FRIENDS ONLINE
-Value='D    ';WITH OTHERS ONLINE
-Value='?    ';NO RESPONSE
-
-[Item]
-Label=Played with whom - Alone
-Name=FTU13A
-Start=69
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Played with whom - Alone
-Name=FTU13A_VS1
-Value='A';ALONE (ONLINE / OFFLINE)
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Played with whom - With friends in person
-Name=FTU13B
-Start=70
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Played with whom - With friends in person
-Name=FTU13B_VS1
-Value='B';WITH FRIENDS IN PERSON (ONLINE / OFFLINE)
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Played with whom - With friends online
-Name=FTU13C
-Start=71
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Played with whom - With friends online
-Name=FTU13C_VS1
-Value='C';WITH FRIENDS ONLINE
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Played with whom - With others online
-Name=FTU13D
-Start=72
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Played with whom - With others online
-Name=FTU13D_VS1
-Value='D';WITH OTHERS ONLINE
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Played with whom - No response
-Name=FTU13NR
-Start=73
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Played with whom - No response
-Name=FTU13NR_VS1
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Watched online
-Name=FTU14
-Start=74
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Watched online
-Name=FTU14_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Got the news online
-Name=FTU15
-Start=75
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Got the news online
-Name=FTU15_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Engaged in the civic activities online
-Name=FTU16
-Start=76
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Engaged in the civic activities online
-Name=FTU16_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=How lessons delivered
-Name=FTU17
-Start=77
-Len=7
-DataType=Alpha
-
-[ValueSet]
-Label=How lessons delivered
-Name=FTU17_VS1
-Value='A      ';SELF-STUDY WITH MATERIALS PROVIDED BY SCHOOL / TEACHERS
-Value='B      ';RADIO-BASED LESSON
-Value='C      ';TV-BASED LESSON
-Value='D      ';INTERNET-BASED LESSON
-Value='E      ';FACE-TO-FACE LESSON (AT CHILD’S HOME OR OUTSIDE SCHOOL)
-Value='X      ';OTHER
-Value='?      ';NO RESPONSE
-
-[Item]
-Label=How lessons delivered - Self study
-Name=FTU17A
-Start=77
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=How lessons delivered - Self study
-Name=FTU17A_VS1
-Value='A';SELF-STUDY WITH MATERIALS PROVIDED BY SCHOOL / TEACHERS
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=How lessons delivered - Radio-based lesson
-Name=FTU17B
-Start=78
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=How lessons delivered - Radio-based lesson
-Name=FTU17B_VS1
-Value='B';RADIO-BASED LESSON
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=How lessons delivered - TV-based lesson
-Name=FTU17C
-Start=79
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=How lessons delivered - TV-based lesson
-Name=FTU17C_VS1
-Value='C';TV-BASED LESSON
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=How lessons delivered - Internet-based lesson
-Name=FTU17D
-Start=80
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=How lessons delivered - Internet-based lesson
-Name=FTU17D_VS1
-Value='D';INTERNET-BASED LESSON
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=How lessons delivered - Face-to-face lesson
-Name=FTU17E
-Start=81
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=How lessons delivered - Face-to-face lesson
-Name=FTU17E_VS1
-Value='E';FACE-TO-FACE LESSON (AT CHILD’S HOME OR OUTSIDE SCHOOL)
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=How lessons delivered - Other
-Name=FTU17X
-Start=82
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=How lessons delivered - Other
-Name=FTU17X_VS1
-Value='X';OTHER
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=How lessons delivered - No response
-Name=FTU17NR
-Start=83
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=How lessons delivered - No response
-Name=FTU17NR_VS1
-Value=' '
-Value='?';NO RESPONSE
-
-[Record]
 Label=Household Involvement in Education
 Name=MODPR
 RecordTypeValue='0PR'
@@ -2451,7 +1818,7 @@ Label=Foundational Learning Skills
 Name=MODFL
 RecordTypeValue='0FL'
 Required=No
-RecordLen=258
+RecordLen=244
 
 [Item]
 Label=Consent from mother / caregiver
@@ -3784,205 +3151,9 @@ Value=1;INCORRECT
 Value='!';NOT REACHED
 
 [Item]
-Label=Word73
-Name=FL19W73
-Start=111
-Len=1
-DataType=Alpha
-
-[ValueSet]
-Label=Word73
-Name=FL19W73_VS1
-Value=' ';CORRECT
-Value=1;INCORRECT
-Value='!';NOT REACHED
-
-[Item]
-Label=Word74
-Name=FL19W74
-Start=112
-Len=1
-DataType=Alpha
-
-[ValueSet]
-Label=Word74
-Name=FL19W74_VS1
-Value=' ';CORRECT
-Value=1;INCORRECT
-Value='!';NOT REACHED
-
-[Item]
-Label=Word75
-Name=FL19W75
-Start=113
-Len=1
-DataType=Alpha
-
-[ValueSet]
-Label=Word75
-Name=FL19W75_VS1
-Value=' ';CORRECT
-Value=1;INCORRECT
-Value='!';NOT REACHED
-
-[Item]
-Label=Word76
-Name=FL19W76
-Start=114
-Len=1
-DataType=Alpha
-
-[ValueSet]
-Label=Word76
-Name=FL19W76_VS1
-Value=' ';CORRECT
-Value=1;INCORRECT
-Value='!';NOT REACHED
-
-[Item]
-Label=Word77
-Name=FL19W77
-Start=115
-Len=1
-DataType=Alpha
-
-[ValueSet]
-Label=Word77
-Name=FL19W77_VS1
-Value=' ';CORRECT
-Value=1;INCORRECT
-Value='!';NOT REACHED
-
-[Item]
-Label=Word78
-Name=FL19W78
-Start=116
-Len=1
-DataType=Alpha
-
-[ValueSet]
-Label=Word78
-Name=FL19W78_VS1
-Value=' ';CORRECT
-Value=1;INCORRECT
-Value='!';NOT REACHED
-
-[Item]
-Label=Word79
-Name=FL19W79
-Start=117
-Len=1
-DataType=Alpha
-
-[ValueSet]
-Label=Word79
-Name=FL19W79_VS1
-Value=' ';CORRECT
-Value=1;INCORRECT
-Value='!';NOT REACHED
-
-[Item]
-Label=Word80
-Name=FL19W80
-Start=118
-Len=1
-DataType=Alpha
-
-[ValueSet]
-Label=Word80
-Name=FL19W80_VS1
-Value=' ';CORRECT
-Value=1;INCORRECT
-Value='!';NOT REACHED
-
-[Item]
-Label=Word81
-Name=FL19W81
-Start=119
-Len=1
-DataType=Alpha
-
-[ValueSet]
-Label=Word81
-Name=FL19W81_VS1
-Value=' ';CORRECT
-Value=1;INCORRECT
-Value='!';NOT REACHED
-
-[Item]
-Label=Word82
-Name=FL19W82
-Start=120
-Len=1
-DataType=Alpha
-
-[ValueSet]
-Label=Word82
-Name=FL19W82_VS1
-Value=' ';CORRECT
-Value=1;INCORRECT
-Value='!';NOT REACHED
-
-[Item]
-Label=Word83
-Name=FL19W83
-Start=121
-Len=1
-DataType=Alpha
-
-[ValueSet]
-Label=Word83
-Name=FL19W83_VS1
-Value=' ';CORRECT
-Value=1;INCORRECT
-Value='!';NOT REACHED
-
-[Item]
-Label=Word84
-Name=FL19W84
-Start=122
-Len=1
-DataType=Alpha
-
-[ValueSet]
-Label=Word84
-Name=FL19W84_VS1
-Value=' ';CORRECT
-Value=1;INCORRECT
-Value='!';NOT REACHED
-
-[Item]
-Label=Word85
-Name=FL19W85
-Start=123
-Len=1
-DataType=Alpha
-
-[ValueSet]
-Label=Word85
-Name=FL19W85_VS1
-Value=' ';CORRECT
-Value=1;INCORRECT
-Value='!';NOT REACHED
-
-[Item]
-Label=Word86
-Name=FL19W86
-Start=124
-Len=1
-DataType=Alpha
-
-[ValueSet]
-Label=Word86
-Name=FL19W86_VS1
-Value=' ';CORRECT
-Value=1;INCORRECT
-Value='!';NOT REACHED
-
-[Item]
 Label=FL19. END
 Name=FL19END
-Start=125
+Start=111
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -3995,7 +3166,7 @@ Value=1;CONTINUE
 [Item]
 Label=Total number of words attempted
 Name=FL20A
-Start=126
+Start=112
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -4009,7 +3180,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Total number of words incorrect or missed
 Name=FL20B
-Start=128
+Start=114
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -4023,7 +3194,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Story comprehension: 1
 Name=FL21BA
-Start=130
+Start=116
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -4039,7 +3210,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Story comprehension: 2
 Name=FL21BB
-Start=131
+Start=117
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -4055,7 +3226,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Story comprehension: 3
 Name=FL21BC
-Start=132
+Start=118
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -4071,7 +3242,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Story comprehension: 4
 Name=FL21BD
-Start=133
+Start=119
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -4087,7 +3258,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Story comprehension: 5
 Name=FL21BE
-Start=134
+Start=120
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -4103,7 +3274,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Like to read story in other language
 Name=FL21D
-Start=135
+Start=121
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -4120,7 +3291,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Giving the Child book - Manual introduction
 Name=FL21G
-Start=137
+Start=123
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -4133,7 +3304,7 @@ Value=1;CONTINUE
 [Item]
 Label=Child read every word in the practice correctly
 Name=FL21H
-Start=138
+Start=124
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -4148,7 +3319,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Reading done:
 Name=FL21I
-Start=139
+Start=125
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -4164,7 +3335,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=FL21J. Say:
 Name=FL21J
-Start=140
+Start=126
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -4177,7 +3348,7 @@ Value=1;CONTINUE
 [Item]
 Label=Another question:
 Name=FL21K
-Start=141
+Start=127
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -4193,7 +3364,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=FL21. Say:
 Name=FL21L
-Start=142
+Start=128
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -4206,7 +3377,7 @@ Value=1;CONTINUE
 [Item]
 Label=FL21O. INTRO
 Name=FL21OINTRO
-Start=143
+Start=129
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -4219,7 +3390,7 @@ Value=1;CONTINUE
 [Item]
 Label=Word1
 Name=FL21OW1
-Start=144
+Start=130
 Len=1
 DataType=Alpha
 
@@ -4233,7 +3404,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word2
 Name=FL21OW2
-Start=145
+Start=131
 Len=1
 DataType=Alpha
 
@@ -4247,7 +3418,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word3
 Name=FL21OW3
-Start=146
+Start=132
 Len=1
 DataType=Alpha
 
@@ -4261,7 +3432,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word4
 Name=FL21OW4
-Start=147
+Start=133
 Len=1
 DataType=Alpha
 
@@ -4275,7 +3446,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word5
 Name=FL21OW5
-Start=148
+Start=134
 Len=1
 DataType=Alpha
 
@@ -4289,7 +3460,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word6
 Name=FL21OW6
-Start=149
+Start=135
 Len=1
 DataType=Alpha
 
@@ -4303,7 +3474,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word7
 Name=FL21OW7
-Start=150
+Start=136
 Len=1
 DataType=Alpha
 
@@ -4317,7 +3488,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word8
 Name=FL21OW8
-Start=151
+Start=137
 Len=1
 DataType=Alpha
 
@@ -4331,7 +3502,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word9
 Name=FL21OW9
-Start=152
+Start=138
 Len=1
 DataType=Alpha
 
@@ -4345,7 +3516,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word10
 Name=FL21OW10
-Start=153
+Start=139
 Len=1
 DataType=Alpha
 
@@ -4359,7 +3530,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word11
 Name=FL21OW11
-Start=154
+Start=140
 Len=1
 DataType=Alpha
 
@@ -4373,7 +3544,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word12
 Name=FL21OW12
-Start=155
+Start=141
 Len=1
 DataType=Alpha
 
@@ -4387,7 +3558,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word13
 Name=FL21OW13
-Start=156
+Start=142
 Len=1
 DataType=Alpha
 
@@ -4401,7 +3572,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word14
 Name=FL21OW14
-Start=157
+Start=143
 Len=1
 DataType=Alpha
 
@@ -4415,7 +3586,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word15
 Name=FL21OW15
-Start=158
+Start=144
 Len=1
 DataType=Alpha
 
@@ -4429,7 +3600,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word16
 Name=FL21OW16
-Start=159
+Start=145
 Len=1
 DataType=Alpha
 
@@ -4443,7 +3614,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word17
 Name=FL21OW17
-Start=160
+Start=146
 Len=1
 DataType=Alpha
 
@@ -4457,7 +3628,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word18
 Name=FL21OW18
-Start=161
+Start=147
 Len=1
 DataType=Alpha
 
@@ -4471,7 +3642,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word19
 Name=FL21OW19
-Start=162
+Start=148
 Len=1
 DataType=Alpha
 
@@ -4485,7 +3656,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word20
 Name=FL21OW20
-Start=163
+Start=149
 Len=1
 DataType=Alpha
 
@@ -4499,7 +3670,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word21
 Name=FL21OW21
-Start=164
+Start=150
 Len=1
 DataType=Alpha
 
@@ -4513,7 +3684,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word22
 Name=FL21OW22
-Start=165
+Start=151
 Len=1
 DataType=Alpha
 
@@ -4527,7 +3698,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word23
 Name=FL21OW23
-Start=166
+Start=152
 Len=1
 DataType=Alpha
 
@@ -4541,7 +3712,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word24
 Name=FL21OW24
-Start=167
+Start=153
 Len=1
 DataType=Alpha
 
@@ -4555,7 +3726,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word25
 Name=FL21OW25
-Start=168
+Start=154
 Len=1
 DataType=Alpha
 
@@ -4569,7 +3740,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word26
 Name=FL21OW26
-Start=169
+Start=155
 Len=1
 DataType=Alpha
 
@@ -4583,7 +3754,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word27
 Name=FL21OW27
-Start=170
+Start=156
 Len=1
 DataType=Alpha
 
@@ -4597,7 +3768,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word28
 Name=FL21OW28
-Start=171
+Start=157
 Len=1
 DataType=Alpha
 
@@ -4611,7 +3782,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word29
 Name=FL21OW29
-Start=172
+Start=158
 Len=1
 DataType=Alpha
 
@@ -4625,7 +3796,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word30
 Name=FL21OW30
-Start=173
+Start=159
 Len=1
 DataType=Alpha
 
@@ -4639,7 +3810,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word31
 Name=FL21OW31
-Start=174
+Start=160
 Len=1
 DataType=Alpha
 
@@ -4653,7 +3824,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word32
 Name=FL21OW32
-Start=175
+Start=161
 Len=1
 DataType=Alpha
 
@@ -4667,7 +3838,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word33
 Name=FL21OW33
-Start=176
+Start=162
 Len=1
 DataType=Alpha
 
@@ -4681,7 +3852,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word34
 Name=FL21OW34
-Start=177
+Start=163
 Len=1
 DataType=Alpha
 
@@ -4695,7 +3866,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word35
 Name=FL21OW35
-Start=178
+Start=164
 Len=1
 DataType=Alpha
 
@@ -4709,7 +3880,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word36
 Name=FL21OW36
-Start=179
+Start=165
 Len=1
 DataType=Alpha
 
@@ -4723,7 +3894,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word37
 Name=FL21OW37
-Start=180
+Start=166
 Len=1
 DataType=Alpha
 
@@ -4737,7 +3908,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word38
 Name=FL21OW38
-Start=181
+Start=167
 Len=1
 DataType=Alpha
 
@@ -4751,7 +3922,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word39
 Name=FL21OW39
-Start=182
+Start=168
 Len=1
 DataType=Alpha
 
@@ -4765,7 +3936,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word40
 Name=FL21OW40
-Start=183
+Start=169
 Len=1
 DataType=Alpha
 
@@ -4779,7 +3950,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word41
 Name=FL21OW41
-Start=184
+Start=170
 Len=1
 DataType=Alpha
 
@@ -4793,7 +3964,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word42
 Name=FL21OW42
-Start=185
+Start=171
 Len=1
 DataType=Alpha
 
@@ -4807,7 +3978,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word43
 Name=FL21OW43
-Start=186
+Start=172
 Len=1
 DataType=Alpha
 
@@ -4821,7 +3992,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word44
 Name=FL21OW44
-Start=187
+Start=173
 Len=1
 DataType=Alpha
 
@@ -4835,7 +4006,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word45
 Name=FL21OW45
-Start=188
+Start=174
 Len=1
 DataType=Alpha
 
@@ -4849,7 +4020,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word46
 Name=FL21OW46
-Start=189
+Start=175
 Len=1
 DataType=Alpha
 
@@ -4863,7 +4034,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word47
 Name=FL21OW47
-Start=190
+Start=176
 Len=1
 DataType=Alpha
 
@@ -4877,7 +4048,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word48
 Name=FL21OW48
-Start=191
+Start=177
 Len=1
 DataType=Alpha
 
@@ -4891,7 +4062,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word49
 Name=FL21OW49
-Start=192
+Start=178
 Len=1
 DataType=Alpha
 
@@ -4905,7 +4076,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word50
 Name=FL21OW50
-Start=193
+Start=179
 Len=1
 DataType=Alpha
 
@@ -4919,7 +4090,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word51
 Name=FL21OW51
-Start=194
+Start=180
 Len=1
 DataType=Alpha
 
@@ -4933,7 +4104,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word52
 Name=FL21OW52
-Start=195
+Start=181
 Len=1
 DataType=Alpha
 
@@ -4947,7 +4118,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word53
 Name=FL21OW53
-Start=196
+Start=182
 Len=1
 DataType=Alpha
 
@@ -4961,7 +4132,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word54
 Name=FL21OW54
-Start=197
+Start=183
 Len=1
 DataType=Alpha
 
@@ -4975,7 +4146,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word55
 Name=FL21OW55
-Start=198
+Start=184
 Len=1
 DataType=Alpha
 
@@ -4989,7 +4160,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word56
 Name=FL21OW56
-Start=199
+Start=185
 Len=1
 DataType=Alpha
 
@@ -5003,7 +4174,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word57
 Name=FL21OW57
-Start=200
+Start=186
 Len=1
 DataType=Alpha
 
@@ -5017,7 +4188,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word58
 Name=FL21OW58
-Start=201
+Start=187
 Len=1
 DataType=Alpha
 
@@ -5031,7 +4202,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word59
 Name=FL21OW59
-Start=202
+Start=188
 Len=1
 DataType=Alpha
 
@@ -5045,7 +4216,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word60
 Name=FL21OW60
-Start=203
+Start=189
 Len=1
 DataType=Alpha
 
@@ -5059,7 +4230,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word61
 Name=FL21OW61
-Start=204
+Start=190
 Len=1
 DataType=Alpha
 
@@ -5073,7 +4244,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word62
 Name=FL21OW62
-Start=205
+Start=191
 Len=1
 DataType=Alpha
 
@@ -5087,7 +4258,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word63
 Name=FL21OW63
-Start=206
+Start=192
 Len=1
 DataType=Alpha
 
@@ -5101,7 +4272,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word64
 Name=FL21OW64
-Start=207
+Start=193
 Len=1
 DataType=Alpha
 
@@ -5115,7 +4286,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word65
 Name=FL21OW65
-Start=208
+Start=194
 Len=1
 DataType=Alpha
 
@@ -5129,7 +4300,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word66
 Name=FL21OW66
-Start=209
+Start=195
 Len=1
 DataType=Alpha
 
@@ -5143,7 +4314,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word67
 Name=FL21OW67
-Start=210
+Start=196
 Len=1
 DataType=Alpha
 
@@ -5157,7 +4328,7 @@ Value='!';NOT REACHED
 [Item]
 Label=Word68
 Name=FL21OW68
-Start=211
+Start=197
 Len=1
 DataType=Alpha
 
@@ -5171,7 +4342,7 @@ Value='!';NOT REACHED
 [Item]
 Label=FL21O. END
 Name=FL21OEND
-Start=212
+Start=198
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5184,7 +4355,7 @@ Value=1;CONTINUE
 [Item]
 Label=Total number of words attempted
 Name=FL21PA
-Start=213
+Start=199
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -5198,7 +4369,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Total number of words incorrect or missed
 Name=FL21PB
-Start=215
+Start=201
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -5212,7 +4383,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Story comprehension: 1
 Name=FL22A
-Start=217
+Start=203
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5228,7 +4399,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Story comprehension: 2
 Name=FL22B
-Start=218
+Start=204
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5244,7 +4415,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Story comprehension: 3
 Name=FL22C
-Start=219
+Start=205
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5260,7 +4431,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Story comprehension: 4
 Name=FL22D
-Start=220
+Start=206
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5276,7 +4447,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Story comprehension: 5
 Name=FL22E
-Start=221
+Start=207
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5292,7 +4463,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Child recognizes symbol: 9
 Name=FL23A
-Start=222
+Start=208
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5307,7 +4478,7 @@ Value=3;NO ATTEMPT
 [Item]
 Label=Child recognizes symbol: 12
 Name=FL23B
-Start=223
+Start=209
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5322,7 +4493,7 @@ Value=3;NO ATTEMPT
 [Item]
 Label=Child recognizes symbol: 30
 Name=FL23C
-Start=224
+Start=210
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5337,7 +4508,7 @@ Value=3;NO ATTEMPT
 [Item]
 Label=Child recognizes symbol: 48
 Name=FL23D
-Start=225
+Start=211
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5352,7 +4523,7 @@ Value=3;NO ATTEMPT
 [Item]
 Label=Child recognizes symbol: 74
 Name=FL23E
-Start=226
+Start=212
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5367,7 +4538,7 @@ Value=3;NO ATTEMPT
 [Item]
 Label=Child recognizes symbol: 731
 Name=FL23F
-Start=227
+Start=213
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5382,7 +4553,7 @@ Value=3;NO ATTEMPT
 [Item]
 Label=Child identities bigger of two numbers: 7-5
 Name=FL24A
-Start=228
+Start=214
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5397,7 +4568,7 @@ Value=3;NO ATTEMPT
 [Item]
 Label=Child identities bigger of two numbers: 11-24
 Name=FL24B
-Start=229
+Start=215
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5412,7 +4583,7 @@ Value=3;NO ATTEMPT
 [Item]
 Label=Child identities bigger of two numbers: 58-49
 Name=FL24C
-Start=230
+Start=216
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5427,7 +4598,7 @@ Value=3;NO ATTEMPT
 [Item]
 Label=Child identities bigger of two numbers: 65-67
 Name=FL24D
-Start=231
+Start=217
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5442,7 +4613,7 @@ Value=3;NO ATTEMPT
 [Item]
 Label=Child identities bigger of two numbers: 146-154
 Name=FL24E
-Start=232
+Start=218
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5457,7 +4628,7 @@ Value=3;NO ATTEMPT
 [Item]
 Label=Child adds numbers correctly: 3+2
 Name=FL25A
-Start=233
+Start=219
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5472,7 +4643,7 @@ Value=3;NO ATTEMPT
 [Item]
 Label=Child adds numbers correctly: 8+6
 Name=FL25B
-Start=234
+Start=220
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5487,7 +4658,7 @@ Value=3;NO ATTEMPT
 [Item]
 Label=Child adds numbers correctly: 7+3
 Name=FL25C
-Start=235
+Start=221
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5502,7 +4673,7 @@ Value=3;NO ATTEMPT
 [Item]
 Label=Child adds numbers correctly: 13+6
 Name=FL25D
-Start=236
+Start=222
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5517,7 +4688,7 @@ Value=3;NO ATTEMPT
 [Item]
 Label=Child adds numbers correctly: 12+24
 Name=FL25E
-Start=237
+Start=223
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5532,7 +4703,7 @@ Value=3;NO ATTEMPT
 [Item]
 Label=Manual intro
 Name=FL26
-Start=238
+Start=224
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5547,7 +4718,7 @@ Value=3;NO ATTEMPT
 [Item]
 Label=Manual intro
 Name=FL26A
-Start=239
+Start=225
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5560,7 +4731,7 @@ Value=1;CONTINUE
 [Item]
 Label=Manual intro
 Name=FL26B
-Start=240
+Start=226
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5573,7 +4744,7 @@ Value=1;CONTINUE
 [Item]
 Label=Manual intro
 Name=FL26C
-Start=241
+Start=227
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5588,7 +4759,7 @@ Value=3;NO ATTEMPT
 [Item]
 Label=Manual intro
 Name=FL26D
-Start=242
+Start=228
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5601,7 +4772,7 @@ Value=1;CONTINUE
 [Item]
 Label=Manual intro
 Name=FL26E
-Start=243
+Start=229
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5614,7 +4785,7 @@ Value=1;CONTINUE
 [Item]
 Label=Child identifies next number: 5-6-7-X
 Name=FL27A
-Start=244
+Start=230
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5629,7 +4800,7 @@ Value=3;NO ATTEMPT
 [Item]
 Label=Child identifies next number: 14-15-X-17
 Name=FL27B
-Start=245
+Start=231
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5644,7 +4815,7 @@ Value=3;NO ATTEMPT
 [Item]
 Label=Child identifies next number: 20-X-40-50
 Name=FL27C
-Start=246
+Start=232
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5659,7 +4830,7 @@ Value=3;NO ATTEMPT
 [Item]
 Label=Child identifies next number: 2-4-6-X
 Name=FL27D
-Start=247
+Start=233
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5674,7 +4845,7 @@ Value=3;NO ATTEMPT
 [Item]
 Label=Child identifies next number: 5-8-11-X
 Name=FL27E
-Start=248
+Start=234
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5689,7 +4860,7 @@ Value=3;NO ATTEMPT
 [Item]
 Label=Result of interview with child
 Name=FL28
-Start=249
+Start=235
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -5708,7 +4879,7 @@ Value=96;OTHER
 [Item]
 Label=Story 1 that child has read - Language
 Name=ST1LANG
-Start=251
+Start=237
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -5725,7 +4896,7 @@ Value=95;DOES NOT WANT TO TRY
 [Item]
 Label=Story 1 that child has read - Target number of words
 Name=ST1WNUM
-Start=253
+Start=239
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -5733,7 +4904,7 @@ ZeroFill=Yes
 [Item]
 Label=Story 2 that child has read - Language
 Name=ST2LANG
-Start=255
+Start=241
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -5750,7 +4921,7 @@ Value=95;DOES NOT WANT TO TRY
 [Item]
 Label=Story 2 that child has read - Target number of words
 Name=ST2WNUM
-Start=257
+Start=243
 Len=2
 DataType=Numeric
 ZeroFill=Yes
