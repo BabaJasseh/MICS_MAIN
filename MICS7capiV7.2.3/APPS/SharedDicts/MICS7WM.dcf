@@ -2854,6 +2854,7 @@ Label=Antenatal care provider
 Name=MN3_VST
 Value='A      ';DOCTOR
 Value='B      ';NURSE / MIDWIFE
+Value='C      ';AUXILIARY NURSE/NURSE ATTENDANT
 Value='F      ';COMMUNITY BIRTH COMPANION
 Value='G      ';COMMUNITY HEALTH WORKER
 Value='X      ';OTHER
@@ -2900,7 +2901,7 @@ DataType=Alpha
 [ValueSet]
 Label=Antenatal care provider: Other qualified
 Name=MN3C_VST
-Value='C';OTHER QUALIFIED
+Value='C';AUXILIARY NURSE/NURSE ATTENDANT
 Value=' '
 Value='?';NO RESPONSE
 
@@ -2915,7 +2916,7 @@ DataType=Alpha
 [ValueSet]
 Label=Antenatal care provider: Traditional birth attendant
 Name=MN3F_VST
-Value='F';TRADITIONAL BIRTH ATTENDANT
+Value='F';COMMUNITY BIRTH COMMUNITY
 Value=' '
 Value='?';NO RESPONSE
 
@@ -3230,8 +3231,8 @@ Label=Assistance at delivery
 Name=MN19_VST
 Value='A        ';DOCTOR
 Value='B        ';NURSE / MIDWIFE
-Value='C        ';OTHER QUALIFIED
-Value='F        ';TRADITIONAL BIRTH ATTENDANT
+Value='C        ';AUXILIARY NURSE /NURSE ATTENDANT
+Value='F        ';COMMUNITY BIRTH COMPANION
 Value='G        ';COMMUNITY HEALTH WORKER
 Value='H        ';RELATIVE / FRIEND
 Value='X        ';OTHER
@@ -3279,7 +3280,7 @@ DataType=Alpha
 [ValueSet]
 Label=Assistance at delivery: Other qualified
 Name=MN19C_VST
-Value='C';OTHER QUALIFIED
+Value='C';AUXILIARY NURSE /NURSE ATTENDANT
 Value=' '
 Value='?';NO RESPONSE
 
@@ -3294,7 +3295,7 @@ DataType=Alpha
 [ValueSet]
 Label=Assistance at delivery: Traditional birth attendant
 Name=MN19F_VST
-Value='F';TRADITIONAL BIRTH ATTENDANT
+Value='F';COMMUNITY BIRTH COMPANION
 Value=' '
 Value='?';NO RESPONSE
 
@@ -3393,7 +3394,6 @@ Value=31;PRIVATE HOSPITAL
 Value=32;PRIVATE CLINIC
 Value=33;PRIVATE MATERNITY HOME
 Value=36;OTHER PRIVATE
-Value=41;NGO HOSPITAL
 Value=42;NGO CLINIC
 Value=46;OTHER NGO
 Value=76;DK PUBLIC, PRIVATE, OR NGO
@@ -3594,9 +3594,9 @@ Label=What was applied to the cord
 Name=MN31_VST
 Value='A       ';CHLORHEXIDINE
 Value='B       ';OTHER ANTISEPTIC (ALCOHOL, SPIRIT, GENTIAN VIOLET)
-Value='C       ';MUSTARD OIL
-Value='D       ';ASH
-Value='E       ';ANIMAL DUNG
+Value='F       ';SHEA BUTTER
+Value='G       ';WATER
+Value='H       ';VASELINE
 Value='X       ';OTHER
 Value='Z       ';DK / DON’T REMEMBER
 Value='?       ';NO RESPONSE
@@ -3632,47 +3632,47 @@ Value=' '
 Value='?';NO RESPONSE
 
 [Item]
-Label=What was applied to the cord: Mustard oil
-Name=MN31C
+Label=What was applied to the cord: Shea Butter
+Name=MN31F
 Start=67
 Len=1
 ItemType=SubItem
 DataType=Alpha
 
 [ValueSet]
-Label=What was applied to the cord: Mustard oil
-Name=MN31C_VST
-Value='C';MUSTARD OIL
+Label=What was applied to the cord: Shea Butter
+Name=MN31F_VS1
+Value='F';SHEA BUTTER
 Value=' '
 Value='?';NO RESPONSE
 
 [Item]
-Label=What was applied to the cord: Ash
-Name=MN31D
+Label=What was applied to the cord: Water
+Name=MN31G
 Start=68
 Len=1
 ItemType=SubItem
 DataType=Alpha
 
 [ValueSet]
-Label=What was applied to the cord: Ash
-Name=MN31D_VST
-Value='D';ASH
+Label=What was applied to the cord: Water
+Name=MN31G_VS1
+Value='G';WATER
 Value=' '
 Value='?';NO RESPONSE
 
 [Item]
-Label=What was applied to the cord: Animal dung
-Name=MN31E
+Label=What was applied to the cord: Vaseline
+Name=MN31H
 Start=69
 Len=1
 ItemType=SubItem
 DataType=Alpha
 
 [ValueSet]
-Label=What was applied to the cord: Animal dung
-Name=MN31E_VST
-Value='E';ANIMAL DUNG
+Label=What was applied to the cord: Vaseline
+Name=MN31H_VS1
+Value='H';VASELINE
 Value=' '
 Value='?';NO RESPONSE
 
@@ -3766,7 +3766,7 @@ ZeroFill=Yes
 [ValueSet]
 Label=Weight from card or recall
 Name=MN34A_VST
-Value=1;FROM CARD
+Value=1;FROM INFANT WELFARE (IWC) CARD/ ANTENATAL CARD (ANC)
 Value=2;FROM RECALL
 Value=9;DK / NO RESPONSE
 
@@ -4122,8 +4122,8 @@ Label=Person checking on baby's health
 Name=PN14_VST
 Value='A       ';DOCTOR
 Value='B       ';NURSE / MIDWIFE
-Value='C       ';OTHER QUALIFIED
-Value='F       ';TRADITIONAL BIRTH ATTENDANT
+Value='C       ';AUXILIARY NURSE/NURSE ATTENDANT	
+Value='F       ';COMMUNITY BIRTH COMPANION
 Value='G       ';COMMUNITY HEALTH WORKER
 Value='H       ';RELATIVE / FRIEND
 Value='X       ';OTHER
@@ -4160,7 +4160,7 @@ Value=' '
 Value='?';NO RESPONSE
 
 [Item]
-Label=Person checking on baby's health: Other qualified
+Label=Person checking on baby's health: Auxiliary Nurse/Nurse Attendant
 Name=PN14C
 Start=32
 Len=1
@@ -4168,14 +4168,14 @@ ItemType=SubItem
 DataType=Alpha
 
 [ValueSet]
-Label=Person checking on baby's health: Other qualified
+Label=Person checking on baby's health: Auxiliary Nurse/Nurse Attendant
 Name=PN14C_VST
 Value='C';OTHER QUALIFIED
 Value=' '
 Value='?';NO RESPONSE
 
 [Item]
-Label=Person checking on baby's health: Traditional birth attendant
+Label=Person checking on baby's health: Community birth companion
 Name=PN14F
 Start=33
 Len=1
@@ -4183,7 +4183,7 @@ ItemType=SubItem
 DataType=Alpha
 
 [ValueSet]
-Label=Person checking on baby's health: Traditional birth attendant
+Label=Person checking on baby's health: Community birth companion
 Name=PN14F_VST
 Value='F';TRADITIONAL BIRTH ATTENDANT
 Value=' '
@@ -4269,7 +4269,6 @@ Value=31;PRIVATE HOSPITAL
 Value=32;PRIVATE CLINIC
 Value=33;PRIVATE MATERNITY HOME
 Value=36;OTHER PRIVATE
-Value=41;NGO HOSPITAL
 Value=42;NGO CLINIC
 Value=46;OTHER NGO
 Value=76;DK PUBLIC, PRIVATE, OR NGO
@@ -4398,8 +4397,8 @@ Label=Person checking on mother's health
 Name=PN23_VST
 Value='A       ';DOCTOR
 Value='B       ';NURSE / MIDWIFE
-Value='C       ';OTHER QUALIFIED
-Value='F       ';TRADITIONAL BIRTH ATTENDANT
+Value='C       ';AUXILIARY NURSE/NURSE ATTENDANCE
+Value='F       ';COMMUNITY BIRTH COMPANION
 Value='G       ';COMMUNITY HEALTH WORKER
 Value='H       ';RELATIVE / FRIEND
 Value='X       ';OTHER
@@ -4436,7 +4435,7 @@ Value=' '
 Value='?';NO RESPONSE
 
 [Item]
-Label=Person checking on mother's health: Other qualified
+Label=Person checking on mother's health: Auxiliary nurse/nurse attendant
 Name=PN23C
 Start=49
 Len=1
@@ -4444,14 +4443,14 @@ ItemType=SubItem
 DataType=Alpha
 
 [ValueSet]
-Label=Person checking on mother's health: Other qualified
+Label=Person checking on mother's health: Auxiliary nurse/nurse attendant
 Name=PN23C_VST
 Value='C';OTHER QUALIFIED
 Value=' '
 Value='?';NO RESPONSE
 
 [Item]
-Label=Person checking on mother's health: Traditional birth attendant
+Label=Person checking on mother's health: Community birth companion
 Name=PN23F
 Start=50
 Len=1
@@ -4459,7 +4458,7 @@ ItemType=SubItem
 DataType=Alpha
 
 [ValueSet]
-Label=Person checking on mother's health: Traditional birth attendant
+Label=Person checking on mother's health: Community birth companion
 Name=PN23F_VST
 Value='F';TRADITIONAL BIRTH ATTENDANT
 Value=' '
@@ -4545,7 +4544,6 @@ Value=31;PRIVATE HOSPITAL
 Value=32;PRIVATE CLINIC
 Value=33;PRIVATE MATERNITY HOME
 Value=36;OTHER PRIVATE
-Value=41;NGO HOSPITAL
 Value=42;NGO CLINIC
 Value=46;OTHER NGO
 Value=76;DK PUBLIC, PRIVATE, OR NGO
@@ -4712,14 +4710,13 @@ Name=CP4_VST
 Value='A              ';FEMALE STERILIZATION
 Value='B              ';MALE STERILIZATION
 Value='C              ';IUD
-Value='D              ';INJECTABLES
+Value='D              ';INJECTABLES SUCH AS DEPO
 Value='E              ';IMPLANTS
 Value='F              ';PILL
 Value='G              ';MALE CONDOM
 Value='H              ';FEMALE CONDOM
 Value='I              ';DIAPHRAGM
 Value='J              ';FOAM / JELLY
-Value='K              ';LACTATIONAL AMENORRHOEA METHOD (LAM)
 Value='L              ';PERIODIC ABSTINENCE / RHYTHM
 Value='M              ';WITHDRAWAL
 Value='X              ';OTHER
@@ -4771,7 +4768,7 @@ Value=' '
 Value='?';NO RESPONSE
 
 [Item]
-Label=Current method: Injectables
+Label=Current method: Injectables such as depo
 Name=CP4D
 Start=22
 Len=1
@@ -4779,7 +4776,7 @@ ItemType=SubItem
 DataType=Alpha
 
 [ValueSet]
-Label=Current method: Injectables
+Label=Current method: Injectables such as depo
 Name=CP4D_VST
 Value='D';INJECTABLES
 Value=' '
@@ -4872,21 +4869,6 @@ DataType=Alpha
 Label=Current method: Foam / Jelly
 Name=CP4J_VST
 Value='J';FOAM / JELLY
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Current method: Lactational amenorrhoea method (LAM)
-Name=CP4K
-Start=29
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Current method: Lactational amenorrhoea method (LAM)
-Name=CP4K_VST
-Value='K';LACTATIONAL AMENORRHOEA METHOD (LAM)
 Value=' '
 Value='?';NO RESPONSE
 
@@ -5588,7 +5570,7 @@ Value=11;DOCTOR
 Value=12;NURSE / MIDWIFE
 Value=16;OTHER HEALTH PROFESSIONAL
 Value=21;TRADITIONAL 'CIRCUMCISER'
-Value=22;TRADITIONAL BIRTH ATTENDANT
+Value=22;COMMUNITY BIRTH COMPANION
 Value=26;OTHER TRADITIONAL
 Value=98;DK
 Value=99;NO RESPONSE
@@ -5644,7 +5626,7 @@ Name=MODFC
 RecordTypeValue='0FC'
 Required=No
 MaxRecords=20
-RecordLen=47
+RecordLen=48
 
 [Item]
 Label=Line Number
@@ -5773,734 +5755,24 @@ Value=11;DOCTOR
 Value=12;NURSE / MIDWIFE
 Value=16;OTHER HEALTH PROFESSIONAL
 Value=21;TRADITIONAL 'CIRCUMCISER'
-Value=22;TRADITIONAL BIRTH ATTENDANT
+Value=22;COMMUNITY BIRTH COMPANION
 Value=26;OTHER TRADITIONAL
 Value=98;DK
 Value=99;NO RESPONSE
 
-[Record]
-Label=HPV
-Name=MODHP
-RecordTypeValue='0HP'
-Required=No
-RecordLen=21
-
 [Item]
-Label=Ever received HPV vaccine
-Name=HP2
-Start=16
+Label=Awareness of the law that prohibits FGM
+Name=FG24A
+Start=48
 Len=1
 DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Ever received HPV vaccine
-Name=HP2_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=Conforming the receipt of HPV vaccine
-Name=HP3
-Start=17
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Conforming the receipt of HPV vaccine
-Name=HP3_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=Ever received HPV vaccination card
-Name=HP4
-Start=18
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Ever received HPV vaccination card
-Name=HP4_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=Number of doses of HPV vaccine
-Name=HP5
-Start=19
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Number of doses of HPV vaccine
-Name=HP5_VS1
-Value=1;ONE DOSE
-Value=2;TWO DOSES
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=Place where the most recent HPV vaccination
-Name=HP6
-Start=20
-Len=2
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Place where the most recent HPV vaccination
-Name=HP6_VS1
-Value=11;PUBLIC HEALTH FACILITY
-Value=12;PRIVATE HEALTH FACILITY
-Value=13;NGO HEALTH FACILITY
-Value=76;DK PUBLIC, PRIVATE, OR NGO
-Value=21;SCHOOL
-Value=96;OTHER
-Value=98;DK
-Value=99;NO RESPONSE
-
-[Record]
-Label=Time Use
-Name=MODTU1
-RecordTypeValue='0TX'
-Required=No
-RecordLen=27
-
-[Item]
-Label=Introduction
-Name=TU3
-Start=16
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Introduction
-Name=TU3_VS1
-Value=1;CONTINUE
-
-[Item]
-Label=Time woke up yesterday
-Name=TU4
-Start=17
-Len=5
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Time woke up yesterday - Hour
-Name=TU4H
-Start=17
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Time woke up yesterday - Hour
-Name=TU4H_VS1
-Value=0:23
-Value='  '
-Name=NOTAPPL,Special
-
-[Item]
-Label=Time woke up yesterday - Decimal
-Name=TU4DEC
-Start=19
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[Item]
-Label=Time woke up yesterday - Minutes
-Name=TU4M
-Start=20
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Time woke up yesterday - Minutes
-Name=TU4M_VS1
-Value=0:59
-Value='  '
-Name=NOTAPPL,Special
-
-[Item]
-Label=Time went to sleep yesterday
-Name=TU5
-Start=22
-Len=5
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Time went to sleep yesterday - Hour
-Name=TU5H
-Start=22
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Time went to sleep yesterday - Hour
-Name=TU5H_VS1
-Value=0:23
-Value='  '
-Name=NOTAPPL,Special
-
-[Item]
-Label=Time went to sleep yesterday - Decimal
-Name=TU5DEC
-Start=24
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[Item]
-Label=Time went to sleep yesterday - Minutes
-Name=TU5M
-Start=25
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Time went to sleep yesterday - Minutes
-Name=TU5M_VS1
-Value=0:59
-Value='  '
-Name=NOTAPPL,Special
-
-[Item]
-Label=Did anything else other than mentioned
-Name=TU18
-Start=27
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Did anything else other than mentioned
-Name=TU18_VS1
-Value=0;Show list of activities to read them
-Value=1;YES
-Value=2;NO
-
-[Record]
-Label=Time Use Activities
-Name=MODTU2
-RecordTypeValue='0TU'
-Required=No
-MaxRecords=100
-RecordLen=83
-
-[Item]
-Label=Activity order
-Name=TU6
-Start=16
-Len=3
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Activity code
-Name=TU7
-Start=19
-Len=3
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Activity code
-Name=TU7_VS1
-Value=10;SLEEPING
-Value=20;EATING AND DRINKING
-Value=30;TAKING CARE OF PERSONAL HYGIENE AND HEALTH CARE
-Value=41;SCHOOL ATTENDANCE (IN PERSON) - FORMAL EDUCATION
-Value=42;SCHOOL ATTENDANCE (REMOTE) - FORMAL EDUCATION
-Value=43;HOMEWORK AND STUDYING AFTER SCHOOL HOURS - FORMAL EDUCATION
-Value=44;TRAVEL TO / FROM SCHOOL - FORMAL EDUCATION
-Value=51;SOCIAL RELATIONSHIPS - IN-PERSON, FACE-TO-FACE
-Value=52;SOCIAL RELATIONSHIPS - USING SOCIAL MEDIA AND CHAT-BASED PLATFORMS
-Value=60;WORK ACTIVITIES AND CHORES
-Value=70;PLAYING (EXCLUDING GAMING)
-Value=80;GAMING
-Value=90;WATCHING TV SHOWS OR MOVIES AS ENTERTAINMENT
-Value=100;SOCIAL MEDIA AS ENTERTAINMENT
-Value=110;FOLLOWING THE NEWS
-Value=120;CIVIC ENGAGEMENT ACTIVITIES
-Value=130;ARTS, CRAFTS, AND OTHER CREATIVE ACTIVITIES
-Value=140;PLAYING SPORTS, EXERCISING AND PHYSICAL ACTIVITY
-Value=150;READING FOR LEISURE
-Value=996;OTHER  ACTIVITIES NOT CAPTURED ELSEWHERE
-
-[Item]
-Label=Activity label
-Name=TU7A
-Start=22
-Len=30
-DataType=Alpha
-
-[Item]
-Label=Activity start time
-Name=TU8
-Start=52
-Len=5
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[ValueSet]
-Label=Activity start time
-Name=TU8_VS1
-Value=0.00:23.59
-Value='     '
-Name=NOTAPPL,Special
-
-[Item]
-Label=Activity start time - Hour
-Name=TU8H
-Start=52
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Activity start time - Hour
-Name=TU8H_VS1
-Value=0:23
-Value='  '
-Name=NOTAPPL,Special
-
-[Item]
-Label=Activity start time - Decimal
-Name=TU8DEC
-Start=54
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[Item]
-Label=Activity start time - Minutes
-Name=TU8M
-Start=55
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Activity start time - Minutes
-Name=TU8M_VS1
-Value=0:59
-Value='  '
-Name=NOTAPPL,Special
-
-[Item]
-Label=Duration and End Time
-Name=TU9X
-Start=57
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Duration and End Time
-Name=TU9X_VS1
-Value=1;DURATION
-Value=2;END TIME
-
-[Item]
-Label=Duration of activity
-Name=TU9
-Start=58
-Len=5
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Duration of activity - Hour
-Name=TU9H
-Start=58
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Duration of activity - Hour
-Name=TU9H_VS1
-Value=0:23
-Value='  '
-Name=NOTAPPL,Special
-
-[Item]
-Label=Duration of activity - Decimal
-Name=TU9DEC
-Start=60
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[Item]
-Label=Duration of activity - Minutes
-Name=TU9M
-Start=61
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Duration of activity - Minutes
-Name=TU9M_VS1
-Value=0:59
-Value='  '
-Name=NOTAPPL,Special
-
-[Item]
-Label=Activity end time
-Name=TU10
-Start=63
-Len=5
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Activity end time - Hour
-Name=TU10H
-Start=63
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Activity end time - Hour
-Name=TU10H_VS1
-Value=0:23
-Value='  '
-Name=NOTAPPL,Special
-
-[Item]
-Label=Activity end time - Decimal
-Name=TU10DEC
-Start=65
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[Item]
-Label=Activity end time - Minutes
-Name=TU10M
-Start=66
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Activity end time - Minutes
-Name=TU10M_VS1
-Value=0:59
-Value='  '
-Name=NOTAPPL,Special
-
-[Item]
-Label=Played online
-Name=TU12
-Start=68
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Played online
-Name=TU12_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Played with whom
-Name=TU13
-Start=69
-Len=5
-DataType=Alpha
-
-[ValueSet]
-Label=Played with whom
-Name=TU13_VS1
-Value='A    ';ALONE (ONLINE / OFFLINE)
-Value='B    ';WITH FRIENDS IN PERSON (ONLINE / OFFLINE)
-Value='C    ';WITH FRIENDS ONLINE
-Value='D    ';WITH OTHERS ONLINE
-Value='?    ';NO RESPONSE
-
-[Item]
-Label=Played with whom - Alone
-Name=TU13A
-Start=69
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Played with whom - Alone
-Name=TU13A_VS1
-Value='A';ALONE (ONLINE / OFFLINE)
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Played with whom - With friends in person
-Name=TU13B
-Start=70
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Played with whom - With friends in person
-Name=TU13B_VS1
-Value='B';WITH FRIENDS IN PERSON (ONLINE / OFFLINE)
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Played with whom - With friends online
-Name=TU13C
-Start=71
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Played with whom - With friends online
-Name=TU13C_VS1
-Value='C';WITH FRIENDS ONLINE
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Played with whom - With others online
-Name=TU13D
-Start=72
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Played with whom - With others online
-Name=TU13D_VS1
-Value='D';WITH OTHERS ONLINE
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Played with whom - No response
-Name=TU13NR
-Start=73
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Played with whom - No response
-Name=TU13NR_VS1
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Watched online
-Name=TU14
-Start=74
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Watched online
-Name=TU14_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Got the news online
-Name=TU15
-Start=75
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Got the news online
-Name=TU15_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Engaged in the civic activities online
-Name=TU16
-Start=76
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Engaged in the civic activities online
-Name=TU16_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=How lessons delivered
-Name=TU17
-Start=77
-Len=7
-DataType=Alpha
-
-[ValueSet]
-Label=How lessons delivered
-Name=TU17_VS1
-Value='A      ';SELF-STUDY WITH MATERIALS PROVIDED BY SCHOOL / TEACHERS
-Value='B      ';RADIO-BASED LESSON
-Value='C      ';TV-BASED LESSON
-Value='D      ';INTERNET-BASED LESSON
-Value='E      ';FACE-TO-FACE LESSON (AT CHILD’S HOME OR OUTSIDE SCHOOL)
-Value='X      ';OTHER
-Value='?      ';NO RESPONSE
-
-[Item]
-Label=How lessons delivered - Self study
-Name=TU17A
-Start=77
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=How lessons delivered - Self study
-Name=TU17A_VS1
-Value='A';SELF-STUDY WITH MATERIALS PROVIDED BY SCHOOL / TEACHERS
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=How lessons delivered - Radio-based lesson
-Name=TU17B
-Start=78
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=How lessons delivered - Radio-based lesson
-Name=TU17B_VS1
-Value='B';RADIO-BASED LESSON
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=How lessons delivered - TV-based lesson
-Name=TU17C
-Start=79
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=How lessons delivered - TV-based lesson
-Name=TU17C_VS1
-Value='C';TV-BASED LESSON
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=How lessons delivered - Internet-based lesson
-Name=TU17D
-Start=80
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=How lessons delivered - Internet-based lesson
-Name=TU17D_VS1
-Value='D';INTERNET-BASED LESSON
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=How lessons delivered - Face-to-face lesson
-Name=TU17E
-Start=81
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=How lessons delivered - Face-to-face lesson
-Name=TU17E_VS1
-Value='E';FACE-TO-FACE LESSON (AT CHILD’S HOME OR OUTSIDE SCHOOL)
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=How lessons delivered - Other
-Name=TU17X
-Start=82
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=How lessons delivered - Other
-Name=TU17X_VS1
-Value='X';OTHER
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=How lessons delivered - No response
-Name=TU17NR
-Start=83
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=How lessons delivered - No response
-Name=TU17NR_VS1
-Value=' '
-Value='?';NO RESPONSE
+Label=Awareness of the law that prohibits FGM
+Name=FG24A_VS1
+Value=1;Yes
+Value=2;No
 
 [Record]
 Label=Attitudes Toward Domestic Violence
@@ -6584,433 +5856,6 @@ ZeroFill=Yes
 [ValueSet]
 Label=If she burns the food: wife beating justified
 Name=DV1E_VST
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Record]
-Label=Safety / Discrimination
-Name=MODVT
-RecordTypeValue='0VT'
-Required=No
-RecordLen=41
-
-[Item]
-Label=Feeling safe walking alone in neighbourhood after dark
-Name=VT20
-Start=16
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Feeling safe walking alone in neighbourhood after dark
-Name=VT20_VST
-Value=1;VERY SAFE
-Value=2;SAFE
-Value=3;UNSAFE
-Value=4;VERY UNSAFE
-Value=7;NEVER WALK ALONE AFTER DARK
-Value=9;NO RESPONSE
-
-[Item]
-Label=Feeling safe at home alone after dark
-Name=VT21
-Start=17
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Feeling safe at home alone after dark
-Name=VT21_VST
-Value=1;VERY SAFE
-Value=2;SAFE
-Value=3;UNSAFE
-Value=4;VERY UNSAFE
-Value=7;NEVER ALONE AFTER DARK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 3 years, felt discriminated: Sex
-Name=VT23A
-Start=18
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 3 years, felt discriminated: Sex
-Name=VT23A_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 1 year, felt discriminated: Sex
-Name=VT23A1
-Start=19
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 1 year, felt discriminated: Sex
-Name=VT23A1_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 3 years, felt discriminated: Age
-Name=VT23B
-Start=20
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 3 years, felt discriminated: Age
-Name=VT23B_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 1 year, felt discriminated: Age
-Name=VT23B1
-Start=21
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 1 year, felt discriminated: Age
-Name=VT23B1_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 3 years, felt discriminated: Disability
-Name=VT23C
-Start=22
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 3 years, felt discriminated: Disability
-Name=VT23C_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 1 year, felt discriminated: Disability
-Name=VT23C1
-Start=23
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 1 year, felt discriminated: Disability
-Name=VT23C1_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 3 years, felt discriminated: Ethnicity, Race
-Name=VT23D
-Start=24
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 3 years, felt discriminated: Ethnicity, Race
-Name=VT23D_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 1 year, felt discriminated: Ethnicity, Race
-Name=VT23D1
-Start=25
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 1 year, felt discriminated: Ethnicity, Race
-Name=VT23D1_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 3 years, felt discriminated: Migration status
-Name=VT23E
-Start=26
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 3 years, felt discriminated: Migration status
-Name=VT23E_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 1 year, felt discriminated: Migration status
-Name=VT23E1
-Start=27
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 1 year, felt discriminated: Migration status
-Name=VT23E1_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 3 years, felt discriminated: Socio-Economic status
-Name=VT23F
-Start=28
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 3 years, felt discriminated: Socio-Economic status
-Name=VT23F_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 1 year, felt discriminated: Socio-Economic status
-Name=VT23F1
-Start=29
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 1 year, felt discriminated: Socio-Economic status
-Name=VT23F1_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 3 years, felt discriminated: Geographic location
-Name=VT23G
-Start=30
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 3 years, felt discriminated: Geographic location
-Name=VT23G_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 1 year, felt discriminated: Geographic location
-Name=VT23G1
-Start=31
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 1 year, felt discriminated: Geographic location
-Name=VT23G1_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 3 years, felt discriminated: Religion
-Name=VT23H
-Start=32
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 3 years, felt discriminated: Religion
-Name=VT23H_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 1 year, felt discriminated: Religion
-Name=VT23H1
-Start=33
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 1 year, felt discriminated: Religion
-Name=VT23H1_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 3 years, felt discriminated: Marital status
-Name=VT23I
-Start=34
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 3 years, felt discriminated: Marital status
-Name=VT23I_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 1 year, felt discriminated: Marital status
-Name=VT23I1
-Start=35
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 1 year, felt discriminated: Marital status
-Name=VT23I1_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 3 years, felt discriminated: Sexual orientation, Gender
-Name=VT23J
-Start=36
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 3 years, felt discriminated: Sexual orientation, Gender
-Name=VT23J_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 1 year, felt discriminated: Sexual orientation, Gender
-Name=VT23J1
-Start=37
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 1 year, felt discriminated: Sexual orientation, Gender
-Name=VT23J1_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 3 years, felt discriminated: Political opinion
-Name=VT23K
-Start=38
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 3 years, felt discriminated: Political opinion
-Name=VT23K_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 1 year, felt discriminated: Political opinion
-Name=VT23K1
-Start=39
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 1 year, felt discriminated: Political opinion
-Name=VT23K1_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 3 years, felt discriminated: Other
-Name=VT23X
-Start=40
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 3 years, felt discriminated: Other
-Name=VT23X_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 1 years, felt discriminated: Other
-Name=VT23X2
-Start=41
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 1 years, felt discriminated: Other
-Name=VT23X2_VS1
 Value=1;YES
 Value=2;NO
 Value=8;DK
@@ -7230,246 +6075,6 @@ Start=38
 Len=2
 DataType=Numeric
 ZeroFill=Yes
-
-[Record]
-Label=Adult Functioning
-Name=MODAF
-RecordTypeValue='0AF'
-Required=No
-RecordLen=29
-
-[Item]
-Label=Use glasses or contact lenses
-Name=AF2
-Start=16
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Use glasses or contact lenses
-Name=AF2_VST
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Use hearing aid
-Name=AF3
-Start=17
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Use hearing aid
-Name=AF3_VST
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Difficulty seeing, even if wearing glasses or contact lenses
-Name=AF6
-Start=18
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Difficulty seeing, even if wearing glasses or contact lenses
-Name=AF6_VST
-Value=1;NO DIFFICULTY
-Value=2;SOME DIFFICULTY
-Value=3;A LOT OF DIFFICULTY
-Value=4;CANNOT SEE AT ALL
-Value=9;NO RESPONSE
-
-[Item]
-Label=Difficulty hearing, even if using a hearing aid
-Name=AF8
-Start=19
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Difficulty hearing, even if using a hearing aid
-Name=AF8_VST
-Value=1;NO DIFFICULTY
-Value=2;SOME DIFFICULTY
-Value=3;A LOT OF DIFFICULTY
-Value=4;CANNOT HEAR AT ALL
-Value=9;NO RESPONSE
-
-[Item]
-Label=Difficulty walking or climbing steps
-Name=AF9
-Start=20
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Difficulty walking or climbing steps
-Name=AF9_VST
-Value=1;NO DIFFICULTY
-Value=2;SOME DIFFICULTY
-Value=3;A LOT OF DIFFICULTY
-Value=4;CANNOT WALK / CLIMB STEPS AT ALL
-Value=9;NO RESPONSE
-
-[Item]
-Label=Difficulty remembering or concentrating
-Name=AF10
-Start=21
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Difficulty remembering or concentrating
-Name=AF10_VST
-Value=1;NO DIFFICULTY
-Value=2;SOME DIFFICULTY
-Value=3;A LOT OF DIFFICULTY
-Value=4;CANNOT REMEMBER / CONCENTRATE AT ALL
-Value=9;NO RESPONSE
-
-[Item]
-Label=Difficulty with self-care, such as washing all over or dressing
-Name=AF11
-Start=22
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Difficulty with self-care, such as washing all over or dressing
-Name=AF11_VST
-Value=1;NO DIFFICULTY
-Value=2;SOME DIFFICULTY
-Value=3;A LOT OF DIFFICULTY
-Value=4;CANNOT CARE FOR SELF AT ALL
-Value=9;NO RESPONSE
-
-[Item]
-Label=Difficulty communicating
-Name=AF12
-Start=23
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Difficulty communicating
-Name=AF12_VST
-Value=1;NO DIFFICULTY
-Value=2;SOME DIFFICULTY
-Value=3;A LOT OF DIFFICULTY
-Value=9;NO RESPONSE
-
-[Item]
-Label=Difficulty with raising 2 litre of water/soda from waist to eye level
-Name=AF13
-Start=24
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Difficulty with raising 2 litre of water/soda from waist to eye level
-Name=AF13_VS1
-Value=1;NO DIFFICULTY
-Value=2;SOME DIFFICULTY
-Value=3;A LOT OF DIFFICULTY
-Value=4;CANNOT RAISE AT ALL
-Value=9;NO RESPONSE
-
-[Item]
-Label=Difficulty with using fingers to pick up small objects
-Name=AF14
-Start=25
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Difficulty with using fingers to pick up small objects
-Name=AF14_VS1
-Value=1;NO DIFFICULTY
-Value=2;SOME DIFFICULTY
-Value=3;A LOT OF DIFFICULTY
-Value=4;CANNOT USE AT ALL
-Value=9;NO RESPONSE
-
-[Item]
-Label=Feel worried nervous or anxious
-Name=AF15
-Start=26
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Feel worried nervous or anxious
-Name=AF15_VS1
-Value=1;DAILY
-Value=2;WEEKLY
-Value=3;MONTHLY
-Value=4;A FEW TIMES A YEAR
-Value=5;NEVER
-Value=9;NO RESPONSE
-
-[Item]
-Label=Level of last anxiety
-Name=AF16
-Start=27
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Level of last anxiety
-Name=AF16_VS1
-Value=1;A LITTLE
-Value=2;A LOT
-Value=3;SOMEWHERE IN BETWEEN A LITTLE AND A LOT
-Value=9;NO RESPONSE
-
-[Item]
-Label=Feel depressed
-Name=AF17
-Start=28
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Feel depressed
-Name=AF17_VS1
-Value=1;DAILY
-Value=2;WEEKLY
-Value=3;MONTHLY
-Value=4;A FEW TIMES A YEAR
-Value=5;NEVER
-Value=9;NO RESPONSE
-
-[Item]
-Label=Level of last depression
-Name=AF18
-Start=29
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Level of last depression
-Name=AF18_VS1
-Value=1;A LITTLE
-Value=2;A LOT
-Value=3;SOMEWHERE IN BETWEEN A LITTLE AND A LOT
-Value=9;NO RESPONSE
 
 [Record]
 Label=Sexual Activity
@@ -8008,3851 +6613,6 @@ DataType=Numeric
 ZeroFill=Yes
 
 [Record]
-Label=Tobacco Use
-Name=MODTO
-RecordTypeValue='0TO'
-Required=No
-RecordLen=29
-
-[Item]
-Label=Ever tried cigarette smoking
-Name=TO1
-Start=16
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Ever tried cigarette smoking
-Name=TO1_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Age when cigarette was smoked for the first time
-Name=TO2
-Start=17
-Len=2
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Age when cigarette was smoked for the first time
-Name=TO2_VS1
-Value=0;NEVER SMOKED A WHOLE CIGARETTE
-Value=5:49
-Value=99;NO RESPONSE
-
-[Item]
-Label=Currently smoking cigarettes
-Name=TO3
-Start=19
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Currently smoking cigarettes
-Name=TO3_VS1
-Value=1;EVERY DAY
-Value=2;SOME DAYS
-Value=3;NOT AT ALL
-Value=9;NO RESPONSE
-
-[Item]
-Label=Number of cigarettes smoked each day
-Name=TO4
-Start=20
-Len=2
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Number of cigarettes smoked each day
-Name=TO4_VS1
-Value=0:70
-Value=99;NO RESPONSE
-
-[Item]
-Label=Smoked cigarette in past month
-Name=TO5
-Start=22
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Smoked cigarette in past month
-Name=TO5_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Ever heard electronic cigarette
-Name=TO6
-Start=23
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Ever heard electronic cigarette
-Name=TO6_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Currently smoking electronic cigarettes
-Name=TO7
-Start=24
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Currently smoking electronic cigarettes
-Name=TO7_VS1
-Value=1;EVERY DAY
-Value=2;SOME DAYS
-Value=3;NOT AT ALL
-Value=9;NO RESPONSE
-
-[Item]
-Label=Smoked electronic cigarette in past month
-Name=TO8
-Start=25
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Smoked electronic cigarette in past month
-Name=TO8_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Currently smoking other tobacco products
-Name=TO9
-Start=26
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Currently smoking other tobacco products
-Name=TO9_VS1
-Value=1;EVERY DAY
-Value=2;SOME DAYS
-Value=3;NOT AT ALL
-Value=9;NO RESPONSE
-
-[Item]
-Label=Smoked other tobacco products in past month
-Name=TO10
-Start=27
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Smoked other tobacco products in past month
-Name=TO10_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Currently using smokeless tobacco
-Name=TO11
-Start=28
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Currently using smokeless tobacco
-Name=TO11_VS1
-Value=1;EVERY DAY
-Value=2;SOME DAYS
-Value=3;NOT AT ALL
-Value=9;NO RESPONSE
-
-[Item]
-Label=Used smokeless tobacco in past month
-Name=TO12
-Start=29
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Used smokeless tobacco in past month
-Name=TO12_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Record]
-Label=Mental Health
-Name=MODMH
-RecordTypeValue='0MH'
-Required=No
-RecordLen=505
-
-[Item]
-Label=Privacy obtanied
-Name=MH1
-Start=16
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Privacy obtanied
-Name=MH1_VS1
-Value=1;PRIVACY OBTAINED
-Value=2;PRIVACY NOT POSSIBLE
-
-[Item]
-Label=Introduction
-Name=MH2
-Start=17
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Introduction
-Name=MH2_VS1
-Value=1;CONTINUE
-
-[Item]
-Label=Been feeling very sad or depressed during the past two weeks
-Name=MH3
-Start=18
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Been feeling very sad or depressed during the past two weeks
-Name=MH3_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Felt easily annoyyed or irritable at small things during the past two weeks
-Name=MH4
-Start=19
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Felt easily annoyyed or irritable at small things during the past two weeks
-Name=MH4_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Not enjoyed doing things she eused to enjoy during the past two weeks
-Name=MH5
-Start=20
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Not enjoyed doing things she eused to enjoy during the past two weeks
-Name=MH5_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Felt hopeless about the future during the past two weeks
-Name=MH6
-Start=21
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Felt hopeless about the future during the past two weeks
-Name=MH6_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Felt nervous anxious or on edge during the past two weeks
-Name=MH7
-Start=22
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Felt nervous anxious or on edge during the past two weeks
-Name=MH7_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Worried not doing the things right or doing poorly during the past two weeks
-Name=MH8
-Start=23
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Worried not doing the things right or doing poorly during the past two weeks
-Name=MH8_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Worried about what others think of her during the past two weeks
-Name=MH9
-Start=24
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Worried about what others think of her during the past two weeks
-Name=MH9_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Worried something bad will happen during the past two weeks
-Name=MH10
-Start=25
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Worried something bad will happen during the past two weeks
-Name=MH10_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Worried too much about different things during the past two weeks
-Name=MH11
-Start=26
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Worried too much about different things during the past two weeks
-Name=MH11_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Felt unable to stop or control your worries during the past two weeks
-Name=MH12
-Start=27
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Felt unable to stop or control your worries during the past two weeks
-Name=MH12_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Not wanted to eat food or eaten too much during past two weeks
-Name=MH15
-Start=28
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Not wanted to eat food or eaten too much during past two weeks
-Name=MH15_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Had sleeping issues during past two weeks
-Name=MH16
-Start=29
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Had sleeping issues during past two weeks
-Name=MH16_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Felt she got tired easily or did not have energy during past two weeks
-Name=MH17
-Start=30
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Felt she got tired easily or did not have energy during past two weeks
-Name=MH17_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Had trouble on concentrating things during past two weeks
-Name=MH18
-Start=31
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Had trouble on concentrating things during past two weeks
-Name=MH18_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Felt lonely during past two weeks
-Name=MH19
-Start=32
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Felt lonely during past two weeks
-Name=MH19_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Felt like a failure during past two weeks
-Name=MH20
-Start=33
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Felt like a failure during past two weeks
-Name=MH20_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Had thoughts rather be dead or hurting herself during past two weeks
-Name=MH21
-Start=34
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Had thoughts rather be dead or hurting herself during past two weeks
-Name=MH21_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Others said she was moving more slowly than usual during past two weeks
-Name=MH22
-Start=35
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Others said she was moving more slowly than usual during past two weeks
-Name=MH22_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Others said she was restless during past two weeks
-Name=MH23
-Start=36
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Others said she was restless during past two weeks
-Name=MH23_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Felt that it was difficult to breath during past two weeks
-Name=MH24
-Start=37
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Felt that it was difficult to breath during past two weeks
-Name=MH24_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Felt dizzy or faint during past two weeks
-Name=MH25
-Start=38
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Felt dizzy or faint during past two weeks
-Name=MH25_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Gotten suddenly scared for no reason during past two weeks
-Name=MH27
-Start=39
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Gotten suddenly scared for no reason during past two weeks
-Name=MH27_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Had difficulty relaxing or feeling calm during past two weeks
-Name=MH28
-Start=40
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Had difficulty relaxing or feeling calm during past two weeks
-Name=MH28_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Felt like her heart was pounding or beating too fast during past two weeks
-Name=MH29
-Start=41
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Felt like her heart was pounding or beating too fast during past two weeks
-Name=MH29_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Had headaches or muscle tension during past two weeks
-Name=MH30
-Start=42
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Had headaches or muscle tension during past two weeks
-Name=MH30_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Her daily activities negatively affected during past two weeks
-Name=MH33
-Start=43
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Her daily activities negatively affected during past two weeks
-Name=MH33_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Her school or work activities negatively affected during past two weeks
-Name=MH34
-Start=44
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Her school or work activities negatively affected during past two weeks
-Name=MH34_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=5;NOT APPLICABLE
-Value=9;NO RESPONSE
-
-[Item]
-Label=Her relationships with peers negatively affected during past two weeks
-Name=MH35
-Start=45
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Her relationships with peers negatively affected during past two weeks
-Name=MH35_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Talking to someone else about these feelings and experiences
-Name=MH36
-Start=46
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Talking to someone else about these feelings and experiences
-Name=MH36_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Talking to someone else about these feelings and experiences - to confirm
-Name=MH36A
-Start=47
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Talking to someone else about these feelings and experiences - to confirm
-Name=MH36A_VS1
-Value=0;NO, NEVER
-Value=1;YES, SOMETIMES
-Value=2;YES, OFTEN
-Value=3;YES, ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past month talked someone about these kinds of problems or worries
-Name=MH37
-Start=48
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past month talked someone about these kinds of problems or worries
-Name=MH37_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past month talked someone about these kinds of problems or worries - to confrm
-Name=MH37A
-Start=49
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past month talked someone about these kinds of problems or worries - to confrm
-Name=MH37A_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Person taked to
-Name=MH38
-Start=50
-Len=12
-DataType=Alpha
-
-[ValueSet]
-Label=Person taked to
-Name=MH38_VS1
-Value='A           ';COUNSELLOR
-Value='B           ';DOCTOR / NURSE / HEALTH AID
-Value='C           ';OTHER QUALIFIED
-Value='D           ';OTHER QUALIFIED
-Value='E           ';OTHER QUALIFIED
-Value='F           ';PARENT
-Value='G           ';OTHER RELATIVE (ADULT)
-Value='H           ';OTHER RELATIVE (<18)
-Value='I           ';TEACHER
-Value='J           ';FRIEND
-Value='X           ';OTHER
-Value='?           ';NO RESPONSE
-
-[Item]
-Label=Person talked to: Counsellor
-Name=MH38A
-Start=50
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person talked to: Counsellor
-Name=MH38A_VS1
-Value='A';COUNSELLOR
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person talked to: Doctor, Nurse, Health Aid
-Name=MH38B
-Start=51
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person talked to: Doctor, Nurse, Health Aid
-Name=MH38B_VS1
-Value='B';DOCTOR / NURSE / HEALTH AID
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person talked to: Other Qualified
-Name=MH38C
-Start=52
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person talked to: Other Qualified
-Name=MH38C_VS1
-Value='C';OTHER QUALIFIED
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person talked to: Other Qualified
-Name=MH38D
-Start=53
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person talked to: Other Qualified
-Name=MH38D_VS1
-Value='D';OTHER QUALIFIED
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person talked to: Other Qualified
-Name=MH38E
-Start=54
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person talked to: Other Qualified
-Name=MH38E_VS1
-Value='E';OTHER QUALIFIED
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person talked to: Parent
-Name=MH38F
-Start=55
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person talked to: Parent
-Name=MH38F_VS1
-Value='F';PARENT
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person talked to: Other Relative (Adult)
-Name=MH38G
-Start=56
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person talked to: Other Relative (Adult)
-Name=MH38G_VS1
-Value='G';OTHER RELATIVE (ADULT)
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person talked to: Other Relative (<18)
-Name=MH38H
-Start=57
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person talked to: Other Relative (<18)
-Name=MH38H_VS1
-Value='H';OTHER RELATIVE (<18)
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person talked to: Teacher
-Name=MH38I
-Start=58
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person talked to: Teacher
-Name=MH38I_VS1
-Value='I';TEACHER
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person talked to: Friend
-Name=MH38J
-Start=59
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person talked to: Friend
-Name=MH38J_VS1
-Value='J';FRIEND
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person talked to: Other
-Name=MH38X
-Start=60
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person talked to: Other
-Name=MH38X_VS1
-Value='X';OTHER
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person talked to: No response
-Name=MH38NR
-Start=61
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person talked to: No response
-Name=MH38NR_VS1
-Value='?';NO RESPONSE
-Value=' '
-
-[Item]
-Label=Privacy obtanied
-Name=MH40
-Start=62
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Privacy obtanied
-Name=MH40_VS1
-Value=1;PRIVACY OBTAINED
-Value=2;PRIVACY NOT POSSIBLE
-
-[Item]
-Label=Tried suicide in past 12 months
-Name=MH42
-Start=63
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Tried suicide in past 12 months
-Name=MH42_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Thought about suicide in the past 2 weeks
-Name=MH43
-Start=64
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Thought about suicide in the past 2 weeks
-Name=MH43_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=High Suicidal Risk Emergency Referral Protocol
-Name=MH45
-Start=65
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=High Suicidal Risk Emergency Referral Protocol
-Name=MH45_VS1
-Value=1;YES, PERMISSION FOR REFERRAL
-Value=2;NO PERMISSION FOR REFERRAL
-
-[Item]
-Label=MH46 filter
-Name=MH46
-Start=66
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=MH47 filter
-Name=MH47
-Start=67
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Low/Moderate Risk Referral Protocol
-Name=MH48
-Start=68
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Low/Moderate Risk Referral Protocol
-Name=MH48_VS1
-Value=1;YES, PERMISSION FOR REFERRAL
-Value=2;NO PERMISSION FOR REFERRAL
-
-[Item]
-Label=Protocol text MH49AB
-Name=MH49AB
-Start=69
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Protocol text MH49AB
-Name=MH49AB_VS1
-Value=1;CONTINUE
-
-[Item]
-Label=Referral CASEID
-Name=MH49AB1
-Start=70
-Len=7
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Referral Type
-Name=MH49AB2
-Start=77
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Referral Type
-Name=MH49AB2_VS1
-Value=1;HIGH RISK
-Value=2;LOW/MODERATE RISK
-
-[Item]
-Label=Referral Name of the Women
-Name=MH49AB3
-Start=78
-Len=20
-DataType=Alpha
-
-[Item]
-Label=Referral Sex
-Name=MH49AB4
-Start=98
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Referral Sex
-Name=MH49AB4_VS1
-Value=1;MALE
-Value=2;FEMALE
-
-[Item]
-Label=Referral Age
-Name=MH49AB5
-Start=99
-Len=2
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Referral Age
-Name=MH49AB5_VS1
-Value=15:49
-
-[Item]
-Label=Best and Safest Way
-Name=MH49AB6
-Start=101
-Len=3
-DataType=Alpha
-
-[ValueSet]
-Label=Best and Safest Way
-Name=MH49AB6_VS1
-Value='A  ';PHONE
-Value='B  ';IN PERSON
-Value='X  ';OTHER
-
-[Item]
-Label=Best and Safest Way - Phone
-Name=MH49AB6A
-Start=101
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Best and Safest Way - Phone
-Name=MH49AB6A_VS1
-Value='A';PHONE
-Value=' '
-
-[Item]
-Label=Best and Safest Way - In Person
-Name=MH49AB6B
-Start=102
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Best and Safest Way - In Person
-Name=MH49AB6B_VS1
-Value='B';IN PERSON
-Value=' '
-
-[Item]
-Label=Best and Safest Way - Other
-Name=MH49AB6X
-Start=103
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Best and Safest Way - Other
-Name=MH49AB6X_VS1
-Value='X';OTHER
-Value=' '
-
-[Item]
-Label=Referral Phone
-Name=MH49AB7
-Start=104
-Len=8
-DataType=Alpha
-
-[Item]
-Label=Referral Meetup Location  - Region No
-Name=MH49AB8
-Start=112
-Len=2
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Referral Meetup Location  - Region Name
-Name=MH49AB8N
-Start=114
-Len=50
-DataType=Alpha
-
-[Item]
-Label=Referral Meetup Location  - District Name
-Name=MH49AB9N
-Start=164
-Len=50
-DataType=Alpha
-
-[Item]
-Label=Referral Meetup Location  - Name of Village Town
-Name=MH49AB10N
-Start=214
-Len=50
-DataType=Alpha
-
-[Item]
-Label=Referral Meetup Location  - Description of Location
-Name=MH49AB11N
-Start=264
-Len=50
-DataType=Alpha
-
-[Item]
-Label=Referral Meetup Location  - Nearby Landmark
-Name=MH49AB12
-Start=314
-Len=50
-DataType=Alpha
-
-[Item]
-Label=Referral Meetup Location  - Best Time to Contact
-Name=MH49AB13
-Start=364
-Len=50
-DataType=Alpha
-
-[Item]
-Label=Referral Meetup Location  - Best Time to Contact
-Name=MH49AB14
-Start=414
-Len=40
-DataType=Alpha
-
-[Item]
-Label=Protocol text MH49C
-Name=MH49C
-Start=454
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Protocol text MH49C
-Name=MH49C_VS1
-Value=1;CONTINUE
-
-[Item]
-Label=Protocol text MH49D
-Name=MH49D
-Start=455
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Protocol text MH49D
-Name=MH49D_VS1
-Value=1;CONTINUE
-
-[Item]
-Label=Interviewer's Observations
-Name=MH51
-Start=456
-Len=50
-DataType=Alpha
-
-[Record]
-Label=Violence Against Women
-Name=MODVW
-RecordTypeValue='0VW'
-Required=No
-RecordLen=1016
-
-[Item]
-Label=Privacy obtanied
-Name=VW1
-Start=16
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Privacy obtanied
-Name=VW1_VS1
-Value=1;PRIVACY OBTAINED
-Value=2;PRIVACY NOT POSSIBLE
-
-[Item]
-Label=Introduction
-Name=VW2
-Start=17
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Introduction
-Name=VW2_VS1
-Value=1;CONTINUE
-
-[Item]
-Label=Currently having an inmate relationship with a man
-Name=VW4
-Start=18
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Currently having an inmate relationship with a man
-Name=VW4_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Ever had an inmate realtionship with a man
-Name=VW5
-Start=19
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Ever had an inmate realtionship with a man
-Name=VW5_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Jealous/Angry if talks to another man
-Name=VW6A1
-Start=20
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Jealous/Angry if talks to another man
-Name=VW6A1_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=During last 12 months: became jealous/angry
-Name=VW6A2
-Start=21
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=During last 12 months: became jealous/angry
-Name=VW6A2_VS1
-Value=1;OFTEN
-Value=2;SOMETIMES
-Value=3;NOT IN LAST 12 MONTHS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Wrongly accuses being unfaithful
-Name=VW6B1
-Start=22
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Wrongly accuses being unfaithful
-Name=VW6B1_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=During last 12 months: wrongly accused being unfaithful
-Name=VW6B2
-Start=23
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=During last 12 months: wrongly accused being unfaithful
-Name=VW6B2_VS1
-Value=1;OFTEN
-Value=2;SOMETIMES
-Value=3;NOT IN LAST 12 MONTHS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Not permit to meet with her female friends
-Name=VW6C1
-Start=24
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Not permit to meet with her female friends
-Name=VW6C1_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=During last 12 months: not permitted to meet with her female friends
-Name=VW6C2
-Start=25
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=During last 12 months: not permitted to meet with her female friends
-Name=VW6C2_VS1
-Value=1;OFTEN
-Value=2;SOMETIMES
-Value=3;NOT IN LAST 12 MONTHS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Tries to limit contact with her family
-Name=VW6D1
-Start=26
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Tries to limit contact with her family
-Name=VW6D1_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=During last 12 months: tried to limit contact with her family
-Name=VW6D2
-Start=27
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=During last 12 months: tried to limit contact with her family
-Name=VW6D2_VS1
-Value=1;OFTEN
-Value=2;SOMETIMES
-Value=3;NOT IN LAST 12 MONTHS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Insists on knowing where she is at all times
-Name=VW6E1
-Start=28
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Insists on knowing where she is at all times
-Name=VW6E1_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=During last 12 months: insisted on knowing where she is at all times
-Name=VW6E2
-Start=29
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=During last 12 months: insisted on knowing where she is at all times
-Name=VW6E2_VS1
-Value=1;OFTEN
-Value=2;SOMETIMES
-Value=3;NOT IN LAST 12 MONTHS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Say/Do something to humiliate her in front of others
-Name=VW7A1
-Start=30
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Say/Do something to humiliate her in front of others
-Name=VW7A1_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=During last 12 months: said/did something to humiliate her in front of others
-Name=VW7A2
-Start=31
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=During last 12 months: said/did something to humiliate her in front of others
-Name=VW7A2_VS1
-Value=1;OFTEN
-Value=2;SOMETIMES
-Value=3;NOT IN LAST 12 MONTHS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Threaten to hurt/harm her or someone care about
-Name=VW7B1
-Start=32
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Threaten to hurt/harm her or someone care about
-Name=VW7B1_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=During last 12 months: threatened to hurt/harm her or someone care about
-Name=VW7B2
-Start=33
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=During last 12 months: threatened to hurt/harm her or someone care about
-Name=VW7B2_VS1
-Value=1;OFTEN
-Value=2;SOMETIMES
-Value=3;NOT IN LAST 12 MONTHS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Insult her to make her bad about herself
-Name=VW7C1
-Start=34
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Insult her to make her bad about herself
-Name=VW7C1_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=During last 12 months: insulted her to make her bad about herself
-Name=VW7C2
-Start=35
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=During last 12 months: insulted her to make her bad about herself
-Name=VW7C2_VS1
-Value=1;OFTEN
-Value=2;SOMETIMES
-Value=3;NOT IN LAST 12 MONTHS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Push, shake or throw something to her
-Name=VW8A1
-Start=36
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Push, shake or throw something to her
-Name=VW8A1_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=During last 12 months: pushed, shaked or threw something to her
-Name=VW8A2
-Start=37
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=During last 12 months: pushed, shaked or threw something to her
-Name=VW8A2_VS1
-Value=1;OFTEN
-Value=2;SOMETIMES
-Value=3;NOT IN LAST 12 MONTHS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Slap her
-Name=VW8B1
-Start=38
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Slap her
-Name=VW8B1_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=During last 12 months: slapped her
-Name=VW8B2
-Start=39
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=During last 12 months: slapped her
-Name=VW8B2_VS1
-Value=1;OFTEN
-Value=2;SOMETIMES
-Value=3;NOT IN LAST 12 MONTHS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Twist her arm or pull her hair
-Name=VW8C1
-Start=40
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Twist her arm or pull her hair
-Name=VW8C1_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=During last 12 months: twisted her arm or pulled her hair
-Name=VW8C2
-Start=41
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=During last 12 months: twisted her arm or pulled her hair
-Name=VW8C2_VS1
-Value=1;OFTEN
-Value=2;SOMETIMES
-Value=3;NOT IN LAST 12 MONTHS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Punch her
-Name=VW8D1
-Start=42
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Punch her
-Name=VW8D1_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=During last 12 months: punched her
-Name=VW8D2
-Start=43
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=During last 12 months: punched her
-Name=VW8D2_VS1
-Value=1;OFTEN
-Value=2;SOMETIMES
-Value=3;NOT IN LAST 12 MONTHS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Kick, drag or beat her up
-Name=VW8E1
-Start=44
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Kick, drag or beat her up
-Name=VW8E1_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=During last 12 months: kicked, dragged or beat her up
-Name=VW8E2
-Start=45
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=During last 12 months: kicked, dragged or beat her up
-Name=VW8E2_VS1
-Value=1;OFTEN
-Value=2;SOMETIMES
-Value=3;NOT IN LAST 12 MONTHS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Try to choke her or burn her on purpose
-Name=VW8F1
-Start=46
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Try to choke her or burn her on purpose
-Name=VW8F1_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=During last 12 months: Tried to choke her or burn her on purpose
-Name=VW8F2
-Start=47
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=During last 12 months: Tried to choke her or burn her on purpose
-Name=VW8F2_VS1
-Value=1;OFTEN
-Value=2;SOMETIMES
-Value=3;NOT IN LAST 12 MONTHS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Attack her with a knife, gun, or other weapon
-Name=VW8G1
-Start=48
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Attack her with a knife, gun, or other weapon
-Name=VW8G1_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=During last 12 months: attacked her with a knife, gun, or other weapon
-Name=VW8G2
-Start=49
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=During last 12 months: attacked her with a knife, gun, or other weapon
-Name=VW8G2_VS1
-Value=1;OFTEN
-Value=2;SOMETIMES
-Value=3;NOT IN LAST 12 MONTHS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Physically force her to have sexual intercourse
-Name=VW8H1
-Start=50
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Physically force her to have sexual intercourse
-Name=VW8H1_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=During last 12 months: physically forced her to have sexual intercourse
-Name=VW8H2
-Start=51
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=During last 12 months: physically forced her to have sexual intercourse
-Name=VW8H2_VS1
-Value=1;OFTEN
-Value=2;SOMETIMES
-Value=3;NOT IN LAST 12 MONTHS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Physically force her to perform any other sexual acts
-Name=VW8I1
-Start=52
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Physically force her to perform any other sexual acts
-Name=VW8I1_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=During last 12 months: physically forced her to perform any other sexual acts
-Name=VW8I2
-Start=53
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=During last 12 months: physically forced her to perform any other sexual acts
-Name=VW8I2_VS1
-Value=1;OFTEN
-Value=2;SOMETIMES
-Value=3;NOT IN LAST 12 MONTHS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Force her with threats to perform sexual acts
-Name=VW8J1
-Start=54
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Force her with threats to perform sexual acts
-Name=VW8J1_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=During last 12 months: forced her with threats to perform sexual acts
-Name=VW8J2
-Start=55
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=During last 12 months: forced her with threats to perform sexual acts
-Name=VW8J2_VS1
-Value=1;OFTEN
-Value=2;SOMETIMES
-Value=3;NOT IN LAST 12 MONTHS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Had cuts, bruises or aches
-Name=VW10A
-Start=56
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Had cuts, bruises or aches
-Name=VW10A_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Had eye injuries, sprains, dislocations or burns
-Name=VW10B
-Start=57
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Had eye injuries, sprains, dislocations or burns
-Name=VW10B_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Had deep wounds, broken bones, broken teeth or any other serious injury
-Name=VW10C
-Start=58
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Had deep wounds, broken bones, broken teeth or any other serious injury
-Name=VW10C_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Ever hit, slapped, kicked or done anything else to husband/male partner
-Name=VW11
-Start=59
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Ever hit, slapped, kicked or done anything else to husband/male partner
-Name=VW11_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=During last 12 months: hit, slapped, kicked or done anything else to husband/male partner
-Name=VW12
-Start=60
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=During last 12 months: hit, slapped, kicked or done anything else to husband/male partner
-Name=VW12_VS1
-Value=1;OFTEN
-Value=2;SOMETIMES
-Value=3;NOT AT ALL
-Value=9;NO RESPONSE
-
-[Item]
-Label=Husband/male partner drinks alcohol
-Name=VW13
-Start=61
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Husband/male partner drinks alcohol
-Name=VW13_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=How often husband/male partner drunk alcohol
-Name=VW14
-Start=62
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=How often husband/male partner drunk alcohol
-Name=VW14_VS1
-Value=1;OFTEN
-Value=2;SOMETIMES
-Value=3;NEVER
-Value=9;NO RESPONSE
-
-[Item]
-Label=Afraid of husband/male partner
-Name=VW15
-Start=63
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Afraid of husband/male partner
-Name=VW15_VS1
-Value=1;MOST OF THE TIME AFRAID
-Value=2;SOMETIMES AFRAID
-Value=3;NEVER AFRAID
-Value=9;NO RESPONSE
-
-[Item]
-Label=Previous husband/partner: Ever hit, slapped or kicked
-Name=VW16A1
-Start=64
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Previous husband/partner: Ever hit, slapped or kicked
-Name=VW16A1_VS1
-Value=1;YES
-Value=2;NO
-Value=3;HAS NEVER HAD ANOTHER HUSBAND/MALE PARTNER
-Value=9;NO RESPONSE
-
-[Item]
-Label=Previous husband/partner: Last time hit, slapped or kicked
-Name=VW16A2
-Start=65
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Previous husband/partner: Last time hit, slapped or kicked
-Name=VW16A2_VS1
-Value=1;0-11 MONTHS AGO
-Value=2;12+ MONTHS AGO
-Value=3;DON’T REMEMBER
-Value=9;NO RESPONSE
-
-[Item]
-Label=Previous husband/partner: Ever physically forced her to perform any other sexual acts
-Name=VW16B1
-Start=66
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Previous husband/partner: Ever physically forced her to perform any other sexual acts
-Name=VW16B1_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Previous husband/partner: Last time physically forced her to perform any other sexual acts
-Name=VW16B2
-Start=67
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Previous husband/partner: Last time physically forced her to perform any other sexual acts
-Name=VW16B2_VS1
-Value=1;0-11 MONTHS AGO
-Value=2;12+ MONTHS AGO
-Value=3;DON’T REMEMBER
-Value=9;NO RESPONSE
-
-[Item]
-Label=Previous husband/partner: Ever humiliated, threatened to hurt or insult her in front of others
-Name=VW16C1
-Start=68
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Previous husband/partner: Ever humiliated, threatened to hurt or insult her in front of others
-Name=VW16C1_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Previous husband/partner: Last time humiliated, threatened to hurt or insult her in front of others
-Name=VW16C2
-Start=69
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Previous husband/partner: Last time humiliated, threatened to hurt or insult her in front of others
-Name=VW16C2_VS1
-Value=1;0-11 MONTHS AGO
-Value=2;12+ MONTHS AGO
-Value=3;DON’T REMEMBER
-Value=9;NO RESPONSE
-
-[Item]
-Label=Age at first time had forced sexual intercourse or perform other sexual acts by current or previous partner
-Name=VW18
-Start=70
-Len=2
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Age at first time had forced sexual intercourse or perform other sexual acts by current or previous partner
-Name=VW18_VS1
-Value=10:49
-Value=98;DK
-Value=99;NO RESPONSE
-
-[Item]
-Label=Anyone hit, slapped or kicked when pregnant
-Name=VW20
-Start=72
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Anyone hit, slapped or kicked when pregnant
-Name=VW20_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Person hit, slapped or kicked when pregnant
-Name=VW21
-Start=73
-Len=18
-DataType=Alpha
-
-[ValueSet]
-Label=Person hit, slapped or kicked when pregnant
-Name=VW21_VS1
-Value='A                 ';CURRENT HUSBAND/PARTNER
-Value='B                 ';MOTHER/STEP-MOTHER
-Value='C                 ';FATHER/STEP-FATHER
-Value='D                 ';SISTER/BROTHER
-Value='E                 ';DAUGHTER/SON
-Value='F                 ';OTHER RELATIVE
-Value='G                 ';FORMER HUSBAND/PARTNER
-Value='H                 ';CURRENT BOYFRIEND
-Value='I                 ';FORMER BOYFRIEND
-Value='J                 ';MOTHER-IN-LAW
-Value='K                 ';FATHER-IN-LAW
-Value='L                 ';OTHER IN-LAW
-Value='M                 ';TEACHER
-Value='N                 ';SCHOOLMATE/CLASSMATE
-Value='O                 ';EMPLOYER/SOMEONE AT WORK
-Value='P                 ';POLICE/SOLDIER
-Value='X                 ';OTHER
-Value='?                 ';NO RESPONSE
-
-[Item]
-Label=Person hit, slapped or kicked when pregnant: Current husband/partner
-Name=VW21A
-Start=73
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person hit, slapped or kicked when pregnant: Current husband/partner
-Name=VW21A_VS1
-Value='A';CURRENT HUSBAND/PARTNER
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person hit, slapped or kicked when pregnant: Mother/Step-Mother
-Name=VW21B
-Start=74
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person hit, slapped or kicked when pregnant: Mother/Step-Mother
-Name=VW21B_VS1
-Value='B';MOTHER/STEP-MOTHER
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person hit, slapped or kicked when pregnant: Father/Step-Father
-Name=VW21C
-Start=75
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person hit, slapped or kicked when pregnant: Father/Step-Father
-Name=VW21C_VS1
-Value='C';FATHER/STEP-FATHER
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person hit, slapped or kicked when pregnant: Sister/Brother
-Name=VW21D
-Start=76
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person hit, slapped or kicked when pregnant: Sister/Brother
-Name=VW21D_VS1
-Value='D';SISTER/BROTHER
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person hit, slapped or kicked when pregnant: Daughter/Son
-Name=VW21E
-Start=77
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person hit, slapped or kicked when pregnant: Daughter/Son
-Name=VW21E_VS1
-Value='E';DAUGHTER/SON
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person hit, slapped or kicked when pregnant: Other relative
-Name=VW21F
-Start=78
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person hit, slapped or kicked when pregnant: Other relative
-Name=VW21F_VS1
-Value='F';OTHER RELATIVE
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person hit, slapped or kicked when pregnant: Former husband/partner
-Name=VW21G
-Start=79
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person hit, slapped or kicked when pregnant: Former husband/partner
-Name=VW21G_VS1
-Value='G';FORMER HUSBAND/PARTNER
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person hit, slapped or kicked when pregnant: Current boyfriend
-Name=VW21H
-Start=80
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person hit, slapped or kicked when pregnant: Current boyfriend
-Name=VW21H_VS1
-Value='H';CURRENT BOYFRIEND
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person hit, slapped or kicked when pregnant: Former boyfriend
-Name=VW21I
-Start=81
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person hit, slapped or kicked when pregnant: Former boyfriend
-Name=VW21I_VS1
-Value='I';FORMER BOYFRIEND
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person hit, slapped or kicked when pregnant: Mother-in-law
-Name=VW21J
-Start=82
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person hit, slapped or kicked when pregnant: Mother-in-law
-Name=VW21J_VS1
-Value='J';MOTHER-IN-LAW
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person hit, slapped or kicked when pregnant: Father-in-law
-Name=VW21K
-Start=83
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person hit, slapped or kicked when pregnant: Father-in-law
-Name=VW21K_VS1
-Value='K';FATHER-IN-LAW
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person hit, slapped or kicked when pregnant: Other-in-law
-Name=VW21L
-Start=84
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person hit, slapped or kicked when pregnant: Other-in-law
-Name=VW21L_VS1
-Value='L';OTHER IN-LAW
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person hit, slapped or kicked when pregnant: Teacher
-Name=VW21M
-Start=85
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person hit, slapped or kicked when pregnant: Teacher
-Name=VW21M_VS1
-Value='M';TEACHER
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person hit, slapped or kicked when pregnant: Schoolmate/Classmate
-Name=VW21N
-Start=86
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person hit, slapped or kicked when pregnant: Schoolmate/Classmate
-Name=VW21N_VS1
-Value='N';SCHOOLMATE/CLASSMATE
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person hit, slapped or kicked when pregnant: Employer/Someone at work
-Name=VW21O
-Start=87
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person hit, slapped or kicked when pregnant: Employer/Someone at work
-Name=VW21O_VS1
-Value='O';EMPLOYER/SOMEONE AT WORK
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person hit, slapped or kicked when pregnant: Police/Soldier
-Name=VW21P
-Start=88
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person hit, slapped or kicked when pregnant: Police/Soldier
-Name=VW21P_VS1
-Value='P';POLICE/SOLDIER
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person hit, slapped or kicked when pregnant: Other
-Name=VW21X
-Start=89
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person hit, slapped or kicked when pregnant: Other
-Name=VW21X_VS1
-Value='X';OTHER
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person hit, slapped or kicked when pregnant: No Response
-Name=VW21NR
-Start=90
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person hit, slapped or kicked when pregnant: No Response
-Name=VW21NR_VS1
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=From time 15 years old: Ever hit, slapped or kicked
-Name=VW22A
-Start=91
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=From time 15 years old: Ever hit, slapped or kicked
-Name=VW22A_VS1
-Value=1;YES
-Value=2;NO
-Value=3;REFUSED TO ANSWER/NO ANSWER
-Value=9;NO RESPONSE
-
-[Item]
-Label=Person ever hit, slapped or kicked from time 15 years old
-Name=VW23
-Start=92
-Len=16
-DataType=Alpha
-
-[ValueSet]
-Label=Person ever hit, slapped or kicked from time 15 years old
-Name=VW23_VS1
-Value='A               ';MOTHER/STEP-MOTHER
-Value='B               ';FATHER/STEP-FATHER
-Value='C               ';SISTER/BROTHER
-Value='D               ';DAUGHTER/SON
-Value='E               ';OTHER RELATIVE
-Value='F               ';CURRENT BOYFRIEND
-Value='G               ';FORMER BOYFRIEND
-Value='H               ';MOTHER-IN-LAW
-Value='I               ';FATHER-IN-LAW
-Value='J               ';OTHER IN-LAW
-Value='K               ';TEACHER
-Value='L               ';SCHOOLMATE/CLASSMATE
-Value='M               ';EMPLOYER/SOMEONE AT WORK
-Value='N               ';POLICE/SOLDIER
-Value='X               ';OTHER
-Value='?               ';NO RESPONSE
-
-[Item]
-Label=Person ever hit, slapped or kicked: Mother/Step-Mother
-Name=VW23A
-Start=92
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person ever hit, slapped or kicked: Mother/Step-Mother
-Name=VW23A_VS1
-Value='A';MOTHER/STEP-MOTHER
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person ever hit, slapped or kicked: Father/Step-Father
-Name=VW23B
-Start=93
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person ever hit, slapped or kicked: Father/Step-Father
-Name=VW23B_VS1
-Value='B';FATHER/STEP-FATHER
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person ever hit, slapped or kicked: Sister/Brother
-Name=VW23C
-Start=94
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person ever hit, slapped or kicked: Sister/Brother
-Name=VW23C_VS1
-Value='C';SISTER/BROTHER
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person ever hit, slapped or kicked: Daughter/Son
-Name=VW23D
-Start=95
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person ever hit, slapped or kicked: Daughter/Son
-Name=VW23D_VS1
-Value='D';DAUGHTER/SON
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person ever hit, slapped or kicked: Other relative
-Name=VW23E
-Start=96
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person ever hit, slapped or kicked: Other relative
-Name=VW23E_VS1
-Value='E';OTHER RELATIVE
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person ever hit, slapped or kicked: Current boyfriend
-Name=VW23F
-Start=97
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person ever hit, slapped or kicked: Current boyfriend
-Name=VW23F_VS1
-Value='F';CURRENT BOYFRIEND
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person ever hit, slapped or kicked: Former boyfriend
-Name=VW23G
-Start=98
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person ever hit, slapped or kicked: Former boyfriend
-Name=VW23G_VS1
-Value='G';FORMER BOYFRIEND
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person ever hit, slapped or kicked: Mother-in-law
-Name=VW23H
-Start=99
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person ever hit, slapped or kicked: Mother-in-law
-Name=VW23H_VS1
-Value='H';MOTHER-IN-LAW
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person ever hit, slapped or kicked: Father-in-law
-Name=VW23I
-Start=100
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person ever hit, slapped or kicked: Father-in-law
-Name=VW23I_VS1
-Value='I';FATHER-IN-LAW
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person ever hit, slapped or kicked: Other-in-law
-Name=VW23J
-Start=101
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person ever hit, slapped or kicked: Other-in-law
-Name=VW23J_VS1
-Value='J';OTHER IN-LAW
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person ever hit, slapped or kicked: Teacher
-Name=VW23K
-Start=102
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person ever hit, slapped or kicked: Teacher
-Name=VW23K_VS1
-Value='K';TEACHER
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person ever hit, slapped or kicked: Schoolmate/Classmate
-Name=VW23L
-Start=103
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person ever hit, slapped or kicked: Schoolmate/Classmate
-Name=VW23L_VS1
-Value='L';SCHOOLMATE/CLASSMATE
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person ever hit, slapped or kicked: Employer/Someone at work
-Name=VW23M
-Start=104
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person ever hit, slapped or kicked: Employer/Someone at work
-Name=VW23M_VS1
-Value='M';EMPLOYER/SOMEONE AT WORK
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person ever hit, slapped or kicked: Police/Soldier
-Name=VW23N
-Start=105
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person ever hit, slapped or kicked: Police/Soldier
-Name=VW23N_VS1
-Value='N';POLICE/SOLDIER
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person ever hit, slapped or kicked: Other
-Name=VW23X
-Start=106
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person ever hit, slapped or kicked: Other
-Name=VW23X_VS1
-Value='X';OTHER
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person ever hit, slapped or kicked: No Response
-Name=VW23NR
-Start=107
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person ever hit, slapped or kicked: No Response
-Name=VW23NR_VS1
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=In the last 12 Months: How often hit, slapped or kicked
-Name=VW24
-Start=108
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the last 12 Months: How often hit, slapped or kicked
-Name=VW24_VS1
-Value=1;OFTEN
-Value=2;SOMETIMES
-Value=3;NOT AT ALL
-Value=9;NO RESPONSE
-
-[Item]
-Label=At any time of her life other than husband/partner ever forced to have sex
-Name=VW26
-Start=109
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=At any time of her life other than husband/partner ever forced to have sex
-Name=VW26_VS1
-Value=1;YES
-Value=2;NO
-Value=3;REFUSED TO ANSWER/NO ANSWER
-Value=9;NO RESPONSE
-
-[Item]
-Label=At any time of her life ever forced to have sex
-Name=VW27
-Start=110
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=At any time of her life ever forced to have sex
-Name=VW27_VS1
-Value=1;YES
-Value=2;NO
-Value=3;REFUSED TO ANSWER/NO ANSWER
-Value=9;NO RESPONSE
-
-[Item]
-Label=Age at first time had forced sexual intercourse or perform other sexual acts NOT by current or previous partner
-Name=VW28A
-Start=111
-Len=2
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Age at first time had forced sexual intercourse or perform other sexual acts NOT by current or previous partner
-Name=VW28A_VS1
-Value=10:49
-Value=98;DK
-Value=99;NO RESPONSE
-
-[Item]
-Label=Person forced to have sex
-Name=VW29
-Start=113
-Len=16
-DataType=Alpha
-
-[ValueSet]
-Label=Person forced to have sex
-Name=VW29_VS1
-Value='A               ';FATHER/STEP-FATHER
-Value='B               ';BROTHER/STEP-BROTHER
-Value='C               ';OTHER RELATIVE
-Value='D               ';CURRENT BOYFRIEND
-Value='E               ';FORMER BOYFRIEND
-Value='F               ';IN-LAW
-Value='G               ';OWN FRIEND/ACQUAINTANCE
-Value='H               ';FAMILY FRIEND
-Value='I               ';TEACHER
-Value='J               ';SCHOOLMATE/CLASSMATE
-Value='K               ';EMPLOYER/SOMEONE AT WORK
-Value='L               ';POLICE/SOLDIER
-Value='M               ';PRIEST/RELIGIOUS LEADER
-Value='N               ';STRANGER
-Value='X               ';OTHER
-Value='?               ';NO RESPONSE
-
-[Item]
-Label=Person forced to have sex: Father / Step-Father
-Name=VW29A
-Start=113
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person forced to have sex: Father / Step-Father
-Name=VW29A_VS1
-Value='A';FATHER/STEP-FATHER
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person forced to have sex: Brother / Step-Brother
-Name=VW29B
-Start=114
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person forced to have sex: Brother / Step-Brother
-Name=VW29B_VS1
-Value='B';BROTHER/STEP-BROTHER
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person forced to have sex: Other relative
-Name=VW29C
-Start=115
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person forced to have sex: Other relative
-Name=VW29C_VS1
-Value='C';OTHER RELATIVE
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person forced to have sex: Current boyfriend
-Name=VW29D
-Start=116
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person forced to have sex: Current boyfriend
-Name=VW29D_VS1
-Value='D';CURRENT BOYFRIEND
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person forced to have sex: Former boyfriend
-Name=VW29E
-Start=117
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person forced to have sex: Former boyfriend
-Name=VW29E_VS1
-Value='E';FORMER BOYFRIEND
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person forced to have sex: In-law
-Name=VW29F
-Start=118
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person forced to have sex: In-law
-Name=VW29F_VS1
-Value='F';IN-LAW
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person forced to have sex: Own friend/Acquaintance
-Name=VW29G
-Start=119
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person forced to have sex: Own friend/Acquaintance
-Name=VW29G_VS1
-Value='G';OWN FRIEND/ACQUAINTANCE
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person forced to have sex: Family friend
-Name=VW29H
-Start=120
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person forced to have sex: Family friend
-Name=VW29H_VS1
-Value='H';FAMILY FRIEND
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person forced to have sex: Teacher
-Name=VW29I
-Start=121
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person forced to have sex: Teacher
-Name=VW29I_VS1
-Value='I';TEACHER
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person forced to have sex: Schoolmate/Classmate
-Name=VW29J
-Start=122
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person forced to have sex: Schoolmate/Classmate
-Name=VW29J_VS1
-Value='J';SCHOOLMATE/CLASSMATE
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person forced to have sex: Employer/Someone at work
-Name=VW29K
-Start=123
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person forced to have sex: Employer/Someone at work
-Name=VW29K_VS1
-Value='K';EMPLOYER/SOMEONE AT WORK
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person forced to have sex: Police/Soldier
-Name=VW29L
-Start=124
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person forced to have sex: Police/Soldier
-Name=VW29L_VS1
-Value='L';POLICE/SOLDIER
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person forced to have sex: Priest/Religious leader
-Name=VW29M
-Start=125
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person forced to have sex: Priest/Religious leader
-Name=VW29M_VS1
-Value='M';PRIEST/RELIGIOUS LEADER
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person forced to have sex: Stranger
-Name=VW29N
-Start=126
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person forced to have sex: Stranger
-Name=VW29N_VS1
-Value='N';STRANGER
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person forced to have sex: Other
-Name=VW29X
-Start=127
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person forced to have sex: Other
-Name=VW29X_VS1
-Value='X';OTHER
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person forced to have sex: No Response
-Name=VW29NR
-Start=128
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person forced to have sex: No Response
-Name=VW29NR_VS1
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Forced to have sex in last 12 months by current/previous partner
-Name=VW30A
-Start=129
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Forced to have sex in last 12 months by current/previous partner
-Name=VW30A_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Ever tried to seek help
-Name=VW32
-Start=130
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Ever tried to seek help
-Name=VW32_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Sought help from
-Name=VW33
-Start=131
-Len=13
-DataType=Alpha
-
-[ValueSet]
-Label=Sought help from
-Name=VW33_VS1
-Value='A            ';OWN FAMILY
-Value='B            ';HUSBAND'S/PARTNER'S FAMILY
-Value='C            ';CURRENT/FORMER HUSBAND/PARTNER
-Value='D            ';CURRENT/FORMER BOYFRIEND
-Value='E            ';FRIEND
-Value='F            ';NEIGHBOR
-Value='G            ';RELIGIOUS LEADER
-Value='H            ';DOCTOR/MEDICAL PERSONNEL
-Value='I            ';POLICE
-Value='J            ';LAWYER
-Value='K            ';SOCIAL SERVICE ORGANIZATION
-Value='X            ';OTHER
-Value='?            ';NO RESPONSE
-
-[Item]
-Label=Sought help from: Own family
-Name=VW33A
-Start=131
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Sought help from: Own family
-Name=VW33A_VS1
-Value='A';OWN FAMILY
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Sought help from: Husband's/Partner's family
-Name=VW33B
-Start=132
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Sought help from: Husband's/Partner's family
-Name=VW33B_VS1
-Value='B';HUSBAND'S/PARTNER'S FAMILY
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Sought help from: Current/Former Husband/Partner
-Name=VW33C
-Start=133
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Sought help from: Current/Former Husband/Partner
-Name=VW33C_VS1
-Value='C';CURRENT/FORMER HUSBAND/PARTNER
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Sought help from: Current/Former boyfriend
-Name=VW33D
-Start=134
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Sought help from: Current/Former boyfriend
-Name=VW33D_VS1
-Value='D';CURRENT/FORMER BOYFRIEND
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Sought help from: Friend
-Name=VW33E
-Start=135
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Sought help from: Friend
-Name=VW33E_VS1
-Value='E';FRIEND
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Sought help from: Neighbor
-Name=VW33F
-Start=136
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Sought help from: Neighbor
-Name=VW33F_VS1
-Value='F';NEIGHBOR
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Sought help from: Religious leader
-Name=VW33G
-Start=137
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Sought help from: Religious leader
-Name=VW33G_VS1
-Value='G';RELIGIOUS LEADER
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Sought help from: Doctor/Medical personnel
-Name=VW33H
-Start=138
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Sought help from: Doctor/Medical personnel
-Name=VW33H_VS1
-Value='H';DOCTOR/MEDICAL PERSONNEL
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Sought help from: Police
-Name=VW33I
-Start=139
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Sought help from: Police
-Name=VW33I_VS1
-Value='I';POLICE
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Sought help from: Lawyer
-Name=VW33J
-Start=140
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Sought help from: Lawyer
-Name=VW33J_VS1
-Value='J';LAWYER
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Sought help from: Social Service Organization
-Name=VW33K
-Start=141
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Sought help from: Social Service Organization
-Name=VW33K_VS1
-Value='K';SOCIAL SERVICE ORGANIZATION
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Sought help from: Other
-Name=VW33X
-Start=142
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Sought help from: Other
-Name=VW33X_VS1
-Value='X';OTHER
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Sought help from: No Response
-Name=VW33NR
-Start=143
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Sought help from: No Response
-Name=VW33NR_VS1
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Ever told anyone
-Name=VW34
-Start=144
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Ever told anyone
-Name=VW34_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Father ever beat mother
-Name=VW35
-Start=145
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Father ever beat mother
-Name=VW35_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Permission for referral
-Name=VW35B
-Start=146
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Permission for referral
-Name=VW35B_VS1
-Value=1;YES, PERMISSION FOR REFERRAL
-Value=2;NO PERMISSION FOR REFERRAL
-
-[Item]
-Label=Protocol text VW34C
-Name=VW35C
-Start=147
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Protocol text VW34C
-Name=VW35C_VS1
-Value=1;CONTINUE
-
-[Item]
-Label=Referral CASEID
-Name=VW35C1
-Start=148
-Len=7
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Referral Type
-Name=VW35C2
-Start=155
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Referral Type
-Name=VW35C2_VS1
-Value=1;RESPONDENT SCREENED POSITIVE
-Value=2;RESPONDENT REQUESTED
-
-[Item]
-Label=Referral Name of the Women
-Name=VW35C3
-Start=156
-Len=20
-DataType=Alpha
-
-[Item]
-Label=Referral Age
-Name=VW35C5
-Start=176
-Len=2
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Referral Age
-Name=VW35C5_VS1
-Value=15:49
-
-[Item]
-Label=Best and Safest Way
-Name=VW35C6
-Start=178
-Len=3
-DataType=Alpha
-
-[ValueSet]
-Label=Best and Safest Way
-Name=VW35C6_VS1
-Value='A  ';PHONE
-Value='B  ';IN PERSON
-Value='X  ';OTHER
-
-[Item]
-Label=Best and Safest Way - Phone
-Name=VW35C6A
-Start=178
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Best and Safest Way - Phone
-Name=VW35C6A_VS1
-Value='A';PHONE
-Value=' '
-
-[Item]
-Label=Best and Safest Way - In Person
-Name=VW35C6B
-Start=179
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Best and Safest Way - In Person
-Name=VW35C6B_VS1
-Value='B';IN PERSON
-Value=' '
-
-[Item]
-Label=Best and Safest Way - Other
-Name=VW35C6X
-Start=180
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Best and Safest Way - Other
-Name=VW35C6X_VS1
-Value='X';OTHER
-Value=' '
-
-[Item]
-Label=Referral Phone
-Name=VW35C7
-Start=181
-Len=8
-DataType=Alpha
-
-[Item]
-Label=Referral Meetup Location  - Region No
-Name=VW35C8
-Start=189
-Len=2
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Referral Meetup Location  - Region No
-Name=VW35C8_VS1
-Value=1;REGION 1
-Value=2;REGION 2
-Value=3;REGION 3
-Value=4;REGION 4
-Value=5;REGION 5
-
-[Item]
-Label=Referral Meetup Location  - Region Name
-Name=VW35C8N
-Start=191
-Len=50
-DataType=Alpha
-
-[Item]
-Label=Referral Meetup Location  - District No
-Name=VW35C9
-Start=241
-Len=2
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Referral Meetup Location  - District Name
-Name=VW35C9N
-Start=243
-Len=50
-DataType=Alpha
-
-[Item]
-Label=Referral Meetup Location  - Name of Village Town
-Name=VW35C10N
-Start=293
-Len=50
-DataType=Alpha
-
-[Item]
-Label=Referral Meetup Location  - Description of Location
-Name=VW35C11N
-Start=343
-Len=50
-DataType=Alpha
-
-[Item]
-Label=Referral Meetup Location  - Nearby Landmark
-Name=VW35C12
-Start=393
-Len=50
-DataType=Alpha
-
-[Item]
-Label=Referral Meetup Location  - Best Time to Contact
-Name=VW35C13
-Start=443
-Len=50
-DataType=Alpha
-
-[Item]
-Label=Protocol text VW34D
-Name=VW35D
-Start=493
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Protocol text VW34D
-Name=VW35D_VS1
-Value=1;CONTINUE
-
-[Item]
-Label=Respondent asked for help or to be referred
-Name=VW35E
-Start=494
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Respondent asked for help or to be referred
-Name=VW35E_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Permission for referral by respondent
-Name=VW35F
-Start=495
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Permission for referral by respondent
-Name=VW35F_VS1
-Value=1;YES, PERMISSION FOR REFERRAL
-Value=2;NO PERMISSION FOR REFERRAL
-
-[Item]
-Label=Protocol text VW34G
-Name=VW35G
-Start=496
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Protocol text VW34G
-Name=VW35G_VS1
-Value=1;CONTINUE
-
-[Item]
-Label=Referral CASEID
-Name=VW35G1
-Start=497
-Len=7
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Referral Type
-Name=VW35G2
-Start=504
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Referral Type
-Name=VW35G2_VS1
-Value=1;RESPONDENT SCREENED POSITIVE
-Value=2;RESPONDENT REQUESTED
-
-[Item]
-Label=Referral Name of the Women
-Name=VW35G3
-Start=505
-Len=20
-DataType=Alpha
-
-[Item]
-Label=Referral Age
-Name=VW35G5
-Start=525
-Len=2
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Referral Age
-Name=VW35G5_VS1
-Value=15:49
-
-[Item]
-Label=Best and Safest Way
-Name=VW35G6
-Start=527
-Len=3
-DataType=Alpha
-
-[ValueSet]
-Label=Best and Safest Way
-Name=VW35G6_VS1
-Value='A  ';PHONE
-Value='B  ';IN PERSON
-Value='X  ';OTHER
-
-[Item]
-Label=Best and Safest Way - Phone
-Name=VW35G6A
-Start=527
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Best and Safest Way - Phone
-Name=VW35G6A_VS1
-Value='A';PHONE
-Value=' '
-
-[Item]
-Label=Best and Safest Way - In Person
-Name=VW35G6B
-Start=528
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Best and Safest Way - In Person
-Name=VW35G6B_VS1
-Value='B';IN PERSON
-Value=' '
-
-[Item]
-Label=Best and Safest Way - Other
-Name=VW35G6X
-Start=529
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Best and Safest Way - Other
-Name=VW35G6X_VS1
-Value='X';OTHER
-Value=' '
-
-[Item]
-Label=Referral Phone
-Name=VW35G7
-Start=530
-Len=8
-DataType=Alpha
-
-[Item]
-Label=Referral Meetup Location  - Region No
-Name=VW35G8
-Start=538
-Len=2
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Referral Meetup Location  - Region No
-Name=VW35G8_VS1
-Value=1;REGION 1
-Value=2;REGION 2
-Value=3;REGION 3
-Value=4;REGION 4
-Value=5;REGION 5
-
-[Item]
-Label=Referral Meetup Location  - Region Name
-Name=VW35G8N
-Start=540
-Len=50
-DataType=Alpha
-
-[Item]
-Label=Referral Meetup Location  - District No
-Name=VW35G9
-Start=590
-Len=2
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Referral Meetup Location  - District Name
-Name=VW35G9N
-Start=592
-Len=50
-DataType=Alpha
-
-[Item]
-Label=Referral Meetup Location  - Name of Village Town
-Name=VW35G10N
-Start=642
-Len=50
-DataType=Alpha
-
-[Item]
-Label=Referral Meetup Location  - Description of Location
-Name=VW35G11N
-Start=692
-Len=50
-DataType=Alpha
-
-[Item]
-Label=Referral Meetup Location  - Nearby Landmark
-Name=VW35G12
-Start=742
-Len=50
-DataType=Alpha
-
-[Item]
-Label=Referral Meetup Location  - Best Time to Contact
-Name=VW35G13
-Start=792
-Len=50
-DataType=Alpha
-
-[Item]
-Label=Protocol text VW34H
-Name=VW35H
-Start=842
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Protocol text VW34H
-Name=VW35H_VS1
-Value=1;CONTINUE
-
-[Item]
-Label=Protocol text VW35A
-Name=VW35I
-Start=843
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Protocol text VW35A
-Name=VW35I_VS1
-Value=1;CONTINUE
-
-[Item]
-Label=Interview interrupted by: Husband
-Name=VW36A
-Start=844
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Interview interrupted by: Husband
-Name=VW36A_VS1
-Value=1;YES, ONCE
-Value=2;YES, MORE THAN ONCE
-Value=3;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Interview interrupted by: Other male adult
-Name=VW36B
-Start=845
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Interview interrupted by: Other male adult
-Name=VW36B_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Interview interrupted by: Female adult
-Name=VW36C
-Start=846
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Interview interrupted by: Female adult
-Name=VW36C_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Interviewer's Observations
-Name=VW36AA
-Start=847
-Len=50
-DataType=Alpha
-
-[Item]
-Label=Comment/Explanation for not completing the VW module
-Name=VW37
-Start=897
-Len=120
-DataType=Alpha
-
-[Record]
 Label=MICS Plus
 Name=MODWPN
 RecordTypeValue='WPN'
@@ -11900,7 +6660,7 @@ Value=2;NO
 Label=Time Stamps of the Women Questionnaire Modules
 Name=MODWMTS
 RecordTypeValue='WTS'
-RecordLen=1125
+RecordLen=885
 
 [Item]
 Label=Timestamp of start of WM Questionnaire - Woman’s information panel
@@ -11983,29 +6743,9 @@ DecimalChar=Yes
 ZeroFill=Yes
 
 [Item]
-Label=Timestamp of start of Module NE Employment and training [15-24]
-Name=WMNETSTMPS
-Start=136
-Len=15
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Timestamp of end of Module NE Employment and training [15-24]
-Name=WMNETSTMPE
-Start=151
-Len=15
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
 Label=Timestamp of start of Module IC ICT use
 Name=WMICTSTMPS
-Start=166
+Start=136
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12015,7 +6755,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of end of Module IC ICT use
 Name=WMICTSTMPE
-Start=181
+Start=151
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12025,7 +6765,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of start of Module CM Fertility
 Name=WMCMTSTMPS
-Start=196
+Start=166
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12035,7 +6775,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of end of Module CM Fertility
 Name=WMCMTSTMPE
-Start=211
+Start=181
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12045,7 +6785,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of start of Module BH Birth history
 Name=WMBHTSTMPS
-Start=226
+Start=196
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12055,7 +6795,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of end of Module BH Birth history
 Name=WMBHTSTMPE
-Start=241
+Start=211
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12065,7 +6805,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of start of Module DB RC: Desire for last birth
 Name=WMDBTSTMPS
-Start=256
+Start=226
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12075,7 +6815,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of end of Module DB RC: Desire for last birth
 Name=WMDBTSTMPE
-Start=271
+Start=241
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12085,7 +6825,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of start of Module MN Antenatal Care
 Name=WMMN1TSTMPS
-Start=286
+Start=256
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12095,7 +6835,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of end of Module MN Antenatal Care
 Name=WMMN1TSTMPE
-Start=301
+Start=271
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12105,7 +6845,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of start of Module MN Malaria
 Name=WMMN2TSTMPS
-Start=316
+Start=286
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12115,7 +6855,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of end of Module MN Malaria
 Name=WMMN2TSTMPE
-Start=331
+Start=301
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12125,7 +6865,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of start of Module MN Delivery Care
 Name=WMMN3TSTMPS
-Start=346
+Start=316
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12135,7 +6875,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of end of Module MN Delivery Care
 Name=WMMN3TSTMPE
-Start=361
+Start=331
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12145,7 +6885,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of start of Module MN PN&NC: Thermal Care
 Name=WMMN4TSTMPS
-Start=376
+Start=346
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12155,7 +6895,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of end of Module MN PN&NC: Thermal Care
 Name=WMMN4TSTMPE
-Start=391
+Start=361
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12165,7 +6905,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of start of Module MN PN&NC: Cord Care
 Name=WMMN5TSTMPS
-Start=406
+Start=376
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12175,7 +6915,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of end of Module MN PN&NC: Cord Care
 Name=WMMN5TSTMPE
-Start=421
+Start=391
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12185,7 +6925,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of start of Module MN PN&NC: Birthweight
 Name=WMMN6TSTMPS
-Start=436
+Start=406
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12195,7 +6935,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of end of Module MN PN&NC: Birthweight
 Name=WMMN6TSTMPE
-Start=451
+Start=421
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12205,7 +6945,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of start of Module MN RC: Period return
 Name=WMMN7TSTMPS
-Start=466
+Start=436
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12215,7 +6955,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of end of Module MN RC: Period return
 Name=WMMN7TSTMPE
-Start=481
+Start=451
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12225,7 +6965,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of start of Module MN IYCF: Initial breastfeeding
 Name=WMMN8TSTMPS
-Start=496
+Start=466
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12235,7 +6975,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of end of Module MN IYCF: Initial breastfeeding
 Name=WMMN8TSTMPE
-Start=511
+Start=481
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12245,7 +6985,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of start of Module PN PN&NC: PNC for newborns and mothers
 Name=WMPN1TSTMPS
-Start=526
+Start=496
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12255,7 +6995,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of end of Module PN PN&NC: PNC for newborns and mothers
 Name=WMPN1TSTMPE
-Start=541
+Start=511
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12265,7 +7005,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of start of Module PN PN&NC: Signal care functions
 Name=WMPN2TSTMPS
-Start=556
+Start=526
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12275,7 +7015,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of end of Module PN PN&NC: Signal care functions
 Name=WMPN2TSTMPE
-Start=571
+Start=541
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12285,7 +7025,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of start of Module CP RC: Contraception
 Name=WMCPTSTMPS
-Start=586
+Start=556
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12295,7 +7035,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of end of Module CP RC: Contraception
 Name=WMCPTSTMPE
-Start=601
+Start=571
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12305,7 +7045,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of start of Module UN RC: Unmet need
 Name=WMUN1TSTMPS
-Start=616
+Start=586
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12315,7 +7055,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of end of Module UN RC: Unmet need
 Name=WMUN1TSTMPE
-Start=631
+Start=601
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12325,7 +7065,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of start of Module UN RC: Menstrual health and hygiene
 Name=WMUN2TSTMPS
-Start=646
+Start=616
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12335,7 +7075,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of end of Module UN RC: Menstrual health and hygiene
 Name=WMUN2TSTMPE
-Start=661
+Start=631
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12345,7 +7085,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of start of Module FG FGM
 Name=WMFGTSTMPS
-Start=676
+Start=646
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12355,47 +7095,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of end of Module FG FGM
 Name=WMFGTSTMPE
-Start=691
-Len=15
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Timestamp of start of Module HP HPV [15-17]
-Name=WMHPTSTMPS
-Start=706
-Len=15
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Timestamp of end of Module HP HPV [15-17]
-Name=WMHPTSTMPE
-Start=721
-Len=15
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Timestamp of start of Module TU Time-use [15-17]
-Name=WMTUTSTMPS
-Start=736
-Len=15
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Timestamp of end of Module TU Time-use [15-17]
-Name=WMTUTSTMPE
-Start=751
+Start=661
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12405,7 +7105,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of start of Module DV Attitudes toward domestic violence
 Name=WMDVTSTMPS
-Start=766
+Start=676
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12415,47 +7115,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of end of Module DV Attitudes toward domestic violence
 Name=WMDVTSTMPE
-Start=781
-Len=15
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Timestamp of start of Module VT SDG16: Safety
-Name=WMVT1TSTMPS
-Start=796
-Len=15
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Timestamp of end of Module VT SDG16: Safety
-Name=WMVT1TSTMPE
-Start=811
-Len=15
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Timestamp of start of Module VT SDG16: Discrimination
-Name=WMVT2TSTMPS
-Start=826
-Len=15
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Timestamp of end of Module VT SDG16: Discrimination
-Name=WMVT2TSTMPE
-Start=841
+Start=691
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12465,7 +7125,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of start of Module MA Marriage / Union
 Name=WMMATSTMPS
-Start=856
+Start=706
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12475,7 +7135,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of end of Module MA Marriage / Union
 Name=WMMATSTMPE
-Start=871
+Start=721
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12485,7 +7145,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of start of Module AF Adult functioning [18-49]
 Name=WMAFTSTMPS
-Start=886
+Start=736
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12495,7 +7155,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of end of Module AF Adult functioning [18-49]
 Name=WMAFTSTMPE
-Start=901
+Start=751
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12505,7 +7165,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of start of Module SB RC: Sexual activity
 Name=WMSBTSTMPS
-Start=916
+Start=766
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12515,7 +7175,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of end of Module SB RC: Sexual activity
 Name=WMSBTSTMPE
-Start=931
+Start=781
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12525,7 +7185,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of start of Module DM RC: Decision-making on reproductive health
 Name=WMDMTSTMPS
-Start=946
+Start=796
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12535,7 +7195,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of end of Module DM RC: Decision-making on reproductive health
 Name=WMDMTSTMPE
-Start=961
+Start=811
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12545,7 +7205,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of start of Module MM Maternal mortality
 Name=WMMMTSTMPS
-Start=976
+Start=826
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12555,67 +7215,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of end of Module MM Maternal mortality
 Name=WMMMTSTMPE
-Start=991
-Len=15
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Timestamp of start of Module TO Tobacco use
-Name=WMTOTSTMPS
-Start=1006
-Len=15
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Timestamp of end of Module TO Tobacco use
-Name=WMTOTSTMPE
-Start=1021
-Len=15
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Timestamp of start of Module MH Mental health [15-24]
-Name=WMMHTSTMPS
-Start=1036
-Len=15
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Timestamp of end of Module MH Mental health [15-24]
-Name=WMMHTSTMPE
-Start=1051
-Len=15
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Timestamp of start of Module VW Violence against women
-Name=WMVWTSTMPS
-Start=1066
-Len=15
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Timestamp of end of Module VW Violence against women
-Name=WMVWTSTMPE
-Start=1081
+Start=841
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12625,7 +7225,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of start of WM - End of Interview
 Name=WMENDTSTMPS
-Start=1096
+Start=856
 Len=15
 DataType=Numeric
 Decimal=2
@@ -12635,7 +7235,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of end of WM - End of Interview
 Name=WMENDTSTMPE
-Start=1111
+Start=871
 Len=15
 DataType=Numeric
 Decimal=2
