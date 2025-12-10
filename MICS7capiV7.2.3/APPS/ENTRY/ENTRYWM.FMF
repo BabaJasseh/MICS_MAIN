@@ -934,7 +934,7 @@ Name=FORM010
 Label=Female Genital Mutilation/Cutting
 QuestionTextHeight=205
 Level=1
-Size=1169,1347
+Size=1169,789
 Color=14680063
 CapturePos=634,80
   
@@ -950,6 +950,7 @@ Item=FG10
 Item=FG7
 Item=FORMFG_ROSTER
 Item=FG24
+Item=FG24A
   
 Box=50,154,1144,155,Etched
   
@@ -4987,6 +4988,18 @@ Form=23
 Position=1050,702,1110,734
 Text=FG24
 Color=4210688
+ 
+  
+[Field]
+Name=FG24A
+Position=884,730,903,764
+Item=FG24A,MICS7WM
+DataCaptureType=RadioButton
+Form=23
+  
+[Text]
+Position=196,732,871,764
+Text=Awareness of the law prohibiting FGM practice
  
 [EndGroup]
   
