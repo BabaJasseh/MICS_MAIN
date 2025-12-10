@@ -244,6 +244,904 @@ PROC GLOBAL
 		dayOfWeek = diff % 7 + 1;
 	end;
 	
+PROC FL10C
+if $ = 11 then
+	ST1LANG = 11;
+elseif $ = 12 then
+	ST1LANG = 12;
+elseif $ = 13 then
+	ST1LANG = 13;
+elseif $ = 95 then
+	ST1LANG = 95;
+	ST1WNUM = notappl;
+endif;
+
+if $ >= 95 then
+	skip to FL23A
+endif;
+  
+PROC FL19W73
+if $  = "!" then
+	skip to FL20A;
+endif;
+
+PROC FL19W74
+if $  = "!" then
+	skip to FL20A;
+endif;
+
+PROC FL19W75
+if $  = "!" then
+	skip to FL20A;
+endif;
+
+PROC FL19W76
+if $  = "!" then
+	skip to FL20A;
+endif;
+
+PROC FL19W77
+if $  = "!" then
+	skip to FL20A;
+endif;
+
+PROC FL19W78
+if $  = "!" then
+	skip to FL20A;
+endif;
+
+PROC FL19W79
+if $  = "!" then
+	skip to FL20A;
+endif;
+
+PROC FL19W80
+if $  = "!" then
+	skip to FL20A;
+endif;
+
+PROC FL19W81
+if $  = "!" then
+	skip to FL20A;
+endif;
+
+PROC FL19W82
+if $  = "!" then
+	skip to FL20A;
+endif;
+
+PROC FL19W83
+if $  = "!" then
+	skip to FL20A;
+endif;
+
+PROC FL19W84
+if $  = "!" then
+	skip to FL20A;
+endif;
+
+PROC FL19W85
+if $  = "!" then
+	skip to FL20A;
+endif;
+
+PROC FL21D
+preproc
+	if FL14 = 2 or FL16 = 1 or FL18 = 1 then
+		ST1LANG = 0;
+		ST1WNUM = notappl;
+	endif;
+
+	if FL21BA = 1 and FL21BB = 1 and FL21BC = 1 and FL21BD = 1 and FL21BE = 1 then
+		skip to FL23A;
+		ST2LANG = 0;
+		ST2WNUM = notappl;
+	endif;
+
+postproc
+	if $ = 11 and ST1LANG = 11 then
+		errmsg(2951);
+		reenter;
+	endif;
+	if $ = 12 and ST1LANG = 12 then
+		errmsg(2951);
+		reenter;
+	endif;
+	if $ = 13 and ST1LANG = 13 then
+		errmsg(2951);
+		reenter;
+	endif;
+
+	if $ = 11 then
+		ST2LANG = 11;
+		ST2WNUM = 61;
+	elseif $ = 12 then
+		ST2LANG = 12;
+		ST2WNUM = 62;
+	elseif $ = 13 then
+		ST2LANG = 13;
+		ST2WNUM = 68;
+	elseif $ = 95 then
+		ST2LANG = 95;
+		ST2WNUM = notappl;
+	endif;
+
+	if $ >= 95 then
+		skip to FL23A
+	endif;
+
+	if ST2LANG = 11 then
+		offeredLang = tr("English")
+	elseif ST2LANG = 12 then
+		offeredLang = tr("French")
+	elseif ST2LANG = 13 then
+		offeredLang = tr("Spanish")  
+	endif;
+
+PROC FL21G
+preproc
+	if CB3 >= 10 and ED9(FS3) = 1 then
+		skip to FL21OINTRO;
+	endif;
+
+PROC FL21H
+if $ <> 1 then
+	skip to FL23A;
+endif;
+
+PROC FL21I
+onfocus
+	clean_labels();
+	codes(1) = 1;
+	codes(2) = 2;
+	codes(3) = 3;
+	codes(4) = 9;
+	if ST2LANG = 11 then
+		labels(1) = tr("CORRECT") + " (2)";
+	elseif ST2LANG = 12 then
+		labels(1) = tr("CORRECT") + " (2)";
+	elseif ST2LANG = 13 then
+		labels(1) = tr("CORRECT") + " (2)";
+	endif;
+		labels(2) = tr("OTHER ANSWERS");
+		labels(3) = tr("NO ANSWER AFTER 5 SECONDS");	  
+		labels(4) = tr("NO RESPONSE");	
+	SetValueSet( @GetSymbol(), codes, labels );
+
+postproc
+	if $ = 1 then
+		skip to FL21K
+	endif;
+
+PROC FL21J
+skip to FL23A;
+
+PROC FL21K
+onfocus
+	clean_labels();
+	codes(1) = 1;
+	codes(2) = 2;
+	codes(3) = 3;
+	codes(4) = 9;
+	if ST2LANG = 11 then
+		labels(1) = tr("CORRECT") + " (ANNE)";
+	elseif ST2LANG = 12 then
+		labels(1) = tr("CORRECT") + " (ANNE)";
+	elseif ST2LANG = 13 then
+		labels(1) = tr("CORRECT") + " (ANA)";
+	endif;
+		labels(2) = tr("OTHER ANSWERS");
+		labels(3) = tr("NO ANSWER AFTER 5 SECONDS");	  
+		labels(4) = tr("NO RESPONSE");	
+	SetValueSet( @GetSymbol(), codes, labels );
+
+postproc
+	if $ = 1 then
+		skip to FL21OINTRO;
+	endif;
+
+PROC FL21L
+skip to FL23A;
+
+PROC FL21OEND
+	if FL21PB >= int(ST2WNUM/10)+1 then
+		skip to FL23A
+	endif;
+
+PROC FL21OINTRO
+preproc
+	if addmode then
+		savepartial();
+	endif;
+  
+PROC FL21OW1
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW10
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW11
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW12
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW13
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW14
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW15
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW16
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW17
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW18
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW19
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW2
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW20
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW21
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW22
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW23
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW24
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW25
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW26
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW27
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW28
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW29
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW3
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW30
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW31
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW32
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW33
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW34
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW35
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW36
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW37
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW38
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW39
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW4
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW40
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW41
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW42
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW43
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW44
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW45
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW46
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW47
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW48
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW49
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW5
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW50
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW51
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW52
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW53
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW54
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW55
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW56
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW57
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW58
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW59
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW6
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW60
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW61
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+if ST2LANG = 11 then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW62
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+if ST2LANG = 12 then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW63
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW64
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW65
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW66
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW67
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW7
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW8
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21OW9
+if $  = "!" then
+	skip to FL21PA;
+endif;
+
+PROC FL21PA
+preproc
+	words(1)  = FL21OW1;
+	words(2)  = FL21OW2;
+	words(3)  = FL21OW3;
+	words(4)  = FL21OW4;
+	words(5)  = FL21OW5;
+	words(6)  = FL21OW6;
+	words(7)  = FL21OW7;
+	words(8)  = FL21OW8;
+	words(9)  = FL21OW9;
+	words(10) = FL21OW10;
+	words(11) = FL21OW11;
+	words(12) = FL21OW12;
+	words(13) = FL21OW13;
+	words(14) = FL21OW14;
+	words(15) = FL21OW15;
+	words(16) = FL21OW16;
+	words(17) = FL21OW17;
+	words(18) = FL21OW18;
+	words(19) = FL21OW19;
+	words(20) = FL21OW20;
+	words(21) = FL21OW21;
+	words(22) = FL21OW22;
+	words(23) = FL21OW23;
+	words(24) = FL21OW24;
+	words(25) = FL21OW25;
+	words(26) = FL21OW26;
+	words(27) = FL21OW27;
+	words(28) = FL21OW28;
+	words(29) = FL21OW29;
+	words(30) = FL21OW30;
+	words(31) = FL21OW31;
+	words(32) = FL21OW32;
+	words(33) = FL21OW33;
+	words(34) = FL21OW34;
+	words(35) = FL21OW35;
+	words(36) = FL21OW36;
+	words(37) = FL21OW37;
+	words(38) = FL21OW38;
+	words(39) = FL21OW39;
+	words(40) = FL21OW40;
+	words(41) = FL21OW41;
+	words(42) = FL21OW42;
+	words(43) = FL21OW43;
+	words(44) = FL21OW44;
+	words(45) = FL21OW45;
+	words(46) = FL21OW46;
+	words(47) = FL21OW47;
+	words(48) = FL21OW48;
+	words(49) = FL21OW49;
+	words(50) = FL21OW50;
+	words(51) = FL21OW51;
+	words(52) = FL21OW52;
+	words(53) = FL21OW53;
+	words(54) = FL21OW54;
+	words(55) = FL21OW55;
+	words(56) = FL21OW56;
+	words(57) = FL21OW57;
+	words(58) = FL21OW58;
+	words(59) = FL21OW59;
+	words(60) = FL21OW60;
+	words(61) = FL21OW61;
+	words(62) = FL21OW62;  
+	words(63) = FL21OW63; 
+	words(64) = FL21OW64; 
+	words(65) = FL21OW65; 
+	words(66) = FL21OW66; 
+	words(67) = FL21OW67; 
+	words(68) = FL21OW68; 
+
+	n = 0;  
+	do i = 1 while i <= ST2WNUM
+		if words(i) <> "!" then n = n + 1; endif;  
+		if words(i) = "!" then i = ST2WNUM; endif;
+	enddo;
+	$ = n;
+  
+PROC FL21PB
+preproc
+	n = 0;
+	do i = 1 while i <= FL21PA
+		if words(i) = "1" then n = n + 1; endif;  
+	enddo;
+	$ = n + ST2WNUM - FL21PA;
+
+PROC FL22A
+onfocus
+	clean_labels();
+	codes(1) = 1;
+	codes(2) = 2;
+	codes(3) = 3;
+	codes(4) = 9;
+	if ST2LANG = 11 then
+		labels(1) = tr("CORRECT") + " (7)";
+	elseif ST2LANG = 12 then
+		labels(1) = tr("CORRECT") + " (7)";
+	elseif ST2LANG = 13 then
+		labels(1) = tr("CORRECT") + " (7)";
+	endif;
+		labels(2) = tr("INCORRECT");
+		labels(3) = tr("NO RESPONSE / SAYS 'I DON'T KNOW'");	  
+		labels(4) = tr("NO RESPONSE");	
+	SetValueSet( @GetSymbol(), codes, labels );
+
+PROC FL22B
+onfocus
+	clean_labels();
+	codes(1) = 1;
+	codes(2) = 2;
+	codes(3) = 3;
+	codes(4) = 9;
+	if ST2LANG = 11 then
+		labels(1) = tr("CORRECT") + " (HER GRANDMOTHER)";
+	elseif ST2LANG = 12 then
+		labels(1) = tr("CORRECT") + " (SA GRAND-MÈRE)";
+	elseif ST2LANG = 13 then
+		labels(1) = tr("CORRECT") + " (SU ABUELA)";
+	endif;
+		labels(2) = tr("INCORRECT");
+		labels(3) = tr("NO RESPONSE / SAYS 'I DON'T KNOW'");	  
+		labels(4) = tr("NO RESPONSE");	
+	SetValueSet( @GetSymbol(), codes, labels );
+
+PROC FL22C
+onfocus
+	clean_labels();
+	codes(1) = 1;
+	codes(2) = 2;
+	codes(3) = 3;
+	codes(4) = 9;
+	if ST2LANG = 11 then
+		labels(1) = tr("CORRECT") + " (CARROTS)";
+	elseif ST2LANG = 12 then
+		labels(1) = tr("CORRECT") + " (CAROTTES)";
+	elseif ST2LANG = 13 then
+		labels(1) = tr("CORRECT") + " (TOMATES)";
+	endif;
+		labels(2) = tr("INCORRECT");
+		labels(3) = tr("NO RESPONSE / SAYS 'I DON'T KNOW'");	  
+		labels(4) = tr("NO RESPONSE");	
+	SetValueSet( @GetSymbol(), codes, labels );
+
+PROC FL22D
+onfocus
+	clean_labels();
+	codes(1) = 1;
+	codes(2) = 2;
+	codes(3) = 3;
+	codes(4) = 9;
+	if ST2LANG = 11 then
+		labels(1) = tr("CORRECT") + " (BECAUSE IT FELL THROUGH THE HOLE IN THE BAG OR BECAUSE THE BAG HAD A HOLE)";
+	elseif ST2LANG = 12 then
+		labels(1) = tr("CORRECT") + " (PARCE QU'IL EST TOMBE A TRAVERS LE TROU DANS LE SAC OU PARCE QUE LE SAC AVAIT UN TROU)";
+	elseif ST2LANG = 13 then
+		labels(1) = tr("CORRECT") + " (PORQUE CAYÓ A TRAVÉS DEL AGUJERO EN LA BOLSA O PORQUE LA BOLSA TENÍA UN AGUJERO)";
+	endif;
+		labels(2) = tr("INCORRECT");
+		labels(3) = tr("NO RESPONSE / SAYS 'I DON'T KNOW'");	  
+		labels(4) = tr("NO RESPONSE");	
+	SetValueSet( @GetSymbol(), codes, labels );
+
+
+PROC FL22E
+onfocus
+	clean_labels();
+	codes(1) = 1;
+	codes(2) = 2;
+	codes(3) = 3;
+	codes(4) = 9;
+	if ST2LANG = 11 then
+		labels(1) = tr("CORRECT") + " (BECAUSE PETER GAVE HER THE MONEY OR BECAUSE PETER FOUND THE MONEY)";
+	elseif ST2LANG = 12 then
+		labels(1) = tr("CORRECT") + " (PARCE QUE PIERRE LUI A DONNE L'ARGENT OU PARCE QUE PIERRE A TROUVE L’ARGENT)";
+	elseif ST2LANG = 13 then
+		labels(1) = tr("CORRECT") + " (PORQUE PEDRO LE DIO EL DINERO O PORQUE PEDRO ENCONTRÓ EL DINERO)";
+	endif;
+		labels(2) = tr("INCORRECT");
+		labels(3) = tr("NO RESPONSE / SAYS 'I DON'T KNOW'");	  
+		labels(4) = tr("NO RESPONSE");	
+	SetValueSet( @GetSymbol(), codes, labels );
+
+
+PROC FTU10
+preproc;
+if FTU9X=1 then
+	FTU10=00.00;
+	if FTU8M+FTU9M>59 then
+		FTU10H =  FTU8H + FTU9H + 1;
+		FTU10M =  FTU8M + FTU9M - 60;
+	else
+		FTU10H =  FTU8H + FTU9H;
+		FTU10M =  FTU8M + FTU9M;
+	endif;
+endif;
+
+postproc
+if FTU9X=2 then
+   if FTU10<FTU8 then
+      errmsg(2303);
+	  reenter;
+   endif;
+   FTU9=00.00;
+   if FTU8M<=FTU10M then
+      FTU9H =  FTU10H-FTU8H;
+      FTU9M =  FTU10M-FTU8M;
+   else
+     FTU9H =  FTU10H-FTU8H-1;
+     FTU9M =  FTU10M-FTU8M+60;
+   endif;
+endif;
+PROC FTU12
+preproc;
+if     FTU7=080 then
+elseif FTU7=090 then skip to FTU14
+elseif FTU7=110 then skip to FTU15
+elseif FTU7 in 120,130,150 then skip to FTU16
+elseif FTU7=042 then skip to FTU17
+else skip to next FTU6
+endif;
+PROC FTU13
+alphavar = $;
+if alphachk("ABCD?") then
+	errmsg(9998);
+	reenter
+else
+	$ = alphavar;
+endif;
+if pos("?",$) & alphsize > 1 then
+	errmsg(9995);
+	reenter
+endif;
+
+if pos("C",$) or pos("D",$) then
+	if FTU12 = 2 then
+		errmsg(2304);
+		reenter;
+	endif;
+endif;
+skip to next FTU6;
+PROC FTU14
+skip to next FTU6;
+PROC FTU15
+skip to next FTU6;
+PROC FTU16
+skip to next FTU6;
+PROC FTU17
+alphavar = $;
+if alphachk("ABCDEX?") then
+	errmsg(9998);
+	reenter
+else
+	$ = alphavar;
+endif;
+if pos("?",$) & alphsize > 1 then
+	errmsg(9995);
+	reenter
+endif;
+if pos("X",$) and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+PROC FTU18
+preproc;
+list string activities;
+for FORMFTU_ROSTER do 
+    activities.add(maketext("%v - %v/%v: %v",FTU6,FTU8,FTU10,FTU7A));
+endfor;
+
+postproc;
+if $=0 then
+   activities.show(tr("Activity"));
+   reenter;
+elseif $=1 then
+   numeric act=accept(tr("Please select where the missed activity should start"),activities);
+   if act > 0 then
+      reenter FTU6(act);
+   else
+      reenter;
+   endif;
+endif;
+
+PROC FTU3
+preproc
+	if !(CB3 in 10:14) then
+		endgroup;
+	endif;
+
+	if addmode then
+		savepartial();
+	endif;
+PROC FTU4
+if !FTU4H in 0:23 or !FTU4M in 0:59 then
+   errmsg(tr("Incorrect time %v, Hour to be between 0-23, Minutes to be between 0-59"),$);
+   reenter;
+endif; 
+PROC FTU5
+if !FTU5H in 0:23 or !FTU5M in 0:59 then
+   errmsg(tr("Incorrect time %v, Hour to be between 0-23, Minutes to be between 0-59"),$);
+   reenter;
+endif;  
+if FTU4H*60 + FTU4M >= FTU5H*60 + FTU5M then 
+   errmsg(2301);
+   reenter;
+endif;
+PROC FTU6
+preproc
+if curocc() >1 and FTU10(curocc ()-1) >= FTU5 then
+ endgroup;
+endif; 
+
+$ = curocc ();
+if curocc() = 1 then 
+	FTU8=FTU4;
+	stactiv=edit("99",FTU4H)+":"+edit("99",FTU4M);
+else
+	FTU8 = FTU10(curocc ()-1);
+	stactiv=edit("99",FTU10H(curocc ()-1))+":"+edit("99",FTU10M(curocc ()-1));
+endif; 
+PROC FTU7
+if $ = 996 and !inadvance() then
+	string other = editnote();
+	ensureNotBlank(other);
+endif;
+PROC FTU7A
+$ = getvaluelabel(FTU7);
+PROC FTU9
+if !FTU9H in 0:23 or !FTU9M in 0:59 then
+   errmsg(tr("Incorrect time %v, Hour to be between 0-23, Minutes to be between 0-59"),$);
+   reenter;
+endif; 
+
+if FTU8H*60+FTU8M + FTU9H*60+FTU9M > FTU5H*60+FTU5M then
+   errmsg(2302);
+   reenter;
+endif;  
+PROC FTU9X
+if $=1 then
+   protect(FTU9,false);
+   protect(FTU10,true);
+else
+   protect(FTU9,true);
+   protect(FTU10,false);
+   skip to FTU10;
+endif;   
 PROC FL_ENTRYFS
 preproc
 	//Initializing global variables
@@ -710,168 +1608,6 @@ if visualvalue (FSFTUTSTMPE) = notappl then
    FSFTUTSTMPE = timestamp (); 
    endif; 
    
-PROC FTU3
-preproc
-	if !(CB3 in 10:14) then
-		endgroup;
-	endif;
-
-	if addmode then
-		savepartial();
-	endif;
-PROC FTU4
-if !FTU4H in 0:23 or !FTU4M in 0:59 then
-   errmsg(tr("Incorrect time %v, Hour to be between 0-23, Minutes to be between 0-59"),$);
-   reenter;
-endif; 
-PROC FTU5
-if !FTU5H in 0:23 or !FTU5M in 0:59 then
-   errmsg(tr("Incorrect time %v, Hour to be between 0-23, Minutes to be between 0-59"),$);
-   reenter;
-endif;  
-if FTU4H*60 + FTU4M >= FTU5H*60 + FTU5M then 
-   errmsg(2301);
-   reenter;
-endif;
-PROC FTU6
-preproc
-if curocc() >1 and FTU10(curocc ()-1) >= FTU5 then
- endgroup;
-endif; 
-
-$ = curocc ();
-if curocc() = 1 then 
-	FTU8=FTU4;
-	stactiv=edit("99",FTU4H)+":"+edit("99",FTU4M);
-else
-	FTU8 = FTU10(curocc ()-1);
-	stactiv=edit("99",FTU10H(curocc ()-1))+":"+edit("99",FTU10M(curocc ()-1));
-endif; 
-PROC FTU7
-if $ = 996 and !inadvance() then
-	string other = editnote();
-	ensureNotBlank(other);
-endif;
-PROC FTU7A
-$ = getvaluelabel(FTU7);
-PROC FTU9X
-if $=1 then
-   protect(FTU9,false);
-   protect(FTU10,true);
-else
-   protect(FTU9,true);
-   protect(FTU10,false);
-   skip to FTU10;
-endif;   
-PROC FTU9
-if !FTU9H in 0:23 or !FTU9M in 0:59 then
-   errmsg(tr("Incorrect time %v, Hour to be between 0-23, Minutes to be between 0-59"),$);
-   reenter;
-endif; 
-
-if FTU8H*60+FTU8M + FTU9H*60+FTU9M > FTU5H*60+FTU5M then
-   errmsg(2302);
-   reenter;
-endif;  
-PROC FTU10
-preproc;
-if FTU9X=1 then
-	FTU10=00.00;
-	if FTU8M+FTU9M>59 then
-		FTU10H =  FTU8H + FTU9H + 1;
-		FTU10M =  FTU8M + FTU9M - 60;
-	else
-		FTU10H =  FTU8H + FTU9H;
-		FTU10M =  FTU8M + FTU9M;
-	endif;
-endif;
-
-postproc
-if FTU9X=2 then
-   if FTU10<FTU8 then
-      errmsg(2303);
-	  reenter;
-   endif;
-   FTU9=00.00;
-   if FTU8M<=FTU10M then
-      FTU9H =  FTU10H-FTU8H;
-      FTU9M =  FTU10M-FTU8M;
-   else
-     FTU9H =  FTU10H-FTU8H-1;
-     FTU9M =  FTU10M-FTU8M+60;
-   endif;
-endif;
-PROC FTU12
-preproc;
-if     FTU7=080 then
-elseif FTU7=090 then skip to FTU14
-elseif FTU7=110 then skip to FTU15
-elseif FTU7 in 120,130,150 then skip to FTU16
-elseif FTU7=042 then skip to FTU17
-else skip to next FTU6
-endif;
-PROC FTU13
-alphavar = $;
-if alphachk("ABCD?") then
-	errmsg(9998);
-	reenter
-else
-	$ = alphavar;
-endif;
-if pos("?",$) & alphsize > 1 then
-	errmsg(9995);
-	reenter
-endif;
-
-if pos("C",$) or pos("D",$) then
-	if FTU12 = 2 then
-		errmsg(2304);
-		reenter;
-	endif;
-endif;
-skip to next FTU6;
-PROC FTU14
-skip to next FTU6;
-PROC FTU15
-skip to next FTU6;
-PROC FTU16
-skip to next FTU6;
-PROC FTU17
-alphavar = $;
-if alphachk("ABCDEX?") then
-	errmsg(9998);
-	reenter
-else
-	$ = alphavar;
-endif;
-if pos("?",$) & alphsize > 1 then
-	errmsg(9995);
-	reenter
-endif;
-if pos("X",$) and !inadvance() then
-	string other = editnote();
-	ensureNotBlank(other);
-endif;
-PROC FTU18
-preproc;
-list string activities;
-for FORMFTU_ROSTER do 
-    activities.add(maketext("%v - %v/%v: %v",FTU6,FTU8,FTU10,FTU7A));
-endfor;
-
-postproc;
-if $=0 then
-   activities.show(tr("Activity"));
-   reenter;
-elseif $=1 then
-   numeric act=accept(tr("Please select where the missed activity should start"),activities);
-   if act > 0 then
-      reenter FTU6(act);
-   else
-      reenter;
-   endif;
-endif;
-
 PROC FORMPR
 preproc
 if visualvalue (FSPRTSTMPS) = notappl then
@@ -1007,22 +1743,6 @@ postproc
 		skip to FL13
 	endif;
 
-PROC FL10C
-if $ = 11 then
-	ST1LANG = 11;
-elseif $ = 12 then
-	ST1LANG = 12;
-elseif $ = 13 then
-	ST1LANG = 13;
-elseif $ = 95 then
-	ST1LANG = 95;
-	ST1WNUM = notappl;
-endif;
-
-if $ >= 95 then
-	skip to FL23A
-endif;
-  
 PROC FL13
 preproc
 	if CB3 >= 10 and ED9(FS3) = 1 then
@@ -1478,71 +2198,6 @@ if ST1LANG = 11 then
 	skip to FL20A;
 endif;
 
-PROC FL19W73
-if $  = "!" then
-	skip to FL20A;
-endif;
-
-PROC FL19W74
-if $  = "!" then
-	skip to FL20A;
-endif;
-
-PROC FL19W75
-if $  = "!" then
-	skip to FL20A;
-endif;
-
-PROC FL19W76
-if $  = "!" then
-	skip to FL20A;
-endif;
-
-PROC FL19W77
-if $  = "!" then
-	skip to FL20A;
-endif;
-
-PROC FL19W78
-if $  = "!" then
-	skip to FL20A;
-endif;
-
-PROC FL19W79
-if $  = "!" then
-	skip to FL20A;
-endif;
-
-PROC FL19W80
-if $  = "!" then
-	skip to FL20A;
-endif;
-
-PROC FL19W81
-if $  = "!" then
-	skip to FL20A;
-endif;
-
-PROC FL19W82
-if $  = "!" then
-	skip to FL20A;
-endif;
-
-PROC FL19W83
-if $  = "!" then
-	skip to FL20A;
-endif;
-
-PROC FL19W84
-if $  = "!" then
-	skip to FL20A;
-endif;
-
-PROC FL19W85
-if $  = "!" then
-	skip to FL20A;
-endif;
-
 PROC FL20A
 preproc
 	words(1)  = FL19W1;
@@ -1747,666 +2402,11 @@ onfocus
 		labels(4) = tr("NO RESPONSE");	
 	SetValueSet( @GetSymbol(), codes, labels );
 
-PROC FL21D
-preproc
-	if FL14 = 2 or FL16 = 1 or FL18 = 1 then
-		ST1LANG = 0;
-		ST1WNUM = notappl;
-	endif;
-
-	if FL21BA = 1 and FL21BB = 1 and FL21BC = 1 and FL21BD = 1 and FL21BE = 1 then
-		skip to FL23A;
-		ST2LANG = 0;
-		ST2WNUM = notappl;
-	endif;
-
-postproc
-	if $ = 11 and ST1LANG = 11 then
-		errmsg(2951);
-		reenter;
-	endif;
-	if $ = 12 and ST1LANG = 12 then
-		errmsg(2951);
-		reenter;
-	endif;
-	if $ = 13 and ST1LANG = 13 then
-		errmsg(2951);
-		reenter;
-	endif;
-
-	if $ = 11 then
-		ST2LANG = 11;
-		ST2WNUM = 61;
-	elseif $ = 12 then
-		ST2LANG = 12;
-		ST2WNUM = 62;
-	elseif $ = 13 then
-		ST2LANG = 13;
-		ST2WNUM = 68;
-	elseif $ = 95 then
-		ST2LANG = 95;
-		ST2WNUM = notappl;
-	endif;
-
-	if $ >= 95 then
-		skip to FL23A
-	endif;
-
-	if ST2LANG = 11 then
-		offeredLang = tr("English")
-	elseif ST2LANG = 12 then
-		offeredLang = tr("French")
-	elseif ST2LANG = 13 then
-		offeredLang = tr("Spanish")  
-	endif;
-
-PROC FL21G
-preproc
-	if CB3 >= 10 and ED9(FS3) = 1 then
-		skip to FL21OINTRO;
-	endif;
-
-PROC FL21H
-if $ <> 1 then
-	skip to FL23A;
-endif;
-
-PROC FL21I
-onfocus
-	clean_labels();
-	codes(1) = 1;
-	codes(2) = 2;
-	codes(3) = 3;
-	codes(4) = 9;
-	if ST2LANG = 11 then
-		labels(1) = tr("CORRECT") + " (2)";
-	elseif ST2LANG = 12 then
-		labels(1) = tr("CORRECT") + " (2)";
-	elseif ST2LANG = 13 then
-		labels(1) = tr("CORRECT") + " (2)";
-	endif;
-		labels(2) = tr("OTHER ANSWERS");
-		labels(3) = tr("NO ANSWER AFTER 5 SECONDS");	  
-		labels(4) = tr("NO RESPONSE");	
-	SetValueSet( @GetSymbol(), codes, labels );
-
-postproc
-	if $ = 1 then
-		skip to FL21K
-	endif;
-
-PROC FL21J
-skip to FL23A;
-
-PROC FL21K
-onfocus
-	clean_labels();
-	codes(1) = 1;
-	codes(2) = 2;
-	codes(3) = 3;
-	codes(4) = 9;
-	if ST2LANG = 11 then
-		labels(1) = tr("CORRECT") + " (ANNE)";
-	elseif ST2LANG = 12 then
-		labels(1) = tr("CORRECT") + " (ANNE)";
-	elseif ST2LANG = 13 then
-		labels(1) = tr("CORRECT") + " (ANA)";
-	endif;
-		labels(2) = tr("OTHER ANSWERS");
-		labels(3) = tr("NO ANSWER AFTER 5 SECONDS");	  
-		labels(4) = tr("NO RESPONSE");	
-	SetValueSet( @GetSymbol(), codes, labels );
-
-postproc
-	if $ = 1 then
-		skip to FL21OINTRO;
-	endif;
-
-PROC FL21L
-skip to FL23A;
-
-PROC FL21OINTRO
-preproc
-	if addmode then
-		savepartial();
-	endif;
-  
-PROC FL21OW1
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW2
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW3
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW4
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW5
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW6
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW7
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW8
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW9
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW10
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW11
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW12
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW13
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW14
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW15
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW16
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW17
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW18
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW19
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW20
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW21
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW22
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW23
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW24
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW25
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW26
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW27
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW28
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW29
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW30
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW31
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW32
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW33
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW34
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW35
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW36
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW37
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW38
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW39
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW40
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW41
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW42
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW43
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW44
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW45
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW46
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW47
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW48
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW49
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW50
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW51
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW52
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW53
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW54
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW55
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW56
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW57
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW58
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW59
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW60
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW61
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-if ST2LANG = 11 then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW62
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-if ST2LANG = 12 then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW63
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW64
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW65
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW66
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21OW67
-if $  = "!" then
-	skip to FL21PA;
-endif;
-
-PROC FL21PA
-preproc
-	words(1)  = FL21OW1;
-	words(2)  = FL21OW2;
-	words(3)  = FL21OW3;
-	words(4)  = FL21OW4;
-	words(5)  = FL21OW5;
-	words(6)  = FL21OW6;
-	words(7)  = FL21OW7;
-	words(8)  = FL21OW8;
-	words(9)  = FL21OW9;
-	words(10) = FL21OW10;
-	words(11) = FL21OW11;
-	words(12) = FL21OW12;
-	words(13) = FL21OW13;
-	words(14) = FL21OW14;
-	words(15) = FL21OW15;
-	words(16) = FL21OW16;
-	words(17) = FL21OW17;
-	words(18) = FL21OW18;
-	words(19) = FL21OW19;
-	words(20) = FL21OW20;
-	words(21) = FL21OW21;
-	words(22) = FL21OW22;
-	words(23) = FL21OW23;
-	words(24) = FL21OW24;
-	words(25) = FL21OW25;
-	words(26) = FL21OW26;
-	words(27) = FL21OW27;
-	words(28) = FL21OW28;
-	words(29) = FL21OW29;
-	words(30) = FL21OW30;
-	words(31) = FL21OW31;
-	words(32) = FL21OW32;
-	words(33) = FL21OW33;
-	words(34) = FL21OW34;
-	words(35) = FL21OW35;
-	words(36) = FL21OW36;
-	words(37) = FL21OW37;
-	words(38) = FL21OW38;
-	words(39) = FL21OW39;
-	words(40) = FL21OW40;
-	words(41) = FL21OW41;
-	words(42) = FL21OW42;
-	words(43) = FL21OW43;
-	words(44) = FL21OW44;
-	words(45) = FL21OW45;
-	words(46) = FL21OW46;
-	words(47) = FL21OW47;
-	words(48) = FL21OW48;
-	words(49) = FL21OW49;
-	words(50) = FL21OW50;
-	words(51) = FL21OW51;
-	words(52) = FL21OW52;
-	words(53) = FL21OW53;
-	words(54) = FL21OW54;
-	words(55) = FL21OW55;
-	words(56) = FL21OW56;
-	words(57) = FL21OW57;
-	words(58) = FL21OW58;
-	words(59) = FL21OW59;
-	words(60) = FL21OW60;
-	words(61) = FL21OW61;
-	words(62) = FL21OW62;  
-	words(63) = FL21OW63; 
-	words(64) = FL21OW64; 
-	words(65) = FL21OW65; 
-	words(66) = FL21OW66; 
-	words(67) = FL21OW67; 
-	words(68) = FL21OW68; 
-
-	n = 0;  
-	do i = 1 while i <= ST2WNUM
-		if words(i) <> "!" then n = n + 1; endif;  
-		if words(i) = "!" then i = ST2WNUM; endif;
-	enddo;
-	$ = n;
-  
-PROC FL21PB
-preproc
-	n = 0;
-	do i = 1 while i <= FL21PA
-		if words(i) = "1" then n = n + 1; endif;  
-	enddo;
-	$ = n + ST2WNUM - FL21PA;
-
-PROC FL21OEND
-	if FL21PB >= int(ST2WNUM/10)+1 then
-		skip to FL23A
-	endif;
-
 PROC FORMFL5
 postproc
 if visualvalue (FSFLTSTMPE) = notappl then
    FSFLTSTMPE = timestamp (); 
    endif; 
-PROC FL22A
-onfocus
-	clean_labels();
-	codes(1) = 1;
-	codes(2) = 2;
-	codes(3) = 3;
-	codes(4) = 9;
-	if ST2LANG = 11 then
-		labels(1) = tr("CORRECT") + " (7)";
-	elseif ST2LANG = 12 then
-		labels(1) = tr("CORRECT") + " (7)";
-	elseif ST2LANG = 13 then
-		labels(1) = tr("CORRECT") + " (7)";
-	endif;
-		labels(2) = tr("INCORRECT");
-		labels(3) = tr("NO RESPONSE / SAYS 'I DON'T KNOW'");	  
-		labels(4) = tr("NO RESPONSE");	
-	SetValueSet( @GetSymbol(), codes, labels );
-
-PROC FL22B
-onfocus
-	clean_labels();
-	codes(1) = 1;
-	codes(2) = 2;
-	codes(3) = 3;
-	codes(4) = 9;
-	if ST2LANG = 11 then
-		labels(1) = tr("CORRECT") + " (HER GRANDMOTHER)";
-	elseif ST2LANG = 12 then
-		labels(1) = tr("CORRECT") + " (SA GRAND-MÈRE)";
-	elseif ST2LANG = 13 then
-		labels(1) = tr("CORRECT") + " (SU ABUELA)";
-	endif;
-		labels(2) = tr("INCORRECT");
-		labels(3) = tr("NO RESPONSE / SAYS 'I DON'T KNOW'");	  
-		labels(4) = tr("NO RESPONSE");	
-	SetValueSet( @GetSymbol(), codes, labels );
-
-PROC FL22C
-onfocus
-	clean_labels();
-	codes(1) = 1;
-	codes(2) = 2;
-	codes(3) = 3;
-	codes(4) = 9;
-	if ST2LANG = 11 then
-		labels(1) = tr("CORRECT") + " (CARROTS)";
-	elseif ST2LANG = 12 then
-		labels(1) = tr("CORRECT") + " (CAROTTES)";
-	elseif ST2LANG = 13 then
-		labels(1) = tr("CORRECT") + " (TOMATES)";
-	endif;
-		labels(2) = tr("INCORRECT");
-		labels(3) = tr("NO RESPONSE / SAYS 'I DON'T KNOW'");	  
-		labels(4) = tr("NO RESPONSE");	
-	SetValueSet( @GetSymbol(), codes, labels );
-
-PROC FL22D
-onfocus
-	clean_labels();
-	codes(1) = 1;
-	codes(2) = 2;
-	codes(3) = 3;
-	codes(4) = 9;
-	if ST2LANG = 11 then
-		labels(1) = tr("CORRECT") + " (BECAUSE IT FELL THROUGH THE HOLE IN THE BAG OR BECAUSE THE BAG HAD A HOLE)";
-	elseif ST2LANG = 12 then
-		labels(1) = tr("CORRECT") + " (PARCE QU'IL EST TOMBE A TRAVERS LE TROU DANS LE SAC OU PARCE QUE LE SAC AVAIT UN TROU)";
-	elseif ST2LANG = 13 then
-		labels(1) = tr("CORRECT") + " (PORQUE CAYÓ A TRAVÉS DEL AGUJERO EN LA BOLSA O PORQUE LA BOLSA TENÍA UN AGUJERO)";
-	endif;
-		labels(2) = tr("INCORRECT");
-		labels(3) = tr("NO RESPONSE / SAYS 'I DON'T KNOW'");	  
-		labels(4) = tr("NO RESPONSE");	
-	SetValueSet( @GetSymbol(), codes, labels );
-
-
-PROC FL22E
-onfocus
-	clean_labels();
-	codes(1) = 1;
-	codes(2) = 2;
-	codes(3) = 3;
-	codes(4) = 9;
-	if ST2LANG = 11 then
-		labels(1) = tr("CORRECT") + " (BECAUSE PETER GAVE HER THE MONEY OR BECAUSE PETER FOUND THE MONEY)";
-	elseif ST2LANG = 12 then
-		labels(1) = tr("CORRECT") + " (PARCE QUE PIERRE LUI A DONNE L'ARGENT OU PARCE QUE PIERRE A TROUVE L’ARGENT)";
-	elseif ST2LANG = 13 then
-		labels(1) = tr("CORRECT") + " (PORQUE PEDRO LE DIO EL DINERO O PORQUE PEDRO ENCONTRÓ EL DINERO)";
-	endif;
-		labels(2) = tr("INCORRECT");
-		labels(3) = tr("NO RESPONSE / SAYS 'I DON'T KNOW'");	  
-		labels(4) = tr("NO RESPONSE");	
-	SetValueSet( @GetSymbol(), codes, labels );
-
-
 PROC FL23A
 preproc
 	if FL21H <> 1 or FL21J = 1 or FL21L = 1 then

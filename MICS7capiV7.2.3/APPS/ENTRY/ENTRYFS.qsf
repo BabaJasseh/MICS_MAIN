@@ -53,7 +53,7 @@ questions:
         questionText:
           ENG: |
             <p><span class="Qnum">FS10B. </span><span class="Qtxt">Now I would like to talk to you about <span class="REF">~~FS3A~~</span>'s health and well-being in more detail.</span></p>
-            <p><span class="Qtxt">This interview usually takes about <span class="QtxtC">number </span>minutes.</span></p>
+            <p><span class="Qtxt">This interview usually takes about <span class="QtxtC"><font color="#000000">40</font>&nbsp;</span>minutes.</span></p>
             <p><span class="Qtxt">Again, participation in this survey is voluntary. No payment of incentive will be given to you for answering these questions. However, this survey will help the government and the general public better understand the situation and needs of children and adolescents.</span></p>
             <p><span class="Qtxt">Please know that all the information you share during the interview will remain strictly confidential and anonymous. No information about you or your child will be made publicly available. We will only produce information about the general population.</span></p>
             <p><span class="Qtxt">Again, should you wish not to answer a question or wish to stop the interview at any point, please let me know.</span></p>
@@ -137,7 +137,7 @@ questions:
       - logic: ED5A(FS3)>=8
         questionText:
           ENG: |
-            <p><span class="Qnum">CB5A. </span><span class="Qtxt">Did <span class="REF">~~FS3A~~</span> ever attend any <span class="QtxtC">Early Childhood Education Programme</span>?</span></p>
+            <p><span class="Qnum">CB5A. </span><span class="Qtxt">Did <span class="REF">~~FS3A~~</span> ever attend any <span class="QtxtC"><font color="#000000">Early Childhood Development Programme</font></span>?</span></p>
       - logic: ED5A(FS3)>=1 and ED5A(FS3)<=4
         questionText:
           ENG: |
@@ -494,7 +494,7 @@ questions:
       - questionText:
           ENG: |
             <p><span class="Qnum">FCF1. </span><span class="Qtxt">I would like to ask you some questions about difficulties <span class="REF">~~FS3A~~</span> may have.</span></p>
-            <p><span class="Qtxt">Does <span class="REF">~~FS3A~~</span> wear glasses <span class="QtxtC">or contact lenses</span>?</span></p>
+            <p><span class="Qtxt">Does <span class="REF">~~FS3A~~</span> wear glasses <font color="#000000"><span class="QtxtC"><font color="#000000">or contact lenses</font></span>?</font></span></p>
   - name: MICS7FS.FCF2
     conditions:
       - questionText:
@@ -546,7 +546,7 @@ questions:
       - logic: chsex=1
         questionText:
           ENG: |
-            <p><span class="Qnum">FCF10. </span><span class="Qtxt">Without his equipment or assistance, does <span class="REF">~~FS3A~~</span> have difficulty walking 100 <span class="QtxtC">meters/yard </span> on level ground?</span></p>
+            <p><span class="Qnum">FCF10. </span><span class="Qtxt">Without his equipment or assistance, does <span class="REF">~~FS3A~~</span> have difficulty walking 100 <span class="QtxtC"><font color="#000000">meters</font>&nbsp;</span>on level ground?</span></p>
             <p><span class="Itxt">Probe: </span><span class="Qtxt">That would be about the length of <span class="QtxtC">1 football field</span>.</span></p>
             <p><span class="Itxt">Note that category 'No difficulty' is not available, as the child uses equipment or receives assistance for walking.</span></p>
       - logic: chsex=2
@@ -560,8 +560,8 @@ questions:
       - logic: chsex=1
         questionText:
           ENG: |
-            <p><span class="Qnum">FCF11. </span><span class="Qtxt">Without his equipment or assistance, does <span class="REF">~~FS3A~~</span> have difficulty walking 500 <span class="QtxtC">meters/yard</span> on level ground?</span></p>
-            <p><span class="Itxt">Probe: </span><span class="Qtxt">That would be about the length of <span class="QtxtC">5 football fields</span>.</span></p>
+            <p><span class="Qnum">FCF11. </span><span class="Qtxt">Without his equipment or assistance, does <span class="REF">~~FS3A~~</span> have difficulty walking 500 <font color="#000000"><span class="QtxtC"><font color="#000000">meters</font></span>&nbsp;</font>on level ground?</span></p>
+            <p><span class="Itxt">Probe: </span><span class="Qtxt">That would be about the length of <font color="#000000"><span class="QtxtC"><font color="#000000">5 football fields</font></span>.</font></span></p>
             <p><span class="Itxt">Note that category 'No difficulty' is not available, as the child uses equipment or receives assistance for walking.</span></p>
       - logic: chsex=2
         questionText:
@@ -574,8 +574,8 @@ questions:
       - logic: chsex=1
         questionText:
           ENG: |
-            <p><span class="Qnum">FCF12. </span><span class="Qtxt">With his equipment or assistance, does <span class="REF">~~FS3A~~</span> have difficulty walking 100 <span class="QtxtC">meters/yards</span> on level ground?</span></p>
-            <p><span class="Itxt">Probe: </span><span class="Qtxt">That would be about the length of <span class="QtxtC">1 football field</span>.</span></p>
+            <p><span class="Qnum">FCF12. </span><span class="Qtxt">With his equipment or assistance, does <span class="REF">~~FS3A~~</span> have difficulty walking 100 <span class="QtxtC"><font color="#000000">meters</font></span>&nbsp;on level ground?</span></p>
+            <p><span class="Itxt">Probe: </span><span class="Qtxt">That would be about the length of <span class="QtxtC"><font color="#000000">1 football field</font></span>.</span></p>
       - logic: chsex=2
         questionText:
           ENG: |
@@ -586,8 +586,8 @@ questions:
       - logic: chsex=1
         questionText:
           ENG: |
-            <p><span class="Qnum">FCF13. </span><span class="Qtxt">With his equipment or assistance, does <span class="REF">~~FS3A~~</span> have difficulty walking 500 <span class="QtxtC">meters/yards</span> on level ground?</span></p>
-            <p><span class="Itxt">Probe: </span><span class="Qtxt">That would be about the length of <span class="QtxtC">5 football fields</span>.</span></p>
+            <p><span class="Qnum">FCF13. </span><span class="Qtxt">With his equipment or assistance, does <span class="REF">~~FS3A~~</span> have difficulty walking 500 <font color="#000000"><span class="QtxtC"><font color="#000000">meters</font></span>&nbsp;</font>on level ground?</span></p>
+            <p><span class="Itxt">Probe: </span><span class="Qtxt">That would be about the length of <span class="QtxtC"><font color="#000000">5 football fields</font></span>.</span></p>
       - logic: chsex=2
         questionText:
           ENG: |
@@ -597,14 +597,14 @@ questions:
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">FCF14. </span><span class="Qtxt">Compared with children of the same age, does <span class="REF">~~FS3A~~</span> have difficulty walking 100<span class="QtxtC"> meters/yards</span> on level ground?</span></p>
-            <p><span class="Itxt">Probe: </span><span class="Qtxt">That would be about the length of <span class="QtxtC">1 football field</span>.</span></p>
+            <p><span class="Qnum">FCF14. </span><span class="Qtxt">Compared with children of the same age, does <span class="REF">~~FS3A~~</span> have difficulty walking 100<span class="QtxtC"> <font color="#000000">meters</font></span>&nbsp;on level ground?</span></p>
+            <p><span class="Itxt">Probe: </span><span class="Qtxt">That would be about the length of <span class="QtxtC"><font color="#000000">1 football field</font></span>.</span></p>
   - name: MICS7FS.FCF15
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">FCF15. </span><span class="Qtxt">Compared with children of the same age, does <span class="REF">~~FS3A~~</span> have difficulty walking 500<span class="QtxtC"> meters/yards</span> on level ground?</span></p>
-            <p><span class="Itxt">Probe: </span><span class="Qtxt">That would be about the length of <span class="QtxtC">5 football fields</span>.</span></p>
+            <p><span class="Qnum">FCF15. </span><span class="Qtxt">Compared with children of the same age, does <span class="REF">~~FS3A~~</span> have difficulty walking 500<span class="QtxtC"> <font color="#000000">meters</font></span>&nbsp;on level ground?</span></p>
+            <p><span class="Itxt">Probe: </span><span class="Qtxt">That would be about the length of <span class="QtxtC"><font color="#000000">5 football fields</font></span>.</span></p>
   - name: MICS7FS.FCF16
     conditions:
       - logic: chsex=1
@@ -693,81 +693,6 @@ questions:
           ENG: |
             <p><span class="Qnum">FCF26. </span><span class="Qtxt">I would also like to know how often <span class="REF">~~FS3A~~</span> seems very sad or depressed.</span></p>
             <p><span class="Qtxt">Would you say: daily, weekly, monthly, a few times a year or never?</span></p>
-  - name: MICS7FS.FTU3
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Itxt"><span class="Inum">FTU2. </span>Begin by asking the respondent what time the child woke up the day before the interview and what time the child went to sleep. Then ask to list the activities the child did during the day in chronological order. For each activity, record the appropriate code in FTU7, ask FTU8-FTU10 and, if applicable, proceed to ask any follow-up questions. After recording all information relative to an activity, you will be led back to FTU7 to ask what the child did next. Once respondent mentions the child went to sleep for the night, do not record anything else. Finally, to ensure everything the child did yesterday has been captured, FTU18 will prompt you to read all activities recorded and ask if anything is missing. If yes, enter the code, time and/or duration for each activity that was not previously mentioned or captured.</span></p><p><span class="Qnum">FTU3.</span> I will now ask you about what&nbsp;<span style="font-style: italic;">~~FS3A~~</span>&nbsp;did yesterday, between waking up in the morning and going to bed at night for sleeping. You can include anything&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>did. These can include active tasks such as studying and eating or passive activities such as relaxing or thinking.</p><div><br></div><p></p>
-  - name: MICS7FS.FTU4
-    conditions:
-      - questionText:
-          ENG: |
-            <b>FTU4.</b>&nbsp;What time did ~~FS3A~~ wake up yesterday?<br><span class="Itxt">record as HH.MM</span><p></p>
-  - name: MICS7FS.FTU5
-    conditions:
-      - questionText:
-          ENG: |
-            <span class="Qnum">FTU5.&nbsp;</span>What time did&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>go to sleep for the night yesterday?<br><span style="color: rgb(0, 0, 255); font-style: italic;">record as HH.MM</span><p></p>
-  - name: MICS7FS.FTU7
-    conditions:
-      - logic: FTU6 = 1
-        questionText:
-          ENG: |
-            <p><b style="text-indent: -9.6px;"><i><font color="#0000ff">First activity starting at ~~stactiv~~</font>&nbsp;</i></b><b style="text-indent: -9.6px;"><br></b></p><p><b style="text-indent: -9.6px;">FTU7.&nbsp;</b><span style="text-indent: -9.6px;">What did&nbsp;</span><span style="font-style: italic;">~~FS3A~~&nbsp;</span><span style="text-indent: -9.6px;">do first?</span></p><p></p>
-      - logic: FTU6 > 1
-        questionText:
-          ENG: |
-            <p><b style="text-indent: -9.6px;"><i><font color="#0000ff">Activity ~~FTU6~~ starting at ~~stactiv~~&nbsp;</font></i></b><b style="text-indent: -9.6px;"><br></b></p><p><b style="text-indent: -9.6px;">FTU7.&nbsp;</b><span style="text-indent: -9.6px;">What did&nbsp;</span><span style="font-style: italic;">~~FS3A~~&nbsp;</span><span style="text-indent: -9.6px;">do next?&nbsp;</span></p><p></p>
-  - name: MICS7FS.FTU9X
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum"><b style="text-indent: -9.6px;"><i><font color="#0000ff">Activity ~~FTU6~~ at ~~stactiv~~ : ~~FTU7A~~</font></i></b><br></span></p><p><span class="Qnum">FTU9.-&nbsp;</span><span class="Qnum">FTU10.</span>&nbsp;<span class="Qnum">&nbsp;</span>How long did&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>do this activity? What time did this activity end?</p><p><span class="Itxt">Select response type</span></p><p></p>
-  - name: MICS7FS.FTU9
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum"><b style="text-indent: -9.6px;"><i><font color="#0000ff">Activity ~~FTU6~~ at ~~stactiv~~ : ~~FTU7A~~</font></i></b><br></span></p><p><span class="Itxt"><span class="Inum"></span></span></p><p><span class="Qnum">FTU9</span><span class="Qnum">.</span>&nbsp;<span class="Qnum">&nbsp;</span>How long did&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>do this activity?&nbsp;</p><p><span style="color: rgb(0, 0, 255); font-style: italic;">Record as HH.MM</span></p><p></p>
-  - name: MICS7FS.FTU10
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum"><b style="text-indent: -9.6px;"><i><font color="#0000ff">Activity ~~FTU6~~ at ~~stactiv~~ : ~~FTU7A~~</font></i></b><br></span></p><span class="Qnum">FTU10.&nbsp;</span>What time did this activity end?<p></p><p><span style="color: rgb(0, 0, 255); font-style: italic;">Record as HH.MM</span></p><p></p>
-  - name: MICS7FS.FTU12
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum"><b style="text-indent: -9.6px;"><i><font color="#0000ff">Activity ~~FTU6~~ at ~~stactiv~~ : ~~FTU7A~~</font></i></b><br></span></p><p><span class="Qnum">FTU12.</span>&nbsp;Did&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>play online?</p><p></p>
-  - name: MICS7FS.FTU13
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum"><b style="text-indent: -9.6px;"><i><font color="#0000ff">Activity ~~FTU6~~ at ~~stactiv~~ : ~~FTU7A~~</font></i></b><br></span></p><p><span class="Qnum">FTU13.&nbsp;</span>With whom did&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>play?</p><p><span class="Itxt">Probe:&nbsp;<span class="Qtxt" style="font-style: normal;">Anyone else?</span></span><br></p><p><span class="Itxt">Record all mentioned. Do not record C, D if FTU12=2</span></p><p></p>
-  - name: MICS7FS.FTU14
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum"><b style="text-indent: -9.6px;"><i><font color="#0000ff">Activity ~~FTU6~~ at ~~stactiv~~ : ~~FTU7A~~</font></i></b><br></span></p><p><span class="Qnum">FTU14.</span>&nbsp;Did&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>watch this online?</p><p></p>
-  - name: MICS7FS.FTU15
-    conditions:
-      - questionText:
-          ENG: |
-            <p></p><div><p><span class="Qnum"><b style="text-indent: -9.6px;"><i><font color="#0000ff">Activity ~~FTU6~~ at ~~stactiv~~ : ~~FTU7A~~</font></i></b><br></span></p><p><span class="Qnum">FTU15.</span>&nbsp;Did&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>get the news online?</p></div>
-  - name: MICS7FS.FTU16
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum"><b style="text-indent: -9.6px;"><i><font color="#0000ff">Activity ~~FTU6~~ at ~~stactiv~~ : ~~FTU7A~~</font></i></b><br></span></p><p><span class="Qnum">FTU16.&nbsp;</span>Did&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>engage in this activity or do this activity online?</p><p></p>
-  - name: MICS7FS.FTU17
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum"><b style="text-indent: -9.6px;"><i><font color="#0000ff">Activity ~~FTU6~~ at ~~stactiv~~ : ~~FTU7A~~</font></i></b><b style="text-indent: -9.6px;"><i><font color="#0000ff">&nbsp;</font></i></b><br></span></p><p><span class="Qnum">FTU17.&nbsp;</span>How were&nbsp;<span style="font-style: italic;">~~FS3A~~</span>'s<span style="font-style: italic;">&nbsp;</span>lessons delivered?</p><p><span class="Itxt">Record all mentioned. Probe:</span>&nbsp;Anything else?</p><p></p>
-  - name: MICS7FS.FTU18
-    conditions:
-      - questionText:
-          ENG: |
-            <p><b>FTU18.&nbsp;</b>Just to make sure I have this right I will now repeat all the activities&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>have listed in chronological order. I would like you to think if there is any activity&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>did yesterday, between waking up in the morning and going to bed at night for sleeping, that you forgot to mention.</p><p><span class="Itxt">Read aloud the list of activities reported and ask:&nbsp;</span>&nbsp;&nbsp;<br></p><p>Did&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>do anything else that we have not recorded yet?</p><p></p>
   - name: MICS7FS.PR3
     conditions:
       - logic: chsex=1
@@ -798,7 +723,7 @@ questions:
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">PR7. </span><span class="Qtxt">In the last 12 months, have you or any other adult from your household received a <span class="QtxtC">student report card</span> for <span class="REF">~~FS3A~~</span>?</span></p>
+            <p><span class="Qnum">PR7. </span><span class="Qtxt">In the last 12 months, have you or any other adult from your household received a <span class="QtxtC"><font color="#000000">student report card</font></span> for <span class="REF">~~FS3A~~</span>?</span></p>
   - name: MICS7FS.PR8
     conditions:
       - logic: chsex=1
@@ -813,7 +738,7 @@ questions:
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">PR9. </span><span class="Qtxt">Does <span class="REF">~~FS3A~~</span>'s school have a school governing body in which parents can participate such as <span class="QtxtC">parent teacher association</span> or <span class="QtxtC">school management committee</span>?</span></p>
+            <p><span class="Qnum">PR9. </span><span class="Qtxt">Does <span class="REF">~~FS3A~~</span>'s school have a school governing body in which parents can participate such as <font color="#000000"><span class="QtxtC"><font color="#000000">parent teacher association</font></span> or <span class="QtxtC"><font color="#000000">school management committee</font></span></font>?</span></p>
   - name: MICS7FS.PR10
     conditions:
       - questionText:
@@ -853,9 +778,9 @@ questions:
             <p><span class="Qtxt">Could you tell me a little bit about yourself?</span></p>
             <p><span class="Itxt">When the child is comfortable, continue with the verbal assent:</span></p>
             <p><span class="Qtxt">Let me tell you why I am here today.</span></p>
-            <p><span class="Qtxt">I am from <span class="QtxtC">National Statistical Office</span>. We are talking to children like you across <span class="QtxtC">country</span> to find out how children learn to read and to use numbers.</span></p>
+            <p><span class="Qtxt">I am from <span class="QtxtC"><font color="#000000">Gambia Bureau of Statistics</font></span>. We are talking to children like you across <span class="QtxtC"><font color="#000000">The Gambia</font>&nbsp;</span>to find out how children learn to read and to use numbers.</span></p>
             <p><span class="Qtxt">We have spoken to (Your mother/Name of caregiver) and (she/he) says you can participate in this activity. So, you get to decide if you want to help us. If you wish to help us, I will ask you some questions and give you some reading and number activities to do. I will explain each activity, and you can ask me questions any time.</span></p>
-            <p><span class="Qtxt">We hope that your participation and the participation of other children like you will help the government improve education in <span class="QtxtC">country</span>.</span></p>
+            <p><span class="Qtxt">We hope that your participation and the participation of other children like you will help the government improve education in <span class="QtxtC"><font color="#000000">The Gambia</font></span>.</span></p>
             <p><span class="Qtxt">After we begin, if you do not want to answer a question or activity, or you do not want to continue, that is alright. No one will be upset.</span></p>
             <p><span class="Qtxt">Would you like to participate?</span></p>
   - name: MICS7FS.FL4
@@ -900,7 +825,7 @@ questions:
       - logic: ST1LANG=11
         questionText:
           ENG: |
-            <p><span class="Qnum">FL10. </span><span class="Qtxt">Now I am going to give you a short story to read in <span class="QtxtC">English</span>. Would you like to start reading the story?</span></p>
+            <p><span class="Qnum">FL10. </span><span class="Qtxt">Now I am going to give you a short story to read in <span class="QtxtC"><font color="#000000">English</font></span>. Would you like to start reading the story?</span></p>
       - logic: ST1LANG=12
         questionText:
           ENG: |
@@ -909,20 +834,15 @@ questions:
         questionText:
           ENG: |
             <p><span class="Qnum">FL10. </span><span class="Qtxt">Now I am going to give you a short story to read in <span class="QtxtC">Spanish</span>. Would you like to start reading the story?</span></p>
-  - name: MICS7FS.FL10C
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">FL10C. </span><span class="Qtxt">I have short stories in <span class="QtxtC">English, French, and Spanish</span>. The stories are almost the same. Would you like to try to read one of them?</span></p>
   - name: MICS7FS.FL13
     conditions:
       - logic: ST1LANG=11
         questionText:
           ENG: |
-            <p><span class="Qnum">FL13. </span><span class="Itxt">Give the child the READING & NUMBERS BOOK in <span class="QtxtC">English</span>.</span></p>
+            <p><span class="Qnum">FL13. </span><span class="Itxt">Give the child the READING &amp; NUMBERS BOOK in <span class="QtxtC"><font color="#000000">English</font></span>.</span></p>
             <p><span class="Itxt">Open the page showing the reading practice item and say: </span><span class="Qtxt">Now we are going to do some reading.</span></p>
             <p><span class="Itxt">Point to the sentence. </span><span class="Qtxt">I would like you to read this aloud. Then I may ask you a question.</span></p>
-            <p><span class="ItxtC">Sam is a cat. Tina is a dog. Sam is 5 years old. Tina is 6 years old.</span></p>
+            <p><span class="ItxtC"><font color="#000000">Sam is a cat. Tina is a dog. Sam is 5. Tina is 6.</font></span></p>
       - logic: ST1LANG=12
         questionText:
           ENG: |
@@ -947,57 +867,57 @@ questions:
       - logic: ST1LANG=11
         questionText:
           ENG: |
-            <p><span class="Qnum">FL15. </span><span class="Itxt">Once the reading is done, ask: </span><span class="Qtxt"><span class="QtxtC">How old is Sam</span>?</span></p>
+            <p><span class="Qnum">FL15. </span><span class="Itxt">Once the reading is done, ask: </span><span class="Qtxt"><span class="QtxtC"><font color="#000000">How old is Sam</font></span>?</span></p>
       - logic: ST1LANG=12
         questionText:
           ENG: |
-            <p><span class="Qnum">FL15. </span><span class="Itxt">Once the reading is done, ask: </span><span class="Qtxt"><span class="QtxtC">How old is Sam</span>?</span></p>
+            <p><span class="Qnum">FL15. </span><span class="Itxt">Once the reading is done, ask: </span><span class="Qtxt"><span class="QtxtC"><font color="#000000">How old is Sam</font></span>?</span></p>
       - logic: ST1LANG=13
         questionText:
           ENG: |
-            <p><span class="Qnum">FL15. </span><span class="Itxt">Once the reading is done, ask: </span><span class="Qtxt"><span class="QtxtC">How old is Sam</span>?</span></p>
+            <p><span class="Qnum">FL15. </span><span class="Itxt">Once the reading is done, ask: </span><span class="Qtxt"><span class="QtxtC"><font color="#000000">How old is Sam</font></span>?</span></p>
   - name: MICS7FS.FL16
     conditions:
       - logic: ST1LANG=11
         questionText:
           ENG: |
-            <p><span class="Qnum">FL16. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC">Sam is 5 years old</span>.</span></p>
+            <p><span class="Qnum">FL16. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC"><font color="#000000">Sam is 5 years old</font></span>.</span></p>
       - logic: ST1LANG=12
         questionText:
           ENG: |
-            <p><span class="Qnum">FL16. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC">Sam is 5 years old</span>.</span></p>
+            <p><span class="Qnum">FL16. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC"><font color="#000000">Sam is 5 years old</font></span>.</span></p>
       - logic: ST1LANG=13
         questionText:
           ENG: |
-            <p><span class="Qnum">FL16. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC">Sam is 5 years old</span>.</span></p>
+            <p><span class="Qnum">FL16. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC"><font color="#000000">Sam is 5 years old</font></span>.</span></p>
   - name: MICS7FS.FL17
     conditions:
       - logic: ST1LANG=11
         questionText:
           ENG: |
-            <p><span class="Qnum">FL17. </span><span class="Qtxt">Here is another question: </span><span class="Qtxt"><span class="QtxtC">Who is older: Sam or Tina</span>?</span></p>
+            <p><span class="Qnum">FL17. </span><span class="Qtxt">Here is another question: </span><span class="Qtxt"><span class="QtxtC"><font color="#000000">Who is older: Sam or Tina</font></span>?</span></p>
       - logic: ST1LANG=12
         questionText:
           ENG: |
-            <p><span class="Qnum">FL17. </span><span class="Qtxt">Here is another question: </span><span class="Qtxt"><span class="QtxtC">Who is older: Sam or Tina</span>?</span></p>
+            <p><span class="Qnum">FL17. </span><span class="Qtxt">Here is another question: </span><span class="Qtxt"><span class="QtxtC"><font color="#000000">Who is older: Sam or Tina</font></span>?</span></p>
       - logic: ST1LANG=13
         questionText:
           ENG: |
-            <p><span class="Qnum">FL17. </span><span class="Qtxt">Here is another question: </span><span class="Qtxt"><span class="QtxtC">Who is older: Sam or Tina</span>?</span></p>
+            <p><span class="Qnum">FL17. </span><span class="Qtxt">Here is another question: </span><span class="Qtxt"><span class="QtxtC"><font color="#000000">Who is older: Sam or Tina</font></span>?</span></p>
   - name: MICS7FS.FL18
     conditions:
       - logic: ST1LANG=11
         questionText:
           ENG: |
-            <p><span class="Qnum">FL18. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC">Tina is older than Sam. Tina is 6 years old and Sam is 5</span>.</span></p>
+            <p><span class="Qnum">FL18. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC"><font color="#000000">Tina is older than Sam. Tina is 6 and Sam is 5</font></span>.</span></p>
       - logic: ST1LANG=12
         questionText:
           ENG: |
-            <p><span class="Qnum">FL18. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC">Tina is older than Sam. Tina is 6 years old and Sam is 5</span>.</span></p>
+            <p><span class="Qnum">FL18. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC"><font color="#000000">Tina is older than Sam. Tina is 6 and Sam is 5</font></span>.</span></p>
       - logic: ST1LANG=13
         questionText:
           ENG: |
-            <p><span class="Qnum">FL18. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC">Tina is older than Sam. Tina is 6 years old and Sam is 5</span>.</span></p>
+            <p><span class="Qnum">FL18. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC"><font color="#000000">Tina is older than Sam. Tina is 6 and Sam is 5</font></span>.</span></p>
   - name: MICS7FS.FL19INTRO
     conditions:
       - logic: ED9(FS3)=1
@@ -1033,7 +953,7 @@ questions:
             <p><span class="Qnum">FL21B. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
             <p><span class="Itxt">If the child does not provide a response after a few seconds, repeat the question. If the child seems unable to provide an answer after repeating the question, mark 'No response' and say: </span><span class="Qtxt">Thank you. That is ok. We will move on.</span></p>
             <p><span class="Itxt">Make sure the child can still see the passage and ask:</span></p>
-            <p><span class="Qnum">[A] </span><span class="Qtxt"><span class="QtxtC">What class is Moses in</span>?</span></p>
+            <p><span class="Qnum">[A] </span><span class="Qtxt"><span class="QtxtC"><font color="#000000">What class is Moses in</font></span>?</span></p>
       - logic: ST1LANG=12
         questionText:
           ENG: |
@@ -1054,7 +974,7 @@ questions:
         questionText:
           ENG: |
             <p><span class="Qnum">FL21B. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
-            <p><span class="Qnum">[B] </span><span class="Qtxt"><span class="QtxtC">What did Moses see on the way home</span>?</span></p>
+            <p><span class="Qnum">[B] </span><span class="Qtxt"><span class="QtxtC"><font color="#000000">What did Moses see on the way home</font></span>?</span></p>
       - logic: ST1LANG=12
         questionText:
           ENG: |
@@ -1071,7 +991,7 @@ questions:
         questionText:
           ENG: |
             <p><span class="Qnum">FL21B. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
-            <p><span class="Qnum">[C] </span><span class="Qtxt"><span class="QtxtC">Why did Moses start crying</span>?</span></p>
+            <p><span class="Qnum">[C] </span><span class="Qtxt"><span class="QtxtC"><font color="#000000">Why did Moses start crying</font></span>?</span></p>
       - logic: ST1LANG=12
         questionText:
           ENG: |
@@ -1088,239 +1008,34 @@ questions:
         questionText:
           ENG: |
             <p><span class="Qnum">FL21B. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
-            <p><span class="Qnum">[D] </span><span class="Qtxt"><span class="QtxtC">Where did Moses fall</span>?</span></p>
+            <p><span class="Qnum">[D] </span><span class="Qtxt"><span class="QtxtC"><font color="#000000">Where did Moses fall</font></span>?</span></p>
       - logic: ST1LANG=12
         questionText:
           ENG: |
             <p><span class="Qnum">FL21B. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
-            <p><span class="Qnum">[D] </span><span class="Qtxt"><span class="QtxtC">Where did Madani fall</span>?</span></p>
+            <p><span class="Qnum">[D] </span><span class="Qtxt"><span class="QtxtC"><font color="#000000">Where did Madani fall</font></span>?</span></p>
       - logic: ST1LANG=13
         questionText:
           ENG: |
             <p><span class="Qnum">FL21B. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
-            <p><span class="Qnum">[D] </span><span class="Qtxt"><span class="QtxtC">Where did Moisés fall</span>?</span></p>
+            <p><span class="Qnum">[D] </span><span class="Qtxt"><span class="QtxtC"><font color="#000000">Where did Moisés fall</font></span>?</span></p>
   - name: MICS7FS.FL21BE
     conditions:
       - logic: ST1LANG=11
         questionText:
           ENG: |
             <p><span class="Qnum">FL21B. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
-            <p><span class="Qnum">[E] </span><span class="Qtxt"><span class="QtxtC">Why was Moses happy</span>?</span></p>
+            <p><span class="Qnum">[E] </span><span class="Qtxt"><span class="QtxtC"><font color="#000000">Why was Moses happy</font></span>?</span></p>
       - logic: ST1LANG=12
         questionText:
           ENG: |
             <p><span class="Qnum">FL21B. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
-            <p><span class="Qnum">[E] </span><span class="Qtxt"><span class="QtxtC">Why was Madani happy</span>?</span></p>
+            <p><span class="Qnum">[E] </span><span class="Qtxt"><span class="QtxtC"><font color="#000000">Why was Madani happy</font></span>?</span></p>
       - logic: ST1LANG=13
         questionText:
           ENG: |
             <p><span class="Qnum">FL21B. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
-            <p><span class="Qnum">[E] </span><span class="Qtxt"><span class="QtxtC">Why was Moisés happy</span>?</span></p>
-  - name: MICS7FS.FL21D
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">FL21D. </span><span class="Qtxt">I have another story in <span class="Itxt">(list languages not yet attempted)</span>. Would you like to try to read <span class="QtxtC">it/one of them</span>?</span></p>
-            <p><span class="Qtxt">The child cannot pick the same language as already attempted</span></p>
-  - name: MICS7FS.FL21G
-    conditions:
-      - logic: ST2LANG=11
-        questionText:
-          ENG: |
-            <p><span class="Qnum">FL21G. </span><span class="Itxt">Give the child the READING & NUMBERS BOOK in <span class="QtxtC">English</span>.</span></p>
-            <p><span class="Itxt">Open the page showing the reading practice item and say: </span><span class="Qtxt">Just as before I would like you to read this aloud.Then I may ask you a question.</span></p>
-            <p><span class="ItxtC">John is a boy. Anne is a girl. John has 2 eggs. Anne has 3 eggs.</span></p>
-      - logic: ST2LANG=12
-        questionText:
-          ENG: |
-            <p><span class="Qnum">FL21G. </span><span class="Itxt">Give the child the READING & NUMBERS BOOK in <span class="QtxtC">French</span>.</span></p>
-            <p><span class="Itxt">Open the page showing the reading practice item and say: </span><span class="Qtxt">Just as before I would like you to read this aloud.Then I may ask you a question.</span></p>
-            <p><span class="ItxtC">Jean est un garçon. Anne est une fille. Jean a 2 œufs. Anne a 3 œufs.</span></p>
-      - logic: ST2LANG=13
-        questionText:
-          ENG: |
-            <p><span class="Qnum">FL21G. </span><span class="Itxt">Give the child the READING & NUMBERS BOOK in <span class="QtxtC">Spanish</span>.</span></p>
-            <p><span class="Itxt">Open the page showing the reading practice item and say: </span><span class="Qtxt">Just as before I would like you to read this aloud.Then I may ask you a question.</span></p>
-            <p><span class="ItxtC">Luis es un niño. Ana es una niña. Luis tiene 2 huevos. Ana tiene 3 huevos.</span></p>
-  - name: MICS7FS.FL21H
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Inum">FL21H. </span><span class="Itxt">Did the child read every word in the practice correctly?</span></span></p>
-  - name: MICS7FS.FL21I
-    conditions:
-      - logic: ST2LANG=11
-        questionText:
-          ENG: |
-            <p><span class="Qnum">FL21I. </span><span class="Itxt">Once the reading is done, ask: </span><span class="Qtxt"><span class="QtxtC">How many eggs does John have</span>?</span></p>
-      - logic: ST2LANG=12
-        questionText:
-          ENG: |
-            <p><span class="Qnum">FL21I. </span><span class="Itxt">Once the reading is done, ask: </span><span class="Qtxt"><span class="QtxtC">How many eggs does Jean have</span>?</span></p>
-      - logic: ST2LANG=13
-        questionText:
-          ENG: |
-            <p><span class="Qnum">FL21I. </span><span class="Itxt">Once the reading is done, ask: </span><span class="Qtxt"><span class="QtxtC">How many eggs does Luis have</span>?</span></p>
-  - name: MICS7FS.FL21J
-    conditions:
-      - logic: ST2LANG=11
-        questionText:
-          ENG: |
-            <p><span class="Qnum">FL21J. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC">John has 2 eggs</span>.</span></p>
-      - logic: ST2LANG=12
-        questionText:
-          ENG: |
-            <p><span class="Qnum">FL21J. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC">Jean has 2 eggs</span>.</span></p>
-      - logic: ST2LANG=13
-        questionText:
-          ENG: |
-            <p><span class="Qnum">FL21J. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC">Luis has 2 eggs</span>.</span></p>
-  - name: MICS7FS.FL21K
-    conditions:
-      - logic: ST2LANG=11
-        questionText:
-          ENG: |
-            <p><span class="Qnum">FL21K. </span><span class="Qtxt">Here is another question: </span><span class="Qtxt"><span class="QtxtC">Who has more eggs: John or Anne</span>?</span></p>
-      - logic: ST2LANG=12
-        questionText:
-          ENG: |
-            <p><span class="Qnum">FL21K. </span><span class="Qtxt">Here is another question: </span><span class="Qtxt"><span class="QtxtC">Who has more eggs: Jean or Anne</span>?</span></p>
-      - logic: ST2LANG=13
-        questionText:
-          ENG: |
-            <p><span class="Qnum">FL21K. </span><span class="Qtxt">Here is another question: </span><span class="Qtxt"><span class="QtxtC">Who has more eggs: Luis or Ana</span>?</span></p>
-  - name: MICS7FS.FL21L
-    conditions:
-      - logic: ST2LANG=11
-        questionText:
-          ENG: |
-            <p><span class="Qnum">FL21L. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC">Anne has more eggs than John. Anne has 3 eggs and John has 2</span>.</span></p>
-      - logic: ST2LANG=12
-        questionText:
-          ENG: |
-            <p><span class="Qnum">FL21L. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC">Anne has more eggs than Jean. Anne has 3 eggs and Jean has 2</span>.</span></p>
-      - logic: ST2LANG=13
-        questionText:
-          ENG: |
-            <p><span class="Qnum">FL21L. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC">Ana has more eggs than Luis. Ana has 3 eggs and Luis has 2</span>.</span></p>
-  - name: MICS7FS.FL21OINTRO
-    conditions:
-      - logic: ED9(FS3)=1
-        questionText:
-          ENG: |
-            <p><span class="Qnum">FL21N. </span><span class="Itxt">Give the child the READING & NUMBERS BOOK in <span class="ItxtC">~~offeredLang~~</span>.</span></p>
-            <p><span class="Itxt">Open the book on the page of reading passage</span></p>
-            <p><span class="Qnum">FL21O. </span><span class="Qtxt">Here is a story. I want you to read it aloud as carefully as you can.</span></p>
-            <p><span class="Qtxt">You will start here <span class="Itxt">(point to the first word on the first line) </span>and you will read line by line <span class="Itxt">(point to the direction for reading each line)</span>.</span></p>
-            <p><span class="Qtxt">When you finish I will ask you some questions about what you have read.</span></p>
-            <p><span class="Qtxt">If you come to a word you do not know, go onto the next word.</span></p>
-            <p><span class="Itxt">Put your finger on the first word. </span><span class="Qtxt">Ready? Begin.</span></p>
-      - logic: FL21K=1
-        questionText:
-          ENG: |
-            <p><span class="Qnum">FL21M. </span><span class="Itxt">Turn the page to reveal the reading passage.</span></p>
-            <p><span class="Qtxt">Thank you. Now I want you to try this.</span></p>
-            <p><span class="Qnum">FL21O. </span><span class="Qtxt">Here is a story. I want you to read it aloud as carefully as you can.</span></p>
-            <p><span class="Qtxt">You will start here <span class="Itxt">(point to the first word on the first line) </span>and you will read line by line <span class="Itxt">(point to the direction for reading each line)</span>.</span></p>
-            <p><span class="Qtxt">When you finish I will ask you some questions about what you have read.</span></p>
-            <p><span class="Qtxt">If you come to a word you do not know, go onto the next word.</span></p>
-            <p><span class="Itxt">Put your finger on the first word. </span><span class="Qtxt"> Ready? Begin.</span></p>             
-  - name: MICS7FS.FL21OEND
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Itxt">Continue if finished with the reading exercise.</span></p>
-  - name: MICS7FS.FL22A
-    conditions:
-      - logic: ST2LANG=11
-        questionText:
-          ENG: |
-            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
-            <p><span class="Itxt">If the child does not provide a response after a few seconds, repeat the question. If the child seems unable to provide an answer after repeating the question, mark 'No response' and say: </span><span class="Qtxt">Thank you. That is ok. We will move on.</span></p>
-            <p><span class="Itxt">Make sure the child can still see the passage and ask:</span></p>
-            <p><span class="Qnum">[A] </span><span class="Qtxt"><span class="QtxtC">How old is Mary</span>?</span></p>
-      - logic: ST2LANG=12
-        questionText:
-          ENG: |
-            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
-            <p><span class="Itxt">If the child does not provide a response after a few seconds, repeat the question. If the child seems unable to provide an answer after repeating the question, mark 'No response' and say: </span><span class="Qtxt">Thank you. That is ok. We will move on.</span></p>
-            <p><span class="Itxt">Make sure the child can still see the passage and ask:</span></p>
-            <p><span class="Qnum">[A] </span><span class="Qtxt"><span class="QtxtC">How old is Marie</span>?</span></p>
-      - logic: ST2LANG=13
-        questionText:
-          ENG: |
-            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
-            <p><span class="Itxt">If the child does not provide a response after a few seconds, repeat the question. If the child seems unable to provide an answer after repeating the question, mark 'No response' and say: </span><span class="Qtxt">Thank you. That is ok. We will move on.</span></p>
-            <p><span class="Itxt">Make sure the child can still see the passage and ask:</span></p>
-            <p><span class="Qnum">[A] </span><span class="Qtxt"><span class="QtxtC">How old is María</span>?</span></p>
-  - name: MICS7FS.FL22B
-    conditions:
-      - logic: ST2LANG=11
-        questionText:
-          ENG: |
-            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
-            <p><span class="Qnum">[B] </span><span class="Qtxt"><span class="QtxtC">Who sent Mary to the market</span>?</span></p>
-      - logic: ST2LANG=12
-        questionText:
-          ENG: |
-            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
-            <p><span class="Qnum">[B] </span><span class="Qtxt"><span class="QtxtC">Who sent Marie to the market</span>?</span></p>
-      - logic: ST2LANG=13
-        questionText:
-          ENG: |
-            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
-            <p><span class="Qnum">[B] </span><span class="Qtxt"><span class="QtxtC">Who sent María to the market</span>?</span></p>
-  - name: MICS7FS.FL22C
-    conditions:
-      - logic: ST2LANG=11
-        questionText:
-          ENG: |
-            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
-            <p><span class="Qnum">[C] </span><span class="Qtxt"><span class="QtxtC">What was Mary asked to buy</span>?</span></p>
-      - logic: ST2LANG=12
-        questionText:
-          ENG: |
-            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
-            <p><span class="Qnum">[C] </span><span class="Qtxt"><span class="QtxtC">What was Marie asked to buy</span>?</span></p>
-      - logic: ST2LANG=13
-        questionText:
-          ENG: |
-            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
-            <p><span class="Qnum">[C] </span><span class="Qtxt"><span class="QtxtC">What was María asked to buy</span>?</span></p>
-  - name: MICS7FS.FL22D
-    conditions:
-      - logic: ST2LANG=11
-        questionText:
-          ENG: |
-            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
-            <p><span class="Qnum">[D] </span><span class="Qtxt"><span class="QtxtC">Why did Mary lose the money</span>?</span></p>
-      - logic: ST2LANG=12
-        questionText:
-          ENG: |
-            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
-            <p><span class="Qnum">[D] </span><span class="Qtxt"><span class="QtxtC">Why did Marie lose the money</span>?</span></p>
-      - logic: ST2LANG=13
-        questionText:
-          ENG: |
-            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
-            <p><span class="Qnum">[D] </span><span class="Qtxt"><span class="QtxtC">Why did María lose the money</span>?</span></p>
-  - name: MICS7FS.FL22E
-    conditions:
-      - logic: ST2LANG=11
-        questionText:
-          ENG: |
-            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
-            <p><span class="Qnum">[E] </span><span class="Qtxt"><span class="QtxtC">Why was Mary happy</span>?</span></p>
-      - logic: ST2LANG=12
-        questionText:
-          ENG: |
-            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
-            <p><span class="Qnum">[E] </span><span class="Qtxt"><span class="QtxtC">Why was Marie happy</span>?</span></p>
-      - logic: ST2LANG=13
-        questionText:
-          ENG: |
-            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
-            <p><span class="Qnum">[E] </span><span class="Qtxt"><span class="QtxtC">Why was María happy</span>?</span></p>
+            <p><span class="Qnum">[E] </span><span class="Qtxt"><span class="QtxtC"><font color="#000000">Why was Moisés happy</font></span>?</span></p>
   - name: MICS7FS.FL23A
     conditions:
       - questionText:
@@ -1554,7 +1269,7 @@ questions:
       - questionText:
           ENG: |
             <p><span class="Qnum">FS15E. </span><span class="Qtxt">Thank you for your participation.</span></p>
-            <p><span class="Qtxt">The <span class="QtxtC">National Statistical Office</span> will be conducting a phone survey about the situation of children, families, and households in the future. We may call a few times over a period of a few months, for about 15 minutes at a time.</span></p>
+            <p><span class="Qtxt">The <span class="QtxtC"><font color="#000000">Gambia Bureau of Statistics</font></span> will be conducting a phone survey about the situation of children, families, and households in the future. We may call a few times over a period of a few months, for about 15 minutes at a time.</span></p>
             <p><span class="Qtxt">Participation is voluntary. If you agree to participate now, you can still withdraw later. It will not cost you anything to participate. Your phone number and all the information you share during these phone interviews will not be shared with anyone outside our team.</span></p>
             <p><span class="Qtxt">Would you like to participate?</span></p>
       - logic: HC7A<>1 and HC12<>1
@@ -1662,4 +1377,289 @@ questions:
       - questionText:
           ENG: |
             <p><span class="Inum">FA14. </span><span class="Itxt">Measurement date: year</span></p>
+  - name: MICS7FS.FL10C
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL10C. </span><span class="Qtxt">I have short stories in <span class="QtxtC">English, French, and Spanish</span>. The stories are almost the same. Would you like to try to read one of them?</span></p>
+  - name: MICS7FS.FL21D
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">FL21D. </span><span class="Qtxt">I have another story in <span class="Itxt">(list languages not yet attempted)</span>. Would you like to try to read <span class="QtxtC">it/one of them</span>?</span></p>
+            <p><span class="Qtxt">The child cannot pick the same language as already attempted</span></p>
+  - name: MICS7FS.FL21G
+    conditions:
+      - logic: ST2LANG=11
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21G. </span><span class="Itxt">Give the child the READING & NUMBERS BOOK in <span class="QtxtC">English</span>.</span></p>
+            <p><span class="Itxt">Open the page showing the reading practice item and say: </span><span class="Qtxt">Just as before I would like you to read this aloud.Then I may ask you a question.</span></p>
+            <p><span class="ItxtC">John is a boy. Anne is a girl. John has 2 eggs. Anne has 3 eggs.</span></p>
+      - logic: ST2LANG=12
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21G. </span><span class="Itxt">Give the child the READING & NUMBERS BOOK in <span class="QtxtC">French</span>.</span></p>
+            <p><span class="Itxt">Open the page showing the reading practice item and say: </span><span class="Qtxt">Just as before I would like you to read this aloud.Then I may ask you a question.</span></p>
+            <p><span class="ItxtC">Jean est un garçon. Anne est une fille. Jean a 2 œufs. Anne a 3 œufs.</span></p>
+      - logic: ST2LANG=13
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21G. </span><span class="Itxt">Give the child the READING & NUMBERS BOOK in <span class="QtxtC">Spanish</span>.</span></p>
+            <p><span class="Itxt">Open the page showing the reading practice item and say: </span><span class="Qtxt">Just as before I would like you to read this aloud.Then I may ask you a question.</span></p>
+            <p><span class="ItxtC">Luis es un niño. Ana es una niña. Luis tiene 2 huevos. Ana tiene 3 huevos.</span></p>
+  - name: MICS7FS.FL21H
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">FL21H. </span><span class="Itxt">Did the child read every word in the practice correctly?</span></span></p>
+  - name: MICS7FS.FL21I
+    conditions:
+      - logic: ST2LANG=11
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21I. </span><span class="Itxt">Once the reading is done, ask: </span><span class="Qtxt"><span class="QtxtC">How many eggs does John have</span>?</span></p>
+      - logic: ST2LANG=12
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21I. </span><span class="Itxt">Once the reading is done, ask: </span><span class="Qtxt"><span class="QtxtC">How many eggs does Jean have</span>?</span></p>
+      - logic: ST2LANG=13
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21I. </span><span class="Itxt">Once the reading is done, ask: </span><span class="Qtxt"><span class="QtxtC">How many eggs does Luis have</span>?</span></p>
+  - name: MICS7FS.FL21J
+    conditions:
+      - logic: ST2LANG=11
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21J. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC">John has 2 eggs</span>.</span></p>
+      - logic: ST2LANG=12
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21J. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC">Jean has 2 eggs</span>.</span></p>
+      - logic: ST2LANG=13
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21J. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC">Luis has 2 eggs</span>.</span></p>
+  - name: MICS7FS.FL21K
+    conditions:
+      - logic: ST2LANG=11
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21K. </span><span class="Qtxt">Here is another question: </span><span class="Qtxt"><span class="QtxtC">Who has more eggs: John or Anne</span>?</span></p>
+      - logic: ST2LANG=12
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21K. </span><span class="Qtxt">Here is another question: </span><span class="Qtxt"><span class="QtxtC">Who has more eggs: Jean or Anne</span>?</span></p>
+      - logic: ST2LANG=13
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21K. </span><span class="Qtxt">Here is another question: </span><span class="Qtxt"><span class="QtxtC">Who has more eggs: Luis or Ana</span>?</span></p>
+  - name: MICS7FS.FL21L
+    conditions:
+      - logic: ST2LANG=11
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21L. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC">Anne has more eggs than John. Anne has 3 eggs and John has 2</span>.</span></p>
+      - logic: ST2LANG=12
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21L. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC">Anne has more eggs than Jean. Anne has 3 eggs and Jean has 2</span>.</span></p>
+      - logic: ST2LANG=13
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21L. </span><span class="Itxt">Say: </span><span class="Qtxt"><span class="QtxtC">Ana has more eggs than Luis. Ana has 3 eggs and Luis has 2</span>.</span></p>
+  - name: MICS7FS.FL21OEND
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Itxt">Continue if finished with the reading exercise.</span></p>
+  - name: MICS7FS.FL21OINTRO
+    conditions:
+      - logic: ED9(FS3)=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21N. </span><span class="Itxt">Give the child the READING & NUMBERS BOOK in <span class="ItxtC">~~offeredLang~~</span>.</span></p>
+            <p><span class="Itxt">Open the book on the page of reading passage</span></p>
+            <p><span class="Qnum">FL21O. </span><span class="Qtxt">Here is a story. I want you to read it aloud as carefully as you can.</span></p>
+            <p><span class="Qtxt">You will start here <span class="Itxt">(point to the first word on the first line) </span>and you will read line by line <span class="Itxt">(point to the direction for reading each line)</span>.</span></p>
+            <p><span class="Qtxt">When you finish I will ask you some questions about what you have read.</span></p>
+            <p><span class="Qtxt">If you come to a word you do not know, go onto the next word.</span></p>
+            <p><span class="Itxt">Put your finger on the first word. </span><span class="Qtxt">Ready? Begin.</span></p>
+      - logic: FL21K=1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL21M. </span><span class="Itxt">Turn the page to reveal the reading passage.</span></p>
+            <p><span class="Qtxt">Thank you. Now I want you to try this.</span></p>
+            <p><span class="Qnum">FL21O. </span><span class="Qtxt">Here is a story. I want you to read it aloud as carefully as you can.</span></p>
+            <p><span class="Qtxt">You will start here <span class="Itxt">(point to the first word on the first line) </span>and you will read line by line <span class="Itxt">(point to the direction for reading each line)</span>.</span></p>
+            <p><span class="Qtxt">When you finish I will ask you some questions about what you have read.</span></p>
+            <p><span class="Qtxt">If you come to a word you do not know, go onto the next word.</span></p>
+            <p><span class="Itxt">Put your finger on the first word. </span><span class="Qtxt"> Ready? Begin.</span></p>             
+  - name: MICS7FS.FL22A
+    conditions:
+      - logic: ST2LANG=11
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Itxt">If the child does not provide a response after a few seconds, repeat the question. If the child seems unable to provide an answer after repeating the question, mark 'No response' and say: </span><span class="Qtxt">Thank you. That is ok. We will move on.</span></p>
+            <p><span class="Itxt">Make sure the child can still see the passage and ask:</span></p>
+            <p><span class="Qnum">[A] </span><span class="Qtxt"><span class="QtxtC">How old is Mary</span>?</span></p>
+      - logic: ST2LANG=12
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Itxt">If the child does not provide a response after a few seconds, repeat the question. If the child seems unable to provide an answer after repeating the question, mark 'No response' and say: </span><span class="Qtxt">Thank you. That is ok. We will move on.</span></p>
+            <p><span class="Itxt">Make sure the child can still see the passage and ask:</span></p>
+            <p><span class="Qnum">[A] </span><span class="Qtxt"><span class="QtxtC">How old is Marie</span>?</span></p>
+      - logic: ST2LANG=13
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Itxt">If the child does not provide a response after a few seconds, repeat the question. If the child seems unable to provide an answer after repeating the question, mark 'No response' and say: </span><span class="Qtxt">Thank you. That is ok. We will move on.</span></p>
+            <p><span class="Itxt">Make sure the child can still see the passage and ask:</span></p>
+            <p><span class="Qnum">[A] </span><span class="Qtxt"><span class="QtxtC">How old is María</span>?</span></p>
+  - name: MICS7FS.FL22B
+    conditions:
+      - logic: ST2LANG=11
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[B] </span><span class="Qtxt"><span class="QtxtC">Who sent Mary to the market</span>?</span></p>
+      - logic: ST2LANG=12
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[B] </span><span class="Qtxt"><span class="QtxtC">Who sent Marie to the market</span>?</span></p>
+      - logic: ST2LANG=13
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[B] </span><span class="Qtxt"><span class="QtxtC">Who sent María to the market</span>?</span></p>
+  - name: MICS7FS.FL22C
+    conditions:
+      - logic: ST2LANG=11
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[C] </span><span class="Qtxt"><span class="QtxtC">What was Mary asked to buy</span>?</span></p>
+      - logic: ST2LANG=12
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[C] </span><span class="Qtxt"><span class="QtxtC">What was Marie asked to buy</span>?</span></p>
+      - logic: ST2LANG=13
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[C] </span><span class="Qtxt"><span class="QtxtC">What was María asked to buy</span>?</span></p>
+  - name: MICS7FS.FL22D
+    conditions:
+      - logic: ST2LANG=11
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[D] </span><span class="Qtxt"><span class="QtxtC">Why did Mary lose the money</span>?</span></p>
+      - logic: ST2LANG=12
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[D] </span><span class="Qtxt"><span class="QtxtC">Why did Marie lose the money</span>?</span></p>
+      - logic: ST2LANG=13
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[D] </span><span class="Qtxt"><span class="QtxtC">Why did María lose the money</span>?</span></p>
+  - name: MICS7FS.FL22E
+    conditions:
+      - logic: ST2LANG=11
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[E] </span><span class="Qtxt"><span class="QtxtC">Why was Mary happy</span>?</span></p>
+      - logic: ST2LANG=12
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[E] </span><span class="Qtxt"><span class="QtxtC">Why was Marie happy</span>?</span></p>
+      - logic: ST2LANG=13
+        questionText:
+          ENG: |
+            <p><span class="Qnum">FL22. </span><span class="Qtxt">Now I am going to ask you a few questions about what you have read.</span></p>
+            <p><span class="Qnum">[E] </span><span class="Qtxt"><span class="QtxtC">Why was María happy</span>?</span></p>
+  - name: MICS7FS.FTU10
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum"><b style="text-indent: -9.6px;"><i><font color="#0000ff">Activity ~~FTU6~~ at ~~stactiv~~ : ~~FTU7A~~</font></i></b><br></span></p><span class="Qnum">FTU10.&nbsp;</span>What time did this activity end?<p></p><p><span style="color: rgb(0, 0, 255); font-style: italic;">Record as HH.MM</span></p><p></p>
+  - name: MICS7FS.FTU12
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum"><b style="text-indent: -9.6px;"><i><font color="#0000ff">Activity ~~FTU6~~ at ~~stactiv~~ : ~~FTU7A~~</font></i></b><br></span></p><p><span class="Qnum">FTU12.</span>&nbsp;Did&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>play online?</p><p></p>
+  - name: MICS7FS.FTU13
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum"><b style="text-indent: -9.6px;"><i><font color="#0000ff">Activity ~~FTU6~~ at ~~stactiv~~ : ~~FTU7A~~</font></i></b><br></span></p><p><span class="Qnum">FTU13.&nbsp;</span>With whom did&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>play?</p><p><span class="Itxt">Probe:&nbsp;<span class="Qtxt" style="font-style: normal;">Anyone else?</span></span><br></p><p><span class="Itxt">Record all mentioned. Do not record C, D if FTU12=2</span></p><p></p>
+  - name: MICS7FS.FTU14
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum"><b style="text-indent: -9.6px;"><i><font color="#0000ff">Activity ~~FTU6~~ at ~~stactiv~~ : ~~FTU7A~~</font></i></b><br></span></p><p><span class="Qnum">FTU14.</span>&nbsp;Did&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>watch this online?</p><p></p>
+  - name: MICS7FS.FTU15
+    conditions:
+      - questionText:
+          ENG: |
+            <p></p><div><p><span class="Qnum"><b style="text-indent: -9.6px;"><i><font color="#0000ff">Activity ~~FTU6~~ at ~~stactiv~~ : ~~FTU7A~~</font></i></b><br></span></p><p><span class="Qnum">FTU15.</span>&nbsp;Did&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>get the news online?</p></div>
+  - name: MICS7FS.FTU16
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum"><b style="text-indent: -9.6px;"><i><font color="#0000ff">Activity ~~FTU6~~ at ~~stactiv~~ : ~~FTU7A~~</font></i></b><br></span></p><p><span class="Qnum">FTU16.&nbsp;</span>Did&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>engage in this activity or do this activity online?</p><p></p>
+  - name: MICS7FS.FTU17
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum"><b style="text-indent: -9.6px;"><i><font color="#0000ff">Activity ~~FTU6~~ at ~~stactiv~~ : ~~FTU7A~~</font></i></b><b style="text-indent: -9.6px;"><i><font color="#0000ff">&nbsp;</font></i></b><br></span></p><p><span class="Qnum">FTU17.&nbsp;</span>How were&nbsp;<span style="font-style: italic;">~~FS3A~~</span>'s<span style="font-style: italic;">&nbsp;</span>lessons delivered?</p><p><span class="Itxt">Record all mentioned. Probe:</span>&nbsp;Anything else?</p><p></p>
+  - name: MICS7FS.FTU18
+    conditions:
+      - questionText:
+          ENG: |
+            <p><b>FTU18.&nbsp;</b>Just to make sure I have this right I will now repeat all the activities&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>have listed in chronological order. I would like you to think if there is any activity&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>did yesterday, between waking up in the morning and going to bed at night for sleeping, that you forgot to mention.</p><p><span class="Itxt">Read aloud the list of activities reported and ask:&nbsp;</span>&nbsp;&nbsp;<br></p><p>Did&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>do anything else that we have not recorded yet?</p><p></p>
+  - name: MICS7FS.FTU3
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Itxt"><span class="Inum">FTU2. </span>Begin by asking the respondent what time the child woke up the day before the interview and what time the child went to sleep. Then ask to list the activities the child did during the day in chronological order. For each activity, record the appropriate code in FTU7, ask FTU8-FTU10 and, if applicable, proceed to ask any follow-up questions. After recording all information relative to an activity, you will be led back to FTU7 to ask what the child did next. Once respondent mentions the child went to sleep for the night, do not record anything else. Finally, to ensure everything the child did yesterday has been captured, FTU18 will prompt you to read all activities recorded and ask if anything is missing. If yes, enter the code, time and/or duration for each activity that was not previously mentioned or captured.</span></p><p><span class="Qnum">FTU3.</span> I will now ask you about what&nbsp;<span style="font-style: italic;">~~FS3A~~</span>&nbsp;did yesterday, between waking up in the morning and going to bed at night for sleeping. You can include anything&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>did. These can include active tasks such as studying and eating or passive activities such as relaxing or thinking.</p><div><br></div><p></p>
+  - name: MICS7FS.FTU4
+    conditions:
+      - questionText:
+          ENG: |
+            <b>FTU4.</b>&nbsp;What time did ~~FS3A~~ wake up yesterday?<br><span class="Itxt">record as HH.MM</span><p></p>
+  - name: MICS7FS.FTU5
+    conditions:
+      - questionText:
+          ENG: |
+            <span class="Qnum">FTU5.&nbsp;</span>What time did&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>go to sleep for the night yesterday?<br><span style="color: rgb(0, 0, 255); font-style: italic;">record as HH.MM</span><p></p>
+  - name: MICS7FS.FTU7
+    conditions:
+      - logic: FTU6 = 1
+        questionText:
+          ENG: |
+            <p><b style="text-indent: -9.6px;"><i><font color="#0000ff">First activity starting at ~~stactiv~~</font>&nbsp;</i></b><b style="text-indent: -9.6px;"><br></b></p><p><b style="text-indent: -9.6px;">FTU7.&nbsp;</b><span style="text-indent: -9.6px;">What did&nbsp;</span><span style="font-style: italic;">~~FS3A~~&nbsp;</span><span style="text-indent: -9.6px;">do first?</span></p><p></p>
+      - logic: FTU6 > 1
+        questionText:
+          ENG: |
+            <p><b style="text-indent: -9.6px;"><i><font color="#0000ff">Activity ~~FTU6~~ starting at ~~stactiv~~&nbsp;</font></i></b><b style="text-indent: -9.6px;"><br></b></p><p><b style="text-indent: -9.6px;">FTU7.&nbsp;</b><span style="text-indent: -9.6px;">What did&nbsp;</span><span style="font-style: italic;">~~FS3A~~&nbsp;</span><span style="text-indent: -9.6px;">do next?&nbsp;</span></p><p></p>
+  - name: MICS7FS.FTU9
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum"><b style="text-indent: -9.6px;"><i><font color="#0000ff">Activity ~~FTU6~~ at ~~stactiv~~ : ~~FTU7A~~</font></i></b><br></span></p><p><span class="Itxt"><span class="Inum"></span></span></p><p><span class="Qnum">FTU9</span><span class="Qnum">.</span>&nbsp;<span class="Qnum">&nbsp;</span>How long did&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>do this activity?&nbsp;</p><p><span style="color: rgb(0, 0, 255); font-style: italic;">Record as HH.MM</span></p><p></p>
+  - name: MICS7FS.FTU9X
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum"><b style="text-indent: -9.6px;"><i><font color="#0000ff">Activity ~~FTU6~~ at ~~stactiv~~ : ~~FTU7A~~</font></i></b><br></span></p><p><span class="Qnum">FTU9.-&nbsp;</span><span class="Qnum">FTU10.</span>&nbsp;<span class="Qnum">&nbsp;</span>How long did&nbsp;<span style="font-style: italic;">~~FS3A~~&nbsp;</span>do this activity? What time did this activity end?</p><p><span class="Itxt">Select response type</span></p><p></p>
 ...
