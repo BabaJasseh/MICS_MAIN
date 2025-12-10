@@ -2594,7 +2594,7 @@ Value=8;DK
 Value=9;NO RESPONSE
 
 [Item]
-Label=Any fortified baby food such as Cerelac, Nutrilac?     
+Label=Any fortified baby food such as Cerelac, Nutrilac?
 Name=BD8B1
 Start=41
 Len=1
@@ -2602,7 +2602,7 @@ DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Any fortified baby food such as Cerelac, Nutrilac?     
+Label=Any fortified baby food such as Cerelac, Nutrilac?
 Name=BD8B1_VS1
 Value=1;YES
 Value=2;NO
@@ -3419,14 +3419,14 @@ Value=9999;NO RESPONSE
 
 [Item]
 Label=Date of Polio3 (OPV) immunization
-Name=IM6P3
+Name=IM6P31
 Start=67
 Len=8
 DataType=Alpha
 
 [Item]
 Label=Day of Polio3 (OPV) immunization
-Name=IM6P3D
+Name=IM6P3D1
 Start=67
 Len=2
 ItemType=SubItem
@@ -3435,7 +3435,7 @@ ZeroFill=Yes
 
 [ValueSet]
 Label=Day of Polio3 (OPV) immunization
-Name=IM6P3D_VST
+Name=IM6P3D1_VS1
 Value=0;NOT GIVEN
 Value=1:31
 Value=44;MARKED ON CARD
@@ -3444,7 +3444,7 @@ Value=99;NO RESPONSE
 
 [Item]
 Label=Month of Polio3 (OPV) immunization
-Name=IM6P3M
+Name=IM6P3M1
 Start=69
 Len=2
 ItemType=SubItem
@@ -3453,7 +3453,7 @@ ZeroFill=Yes
 
 [ValueSet]
 Label=Month of Polio3 (OPV) immunization
-Name=IM6P3M_VST
+Name=IM6P3M1_VS1
 Value=0;NOT GIVEN
 Value=1;JANUARY
 Value=2;FEBRUARY
@@ -3473,7 +3473,7 @@ Value=99;NO RESPONSE
 
 [Item]
 Label=Year of Polio3 (OPV) immunization
-Name=IM6P3Y
+Name=IM6P3Y1
 Start=71
 Len=4
 ItemType=SubItem
@@ -3482,7 +3482,84 @@ ZeroFill=Yes
 
 [ValueSet]
 Label=Year of Polio3 (OPV) immunization
-Name=IM6P3Y_VS1
+Name=IM6P3Y1_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=6666;MOTHER REPORTED
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Polio4 (OPV) immunization
+Name=IM6P4
+Start=75
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Polio4 (OPV) immunization
+Name=IM6P4D
+Start=75
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Polio4 (OPV) immunization
+Name=IM6P4D_VS1
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Polio4 (OPV) immunization
+Name=IM6P4M
+Start=77
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Polio4 (OPV) immunization
+Name=IM6P4M_VS1
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Polio4 (OPV) immunization
+Name=IM6P4Y
+Start=79
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Polio4 (OPV) immunization
+Name=IM6P4Y_VS1
 Value=0;NOT GIVEN
 Value=2020;2020
 Value=2021;2021
@@ -3497,14 +3574,14 @@ Value=9999;NO RESPONSE
 [Item]
 Label=Date of Polio (IPV) 1 immunization
 Name=IM6I1
-Start=75
+Start=83
 Len=8
 DataType=Alpha
 
 [Item]
 Label=Day of Polio (IPV) 1 immunization
 Name=IM6I1D
-Start=75
+Start=83
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -3522,7 +3599,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Month of Polio (IPV) 1 immunization
 Name=IM6I1M
-Start=77
+Start=85
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -3551,7 +3628,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Year of Polio (IPV) 1 immunization
 Name=IM6I1Y
-Start=79
+Start=87
 Len=4
 ItemType=SubItem
 DataType=Numeric
@@ -3574,14 +3651,14 @@ Value=9999;NO RESPONSE
 [Item]
 Label=Date of Polio (IPV) 2 immunization
 Name=IM6I2
-Start=83
+Start=91
 Len=8
 DataType=Alpha
 
 [Item]
 Label=Day of Polio (IPV) 2 immunization
 Name=IM6I2D
-Start=83
+Start=91
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -3599,7 +3676,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Month of Polio (IPV) 2 immunization
 Name=IM6I2M
-Start=85
+Start=93
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -3628,7 +3705,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Year of Polio (IPV) 2 immunization
 Name=IM6I2Y
-Start=87
+Start=95
 Len=4
 ItemType=SubItem
 DataType=Numeric
@@ -3651,14 +3728,14 @@ Value=9999;NO RESPONSE
 [Item]
 Label=Date of Pentavalent (DPTHibHepB) 1 immunization
 Name=IM6PENTA1
-Start=91
+Start=99
 Len=8
 DataType=Alpha
 
 [Item]
 Label=Day of Pentavalent (DPTHibHepB) 1 immunization
 Name=IM6PENTA1D
-Start=91
+Start=99
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -3676,7 +3753,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Month of Pentavalent (DPTHibHepB) 1 immunization
 Name=IM6PENTA1M
-Start=93
+Start=101
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -3705,7 +3782,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Year of Pentavalent (DPTHibHepB) 1 immunization
 Name=IM6PENTA1Y
-Start=95
+Start=103
 Len=4
 ItemType=SubItem
 DataType=Numeric
@@ -3728,14 +3805,14 @@ Value=9999;NO RESPONSE
 [Item]
 Label=Date of Pentavalent (DPTHibHepB) 2 immunization
 Name=IM6PENTA2
-Start=99
+Start=107
 Len=8
 DataType=Alpha
 
 [Item]
 Label=Day of Pentavalent (DPTHibHepB) 2 immunization
 Name=IM6PENTA2D
-Start=99
+Start=107
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -3753,7 +3830,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Month of Pentavalent (DPTHibHepB) 2 immunization
 Name=IM6PENTA2M
-Start=101
+Start=109
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -3782,7 +3859,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Year of Pentavalent (DPTHibHepB) 2 immunization
 Name=IM6PENTA2Y
-Start=103
+Start=111
 Len=4
 ItemType=SubItem
 DataType=Numeric
@@ -3805,14 +3882,14 @@ Value=9999;NO RESPONSE
 [Item]
 Label=Date of Pentavalent (DPTHibHepB) 3 immunization
 Name=IM6PENTA3
-Start=107
+Start=115
 Len=8
 DataType=Alpha
 
 [Item]
 Label=Day of Pentavalent (DPTHibHepB) 3 immunization
 Name=IM6PENTA3D
-Start=107
+Start=115
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -3830,7 +3907,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Month of Pentavalent (DPTHibHepB) 3 immunization
 Name=IM6PENTA3M
-Start=109
+Start=117
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -3859,7 +3936,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Year of Pentavalent (DPTHibHepB) 3 immunization
 Name=IM6PENTA3Y
-Start=111
+Start=119
 Len=4
 ItemType=SubItem
 DataType=Numeric
@@ -3882,14 +3959,14 @@ Value=9999;NO RESPONSE
 [Item]
 Label=Date of Pneumococcal (Conjugate) 1 immunization
 Name=IM6PCV1
-Start=115
+Start=123
 Len=8
 DataType=Alpha
 
 [Item]
 Label=Day of Pneumococcal (Conjugate) 1 immunization
 Name=IM6PCV1D
-Start=115
+Start=123
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -3907,7 +3984,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Month of Pneumococcal (Conjugate) 1 immunization
 Name=IM6PCV1M
-Start=117
+Start=125
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -3936,7 +4013,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Year of Pneumococcal (Conjugate) 1 immunization
 Name=IM6PCV1Y
-Start=119
+Start=127
 Len=4
 ItemType=SubItem
 DataType=Numeric
@@ -3959,14 +4036,14 @@ Value=9999;NO RESPONSE
 [Item]
 Label=Date of Pneumococcal (Conjugate) 2 immunization
 Name=IM6PCV2
-Start=123
+Start=131
 Len=8
 DataType=Alpha
 
 [Item]
 Label=Day of Pneumococcal (Conjugate) 2 immunization
 Name=IM6PCV2D
-Start=123
+Start=131
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -3984,7 +4061,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Month of Pneumococcal (Conjugate) 2 immunization
 Name=IM6PCV2M
-Start=125
+Start=133
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -4013,7 +4090,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Year of Pneumococcal (Conjugate) 2 immunization
 Name=IM6PCV2Y
-Start=127
+Start=135
 Len=4
 ItemType=SubItem
 DataType=Numeric
@@ -4036,14 +4113,14 @@ Value=9999;NO RESPONSE
 [Item]
 Label=Date of Pneumococcal (Conjugate) 3 immunization
 Name=IM6PCV3
-Start=131
+Start=139
 Len=8
 DataType=Alpha
 
 [Item]
 Label=Day of Pneumococcal (Conjugate) 3 immunization
 Name=IM6PCV3D
-Start=131
+Start=139
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -4061,7 +4138,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Month of Pneumococcal (Conjugate) 3 immunization
 Name=IM6PCV3M
-Start=133
+Start=141
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -4090,7 +4167,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Year of Pneumococcal (Conjugate) 3 immunization
 Name=IM6PCV3Y
-Start=135
+Start=143
 Len=4
 ItemType=SubItem
 DataType=Numeric
@@ -4113,14 +4190,14 @@ Value=9999;NO RESPONSE
 [Item]
 Label=Date of Rotavirus 1 immunization
 Name=IM6R1
-Start=139
+Start=147
 Len=8
 DataType=Alpha
 
 [Item]
 Label=Day of Rotavirus 1 immunization
 Name=IM6R1D
-Start=139
+Start=147
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -4138,7 +4215,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Month of Rotavirus 1 immunization
 Name=IM6R1M
-Start=141
+Start=149
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -4167,7 +4244,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Year of Rotavirus 1 immunization
 Name=IM6R1Y
-Start=143
+Start=151
 Len=4
 ItemType=SubItem
 DataType=Numeric
@@ -4190,14 +4267,14 @@ Value=9999;NO RESPONSE
 [Item]
 Label=Date of Rotavirus 2 immunization
 Name=IM6R2
-Start=147
+Start=155
 Len=8
 DataType=Alpha
 
 [Item]
 Label=Day of Rotavirus 2 immunization
 Name=IM6R2D
-Start=147
+Start=155
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -4215,7 +4292,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Month of Rotavirus 2 immunization
 Name=IM6R2M
-Start=149
+Start=157
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -4244,7 +4321,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Year of Rotavirus 2 immunization
 Name=IM6R2Y
-Start=151
+Start=159
 Len=4
 ItemType=SubItem
 DataType=Numeric
@@ -4253,83 +4330,6 @@ ZeroFill=Yes
 [ValueSet]
 Label=Year of Rotavirus 2 immunization
 Name=IM6R2Y_VS1
-Value=0;NOT GIVEN
-Value=2020;2020
-Value=2021;2021
-Value=2022;2022
-Value=2023;2023
-Value=2024;2024
-Value=2025;2025
-Value=4444;MARKED ON CARD
-Value=6666;MOTHER REPORTED
-Value=9999;NO RESPONSE
-
-[Item]
-Label=Date of Rotavirus 3 immunization
-Name=IM6R3
-Start=155
-Len=8
-DataType=Alpha
-
-[Item]
-Label=Day of Rotavirus 3 immunization
-Name=IM6R3D
-Start=155
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Day of Rotavirus 3 immunization
-Name=IM6R3D_VST
-Value=0;NOT GIVEN
-Value=1:31
-Value=44;MARKED ON CARD
-Value=66;MOTHER REPORTED
-Value=99;NO RESPONSE
-
-[Item]
-Label=Month of Rotavirus 3 immunization
-Name=IM6R3M
-Start=157
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Month of Rotavirus 3 immunization
-Name=IM6R3M_VST
-Value=0;NOT GIVEN
-Value=1;JANUARY
-Value=2;FEBRUARY
-Value=3;MARCH
-Value=4;APRIL
-Value=5;MAY
-Value=6;JUNE
-Value=7;JULY
-Value=8;AUGUST
-Value=9;SEPTEMBER
-Value=10;OCTOBER
-Value=11;NOVEMBER
-Value=12;DECEMBER
-Value=44;MARKED ON CARD
-Value=66;MOTHER REPORTED
-Value=99;NO RESPONSE
-
-[Item]
-Label=Year of Rotavirus 3 immunization
-Name=IM6R3Y
-Start=159
-Len=4
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Year of Rotavirus 3 immunization
-Name=IM6R3Y_VS1
 Value=0;NOT GIVEN
 Value=2020;2020
 Value=2021;2021

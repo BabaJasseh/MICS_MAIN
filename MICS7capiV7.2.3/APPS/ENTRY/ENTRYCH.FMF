@@ -605,9 +605,8 @@ Item=IM6P1Y
 Item=IM6P2D
 Item=IM6P2M
 Item=IM6P2Y
-Item=IM6P3D
-Item=IM6P3M
-Item=IM6P3Y
+Item=IM6P4D
+Item=IM6P4M
 Item=IM6I1D
 Item=IM6I1M
 Item=IM6I1Y
@@ -635,9 +634,6 @@ Item=IM6R1Y
 Item=IM6R2D
 Item=IM6R2M
 Item=IM6R2Y
-Item=IM6R3D
-Item=IM6R3M
-Item=IM6R3Y
 Item=IM6M1D
 Item=IM6M1M
 Item=IM6M1Y
@@ -4205,9 +4201,9 @@ Form=10
   
   
 [Field]
-Name=IM6P3D
+Name=IM6P4D
 Position=548,661,585,695
-Item=IM6P3D,MICS7CH
+Item=IM6P4D,MICS7CH
 UpperCase=Yes
 DataCaptureType=NumberPad
 Keyboard=1033
@@ -4220,19 +4216,9 @@ Color=4210688
  
   
 [Field]
-Name=IM6P3M
+Name=IM6P4M
 Position=599,661,636,695
-Item=IM6P3M,MICS7CH
-UpperCase=Yes
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=10
-  
-  
-[Field]
-Name=IM6P3Y
-Position=645,661,718,695
-Item=IM6P3Y,MICS7CH
+Item=IM6P4M,MICS7CH
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
@@ -4580,41 +4566,6 @@ Form=10
 Name=IM6R2Y
 Position=645,1134,718,1168
 Item=IM6R2Y,MICS7CH
-UpperCase=Yes
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=10
-  
-  
-[Field]
-Name=IM6R3D
-Position=548,1180,585,1214
-Item=IM6R3D,MICS7CH
-UpperCase=Yes
-DataCaptureType=NumberPad
-Keyboard=1033
-Form=10
-  
-[Text]
-Position=127,1181,292,1213
-Text=Rotavirus 3
-Color=4210688
- 
-  
-[Field]
-Name=IM6R3M
-Position=599,1180,636,1214
-Item=IM6R3M,MICS7CH
-UpperCase=Yes
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=10
-  
-  
-[Field]
-Name=IM6R3Y
-Position=645,1180,718,1214
-Item=IM6R3Y,MICS7CH
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
