@@ -4710,14 +4710,13 @@ Name=CP4_VST
 Value='A              ';FEMALE STERILIZATION
 Value='B              ';MALE STERILIZATION
 Value='C              ';IUD
-Value='D              ';INJECTABLES
+Value='D              ';INJECTABLES SUCH AS DEPO
 Value='E              ';IMPLANTS
 Value='F              ';PILL
 Value='G              ';MALE CONDOM
 Value='H              ';FEMALE CONDOM
 Value='I              ';DIAPHRAGM
 Value='J              ';FOAM / JELLY
-Value='K              ';LACTATIONAL AMENORRHOEA METHOD (LAM)
 Value='L              ';PERIODIC ABSTINENCE / RHYTHM
 Value='M              ';WITHDRAWAL
 Value='X              ';OTHER
@@ -4769,7 +4768,7 @@ Value=' '
 Value='?';NO RESPONSE
 
 [Item]
-Label=Current method: Injectables
+Label=Current method: Injectables such as depo
 Name=CP4D
 Start=22
 Len=1
@@ -4777,7 +4776,7 @@ ItemType=SubItem
 DataType=Alpha
 
 [ValueSet]
-Label=Current method: Injectables
+Label=Current method: Injectables such as depo
 Name=CP4D_VST
 Value='D';INJECTABLES
 Value=' '
@@ -4870,21 +4869,6 @@ DataType=Alpha
 Label=Current method: Foam / Jelly
 Name=CP4J_VST
 Value='J';FOAM / JELLY
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Current method: Lactational amenorrhoea method (LAM)
-Name=CP4K
-Start=29
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Current method: Lactational amenorrhoea method (LAM)
-Name=CP4K_VST
-Value='K';LACTATIONAL AMENORRHOEA METHOD (LAM)
 Value=' '
 Value='?';NO RESPONSE
 
@@ -5586,7 +5570,7 @@ Value=11;DOCTOR
 Value=12;NURSE / MIDWIFE
 Value=16;OTHER HEALTH PROFESSIONAL
 Value=21;TRADITIONAL 'CIRCUMCISER'
-Value=22;TRADITIONAL BIRTH ATTENDANT
+Value=22;COMMUNITY BIRTH COMPANION
 Value=26;OTHER TRADITIONAL
 Value=98;DK
 Value=99;NO RESPONSE
@@ -5642,7 +5626,7 @@ Name=MODFC
 RecordTypeValue='0FC'
 Required=No
 MaxRecords=20
-RecordLen=47
+RecordLen=48
 
 [Item]
 Label=Line Number
@@ -5771,10 +5755,24 @@ Value=11;DOCTOR
 Value=12;NURSE / MIDWIFE
 Value=16;OTHER HEALTH PROFESSIONAL
 Value=21;TRADITIONAL 'CIRCUMCISER'
-Value=22;TRADITIONAL BIRTH ATTENDANT
+Value=22;COMMUNITY BIRTH COMPANION
 Value=26;OTHER TRADITIONAL
 Value=98;DK
 Value=99;NO RESPONSE
+
+[Item]
+Label=Awareness of the law that prohibits FGM
+Name=FG24A
+Start=48
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Awareness of the law that prohibits FGM
+Name=FG24A_VS1
+Value=1;Yes
+Value=2;No
 
 [Record]
 Label=HPV
