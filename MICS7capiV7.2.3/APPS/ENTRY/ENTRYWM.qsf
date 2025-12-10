@@ -93,7 +93,7 @@ questions:
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">WB5. </span><span class="Qtxt">Where were you born? In <span class="QtxtC">Country</span> or another country?</span></p>
+            <p><span class="Qnum">WB5. </span><span class="Qtxt">Where were you born? In The Gambia&nbsp;or another country?</span></p>
   - name: MICS7WM.WB5A
     conditions:
       - questionText:
