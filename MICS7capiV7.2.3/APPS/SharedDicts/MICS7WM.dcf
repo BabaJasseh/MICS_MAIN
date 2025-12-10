@@ -3231,7 +3231,7 @@ Label=Assistance at delivery
 Name=MN19_VST
 Value='A        ';DOCTOR
 Value='B        ';NURSE / MIDWIFE
-Value='C        ';AUXILIARY NURSE /NURSE ATTENDANT	
+Value='C        ';AUXILIARY NURSE /NURSE ATTENDANT
 Value='F        ';COMMUNITY BIRTH COMPANION
 Value='G        ';COMMUNITY HEALTH WORKER
 Value='H        ';RELATIVE / FRIEND
@@ -3280,7 +3280,7 @@ DataType=Alpha
 [ValueSet]
 Label=Assistance at delivery: Other qualified
 Name=MN19C_VST
-Value='C';AUXILIARY NURSE /NURSE ATTENDANT	
+Value='C';AUXILIARY NURSE /NURSE ATTENDANT
 Value=' '
 Value='?';NO RESPONSE
 
@@ -4122,8 +4122,8 @@ Label=Person checking on baby's health
 Name=PN14_VST
 Value='A       ';DOCTOR
 Value='B       ';NURSE / MIDWIFE
-Value='C       ';OTHER QUALIFIED
-Value='F       ';TRADITIONAL BIRTH ATTENDANT
+Value='C       ';AUXILIARY NURSE/NURSE ATTENDANT	
+Value='F       ';COMMUNITY BIRTH COMPANION
 Value='G       ';COMMUNITY HEALTH WORKER
 Value='H       ';RELATIVE / FRIEND
 Value='X       ';OTHER
@@ -4160,7 +4160,7 @@ Value=' '
 Value='?';NO RESPONSE
 
 [Item]
-Label=Person checking on baby's health: Other qualified
+Label=Person checking on baby's health: Auxiliary Nurse/Nurse Attendant
 Name=PN14C
 Start=32
 Len=1
@@ -4168,14 +4168,14 @@ ItemType=SubItem
 DataType=Alpha
 
 [ValueSet]
-Label=Person checking on baby's health: Other qualified
+Label=Person checking on baby's health: Auxiliary Nurse/Nurse Attendant
 Name=PN14C_VST
 Value='C';OTHER QUALIFIED
 Value=' '
 Value='?';NO RESPONSE
 
 [Item]
-Label=Person checking on baby's health: Traditional birth attendant
+Label=Person checking on baby's health: Community birth companion
 Name=PN14F
 Start=33
 Len=1
@@ -4183,7 +4183,7 @@ ItemType=SubItem
 DataType=Alpha
 
 [ValueSet]
-Label=Person checking on baby's health: Traditional birth attendant
+Label=Person checking on baby's health: Community birth companion
 Name=PN14F_VST
 Value='F';TRADITIONAL BIRTH ATTENDANT
 Value=' '
@@ -4269,7 +4269,6 @@ Value=31;PRIVATE HOSPITAL
 Value=32;PRIVATE CLINIC
 Value=33;PRIVATE MATERNITY HOME
 Value=36;OTHER PRIVATE
-Value=41;NGO HOSPITAL
 Value=42;NGO CLINIC
 Value=46;OTHER NGO
 Value=76;DK PUBLIC, PRIVATE, OR NGO
@@ -4398,8 +4397,8 @@ Label=Person checking on mother's health
 Name=PN23_VST
 Value='A       ';DOCTOR
 Value='B       ';NURSE / MIDWIFE
-Value='C       ';OTHER QUALIFIED
-Value='F       ';TRADITIONAL BIRTH ATTENDANT
+Value='C       ';AUXILIARY NURSE/NURSE ATTENDANCE
+Value='F       ';COMMUNITY BIRTH COMPANION
 Value='G       ';COMMUNITY HEALTH WORKER
 Value='H       ';RELATIVE / FRIEND
 Value='X       ';OTHER
@@ -4436,7 +4435,7 @@ Value=' '
 Value='?';NO RESPONSE
 
 [Item]
-Label=Person checking on mother's health: Other qualified
+Label=Person checking on mother's health: Auxiliary nurse/nurse attendant
 Name=PN23C
 Start=49
 Len=1
@@ -4444,14 +4443,14 @@ ItemType=SubItem
 DataType=Alpha
 
 [ValueSet]
-Label=Person checking on mother's health: Other qualified
+Label=Person checking on mother's health: Auxiliary nurse/nurse attendant
 Name=PN23C_VST
 Value='C';OTHER QUALIFIED
 Value=' '
 Value='?';NO RESPONSE
 
 [Item]
-Label=Person checking on mother's health: Traditional birth attendant
+Label=Person checking on mother's health: Community birth companion
 Name=PN23F
 Start=50
 Len=1
@@ -4459,7 +4458,7 @@ ItemType=SubItem
 DataType=Alpha
 
 [ValueSet]
-Label=Person checking on mother's health: Traditional birth attendant
+Label=Person checking on mother's health: Community birth companion
 Name=PN23F_VST
 Value='F';TRADITIONAL BIRTH ATTENDANT
 Value=' '
@@ -4545,7 +4544,6 @@ Value=31;PRIVATE HOSPITAL
 Value=32;PRIVATE CLINIC
 Value=33;PRIVATE MATERNITY HOME
 Value=36;OTHER PRIVATE
-Value=41;NGO HOSPITAL
 Value=42;NGO CLINIC
 Value=46;OTHER NGO
 Value=76;DK PUBLIC, PRIVATE, OR NGO
