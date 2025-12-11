@@ -919,7 +919,7 @@ Value=12;OTHER RELATIVE
 Value=13;ADOPTED / FOSTER / STEPCHILD
 Value=14;SERVANT (LIVE-IN)
 Value=15;CO-WIFE
-Value=16;GRANDPARENT   
+Value=16;GRANDPARENT
 Value=96;OTHER (NOT RELATED)
 Value=98;DK
 
@@ -1221,7 +1221,7 @@ Name=MODED
 RecordTypeValue='0ED'
 Required=No
 MaxRecords=50
-RecordLen=56
+RecordLen=55
 
 [Item]
 Label=Line number
@@ -1426,25 +1426,9 @@ Value=98;DK
 Value=99;NO RESPONSE
 
 [Item]
-Label=School tuition support was sufficient for paying the costs
-Name=ED12A
-Start=52
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=School tuition support was sufficient for paying the costs
-Name=ED12A_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
 Label=Attended school during previous school year
 Name=ED15
-Start=53
+Start=52
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -1460,7 +1444,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Level of education attended during previous school year
 Name=ED16A
-Start=54
+Start=53
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -1471,7 +1455,7 @@ Name=ED16A_VST
 Value=0;ECD
 Value=1;LOWER BASIC EDUCATION
 Value=2;UPPER BASIC EDUCATION
-Value=3;SENIOR SECONDARY EDUCATION 
+Value=3;SENIOR SECONDARY EDUCATION
 Value=4;VOCATIONAL
 Value=5;DIPLOMA
 Value=6;HIGHER
@@ -1481,7 +1465,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Grade attended at that level during previous school year
 Name=ED16B
-Start=55
+Start=54
 Len=2
 DataType=Numeric
 ZeroFill=Yes

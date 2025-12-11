@@ -243,9 +243,9 @@ Color=6447871
 [Form]
 Name=FORM005
 Label=Household Characteristics
-QuestionTextHeight=212
+QuestionTextHeight=110
 Level=1
-Size=1145,550
+Size=1145,657
 Color=15263999
   
 Item=HC3
@@ -274,9 +274,7 @@ Item=HC18F
 Item=HC18G
 Item=HC19
 Item=HC9B
-Item=HC9M
 Item=HC10G
-Item=HC1A1
 Item=HC1B
 Item=HC2
 Item=HC11
@@ -290,6 +288,25 @@ Item=HC7A
 Item=HC8
 Item=HC18I
 Item=HC8B
+Item=HC7D
+Item=HC7E
+Item=HC7F
+Item=HC7G
+Item=HC7H
+Item=HC7I000
+Item=HC9C
+Item=HC9D
+Item=HC9E
+Item=HC9G
+Item=HC9H
+Item=HC9I
+Item=HC9J
+Item=HC9K
+Item=HC9L
+Item=HC18H1
+Item=HC9M
+Item=HC1A
+Item=HC1A1
   
 Box=41,56,1120,57,Etched
   
@@ -300,6 +317,158 @@ Text=HOUSEHOLD CHARACTERISTICS
 Form=5
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=6447871
+ 
+  
+[Text]
+Name=TEXT49
+Position=219,83,279,115
+Text=HC7D
+Form=5
+Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
+ 
+  
+[Text]
+Name=TEXT50
+Position=221,127,281,159
+Text=HC7E
+Form=5
+Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
+ 
+  
+[Text]
+Name=TEXT51
+Position=223,178,283,210
+Text=HC7F
+Form=5
+Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
+ 
+  
+[Text]
+Name=TEXT52
+Position=225,230,285,262
+Text=HC7G
+Form=5
+Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
+ 
+  
+[Text]
+Name=TEXT53
+Position=228,272,288,304
+Text=HC7H
+Form=5
+Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
+ 
+  
+[Text]
+Name=TEXT54
+Position=223,320,283,352
+Text=HC7I
+Form=5
+Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
+ 
+  
+[Text]
+Name=TEXT55
+Position=381,174,441,206
+Text=HC9C
+Form=5
+Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
+ 
+  
+[Text]
+Name=TEXT56
+Position=381,219,441,251
+Text=HC9D
+Form=5
+Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
+ 
+  
+[Text]
+Name=TEXT57
+Position=382,266,442,298
+Text=HC9E
+Form=5
+Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
+ 
+  
+[Text]
+Name=TEXT58
+Position=383,309,443,341
+Text=HC9G
+Form=5
+Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
+ 
+  
+[Text]
+Name=TEXT59
+Position=384,350,444,382
+Text=HC9H
+Form=5
+Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
+ 
+  
+[Text]
+Name=TEXT60
+Position=386,391,446,423
+Text=HC9I
+Form=5
+Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
+ 
+  
+[Text]
+Name=TEXT61
+Position=391,467,451,499
+Text=HC9J
+Form=5
+Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
+ 
+  
+[Text]
+Name=TEXT62
+Position=392,506,452,538
+Text=HC9K
+Form=5
+Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
+ 
+  
+[Text]
+Name=TEXT63
+Position=396,552,456,584
+Text=HC9L
+Form=5
+Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
+ 
+  
+[Text]
+Name=TEXT64
+Position=845,488,920,520
+Text=HC18H
+Form=5
+Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
+ 
+  
+[Text]
+Name=TEXT65
+Position=397,599,457,631
+Text=HC9M
+Form=5
+Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
+ 
+  
+[Text]
+Name=TEXT48
+Position=50,83,110,115
+Text=HC1A
+Form=5
+Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
+ 
+  
+[Text]
+Name=TEXT66
+Position=52,134,112,166
+Text=HC1A
+Form=5
+Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
  
 [EndForm]
   
@@ -3482,29 +3651,6 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Consolas
 [EndColumn]
   
 [Column]
-Width=83
-  
-[HeaderText]
-Position=0,0,83,40
-Text=ED12A
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-[Field]
-Name=ED12A
-Position=32,0,51,34
-Item=ED12A,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-  
-[Text]
-Text=ED12A
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
- 
-[EndColumn]
-  
-[Column]
 Width=68
   
 [HeaderText]
@@ -3581,25 +3727,24 @@ Form=5
 Max=1
   
 [Field]
-Name=HC1A1
-Position=124,85,161,119
-Item=HC1A1,MICS7HH
-UpperCase=Yes
-FieldLabelType=DictionaryName
+Name=HC1A
+Position=139,82,158,116
+Item=HC1A,MICS7HH
 DataCaptureType=RadioButton
-Keyboard=1033
 Form=5
   
-[Text]
-Position=45,84,120,116
-Text=HC1A1
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
+  
+[Field]
+Name=HC1A1
+Position=129,132,166,166
+Item=HC1A1,MICS7HH
+DataCaptureType=RadioButton
+Form=5
+  
   
 [Field]
 Name=HC1B
-Position=125,131,162,165
+Position=128,181,165,215
 Item=HC1B,MICS7HH
 UpperCase=Yes
 FieldLabelType=DictionaryName
@@ -3608,7 +3753,7 @@ Keyboard=1033
 Form=5
   
 [Text]
-Position=45,133,105,165
+Position=48,183,108,215
 Text=HC1B
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
@@ -3616,7 +3761,7 @@ Color=4210688
   
 [Field]
 Name=HC2
-Position=125,180,162,214
+Position=128,230,165,264
 Item=HC2,MICS7HH
 UpperCase=Yes
 FieldLabelType=DictionaryName
@@ -3625,7 +3770,7 @@ Keyboard=1033
 Form=5
   
 [Text]
-Position=45,182,90,214
+Position=48,232,93,264
 Text=HC2
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
@@ -3633,7 +3778,7 @@ Color=4210688
   
 [Field]
 Name=HC3
-Position=125,229,162,263
+Position=128,279,165,313
 Item=HC3,MICS7HH
 UpperCase=Yes
 FieldLabelType=DictionaryName
@@ -3642,7 +3787,7 @@ Keyboard=1033
 Form=5
   
 [Text]
-Position=45,231,90,263
+Position=48,281,93,313
 Text=HC3
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
@@ -3650,7 +3795,7 @@ Color=4210688
   
 [Field]
 Name=HC4
-Position=125,278,162,312
+Position=128,328,165,362
 Item=HC4,MICS7HH
 UpperCase=Yes
 FieldLabelType=DictionaryName
@@ -3659,7 +3804,7 @@ Keyboard=1033
 Form=5
   
 [Text]
-Position=45,281,90,313
+Position=48,331,93,363
 Text=HC4
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
@@ -3667,7 +3812,7 @@ Color=4210688
   
 [Field]
 Name=HC5
-Position=125,327,162,361
+Position=128,377,165,411
 Item=HC5,MICS7HH
 UpperCase=Yes
 FieldLabelType=DictionaryName
@@ -3676,7 +3821,7 @@ Keyboard=1033
 Form=5
   
 [Text]
-Position=45,331,90,363
+Position=48,381,93,413
 Text=HC5
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
@@ -3684,7 +3829,7 @@ Color=4210688
   
 [Field]
 Name=HC6
-Position=293,85,330,119
+Position=131,423,168,457
 Item=HC6,MICS7HH
 UpperCase=Yes
 FieldLabelType=DictionaryName
@@ -3693,7 +3838,7 @@ Keyboard=1033
 Form=5
   
 [Text]
-Position=215,84,260,116
+Position=53,422,98,454
 Text=HC6
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
@@ -3701,7 +3846,7 @@ Color=4210688
   
 [Field]
 Name=HC7A
-Position=293,134,312,168
+Position=131,472,150,506
 Item=HC7A,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
@@ -3709,7 +3854,7 @@ Keyboard=1033
 Form=5
   
 [Text]
-Position=215,134,275,166
+Position=53,472,113,504
 Text=HC7A
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
@@ -3717,7 +3862,7 @@ Color=4210688
   
 [Field]
 Name=HC7B
-Position=293,183,312,217
+Position=131,521,150,555
 Item=HC7B,MICS7HH
 UpperCase=Yes
 FieldLabelType=DictionaryName
@@ -3726,7 +3871,7 @@ Keyboard=1033
 Form=5
   
 [Text]
-Position=215,184,275,216
+Position=53,522,113,554
 Text=HC7B
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
@@ -3734,24 +3879,72 @@ Color=4210688
   
 [Field]
 Name=HC7I
-Position=293,232,312,266
+Position=131,570,150,604
 Item=HC7I,MICS7HH
 UpperCase=Yes
-FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
 Form=5
   
 [Text]
-Position=215,234,275,266
+Position=54,572,114,604
 Text=HC7C
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
  
   
 [Field]
+Name=HC7D
+Position=300,81,319,115
+Item=HC7D,MICS7HH
+DataCaptureType=RadioButton
+Form=5
+  
+  
+[Field]
+Name=HC7E
+Position=298,127,317,161
+Item=HC7E,MICS7HH
+DataCaptureType=RadioButton
+Form=5
+  
+  
+[Field]
+Name=HC7F
+Position=300,177,319,211
+Item=HC7F,MICS7HH
+DataCaptureType=RadioButton
+Form=5
+  
+  
+[Field]
+Name=HC7G
+Position=302,227,321,261
+Item=HC7G,MICS7HH
+DataCaptureType=RadioButton
+Form=5
+  
+  
+[Field]
+Name=HC7H
+Position=301,271,320,305
+Item=HC7H,MICS7HH
+DataCaptureType=RadioButton
+Form=5
+  
+  
+[Field]
+Name=HC7I000
+Position=301,318,320,352
+Item=HC7I,MICS7HH
+Mirror=Yes
+DataCaptureType=TextBox
+Form=5
+  
+  
+[Field]
 Name=HC8
-Position=293,282,312,316
+Position=301,375,320,409
 Item=HC8,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
@@ -3759,7 +3952,7 @@ Keyboard=1033
 Form=5
   
 [Text]
-Position=215,285,260,317
+Position=222,378,267,410
 Text=HC8
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
@@ -3767,7 +3960,7 @@ Color=4210688
   
 [Field]
 Name=HC8A
-Position=293,332,474,366
+Position=301,425,482,459
 Item=HC8A,MICS7HH
 UpperCase=Yes
 FieldLabelType=DictionaryName
@@ -3776,7 +3969,7 @@ Keyboard=1033
 Form=5
   
 [Text]
-Position=215,336,275,368
+Position=223,429,283,461
 Text=HC8A
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
@@ -3784,13 +3977,13 @@ Color=4210688
   
 [Field]
 Name=HC8B
-Position=293,381,330,415
+Position=301,474,338,508
 Item=HC8B,MICS7HH
 DataCaptureType=RadioButton
 Form=5
   
 [Text]
-Position=215,384,275,416
+Position=223,477,283,509
 Text=HC8B
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
@@ -3831,21 +4024,84 @@ Color=4210688
  
   
 [Field]
-Name=HC9M
-Position=460,169,479,203
-Item=HC9M,MICS7HH
-UpperCase=Yes
-FieldLabelType=DictionaryName
+Name=HC9C
+Position=461,173,480,207
+Item=HC9C,MICS7HH
 DataCaptureType=RadioButton
-Keyboard=1033
 Form=5
   
-[Text]
-Position=380,170,440,202
-Text=HC9C
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
+  
+[Field]
+Name=HC9D
+Position=461,219,480,253
+Item=HC9D,MICS7HH
+DataCaptureType=RadioButton
+Form=5
+  
+  
+[Field]
+Name=HC9E
+Position=462,264,481,298
+Item=HC9E,MICS7HH
+DataCaptureType=RadioButton
+Form=5
+  
+  
+[Field]
+Name=HC9G
+Position=462,308,481,342
+Item=HC9G,MICS7HH
+DataCaptureType=RadioButton
+Form=5
+  
+  
+[Field]
+Name=HC9H
+Position=461,349,480,383
+Item=HC9H,MICS7HH
+DataCaptureType=RadioButton
+Form=5
+  
+  
+[Field]
+Name=HC9I
+Position=461,389,480,423
+Item=HC9I,MICS7HH
+DataCaptureType=RadioButton
+Form=5
+  
+  
+[Field]
+Name=HC9J
+Position=462,465,481,499
+Item=HC9J,MICS7HH
+DataCaptureType=RadioButton
+Form=5
+  
+  
+[Field]
+Name=HC9K
+Position=463,507,482,541
+Item=HC9K,MICS7HH
+DataCaptureType=RadioButton
+Form=5
+  
+  
+[Field]
+Name=HC9L
+Position=464,548,483,582
+Item=HC9L,MICS7HH
+DataCaptureType=RadioButton
+Form=5
+  
+  
+[Field]
+Name=HC9M
+Position=466,598,485,632
+Item=HC9M,MICS7HH
+DataCaptureType=RadioButton
+Form=5
+  
   
 [Field]
 Name=HC10A
@@ -4238,7 +4494,7 @@ Color=4210688
   
 [Field]
 Name=HC18I
-Position=936,491,973,525
+Position=938,530,975,564
 Item=HC18I,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=NumberPad
@@ -4246,8 +4502,8 @@ Keyboard=1033
 Form=5
   
 [Text]
-Position=843,494,918,526
-Text=HC18H
+Position=845,533,920,565
+Text=HC18I
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
  
@@ -4284,6 +4540,14 @@ Text=HC20
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
  
+  
+[Field]
+Name=HC18H1
+Position=938,486,975,520
+Item=HC18H1,MICS7HH
+DataCaptureType=TextBox
+Form=5
+  
 [EndGroup]
   
 [Group]
