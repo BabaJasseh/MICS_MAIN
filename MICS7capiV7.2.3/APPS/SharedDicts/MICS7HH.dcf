@@ -123,7 +123,7 @@ Name=HH5Y_VST
 Value=2025:2028
 
 [Item]
-Label=Location
+Label=Area
 Name=HH6
 Start=30
 Len=1
@@ -131,13 +131,13 @@ DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Location
+Label=Area
 Name=HH6_VST
 Value=1;URBAN
 Value=2;RURAL
 
 [Item]
-Label=Region
+Label=LGA
 Name=HH7
 Start=31
 Len=1
@@ -145,13 +145,16 @@ DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Region
+Label=LGA
 Name=HH7_VST
-Value=1;REGION 1
-Value=2;REGION 2
-Value=3;REGION 3
-Value=4;REGION 4
-Value=5;REGION 5
+Value=1;BANJUL
+Value=2;KANIFING
+Value=3;BRIKAMA
+Value=4;MANSAKONKO
+Value=5;KEREWAN
+Value=6;KUNTAUR
+Value=7;JANJANBUREH
+Value=8;BASSE
 
 [Item]
 Label=HH selected for Questionnaire for Men
@@ -1108,8 +1111,8 @@ ZeroFill=Yes
 Label=Where does natural mother live
 Name=HL15_VST
 Value=1;ABROAD
-Value=2;IN ANOTHER HOUSEHOLD IN THE SAME REGION
-Value=3;IN ANOTHER HOUSEHOLD IN ANOTHER REGION
+Value=2;IN ANOTHER HOUSEHOLD IN THE SAME LGA
+Value=3;IN ANOTHER HOUSEHOLD IN ANOTHER LGA
 Value=4;INSTITUTION IN THIS COUNTRY
 Value=8;DK
 Value=9;NO RESPONSE
@@ -1197,7 +1200,7 @@ Name=MODED
 RecordTypeValue='0ED'
 Required=No
 MaxRecords=50
-RecordLen=66
+RecordLen=56
 
 [Item]
 Label=Line number
@@ -1250,7 +1253,7 @@ DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Ever attended school or any Early Childhood Education programme
+Label=Ever attended school or any Early Childhood Development programme
 Name=ED4_VST
 Value=1;YES
 Value=2;NO
@@ -1267,13 +1270,14 @@ ZeroFill=Yes
 [ValueSet]
 Label=Highest level of education attended
 Name=ED5A_VST
-Value=0;EARLY CHILDHOOD EDUCATION
-Value=1;PRIMARY
-Value=2;LOWER SECONDARY
-Value=3;UPPER SECONDARY
-Value=4;HIGHER
+Value=0;ECD
+Value=1;LOWER BASIC EDUCATION
+Value=2;UPPER BASIC EDUCATION
+Value=3;SENIOR SECONDARY EDUCATION
+Value=4;VOCATIONAL
+Value=5;DIPLOMA
+Value=6;HIGHER
 Value=8;DK
-Value=9;NO RESPONSE
 
 [Item]
 Label=Highest grade attended at that level
@@ -1368,13 +1372,14 @@ ZeroFill=Yes
 [ValueSet]
 Label=Level of education attended during current school year
 Name=ED10A_VST
-Value=0;EARLY CHILDHOOD EDUCATION
-Value=1;PRIMARY
-Value=2;LOWER SECONDARY
-Value=3;UPPER SECONDARY
-Value=4;HIGHER
+Value=0;ECD
+Value=1;LOWER BASIC EDUCATION
+Value=2;UPPER BASIC EDUCATION
+Value=3;SENIOR SECONDARY EDUCATION
+Value=4;VOCATIONAL
+Value=5;DIPLOMA
+Value=6;HIGHER
 Value=8;DK
-Value=9;NO RESPONSE
 
 [Item]
 Label=Grade attended at that level during current school year
@@ -1399,43 +1404,9 @@ Value=98;DK
 Value=99;NO RESPONSE
 
 [Item]
-Label=Attended public school during current school year
-Name=ED11
-Start=52
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Attended public school during current school year
-Name=ED11_VS1
-Value=1;GOVT./ PUBLIC
-Value=2;RELIGIOUS/ FAITH ORG.
-Value=3;PRIVATE
-Value=6;OTHER
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=School tuition support in the current school year
-Name=ED12
-Start=53
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=School tuition support in the current school year
-Name=ED12_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
 Label=School tuition support was sufficient for paying the costs
 Name=ED12A
-Start=54
+Start=52
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -1449,147 +1420,9 @@ Value=8;DK
 Value=9;NO RESPONSE
 
 [Item]
-Label=Tuition support provided
-Name=ED13
-Start=55
-Len=6
-DataType=Alpha
-
-[ValueSet]
-Label=Tuition support provided
-Name=ED13_VS1
-Value='A     ';GOVT./ PUBLIC
-Value='B     ';RELIGIOUS/ FAITH ORG.
-Value='C     ';PRIVATE
-Value='X     ';OTHER
-Value='Z     ';DK
-Value='?     ';NO RESPONSE
-
-[Item]
-Label=Tuition support provided: Govt./public
-Name=ED13A
-Start=55
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Tuition support provided: Govt./public
-Name=ED13A_VS1
-Value='A';GOVT./ PUBLIC
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Tuition support provided: Religious/faith org.
-Name=ED13B
-Start=56
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Tuition support provided: Religious/faith org.
-Name=ED13B_VS1
-Value='B';RELIGIOUS/ FAITH ORG.
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Tuition support provided: Private
-Name=ED13C
-Start=57
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Tuition support provided: Private
-Name=ED13C_VS1
-Value='C';PRIVATE
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Tuition support provided: Other
-Name=ED13X
-Start=58
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Tuition support provided: Other
-Name=ED13X_VS1
-Value='X';OTHER
-Value='?';NO RESPONSE
-
-[Item]
-Label=Tuition support provided: DK
-Name=ED13Z
-Start=59
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Tuition support provided: DK
-Name=ED13Z_VS1
-Value='Z';DK
-Value='?';NO RESPONSE
-
-[Item]
-Label=Tuition support provided: No response
-Name=ED13NR
-Start=60
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Tuition support provided: No response
-Name=ED13NR_VS1
-Value='?';NO RESPONSE
-Value=' '
-
-[Item]
-Label=Material support in the current school year
-Name=ED14
-Start=61
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Material support in the current school year
-Name=ED14_VS1
-Value=1;YES, CASH ONLY
-Value=2;YES, IN KIND ONLY
-Value=3;YES, BOTH
-Value=4;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=Material support was sufficient
-Name=ED14A
-Start=62
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Material support was sufficient
-Name=ED14A_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
 Label=Attended school during previous school year
 Name=ED15
-Start=63
+Start=53
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -1605,7 +1438,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Level of education attended during previous school year
 Name=ED16A
-Start=64
+Start=54
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -1624,7 +1457,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Grade attended at that level during previous school year
 Name=ED16B
-Start=65
+Start=55
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -1648,7 +1481,7 @@ Label=Household Characteristics
 Name=MODHC
 RecordTypeValue='0HC'
 Required=No
-RecordLen=80
+RecordLen=84
 
 [Item]
 Label=Religion of household head
@@ -1661,51 +1494,85 @@ ZeroFill=Yes
 [ValueSet]
 Label=Religion of household head
 Name=HC1A_VS1
-Value=1;RELIGION 1
-Value=2;RELIGION 2
-Value=3;RELIGION 3
+Value=1;ISLAM
+Value=2;CHRISTIANITY
+Value=3;TRADITIONAL
 Value=6;OTHER RELIGION
 Value=7;NO RELIGION
-Value=9;NO RESPONSE
+
+[Item]
+Label=Nationality of household head
+Name=HC1A1
+Start=17
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Nationality of household head
+Name=HC1A1_VS1
+Value=1;Gambian
+Value=2;Senegalese
+Value=3;guinean
+Value=4;bissau-guinean
+Value=5;malian
+Value=6;nigerian
+Value=7;sierra leonean
+Value=8;mauritanian
+Value=9;ghanaian
+Value=10;liberian
+Value=11;other west african
+Value=12;other african
+Value=13;non-african
 
 [Item]
 Label=Language of household head
 Name=HC1B
-Start=17
-Len=1
+Start=19
+Len=2
 DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
 Label=Language of household head
 Name=HC1B_VS1
-Value=1;LANGUAGE 1
-Value=2;LANGUAGE 2
-Value=3;LANGUAGE 3
-Value=6;OTHER LANGUAGE
-Value=9;NO RESPONSE
+Value=1;MANDINKA/jahanka
+Value=2;WOLLOF
+Value=3;FULA/tukulor/lorobo
+Value=4;JOLA/karoninka
+Value=5;SARAHULE
+Value=6;SERERE
+Value=7;MANJAGO
+Value=8;KRIO/ AKU MARABOUT
+Value=9;BAMBARA
+Value=96;OTHER LANGUAGE
 
 [Item]
 Label=Ethnic group of household head
 Name=HC2
-Start=18
-Len=1
+Start=21
+Len=2
 DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
 Label=Ethnic group of household head
 Name=HC2_VST
-Value=1;ETHNIC GROUP 1
-Value=2;ETHNIC GROUP 2
-Value=3;ETHNIC GROUP 3
-Value=6;OTHER
-Value=9;NO RESPONSE
+Value=1;MANDINKA/JAHANKA
+Value=2;WOLLOF
+Value=3;FULA/TUKULOR/LOROBO
+Value=4;JOLA/KARONINKA
+Value=5;SARAHULE
+Value=6;SERERE
+Value=7;MANJAGO
+Value=8;KRIO/ AKU MARABOUT
+Value=9;BAMBARA
+Value=96;Other
 
 [Item]
 Label=Number of rooms used for sleeping
 Name=HC3
-Start=19
+Start=23
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -1719,7 +1586,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Main material of floor
 Name=HC4
-Start=21
+Start=25
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -1730,9 +1597,8 @@ Name=HC4_VST
 Value=11;NATURAL FLOOR: EARTH/ SAND
 Value=12;NATURAL FLOOR: DUNG
 Value=21;RUDIMENTARY FLOOR: WOOD PLANKS
-Value=22;RUDIMENTARY FLOOR: PALM / BAMBOO
 Value=31;FINISHED FLOOR: PARQUET OR POLISHED WOOD
-Value=32;FINISHED FLOOR: VINYL OR ASPHALT STRIPS
+Value=32;FINISHED FLOOR: LINOLEUM/VINYL("TAPEH") OR ASPHALT STRIPS
 Value=33;FINISHED FLOOR: CERAMIC TILES
 Value=34;FINISHED FLOOR: CEMENT
 Value=35;FINISHED FLOOR: CARPET
@@ -1741,7 +1607,7 @@ Value=96;OTHER
 [Item]
 Label=Main material of roof
 Name=HC5
-Start=23
+Start=27
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -1751,23 +1617,18 @@ Label=Main material of roof
 Name=HC5_VST
 Value=11;NO ROOF
 Value=12;NATURAL ROOFING: THATCH / PALM LEAF
-Value=13;NATURAL ROOFING: SOD
-Value=21;RUDIMENTARY ROOFING: RUSTIC MAT
 Value=22;RUDIMENTARY ROOFING: PALM / BAMBOO
-Value=23;RUDIMENTARY ROOFING: WOOD PLANKS
-Value=24;RUDIMENTARY ROOFING: CARDBOARD
 Value=31;FINISHED ROOFING: METAL / TIN
-Value=32;FINISHED ROOFING: WOOD
 Value=33;FINISHED ROOFING: CALAMINE / CEMENT FIBRE
 Value=34;FINISHED ROOFING: CERAMIC TILES
 Value=35;FINISHED ROOFING: CEMENT
-Value=36;FINISHED ROOFING: ROOFING SHINGLES
+Value=36;FINISHED ROOFING: ROOFING SHINGLES (DECRA)
 Value=96;OTHER
 
 [Item]
 Label=Main material of exterior wall
 Name=HC6
-Start=25
+Start=29
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -1780,22 +1641,19 @@ Value=12;NATURAL WALLS: CANE / PALM / TRUNKS
 Value=13;NATURAL WALLS: DIRT
 Value=21;RUDIMENTARY WALLS: BAMBOO WITH MUD
 Value=22;RUDIMENTARY WALLS: STONE WITH MUD
-Value=23;RUDIMENTARY WALLS: UNCOVERED ADOBE
 Value=24;RUDIMENTARY WALLS: PLYWOOD
-Value=25;RUDIMENTARY WALLS: CARDBOARD
 Value=26;RUDIMENTARY WALLS: REUSED WOOD
 Value=31;FINISHED WALLS: CEMENT
 Value=32;FINISHED WALLS: STONE WITH LIME / CEMENT
 Value=33;FINISHED WALLS: BRICKS
 Value=34;FINISHED WALLS: CEMENT BLOCKS
-Value=35;FINISHED WALLS: COVERED ADOBE
 Value=36;FINISHED WALLS: WOOD PLANKS / SHINGLES
 Value=96;OTHER
 
 [Item]
 Label=Household have: Fixed telephone line
 Name=HC7A
-Start=27
+Start=31
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -1810,7 +1668,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Household have: Radio
 Name=HC7B
-Start=28
+Start=32
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -1825,7 +1683,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Household have: Country Specific Items That Do Not Run On Electricity
 Name=HC7C
-Start=29
+Start=33
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -1840,7 +1698,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Household have electricity
 Name=HC8
-Start=30
+Start=34
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -1855,7 +1713,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Source of electricity for the household
 Name=HC8A
-Start=31
+Start=35
 Len=10
 DataType=Alpha
 
@@ -1876,7 +1734,7 @@ Value='?         ';NO RESPONSE
 [Item]
 Label=Source of electricity for the household: National / Interconnected grid
 Name=HC8AA
-Start=31
+Start=35
 Len=1
 ItemType=SubItem
 DataType=Alpha
@@ -1891,7 +1749,7 @@ Value='?';NO RESPONSE
 [Item]
 Label=Source of electricity for the household: Local mini grid
 Name=HC8AB
-Start=32
+Start=36
 Len=1
 ItemType=SubItem
 DataType=Alpha
@@ -1906,7 +1764,7 @@ Value='?';NO RESPONSE
 [Item]
 Label=Source of electricity for the household: Solar home system
 Name=HC8AC
-Start=33
+Start=37
 Len=1
 ItemType=SubItem
 DataType=Alpha
@@ -1921,7 +1779,7 @@ Value='?';NO RESPONSE
 [Item]
 Label=Source of electricity for the household: Solar lantern
 Name=HC8AD
-Start=34
+Start=38
 Len=1
 ItemType=SubItem
 DataType=Alpha
@@ -1936,7 +1794,7 @@ Value='?';NO RESPONSE
 [Item]
 Label=Source of electricity for the household: Electric generator
 Name=HC8AE
-Start=35
+Start=39
 Len=1
 ItemType=SubItem
 DataType=Alpha
@@ -1951,7 +1809,7 @@ Value='?';NO RESPONSE
 [Item]
 Label=Source of electricity for the household: Rechargeable battery
 Name=HC8AF
-Start=36
+Start=40
 Len=1
 ItemType=SubItem
 DataType=Alpha
@@ -1966,7 +1824,7 @@ Value='?';NO RESPONSE
 [Item]
 Label=Source of electricity for the household: Dry cell battery / torch
 Name=HC8AG
-Start=37
+Start=41
 Len=1
 ItemType=SubItem
 DataType=Alpha
@@ -1981,7 +1839,7 @@ Value='?';NO RESPONSE
 [Item]
 Label=Source of electricity for the household: Other
 Name=HC8AX
-Start=38
+Start=42
 Len=1
 ItemType=SubItem
 DataType=Alpha
@@ -1996,7 +1854,7 @@ Value='?';NO RESPONSE
 [Item]
 Label=Source of electricity for the household: DK
 Name=HC8AZ
-Start=39
+Start=43
 Len=1
 ItemType=SubItem
 DataType=Alpha
@@ -2011,7 +1869,7 @@ Value='?';NO RESPONSE
 [Item]
 Label=Source of electricity for the household: No response
 Name=HC8ANR
-Start=40
+Start=44
 Len=1
 ItemType=SubItem
 DataType=Alpha
@@ -2025,7 +1883,7 @@ Value='?';NO RESPONSE
 [Item]
 Label=Most used source of electricity
 Name=HC8B
-Start=41
+Start=45
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2047,7 +1905,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Household have: Television
 Name=HC9A
-Start=43
+Start=47
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2062,7 +1920,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Household have: Refrigerator
 Name=HC9B
-Start=44
+Start=48
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2077,7 +1935,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Household have: Country Specific Items That Run On Electricity
 Name=HC9C
-Start=45
+Start=49
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2092,7 +1950,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Any member of household own: Wristwatch
 Name=HC10A
-Start=46
+Start=50
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2107,7 +1965,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Any member of household own: Bicycle
 Name=HC10B
-Start=47
+Start=51
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2122,7 +1980,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Any member of household own: Motorcycle or scooter
 Name=HC10C
-Start=48
+Start=52
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2137,7 +1995,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Any member of household own: Animal-drawn cart
 Name=HC10D
-Start=49
+Start=53
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2152,7 +2010,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Any member of household own: Car, truck or van
 Name=HC10E
-Start=50
+Start=54
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2167,7 +2025,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Any member of household own: Boat with motor
 Name=HC10F
-Start=51
+Start=55
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2182,7 +2040,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Any member of household own: Country Specific Items
 Name=HC10G
-Start=52
+Start=56
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2197,7 +2055,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Any member have a computer
 Name=HC11
-Start=53
+Start=57
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2212,7 +2070,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Any member have a mobile telephone
 Name=HC12
-Start=54
+Start=58
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2227,7 +2085,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Any member have a smart telephone
 Name=HC12A
-Start=55
+Start=59
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2242,7 +2100,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Internet access at home
 Name=HC13
-Start=56
+Start=60
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2257,7 +2115,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Internet access via smart phone
 Name=HC13B
-Start=57
+Start=61
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2273,7 +2131,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Household owns the dwelling
 Name=HC14
-Start=58
+Start=62
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2289,7 +2147,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Any household member own land that can be used for agriculture
 Name=HC15
-Start=59
+Start=63
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2304,7 +2162,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Hectares of agricultural land members of household owns
 Name=HC16
-Start=60
+Start=64
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2320,7 +2178,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Household own any animals
 Name=HC17
-Start=62
+Start=66
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2335,7 +2193,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Milk cows or bulls
 Name=HC18A
-Start=63
+Start=67
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2351,7 +2209,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Other cattle
 Name=HC18B
-Start=65
+Start=69
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2367,7 +2225,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Horses, donkeys or mules
 Name=HC18C
-Start=67
+Start=71
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2383,7 +2241,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Goats
 Name=HC18D
-Start=69
+Start=73
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2399,7 +2257,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Sheep
 Name=HC18E
-Start=71
+Start=75
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2415,7 +2273,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Chickens
 Name=HC18F
-Start=73
+Start=77
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2431,7 +2289,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Pigs
 Name=HC18G
-Start=75
+Start=79
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2447,7 +2305,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Country Specific Additions
 Name=HC18H
-Start=77
+Start=81
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2463,7 +2321,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Any household member own bank account
 Name=HC19
-Start=79
+Start=83
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2478,7 +2336,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Any household member makes financial transactions via mobile phone
 Name=HC20
-Start=80
+Start=84
 Len=1
 DataType=Numeric
 ZeroFill=Yes

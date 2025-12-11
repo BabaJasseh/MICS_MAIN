@@ -275,7 +275,7 @@ Item=HC19
 Item=HC9B
 Item=HC9C
 Item=HC10G
-Item=HC1A
+Item=HC1A1
 Item=HC1B
 Item=HC2
 Item=HC11
@@ -3468,52 +3468,6 @@ Font=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Consolas
 [EndColumn]
   
 [Column]
-Width=68
-  
-[HeaderText]
-Position=0,0,68,40
-Text=ED11
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-[Field]
-Name=ED11
-Position=20,0,39,34
-Item=ED11,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-  
-[Text]
-Text=ED11
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
- 
-[EndColumn]
-  
-[Column]
-Width=68
-  
-[HeaderText]
-Position=0,0,68,40
-Text=ED12
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-[Field]
-Name=ED12
-Position=24,0,43,34
-Item=ED12,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-  
-[Text]
-Text=ED12
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
- 
-[EndColumn]
-  
-[Column]
 Width=83
   
 [HeaderText]
@@ -3532,79 +3486,6 @@ Keyboard=1033
   
 [Text]
 Text=ED12A
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
- 
-[EndColumn]
-  
-[Column]
-Width=117
-  
-[HeaderText]
-Position=24,0,92,40
-Text=ED13
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-HorizontalAlignment=Center
-Color=4210688
- 
-[Field]
-Name=ED13
-Position=0,0,109,34
-Item=ED13,MICS7HH
-UpperCase=Yes
-DataCaptureType=CheckBox
-Keyboard=1033
-  
-[Text]
-Position=49,0,117,40
-Text=ED13
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-HorizontalAlignment=Center
-Color=4210688
- 
-[EndColumn]
-  
-[Column]
-Width=68
-  
-[HeaderText]
-Position=0,0,68,40
-Text=ED14
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-[Field]
-Name=ED14
-Position=21,0,40,34
-Item=ED14,MICS7HH
-DataCaptureType=RadioButton
-Keyboard=1033
-  
-[Text]
-Text=ED14
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-[EndColumn]
-  
-[Column]
-Width=83
-  
-[HeaderText]
-Position=0,0,83,40
-Text=ED14A
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-[Field]
-Name=ED14A
-Position=26,0,45,34
-Item=ED14A,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-  
-[Text]
-Text=ED14A
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
  
 [EndColumn]
@@ -3686,9 +3567,9 @@ Form=5
 Max=1
   
 [Field]
-Name=HC1A
+Name=HC1A1
 Position=124,85,143,119
-Item=HC1A,MICS7HH
+Item=HC1A1,MICS7HH
 UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
@@ -3704,7 +3585,7 @@ Color=4210688
   
 [Field]
 Name=HC1B
-Position=125,131,144,165
+Position=125,131,162,165
 Item=HC1B,MICS7HH
 UpperCase=Yes
 FieldLabelType=DictionaryName

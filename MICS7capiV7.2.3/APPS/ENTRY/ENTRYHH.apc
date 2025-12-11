@@ -604,6 +604,7 @@ postproc
 
 PROC FORMHX
 preproc
+// preproc
 if visualvalue(HHHLTSTMPS) = notappl then
    HHHLTSTMPS = timestamp (); 
    endif; 
@@ -1092,40 +1093,6 @@ postproc;
 		reenter
 	endif;
 
-
-PROC ED12
-if $ <> 1 then
-	skip to ED14
-endif;  
-  
-PROC ED13
-alphavar = $;
-if alphachk("ABCXZ?") then
-	errmsg(9998);
-	reenter
-else
-	$ = alphavar;
-endif;
-{ Check "Don't Know" is only response }
-if pos("Z",$) & alphsize > 1 then
-	errmsg(9996);
-	reenter
-endif;
-{ Check "Missing" is only response }
-if pos("?",$) & alphsize > 1 then
-	errmsg(9995);
-	reenter
-endif;
-{ Display the note entry dialog box for recording "Other" answer }
-if pos("X",$) and !inadvance() then
-	string other = editnote();
-	ensureNotBlank(other);
-endif;
-
-PROC ED14
-if $ > 3 then
-	skip to ED15;
-endif;
 PROC ED15
 if $ <> 1 then
 	skip to next ED1
