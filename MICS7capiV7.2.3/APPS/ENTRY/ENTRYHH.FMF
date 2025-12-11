@@ -15,7 +15,7 @@ Name=FORM000
 Label=Household Information Panel
 QuestionTextHeight=222
 Level=1
-Size=1577,918
+Size=1527,923
 Color=15263999
   
 Item=HH1
@@ -37,6 +37,7 @@ Item=HH11M
 Item=HHADDR
 Item=HH10
 Item=HH11C
+Item=HH7A
   
 Box=64,49,78,79,Thick
 Box=44,54,60,79,Thick
@@ -252,7 +253,7 @@ Item=HC4
 Item=HC5
 Item=HC6
 Item=HC7B
-Item=HC7C
+Item=HC7I
 Item=HC8A
 Item=HC9A
 Item=HC10A
@@ -273,7 +274,7 @@ Item=HC18F
 Item=HC18G
 Item=HC19
 Item=HC9B
-Item=HC9C
+Item=HC9M
 Item=HC10G
 Item=HC1A1
 Item=HC1B
@@ -287,7 +288,7 @@ Item=HC13B
 Item=HC20
 Item=HC7A
 Item=HC8
-Item=HC18H
+Item=HC18I
 Item=HC8B
   
 Box=41,56,1120,57,Etched
@@ -1035,10 +1036,23 @@ Keyboard=1033
 Form=1
   
 [Text]
-Position=39,420,204,452
-Text=HH7. Region
+Position=39,420,429,452
+Text=HH7. Local Government Area
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
 Color=4210688
+ 
+  
+[Field]
+Name=HH7A
+Position=1186,403,1205,437
+Item=HH7A,MICS7HH
+DataCaptureType=RadioButton
+Form=1
+  
+[Text]
+Position=707,407,1022,439
+Text=HH7A. District number
+Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
  
   
 [Field]
@@ -3568,7 +3582,7 @@ Max=1
   
 [Field]
 Name=HC1A1
-Position=124,85,143,119
+Position=124,85,161,119
 Item=HC1A1,MICS7HH
 UpperCase=Yes
 FieldLabelType=DictionaryName
@@ -3577,8 +3591,8 @@ Keyboard=1033
 Form=5
   
 [Text]
-Position=45,84,105,116
-Text=HC1A
+Position=45,84,120,116
+Text=HC1A1
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
  
@@ -3602,7 +3616,7 @@ Color=4210688
   
 [Field]
 Name=HC2
-Position=125,180,144,214
+Position=125,180,162,214
 Item=HC2,MICS7HH
 UpperCase=Yes
 FieldLabelType=DictionaryName
@@ -3719,9 +3733,9 @@ Color=4210688
  
   
 [Field]
-Name=HC7C
+Name=HC7I
 Position=293,232,312,266
-Item=HC7C,MICS7HH
+Item=HC7I,MICS7HH
 UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
@@ -3817,9 +3831,9 @@ Color=4210688
  
   
 [Field]
-Name=HC9C
+Name=HC9M
 Position=460,169,479,203
-Item=HC9C,MICS7HH
+Item=HC9M,MICS7HH
 UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
@@ -4223,9 +4237,9 @@ Color=4210688
  
   
 [Field]
-Name=HC18H
+Name=HC18I
 Position=936,491,973,525
-Item=HC18H,MICS7HH
+Item=HC18I,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=NumberPad
 Keyboard=1033

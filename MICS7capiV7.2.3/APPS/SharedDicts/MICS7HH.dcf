@@ -54,7 +54,7 @@ ZeroFill=Yes
 Label=Household Information Panel
 Name=MODHH
 RecordTypeValue='0HH'
-RecordLen=250
+RecordLen=251
 
 [Item]
 Label=Interviewer number
@@ -157,9 +157,28 @@ Value=7;JANJANBUREH
 Value=8;BASSE
 
 [Item]
+Label=District number
+Name=HH7A
+Start=32
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=District number
+Name=HH7A_VS1
+Value=1;BANJUL
+Value=2;KANIFING
+Value=3;BRIKAMA
+Value=4;MANSAKONKO
+Value=5;KEREWAN
+Value=6;KUNTAUR
+Value=7;JANJANBUREH
+Value=8;BASSE
+
+[Item]
 Label=HH selected for Questionnaire for Men
 Name=HH8
-Start=32
+Start=33
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -173,7 +192,7 @@ Value=2;NO
 [Item]
 Label=HH selected for Water Quality Testing
 Name=HH9
-Start=33
+Start=34
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -187,7 +206,7 @@ Value=2;NO
 [Item]
 Label=HH selected for Blank Testing
 Name=HH10
-Start=34
+Start=35
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -201,14 +220,14 @@ Value=2;NO
 [Item]
 Label=Name of household head
 Name=HHNAME
-Start=35
+Start=36
 Len=20
 DataType=Alpha
 
 [Item]
 Label=Time of start of interview
 Name=HH11
-Start=55
+Start=56
 Len=4
 DataType=Numeric
 ZeroFill=Yes
@@ -216,7 +235,7 @@ ZeroFill=Yes
 [Item]
 Label=Start of interview - Hour
 Name=HH11H
-Start=55
+Start=56
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -230,7 +249,7 @@ Value=6:23
 [Item]
 Label=Start of interview - Minutes
 Name=HH11M
-Start=57
+Start=58
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -244,7 +263,7 @@ Value=0:59
 [Item]
 Label=Respondent age confirmation
 Name=HH11C
-Start=59
+Start=60
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -257,7 +276,7 @@ Value=1;CONTINUE
 [Item]
 Label=Consent
 Name=HH12
-Start=60
+Start=61
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -271,7 +290,7 @@ Value=2;NO / NOT ASKED
 [Item]
 Label=Result of HH interview
 Name=HH46
-Start=61
+Start=62
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -291,7 +310,7 @@ Value=96;OTHER
 [Item]
 Label=Time of end of interview
 Name=HH13
-Start=63
+Start=64
 Len=4
 DataType=Numeric
 ZeroFill=Yes
@@ -299,7 +318,7 @@ ZeroFill=Yes
 [Item]
 Label=End of interview - Hour
 Name=HH13H
-Start=63
+Start=64
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -313,7 +332,7 @@ Value=6:23
 [Item]
 Label=End of interview - Minutes
 Name=HH13M
-Start=65
+Start=66
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -327,7 +346,7 @@ Value=0:59
 [Item]
 Label=Language of the Questionnaire
 Name=HH14
-Start=67
+Start=68
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -342,7 +361,7 @@ Value=3;LANGUAGE 3
 [Item]
 Label=Language of the Interview
 Name=HH15
-Start=68
+Start=69
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -358,7 +377,7 @@ Value=6;OTHER LANGUAGE
 [Item]
 Label=Native language of the Respondent
 Name=HH16
-Start=69
+Start=70
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -374,7 +393,7 @@ Value=6;OTHER LANGUAGE
 [Item]
 Label=Translator used
 Name=HH17
-Start=70
+Start=71
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -389,7 +408,7 @@ Value=3;NO, NOT USED
 [Item]
 Label=Rank number of the selected child
 Name=HH26A
-Start=71
+Start=72
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -402,7 +421,7 @@ Value=1:8
 [Item]
 Label=Child line number
 Name=HH26B
-Start=72
+Start=73
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -416,7 +435,7 @@ Value=97;Inconsistent
 [Item]
 Label=Child's age
 Name=HH26C
-Start=74
+Start=75
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -424,7 +443,7 @@ ZeroFill=Yes
 [Item]
 Label=Rank number of the selected woman for the VW module
 Name=HH30HA
-Start=76
+Start=77
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -437,7 +456,7 @@ Value=1:8
 [Item]
 Label=Woman line number for the VW module
 Name=HH30HB
-Start=77
+Start=78
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -451,7 +470,7 @@ Value=97;Inconsistent
 [Item]
 Label=Woman's age (selected for the VW module)
 Name=HH30HC
-Start=79
+Start=80
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -459,7 +478,7 @@ ZeroFill=Yes
 [Item]
 Label=Roster to check the consent for interview girls 15-17
 Name=HH33X
-Start=81
+Start=82
 Len=1
 DataType=Numeric
 Occurrences=50
@@ -474,7 +493,7 @@ Value=2;NO, PERMISSION IS NOT GIVEN
 [Item]
 Label=Consent for interview girls 15-17
 Name=HH33
-Start=131
+Start=132
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -489,7 +508,7 @@ Value=3;NO for all girls age 15-17
 [Item]
 Label=Roster to check the consent for interview boys 15-17
 Name=HH39X
-Start=132
+Start=133
 Len=1
 DataType=Numeric
 Occurrences=50
@@ -504,7 +523,7 @@ Value=2;NO, PERMISSION IS NOT GIVEN
 [Item]
 Label=Consent for interview boys 15-17
 Name=HH39
-Start=182
+Start=183
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -519,7 +538,7 @@ Value=3;NO for all boys age 15-17
 [Item]
 Label=Consent for Water Quality Testing
 Name=HH44
-Start=183
+Start=184
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -533,7 +552,7 @@ Value=2;NO, PERMISSION IS NOT GIVEN
 [Item]
 Label=Respondent to HH questionnaire
 Name=HH47
-Start=184
+Start=185
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -546,7 +565,7 @@ Value=1:50
 [Item]
 Label=Number of HH members
 Name=HH48
-Start=186
+Start=187
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -559,7 +578,7 @@ Value=1:50
 [Item]
 Label=Number of women 15-49 years
 Name=HH49
-Start=188
+Start=189
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -572,7 +591,7 @@ Value=0:50
 [Item]
 Label=Number of woman's questionnaires completed
 Name=HH53
-Start=190
+Start=191
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -585,7 +604,7 @@ Value=0:50
 [Item]
 Label=Number of men 15-49 years [If household is selected for Questionnaire for Men]
 Name=HH50
-Start=192
+Start=193
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -598,7 +617,7 @@ Value=0:50
 [Item]
 Label=Number of man's questionnaires completed [If household is selected for Questionnaire for Men]
 Name=HH54
-Start=194
+Start=195
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -611,7 +630,7 @@ Value=0:50
 [Item]
 Label=Number of children under age 5
 Name=HH51
-Start=196
+Start=197
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -624,7 +643,7 @@ Value=0:50
 [Item]
 Label=Number of under-5 questionnaires completed
 Name=HH55
-Start=198
+Start=199
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -637,7 +656,7 @@ Value=0:50
 [Item]
 Label=Number of children age 5-17
 Name=HH52
-Start=200
+Start=201
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -650,7 +669,7 @@ Value=0:50
 [Item]
 Label=Number of 5-17 questionnaires completed
 Name=HH56
-Start=202
+Start=203
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -664,7 +683,7 @@ Value=1;ONE
 [Item]
 Label=Introduction HH Listing
 Name=INTROHL
-Start=204
+Start=205
 Len=1
 DataType=Alpha
 
@@ -676,7 +695,7 @@ Value=1;CONTINUE
 [Item]
 Label=Other household members
 Name=HHAUX
-Start=205
+Start=206
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -690,14 +709,14 @@ Value=2;NO
 [Item]
 Label=Household address
 Name=HHADDR
-Start=206
+Start=207
 Len=40
 DataType=Alpha
 
 [Item]
 Label=Water Quality prompt
 Name=HHWQ
-Start=246
+Start=247
 Len=1
 DataType=Alpha
 
@@ -709,7 +728,7 @@ Value=1;CONTINUE
 [Item]
 Label=Consent for phone survey
 Name=HH44BC
-Start=247
+Start=248
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -723,7 +742,7 @@ Value=2;NO
 [Item]
 Label=Have personal phone number or phone number for the household
 Name=HH44DE
-Start=248
+Start=249
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -737,7 +756,7 @@ Value=2;NO
 [Item]
 Label=Note on sharing phone number for the household
 Name=HH44F
-Start=249
+Start=250
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -750,7 +769,7 @@ Value=1;CONTINUE
 [Item]
 Label=Finish
 Name=HHFIN
-Start=250
+Start=251
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -899,6 +918,8 @@ Value=11;NIECE / NEPHEW
 Value=12;OTHER RELATIVE
 Value=13;ADOPTED / FOSTER / STEPCHILD
 Value=14;SERVANT (LIVE-IN)
+Value=15;CO-WIFE
+Value=16;GRANDPARENT   
 Value=96;OTHER (NOT RELATED)
 Value=98;DK
 
@@ -1174,8 +1195,8 @@ ZeroFill=Yes
 Label=Where does natural father live
 Name=HL19_VST
 Value=1;ABROAD
-Value=2;IN ANOTHER HOUSEHOLD IN THE SAME REGION
-Value=3;IN ANOTHER HOUSEHOLD IN ANOTHER REGION
+Value=2;IN ANOTHER HOUSEHOLD IN THE SAME LGA
+Value=3;IN ANOTHER HOUSEHOLD IN ANOTHER LGA
 Value=4;INSTITUTION IN THIS COUNTRY
 Value=8;DK
 Value=9;NO RESPONSE
@@ -1380,6 +1401,7 @@ Value=4;VOCATIONAL
 Value=5;DIPLOMA
 Value=6;HIGHER
 Value=8;DK
+Value=9;NO RESPONSE
 
 [Item]
 Label=Grade attended at that level during current school year
@@ -1446,11 +1468,13 @@ ZeroFill=Yes
 [ValueSet]
 Label=Level of education attended during previous school year
 Name=ED16A_VST
-Value=0;EARLY CHILDHOOD EDUCATION
-Value=1;PRIMARY
-Value=2;LOWER SECONDARY
-Value=3;UPPER SECONDARY
-Value=4;HIGHER
+Value=0;ECD
+Value=1;LOWER BASIC EDUCATION
+Value=2;UPPER BASIC EDUCATION
+Value=3;SENIOR SECONDARY EDUCATION 
+Value=4;VOCATIONAL
+Value=5;DIPLOMA
+Value=6;HIGHER
 Value=8;DK
 Value=9;NO RESPONSE
 
@@ -1481,7 +1505,7 @@ Label=Household Characteristics
 Name=MODHC
 RecordTypeValue='0HC'
 Required=No
-RecordLen=84
+RecordLen=101
 
 [Item]
 Label=Religion of household head
@@ -1511,19 +1535,19 @@ ZeroFill=Yes
 [ValueSet]
 Label=Nationality of household head
 Name=HC1A1_VS1
-Value=1;Gambian
-Value=2;Senegalese
-Value=3;guinean
-Value=4;bissau-guinean
-Value=5;malian
-Value=6;nigerian
-Value=7;sierra leonean
-Value=8;mauritanian
-Value=9;ghanaian
-Value=10;liberian
-Value=11;other west african
-Value=12;other african
-Value=13;non-african
+Value=1;GAMBIAN
+Value=2;SENEGALESE
+Value=3;GUINEAN
+Value=4;BISSAU-GUINEAN
+Value=5;MALIAN
+Value=6;NIGERIAN
+Value=7;SIERRA LEONEAN
+Value=8;MAURITANIAN
+Value=9;GHANAIAN
+Value=10;LIBERIAN
+Value=11;OTHER WEST AFRICAN
+Value=12;OTHER AFRICAN
+Value=13;NON-AFRICAN
 
 [Item]
 Label=Language of household head
@@ -1536,10 +1560,10 @@ ZeroFill=Yes
 [ValueSet]
 Label=Language of household head
 Name=HC1B_VS1
-Value=1;MANDINKA/jahanka
+Value=1;MANDINKA/JAHANKA
 Value=2;WOLLOF
-Value=3;FULA/tukulor/lorobo
-Value=4;JOLA/karoninka
+Value=3;FULA/TUKULOR/LOROBO
+Value=4;JOLA/KARONINKA
 Value=5;SARAHULE
 Value=6;SERERE
 Value=7;MANJAGO
@@ -1648,6 +1672,7 @@ Value=32;FINISHED WALLS: STONE WITH LIME / CEMENT
 Value=33;FINISHED WALLS: BRICKS
 Value=34;FINISHED WALLS: CEMENT BLOCKS
 Value=36;FINISHED WALLS: WOOD PLANKS / SHINGLES
+Value=37;FINISHED WALLS: BAMBOO WITH CEMENT
 Value=96;OTHER
 
 [Item]
@@ -1681,7 +1706,7 @@ Value=2;NO
 Value=9;NO RESPONSE
 
 [Item]
-Label=Household have: Country Specific Items That Do Not Run On Electricity
+Label=Household have: Bed
 Name=HC7C
 Start=33
 Len=1
@@ -1689,8 +1714,98 @@ DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Household have: Country Specific Items That Do Not Run On Electricity
+Label=Household have: Bed
 Name=HC7C_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have: Sofa
+Name=HC7D
+Start=34
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Sofa
+Name=HC7D_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have: Dining table
+Name=HC7E
+Start=35
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Dining table
+Name=HC7E_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have: Cupboard
+Name=HC7F
+Start=36
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Cupboard
+Name=HC7F_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have: Mattress
+Name=HC7G
+Start=37
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Mattress
+Name=HC7G_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have: Generator
+Name=HC7H
+Start=38
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Generator
+Name=HC7H_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have: Solar panel
+Name=HC7I
+Start=39
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Solar panel
+Name=HC7I_VS1
 Value=1;YES
 Value=2;NO
 Value=9;NO RESPONSE
@@ -1698,7 +1813,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Household have electricity
 Name=HC8
-Start=34
+Start=40
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -1713,7 +1828,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Source of electricity for the household
 Name=HC8A
-Start=35
+Start=41
 Len=10
 DataType=Alpha
 
@@ -1721,7 +1836,6 @@ DataType=Alpha
 Label=Source of electricity for the household
 Name=HC8A_VS1
 Value='A         ';NATIONAL / INTERCONNECTED GRID
-Value='B         ';LOCAL MINI GRID
 Value='C         ';SOLAR HOME SYSTEM
 Value='D         ';SOLAR LANTERN
 Value='E         ';ELECTRIC GENERATOR
@@ -1734,7 +1848,7 @@ Value='?         ';NO RESPONSE
 [Item]
 Label=Source of electricity for the household: National / Interconnected grid
 Name=HC8AA
-Start=35
+Start=41
 Len=1
 ItemType=SubItem
 DataType=Alpha
@@ -1747,24 +1861,9 @@ Value=' '
 Value='?';NO RESPONSE
 
 [Item]
-Label=Source of electricity for the household: Local mini grid
-Name=HC8AB
-Start=36
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Source of electricity for the household: Local mini grid
-Name=HC8AB_VS1
-Value='B';LOCAL MINI GRID
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
 Label=Source of electricity for the household: Solar home system
 Name=HC8AC
-Start=37
+Start=43
 Len=1
 ItemType=SubItem
 DataType=Alpha
@@ -1779,7 +1878,7 @@ Value='?';NO RESPONSE
 [Item]
 Label=Source of electricity for the household: Solar lantern
 Name=HC8AD
-Start=38
+Start=44
 Len=1
 ItemType=SubItem
 DataType=Alpha
@@ -1794,7 +1893,7 @@ Value='?';NO RESPONSE
 [Item]
 Label=Source of electricity for the household: Electric generator
 Name=HC8AE
-Start=39
+Start=45
 Len=1
 ItemType=SubItem
 DataType=Alpha
@@ -1809,7 +1908,7 @@ Value='?';NO RESPONSE
 [Item]
 Label=Source of electricity for the household: Rechargeable battery
 Name=HC8AF
-Start=40
+Start=46
 Len=1
 ItemType=SubItem
 DataType=Alpha
@@ -1824,7 +1923,7 @@ Value='?';NO RESPONSE
 [Item]
 Label=Source of electricity for the household: Dry cell battery / torch
 Name=HC8AG
-Start=41
+Start=47
 Len=1
 ItemType=SubItem
 DataType=Alpha
@@ -1839,7 +1938,7 @@ Value='?';NO RESPONSE
 [Item]
 Label=Source of electricity for the household: Other
 Name=HC8AX
-Start=42
+Start=48
 Len=1
 ItemType=SubItem
 DataType=Alpha
@@ -1854,7 +1953,7 @@ Value='?';NO RESPONSE
 [Item]
 Label=Source of electricity for the household: DK
 Name=HC8AZ
-Start=43
+Start=49
 Len=1
 ItemType=SubItem
 DataType=Alpha
@@ -1869,7 +1968,7 @@ Value='?';NO RESPONSE
 [Item]
 Label=Source of electricity for the household: No response
 Name=HC8ANR
-Start=44
+Start=50
 Len=1
 ItemType=SubItem
 DataType=Alpha
@@ -1883,7 +1982,7 @@ Value='?';NO RESPONSE
 [Item]
 Label=Most used source of electricity
 Name=HC8B
-Start=45
+Start=51
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -1892,7 +1991,6 @@ ZeroFill=Yes
 Label=Most used source of electricity
 Name=HC8B_VS1
 Value=11;NATIONAL / INTERCONNECTED GRID
-Value=21;LOCAL MINI GRID
 Value=31;SOLAR HOME SYSTEM
 Value=32;SOLAR LANTERN
 Value=41;ELECTRIC GENERATOR
@@ -1905,7 +2003,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Household have: Television
 Name=HC9A
-Start=47
+Start=53
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -1920,7 +2018,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Household have: Refrigerator
 Name=HC9B
-Start=48
+Start=54
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -1933,16 +2031,151 @@ Value=2;NO
 Value=9;NO RESPONSE
 
 [Item]
-Label=Household have: Country Specific Items That Run On Electricity
+Label=Household have: Fan
 Name=HC9C
-Start=49
+Start=55
 Len=1
 DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Household have: Country Specific Items That Run On Electricity
+Label=Household have: Fan
 Name=HC9C_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have: Air conditioner
+Name=HC9D
+Start=56
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Air conditioner
+Name=HC9D_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have: Satellite dish
+Name=HC9E
+Start=57
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Satellite dish
+Name=HC9E_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have: Microwave Oven
+Name=HC9G
+Start=58
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Microwave Oven
+Name=HC9G_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have: Water Heater
+Name=HC9H
+Start=59
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Water Heater
+Name=HC9H_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have: Blender
+Name=HC9I
+Start=60
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Blender
+Name=HC9I_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have: Washing Machine
+Name=HC9J
+Start=61
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Washing Machine
+Name=HC9J_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have: Electric Iron
+Name=HC9K
+Start=62
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Electric Iron
+Name=HC9K_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have: Electric Kettle
+Name=HC9L
+Start=63
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Electric Kettle
+Name=HC9L_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have: Water Tank
+Name=HC9M
+Start=64
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Water Tank
+Name=HC9M_VS1
 Value=1;YES
 Value=2;NO
 Value=9;NO RESPONSE
@@ -1950,7 +2183,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Any member of household own: Wristwatch
 Name=HC10A
-Start=50
+Start=65
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -1965,7 +2198,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Any member of household own: Bicycle
 Name=HC10B
-Start=51
+Start=66
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -1980,7 +2213,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Any member of household own: Motorcycle or scooter
 Name=HC10C
-Start=52
+Start=67
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -1995,7 +2228,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Any member of household own: Animal-drawn cart
 Name=HC10D
-Start=53
+Start=68
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2010,7 +2243,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Any member of household own: Car, truck or van
 Name=HC10E
-Start=54
+Start=69
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2025,7 +2258,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Any member of household own: Boat with motor
 Name=HC10F
-Start=55
+Start=70
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2038,15 +2271,15 @@ Value=2;NO
 Value=9;NO RESPONSE
 
 [Item]
-Label=Any member of household own: Country Specific Items
+Label=Any member of household own: A boat without motor
 Name=HC10G
-Start=56
+Start=71
 Len=1
 DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Any member of household own: Country Specific Items
+Label=Any member of household own: A boat without motor
 Name=HC10G_VS1
 Value=1;YES
 Value=2;NO
@@ -2055,7 +2288,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Any member have a computer
 Name=HC11
-Start=57
+Start=72
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2070,7 +2303,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Any member have a mobile telephone
 Name=HC12
-Start=58
+Start=73
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2085,7 +2318,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Any member have a smart telephone
 Name=HC12A
-Start=59
+Start=74
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2100,7 +2333,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Internet access at home
 Name=HC13
-Start=60
+Start=75
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2115,7 +2348,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Internet access via smart phone
 Name=HC13B
-Start=61
+Start=76
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2131,7 +2364,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Household owns the dwelling
 Name=HC14
-Start=62
+Start=77
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2141,13 +2374,14 @@ Label=Household owns the dwelling
 Name=HC14_VST
 Value=1;OWN
 Value=2;RENT
+Value=3;RENT-FREE
 Value=6;OTHER
 Value=9;NO RESPONSE
 
 [Item]
 Label=Any household member own land that can be used for agriculture
 Name=HC15
-Start=63
+Start=78
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2162,7 +2396,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Hectares of agricultural land members of household owns
 Name=HC16
-Start=64
+Start=79
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2178,7 +2412,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Household own any animals
 Name=HC17
-Start=66
+Start=81
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2193,7 +2427,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Milk cows or bulls
 Name=HC18A
-Start=67
+Start=82
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2209,7 +2443,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Other cattle
 Name=HC18B
-Start=69
+Start=84
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2225,7 +2459,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Horses, donkeys or mules
 Name=HC18C
-Start=71
+Start=86
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2241,7 +2475,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Goats
 Name=HC18D
-Start=73
+Start=88
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2257,7 +2491,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Sheep
 Name=HC18E
-Start=75
+Start=90
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2273,7 +2507,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Chickens
 Name=HC18F
-Start=77
+Start=92
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2289,7 +2523,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Pigs
 Name=HC18G
-Start=79
+Start=94
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2303,16 +2537,32 @@ Value=98;DK
 Value=99;NO RESPONSE
 
 [Item]
-Label=Country Specific Additions
-Name=HC18H
-Start=81
+Label=Guinea fowls
+Name=HC18H1
+Start=96
 Len=2
 DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Country Specific Additions
-Name=HC18H_VS1
+Label=Guinea fowls
+Name=HC18H1_VS1
+Value=0:94
+Value=95;95+
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Ducks
+Name=HC18I
+Start=98
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Ducks
+Name=HC18I_VS1
 Value=0:94
 Value=95;95+
 Value=98;DK
@@ -2321,7 +2571,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Any household member own bank account
 Name=HC19
-Start=83
+Start=100
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2336,7 +2586,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Any household member makes financial transactions via mobile phone
 Name=HC20
-Start=84
+Start=101
 Len=1
 DataType=Numeric
 ZeroFill=Yes
