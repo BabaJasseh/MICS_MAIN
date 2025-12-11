@@ -888,7 +888,7 @@ questions:
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">TN10. </span><span class="Qtxt">Did you get the net through a <span class="QtxtC">local name of mass distribution campaign</span>, during an antenatal care visit, or during an immunization visit? [NET <span class="REF">~~TNLN~~</span>]</span></p>
+            <p><span class="Qnum">TN10. </span><span class="Qtxt">Did you get the net through a synchronize mass ITN<span class="QtxtC">&nbsp;<font color="#000000">distribution</font></span>, during an antenatal care visit, or during an immunization visitsuch as Infant Welfare Clinic? [NET <span class="REF">~~TNLN~~</span>]</span></p>
         helpText:
           ENG: |
             
