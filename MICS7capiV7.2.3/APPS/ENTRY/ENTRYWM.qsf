@@ -53,11 +53,11 @@ questions:
         questionText:
           ENG: |
             <p><span class="Qnum">WM9B. </span><span class="Qtxt">Now I would like to talk to you about your health and other topics in more detail.</span></p>
-            <p><span class="Qtxt">This interview will take about <span class="QtxtC">number </span>minutes.</span></p>
+            <p><span class="Qtxt">This interview will take about 50<span class="QtxtC">&nbsp;</span>minutes.</span></p>
             <p><span class="Qtxt">Again, participation in this survey is voluntary. No payment of incentive will be given to you for answering these questions. However, this survey will help the government and the general public better understand the situation and needs of women.</span></p>
             <p><span class="Qtxt">Please know that all the information you share during the interview will remain strictly confidential and anonymous. No information about you will be made publicly available. We will only produce information about the general population.</span></p>
             <p><span class="Qtxt">Again, should you wish not to answer a question or wish to stop the interview at any point, please let me know.</span></p>
-            <p><span class="Qtxt">If at any time you have any complaints or concerns about this survey, please use the information on the card I gave you earlier to contact <span class="QtxtC">organisation name</span>.</span></p>
+            <p><span class="Qtxt">If at any time you have any complaints or concerns about this survey, please use the information on the card I gave you earlier to contact Gambia Bureau of Statistics (GBoS.</span></p>
             <p><span class="Qtxt">May I start the interview?</span></p>
       - logic: WM8=2
         questionText:
@@ -98,7 +98,7 @@ questions:
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">WB5A. </span><span class="Qtxt">In which <span class="QtxtC">region</span> <u>were</u> you born?</span></p>
+            <p><span class="Qnum">WB5A. </span><span class="Qtxt">In which Local Government Area&nbsp;<u>were</u> you born?</span></p>
             <p><span class="Itxt">Probe to determine the region according to present borders.</span></p>
   - name: MICS7WM.WB6
     conditions:
@@ -111,7 +111,7 @@ questions:
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">WB7. </span><span class="Qtxt">Do you have the citizenship of <span class="QtxtC">Country</span>?</span></p>
+            <p><span class="Qnum">WB7. </span><span class="Qtxt">Do you have the citizenship of The Gambia?</span></p>
   - name: MICS7WM.WB7A
     conditions:
       - questionText:
@@ -152,14 +152,14 @@ questions:
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">WB9. </span><span class="Qtxt">Just before you moved here, did you live in a city, in a town, or in a rural area?</span></p>
+            <p><span class="Qnum">WB9. </span><span class="Qtxt">Just before you moved here, did you live in Banjul, in another urban area, or in a rural area?</span></p>
             <p><span class="Itxt">Probe to identify the type of place.</span></p>
             <p><span class="Itxt"><u>If unable to determine whether the place is a city, a town or a rural area</u>, write the name of the place and then temporarily record ‘5’ until you learn the appropriate category for the response.</span></p>
   - name: MICS7WM.WB10
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">WB10. </span><span class="Qtxt">Before you moved here, in which <span class="QtxtC">region </span>did you live in?</span></p>
+            <p><span class="Qnum">WB10. </span><span class="Qtxt">Before you moved here, in which Local Government Area<span class="QtxtC">&nbsp;</span>did you live in?</span></p>
   - name: MICS7WM.IN1
     conditions:
       - questionText:
@@ -772,7 +772,7 @@ questions:
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">MN38. </span><span class="Qtxt">In the first three days after delivery, was <span class="REF">~~CM18~~</span> given anything at all other than breast milk to eat or drink, such as water, infant formula, or <span class="QtxtC">insert common drinks and foods, including ritual feeds that may be given to newborn infants</span>?</span></p>
+            <p><span class="Qnum">MN38. </span><span class="Qtxt">In the first three days after delivery, was <span class="REF">~~CM18~~</span> given anything at all other than breast milk to eat or drink, such as water, infant formula, or milk other than breast milk?</span></p>
   - name: MICS7WM.PN3U
     conditions:
       - questionText:
@@ -1638,7 +1638,7 @@ questions:
         questionText:
           ENG: |
             <p><span class="Qnum">WM15F. </span><span class="Qtxt">Thank you for your participation.</span></p>
-            <p><span class="Qtxt">The <span class="QtxtC">National Statistical Office</span> will be conducting a follow-up survey about the situation of children, families, and households in the future. We may contact you a few times over a period of a few months, for about 15 minutes at a time.</span></p>
+            <p><span class="Qtxt">The Gambia Bureau of Statistics (GBoS)will be conducting a follow-up survey about the situation of children, families, and households in the future. We may contact you a few times over a period of a few months, for about 15 minutes at a time.</span></p>
             <p><span class="Qtxt">Participation is voluntary. If you agree to participate now, you can still withdraw later. It will not cost you anything to participate. All the information you share during these interviews will not be shared with anyone outside our team.</span></p>
             <p><span class="Qtxt">Would you like to participate?</span></p>
       - questionText:

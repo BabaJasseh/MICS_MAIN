@@ -1280,27 +1280,6 @@ Color=49087
 [EndForm]
   
 [Form]
-Name=FORM004
-Label=Violence Against Woman
-QuestionTextHeight=320
-Level=1
-Size=4348,1010
-Color=14680063
-  
-  
-Box=57,153,532,154,Etched
-  
-[Text]
-Name=TEXT18
-Position=56,110,452,147
-Text=VIOLENCE AGAINST WOMEN
-Form=31
-Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
-Color=49087
- 
-[EndForm]
-  
-[Form]
 Name=FORM023
 Label=End of Interview
 QuestionTextHeight=180
@@ -1330,7 +1309,7 @@ Box=52,154,527,155,Etched
 Name=TEXT9
 Position=428,200,458,232
 Text=HH
-Form=32
+Form=31
 Color=4210688
  
   
@@ -1338,7 +1317,7 @@ Color=4210688
 Name=TEXT23
 Position=489,200,519,232
 Text=MM
-Form=32
+Form=31
 Color=4210688
  
   
@@ -1346,7 +1325,7 @@ Color=4210688
 Name=TEXT63
 Position=466,234,481,266
 Text=:
-Form=32
+Form=31
 Color=4210688
  
   
@@ -1354,7 +1333,7 @@ Color=4210688
 Name=TEXT64
 Position=51,111,339,148
 Text=END OF INTERVIEW
-Form=32
+Form=31
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
 Color=49087
  
@@ -6336,81 +6315,9 @@ Color=4210688
   
 [Group]
 Required=Yes
-Name=FORMVW
-Label=Violence Against Woman
-Form=31
-Max=1
-  
-  
-  
-  
-  
-  
-  
-  
-[Block]
-Name=BLOCK000
-Label=New Block
-DisplayTogether=Yes
-Position=0
-Length=0
-  
-[Block]
-Name=BLOCK001
-Label=New Block
-DisplayTogether=Yes
-Position=1
-Length=0
-  
-[Block]
-Name=BLOCK002
-Label=New Block
-DisplayTogether=Yes
-Position=2
-Length=0
-  
-[Block]
-Name=BLOCK003
-Label=New Block
-DisplayTogether=Yes
-Position=3
-Length=0
-  
-[Block]
-Name=BLOCK004
-Label=New Block
-DisplayTogether=Yes
-Position=4
-Length=0
-  
-[Block]
-Name=BLOCK005
-Label=New Block
-DisplayTogether=Yes
-Position=5
-Length=0
-  
-[Block]
-Name=BLOCK006
-Label=New Block
-DisplayTogether=Yes
-Position=6
-Length=0
-  
-[Block]
-Name=BLOCK007
-Label=New Block
-DisplayTogether=Yes
-Position=7
-Length=0
-  
-[EndGroup]
-  
-[Group]
-Required=Yes
 Name=FORMEND
 Label=End of Interview
-Form=32
+Form=31
 Max=1
   
 [Field]
@@ -6421,7 +6328,7 @@ Protected=Yes
 UpperCase=Yes
 DataCaptureType=TextBox
 Keyboard=1033
-Form=32
+Form=31
   
 [Text]
 Position=51,235,411,267
@@ -6438,7 +6345,7 @@ Protected=Yes
 UpperCase=Yes
 DataCaptureType=TextBox
 Keyboard=1033
-Form=32
+Form=31
   
   
 [Field]
@@ -6449,7 +6356,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=32
+Form=31
   
 [Text]
 Position=51,312,111,344
@@ -6466,7 +6373,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=32
+Form=31
   
 [Text]
 Position=51,364,111,396
@@ -6483,7 +6390,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=32
+Form=31
   
 [Text]
 Position=51,411,111,443
@@ -6500,7 +6407,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=32
+Form=31
   
 [Text]
 Position=51,462,111,494
@@ -6517,7 +6424,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=32
+Form=31
   
 [Text]
 Position=51,517,111,549
@@ -6533,7 +6440,7 @@ Item=WM15C,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=32
+Form=31
   
 [Text]
 Position=292,344,367,376
@@ -6547,7 +6454,7 @@ Item=WM15EF,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=32
+Form=31
   
 [Text]
 Position=292,401,382,433
@@ -6561,7 +6468,7 @@ Item=WM15GH,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=32
+Form=31
   
 [Text]
 Position=292,453,382,485
@@ -6575,7 +6482,7 @@ Item=WM15I,MICS7WM
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=32
+Form=31
   
 [Text]
 Position=292,508,367,540
@@ -6585,7 +6492,7 @@ Text=WM15I
 [Grid]
 Name=MODWPN000
 Label=MICS plus consent
-Form=32
+Form=31
 Required=No
 Type=Record
 TypeName=MODWPN
@@ -6698,7 +6605,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=32
+Form=31
   
 [Text]
 Position=53,771,113,803
@@ -6714,7 +6621,7 @@ Item=WMFIN,MICS7WM
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=32
+Form=31
   
 [Text]
 Position=53,818,128,850
