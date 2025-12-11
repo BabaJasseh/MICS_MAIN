@@ -533,72 +533,6 @@ Color=6447871
 [EndForm]
   
 [Form]
-Name=FORM006
-Label=Social Transfers
-QuestionTextHeight=263
-Level=1
-Size=3727,545
-Color=15263999
-  
-Item=FORMST_ROSTER
-  
-Box=30,67,882,68,Etched
-  
-[Text]
-Name=TEXT1
-Position=28,23,316,60
-Text=SOCIAL TRANSFERS
-Form=8
-Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=6447871
- 
-[EndForm]
-  
-[Form]
-Name=FORM012
-Label=Post Emergency
-QuestionTextHeight=272
-Level=1
-Size=918,540
-Color=15263999
-  
-Item=PE1
-Item=PE2
-Item=PE3
-Item=PE4U
-Item=PE4N
-Item=PE5
-Item=PE6
-Item=PE7
-Item=PE8
-Item=PE9
-Item=PE10
-Item=PE11
-Item=PE12
-Item=PE13
-Item=PE14
-Item=PE15
-Item=PE16
-Item=PE17
-Item=PE18
-Item=PE19
-Item=PE20
-Item=PE21
-Item=PE22
-  
-Box=51,185,256,186,Etched
-  
-[Text]
-Name=TEXT43
-Position=53,128,305,165
-Text=POST-EMERGENCY
-Form=9
-Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=6447871
- 
-[EndForm]
-  
-[Form]
 Name=FORM014
 Label=Food Insecurity Experience
 QuestionTextHeight=318
@@ -606,14 +540,6 @@ Level=1
 Size=674,453
 Color=15263999
   
-Item=FE1
-Item=FE2
-Item=FE3
-Item=FE4
-Item=FE5
-Item=FE6
-Item=FE7
-Item=FE8
   
 Box=47,89,649,89,Etched
   
@@ -621,7 +547,7 @@ Box=47,89,649,89,Etched
 Name=TEXT46
 Position=54,41,522,78
 Text=FOOD INSECURITY EXPERIENCE
-Form=10
+Form=8
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=6447871
  
@@ -658,7 +584,7 @@ Box=39,176,531,177,Etched
 Name=TEXT12
 Position=41,132,131,169
 Text=WATER
-Form=11
+Form=9
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=6447871
  
@@ -693,7 +619,7 @@ Box=49,185,541,186,Etched
 Name=TEXT8
 Position=51,142,231,179
 Text=SANITATION
-Form=12
+Form=10
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=6447871
  
@@ -719,7 +645,7 @@ Box=41,175,246,176,Etched
 Name=TEXT5
 Position=41,132,167,169
 Text=HYGIENE
-Form=13
+Form=11
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=6447871
  
@@ -764,7 +690,7 @@ Box=38,175,738,176,Etched
 Name=TEXT13
 Position=680,262,695,294
 Text=:
-Form=14
+Form=12
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
  
@@ -773,7 +699,7 @@ Color=4210688
 Name=TEXT14
 Position=643,229,673,261
 Text=HH
-Form=14
+Form=12
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
  
@@ -782,7 +708,7 @@ Color=4210688
 Name=TEXT15
 Position=704,229,734,261
 Text=MM
-Form=14
+Form=12
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
  
@@ -791,7 +717,7 @@ Color=4210688
 Name=TEXT16
 Position=41,132,329,169
 Text=END OF INTERVIEW
-Form=14
+Form=12
 Font=-032 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=6447871
  
@@ -800,7 +726,7 @@ Color=6447871
 Name=TEXT47
 Position=904,342,1609,374
 Text=Selection of Violence Against Women (VW) Module
-Form=14
+Form=12
  
 [EndForm]
   
@@ -855,7 +781,7 @@ Box=48,142,1110,143,Etched
 Name=TEXT17
 Position=308,462,323,494
 Text=/
-Form=15
+Form=13
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
  
@@ -864,7 +790,7 @@ Color=4210688
 Name=TEXT18
 Position=369,462,384,494
 Text=/
-Form=15
+Form=13
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
  
@@ -873,7 +799,7 @@ Color=4210688
 Name=TEXT19
 Position=1053,464,1068,496
 Text=:
-Form=15
+Form=13
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
  
@@ -882,7 +808,7 @@ Color=4210688
 Name=TEXT20
 Position=1047,821,1062,853
 Text=:
-Form=15
+Form=13
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
  
@@ -891,7 +817,7 @@ Color=4210688
 Name=TEXT23
 Position=1048,974,1063,1006
 Text=:
-Form=15
+Form=13
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
  
@@ -900,7 +826,7 @@ Color=4210688
 Name=TEXT21
 Position=214,1019,229,1051
 Text=/
-Form=15
+Form=13
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
  
@@ -909,7 +835,7 @@ Color=4210688
 Name=TEXT22
 Position=161,1019,176,1051
 Text=/
-Form=15
+Form=13
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
  
@@ -918,7 +844,7 @@ Color=4210688
 Name=TEXT28
 Position=270,431,300,463
 Text=DD
-Form=15
+Form=13
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
  
@@ -927,7 +853,7 @@ Color=4210688
 Name=TEXT29
 Position=329,432,359,464
 Text=MM
-Form=15
+Form=13
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
  
@@ -936,7 +862,7 @@ Color=4210688
 Name=TEXT30
 Position=395,432,455,464
 Text=YYYY
-Form=15
+Form=13
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
  
@@ -945,7 +871,7 @@ Color=4210688
 Name=TEXT31
 Position=1015,431,1045,463
 Text=HH
-Form=15
+Form=13
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
  
@@ -954,7 +880,7 @@ Color=4210688
 Name=TEXT32
 Position=1074,432,1104,464
 Text=MM
-Form=15
+Form=13
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
  
@@ -963,7 +889,7 @@ Color=4210688
 Name=TEXT33
 Position=1013,786,1043,818
 Text=HH
-Form=15
+Form=13
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
  
@@ -972,7 +898,7 @@ Color=4210688
 Name=TEXT34
 Position=1068,786,1098,818
 Text=MM
-Form=15
+Form=13
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
  
@@ -981,7 +907,7 @@ Color=4210688
 Name=TEXT35
 Position=124,986,154,1018
 Text=DD
-Form=15
+Form=13
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
  
@@ -990,7 +916,7 @@ Color=4210688
 Name=TEXT36
 Position=180,986,210,1018
 Text=MM
-Form=15
+Form=13
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
  
@@ -999,7 +925,7 @@ Color=4210688
 Name=TEXT37
 Position=237,986,297,1018
 Text=YYYY
-Form=15
+Form=13
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
  
@@ -1008,7 +934,7 @@ Color=4210688
 Name=TEXT38
 Position=1068,942,1098,974
 Text=MM
-Form=15
+Form=13
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
  
@@ -1017,7 +943,7 @@ Color=4210688
 Name=TEXT39
 Position=1011,942,1041,974
 Text=HH
-Form=15
+Form=13
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
  
@@ -1026,7 +952,7 @@ Color=4210688
 Name=TEXT10
 Position=115,45,211,96
 Text=MICS
-Form=15
+Form=13
 Font=-043 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
  
@@ -1035,7 +961,7 @@ Color=4210688
 Name=TEXT44
 Position=252,48,672,134
 Text=WATER QUALITY TESTING\n    QUESTIONNAIRE
-Form=15
+Form=13
 Font=-037 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=176
  
@@ -1044,7 +970,7 @@ Color=176
 Name=TEXT45
 Position=765,48,1105,91
 Text=Survey name, year
-Form=15
+Form=13
 Font=-037 0000 0000 0000 0700 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
  
@@ -5091,721 +5017,17 @@ Color=4210688
   
 [Group]
 Required=Yes
-Name=FORMST
-Label=Social Transfers
-Form=8
-Max=1
-  
-[Grid]
-Name=FORMST_ROSTER
-Label=Social Transfers
-Form=8
-Required=No
-Type=Record
-TypeName=MODST
-Max=5
-DisplaySize=76,157,3702,520
-Orientation=Horizontal
-FieldRowHeight=46
-HeadingRowHeight=40
-FreeMovement=No
- 
-[Text]
-Position=0,0,169,46
-Text=[A]
-Text=ASSISTANCE TYPE 1
-Font=-016 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-HorizontalAlignment=Center
-Color=255
- 
-  
-[Text]
-Position=0,0,169,46
-Text=[B]
-Text=ASSISTANCE TYPE 2
-Font=-016 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-HorizontalAlignment=Center
-Color=255
- 
-  
-[Text]
-Position=0,0,169,46
-Text=[C]
-Text=ASSISTANCE TYPE 3
-Font=-016 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-HorizontalAlignment=Center
-Color=255
- 
-  
-[Text]
-Position=0,0,169,65
-Text=[D]
-Text=ANY RETIREMENT PENSION
-Font=-016 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-HorizontalAlignment=Center
- 
-  
-[Text]
-Position=0,0,169,103
-Text=[X]
-Text=ANY OTHER EXTERNAL ASSISTANCE PROGRAMME
-Font=-016 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-HorizontalAlignment=Center
- 
-  
-[Column]
-Width=10
-[EndColumn]
-  
-[Column]
-Width=53
-  
-[HeaderText]
-Position=0,0,53,40
-Text=ST2
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
- 
-[Field]
-Name=ST2
-Position=17,0,36,34
-Item=ST2,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=ST2
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
- 
-[EndColumn]
-  
-[Column]
-Width=53
-  
-[HeaderText]
-Position=0,0,53,40
-Text=ST3
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
- 
-[Field]
-Name=ST3
-Position=13,0,32,34
-Item=ST3,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=ST3
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
- 
-[EndColumn]
-  
-[Column]
-Width=1809
-  
-[HeaderText]
-Position=0,0,53,40
-Text=ST4
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-HorizontalAlignment=Left
- 
-[Field]
-Name=ST4
-Position=0,0,1801,34
-Item=ST4,MICS7HH
-UpperCase=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=CheckBox
-  
-[Text]
-Position=1756,0,1809,40
-Text=ST4
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-HorizontalAlignment=Left
- 
-[EndColumn]
-  
-[Column]
-Width=1809
-  
-[HeaderText]
-Position=0,0,53,40
-Text=ST5
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-HorizontalAlignment=Left
- 
-[Field]
-Name=ST5
-Position=0,0,1801,34
-Item=ST5,MICS7HH
-UpperCase=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=CheckBox
-  
-[Text]
-Position=1756,0,1809,40
-Text=ST5
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-HorizontalAlignment=Left
- 
-[EndColumn]
-  
-[Column]
-Width=68
-  
-[HeaderText]
-Position=0,0,68,40
-Text=ST6U
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
- 
-[Field]
-Name=ST6U
-Position=20,0,39,34
-Item=ST6U,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-  
-[Text]
-Text=ST6U
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
- 
-[EndColumn]
-  
-[Column]
-Width=68
-  
-[HeaderText]
-Position=0,0,68,40
-Text=ST6N
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
- 
-[Field]
-Name=ST6N
-Position=14,0,51,34
-Item=ST6N,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=NumberPad
-  
-[Text]
-Position=0,0,35,16
-Text=ST6N
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
- 
-[EndColumn]
-  
-[EndGrid]
- 
-[EndGroup]
-  
-[Group]
-Required=Yes
-Name=FORMPE
-Label=Post Emergency
-Form=9
-Max=1
-  
-[Field]
-Name=PE1
-Position=146,205,165,239
-Item=PE1,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=9
-  
-[Text]
-Position=56,209,101,241
-Text=PE1
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-  
-[Field]
-Name=PE2
-Position=146,249,183,283
-Item=PE2,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=NumberPad
-Keyboard=1033
-Form=9
-  
-[Text]
-Position=56,252,101,284
-Text=PE2
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-  
-[Field]
-Name=PE3
-Position=146,293,165,327
-Item=PE3,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=9
-  
-[Text]
-Position=56,296,101,328
-Text=PE3
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-  
-[Field]
-Name=PE4U
-Position=146,337,165,371
-Item=PE4U,MICS7HH
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=9
-  
-[Text]
-Position=56,340,101,372
-Text=PE4
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-  
-[Field]
-Name=PE4N
-Position=173,337,210,371
-Item=PE4N,MICS7HH
-DataCaptureType=NumberPad
-Keyboard=1033
-Form=9
-  
-  
-[Field]
-Name=PE5
-Position=332,205,351,239
-Item=PE5,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=9
-  
-[Text]
-Position=242,209,287,241
-Text=PE5
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-  
-[Field]
-Name=PE6
-Position=332,249,351,283
-Item=PE6,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=9
-  
-[Text]
-Position=242,252,287,284
-Text=PE6
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-  
-[Field]
-Name=PE7
-Position=332,293,351,327
-Item=PE7,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=9
-  
-[Text]
-Position=242,296,287,328
-Text=PE7
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-  
-[Field]
-Name=PE8
-Position=332,337,351,371
-Item=PE8,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=9
-  
-[Text]
-Position=242,340,287,372
-Text=PE8
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-  
-[Field]
-Name=PE9
-Position=332,381,351,415
-Item=PE9,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=9
-  
-[Text]
-Position=242,384,287,416
-Text=PE9
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-  
-[Field]
-Name=PE10
-Position=495,205,514,239
-Item=PE10,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=9
-  
-[Text]
-Position=405,209,465,241
-Text=PE10
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-  
-[Field]
-Name=PE11
-Position=495,250,514,284
-Item=PE11,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=9
-  
-[Text]
-Position=405,254,465,286
-Text=PE11
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-  
-[Field]
-Name=PE12
-Position=495,296,514,330
-Item=PE12,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=9
-  
-[Text]
-Position=405,299,465,331
-Text=PE12
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-  
-[Field]
-Name=PE13
-Position=495,342,532,376
-Item=PE13,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=ComboBox
-Keyboard=1033
-Form=9
-  
-[Text]
-Position=405,345,465,377
-Text=PE13
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-  
-[Field]
-Name=PE14
-Position=495,388,514,422
-Item=PE14,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=9
-  
-[Text]
-Position=405,391,465,423
-Text=PE14
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-  
-[Field]
-Name=PE15
-Position=495,434,514,468
-Item=PE15,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=9
-  
-[Text]
-Position=405,437,465,469
-Text=PE15
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-  
-[Field]
-Name=PE16
-Position=495,480,514,514
-Item=PE16,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=9
-  
-[Text]
-Position=405,483,465,515
-Text=PE16
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-  
-[Field]
-Name=PE17
-Position=666,203,685,237
-Item=PE17,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=9
-  
-[Text]
-Position=576,206,636,238
-Text=PE17
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-  
-[Field]
-Name=PE18
-Position=666,246,685,280
-Item=PE18,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=9
-  
-[Text]
-Position=576,249,636,281
-Text=PE18
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-  
-[Field]
-Name=PE19
-Position=666,289,685,323
-Item=PE19,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=9
-  
-[Text]
-Position=576,292,636,324
-Text=PE19
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-  
-[Field]
-Name=PE20
-Position=666,332,685,366
-Item=PE20,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=9
-  
-[Text]
-Position=576,335,636,367
-Text=PE20
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-  
-[Field]
-Name=PE21
-Position=666,375,883,409
-Item=PE21,MICS7HH
-UpperCase=Yes
-FieldLabelType=DictionaryName
-DataCaptureType=CheckBox
-Keyboard=1033
-Form=9
-  
-[Text]
-Position=576,378,636,410
-Text=PE21
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-  
-[Field]
-Name=PE22
-Position=666,418,685,452
-Item=PE22,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=9
-  
-[Text]
-Position=576,421,636,453
-Text=PE22
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-[EndGroup]
-  
-[Group]
-Required=Yes
 Name=FORMFE
 Label=Food Insecurity Experience
-Form=10
+Form=8
 Max=1
-  
-[Field]
-Name=FE1
-Position=130,122,149,156
-Item=FE1,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=10
-  
-[Text]
-Position=55,125,100,157
-Text=FE1
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-  
-[Field]
-Name=FE2
-Position=130,160,149,194
-Item=FE2,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=10
-  
-[Text]
-Position=55,163,100,195
-Text=FE2
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-  
-[Field]
-Name=FE3
-Position=130,198,149,232
-Item=FE3,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=10
-  
-[Text]
-Position=55,201,100,233
-Text=FE3
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-  
-[Field]
-Name=FE4
-Position=130,236,149,270
-Item=FE4,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=10
-  
-[Text]
-Position=55,240,100,272
-Text=FE4
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-  
-[Field]
-Name=FE5
-Position=130,274,149,308
-Item=FE5,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=10
-  
-[Text]
-Position=55,279,100,311
-Text=FE5
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-  
-[Field]
-Name=FE6
-Position=130,313,149,347
-Item=FE6,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=10
-  
-[Text]
-Position=55,318,100,350
-Text=FE6
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-  
-[Field]
-Name=FE7
-Position=130,352,149,386
-Item=FE7,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=10
-  
-[Text]
-Position=55,357,100,389
-Text=FE7
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
-  
-[Field]
-Name=FE8
-Position=130,391,149,425
-Item=FE8,MICS7HH
-FieldLabelType=DictionaryName
-DataCaptureType=RadioButton
-Keyboard=1033
-Form=10
-  
-[Text]
-Position=55,396,100,428
-Text=FE8
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
 [EndGroup]
   
 [Group]
 Required=Yes
 Name=FORMWS
 Label=Water
-Form=11
+Form=9
 Max=1
   
 [Field]
@@ -5815,7 +5037,7 @@ Item=WS1,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=11
+Form=9
   
 [Text]
 Position=46,199,91,231
@@ -5831,7 +5053,7 @@ Item=WS2,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=11
+Form=9
   
 [Text]
 Position=46,236,91,268
@@ -5847,7 +5069,7 @@ Item=WS3,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=11
+Form=9
   
 [Text]
 Position=46,274,91,306
@@ -5863,7 +5085,7 @@ Item=WS4,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=11
+Form=9
   
 [Text]
 Position=46,312,91,344
@@ -5879,7 +5101,7 @@ Item=WS5,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=ComboBox
 Keyboard=1033
-Form=11
+Form=9
   
 [Text]
 Position=46,350,91,382
@@ -5895,7 +5117,7 @@ Item=WS6,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=11
+Form=9
   
 [Text]
 Position=46,388,91,420
@@ -5911,7 +5133,7 @@ Item=WS7,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=11
+Form=9
   
 [Text]
 Position=214,198,259,230
@@ -5927,7 +5149,7 @@ Item=WS7A,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=11
+Form=9
   
 [Text]
 Position=214,245,274,277
@@ -5943,7 +5165,7 @@ Item=WS8,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=11
+Form=9
   
 [Text]
 Position=214,292,259,324
@@ -5959,7 +5181,7 @@ Item=WS9,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=11
+Form=9
   
 [Text]
 Position=214,339,259,371
@@ -5976,7 +5198,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=CheckBox
 Keyboard=1033
-Form=11
+Form=9
   
 [Text]
 Position=214,386,274,418
@@ -5992,7 +5214,7 @@ Item=WS10AA,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=11
+Form=9
   
 [Text]
 Position=550,196,640,228
@@ -6008,7 +5230,7 @@ Item=WS10BB,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=11
+Form=9
   
 [Text]
 Position=550,242,640,274
@@ -6024,7 +5246,7 @@ Item=WS10CC,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=11
+Form=9
   
 [Text]
 Position=550,288,640,320
@@ -6040,7 +5262,7 @@ Item=WS10DD,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=11
+Form=9
   
 [Text]
 Position=550,335,640,367
@@ -6056,7 +5278,7 @@ Item=WS10EE,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=11
+Form=9
   
 [Text]
 Position=550,382,640,414
@@ -6070,7 +5292,7 @@ Color=4210688
 Required=Yes
 Name=FORMWS2
 Label=Sanitation
-Form=12
+Form=10
 Max=1
   
 [Field]
@@ -6080,7 +5302,7 @@ Item=WS11,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=12
+Form=10
   
 [Text]
 Position=51,216,111,248
@@ -6096,7 +5318,7 @@ Item=WS11B,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=12
+Form=10
   
 [Text]
 Position=51,267,126,299
@@ -6112,7 +5334,7 @@ Item=WS11C,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=12
+Form=10
   
 [Text]
 Position=51,319,126,351
@@ -6128,7 +5350,7 @@ Item=WS11DA,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=12
+Form=10
   
 [Text]
 Position=230,220,320,252
@@ -6144,7 +5366,7 @@ Item=WS11DB,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=12
+Form=10
   
 [Text]
 Position=230,263,320,295
@@ -6160,7 +5382,7 @@ Item=WS11DC,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=12
+Form=10
   
 [Text]
 Position=230,306,320,338
@@ -6176,7 +5398,7 @@ Item=WS11DD,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=12
+Form=10
   
 [Text]
 Position=230,349,320,381
@@ -6192,7 +5414,7 @@ Item=WS12,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=12
+Form=10
   
 [Text]
 Position=445,216,505,248
@@ -6208,7 +5430,7 @@ Item=WS12A,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=12
+Form=10
   
 [Text]
 Position=445,260,520,292
@@ -6224,7 +5446,7 @@ Item=WS13,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=12
+Form=10
   
 [Text]
 Position=445,305,505,337
@@ -6240,7 +5462,7 @@ Item=WS14,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=12
+Form=10
   
 [Text]
 Position=445,350,505,382
@@ -6256,7 +5478,7 @@ Item=WS15,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=12
+Form=10
   
 [Text]
 Position=608,213,668,245
@@ -6272,7 +5494,7 @@ Item=WS16,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=12
+Form=10
   
 [Text]
 Position=608,266,668,298
@@ -6288,7 +5510,7 @@ Item=WS17,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=12
+Form=10
   
 [Text]
 Position=608,320,668,352
@@ -6302,7 +5524,7 @@ Color=4210688
 Required=Yes
 Name=FORMHW
 Label=Hygiene
-Form=13
+Form=11
 Max=1
   
 [Field]
@@ -6312,7 +5534,7 @@ Item=HW1,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=13
+Form=11
   
 [Text]
 Position=48,199,93,231
@@ -6328,7 +5550,7 @@ Item=HW2,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=13
+Form=11
   
 [Text]
 Position=48,237,93,269
@@ -6345,7 +5567,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=CheckBox
 Keyboard=1033
-Form=13
+Form=11
   
 [Text]
 Position=48,275,93,307
@@ -6361,7 +5583,7 @@ Item=HW4A,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=13
+Form=11
   
 [Text]
 Position=48,314,108,346
@@ -6377,7 +5599,7 @@ Item=HW5A,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=13
+Form=11
   
 [Text]
 Position=48,353,108,385
@@ -6391,7 +5613,7 @@ Color=4210688
 Required=Yes
 Name=FORMEND
 Label=End of Interview
-Form=14
+Form=12
 Max=1
   
 [Field]
@@ -6402,7 +5624,7 @@ Protected=Yes
 UpperCase=Yes
 DataCaptureType=TextBox
 Keyboard=1033
-Form=14
+Form=12
   
 [Text]
 Position=46,261,406,293
@@ -6419,7 +5641,7 @@ Protected=Yes
 UpperCase=Yes
 DataCaptureType=TextBox
 Keyboard=1033
-Form=14
+Form=12
   
   
 [Field]
@@ -6430,7 +5652,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=14
+Form=12
   
 [Text]
 Position=46,333,106,365
@@ -6448,7 +5670,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=14
+Form=12
   
 [Text]
 Position=237,333,297,365
@@ -6466,7 +5688,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=14
+Form=12
   
 [Text]
 Position=441,333,501,365
@@ -6484,7 +5706,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=14
+Form=12
   
 [Text]
 Position=645,333,705,365
@@ -6502,7 +5724,7 @@ Protected=Yes
 UpperCase=Yes
 DataCaptureType=TextBox
 Keyboard=1033
-Form=14
+Form=12
   
 [Text]
 Position=46,405,691,437
@@ -6520,7 +5742,7 @@ Protected=Yes
 UpperCase=Yes
 DataCaptureType=TextBox
 Keyboard=1033
-Form=14
+Form=12
   
 [Text]
 Position=46,462,691,494
@@ -6538,7 +5760,7 @@ Protected=Yes
 UpperCase=Yes
 DataCaptureType=TextBox
 Keyboard=1033
-Form=14
+Form=12
   
 [Text]
 Position=46,518,571,550
@@ -6554,7 +5776,7 @@ Position=1622,401,1641,435
 Item=HH30HA,MICS7HH
 Protected=Yes
 DataCaptureType=TextBox
-Form=14
+Form=12
   
 [Text]
 Position=907,405,1582,437
@@ -6568,7 +5790,7 @@ Position=1604,455,1641,489
 Item=HH30HB,MICS7HH
 Protected=Yes
 DataCaptureType=TextBox
-Form=14
+Form=12
   
 [Text]
 Position=908,458,1583,490
@@ -6582,7 +5804,7 @@ Position=1604,514,1641,548
 Item=HH30HC,MICS7HH
 Protected=Yes
 DataCaptureType=TextBox
-Form=14
+Form=12
   
 [Text]
 Position=908,517,1463,549
@@ -6593,7 +5815,7 @@ Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 [Grid]
 Name=HH33X000
 Label=Roster to check the consent for interview girls 15-17
-Form=14
+Form=12
 Required=Yes
 Type=Item
 TypeName=HH33X
@@ -6995,7 +6217,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=TextBox
 Keyboard=1033
-Form=14
+Form=12
   
 [Text]
 Position=225,584,285,616
@@ -7008,7 +6230,7 @@ Color=4210688
 [Grid]
 Name=HH39X000
 Label=Roster to check the consent for interview boys 15-17
-Form=14
+Form=12
 Required=Yes
 Type=Item
 TypeName=HH39X
@@ -7410,7 +6632,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=TextBox
 Keyboard=1033
-Form=14
+Form=12
   
 [Text]
 Position=642,584,702,616
@@ -7428,7 +6650,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=14
+Form=12
   
 [Text]
 Position=41,832,101,864
@@ -7445,7 +6667,7 @@ Item=HH44BC,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=14
+Form=12
   
 [Text]
 Position=41,877,131,909
@@ -7461,7 +6683,7 @@ Item=HH44DE,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=14
+Form=12
   
 [Text]
 Position=41,923,131,955
@@ -7477,7 +6699,7 @@ Item=HH44F,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=14
+Form=12
   
 [Text]
 Position=41,969,116,1001
@@ -7489,7 +6711,7 @@ Color=4210688
 [Grid]
 Name=MODHPN000
 Label=MICS Plus Consent
-Form=14
+Form=12
 Required=No
 Type=Record
 TypeName=MODHPN
@@ -7620,7 +6842,7 @@ Item=HH46,MICS7HH
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=14
+Form=12
   
 [Text]
 Position=42,1031,102,1063
@@ -7638,7 +6860,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=14
+Form=12
   
 [Text]
 Position=250,1031,310,1063
@@ -7656,7 +6878,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=14
+Form=12
   
 [Text]
 Position=443,1031,518,1063
@@ -7671,7 +6893,7 @@ Color=4210688
 Required=Yes
 Name=FORMWQ
 Label=Water Quality Testing Questionnaire
-Form=15
+Form=13
 Max=1
   
 [Field]
@@ -7682,7 +6904,7 @@ Protected=Yes
 UpperCase=Yes
 DataCaptureType=TextBox
 Keyboard=1033
-Form=15
+Form=13
   
 [Text]
 Position=53,230,338,262
@@ -7699,7 +6921,7 @@ Protected=Yes
 UpperCase=Yes
 DataCaptureType=TextBox
 Keyboard=1033
-Form=15
+Form=13
   
 [Text]
 Position=53,288,368,320
@@ -7716,7 +6938,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=15
+Form=13
   
 [Text]
 Position=53,333,98,365
@@ -7733,7 +6955,7 @@ Protected=Yes
 UpperCase=Yes
 DataCaptureType=TextBox
 Keyboard=1033
-Form=15
+Form=13
   
 [Text]
 Position=53,381,398,413
@@ -7749,7 +6971,7 @@ Item=WQ5D,MICS7HH
 UpperCase=Yes
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=15
+Form=13
   
 [Text]
 Position=52,463,97,495
@@ -7765,7 +6987,7 @@ Item=WQ5M,MICS7HH
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=15
+Form=13
   
   
 [Field]
@@ -7775,7 +6997,7 @@ Item=WQ5Y,MICS7HH
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=15
+Form=13
   
   
 [Field]
@@ -7786,7 +7008,7 @@ Protected=Yes
 UpperCase=Yes
 DataCaptureType=TextBox
 Keyboard=1033
-Form=15
+Form=13
   
 [Text]
 Position=536,230,1016,262
@@ -7802,7 +7024,7 @@ Item=WQ7,MICS7HH
 FieldLabelType=DictionaryName
 DataCaptureType=ComboBox
 Keyboard=1033
-Form=15
+Form=13
   
 [Text]
 Position=536,290,581,322
@@ -7820,7 +7042,7 @@ Protected=Yes
 UpperCase=Yes
 DataCaptureType=TextBox
 Keyboard=1033
-Form=15
+Form=13
   
 [Text]
 Position=536,356,1076,388
@@ -7836,7 +7058,7 @@ Item=WQ10H,MICS7HH
 UpperCase=Yes
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=15
+Form=13
   
 [Text]
 Position=536,462,596,494
@@ -7852,7 +7074,7 @@ Item=WQ10M,MICS7HH
 UpperCase=Yes
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=15
+Form=13
   
   
 [Field]
@@ -7863,7 +7085,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=15
+Form=13
   
 [Text]
 Position=52,591,112,623
@@ -7880,7 +7102,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=15
+Form=13
   
 [Text]
 Position=52,646,112,678
@@ -7894,7 +7116,7 @@ Name=WQ12A
 Position=285,692,304,726
 Item=WQ12A,MICS7HH
 DataCaptureType=RadioButton
-Form=15
+Form=13
   
 [Text]
 Position=52,695,127,727
@@ -7912,7 +7134,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=15
+Form=13
   
 [Text]
 Position=52,747,112,779
@@ -7929,7 +7151,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=CheckBox
 Keyboard=1033
-Form=15
+Form=13
   
 [Text]
 Position=52,804,112,836
@@ -7946,7 +7168,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=15
+Form=13
   
 [Text]
 Position=52,862,112,894
@@ -7963,7 +7185,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=15
+Form=13
   
 [Text]
 Position=536,591,596,623
@@ -7980,7 +7202,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=15
+Form=13
   
 [Text]
 Position=536,638,596,670
@@ -7997,7 +7219,7 @@ Protected=Yes
 UpperCase=Yes
 DataCaptureType=TextBox
 Keyboard=1033
-Form=15
+Form=13
   
 [Text]
 Position=536,686,1031,718
@@ -8014,7 +7236,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=15
+Form=13
   
 [Text]
 Position=536,734,596,766
@@ -8030,7 +7252,7 @@ Item=WQ23H,MICS7HH
 UpperCase=Yes
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=15
+Form=13
   
 [Text]
 Position=536,818,596,850
@@ -8046,7 +7268,7 @@ Item=WQ23M,MICS7HH
 UpperCase=Yes
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=15
+Form=13
   
   
 [Field]
@@ -8056,7 +7278,7 @@ Item=WQ24D,MICS7HH
 UpperCase=Yes
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=15
+Form=13
   
 [Text]
 Position=47,1018,107,1050
@@ -8072,7 +7294,7 @@ Item=WQ24M,MICS7HH
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=15
+Form=13
   
   
 [Field]
@@ -8082,7 +7304,7 @@ Item=WQ24Y,MICS7HH
 UpperCase=Yes
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=15
+Form=13
   
   
 [Field]
@@ -8092,7 +7314,7 @@ Item=WQ25H,MICS7HH
 UpperCase=Yes
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=15
+Form=13
   
 [Text]
 Position=928,974,988,1006
@@ -8108,7 +7330,7 @@ Item=WQ25M,MICS7HH
 UpperCase=Yes
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=15
+Form=13
   
   
 [Field]
@@ -8119,7 +7341,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=15
+Form=13
   
 [Text]
 Position=47,1073,107,1105
@@ -8136,7 +7358,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=15
+Form=13
   
 [Text]
 Position=514,1029,574,1061
@@ -8153,7 +7375,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=NumberPad
 Keyboard=1033
-Form=15
+Form=13
   
 [Text]
 Position=928,1029,988,1061
@@ -8170,7 +7392,7 @@ UpperCase=Yes
 FieldLabelType=DictionaryName
 DataCaptureType=RadioButton
 Keyboard=1033
-Form=15
+Form=13
   
 [Text]
 Position=47,1174,107,1206

@@ -960,431 +960,6 @@ questions:
         helpText:
           ENG: |
             
-  - name: MICS7HH.ST2
-    conditions:
-      - logic: curocc() = 1
-        questionText:
-          ENG: |
-            <p><span class="Qnum"><span style="font-family: &quot;Courier New&quot;;">ST1.</span><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">&nbsp;</span></span><span lang="EN-GB" style="font-size: 26px; line-height: 150%; font-family: &quot;Courier New&quot;;">I
-            would like to ask you about </span><span lang="EN-GB" style="font-size: 26px; line-height: 150%; font-family: &quot;Courier New&quot;;">various external economic assistance programmes provided to households.
-            By external assistance I mean support that comes from the government or from
-            non-governmental organizations such as religious, charitable, or
-            community-based organisations. This excludes support from family, other
-            relatives, friends, or neighbours.</span></p><span style="font-family: &quot;Courier New&quot;;">
-            </span><p><span class="Qnum" style="font-family: &quot;Courier New&quot;;">ST2. </span><span class="Qtxt"><span style="font-family: &quot;Courier New&quot;;">Are you </span><span style="font-family: &quot;Courier New&quot;;">aw</span><span style="font-size: 26px; font-family: &quot;Times New Roman&quot;;"><span style="font-family: &quot;Courier New&quot;;">a</span><span style="font-size: 26px; font-family: &quot;Courier New&quot;;">re of&nbsp;</span></span></span><span lang="EN-GB" style="font-size: 26px; line-height: 150%; font-family: &quot;Courier New&quot;; color: red; text-transform: uppercase;">Assistance Type 1</span><span style="font-size: 26px; text-transform: uppercase; text-align: center; text-indent: -0.1in; font-family: &quot;Courier New&quot;;">?</span></p>
-        helpText:
-          ENG: |
-            
-      - logic: curocc() = 2
-        questionText:
-          ENG: |
-            <p><span class="Qnum" style="font-family: &quot;Courier New&quot;;">ST2. </span><span class="Qtxt"><span style="font-family: &quot;Courier New&quot;;">Are you awar</span><span style="font-size: 26px; font-family: &quot;Courier New&quot;;">e </span><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">of&nbsp;</span></span><span lang="EN-GB" style="font-size: 26px; line-height: 150%; font-family: &quot;Courier New&quot;; color: red; text-transform: uppercase;">Assistance Type 2</span><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">?</span></p>
-        helpText:
-          ENG: |
-            
-      - logic: curocc() = 3
-        questionText:
-          ENG: |
-            <p><span class="Qnum" style="font-family: &quot;Courier New&quot;;">ST2. </span><span class="Qtxt"><span style="font-family: &quot;Courier New&quot;;">Ar</span><span style="font-family: &quot;Courier New&quot;;">e you awar</span><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">e of&nbsp;</span></span><span style="color: rgb(255, 0, 0); font-family: &quot;Courier New&quot;; text-transform: uppercase;">ASSISTANCE TYPE 3</span><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">?</span></p>
-        helpText:
-          ENG: |
-            
-      - logic: curocc() = 4
-        questionText:
-          ENG: |
-            <p><span class="Qnum"><span style="font-family: &quot;Courier New&quot;;">S</span><span style="font-size: 26px; font-family: &quot;Courier New&quot;;">T2. </span></span><span class="Qtxt"><span style="font-size: 26px; font-family: &quot;Courier New&quot;;">Are you aware of&nbsp;</span><span lang="EN-GB" style="font-size: 26px; line-height: 150%; font-family: &quot;Courier New&quot;; text-transform: uppercase;">Any Retirement Pension</span><span style="font-size: 26px; font-family: &quot;Courier New&quot;;">?</span></span></p>
-        helpText:
-          ENG: |
-            
-      - logic: curocc() = 5
-        questionText:
-          ENG: |
-            <p><span class="Qnum"><span style="font-family: &quot;Courier New&quot;;">ST</span><span style="font-size: 26px; font-family: &quot;Courier New&quot;;">2. </span></span><span class="Qtxt"><span style="font-size: 26px; font-family: &quot;Courier New&quot;;">Are you aware of&nbsp;</span><span lang="EN-GB" style="font-size: 26px; line-height: 150%; font-family: &quot;Courier New&quot;; text-transform: uppercase;">ANY Other external assistance programme</span><span style="font-size: 26px; font-family: &quot;Courier New&quot;;">?</span></span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.ST3
-    conditions:
-      - logic: curocc() = 1
-        questionText:
-          ENG: |
-            <p><span class="Qnum" style="font-family: &quot;Courier New&quot;; font-size: 24px;">ST3.&nbsp;</span><span class="Qtxt"><span lang="EN-GB" style="font-size: 24px; line-height: 150%; font-family: &quot;Courier New&quot;;">Has
-            your household or anyone in your household received assistance through&nbsp;</span><span lang="EN-GB" style="line-height: 39px; color: red; text-transform: uppercase; font-family: &quot;Courier New&quot;;">ASSISTANCE TYPE 1</span><span style="font-size: 24px; font-family: &quot;Courier New&quot;;">?</span></span></p>
-        helpText:
-          ENG: |
-            
-      - logic: curocc() = 2
-        questionText:
-          ENG: |
-            <p><span class="Qnum" style="font-size: 24px;">ST3.&nbsp;</span><span class="Qtxt"><span lang="EN-GB" style="font-size: 24px; line-height: 36px;">Has your household or anyone in your household received assistance through</span><span class="Qtxt">&nbsp;</span><span lang="EN-GB" style="line-height: 39px; color: red; text-transform: uppercase;">ASSISTANCE TYPE 2</span><span style="font-size: 24px;">?</span></span><br></p>
-        helpText:
-          ENG: |
-            
-      - logic: curocc() = 3
-        questionText:
-          ENG: |
-            <p><span class="Qnum" style="font-size: 24px;">ST3.&nbsp;</span><span class="Qtxt"><span lang="EN-GB" style="font-size: 24px; line-height: 36px;">Has your household or anyone in your household received assistance through</span><span class="Qtxt">&nbsp;</span><span lang="EN-GB" style="line-height: 39px; color: red; text-transform: uppercase;">ASSISTANCE TYPE 3</span><span style="font-size: 24px;">?</span></span><br></p>
-        helpText:
-          ENG: |
-            
-      - logic: curocc() = 4
-        questionText:
-          ENG: |
-            <p><span class="Qnum" style="font-size: 24px;">ST3.&nbsp;</span><span class="Qtxt"><span lang="EN-GB" style="font-size: 24px; line-height: 36px;">Has your household or anyone in your household received assistance through&nbsp;</span></span><span lang="EN-GB" style="line-height: 39px; text-transform: uppercase;">ANY RETIREMENT PENSION</span>?<br></p>
-        helpText:
-          ENG: |
-            
-      - logic: curocc() = 5
-        questionText:
-          ENG: |
-            <p><span class="Qnum">ST3. </span><span class="Qtxt">Has your household or anyone in your household received assistance through&nbsp;</span><span lang="EN-GB" style="line-height: 39px; text-transform: uppercase;">ANY OTHER EXTERNAL ASSISTANCE PROGRAMME</span>?</p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.ST4
-    conditions:
-      - questionText:
-          ENG: |
-            <span class="Qnum" style="font-size: 24px;">ST4.&nbsp;</span><span class="Qtxt"><span lang="EN-GB" style="font-size: 24px; line-height: 36px;">Who in your household is the assistance intended or meant for</span><span style="font-size: 24px;">?<br></span><span style="color: rgb(0, 0, 255); font-style: italic;">Probe:&nbsp;</span><span style="font-size: 24px;">Anyone else?</span><span style="font-size: 24px;"><br></span></span><p></p>
-  - name: MICS7HH.ST5
-    conditions:
-      - questionText:
-          ENG: |
-            <span class="Qnum" style="font-size: 24px;">ST5.&nbsp;</span><span class="Qtxt"><span lang="EN-GB" style="font-size: 24px; line-height: 36px;">Who in your household is authorized to receive or collect the assistance</span><span style="font-size: 24px;">?<br></span><span style="color: rgb(0, 0, 255); font-style: italic;">Probe:&nbsp;</span><span style="font-size: 24px;">Anyone else?</span></span><p></p>
-  - name: MICS7HH.ST6U
-    conditions:
-      - logic: curocc() = 1
-        questionText:
-          ENG: |
-            <p><span class="Qnum">ST6.&nbsp;</span><span class="Qtxt">When was the last time your household or anyone in your household received assistance through&nbsp;<span class="QtxtC">Assistance Type 1</span>?</span></p><p><span class="Itxt">If less than one month, record '1' and record '00' in Months.</span></p><p><span class="Itxt">If less than 12 months, record '1' and record in Months.</span></p><p><span class="Itxt">If 1 year/12 months or more, record '2' and record in Years.</span></p>
-        helpText:
-          ENG: |
-            
-      - logic: curocc() = 2
-        questionText:
-          ENG: |
-            <p><span class="Qnum">ST6.&nbsp;</span><span class="Qtxt">When was the last time your household or anyone in your household received assistance through&nbsp;<span class="QtxtC">Assistance Type 2</span>?</span></p><p><span class="Itxt">If less than one month, record '1' and record '00' in Months.</span></p><p><span class="Itxt">If less than 12 months, record '1' and record in Months.</span></p><p><span class="Itxt">If 1 year/12 months or more, record '2' and record in Years.</span></p>
-        helpText:
-          ENG: |
-            
-      - logic: curocc() = 3
-        questionText:
-          ENG: |
-            <p><span class="Qnum">ST6.&nbsp;</span><span class="Qtxt">When was the last time your household or anyone in your household received assistance through&nbsp;<span class="QtxtC">Assistance Type 3</span>?</span></p><p><span class="Itxt">If less than one month, record '1' and record '00' in Months.</span></p><p><span class="Itxt">If less than 12 months, record '1' and record in Months.</span></p><p><span class="Itxt">If 1 year/12 months or more, record '2' and record in Years.</span></p>
-        helpText:
-          ENG: |
-            
-      - logic: curocc() = 4
-        questionText:
-          ENG: |
-            <p><span class="Qnum">ST6.&nbsp;</span><span class="Qtxt">When was the last time your household or anyone in your household received assistance through ANY RETIREMENT PENSION?</span></p><p><span class="Itxt">If less than one month, record '1' and record '00' in Months.</span></p><p><span class="Itxt">If less than 12 months, record '1' and record in Months.</span></p><p><span class="Itxt">If 1 year/12 months or more, record '2' and record in Years.</span></p>
-        helpText:
-          ENG: |
-            
-      - logic: curocc() = 5
-        questionText:
-          ENG: |
-            <p><span class="Qnum">ST6.&nbsp;</span><span class="Qtxt">When was the last time your household or anyone in your household received assistance through ANY Other external assistance programme?</span></p><p><span class="Itxt">If less than one month, record '1' and record '00' in Months.</span></p><p><span class="Itxt">If less than 12 months, record '1' and record in Months.</span></p><p><span class="Itxt">If 1 year/12 months or more, record '2' and record in Years.</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.ST6N
-    conditions:
-      - logic: curocc() = 1
-        questionText:
-          ENG: |
-            <p><span class="Qnum">ST6.&nbsp;</span><span class="Qtxt">When was the last time your household or anyone in your household received assistance through&nbsp;<span class="QtxtC">Assistance Type 1</span>?</span><br></p>
-            <p><span class="Itxt">Record ~~worklabel~~</span></p>
-        helpText:
-          ENG: |
-            
-      - logic: curocc() = 2
-        questionText:
-          ENG: |
-            <p><span class="Qnum">ST6.&nbsp;</span><span class="Qtxt">When was the last time your household or anyone in your household received assistance through&nbsp;<span class="QtxtC">Assistance Type 2</span>?</span><br></p>
-            <p><span class="Itxt">Record ~~worklabel~~</span></p>
-        helpText:
-          ENG: |
-            
-      - logic: curocc() = 3
-        questionText:
-          ENG: |
-            <p><span class="Qnum">ST6.&nbsp;</span><span class="Qtxt">When was the last time your household or anyone in your household received assistance through&nbsp;<span class="QtxtC">Assistance Type 3</span>?</span><br></p>
-            <p><span class="Itxt">Record ~~worklabel~~</span></p>
-        helpText:
-          ENG: |
-            
-      - logic: curocc() = 4
-        questionText:
-          ENG: |
-            <p><span class="Qnum">ST6.&nbsp;</span><span class="Qtxt">When was the last time your household or anyone in your household received assistance through ANY RETIREMENT PENSION?</span><br></p>
-            <p><span class="Itxt">Record ~~worklabel~~</span></p>
-        helpText:
-          ENG: |
-            
-      - logic: curocc() = 5
-        questionText:
-          ENG: |
-            <p><span class="Qnum">ST6.&nbsp;</span><span class="Qtxt">When was the last time your household or anyone in your household received assistance through ANY Other external assistance programme?</span><br></p>
-            <p><span class="Itxt">Record ~~worklabel~~</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.PE1
-    conditions:
-      - questionText:
-          ENG: |
-            <p class="MsoNormal"><b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">PE1</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">. We want to talk to you about the</span><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;"> </span><span lang="EN-GB" style="font-size: 18pt; color: red; font-family: &quot;Courier New&quot;;">emergency</span><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">.</span></p><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">
-            
-            </span><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">Did anyone who was not a
-            member of this household before the </span><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;; color: red;">emergency</span><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;"> come to live in this household because of&nbsp;the </span><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;; color: red;">emergency</span><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">?</span><p></p>
-  - name: MICS7HH.PE2
-    conditions:
-      - questionText:
-          ENG: |
-            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">PE2</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">. How many persons came to live in this
-            household?</span><p></p>
-  - name: MICS7HH.PE3
-    conditions:
-      - questionText:
-          ENG: |
-            <p class="Instructionstointvw" style="margin-left:.1in;mso-add-space:auto;
-            text-indent:-.1in;line-height:115%"><b><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-size: 24px;">PE3</span></b><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-size: 24px;">.</span><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-size: 24px;"> </span><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-size: 24px;">At any time
-            during the </span><span lang="EN-GB" style="color: red; font-family: &quot;Courier New&quot;; font-size: 24px;">emergency</span><span lang="EN-GB"><span style="font-family: &quot;Courier New&quot;; font-size: 24px;">, did </span><u><span style="font-family: &quot;Courier New&quot;; font-size: 24px;">all members
-            of this household</span></u><span style="font-family: &quot;Courier New&quot;; font-size: 24px;"> move somewhere else because of the </span></span><span lang="EN-GB" style="color: red; font-family: &quot;Courier New&quot;; font-size: 24px;">emergency</span><span lang="EN-GB"><span style="font-family: &quot;Courier New&quot;; font-size: 24px;">?</span></span></p><span style="font-size: 24px; font-family: &quot;Courier New&quot;;">
-            
-            </span><span lang="EN-GB" style="font-size: 24px; font-family: &quot;Courier New&quot;;"><font color="#0000ff"><i>If ‘No’, probe if all the
-            members of the household stayed one night or more in another location. If so,
-            record 1 for ‘Yes’.</i></font></span><p></p>
-  - name: MICS7HH.PE4U
-    conditions:
-      - questionText:
-          ENG: |
-            <p class="Instructionstointvw" style="margin-left:.1in;mso-add-space:auto;
-            text-indent:-.1in;line-height:115%"><b><span lang="EN-GB">PE4</span></b><span lang="EN-GB">. How long did all the members of this
-            household live in that other place(s)?</span></p>
-            
-            <p class="Instructionstointvw" style="margin-left:6.75pt;mso-add-space:auto;
-            text-indent:.45pt;line-height:115%"><span lang="EN-GB"><font color="#0000ff"><i>Record unit.<br>If less than one week, record days.</i></font></span></p><p></p>
-  - name: MICS7HH.PE4N
-    conditions:
-      - questionText:
-          ENG: |
-            <p class="Instructionstointvw" style="margin-left: 0.1in; text-indent: -0.1in; line-height: 29.9px;"><b><span lang="EN-GB">PE4</span></b><span lang="EN-GB">. How long did all the members of this household live in that other place(s)?</span></p><p class="Instructionstointvw" style="margin-left: 6.75pt; text-indent: 0.45pt; line-height: 29.9px;"><span lang="EN-GB"><font color="#0000ff"><i>Record number. If any household member is still at another location, record 995.</i></font></span></p><p></p>
-  - name: MICS7HH.PE5
-    conditions:
-      - questionText:
-          ENG: |
-            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">PE5</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">. Due to the </span><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;; color: red;">emergency</span><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">, was your house damaged or destroyed?</span><p></p>
-  - name: MICS7HH.PE6
-    conditions:
-      - questionText:
-          ENG: |
-            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">PE6</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">. </span><span lang="EN-GB" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;,serif;
-            mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-GB;mso-fareast-language:
-            EN-US;mso-bidi-language:AR-SA"><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">Did anyone who was living in the household
-            during the </span><span style="color: red; font-family: &quot;Courier New&quot;; font-size: 18pt;">emergency</span><b><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;"> </span></b><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">die as a direct result of the</span><b><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">
-            </span></b><span style="color: red; font-family: &quot;Courier New&quot;; font-size: 18pt;">emergency</span><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">?</span></span><p></p>
-  - name: MICS7HH.PE7
-    conditions:
-      - questionText:
-          ENG: |
-            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">PE7</span></b><span lang="EN-GB" style="font-size:
-            12.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;,serif;
-            mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-GB;mso-fareast-language:
-            EN-US;mso-bidi-language:AR-SA"><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">. Did any of the members of this household need
-            medical care for any reason at the time of the </span><span style="color: red; font-family: &quot;Courier New&quot;; font-size: 18pt;">emergency</span><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">?</span></span><p></p>
-  - name: MICS7HH.PE8
-    conditions:
-      - questionText:
-          ENG: |
-            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">PE8</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">. Did all members that needed medical care
-            receive this care?</span><p></p>
-  - name: MICS7HH.PE9
-    conditions:
-      - questionText:
-          ENG: |
-            <p class="Instructionstointvw" style="margin-left:.1in;mso-add-space:auto;
-            text-indent:-.1in;line-height:115%"><b><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-size: 24px;">PE9</span></b><span lang="EN-GB" style="font-family: &quot;Times New Roman&quot;; font-size: 24px;"><span style="font-family: &quot;Courier New&quot;;">. Now I would like to ask you ab</span><span style="font-size: 24px;"><span style="font-family: &quot;Courier New&quot;;">out serious
-            illnesses caused by the </span><font color="#ff0000"><span style="font-family: &quot;Courier New&quot;;">emergency</span></font><span style="font-family: &quot;Courier New&quot;;">. These can include, for example, </span></span></span><span lang="EN-GB" style="color: red; font-family: &quot;Courier New&quot;; font-size: 24px;">customise
-            based on emergency type</span><span lang="EN-GB"><span style="font-family: &quot;Times New Roman&quot;; font-size: 24px;"><span style="font-size: 24px; font-family: &quot;Courier New&quot;;">.</span><span class="Qtxt" style="font-size: 24px; font-family: &quot;Courier New&quot;;">&nbsp;</span></span></span></p><p class="Instructionstointvw" style="margin-left:.1in;mso-add-space:auto;
-            text-indent:-.1in;line-height:115%"><span style="font-size: 24px;"><span style="font-family: &quot;Courier New&quot;;">Did any member of this household become seriously ill at the time of the </span><span class="QtxtC" style="font-family: &quot;Courier New&quot;;">emergency</span><span style="font-family: &quot;Courier New&quot;;">?</span></span></p><p></p>
-  - name: MICS7HH.PE10
-    conditions:
-      - questionText:
-          ENG: |
-            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">PE10</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">. As a result of the illness(es), (was this
-            person/were these persons) unable to perform usual daily activities, such as
-            going to work or school for more than 3 months at a time?</span><p></p>
-  - name: MICS7HH.PE11
-    conditions:
-      - questionText:
-          ENG: |
-            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">PE11</span></b><span lang="EN-GB" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;,serif;
-            mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-GB;mso-fareast-language:
-            EN-US;mso-bidi-language:AR-SA"><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">. Did anyone in this household become seriously
-            injured due to the </span><span style="color: red; font-family: &quot;Courier New&quot;; font-size: 18pt;">emergency</span><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">?</span></span><p></p>
-  - name: MICS7HH.PE12
-    conditions:
-      - questionText:
-          ENG: |
-            <p class="Instructionstointvw" style="margin-left:.1in;mso-add-space:auto;
-            text-indent:-.1in;line-height:115%"><span class="1IntvwqstChar1"><b><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-size: 24px;">PE12</span></b></span><span class="1IntvwqstChar1"><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-size: 24px;">.</span></span><span lang="EN-GB" style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-caps: small-caps; font-variant-alternates: normal; font-family: &quot;Courier New&quot;; font-size: 24px;"> </span><span lang="EN-GB"><span style="font-family: &quot;Courier New&quot;; font-size: 24px;">Due to
-            the </span><span style="color: red; font-family: &quot;Courier New&quot;; font-size: 24px;">emergency</span><span style="font-family: &quot;Courier New&quot;; font-size: 24px;">, were any household members
-            separated from the household, even if it was temporary?</span></span></p><span style="font-family: &quot;Courier New&quot;; font-size: 24px;">
-            
-            </span><span lang="EN-GB" style="font-size: 24px; font-family: &quot;Courier New&quot;;"><font color="#0000ff"><i>If ‘No’, probe: Did any household member move to live
-            with relatives or neighbours, or were detained or got lost, even if
-            temporarily? If any, record 1 for
-            ‘Yes’.</i></font></span><p></p>
-  - name: MICS7HH.PE13
-    conditions:
-      - questionText:
-          ENG: |
-            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">PE13</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">. </span><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">How many members were separated?</span><p></p>
-  - name: MICS7HH.PE14
-    conditions:
-      - questionText:
-          ENG: |
-            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-caps: small-caps; font-variant-alternates: normal;">PE14</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-caps: small-caps; font-variant-alternates: normal;">. </span><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">Were any of the separated members less than 18
-            years old at the time of separation?</span><p></p>
-  - name: MICS7HH.PE15
-    conditions:
-      - questionText:
-          ENG: |
-            <p class="1Intvwqst" style="margin-left:.1in;mso-add-space:auto;text-indent:-.1in;
-            line-height:115%;mso-pagination:none"><b><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-size: 24px; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">PE15</span></b><span lang="EN-GB" style="font-family: &quot;Times New Roman&quot;, serif; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;"><span style="font-family: &quot;Courier New&quot;; font-size: 24px;">.
-            Were there any children age 5-17 years living in this household during the </span><span style="color: red; font-family: &quot;Courier New&quot;; font-size: 24px;">emergency</span><span style="font-family: &quot;Courier New&quot;; font-size: 24px;">?</span></span></p><span style="font-family: &quot;Courier New&quot;; font-size: 24px;">
-            
-            </span><span lang="EN-GB" style="font-size: 24px; font-family: &quot;Times New Roman&quot;;"><font color="#0000ff"><i><span style="font-family: &quot;Courier New&quot;;">Probe:</span></i></font><span style="font-family: &quot;Courier New&quot;;"> Please include
-            children who were living with the household at the time of the </span><font color="#ff0000"><span style="font-family: &quot;Courier New&quot;;">emergency</span></font><span style="font-family: &quot;Courier New&quot;;">.&nbsp;</span></span><p></p>
-  - name: MICS7HH.PE16
-    conditions:
-      - questionText:
-          ENG: |
-            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">PE16</span></b><span lang="EN-GB" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;,serif;
-            mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-GB;mso-fareast-language:
-            EN-US;mso-bidi-language:AR-SA"><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">. Before the </span><span style="color: red; font-family: &quot;Courier New&quot;; font-size: 18pt;">emergency</span><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">,
-            were any of these children attending school?</span></span><p></p>
-  - name: MICS7HH.PE17
-    conditions:
-      - questionText:
-          ENG: |
-            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">PE17</span></b><span lang="EN-GB" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;,serif;
-            mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-GB;mso-fareast-language:
-            EN-US;mso-bidi-language:AR-SA"><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">. During the </span><span style="color: red; font-family: &quot;Courier New&quot;; font-size: 18pt;">emergency</span><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">,
-            did any of these children age 5 to 17 years stop attending school due to the </span><span style="color: red; font-family: &quot;Courier New&quot;; font-size: 18pt;">emergency</span><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">, even if temporarily?</span></span><p></p>
-  - name: MICS7HH.PE18
-    conditions:
-      - questionText:
-          ENG: |
-            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">PE18</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">. </span><span lang="EN-GB" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;,serif;
-            mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-GB;mso-fareast-language:
-            EN-US;mso-bidi-language:AR-SA"><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">During the </span><span style="color: red; font-family: &quot;Courier New&quot;; font-size: 18pt;">emergency</span><span style="font-family: &quot;Times New Roman&quot;; font-size: 18pt;"><span style="font-family: &quot;Courier New&quot;;">,
-            was the household’s main source of drinking water unusable because of the
-            </span><font color="#ff0000"><span style="font-family: &quot;Courier New&quot;;">emergency</span></font><span style="font-family: &quot;Courier New&quot;;">, even if temporarily?</span></span></span><p></p>
-  - name: MICS7HH.PE19
-    conditions:
-      - questionText:
-          ENG: |
-            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">PE19</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">. </span><span lang="EN-GB" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;,serif;
-            mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-GB;mso-fareast-language:
-            EN-US;mso-bidi-language:AR-SA"><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">During the </span><span style="color: red; font-family: &quot;Courier New&quot;; font-size: 18pt;">emergency</span><span style="font-family: &quot;Times New Roman&quot;; font-size: 18pt;"><span style="font-family: &quot;Courier New&quot;;">,
-            was the household’s main toilet facility unusable due to the </span><font color="#ff0000"><span style="font-family: &quot;Courier New&quot;;">emergency</span></font><span style="font-family: &quot;Courier New&quot;;">, even if
-            temporarily?</span></span></span><p></p>
-  - name: MICS7HH.PE20
-    conditions:
-      - questionText:
-          ENG: |
-            <p class="1Intvwqst" style="margin-left:.1in;mso-add-space:auto;text-indent:-.1in;
-            line-height:115%;mso-pagination:none"><b><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-size: 24px; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">PE20</span></b><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-size: 24px; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">. </span><span lang="EN-GB" style="font-family: &quot;Times New Roman&quot;, serif; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;"><span style="font-family: &quot;Courier New&quot;; font-size: 24px;">Was household income affected by the </span><span style="color: red; font-family: &quot;Courier New&quot;; font-size: 24px;">emergency</span><span style="font-family: &quot;Courier New&quot;; font-size: 24px;">?</span></span></p><span style="font-family: &quot;Courier New&quot;; font-size: 24px;">
-            
-            </span><i><span lang="EN-GB" style="font-size: 24px; font-family: &quot;Courier New&quot;;"><font color="#0000ff">If ‘Yes’, probe to find whether the income increased
-            or decreased.</font></span></i><p></p>
-  - name: MICS7HH.PE21
-    conditions:
-      - questionText:
-          ENG: |
-            <p class="1Intvwqst" style="margin-left:.1in;mso-add-space:auto;text-indent:-.1in;
-            line-height:115%;mso-pagination:none"><b><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">PE21</span></b><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">. </span><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">Why did your household’s income decrease?</span></p><p class="1Intvwqst" style="margin-left:.1in;mso-add-space:auto;text-indent:-.1in;
-            line-height:115%;mso-pagination:none"><i style="text-indent: -0.1in;"><span lang="EN-GB" style="font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;"><font color="#0000ff"><span style="font-family: &quot;Courier New&quot;;">Probe:</span></font><span style="font-family: &quot;Courier New&quot;;">&nbsp;Anything else?</span></span></i></p><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">
-            
-            </span><i><span lang="EN-GB" style="font-size: 26px; font-family: &quot;Courier New&quot;;"><font color="#0000ff">Record all that apply.</font></span></i><p></p>
-  - name: MICS7HH.PE22
-    conditions:
-      - questionText:
-          ENG: |
-            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">PE22</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">. </span><span lang="EN-GB" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;,serif;
-            mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-GB;mso-fareast-language:
-            EN-US;mso-bidi-language:AR-SA"><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">During the </span><span style="color: red; font-family: &quot;Courier New&quot;; font-size: 18pt;">emergency</span><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">,
-            were any items of value in the home, farm or business, either damaged,
-            destroyed, or stolen?</span></span><p></p>
-  - name: MICS7HH.FE1
-    conditions:
-      - questionText:
-          ENG: |
-            <p class="1IntvwqstChar1Char" style="margin-left:.1in;mso-add-space:auto;
-            text-indent:-.1in;line-height:115%"><b><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">FE1</span></b><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">.
-            Now I would like to ask you some questions about food. During the last 1 year,
-            was there a time when</span><span style="font-family: &quot;Times New Roman&quot;, serif; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;"><span style="font-family: &quot;Courier New&quot;;"> you or others in your household worried about
-            not having enough food to eat because of a lack of money or other resources?</span><o:p></o:p></span></p>
-            
-            <p class="1IntvwqstChar1Char" style="margin-left:.1in;mso-add-space:auto;
-            text-indent:-.1in;line-height:115%"><b><span style="font-family: &quot;Courier New&quot;; font-size: 26px; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;"><font color="#0000ff">&nbsp;</font></span></b><i><span lang="EN-GB" style="font-size: 26px; font-family: &quot;Times New Roman&quot;;"><font color="#0000ff"><span style="font-family: &quot;Courier New&quot;;">Probe:</span></font><span style="font-family: &quot;Courier New&quot;;"> </span></span></i><span lang="EN-GB" style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;"><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">By lack of money or
-            other resources, I mean not having the means to get food, either through </span><span style="color: red; font-family: &quot;Courier New&quot;; font-size: 26px;">growing it, purchasing it, or trading for it</span><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">.</span></span></p><p></p>
-  - name: MICS7HH.FE2
-    conditions:
-      - questionText:
-          ENG: |
-            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">FE2</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">.
-            Still thinking about the last 1 year, was there a time when you or others in
-            your household were unable to eat healthy and nutritious food because of a lack
-            of money or other resources?</span><p></p>
-  - name: MICS7HH.FE3
-    conditions:
-      - questionText:
-          ENG: |
-            <p class="MsoNormal" style="margin-left:7.45pt;mso-add-space:auto;text-indent:
-            -7.45pt;line-height:115%"><b><span lang="EN-GB" style="font-size: 18pt; line-height: 115%;">FE3</span></b><span lang="EN-GB" style="font-size:10.0pt;line-height:115%"><span style="font-size: 18pt;">. Was there a time when
-            you or others in your household ate only a few kinds of foods because of a lack
-            of money or other resources?</span><o:p></o:p></span></p><p></p>
-  - name: MICS7HH.FE4
-    conditions:
-      - questionText:
-          ENG: |
-            <p class="MsoNormal" style="margin-left:7.45pt;mso-add-space:auto;text-indent:
-            -7.1pt;line-height:115%"><b><span lang="EN-GB" style="font-size: 18pt; line-height: 115%;">FE4</span></b><span lang="EN-GB" style="font-size:10.0pt;line-height:115%"><span style="font-size: 18pt;">. Was there a time when
-            you or others in your household had to skip a meal because there were not
-            enough money or other resources to get food?</span><o:p></o:p></span></p><p></p>
-  - name: MICS7HH.FE5
-    conditions:
-      - questionText:
-          ENG: |
-            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">FE5</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">.
-            Still thinking about the last 1 year, was there a time when you or others in
-            your household ate less than you thought you should because of a lack of money
-            or other resources?</span><p></p>
-  - name: MICS7HH.FE6
-    conditions:
-      - questionText:
-          ENG: |
-            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">FE6</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">.
-            Was there a time when your household ran out of food because of a lack of money
-            or other resources?</span><p></p>
-  - name: MICS7HH.FE7
-    conditions:
-      - questionText:
-          ENG: |
-            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">FE7</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">.
-            Was there a time when you or others in your household were hungry but did not
-            eat because of a lack of money or other resources for food?</span><p></p>
-  - name: MICS7HH.FE8
-    conditions:
-      - questionText:
-          ENG: |
-            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">FE8</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">. During</span><b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;"> </span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">the last 1 year, was there a time when you or
-            others in your household went without eating for a whole day because of a lack
-            of money or other resources?</span><p></p>
   - name: MICS7HH.WS1
     conditions:
       - questionText:
@@ -1493,14 +1068,14 @@ questions:
           ENG: |
             <p class="1IntvwqstChar1Char" style="margin-left:.1in;mso-add-space:auto;
             text-indent:-.1in;line-height:115%"><b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">WS10B</span></b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">.</span><b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;"> </span></b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">Is your main source of drinking water the same in
-            the </span><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;"><font color="#ff0000">wet/dry</font></span><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;"> season?</span><br></p><p></p>
+            the </span><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">wet</span><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">&nbsp;season?</span><br></p><p></p>
   - name: MICS7HH.WS10CC
     conditions:
       - questionText:
           ENG: |
             <p class="1IntvwqstChar1Char" style="margin-left:.1in;mso-add-space:auto;
             text-indent:-.1in;line-height:115%"><b><span lang="MN" style="font-family: &quot;Courier New&quot;; font-size: 26px; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">WS10C.&nbsp;</span></b><span lang="EN-GB" style="font-size: 26px; line-height: 150%; font-family: &quot;Courier New&quot;;">What is your main source of drinking water in
-            the </span><span lang="EN-GB" style="font-size: 26px; line-height: 150%; font-family: &quot;Courier New&quot;;"><font color="#ff0000">wet/dry</font></span><span lang="EN-GB" style="font-size: 26px; line-height: 150%; font-family: &quot;Courier New&quot;;"> season?</span></p><b><span lang="EN-GB" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;line-height:150%;
+            the </span><span lang="EN-GB" style="font-size: 26px; line-height: 150%; font-family: &quot;Courier New&quot;;">wet</span><span lang="EN-GB" style="font-size: 26px; line-height: 150%; font-family: &quot;Courier New&quot;;">&nbsp;season?</span></p><b><span lang="EN-GB" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;line-height:150%;
             font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:&quot;Times New Roman&quot;;
             mso-ansi-language:EN-GB;mso-fareast-language:EN-US;mso-bidi-language:AR-SA"></span></b><p></p>
   - name: MICS7HH.WS10DD
@@ -2070,4 +1645,429 @@ questions:
             <b><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">ED14A.&nbsp;</span></b><span lang="EN-GB" style="font-size: 26px; line-height: 150%; font-family: &quot;Courier New&quot;;">Do you think this </span><span lang="EN-GB" style="font-size:9.0pt;line-height:150%;font-family:&quot;Times New Roman&quot;,serif;
             mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-GB;mso-fareast-language:
             EN-US;mso-bidi-language:AR-SA"><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">support is sufficient for the school supplies&nbsp;</span><span style="font-family: &quot;Courier New&quot;; font-size: 26px; font-style: italic;">~~ED2~~</span><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">&nbsp;needed?</span></span><p></p>
+  - name: MICS7HH.FE1
+    conditions:
+      - questionText:
+          ENG: |
+            <p class="1IntvwqstChar1Char" style="margin-left:.1in;mso-add-space:auto;
+            text-indent:-.1in;line-height:115%"><b><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">FE1</span></b><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">.
+            Now I would like to ask you some questions about food. During the last 1 year,
+            was there a time when</span><span style="font-family: &quot;Times New Roman&quot;, serif; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;"><span style="font-family: &quot;Courier New&quot;;"> you or others in your household worried about
+            not having enough food to eat because of a lack of money or other resources?</span><o:p></o:p></span></p>
+            
+            <p class="1IntvwqstChar1Char" style="margin-left:.1in;mso-add-space:auto;
+            text-indent:-.1in;line-height:115%"><b><span style="font-family: &quot;Courier New&quot;; font-size: 26px; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;"><font color="#0000ff">&nbsp;</font></span></b><i><span lang="EN-GB" style="font-size: 26px; font-family: &quot;Times New Roman&quot;;"><font color="#0000ff"><span style="font-family: &quot;Courier New&quot;;">Probe:</span></font><span style="font-family: &quot;Courier New&quot;;"> </span></span></i><span lang="EN-GB" style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;"><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">By lack of money or
+            other resources, I mean not having the means to get food, either through </span><span style="color: red; font-family: &quot;Courier New&quot;; font-size: 26px;">growing it, purchasing it, or trading for it</span><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">.</span></span></p><p></p>
+  - name: MICS7HH.FE2
+    conditions:
+      - questionText:
+          ENG: |
+            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">FE2</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">.
+            Still thinking about the last 1 year, was there a time when you or others in
+            your household were unable to eat healthy and nutritious food because of a lack
+            of money or other resources?</span><p></p>
+  - name: MICS7HH.FE3
+    conditions:
+      - questionText:
+          ENG: |
+            <p class="MsoNormal" style="margin-left:7.45pt;mso-add-space:auto;text-indent:
+            -7.45pt;line-height:115%"><b><span lang="EN-GB" style="font-size: 18pt; line-height: 115%;">FE3</span></b><span lang="EN-GB" style="font-size:10.0pt;line-height:115%"><span style="font-size: 18pt;">. Was there a time when
+            you or others in your household ate only a few kinds of foods because of a lack
+            of money or other resources?</span><o:p></o:p></span></p><p></p>
+  - name: MICS7HH.FE4
+    conditions:
+      - questionText:
+          ENG: |
+            <p class="MsoNormal" style="margin-left:7.45pt;mso-add-space:auto;text-indent:
+            -7.1pt;line-height:115%"><b><span lang="EN-GB" style="font-size: 18pt; line-height: 115%;">FE4</span></b><span lang="EN-GB" style="font-size:10.0pt;line-height:115%"><span style="font-size: 18pt;">. Was there a time when
+            you or others in your household had to skip a meal because there were not
+            enough money or other resources to get food?</span><o:p></o:p></span></p><p></p>
+  - name: MICS7HH.FE5
+    conditions:
+      - questionText:
+          ENG: |
+            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">FE5</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">.
+            Still thinking about the last 1 year, was there a time when you or others in
+            your household ate less than you thought you should because of a lack of money
+            or other resources?</span><p></p>
+  - name: MICS7HH.FE6
+    conditions:
+      - questionText:
+          ENG: |
+            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">FE6</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">.
+            Was there a time when your household ran out of food because of a lack of money
+            or other resources?</span><p></p>
+  - name: MICS7HH.FE7
+    conditions:
+      - questionText:
+          ENG: |
+            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">FE7</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">.
+            Was there a time when you or others in your household were hungry but did not
+            eat because of a lack of money or other resources for food?</span><p></p>
+  - name: MICS7HH.FE8
+    conditions:
+      - questionText:
+          ENG: |
+            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">FE8</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">. During</span><b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;"> </span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">the last 1 year, was there a time when you or
+            others in your household went without eating for a whole day because of a lack
+            of money or other resources?</span><p></p>
+  - name: MICS7HH.PE1
+    conditions:
+      - questionText:
+          ENG: |
+            <p class="MsoNormal"><b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">PE1</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">. We want to talk to you about the</span><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;"> </span><span lang="EN-GB" style="font-size: 18pt; color: red; font-family: &quot;Courier New&quot;;">emergency</span><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">.</span></p><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">
+            
+            </span><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">Did anyone who was not a
+            member of this household before the </span><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;; color: red;">emergency</span><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;"> come to live in this household because of&nbsp;the </span><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;; color: red;">emergency</span><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">?</span><p></p>
+  - name: MICS7HH.PE10
+    conditions:
+      - questionText:
+          ENG: |
+            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">PE10</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">. As a result of the illness(es), (was this
+            person/were these persons) unable to perform usual daily activities, such as
+            going to work or school for more than 3 months at a time?</span><p></p>
+  - name: MICS7HH.PE11
+    conditions:
+      - questionText:
+          ENG: |
+            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">PE11</span></b><span lang="EN-GB" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;,serif;
+            mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-GB;mso-fareast-language:
+            EN-US;mso-bidi-language:AR-SA"><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">. Did anyone in this household become seriously
+            injured due to the </span><span style="color: red; font-family: &quot;Courier New&quot;; font-size: 18pt;">emergency</span><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">?</span></span><p></p>
+  - name: MICS7HH.PE12
+    conditions:
+      - questionText:
+          ENG: |
+            <p class="Instructionstointvw" style="margin-left:.1in;mso-add-space:auto;
+            text-indent:-.1in;line-height:115%"><span class="1IntvwqstChar1"><b><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-size: 24px;">PE12</span></b></span><span class="1IntvwqstChar1"><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-size: 24px;">.</span></span><span lang="EN-GB" style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-caps: small-caps; font-variant-alternates: normal; font-family: &quot;Courier New&quot;; font-size: 24px;"> </span><span lang="EN-GB"><span style="font-family: &quot;Courier New&quot;; font-size: 24px;">Due to
+            the </span><span style="color: red; font-family: &quot;Courier New&quot;; font-size: 24px;">emergency</span><span style="font-family: &quot;Courier New&quot;; font-size: 24px;">, were any household members
+            separated from the household, even if it was temporary?</span></span></p><span style="font-family: &quot;Courier New&quot;; font-size: 24px;">
+            
+            </span><span lang="EN-GB" style="font-size: 24px; font-family: &quot;Courier New&quot;;"><font color="#0000ff"><i>If ‘No’, probe: Did any household member move to live
+            with relatives or neighbours, or were detained or got lost, even if
+            temporarily? If any, record 1 for
+            ‘Yes’.</i></font></span><p></p>
+  - name: MICS7HH.PE13
+    conditions:
+      - questionText:
+          ENG: |
+            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">PE13</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">. </span><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">How many members were separated?</span><p></p>
+  - name: MICS7HH.PE14
+    conditions:
+      - questionText:
+          ENG: |
+            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-caps: small-caps; font-variant-alternates: normal;">PE14</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-caps: small-caps; font-variant-alternates: normal;">. </span><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">Were any of the separated members less than 18
+            years old at the time of separation?</span><p></p>
+  - name: MICS7HH.PE15
+    conditions:
+      - questionText:
+          ENG: |
+            <p class="1Intvwqst" style="margin-left:.1in;mso-add-space:auto;text-indent:-.1in;
+            line-height:115%;mso-pagination:none"><b><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-size: 24px; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">PE15</span></b><span lang="EN-GB" style="font-family: &quot;Times New Roman&quot;, serif; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;"><span style="font-family: &quot;Courier New&quot;; font-size: 24px;">.
+            Were there any children age 5-17 years living in this household during the </span><span style="color: red; font-family: &quot;Courier New&quot;; font-size: 24px;">emergency</span><span style="font-family: &quot;Courier New&quot;; font-size: 24px;">?</span></span></p><span style="font-family: &quot;Courier New&quot;; font-size: 24px;">
+            
+            </span><span lang="EN-GB" style="font-size: 24px; font-family: &quot;Times New Roman&quot;;"><font color="#0000ff"><i><span style="font-family: &quot;Courier New&quot;;">Probe:</span></i></font><span style="font-family: &quot;Courier New&quot;;"> Please include
+            children who were living with the household at the time of the </span><font color="#ff0000"><span style="font-family: &quot;Courier New&quot;;">emergency</span></font><span style="font-family: &quot;Courier New&quot;;">.&nbsp;</span></span><p></p>
+  - name: MICS7HH.PE16
+    conditions:
+      - questionText:
+          ENG: |
+            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">PE16</span></b><span lang="EN-GB" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;,serif;
+            mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-GB;mso-fareast-language:
+            EN-US;mso-bidi-language:AR-SA"><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">. Before the </span><span style="color: red; font-family: &quot;Courier New&quot;; font-size: 18pt;">emergency</span><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">,
+            were any of these children attending school?</span></span><p></p>
+  - name: MICS7HH.PE17
+    conditions:
+      - questionText:
+          ENG: |
+            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">PE17</span></b><span lang="EN-GB" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;,serif;
+            mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-GB;mso-fareast-language:
+            EN-US;mso-bidi-language:AR-SA"><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">. During the </span><span style="color: red; font-family: &quot;Courier New&quot;; font-size: 18pt;">emergency</span><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">,
+            did any of these children age 5 to 17 years stop attending school due to the </span><span style="color: red; font-family: &quot;Courier New&quot;; font-size: 18pt;">emergency</span><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">, even if temporarily?</span></span><p></p>
+  - name: MICS7HH.PE18
+    conditions:
+      - questionText:
+          ENG: |
+            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">PE18</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">. </span><span lang="EN-GB" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;,serif;
+            mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-GB;mso-fareast-language:
+            EN-US;mso-bidi-language:AR-SA"><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">During the </span><span style="color: red; font-family: &quot;Courier New&quot;; font-size: 18pt;">emergency</span><span style="font-family: &quot;Times New Roman&quot;; font-size: 18pt;"><span style="font-family: &quot;Courier New&quot;;">,
+            was the household’s main source of drinking water unusable because of the
+            </span><font color="#ff0000"><span style="font-family: &quot;Courier New&quot;;">emergency</span></font><span style="font-family: &quot;Courier New&quot;;">, even if temporarily?</span></span></span><p></p>
+  - name: MICS7HH.PE19
+    conditions:
+      - questionText:
+          ENG: |
+            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">PE19</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">. </span><span lang="EN-GB" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;,serif;
+            mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-GB;mso-fareast-language:
+            EN-US;mso-bidi-language:AR-SA"><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">During the </span><span style="color: red; font-family: &quot;Courier New&quot;; font-size: 18pt;">emergency</span><span style="font-family: &quot;Times New Roman&quot;; font-size: 18pt;"><span style="font-family: &quot;Courier New&quot;;">,
+            was the household’s main toilet facility unusable due to the </span><font color="#ff0000"><span style="font-family: &quot;Courier New&quot;;">emergency</span></font><span style="font-family: &quot;Courier New&quot;;">, even if
+            temporarily?</span></span></span><p></p>
+  - name: MICS7HH.PE2
+    conditions:
+      - questionText:
+          ENG: |
+            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">PE2</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">. How many persons came to live in this
+            household?</span><p></p>
+  - name: MICS7HH.PE20
+    conditions:
+      - questionText:
+          ENG: |
+            <p class="1Intvwqst" style="margin-left:.1in;mso-add-space:auto;text-indent:-.1in;
+            line-height:115%;mso-pagination:none"><b><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-size: 24px; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">PE20</span></b><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-size: 24px; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">. </span><span lang="EN-GB" style="font-family: &quot;Times New Roman&quot;, serif; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;"><span style="font-family: &quot;Courier New&quot;; font-size: 24px;">Was household income affected by the </span><span style="color: red; font-family: &quot;Courier New&quot;; font-size: 24px;">emergency</span><span style="font-family: &quot;Courier New&quot;; font-size: 24px;">?</span></span></p><span style="font-family: &quot;Courier New&quot;; font-size: 24px;">
+            
+            </span><i><span lang="EN-GB" style="font-size: 24px; font-family: &quot;Courier New&quot;;"><font color="#0000ff">If ‘Yes’, probe to find whether the income increased
+            or decreased.</font></span></i><p></p>
+  - name: MICS7HH.PE21
+    conditions:
+      - questionText:
+          ENG: |
+            <p class="1Intvwqst" style="margin-left:.1in;mso-add-space:auto;text-indent:-.1in;
+            line-height:115%;mso-pagination:none"><b><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">PE21</span></b><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">. </span><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">Why did your household’s income decrease?</span></p><p class="1Intvwqst" style="margin-left:.1in;mso-add-space:auto;text-indent:-.1in;
+            line-height:115%;mso-pagination:none"><i style="text-indent: -0.1in;"><span lang="EN-GB" style="font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;"><font color="#0000ff"><span style="font-family: &quot;Courier New&quot;;">Probe:</span></font><span style="font-family: &quot;Courier New&quot;;">&nbsp;Anything else?</span></span></i></p><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">
+            
+            </span><i><span lang="EN-GB" style="font-size: 26px; font-family: &quot;Courier New&quot;;"><font color="#0000ff">Record all that apply.</font></span></i><p></p>
+  - name: MICS7HH.PE22
+    conditions:
+      - questionText:
+          ENG: |
+            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">PE22</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">. </span><span lang="EN-GB" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;,serif;
+            mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-GB;mso-fareast-language:
+            EN-US;mso-bidi-language:AR-SA"><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">During the </span><span style="color: red; font-family: &quot;Courier New&quot;; font-size: 18pt;">emergency</span><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">,
+            were any items of value in the home, farm or business, either damaged,
+            destroyed, or stolen?</span></span><p></p>
+  - name: MICS7HH.PE3
+    conditions:
+      - questionText:
+          ENG: |
+            <p class="Instructionstointvw" style="margin-left:.1in;mso-add-space:auto;
+            text-indent:-.1in;line-height:115%"><b><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-size: 24px;">PE3</span></b><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-size: 24px;">.</span><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-size: 24px;"> </span><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-size: 24px;">At any time
+            during the </span><span lang="EN-GB" style="color: red; font-family: &quot;Courier New&quot;; font-size: 24px;">emergency</span><span lang="EN-GB"><span style="font-family: &quot;Courier New&quot;; font-size: 24px;">, did </span><u><span style="font-family: &quot;Courier New&quot;; font-size: 24px;">all members
+            of this household</span></u><span style="font-family: &quot;Courier New&quot;; font-size: 24px;"> move somewhere else because of the </span></span><span lang="EN-GB" style="color: red; font-family: &quot;Courier New&quot;; font-size: 24px;">emergency</span><span lang="EN-GB"><span style="font-family: &quot;Courier New&quot;; font-size: 24px;">?</span></span></p><span style="font-size: 24px; font-family: &quot;Courier New&quot;;">
+            
+            </span><span lang="EN-GB" style="font-size: 24px; font-family: &quot;Courier New&quot;;"><font color="#0000ff"><i>If ‘No’, probe if all the
+            members of the household stayed one night or more in another location. If so,
+            record 1 for ‘Yes’.</i></font></span><p></p>
+  - name: MICS7HH.PE4N
+    conditions:
+      - questionText:
+          ENG: |
+            <p class="Instructionstointvw" style="margin-left: 0.1in; text-indent: -0.1in; line-height: 29.9px;"><b><span lang="EN-GB">PE4</span></b><span lang="EN-GB">. How long did all the members of this household live in that other place(s)?</span></p><p class="Instructionstointvw" style="margin-left: 6.75pt; text-indent: 0.45pt; line-height: 29.9px;"><span lang="EN-GB"><font color="#0000ff"><i>Record number. If any household member is still at another location, record 995.</i></font></span></p><p></p>
+  - name: MICS7HH.PE4U
+    conditions:
+      - questionText:
+          ENG: |
+            <p class="Instructionstointvw" style="margin-left:.1in;mso-add-space:auto;
+            text-indent:-.1in;line-height:115%"><b><span lang="EN-GB">PE4</span></b><span lang="EN-GB">. How long did all the members of this
+            household live in that other place(s)?</span></p>
+            
+            <p class="Instructionstointvw" style="margin-left:6.75pt;mso-add-space:auto;
+            text-indent:.45pt;line-height:115%"><span lang="EN-GB"><font color="#0000ff"><i>Record unit.<br>If less than one week, record days.</i></font></span></p><p></p>
+  - name: MICS7HH.PE5
+    conditions:
+      - questionText:
+          ENG: |
+            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">PE5</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">. Due to the </span><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;; color: red;">emergency</span><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">, was your house damaged or destroyed?</span><p></p>
+  - name: MICS7HH.PE6
+    conditions:
+      - questionText:
+          ENG: |
+            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">PE6</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">. </span><span lang="EN-GB" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;,serif;
+            mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-GB;mso-fareast-language:
+            EN-US;mso-bidi-language:AR-SA"><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">Did anyone who was living in the household
+            during the </span><span style="color: red; font-family: &quot;Courier New&quot;; font-size: 18pt;">emergency</span><b><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;"> </span></b><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">die as a direct result of the</span><b><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">
+            </span></b><span style="color: red; font-family: &quot;Courier New&quot;; font-size: 18pt;">emergency</span><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">?</span></span><p></p>
+  - name: MICS7HH.PE7
+    conditions:
+      - questionText:
+          ENG: |
+            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">PE7</span></b><span lang="EN-GB" style="font-size:
+            12.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;,serif;
+            mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-GB;mso-fareast-language:
+            EN-US;mso-bidi-language:AR-SA"><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">. Did any of the members of this household need
+            medical care for any reason at the time of the </span><span style="color: red; font-family: &quot;Courier New&quot;; font-size: 18pt;">emergency</span><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">?</span></span><p></p>
+  - name: MICS7HH.PE8
+    conditions:
+      - questionText:
+          ENG: |
+            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">PE8</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">. Did all members that needed medical care
+            receive this care?</span><p></p>
+  - name: MICS7HH.PE9
+    conditions:
+      - questionText:
+          ENG: |
+            <p class="Instructionstointvw" style="margin-left:.1in;mso-add-space:auto;
+            text-indent:-.1in;line-height:115%"><b><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-size: 24px;">PE9</span></b><span lang="EN-GB" style="font-family: &quot;Times New Roman&quot;; font-size: 24px;"><span style="font-family: &quot;Courier New&quot;;">. Now I would like to ask you ab</span><span style="font-size: 24px;"><span style="font-family: &quot;Courier New&quot;;">out serious
+            illnesses caused by the </span><font color="#ff0000"><span style="font-family: &quot;Courier New&quot;;">emergency</span></font><span style="font-family: &quot;Courier New&quot;;">. These can include, for example, </span></span></span><span lang="EN-GB" style="color: red; font-family: &quot;Courier New&quot;; font-size: 24px;">customise
+            based on emergency type</span><span lang="EN-GB"><span style="font-family: &quot;Times New Roman&quot;; font-size: 24px;"><span style="font-size: 24px; font-family: &quot;Courier New&quot;;">.</span><span class="Qtxt" style="font-size: 24px; font-family: &quot;Courier New&quot;;">&nbsp;</span></span></span></p><p class="Instructionstointvw" style="margin-left:.1in;mso-add-space:auto;
+            text-indent:-.1in;line-height:115%"><span style="font-size: 24px;"><span style="font-family: &quot;Courier New&quot;;">Did any member of this household become seriously ill at the time of the </span><span class="QtxtC" style="font-family: &quot;Courier New&quot;;">emergency</span><span style="font-family: &quot;Courier New&quot;;">?</span></span></p><p></p>
+  - name: MICS7HH.ST2
+    conditions:
+      - logic: curocc() = 1
+        questionText:
+          ENG: |
+            <p><span class="Qnum"><span style="font-family: &quot;Courier New&quot;;">ST1.</span><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">&nbsp;</span></span><span lang="EN-GB" style="font-size: 26px; line-height: 150%; font-family: &quot;Courier New&quot;;">I
+            would like to ask you about </span><span lang="EN-GB" style="font-size: 26px; line-height: 150%; font-family: &quot;Courier New&quot;;">various external economic assistance programmes provided to households.
+            By external assistance I mean support that comes from the government or from
+            non-governmental organizations such as religious, charitable, or
+            community-based organisations. This excludes support from family, other
+            relatives, friends, or neighbours.</span></p><span style="font-family: &quot;Courier New&quot;;">
+            </span><p><span class="Qnum" style="font-family: &quot;Courier New&quot;;">ST2. </span><span class="Qtxt"><span style="font-family: &quot;Courier New&quot;;">Are you </span><span style="font-family: &quot;Courier New&quot;;">aw</span><span style="font-size: 26px; font-family: &quot;Times New Roman&quot;;"><span style="font-family: &quot;Courier New&quot;;">a</span><span style="font-size: 26px; font-family: &quot;Courier New&quot;;">re of&nbsp;</span></span></span><span lang="EN-GB" style="font-size: 26px; line-height: 150%; font-family: &quot;Courier New&quot;; color: red; text-transform: uppercase;">Assistance Type 1</span><span style="font-size: 26px; text-transform: uppercase; text-align: center; text-indent: -0.1in; font-family: &quot;Courier New&quot;;">?</span></p>
+        helpText:
+          ENG: |
+            
+      - logic: curocc() = 2
+        questionText:
+          ENG: |
+            <p><span class="Qnum" style="font-family: &quot;Courier New&quot;;">ST2. </span><span class="Qtxt"><span style="font-family: &quot;Courier New&quot;;">Are you awar</span><span style="font-size: 26px; font-family: &quot;Courier New&quot;;">e </span><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">of&nbsp;</span></span><span lang="EN-GB" style="font-size: 26px; line-height: 150%; font-family: &quot;Courier New&quot;; color: red; text-transform: uppercase;">Assistance Type 2</span><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">?</span></p>
+        helpText:
+          ENG: |
+            
+      - logic: curocc() = 3
+        questionText:
+          ENG: |
+            <p><span class="Qnum" style="font-family: &quot;Courier New&quot;;">ST2. </span><span class="Qtxt"><span style="font-family: &quot;Courier New&quot;;">Ar</span><span style="font-family: &quot;Courier New&quot;;">e you awar</span><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">e of&nbsp;</span></span><span style="color: rgb(255, 0, 0); font-family: &quot;Courier New&quot;; text-transform: uppercase;">ASSISTANCE TYPE 3</span><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">?</span></p>
+        helpText:
+          ENG: |
+            
+      - logic: curocc() = 4
+        questionText:
+          ENG: |
+            <p><span class="Qnum"><span style="font-family: &quot;Courier New&quot;;">S</span><span style="font-size: 26px; font-family: &quot;Courier New&quot;;">T2. </span></span><span class="Qtxt"><span style="font-size: 26px; font-family: &quot;Courier New&quot;;">Are you aware of&nbsp;</span><span lang="EN-GB" style="font-size: 26px; line-height: 150%; font-family: &quot;Courier New&quot;; text-transform: uppercase;">Any Retirement Pension</span><span style="font-size: 26px; font-family: &quot;Courier New&quot;;">?</span></span></p>
+        helpText:
+          ENG: |
+            
+      - logic: curocc() = 5
+        questionText:
+          ENG: |
+            <p><span class="Qnum"><span style="font-family: &quot;Courier New&quot;;">ST</span><span style="font-size: 26px; font-family: &quot;Courier New&quot;;">2. </span></span><span class="Qtxt"><span style="font-size: 26px; font-family: &quot;Courier New&quot;;">Are you aware of&nbsp;</span><span lang="EN-GB" style="font-size: 26px; line-height: 150%; font-family: &quot;Courier New&quot;; text-transform: uppercase;">ANY Other external assistance programme</span><span style="font-size: 26px; font-family: &quot;Courier New&quot;;">?</span></span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.ST3
+    conditions:
+      - logic: curocc() = 1
+        questionText:
+          ENG: |
+            <p><span class="Qnum" style="font-family: &quot;Courier New&quot;; font-size: 24px;">ST3.&nbsp;</span><span class="Qtxt"><span lang="EN-GB" style="font-size: 24px; line-height: 150%; font-family: &quot;Courier New&quot;;">Has
+            your household or anyone in your household received assistance through&nbsp;</span><span lang="EN-GB" style="line-height: 39px; color: red; text-transform: uppercase; font-family: &quot;Courier New&quot;;">ASSISTANCE TYPE 1</span><span style="font-size: 24px; font-family: &quot;Courier New&quot;;">?</span></span></p>
+        helpText:
+          ENG: |
+            
+      - logic: curocc() = 2
+        questionText:
+          ENG: |
+            <p><span class="Qnum" style="font-size: 24px;">ST3.&nbsp;</span><span class="Qtxt"><span lang="EN-GB" style="font-size: 24px; line-height: 36px;">Has your household or anyone in your household received assistance through</span><span class="Qtxt">&nbsp;</span><span lang="EN-GB" style="line-height: 39px; color: red; text-transform: uppercase;">ASSISTANCE TYPE 2</span><span style="font-size: 24px;">?</span></span><br></p>
+        helpText:
+          ENG: |
+            
+      - logic: curocc() = 3
+        questionText:
+          ENG: |
+            <p><span class="Qnum" style="font-size: 24px;">ST3.&nbsp;</span><span class="Qtxt"><span lang="EN-GB" style="font-size: 24px; line-height: 36px;">Has your household or anyone in your household received assistance through</span><span class="Qtxt">&nbsp;</span><span lang="EN-GB" style="line-height: 39px; color: red; text-transform: uppercase;">ASSISTANCE TYPE 3</span><span style="font-size: 24px;">?</span></span><br></p>
+        helpText:
+          ENG: |
+            
+      - logic: curocc() = 4
+        questionText:
+          ENG: |
+            <p><span class="Qnum" style="font-size: 24px;">ST3.&nbsp;</span><span class="Qtxt"><span lang="EN-GB" style="font-size: 24px; line-height: 36px;">Has your household or anyone in your household received assistance through&nbsp;</span></span><span lang="EN-GB" style="line-height: 39px; text-transform: uppercase;">ANY RETIREMENT PENSION</span>?<br></p>
+        helpText:
+          ENG: |
+            
+      - logic: curocc() = 5
+        questionText:
+          ENG: |
+            <p><span class="Qnum">ST3. </span><span class="Qtxt">Has your household or anyone in your household received assistance through&nbsp;</span><span lang="EN-GB" style="line-height: 39px; text-transform: uppercase;">ANY OTHER EXTERNAL ASSISTANCE PROGRAMME</span>?</p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.ST4
+    conditions:
+      - questionText:
+          ENG: |
+            <span class="Qnum" style="font-size: 24px;">ST4.&nbsp;</span><span class="Qtxt"><span lang="EN-GB" style="font-size: 24px; line-height: 36px;">Who in your household is the assistance intended or meant for</span><span style="font-size: 24px;">?<br></span><span style="color: rgb(0, 0, 255); font-style: italic;">Probe:&nbsp;</span><span style="font-size: 24px;">Anyone else?</span><span style="font-size: 24px;"><br></span></span><p></p>
+  - name: MICS7HH.ST5
+    conditions:
+      - questionText:
+          ENG: |
+            <span class="Qnum" style="font-size: 24px;">ST5.&nbsp;</span><span class="Qtxt"><span lang="EN-GB" style="font-size: 24px; line-height: 36px;">Who in your household is authorized to receive or collect the assistance</span><span style="font-size: 24px;">?<br></span><span style="color: rgb(0, 0, 255); font-style: italic;">Probe:&nbsp;</span><span style="font-size: 24px;">Anyone else?</span></span><p></p>
+  - name: MICS7HH.ST6N
+    conditions:
+      - logic: curocc() = 1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">ST6.&nbsp;</span><span class="Qtxt">When was the last time your household or anyone in your household received assistance through&nbsp;<span class="QtxtC">Assistance Type 1</span>?</span><br></p>
+            <p><span class="Itxt">Record ~~worklabel~~</span></p>
+        helpText:
+          ENG: |
+            
+      - logic: curocc() = 2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">ST6.&nbsp;</span><span class="Qtxt">When was the last time your household or anyone in your household received assistance through&nbsp;<span class="QtxtC">Assistance Type 2</span>?</span><br></p>
+            <p><span class="Itxt">Record ~~worklabel~~</span></p>
+        helpText:
+          ENG: |
+            
+      - logic: curocc() = 3
+        questionText:
+          ENG: |
+            <p><span class="Qnum">ST6.&nbsp;</span><span class="Qtxt">When was the last time your household or anyone in your household received assistance through&nbsp;<span class="QtxtC">Assistance Type 3</span>?</span><br></p>
+            <p><span class="Itxt">Record ~~worklabel~~</span></p>
+        helpText:
+          ENG: |
+            
+      - logic: curocc() = 4
+        questionText:
+          ENG: |
+            <p><span class="Qnum">ST6.&nbsp;</span><span class="Qtxt">When was the last time your household or anyone in your household received assistance through ANY RETIREMENT PENSION?</span><br></p>
+            <p><span class="Itxt">Record ~~worklabel~~</span></p>
+        helpText:
+          ENG: |
+            
+      - logic: curocc() = 5
+        questionText:
+          ENG: |
+            <p><span class="Qnum">ST6.&nbsp;</span><span class="Qtxt">When was the last time your household or anyone in your household received assistance through ANY Other external assistance programme?</span><br></p>
+            <p><span class="Itxt">Record ~~worklabel~~</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.ST6U
+    conditions:
+      - logic: curocc() = 1
+        questionText:
+          ENG: |
+            <p><span class="Qnum">ST6.&nbsp;</span><span class="Qtxt">When was the last time your household or anyone in your household received assistance through&nbsp;<span class="QtxtC">Assistance Type 1</span>?</span></p><p><span class="Itxt">If less than one month, record '1' and record '00' in Months.</span></p><p><span class="Itxt">If less than 12 months, record '1' and record in Months.</span></p><p><span class="Itxt">If 1 year/12 months or more, record '2' and record in Years.</span></p>
+        helpText:
+          ENG: |
+            
+      - logic: curocc() = 2
+        questionText:
+          ENG: |
+            <p><span class="Qnum">ST6.&nbsp;</span><span class="Qtxt">When was the last time your household or anyone in your household received assistance through&nbsp;<span class="QtxtC">Assistance Type 2</span>?</span></p><p><span class="Itxt">If less than one month, record '1' and record '00' in Months.</span></p><p><span class="Itxt">If less than 12 months, record '1' and record in Months.</span></p><p><span class="Itxt">If 1 year/12 months or more, record '2' and record in Years.</span></p>
+        helpText:
+          ENG: |
+            
+      - logic: curocc() = 3
+        questionText:
+          ENG: |
+            <p><span class="Qnum">ST6.&nbsp;</span><span class="Qtxt">When was the last time your household or anyone in your household received assistance through&nbsp;<span class="QtxtC">Assistance Type 3</span>?</span></p><p><span class="Itxt">If less than one month, record '1' and record '00' in Months.</span></p><p><span class="Itxt">If less than 12 months, record '1' and record in Months.</span></p><p><span class="Itxt">If 1 year/12 months or more, record '2' and record in Years.</span></p>
+        helpText:
+          ENG: |
+            
+      - logic: curocc() = 4
+        questionText:
+          ENG: |
+            <p><span class="Qnum">ST6.&nbsp;</span><span class="Qtxt">When was the last time your household or anyone in your household received assistance through ANY RETIREMENT PENSION?</span></p><p><span class="Itxt">If less than one month, record '1' and record '00' in Months.</span></p><p><span class="Itxt">If less than 12 months, record '1' and record in Months.</span></p><p><span class="Itxt">If 1 year/12 months or more, record '2' and record in Years.</span></p>
+        helpText:
+          ENG: |
+            
+      - logic: curocc() = 5
+        questionText:
+          ENG: |
+            <p><span class="Qnum">ST6.&nbsp;</span><span class="Qtxt">When was the last time your household or anyone in your household received assistance through ANY Other external assistance programme?</span></p><p><span class="Itxt">If less than one month, record '1' and record '00' in Months.</span></p><p><span class="Itxt">If less than 12 months, record '1' and record in Months.</span></p><p><span class="Itxt">If 1 year/12 months or more, record '2' and record in Years.</span></p>
+        helpText:
+          ENG: |
+            
 ...
