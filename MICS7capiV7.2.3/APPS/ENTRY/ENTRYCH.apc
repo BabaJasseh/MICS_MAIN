@@ -831,6 +831,496 @@ PROC GLOBAL
 		dayOfWeek = diff % 7 + 1;
 	end;
 
+PROC FORMHF
+preproc
+	if UB2 > 2 then
+		endlevel
+	endif;
+
+PROC FORMHF2
+preproc
+	clean_labels();
+	j = 0;
+	do i = UB1Y while i <= UF7Y {create labels starting on year of birth}
+		codes(j) = i;
+		labels(j) = "";
+		j = j + 1;
+	enddo;
+	codes(j) = 9999;
+	labels(j) = tr("NO RESPONSE");
+
+postproc
+	if HF15 <> 1 then
+		if endmess() then
+			reenter HF15
+		else
+			endlevel
+		endif;
+	endif;
+
+PROC HF1
+preproc
+	HF1  = UF1;
+	HF2  = UF2;
+	HF3N = UF3N;
+	HF3  = UF3;
+	HF4N = UF4N;
+	HF4  = UF4;
+	HF5  = UF5;
+	HF7AD = UB1D;
+	HF7AM = UB1M;
+	HF7AY = UB1Y;
+	HF7BD = IM5AD;
+	HF7BM = IM5AM;
+	HF7BY = IM5AY;
+	
+	if addmode then
+		savepartial();
+	endif;
+	
+PROC HF11D
+preproc
+	if addmode then
+		savepartial();
+	endif;
+  
+PROC HF12BD
+if $ in 0,44,66 then
+	HF12BM = $;
+	HF12BY = $*100+$;
+	skip to HF12H0D
+endif;
+
+PROC HF12BY
+onfocus
+	setvalueset( @getsymbol(), codes, labels );
+
+postproc
+	checkdates(tr("BCG"),HF12BD,HF12BM,HF12BY);
+
+PROC HF12H0D
+if $ in 0,44,66 then
+	HF12H0M = $;
+	HF12H0Y = $*100+$;
+	skip to HF12P0D
+endif;
+
+PROC HF12H0Y
+onfocus
+	setvalueset( @getsymbol(), codes, labels );
+
+postproc
+	checkdates(tr("Hep B (at birth)"),HF12H0D,HF12H0M,HF12H0Y);
+
+PROC HF12I1D
+if $ in 0,44,66 then
+	HF12I1M = $;
+	HF12I1Y = $*100+$;
+	skip to HF12I2D
+endif;
+
+PROC HF12I1Y
+onfocus
+	setvalueset( @getsymbol(), codes, labels );
+
+postproc
+	checkdates(tr("Polio (IPV)") + " 1",HF12I1D,HF12I1M,HF12I1Y);
+PROC HF12I2D
+if $ in 0,44,66 then
+	HF12I2M = $;
+	HF12I2Y = $*100+$;
+	skip to HF12PENTA1D
+endif;
+PROC HF12I2Y
+onfocus
+	setvalueset( @getsymbol(), codes, labels );
+
+postproc
+	checkdates(tr("Polio (IPV)") + " 2",HF12I2D,HF12I2M,HF12I2Y);
+
+	if vseq(HF12I1D,HF12I1M,HF12I1Y,HF12I2D,HF12I2M,HF12I2Y) then
+		errmsg(2704,tr("Polio (IPV)") + " 1",HF12I1D,HF12I1M,HF12I1Y,tr("Polio (IPV)") + " 2",HF12I2D,HF12I2M,HF12I2Y);
+	endif;
+PROC HF12M1D
+if $ in 0,44,66 then
+	HF12M1M = $;
+	HF12M1Y = $*100+$;
+	skip to HF12M2D
+endif;
+
+PROC HF12M1Y
+onfocus
+	setvalueset( @getsymbol(), codes, labels );
+
+postproc
+	checkdates(tr("MMR/MR") + " 1",HF12M1D,HF12M1M,HF12M1Y);
+
+PROC HF12M2D
+if $ in 0,44,66 then
+	HF12M2M = $;
+	HF12M2Y = $*100+$;
+	skip to HF12YD
+endif;
+
+PROC HF12M2Y
+onfocus
+	setvalueset( @getsymbol(), codes, labels );
+
+postproc
+	checkdates(tr("MMR/MR") + " 2",HF12M2D,HF12M2M,HF12M2Y);
+
+	if vseq(HF12M1D,HF12M1M,HF12M1Y,HF12M2D,HF12M2M,HF12M2Y) then
+		errmsg(2704,tr("MMR/MR") + " 1",HF12M1D,HF12M1M,HF12M1Y,tr("MMR/MR") + " 2",HF12M2D,HF12M2M,HF12M2Y);
+	endif;
+	
+PROC HF12P0D
+if $ in 0,44,66 then
+	HF12P0M = $;
+	HF12P0Y = $*100+$;
+	skip to HF12P1D
+endif;
+
+PROC HF12P0Y
+onfocus
+	setvalueset( @getsymbol(), codes, labels );
+
+postproc
+	checkdates(tr("Polio (OPV) (at birth)"),HF12P0D,HF12P0M,HF12P0Y);
+
+PROC HF12P1D
+if $ in 0,44,66 then
+	HF12P1M = $;
+	HF12P1Y = $*100+$;
+	skip to HF12P2D
+endif;
+
+PROC HF12P1Y
+onfocus
+	setvalueset( @getsymbol(), codes, labels );
+
+postproc
+	checkdates(tr("Polio (OPV)") + " 1",HF12P1D,HF12P1M,HF12P1Y);
+
+	if vseq(HF12P0D,HF12P0M,HF12P0Y,HF12P1D,HF12P1M,HF12P1Y) then
+		errmsg(2704,tr('Polio (OPV) (at birth)'),HF12P0D,HF12P0M,HF12P0Y,tr("Polio (OPV)") + " 1",HF12P1D,HF12P1M,HF12P1Y);
+	endif;
+
+PROC HF12P2D
+if $ in 0,44,66 then
+	HF12P2M = $;
+	HF12P2Y = $*100+$;
+	skip to HF12P3D
+endif;
+
+PROC HF12P2Y
+onfocus
+	setvalueset( @getsymbol(), codes, labels );
+
+postproc
+	checkdates(tr("Polio (OPV)") + " 2",HF12P2D,HF12P2M,HF12P2Y);
+
+	if vseq(HF12P0D,HF12P0M,HF12P0Y,HF12P2D,HF12P2M,HF12P2Y) then
+		errmsg(2704,tr('Polio (OPV)(at birth)'),HF12P0D,HF12P0M,HF12P0Y,tr("Polio (OPV)") + " 2",HF12P2D,HF12P2M,HF12P2Y);
+	endif;
+
+	if vseq(HF12P1D,HF12P1M,HF12P1Y,HF12P2D,HF12P2M,HF12P2Y) then
+		errmsg(2704,tr("Polio (OPV)") + " 1",HF12P1D,HF12P1M,HF12P1Y,tr("Polio (OPV)") + " 2",HF12P2D,HF12P2M,HF12P2Y);
+	endif;
+  
+PROC HF12P3D
+if $ in 0,44,66 then
+	HF12P3M = $;
+	HF12P3Y = $*100+$;
+	skip to HF12I1D
+endif;
+
+PROC HF12P3Y
+onfocus
+	setvalueset( @getsymbol(), codes, labels );
+
+postproc
+	checkdates(tr("Polio (OPV)") + " 3",HF12P3D,HF12P3M,HF12P3Y);
+
+	if vseq(HF12P0D,HF12P0M,HF12P0Y,HF12P3D,HF12P3M,HF12P3Y) then
+		errmsg(2704,tr('Polio (OPV)(at birth)'),HF12P0D,HF12P0M,HF12P0Y,tr("Polio (OPV)") + " 3",HF12P3D,HF12P3M,HF12P3Y);
+	endif;
+
+	if vseq(HF12P1D,HF12P1M,HF12P1Y,HF12P3D,HF12P3M,HF12P3Y) then
+		errmsg(2704,tr("Polio (OPV)") + " 1",HF12P1D,HF12P1M,HF12P1Y,tr("Polio (OPV)") + " 3",HF12P3D,HF12P3M,HF12P3Y);
+	endif;
+
+	if vseq(HF12P2D,HF12P2M,HF12P2Y,HF12P3D,HF12P3M,HF12P3Y) then
+		errmsg(2704,tr("Polio (OPV)") + " 2",HF12P2D,HF12P2M,HF12P2Y,tr("Polio (OPV)") + " 3", HF12P3D,HF12P3M,HF12P3Y);
+	endif;
+  
+PROC HF12PCV1D
+if $ in 0,44,66 then
+	HF12PCV1M = $;
+	HF12PCV1Y = $*100+$;
+	skip to HF12PCV2D
+endif;
+
+PROC HF12PCV1Y
+onfocus
+	setvalueset( @getsymbol(), codes, labels );
+
+postproc
+	checkdates(tr("Pneumococcal (Conjugate)") + " 1",HF12PCV1D,HF12PCV1M,HF12PCV1Y);
+	
+PROC HF12PCV2D
+if $ in 0,44,66 then
+	HF12PCV2M = $;
+	HF12PCV2Y = $*100+$;
+	skip to HF12PCV3D
+endif;
+
+PROC HF12PCV2Y
+onfocus
+	setvalueset( @getsymbol(), codes, labels );
+
+postproc
+	checkdates(tr("Pneumococcal (Conjugate)") + " 2",HF12PCV2D,HF12PCV2M,HF12PCV2Y);
+
+	if vseq(HF12PCV1D,HF12PCV1M,HF12PCV1Y,HF12PCV2D,HF12PCV2M,HF12PCV2Y) then
+		errmsg(2704,tr("Pneumococcal (Conjugate)") + " 1",HF12PCV1D,HF12PCV1M,HF12PCV1Y,tr("Pneumococcal (Conjugate)") + " 2",HF12PCV2D,HF12PCV2M,HF12PCV2Y);
+	endif;
+	
+PROC HF12PCV3D
+if $ in 0,44,66 then
+	HF12PCV3M = $;
+	HF12PCV3Y = $*100+$;
+	skip to HF12R1D
+endif;
+
+PROC HF12PCV3Y
+onfocus
+	setvalueset( @getsymbol(), codes, labels );
+
+postproc
+	checkdates(tr("Pneumococcal (Conjugate)") + " 3",HF12PCV3D,HF12PCV3M,HF12PCV3Y);
+
+	if vseq(HF12PCV1D,HF12PCV1M,HF12PCV1Y,HF12PCV3D,HF12PCV3M,HF12PCV3Y) then
+		errmsg(2704,tr("Pneumococcal (Conjugate)") + " 1",HF12PCV1D,HF12PCV1M,HF12PCV1Y,tr("Pneumococcal (Conjugate)") + " 3",HF12PCV3D,HF12PCV3M,HF12PCV3Y);
+	endif;
+
+	if vseq(HF12PCV2D,HF12PCV2M,HF12PCV2Y,HF12PCV3D,HF12PCV3M,HF12PCV3Y) then
+		errmsg(2704,tr("Pneumococcal (Conjugate)") + " 2",HF12PCV2D,HF12PCV2M,HF12PCV2Y,tr("Pneumococcal (Conjugate)") + " 3",HF12PCV3D,HF12PCV3M,HF12PCV3Y);
+	endif;
+	
+PROC HF12PENTA1D
+if $ in 0,44,66 then
+	HF12PENTA1M = $;
+	HF12PENTA1Y = $*100+$;
+	skip to HF12PENTA2D
+endif;
+
+PROC HF12PENTA1Y
+onfocus
+	setvalueset( @getsymbol(), codes, labels );
+
+postproc
+	checkdates(tr("Pentavalent (DPTHibHepB)") + " 1",HF12PENTA1D,HF12PENTA1M,HF12PENTA1Y);
+
+PROC HF12PENTA2D
+if $ in 0,44,66 then
+	HF12PENTA2M = $;
+	HF12PENTA2Y = $*100+$;
+	skip to HF12PENTA3D
+endif;
+
+PROC HF12PENTA2Y
+onfocus
+	setvalueset( @getsymbol(), codes, labels );
+
+postproc
+	checkdates(tr("Pentavalent (DPTHibHepB)") + " 2",HF12PENTA2D,HF12PENTA2M,HF12PENTA2Y);
+
+	if vseq(HF12PENTA1D,HF12PENTA1M,HF12PENTA1Y,HF12PENTA2D,HF12PENTA2M,HF12PENTA2Y) then
+		errmsg(2704,tr("Pentavalent (DPTHibHepB)") + " 1",HF12PENTA1D,HF12PENTA1M,HF12PENTA1Y,tr("Pentavalent (DPTHibHepB)") + " 2",HF12PENTA2D,HF12PENTA2M,HF12PENTA2Y);
+	endif;
+
+PROC HF12PENTA3D
+if $ in 0,44,66 then
+	HF12PENTA3M = $;
+	HF12PENTA3Y = $*100+$;
+	skip to HF12PCV1D
+endif;
+
+PROC HF12PENTA3Y
+onfocus
+	setvalueset( @getsymbol(), codes, labels );
+
+postproc
+	checkdates(tr("Pentavalent (DPTHibHepB)") + " 3",HF12PENTA3D,HF12PENTA3M,HF12PENTA3Y);
+
+	if vseq(HF12PENTA1D,HF12PENTA1M,HF12PENTA1Y,HF12PENTA3D,HF12PENTA3M,HF12PENTA3Y) then
+		errmsg(2704,tr("Pentavalent (DPTHibHepB)") + " 1",HF12PENTA1D,HF12PENTA1M,HF12PENTA1Y,tr("Pentavalent (DPTHibHepB)") + " 3",HF12PENTA3D,HF12PENTA3M,HF12PENTA3Y);
+	endif;
+
+	if vseq(HF12PENTA2D,HF12PENTA2M,HF12PENTA2Y,HF12PENTA3D,HF12PENTA3M,HF12PENTA3Y) then
+		errmsg(2704,tr("Pentavalent (DPTHibHepB)") + " 2",HF12PENTA2D,HF12PENTA2M,HF12PENTA2Y,tr("Pentavalent (DPTHibHepB)") + " 3",HF12PENTA3D,HF12PENTA3M,HF12PENTA3Y);
+	endif;
+	
+PROC HF12R1D
+if $ in 0,44,66 then
+	HF12R1M = $;
+	HF12R1Y = $*100+$;
+	skip to HF12R2D
+endif;
+
+PROC HF12R1Y
+onfocus
+	setvalueset( @getsymbol(), codes, labels );
+
+postproc
+	checkdates(tr("Rotavirus") + " 1",HF12R1D,HF12R1M,HF12R1Y);
+
+PROC HF12R2D
+if $ in 0,44,66 then
+	HF12R2M = $;
+	HF12R2Y = $*100+$;
+	skip to HF12R3D
+endif;
+
+PROC HF12R2Y
+onfocus
+	setvalueset( @getsymbol(), codes, labels );
+
+postproc
+	checkdates(tr("Rotavirus") + " 2",HF12R2D,HF12R2M,HF12R2Y);
+
+	if vseq(HF12R1D,HF12R1M,HF12R1Y,HF12R2D,HF12R2M,HF12R2Y) then
+		errmsg(2704,tr("Rotavirus") + " 1",HF12R1D,HF12R1M,HF12R1Y,tr("Rotavirus") + " 2",HF12R2D,HF12R2M,HF12R2Y);
+	endif;
+	
+PROC HF12R3D
+if $ in 0,44,66 then
+	HF12R3M = $;
+	HF12R3Y = $*100+$;
+	skip to HF12M1D
+endif;
+
+PROC HF12R3Y
+onfocus
+	setvalueset( @getsymbol(), codes, labels );
+
+postproc
+	checkdates(tr("Rotavirus") + " 3",HF12R3D,HF12R3M,HF12R3Y);
+
+	if vseq(HF12R1D,HF12R1M,HF12R1Y,HF12R3D,HF12R3M,HF12R3Y) then
+		errmsg(2704,tr("Rotavirus") + " 1",HF12R1D,HF12R1M,HF12R1Y,tr("Rotavirus") + " 3",HF12R3D,HF12R3M,HF12R3Y);
+	endif;
+
+	if vseq(HF12R2D,HF12R2M,HF12R2Y,HF12R3D,HF12R3M,HF12R3Y) then
+		errmsg(2704,tr("Rotavirus") + " 2",HF12R2D,HF12R2M,HF12R2Y,tr("Rotavirus") + " 3",HF12R3D,HF12R3M,HF12R3Y);
+	endif;
+	
+PROC HF12TD1D
+if $ in 0,44,66 then
+	HF12TD1M = $;
+	HF12TD1Y = $*100+$;
+	skip to HF14H
+endif;
+
+PROC HF12TD1Y
+onfocus
+	setvalueset( @getsymbol(), codes, labels );
+
+postproc
+	checkdates(tr("Td Booster 1"),HF12TD1D,HF12TD1M,HF12TD1Y);
+
+PROC HF12YD
+if $ in 0,44,66 then
+	HF12YM = $;
+	HF12YY = $*100+$;
+	skip to HF12TD1D
+endif;
+
+PROC HF12YY
+onfocus
+	setvalueset( @getsymbol(), codes, labels );
+
+postproc
+	checkdates(tr("Yellow Fever"),HF12YD,HF12YM,HF12YY);
+	
+PROC HF14M
+if valid(HF10H) and valid(HF10M) and valid(HF14H) and valid(HF14M) then
+	if (HF10H*100+HF10M)>(HF14H*100+HF14M)then
+		errmsg(2910);
+		reenter
+	endif;
+endif;
+
+PROC HF15
+if $ <> 1 then
+	if endmess() then
+		goto ()
+	else
+		endlevel
+	endif;
+endif;
+PROC IM6P3D
+if $ in 0,44,66 then
+	IM6P3M = $;
+	IM6P3Y = $*100+$;
+	skip to IM6I1D
+endif;
+
+PROC IM6P3Y
+onfocus
+	setvalueset( @getsymbol(), codes, labels );
+
+postproc
+	checkdates(tr("Polio (OPV)") + " 3",IM6P3D,IM6P3M,IM6P3Y);
+
+	if vseq(IM6P0D,IM6P0M,IM6P0Y,IM6P3D,IM6P3M,IM6P3Y) then
+		errmsg(2704,tr("Polio (OPV)(at birth)"),IM6P0D,IM6P0M,IM6P0Y,tr("Polio (OPV)") + " 3",IM6P3D,IM6P3M,IM6P3Y);
+	endif;
+
+	if vseq(IM6P1D,IM6P1M,IM6P1Y,IM6P3D,IM6P3M,IM6P3Y) then
+		errmsg(2704,tr("Polio (OPV)") + " 1",IM6P1D,IM6P1M,IM6P1Y,tr("Polio (OPV)") + " 3",IM6P3D,IM6P3M,IM6P3Y);
+	endif;
+
+	if vseq(IM6P2D,IM6P2M,IM6P2Y,IM6P3D,IM6P3M,IM6P3Y) then
+		errmsg(2704,tr("Polio (OPV)") + " 2",IM6P2D,IM6P2M,IM6P2Y,tr("Polio (OPV)") + " 3", IM6P3D,IM6P3M,IM6P3Y);
+	endif;
+  
+PROC IM6R3D
+if $ in 0,44,66 then
+	IM6R3M = $;
+	IM6R3Y = $*100+$;
+	skip to IM6M1D
+endif;
+
+PROC IM6R3Y
+onfocus
+	setvalueset( @getsymbol(), codes, labels );
+
+postproc
+	checkdates(tr("Rotavirus") + " 3",IM6R3D,IM6R3M,IM6R3Y);
+
+	if vseq(IM6R1D,IM6R1M,IM6R1Y,IM6R3D,IM6R3M,IM6R3Y) then
+		errmsg(2704,tr("Rotavirus") + " 1",IM6R1D,IM6R1M,IM6R1Y,tr("Rotavirus") + " 3",IM6R3D,IM6R3M,IM6R3Y);
+	endif;
+
+	if vseq(IM6R2D,IM6R2M,IM6R2Y,IM6R3D,IM6R3M,IM6R3Y) then
+		errmsg(2704,tr("Rotavirus") + " 2",IM6R2D,IM6R2M,IM6R2Y,tr("Rotavirus") + " 3",IM6R3D,IM6R3M,IM6R3Y);
+	endif;
+	
+PROC IM6TD1D
+if $ in 0,44,66 then
+	IM6TD1M = $;
+	IM6TD1Y = $*100+$;
+	endgroup
+endif;
+
+PROC IM6TD1Y
+onfocus
+	setvalueset( @getsymbol(), codes, labels );
+
+postproc
+	checkdates(tr("Td Booster 1"),IM6TD1D,IM6TD1M,IM6TD1Y);
+
 PROC FL_ENTRYCH
 preproc
 
@@ -1491,6 +1981,7 @@ preproc
 	// Check all BD8 questions have information
 	if BD8A = notappl then reenter BD8A; endif;
 	if BD8B = notappl then reenter BD8B; endif;
+	if BD8R = notappl then reenter BD8R; endif;
 	if BD8C = notappl then reenter BD8C; endif;
 	if BD8D = notappl then reenter BD8D; endif;
 	if BD8E = notappl then reenter BD8E; endif;
@@ -1509,15 +2000,15 @@ preproc
 	if BD8X = notappl then reenter BD8X; endif;
 
 	{BD9&BD10 Filter}
-	if (BD8A = 1 or BD8B = 1 or BD8C = 1 or BD8D = 1 or BD8E = 1 or BD8F = 1 or
+	if (BD8A = 1 or BD8B = 1 or BD8R = 1 or BD8C = 1 or BD8D = 1 or BD8E = 1 or BD8F = 1 or
 		BD8G = 1 or BD8H = 1 or BD8I = 1 or BD8J = 1 or BD8K = 1 or BD8L = 1 or 
 		BD8M = 1 or BD8N = 1 or BD8O = 1 or BD8P = 1 or BD8Q = 1 or BD8X = 1) or 
 	 
-		(BD8A = 8 and BD8B = 8 and BD8C = 8 and BD8D = 8 and BD8E = 8 and BD8F = 8 and
+		(BD8A = 8 and BD8B = 8 and BD8R = 8 and BD8C = 8 and BD8D = 8 and BD8E = 8 and BD8F = 8 and
 		BD8G = 8 and BD8H = 8 and BD8I = 8 and BD8J = 8 and BD8K = 8 and BD8L = 8 and 
 		BD8M = 8 and BD8N = 8 and BD8O = 8 and BD8P = 8 and BD8Q = 8 and BD8X = 8) or
 		
-		(BD8A = 9 and BD8B = 9 and BD8C = 9 and BD8D = 9 and BD8E = 9 and BD8F = 9 and
+		(BD8A = 9 and BD8B = 9 and BD8R = 9 and BD8C = 9 and BD8D = 9 and BD8E = 9 and BD8F = 9 and
 		BD8G = 9 and BD8H = 9 and BD8I = 9 and BD8J = 9 and BD8K = 9 and BD8L = 9 and 
 		BD8M = 9 and BD8N = 9 and BD8O = 9 and BD8P = 9 and BD8Q = 9 and BD8X = 9) then;
 	else
@@ -1634,6 +2125,48 @@ postproc
 		errmsg(2704,tr("Polio (OPV) (at birth)"),IM6P0D,IM6P0M,IM6P0Y,tr("Polio (OPV)") + " 1",IM6P1D,IM6P1M,IM6P1Y);
 	endif;
 
+PROC IM6PENTA1D
+if $ in 0,44,66 then
+	IM6PENTA1M = $;
+	IM6PENTA1Y = $*100+$;
+	skip to IM6PENTA2D
+endif;
+
+PROC IM6PENTA1Y
+onfocus
+	setvalueset( @getsymbol(), codes, labels );
+
+postproc
+	checkdates(tr("Pentavalent (DPTHibHepB)") + " 1",IM6PENTA1D,IM6PENTA1M,IM6PENTA1Y);
+
+PROC IM6PCV1D
+if $ in 0,44,66 then
+	IM6PCV1M = $;
+	IM6PCV1Y = $*100+$;
+	skip to IM6PCV2D
+endif;
+
+PROC IM6PCV1Y
+onfocus
+	setvalueset( @getsymbol(), codes, labels );
+
+postproc
+	checkdates(tr("Pneumococcal (Conjugate)") + " 1",IM6PCV1D,IM6PCV1M,IM6PCV1Y);
+	
+PROC IM6R1D
+if $ in 0,44,66 then
+	IM6R1M = $;
+	IM6R1Y = $*100+$;
+	skip to IM6R2D
+endif;
+
+PROC IM6R1Y
+onfocus
+	setvalueset( @getsymbol(), codes, labels );
+
+postproc
+	checkdates(tr("Rotavirus") + " 1",IM6R1D,IM6R1M,IM6R1Y);
+
 PROC IM6P2D
 if $ in 0,44,66 then
 	IM6P2M = $;
@@ -1656,76 +2189,6 @@ postproc
 		errmsg(2704,tr("Polio (OPV)") + " 1",IM6P1D,IM6P1M,IM6P1Y,tr("Polio (OPV)") + " 2",IM6P2D,IM6P2M,IM6P2Y);
 	endif;
   
-PROC IM6P3D
-if $ in 0,44,66 then
-	IM6P3M = $;
-	IM6P3Y = $*100+$;
-	skip to IM6I1D
-endif;
-
-PROC IM6P3Y
-onfocus
-	setvalueset( @getsymbol(), codes, labels );
-
-postproc
-	checkdates(tr("Polio (OPV)") + " 3",IM6P3D,IM6P3M,IM6P3Y);
-
-	if vseq(IM6P0D,IM6P0M,IM6P0Y,IM6P3D,IM6P3M,IM6P3Y) then
-		errmsg(2704,tr("Polio (OPV)(at birth)"),IM6P0D,IM6P0M,IM6P0Y,tr("Polio (OPV)") + " 3",IM6P3D,IM6P3M,IM6P3Y);
-	endif;
-
-	if vseq(IM6P1D,IM6P1M,IM6P1Y,IM6P3D,IM6P3M,IM6P3Y) then
-		errmsg(2704,tr("Polio (OPV)") + " 1",IM6P1D,IM6P1M,IM6P1Y,tr("Polio (OPV)") + " 3",IM6P3D,IM6P3M,IM6P3Y);
-	endif;
-
-	if vseq(IM6P2D,IM6P2M,IM6P2Y,IM6P3D,IM6P3M,IM6P3Y) then
-		errmsg(2704,tr("Polio (OPV)") + " 2",IM6P2D,IM6P2M,IM6P2Y,tr("Polio (OPV)") + " 3", IM6P3D,IM6P3M,IM6P3Y);
-	endif;
-  
-PROC IM6I1D
-if $ in 0,44,66 then
-	IM6I1M = $;
-	IM6I1Y = $*100+$;
-	skip to IM6I2D
-endif;
-
-PROC IM6I1Y
-onfocus
-	setvalueset( @getsymbol(), codes, labels );
-
-postproc
-	checkdates(tr("Polio (IPV)") + " 1",IM6I1D,IM6I1M,IM6I1Y);
-
-PROC IM6I2D
-if $ in 0,44,66 then
-	IM6I2M = $;
-	IM6I2Y = $*100+$;
-	skip to IM6PENTA1D
-endif;
-PROC IM6I2Y
-onfocus
-	setvalueset( @getsymbol(), codes, labels );
-
-postproc
-	checkdates(tr("Polio (IPV)") + " 2",IM6I2D,IM6I2M,IM6I2Y);
-
-	if vseq(IM6I1D,IM6I1M,IM6I1Y,IM6I2D,IM6I2M,IM6I2Y) then
-		errmsg(2704,tr("Polio (IPV)") + " 1",IM6I1D,IM6I1M,IM6I1Y,tr("Polio (IPV)") + " 2",IM6I2D,IM6I2M,IM6I2Y);
-	endif;
-PROC IM6PENTA1D
-if $ in 0,44,66 then
-	IM6PENTA1M = $;
-	IM6PENTA1Y = $*100+$;
-	skip to IM6PENTA2D
-endif;
-
-PROC IM6PENTA1Y
-onfocus
-	setvalueset( @getsymbol(), codes, labels );
-
-postproc
-	checkdates(tr("Pentavalent (DPTHibHepB)") + " 1",IM6PENTA1D,IM6PENTA1M,IM6PENTA1Y);
-
 PROC IM6PENTA2D
 if $ in 0,44,66 then
 	IM6PENTA2M = $;
@@ -1744,6 +2207,42 @@ postproc
 		errmsg(2704,tr("Pentavalent (DPTHibHepB)") + " 1",IM6PENTA1D,IM6PENTA1M,IM6PENTA1Y,tr("Pentavalent (DPTHibHepB)") + " 2",IM6PENTA2D,IM6PENTA2M,IM6PENTA2Y);
 	endif;
 
+PROC IM6PCV2D
+if $ in 0,44,66 then
+	IM6PCV2M = $;
+	IM6PCV2Y = $*100+$;
+	skip to IM6PCV3D
+endif;
+
+PROC IM6PCV2Y
+onfocus
+	setvalueset( @getsymbol(), codes, labels );
+
+postproc
+	checkdates(tr("Pneumococcal (Conjugate)") + " 2",IM6PCV2D,IM6PCV2M,IM6PCV2Y);
+
+	if vseq(IM6PCV1D,IM6PCV1M,IM6PCV1Y,IM6PCV2D,IM6PCV2M,IM6PCV2Y) then
+		errmsg(2704,tr("Pneumococcal (Conjugate)") + " 1",IM6PCV1D,IM6PCV1M,IM6PCV1Y,tr("Pneumococcal (Conjugate)") + " 2",IM6PCV2D,IM6PCV2M,IM6PCV2Y);
+	endif;
+	
+PROC IM6R2D
+if $ in 0,44,66 then
+	IM6R2M = $;
+	IM6R2Y = $*100+$;
+	skip to IM6R3D
+endif;
+
+PROC IM6R2Y
+onfocus
+	setvalueset( @getsymbol(), codes, labels );
+
+postproc
+	checkdates(tr("Rotavirus") + " 2",IM6R2D,IM6R2M,IM6R2Y);
+
+	if vseq(IM6R1D,IM6R1M,IM6R1Y,IM6R2D,IM6R2M,IM6R2Y) then
+		errmsg(2704,tr("Rotavirus") + " 1",IM6R1D,IM6R1M,IM6R1Y,tr("Rotavirus") + " 2",IM6R2D,IM6R2M,IM6R2Y);
+	endif;
+	
 PROC IM6PENTA3D
 if $ in 0,44,66 then
 	IM6PENTA3M = $;
@@ -1764,38 +2263,6 @@ postproc
 
 	if vseq(IM6PENTA2D,IM6PENTA2M,IM6PENTA2Y,IM6PENTA3D,IM6PENTA3M,IM6PENTA3Y) then
 		errmsg(2704,tr("Pentavalent (DPTHibHepB)") + " 2",IM6PENTA2D,IM6PENTA2M,IM6PENTA2Y,tr("Pentavalent (DPTHibHepB)") + " 3",IM6PENTA3D,IM6PENTA3M,IM6PENTA3Y);
-	endif;
-	
-PROC IM6PCV1D
-if $ in 0,44,66 then
-	IM6PCV1M = $;
-	IM6PCV1Y = $*100+$;
-	skip to IM6PCV2D
-endif;
-
-PROC IM6PCV1Y
-onfocus
-	setvalueset( @getsymbol(), codes, labels );
-
-postproc
-	checkdates(tr("Pneumococcal (Conjugate)") + " 1",IM6PCV1D,IM6PCV1M,IM6PCV1Y);
-	
-PROC IM6PCV2D
-if $ in 0,44,66 then
-	IM6PCV2M = $;
-	IM6PCV2Y = $*100+$;
-	skip to IM6PCV3D
-endif;
-
-PROC IM6PCV2Y
-onfocus
-	setvalueset( @getsymbol(), codes, labels );
-
-postproc
-	checkdates(tr("Pneumococcal (Conjugate)") + " 2",IM6PCV2D,IM6PCV2M,IM6PCV2Y);
-
-	if vseq(IM6PCV1D,IM6PCV1M,IM6PCV1Y,IM6PCV2D,IM6PCV2M,IM6PCV2Y) then
-		errmsg(2704,tr("Pneumococcal (Conjugate)") + " 1",IM6PCV1D,IM6PCV1M,IM6PCV1Y,tr("Pneumococcal (Conjugate)") + " 2",IM6PCV2D,IM6PCV2M,IM6PCV2Y);
 	endif;
 	
 PROC IM6PCV3D
@@ -1820,60 +2287,20 @@ postproc
 		errmsg(2704,tr("Pneumococcal (Conjugate)") + " 2",IM6PCV2D,IM6PCV2M,IM6PCV2Y,tr("Pneumococcal (Conjugate)") + " 3",IM6PCV3D,IM6PCV3M,IM6PCV3Y);
 	endif;
 	
-PROC IM6R1D
+PROC IM6I1D
 if $ in 0,44,66 then
-	IM6R1M = $;
-	IM6R1Y = $*100+$;
-	skip to IM6R2D
+	IM6I1M = $;
+	IM6I1Y = $*100+$;
+	skip to IM6I2D
 endif;
 
-PROC IM6R1Y
+PROC IM6I1Y
 onfocus
 	setvalueset( @getsymbol(), codes, labels );
 
 postproc
-	checkdates(tr("Rotavirus") + " 1",IM6R1D,IM6R1M,IM6R1Y);
+	checkdates(tr("Polio (IPV)") + " 1",IM6I1D,IM6I1M,IM6I1Y);
 
-PROC IM6R2D
-if $ in 0,44,66 then
-	IM6R2M = $;
-	IM6R2Y = $*100+$;
-	skip to IM6R3D
-endif;
-
-PROC IM6R2Y
-onfocus
-	setvalueset( @getsymbol(), codes, labels );
-
-postproc
-	checkdates(tr("Rotavirus") + " 2",IM6R2D,IM6R2M,IM6R2Y);
-
-	if vseq(IM6R1D,IM6R1M,IM6R1Y,IM6R2D,IM6R2M,IM6R2Y) then
-		errmsg(2704,tr("Rotavirus") + " 1",IM6R1D,IM6R1M,IM6R1Y,tr("Rotavirus") + " 2",IM6R2D,IM6R2M,IM6R2Y);
-	endif;
-	
-PROC IM6R3D
-if $ in 0,44,66 then
-	IM6R3M = $;
-	IM6R3Y = $*100+$;
-	skip to IM6M1D
-endif;
-
-PROC IM6R3Y
-onfocus
-	setvalueset( @getsymbol(), codes, labels );
-
-postproc
-	checkdates(tr("Rotavirus") + " 3",IM6R3D,IM6R3M,IM6R3Y);
-
-	if vseq(IM6R1D,IM6R1M,IM6R1Y,IM6R3D,IM6R3M,IM6R3Y) then
-		errmsg(2704,tr("Rotavirus") + " 1",IM6R1D,IM6R1M,IM6R1Y,tr("Rotavirus") + " 3",IM6R3D,IM6R3M,IM6R3Y);
-	endif;
-
-	if vseq(IM6R2D,IM6R2M,IM6R2Y,IM6R3D,IM6R3M,IM6R3Y) then
-		errmsg(2704,tr("Rotavirus") + " 2",IM6R2D,IM6R2M,IM6R2Y,tr("Rotavirus") + " 3",IM6R3D,IM6R3M,IM6R3Y);
-	endif;
-	
 PROC IM6M1D
 if $ in 0,44,66 then
 	IM6M1M = $;
@@ -1888,6 +2315,36 @@ onfocus
 postproc
 	checkdates(tr("MMR/MR") + " 1",IM6M1D,IM6M1M,IM6M1Y);
 
+PROC IM6YD
+if $ in 0,44,66 then
+	IM6YM = $;
+	IM6YY = $*100+$;
+	skip to IM6TD1D
+endif;
+
+PROC IM6YY
+onfocus
+	setvalueset( @getsymbol(), codes, labels );
+
+postproc
+	checkdates(tr("Yellow Fever"),IM6YD,IM6YM,IM6YY);
+	
+PROC IM6I2D
+if $ in 0,44,66 then
+	IM6I2M = $;
+	IM6I2Y = $*100+$;
+	skip to IM6PENTA1D
+endif;
+PROC IM6I2Y
+onfocus
+	setvalueset( @getsymbol(), codes, labels );
+
+postproc
+	checkdates(tr("Polio (IPV)") + " 2",IM6I2D,IM6I2M,IM6I2Y);
+
+	if vseq(IM6I1D,IM6I1M,IM6I1Y,IM6I2D,IM6I2M,IM6I2Y) then
+		errmsg(2704,tr("Polio (IPV)") + " 1",IM6I1D,IM6I1M,IM6I1Y,tr("Polio (IPV)") + " 2",IM6I2D,IM6I2M,IM6I2Y);
+	endif;
 PROC IM6M2D
 if $ in 0,44,66 then
 	IM6M2M = $;
@@ -1906,34 +2363,6 @@ postproc
 		errmsg(2704,tr("MMR/MR") + " 1",IM6M1D,IM6M1M,IM6M1Y,tr("MMR/MR") + " 2",IM6M2D,IM6M2M,IM6M2Y);
 	endif;
 	
-PROC IM6YD
-if $ in 0,44,66 then
-	IM6YM = $;
-	IM6YY = $*100+$;
-	skip to IM6TD1D
-endif;
-
-PROC IM6YY
-onfocus
-	setvalueset( @getsymbol(), codes, labels );
-
-postproc
-	checkdates(tr("Yellow Fever"),IM6YD,IM6YM,IM6YY);
-	
-PROC IM6TD1D
-if $ in 0,44,66 then
-	IM6TD1M = $;
-	IM6TD1Y = $*100+$;
-	endgroup
-endif;
-
-PROC IM6TD1Y
-onfocus
-	setvalueset( @getsymbol(), codes, labels );
-
-postproc
-	checkdates(tr("Td Booster 1"),IM6TD1D,IM6TD1M,IM6TD1Y);
-
 PROC FORMIM2
 postproc;
 if visualvalue (CHIMTSTMPE) = notappl then
@@ -2530,432 +2959,4 @@ if datediff(UF7Y*10000+UF7M*100+UF7D,AN14Y*10000+AN14M*100+AN14D,"d") < 0 then
 	errmsg(2910);  
 	reenter
 endif; 
-
-PROC FORMHF
-preproc
-	if UB2 > 2 then
-		endlevel
-	endif;
-
-PROC HF1
-preproc
-	HF1  = UF1;
-	HF2  = UF2;
-	HF3N = UF3N;
-	HF3  = UF3;
-	HF4N = UF4N;
-	HF4  = UF4;
-	HF5  = UF5;
-	HF7AD = UB1D;
-	HF7AM = UB1M;
-	HF7AY = UB1Y;
-	HF7BD = IM5AD;
-	HF7BM = IM5AM;
-	HF7BY = IM5AY;
-	
-	if addmode then
-		savepartial();
-	endif;
-	
-PROC FORMHF2
-preproc
-	clean_labels();
-	j = 0;
-	do i = UB1Y while i <= UF7Y {create labels starting on year of birth}
-		codes(j) = i;
-		labels(j) = "";
-		j = j + 1;
-	enddo;
-	codes(j) = 9999;
-	labels(j) = tr("NO RESPONSE");
-
-postproc
-	if HF15 <> 1 then
-		if endmess() then
-			reenter HF15
-		else
-			endlevel
-		endif;
-	endif;
-
-PROC HF11D
-preproc
-	if addmode then
-		savepartial();
-	endif;
-  
-PROC HF15
-if $ <> 1 then
-	if endmess() then
-		goto ()
-	else
-		endlevel
-	endif;
-endif;
-PROC HF12BD
-if $ in 0,44,66 then
-	HF12BM = $;
-	HF12BY = $*100+$;
-	skip to HF12H0D
-endif;
-
-PROC HF12BY
-onfocus
-	setvalueset( @getsymbol(), codes, labels );
-
-postproc
-	checkdates(tr("BCG"),HF12BD,HF12BM,HF12BY);
-
-PROC HF12H0D
-if $ in 0,44,66 then
-	HF12H0M = $;
-	HF12H0Y = $*100+$;
-	skip to HF12P0D
-endif;
-
-PROC HF12H0Y
-onfocus
-	setvalueset( @getsymbol(), codes, labels );
-
-postproc
-	checkdates(tr("Hep B (at birth)"),HF12H0D,HF12H0M,HF12H0Y);
-
-PROC HF12P0D
-if $ in 0,44,66 then
-	HF12P0M = $;
-	HF12P0Y = $*100+$;
-	skip to HF12P1D
-endif;
-
-PROC HF12P0Y
-onfocus
-	setvalueset( @getsymbol(), codes, labels );
-
-postproc
-	checkdates(tr("Polio (OPV) (at birth)"),HF12P0D,HF12P0M,HF12P0Y);
-
-PROC HF12P1D
-if $ in 0,44,66 then
-	HF12P1M = $;
-	HF12P1Y = $*100+$;
-	skip to HF12P2D
-endif;
-
-PROC HF12P1Y
-onfocus
-	setvalueset( @getsymbol(), codes, labels );
-
-postproc
-	checkdates(tr("Polio (OPV)") + " 1",HF12P1D,HF12P1M,HF12P1Y);
-
-	if vseq(HF12P0D,HF12P0M,HF12P0Y,HF12P1D,HF12P1M,HF12P1Y) then
-		errmsg(2704,tr('Polio (OPV) (at birth)'),HF12P0D,HF12P0M,HF12P0Y,tr("Polio (OPV)") + " 1",HF12P1D,HF12P1M,HF12P1Y);
-	endif;
-
-PROC HF12P2D
-if $ in 0,44,66 then
-	HF12P2M = $;
-	HF12P2Y = $*100+$;
-	skip to HF12P3D
-endif;
-
-PROC HF12P2Y
-onfocus
-	setvalueset( @getsymbol(), codes, labels );
-
-postproc
-	checkdates(tr("Polio (OPV)") + " 2",HF12P2D,HF12P2M,HF12P2Y);
-
-	if vseq(HF12P0D,HF12P0M,HF12P0Y,HF12P2D,HF12P2M,HF12P2Y) then
-		errmsg(2704,tr('Polio (OPV)(at birth)'),HF12P0D,HF12P0M,HF12P0Y,tr("Polio (OPV)") + " 2",HF12P2D,HF12P2M,HF12P2Y);
-	endif;
-
-	if vseq(HF12P1D,HF12P1M,HF12P1Y,HF12P2D,HF12P2M,HF12P2Y) then
-		errmsg(2704,tr("Polio (OPV)") + " 1",HF12P1D,HF12P1M,HF12P1Y,tr("Polio (OPV)") + " 2",HF12P2D,HF12P2M,HF12P2Y);
-	endif;
-  
-PROC HF12P3D
-if $ in 0,44,66 then
-	HF12P3M = $;
-	HF12P3Y = $*100+$;
-	skip to HF12I1D
-endif;
-
-PROC HF12P3Y
-onfocus
-	setvalueset( @getsymbol(), codes, labels );
-
-postproc
-	checkdates(tr("Polio (OPV)") + " 3",HF12P3D,HF12P3M,HF12P3Y);
-
-	if vseq(HF12P0D,HF12P0M,HF12P0Y,HF12P3D,HF12P3M,HF12P3Y) then
-		errmsg(2704,tr('Polio (OPV)(at birth)'),HF12P0D,HF12P0M,HF12P0Y,tr("Polio (OPV)") + " 3",HF12P3D,HF12P3M,HF12P3Y);
-	endif;
-
-	if vseq(HF12P1D,HF12P1M,HF12P1Y,HF12P3D,HF12P3M,HF12P3Y) then
-		errmsg(2704,tr("Polio (OPV)") + " 1",HF12P1D,HF12P1M,HF12P1Y,tr("Polio (OPV)") + " 3",HF12P3D,HF12P3M,HF12P3Y);
-	endif;
-
-	if vseq(HF12P2D,HF12P2M,HF12P2Y,HF12P3D,HF12P3M,HF12P3Y) then
-		errmsg(2704,tr("Polio (OPV)") + " 2",HF12P2D,HF12P2M,HF12P2Y,tr("Polio (OPV)") + " 3", HF12P3D,HF12P3M,HF12P3Y);
-	endif;
-  
-PROC HF12I1D
-if $ in 0,44,66 then
-	HF12I1M = $;
-	HF12I1Y = $*100+$;
-	skip to HF12I2D
-endif;
-
-PROC HF12I1Y
-onfocus
-	setvalueset( @getsymbol(), codes, labels );
-
-postproc
-	checkdates(tr("Polio (IPV)") + " 1",HF12I1D,HF12I1M,HF12I1Y);
-PROC HF12I2D
-if $ in 0,44,66 then
-	HF12I2M = $;
-	HF12I2Y = $*100+$;
-	skip to HF12PENTA1D
-endif;
-PROC HF12I2Y
-onfocus
-	setvalueset( @getsymbol(), codes, labels );
-
-postproc
-	checkdates(tr("Polio (IPV)") + " 2",HF12I2D,HF12I2M,HF12I2Y);
-
-	if vseq(HF12I1D,HF12I1M,HF12I1Y,HF12I2D,HF12I2M,HF12I2Y) then
-		errmsg(2704,tr("Polio (IPV)") + " 1",HF12I1D,HF12I1M,HF12I1Y,tr("Polio (IPV)") + " 2",HF12I2D,HF12I2M,HF12I2Y);
-	endif;
-PROC HF12PENTA1D
-if $ in 0,44,66 then
-	HF12PENTA1M = $;
-	HF12PENTA1Y = $*100+$;
-	skip to HF12PENTA2D
-endif;
-
-PROC HF12PENTA1Y
-onfocus
-	setvalueset( @getsymbol(), codes, labels );
-
-postproc
-	checkdates(tr("Pentavalent (DPTHibHepB)") + " 1",HF12PENTA1D,HF12PENTA1M,HF12PENTA1Y);
-
-PROC HF12PENTA2D
-if $ in 0,44,66 then
-	HF12PENTA2M = $;
-	HF12PENTA2Y = $*100+$;
-	skip to HF12PENTA3D
-endif;
-
-PROC HF12PENTA2Y
-onfocus
-	setvalueset( @getsymbol(), codes, labels );
-
-postproc
-	checkdates(tr("Pentavalent (DPTHibHepB)") + " 2",HF12PENTA2D,HF12PENTA2M,HF12PENTA2Y);
-
-	if vseq(HF12PENTA1D,HF12PENTA1M,HF12PENTA1Y,HF12PENTA2D,HF12PENTA2M,HF12PENTA2Y) then
-		errmsg(2704,tr("Pentavalent (DPTHibHepB)") + " 1",HF12PENTA1D,HF12PENTA1M,HF12PENTA1Y,tr("Pentavalent (DPTHibHepB)") + " 2",HF12PENTA2D,HF12PENTA2M,HF12PENTA2Y);
-	endif;
-
-PROC HF12PENTA3D
-if $ in 0,44,66 then
-	HF12PENTA3M = $;
-	HF12PENTA3Y = $*100+$;
-	skip to HF12PCV1D
-endif;
-
-PROC HF12PENTA3Y
-onfocus
-	setvalueset( @getsymbol(), codes, labels );
-
-postproc
-	checkdates(tr("Pentavalent (DPTHibHepB)") + " 3",HF12PENTA3D,HF12PENTA3M,HF12PENTA3Y);
-
-	if vseq(HF12PENTA1D,HF12PENTA1M,HF12PENTA1Y,HF12PENTA3D,HF12PENTA3M,HF12PENTA3Y) then
-		errmsg(2704,tr("Pentavalent (DPTHibHepB)") + " 1",HF12PENTA1D,HF12PENTA1M,HF12PENTA1Y,tr("Pentavalent (DPTHibHepB)") + " 3",HF12PENTA3D,HF12PENTA3M,HF12PENTA3Y);
-	endif;
-
-	if vseq(HF12PENTA2D,HF12PENTA2M,HF12PENTA2Y,HF12PENTA3D,HF12PENTA3M,HF12PENTA3Y) then
-		errmsg(2704,tr("Pentavalent (DPTHibHepB)") + " 2",HF12PENTA2D,HF12PENTA2M,HF12PENTA2Y,tr("Pentavalent (DPTHibHepB)") + " 3",HF12PENTA3D,HF12PENTA3M,HF12PENTA3Y);
-	endif;
-	
-PROC HF12PCV1D
-if $ in 0,44,66 then
-	HF12PCV1M = $;
-	HF12PCV1Y = $*100+$;
-	skip to HF12PCV2D
-endif;
-
-PROC HF12PCV1Y
-onfocus
-	setvalueset( @getsymbol(), codes, labels );
-
-postproc
-	checkdates(tr("Pneumococcal (Conjugate)") + " 1",HF12PCV1D,HF12PCV1M,HF12PCV1Y);
-	
-PROC HF12PCV2D
-if $ in 0,44,66 then
-	HF12PCV2M = $;
-	HF12PCV2Y = $*100+$;
-	skip to HF12PCV3D
-endif;
-
-PROC HF12PCV2Y
-onfocus
-	setvalueset( @getsymbol(), codes, labels );
-
-postproc
-	checkdates(tr("Pneumococcal (Conjugate)") + " 2",HF12PCV2D,HF12PCV2M,HF12PCV2Y);
-
-	if vseq(HF12PCV1D,HF12PCV1M,HF12PCV1Y,HF12PCV2D,HF12PCV2M,HF12PCV2Y) then
-		errmsg(2704,tr("Pneumococcal (Conjugate)") + " 1",HF12PCV1D,HF12PCV1M,HF12PCV1Y,tr("Pneumococcal (Conjugate)") + " 2",HF12PCV2D,HF12PCV2M,HF12PCV2Y);
-	endif;
-	
-PROC HF12PCV3D
-if $ in 0,44,66 then
-	HF12PCV3M = $;
-	HF12PCV3Y = $*100+$;
-	skip to HF12R1D
-endif;
-
-PROC HF12PCV3Y
-onfocus
-	setvalueset( @getsymbol(), codes, labels );
-
-postproc
-	checkdates(tr("Pneumococcal (Conjugate)") + " 3",HF12PCV3D,HF12PCV3M,HF12PCV3Y);
-
-	if vseq(HF12PCV1D,HF12PCV1M,HF12PCV1Y,HF12PCV3D,HF12PCV3M,HF12PCV3Y) then
-		errmsg(2704,tr("Pneumococcal (Conjugate)") + " 1",HF12PCV1D,HF12PCV1M,HF12PCV1Y,tr("Pneumococcal (Conjugate)") + " 3",HF12PCV3D,HF12PCV3M,HF12PCV3Y);
-	endif;
-
-	if vseq(HF12PCV2D,HF12PCV2M,HF12PCV2Y,HF12PCV3D,HF12PCV3M,HF12PCV3Y) then
-		errmsg(2704,tr("Pneumococcal (Conjugate)") + " 2",HF12PCV2D,HF12PCV2M,HF12PCV2Y,tr("Pneumococcal (Conjugate)") + " 3",HF12PCV3D,HF12PCV3M,HF12PCV3Y);
-	endif;
-	
-PROC HF12R1D
-if $ in 0,44,66 then
-	HF12R1M = $;
-	HF12R1Y = $*100+$;
-	skip to HF12R2D
-endif;
-
-PROC HF12R1Y
-onfocus
-	setvalueset( @getsymbol(), codes, labels );
-
-postproc
-	checkdates(tr("Rotavirus") + " 1",HF12R1D,HF12R1M,HF12R1Y);
-
-PROC HF12R2D
-if $ in 0,44,66 then
-	HF12R2M = $;
-	HF12R2Y = $*100+$;
-	skip to HF12R3D
-endif;
-
-PROC HF12R2Y
-onfocus
-	setvalueset( @getsymbol(), codes, labels );
-
-postproc
-	checkdates(tr("Rotavirus") + " 2",HF12R2D,HF12R2M,HF12R2Y);
-
-	if vseq(HF12R1D,HF12R1M,HF12R1Y,HF12R2D,HF12R2M,HF12R2Y) then
-		errmsg(2704,tr("Rotavirus") + " 1",HF12R1D,HF12R1M,HF12R1Y,tr("Rotavirus") + " 2",HF12R2D,HF12R2M,HF12R2Y);
-	endif;
-	
-PROC HF12R3D
-if $ in 0,44,66 then
-	HF12R3M = $;
-	HF12R3Y = $*100+$;
-	skip to HF12M1D
-endif;
-
-PROC HF12R3Y
-onfocus
-	setvalueset( @getsymbol(), codes, labels );
-
-postproc
-	checkdates(tr("Rotavirus") + " 3",HF12R3D,HF12R3M,HF12R3Y);
-
-	if vseq(HF12R1D,HF12R1M,HF12R1Y,HF12R3D,HF12R3M,HF12R3Y) then
-		errmsg(2704,tr("Rotavirus") + " 1",HF12R1D,HF12R1M,HF12R1Y,tr("Rotavirus") + " 3",HF12R3D,HF12R3M,HF12R3Y);
-	endif;
-
-	if vseq(HF12R2D,HF12R2M,HF12R2Y,HF12R3D,HF12R3M,HF12R3Y) then
-		errmsg(2704,tr("Rotavirus") + " 2",HF12R2D,HF12R2M,HF12R2Y,tr("Rotavirus") + " 3",HF12R3D,HF12R3M,HF12R3Y);
-	endif;
-	
-PROC HF12M1D
-if $ in 0,44,66 then
-	HF12M1M = $;
-	HF12M1Y = $*100+$;
-	skip to HF12M2D
-endif;
-
-PROC HF12M1Y
-onfocus
-	setvalueset( @getsymbol(), codes, labels );
-
-postproc
-	checkdates(tr("MMR/MR") + " 1",HF12M1D,HF12M1M,HF12M1Y);
-
-PROC HF12M2D
-if $ in 0,44,66 then
-	HF12M2M = $;
-	HF12M2Y = $*100+$;
-	skip to HF12YD
-endif;
-
-PROC HF12M2Y
-onfocus
-	setvalueset( @getsymbol(), codes, labels );
-
-postproc
-	checkdates(tr("MMR/MR") + " 2",HF12M2D,HF12M2M,HF12M2Y);
-
-	if vseq(HF12M1D,HF12M1M,HF12M1Y,HF12M2D,HF12M2M,HF12M2Y) then
-		errmsg(2704,tr("MMR/MR") + " 1",HF12M1D,HF12M1M,HF12M1Y,tr("MMR/MR") + " 2",HF12M2D,HF12M2M,HF12M2Y);
-	endif;
-	
-PROC HF12YD
-if $ in 0,44,66 then
-	HF12YM = $;
-	HF12YY = $*100+$;
-	skip to HF12TD1D
-endif;
-
-PROC HF12YY
-onfocus
-	setvalueset( @getsymbol(), codes, labels );
-
-postproc
-	checkdates(tr("Yellow Fever"),HF12YD,HF12YM,HF12YY);
-	
-PROC HF12TD1D
-if $ in 0,44,66 then
-	HF12TD1M = $;
-	HF12TD1Y = $*100+$;
-	skip to HF14H
-endif;
-
-PROC HF12TD1Y
-onfocus
-	setvalueset( @getsymbol(), codes, labels );
-
-postproc
-	checkdates(tr("Td Booster 1"),HF12TD1D,HF12TD1M,HF12TD1Y);
-
-PROC HF14M
-if valid(HF10H) and valid(HF10M) and valid(HF14H) and valid(HF14M) then
-	if (HF10H*100+HF10M)>(HF14H*100+HF14M)then
-		errmsg(2910);
-		reenter
-	endif;
-endif;
 

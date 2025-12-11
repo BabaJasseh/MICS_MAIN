@@ -565,7 +565,7 @@ Item=BD8P
 Item=BD8Q
 Item=BD8X
 Item=BD8I
-Item=BD8B1
+Item=BD8R
   
 Box=50,157,1234,157,Etched
   
@@ -2867,15 +2867,15 @@ Text=B. Bread, rice, noodles, pasta such as macaroni and spaghetti,chereh made f
  
   
 [Field]
-Name=BD8B1
+Name=BD8R
 Position=1592,333,1611,367
-Item=BD8B1,MICS7CH
+Item=BD8R,MICS7CH
 DataCaptureType=RadioButton
 Form=9
   
 [Text]
-Position=93,435,903,467
-Text=B1. Any fortified baby food such as Cerelac, Nutrilac?
+Position=93,435,888,467
+Text=R. Any fortified baby food such as Cerelac, Nutrilac?
  
   
 [Field]

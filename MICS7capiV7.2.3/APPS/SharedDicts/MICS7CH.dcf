@@ -2595,7 +2595,7 @@ Value=9;NO RESPONSE
 
 [Item]
 Label=Any fortified baby food such as Cerelac, Nutrilac?
-Name=BD8B1
+Name=BD8R
 Start=41
 Len=1
 DataType=Numeric
@@ -2603,7 +2603,7 @@ ZeroFill=Yes
 
 [ValueSet]
 Label=Any fortified baby food such as Cerelac, Nutrilac?
-Name=BD8B1_VS1
+Name=BD8R_VS11
 Value=1;YES
 Value=2;NO
 Value=8;DK
