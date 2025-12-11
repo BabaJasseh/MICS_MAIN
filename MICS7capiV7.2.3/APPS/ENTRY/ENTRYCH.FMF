@@ -582,7 +582,7 @@ Color=6472704
 [Form]
 Name=FORM007
 Label=Immunization
-QuestionTextHeight=220
+QuestionTextHeight=300
 Level=1
 Size=1128,1611
 Color=15400917
