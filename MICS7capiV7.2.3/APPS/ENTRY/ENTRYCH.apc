@@ -1321,13 +1321,21 @@ onfocus
 postproc
 	checkdates(tr("Td Booster 1"),IM6TD1D,IM6TD1M,IM6TD1Y);
 
-PROC IM6TD1Y1
+PROC IM6TD1Y1000
+
+PROC IM6TD1Y1000
+
+onfocus
+	setvalueset( @getsymbol(), codes, labels );
 
 onfocus
 	setvalueset( @getsymbol(), codes, labels );
 
 postproc
-	checkdates(tr("DPT Booster"),IM6TD1D1,IM6TD1M1,IM6TD1Y1);
+	checkdates(tr("DPT Booster"),IM6TD1D1,IM6TD1M1,IM6TD1Y1000);
+postproc
+	checkdates(tr("DPT Booster"),IM6TD1D1,IM6TD1M1,IM6TD1Y1000);
+	
 PROC FL_ENTRYCH
 preproc
 
@@ -2319,37 +2327,23 @@ postproc
 		errmsg(2704,tr("Rotavirus") + " 1",IM6R1D,IM6R1M,IM6R1Y,tr("Rotavirus") + " 2",IM6R2D,IM6R2M,IM6R2Y);
 	endif;
 	
-PROC IM6P4D
-{CA PROC IM6P4D
-if $ in 0,44,66 then
-		IM6BM = $;
-		IM6BY = $*100+$;
-		skip to IM6PENTA3D
-endif;}
-
-PROC IM6P4D
-	if $ in 0,44,66 then
-		IM6BM = $;
-		IM6BY = $*100+$;
-		skip to IM6M1D
-	endif;
 PROC IM6P3Y1
 onfocus
 	setvalueset( @getsymbol(), codes, labels );
 
 postproc
-	checkdates(tr("Polio (OPV)") + " 3",IM6P4D,IM6P4M,IM6P3Y);
+	checkdates(tr("Polio (OPV)") + " 3",IM6P3D1,IM6P3M1,IM6P3Y1);
 	
-	if vseq(IM6P0D,IM6P0M,IM6P0Y,IM6P4D,IM6P4M,IM6P3Y) then
-		errmsg(2704,tr("Polio (OPV) 0 (at birth)"),IM6P0D,IM6P0M,IM6P0Y,tr("Polio (OPV)") + " 3",IM6P4D,IM6P4M,IM6P3Y);
+	if vseq(IM6P0D,IM6P0M,IM6P0Y,IM6P3D1,IM6P3M1,IM6P3Y1) then
+		errmsg(2704,tr("Polio (OPV) 0 (at birth)"),IM6P0D,IM6P0M,IM6P0Y,tr("Polio (OPV)") + " 3",IM6P3D1,IM6P3M1,IM6P3Y1);
 	endif;
 
-	if vseq(IM6P1D,IM6P1M,IM6P1Y,IM6P4D,IM6P4M,IM6P3Y) then
-		errmsg(2704,tr("Polio (OPV)") + " 1",IM6P1D,IM6P1M,IM6P1Y,tr("Polio (OPV)") + " 3",IM6P4D,IM6P4M,IM6P3Y);
+	if vseq(IM6P1D,IM6P1M,IM6P1Y,IM6P3D1,IM6P3M1,IM6P3Y1) then
+		errmsg(2704,tr("Polio (OPV)") + " 1",IM6P1D,IM6P1M,IM6P1Y,tr("Polio (OPV)") + " 3",IM6P3D1,IM6P3M1,IM6P3Y1);
 	endif;
   
-  if vseq(IM6P2D,IM6P2M,IM6P2Y,IM6P4D,IM6P4M,IM6P3Y) then
-		errmsg(2704,tr("Polio (OPV)") + " 2",IM6P2D,IM6P2M,IM6P2Y,tr("Polio (OPV)") + " 3",IM6P4D,IM6P4M,IM6P3Y);
+  if vseq(IM6P2D,IM6P2M,IM6P2Y,IM6P3D1,IM6P3M1,IM6P3Y1) then
+		errmsg(2704,tr("Polio (OPV)") + " 2",IM6P2D,IM6P2M,IM6P2Y,tr("Polio (OPV)") + " 3",IM6P3D1,IM6P3M1,IM6P3Y1);
 	endif;
 PROC IM6PENTA3D
 {CA PROC IM6PENTA3D
@@ -2430,27 +2424,41 @@ onfocus
 postproc
 	checkdates(tr("Polio (IPV)") + " 1",IM6I1D,IM6I1M,IM6I1Y);
 
+PROC IM6P4D
+{CA PROC IM6P4D
+if $ in 0,44,66 then
+		IM6BM = $;
+		IM6BY = $*100+$;
+		skip to IM6PENTA3D
+endif;}
+
+PROC IM6P4D
+	if $ in 0,44,66 then
+		IM6BM = $;
+		IM6BY = $*100+$;
+		skip to IM6M1D
+	endif;
 PROC IM6P4Y
 onfocus
 	setvalueset( @getsymbol(), codes, labels );
 
 postproc
-	checkdates(tr("Polio (OPV)") + " 4",IM6P4D000,IM6P4M000,IM6P4Y);
+	checkdates(tr("Polio (OPV)") + " 4",IM6P4D,IM6P4M,IM6P4Y);
 	
-	if vseq(IM6P0D,IM6P0M,IM60Y,IM6P4D000,IM6P4M000,IM6P4Y) then
-		errmsg(2704,tr("Polio (OPV) 0 (at birth)"),IM6P0D,IM6P0M,IM6P0Y,tr("Polio (OPV)") + " 4",IM6P4D000,IM6P4M000,IM6P4Y);
+	if vseq(IM6P0D,IM6P0M,IM60Y,IM6P4D,IM6P4M,IM6P4Y) then
+		errmsg(2704,tr("Polio (OPV) 0 (at birth)"),IM6P0D,IM6P0M,IM6P0Y,tr("Polio (OPV)") + " 4",IM6P4D,IM6P4M,IM6P4Y);
 	endif;
 
-	if vseq(IM6P1D,IM6P1M,IM6P1Y,IM6P4D000,IM6P4M000,IM6P4Y) then
-		errmsg(2704,tr("Polio (OPV)") + " 1",IM6P1D,IM6P1M,IM6P1Y,tr("Polio (OPV)") + " 4",IM6P4D000,IM6P4M000,IM6P4Y);
+	if vseq(IM6P1D,IM6P1M,IM6P1Y,IM6P4D,IM6P4M,IM6P4Y) then
+		errmsg(2704,tr("Polio (OPV)") + " 1",IM6P1D,IM6P1M,IM6P1Y,tr("Polio (OPV)") + " 4",IM6P4D,IM6P4M,IM6P4Y);
 	endif;
   
-  if vseq(IM6P2D,IM6P2M,IM6P2Y,IM6P4D000,IM6P4M000,IM6P4Y) then
-		errmsg(2704,tr("Polio (OPV)") + " 2",IM6P2D,IM6P2M,IM6P2Y,tr("Polio (OPV)") + " 4",IM6P4D000,IM6P4M000,IM6P4Y);
+  if vseq(IM6P2D,IM6P2M,IM6P2Y,IM6P4D,IM6P4M,IM6P4Y) then
+		errmsg(2704,tr("Polio (OPV)") + " 2",IM6P2D,IM6P2M,IM6P2Y,tr("Polio (OPV)") + " 4",IM6P4D,IM6P4M,IM6P4Y);
 	endif;
 
-if vseq(IM6P4D,IM6P4M,IM6P3Y,IM6P4D000,IM6P4M000,IM6P4Y) then
-		errmsg(2704,tr("Polio (OPV)") + " 3",IM6P3D,IM6P3M,IM6P3Y,tr("Polio (OPV)") + " 4",IM6P4D000,IM6P4M000,IM6P4Y);
+if vseq(IM6P3D1,IM6P3M1,IM6P3Y1,IM6P4D,IM6P4M,IM6P4Y) then
+		errmsg(2704,tr("Polio (OPV)") + " 3",IM6P3D1,IM6P3M1,IM6P3Y1,tr("Polio (OPV)") + " 4",IM6P4D,IM6P4M,IM6P4Y);
 	endif;
 PROC IM6M1D
 {CA PROC IM6M1D
@@ -2539,21 +2547,13 @@ if $ in 0,44,66 then
 		IM6BY = $*100+$;
 		skip to IM6POLBD
 	endif;
-PROC IM6TD1Y1000
-
-PROC IM6TD1Y1000
-
-onfocus
-	setvalueset( @getsymbol(), codes, labels );
+PROC IM6TD1Y1
 
 onfocus
 	setvalueset( @getsymbol(), codes, labels );
 
 postproc
-	checkdates(tr("DPT Booster"),IM6TD1D1,IM6TD1M1,IM6TD1Y1000);
-postproc
-	checkdates(tr("DPT Booster"),IM6TD1D1,IM6TD1M1,IM6TD1Y1000);
-	
+	checkdates(tr("DPT Booster"),IM6TD1D1,IM6TD1M1,IM6TD1Y1);
 PROC IM6POLBD
 if $ in 0,44,66 then
 		IM6BM = $;
@@ -2580,12 +2580,12 @@ postproc
 		errmsg(2704,tr("Polio (OPV)") + " 2",IM6P2D,IM6P2M,IM6P2Y,tr("Polio (OPV)") + " 5",IM6POLBD,IM6POLBM,IMPOLBY);
 	endif;
 
-if vseq(IM6P4D,IM6P4M,IM6P3Y,IM6POLBD,IM6POLBM,IMPOLBY) then
-		errmsg(2704,tr("Polio (OPV)") + " 3",IM6P3D,IM6P3M,IM6P3Y,tr("Polio (OPV)") + " 5",IM6POLBD,IM6POLBM,IMPOLBY);
+if vseq(IM6P3D1,IM6P3M1,IM6P3Y1,IM6POLBD,IM6POLBM,IMPOLBY) then
+		errmsg(2704,tr("Polio (OPV)") + " 3",IM6P3D1,IM6P3M1,IM6P3Y1,tr("Polio (OPV)") + " 5",IM6POLBD,IM6POLBM,IMPOLBY);
 	endif;
 	
-	if vseq(IM6P4D000,IM6P4M000,IM6P4Y,IM6POLBD,IM6POLBM,IMPOLBY) then
-		errmsg(2704,tr("Polio (OPV)") + " 4",IM6P3D,IM6P3M,IM6P3Y,tr("Polio (OPV)") + " 5",IM6POLBD,IM6POLBM,IMPOLBY);
+	if vseq(IM6P4D,IM6P4M,IM6P4Y,IM6POLBD,IM6POLBM,IMPOLBY) then
+		errmsg(2704,tr("Polio (OPV)") + " 4",IM6P4D,IM6P4M,IM6P4Y,tr("Polio (OPV)") + " 5",IM6POLBD,IM6POLBM,IMPOLBY);
 	endif;
 
 PROC IM6M2D

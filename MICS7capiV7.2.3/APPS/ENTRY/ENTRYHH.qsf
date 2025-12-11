@@ -42,233 +42,96 @@ styles:
     css: |
       font-family: Courier New;font-style: italic;font-size: 26px;color: #000000;
 questions:
-  - name: MICS7HH.HH7
+  - name: MICS7HH.ED10A
     conditions:
       - questionText:
           ENG: |
-            
+            <p><span class="Qnum">ED10<span style="font-size: 26px;">.&nbsp;</span></span><span style="font-size: 26px;">During&nbsp;</span>this current&nbsp;2024/2025<font color="#ff0000">&nbsp;</font>school year, which level and grade is&nbsp;<span style="font-style: italic;">~~ED2~~</span>&nbsp;<u style="font-size: 9pt;"><span style="font-size: 26px;">attending</span></u>?</p><p><i style="color: rgb(0, 0, 255);">Record grade.</i><span style="font-size: 26px;"><br></span></p><p class="MsoNormal"><span lang="EN-GB"><o:p></o:p></span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.HH11C
+  - name: MICS7HH.ED10B
     conditions:
       - questionText:
           ENG: |
-            <p class="1IntvwqstChar1Char" style="margin-left:.8pt;mso-add-space:auto;
-            text-indent:-.8pt;line-height:115%"><i><font color="#0000ff"><span class="Instructionsinparens" style="">Respondent
-            representing a household</span><span class="Instructionsinparens" style=""><span lang="MN" style="font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;"> shall be 18, and </span></span><span class="Instructionsinparens" style="">be </span><span class="Instructionsinparens" style=""><span lang="MN" style="font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">know</span></span><span class="Instructionsinparens" style="">ledgeable</span><span class="Instructionsinparens" style=""> </span><span class="Instructionsinparens" style="">about </span><span class="Instructionsinparens" style=""><span lang="MN" style="font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">household members. </span></span></font></i><span class="Instructionsinparens"><i><font color="#0000ff">If there is no adult member in the household or all
-            adult members are incapable to give interviews, a child aged 15-17 can be
-            interviewed. A child under 15 shall not be interviewed.&nbsp;</font></i><o:p></o:p></span></p><p></p>
-  - name: MICS7HH.HH12
+            <p><span class="Qnum">ED10.&nbsp;</span>During this current 2024/2025 school year, which year is&nbsp;<span style="font-style: italic;">~~ED2~~</span>&nbsp;<u style="font-size: 9pt;"><span style="font-size: 26px;">attending</span></u>?</p><p><span class="Qtxt"><i style="color: rgb(0, 0, 255);">Record year.</i><br></span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.ED11
     conditions:
       - questionText:
           ENG: |
-            <p style="text-indent: -9.6px; "><span class="Qnum" style="font-family: &quot;Courier New&quot;;">HH12.&nbsp;</span><span style="font-family: &quot;Courier New&quot;; text-indent: -0.1in;">Hello, my name is ~~STAFF_NAME~~</span><span style="text-indent: -9.6px; font-family: &quot;Courier New&quot;;">&nbsp;</span><span style="text-indent: -0.1in;"><span style="font-family: &quot;Courier New&quot;;">. We</span> are from&nbsp;</span>Gambia Bureau of Statistics<span style="text-indent: -0.1in;">. We are conducting
-            a survey about the situation of children, families, and households.&nbsp;</span></p><p style="text-indent: -9.6px; "><span style="text-indent: -0.1in;"></span></p><p><span style="text-indent: -0.2pt;">This interview usually
-            takes about<span style="font-family: &quot;Courier New&quot;;">&nbsp;45&nbsp;</span></span><span style="text-indent: -0.2pt;">minutes.</span></p><p><span style="text-indent: -9pt;">Participation in this
-            survey is voluntary. No payment or incentive will be given to you or your
-            family members for answering these questions. However, the information gathered
-            will be very helpful for the government and the general public to better
-            understand the situation and needs of the population.</span></p><p><span style="text-indent: -0.1in;">Please know that all
-            the information you share during the interview will remain strictly
-            confidential and anonymous. No information about you or your household will be
-            made publicly available. We will only produce information about the general
-            population.</span></p><p><span style="text-indent: -0.1in;">Should you feel
-            uncomfortable about any questions and not wish to answer, just let me know and
-            we can skip the question. Also, if you wish to stop the interview at any point
-            just let me know.</span></p><p><span style="text-indent: -0.1in; font-size: 26px;">If at any time you have
-            any complaints or concerns about this survey, please use the information on
-            this card to contact&nbsp;</span>Gambia Bureau of Statistics<span style="text-indent: -0.1in;">.</span></p><p><span style="font-size: 26px;">May
-            I start the interview?</span></p>
+            <p><span class="Qnum">ED11. </span><span class="Qtxt">Is <span class="REF">~~ED2~~ </span>attending a public school?</span></p>
+            <p><span class="Itxt">﻿If yes, record '1'. If no, probe to code who controls and manages the school.</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.HHNAME
+  - name: MICS7HH.ED12
     conditions:
       - questionText:
           ENG: |
-            <p>First, please tell me the name of the household head.<br></p>
+            <p><span class="Qnum">ED12. </span><span class="Qtxt">In the <span class="QtxtC">current </span>school year, has <span class="REF">~~ED2~~ </span>received any school tuition support?</span></p>
+            <p><span class="Itxt">If yes, probe to ensure that support was not received from family, other relatives, friends or neighbours.</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.INTROHL
+  - name: MICS7HH.ED12A
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">HL2. </span><span class="Qtxt">First, please tell me the name of each person who usually lives here, starting with the head of the household.</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.HX2
-    conditions:
-      - logic: HX1=1
-        questionText:
-          ENG: |
-            <p><span class="Itxt">Name of the household head</span></p>
-        helpText:
-          ENG: |
-            
-      - logic: HX1>1
-        questionText:
-          ENG: |
-            <span style="color: rgb(0, 0, 255); font-style: italic;">Name of the household member</span><p></p>
-  - name: MICS7HH.HX3
-    conditions:
-      - logic: curocc() = 1
-        questionText:
-          ENG: |
-            <span class="Qnum">HL3.&nbsp;</span><span class="Qtxt">Please confirm,&nbsp;<span class="REF">~~HX2~~&nbsp;</span>is the head of this household?</span><br>
-        helpText:
-          ENG: |
-            
-      - logic: curocc() in 2:50
-        questionText:
-          ENG: |
-            <p><span class="Qnum">HL3. </span><span class="Qtxt">What is the relationship of <span class="REF">~~HX2~~ </span>to <span class="REF">~~hhname~~</span>?</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.HX4
+            <span class="Qnum">ED12A.&nbsp;</span><span style="font-size: 26px; text-indent: 0in;">Do you think this tuition support is sufficient for paying the costs of&nbsp;</span><span style="font-style: italic;">~~ED2~~&nbsp;</span><span style="font-size: 26px; text-indent: 0in;">’s tuition?</span><p class="MsoNormal" style="margin-left:0in;mso-add-space:auto;text-indent:0in;
+            line-height:normal"><span lang="EN-GB" style="font-size:9.0pt;mso-bidi-font-size:
+            10.0pt"><o:p></o:p></span></p><p></p>
+  - name: MICS7HH.ED13
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">HL4. </span><span class="Qtxt">Is <span class="REF">~~HX2~~ </span>male or female?</span></p>
+            <p><span class="Qnum">ED13. </span><span class="Qtxt">Who provided the tuition support?</span></p>
+            <p><span class="Itxt">Record all mentioned.</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.HX0
+  - name: MICS7HH.ED14
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qtxt">Is there another member in the household?</span></p>
-            <p><span class="Itxt">Probe for additional household members.</span></p>
+            <p><span class="Qnum">ED14. </span><span class="Qtxt">For the <span class="QtxtC">current </span>school year, has <span class="REF">~~ED2~~ </span></span>received any material support or cash to buy shoes, exercise books, notebooks, school uniforms or other school supplies?</span></p>
+            <p><span class="Itxt">If yes, probe to ensure that support was not received from family, other relatives, friends or neighbours.</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.HHAUX
+  - name: MICS7HH.ED14A
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Itxt">Make sure to probe for additional members: Those that are not currently at home, any infants or small children and any others who may not be family (such as servants, friends) but who usually live in the household.</span></p>
+            <b><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">ED14A.&nbsp;</span></b><span lang="EN-GB" style="font-size: 26px; line-height: 150%; font-family: &quot;Courier New&quot;;">Do you think this </span><span lang="EN-GB" style="font-size:9.0pt;line-height:150%;font-family:&quot;Times New Roman&quot;,serif;
+            mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-GB;mso-fareast-language:
+            EN-US;mso-bidi-language:AR-SA"><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">support is sufficient for the school supplies&nbsp;</span><span style="font-family: &quot;Courier New&quot;; font-size: 26px; font-style: italic;">~~ED2~~</span><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">&nbsp;needed?</span></span><p></p>
+  - name: MICS7HH.ED15
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">ED<span style="font-size: 26px;">15. </span></span><span lang="EN-GB" style="text-indent: 0in; font-size: 9pt; line-height: 115%;"><span style="font-size: 26px;">At any time during the </span><span style="font-size: 26px;">previous</span><span style="font-size: 26px;">&nbsp;</span></span>2024/25&nbsp;<span lang="EN-GB" style="text-indent: 0in; font-size: 9pt; line-height: 115%;"><span style="font-size: 26px;">school year did&nbsp;</span></span><span style="font-style: italic;">~~ED2~~&nbsp;</span><span lang="EN-GB" style="text-indent: 0in; line-height: 115%;">attend school </span><span lang="EN-GB" style="text-indent: 0in; font-size: 9pt; line-height: 115%;"><span style="font-size: 26px;">or any </span><span style="font-size: 26px;">Early Childhood
+            Development</span><span style="font-size: 26px;"> programme?</span></span></p><p class="MsoNormal" style="margin-left:0in;mso-add-space:auto;text-indent:0in;
+            line-height:115%"><span lang="EN-GB" style="font-size:9.0pt;
+            mso-bidi-font-size:10.0pt;line-height:115%"><o:p></o:p></span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.HL5M
+  - name: MICS7HH.ED16A
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">HL5. </span><span class="Qtxt">What is <span class="REF">~~HL2~~</span>'s date of birth?</span></p>
-            <p><span class="Itxt">Record month of birth. </span></p>
-            <p><span class="Itxt">If 'DK' record '98'.</span></p>
+            <p><span class="Qnum">ED1<span style="font-size: 26px;">6. </span></span><span style="font-size: 26px;">During&nbsp;</span>that previous 2024/25&nbsp;&nbsp;school year, which level and grade did&nbsp;<span style="font-style: italic; font-size: 26px;">~~ED2~~</span><span style="font-size: 26px;">&nbsp;</span><u style="font-size: 9pt;"><span style="font-size: 26px;">attend</span></u><span style="font-size: 26px;">?</span></p><p><i style="color: rgb(0, 0, 255);">Record grade.</i><span style="font-size: 26px;"><br></span></p><p class="MsoNormal"><span lang="EN-GB"><o:p></o:p></span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.HL5Y
+  - name: MICS7HH.ED16B
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Itxt">Record year of birth. </span></p>
-            <p><span class="Itxt">If 'DK' record '9998'.</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.HL6
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">HL6. </span><span class="Qtxt">How old is <span class="REF">~~HL2~~</span>?</span></p>
-            <p><span class="Itxt">Record in completed years.</span></p>
-            <p><span class="Itxt">If age is 95 or above, record '95'.</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.HL7
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">HL7. </span><span class="Qtxt">Did <span class="REF">~~HL2~~ </span>stay here last night?</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.HL12
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">HL12. </span><span class="Qtxt">Is <span class="REF">~~HL2~~</span>'s natural mother alive?</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.HL13
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">HL13. </span><span class="Qtxt">Does <span class="REF">~~HL2~~</span>'s natural mother live in this household?</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.HL14
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Inum">HL14. </span><span class="Itxt">Record the line number of natural mother.</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.HL15
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">HL15. </span><span class="Qtxt">Where does <span class="REF">~~HL2~~</span>'s natural mother live?</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.HL16
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">HL16. </span><span class="Qtxt">Is <span class="REF">~~HL2~~</span>'s natural father alive?</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.HL17
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">HL17. </span><span class="Qtxt">Does <span class="REF">~~HL2~~</span>'s natural father live in this household?</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.HL18
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Inum">HL18. </span><span class="Itxt">Record the line number of natural father.</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.HL19
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">HL19. </span><span class="Qtxt">Where does <span class="REF">~~HL2~~</span>'s natural father live?</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.HL20
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Inum">HL20. </span><span class="Itxt">Copy the line number of mother from HL14. If blank, ask:</span></p>
-            <p><span class="Qtxt">Who is the primary caretaker of <span class="REF">~~HL2~~</span>?</span></p>
-            <p><span class="Itxt">If 'No one' for a child age 15-17, record '90'.</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.HH47
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Inum">HH47. </span><span class="Itxt">Name and line number of the respondent to Household Questionnaire interview</span></p>
+            <p><span class="Qnum">ED16.&nbsp;</span>During that previous 2024/25&nbsp; school year, which year did&nbsp;<span style="font-style: italic;">~~ED2~~</span>&nbsp;<u style="font-size: 9pt;"><span style="font-size: 26px;">attend</span></u>?</p><p><i style="color: rgb(0, 0, 255);">Record year.</i><br></p>
         helpText:
           ENG: |
             
@@ -318,259 +181,132 @@ questions:
         helpText:
           ENG: |
             
-  - name: MICS7HH.ED10A
+  - name: MICS7HH.EU1
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">ED10<span style="font-size: 26px;">.&nbsp;</span></span><span style="font-size: 26px;">During&nbsp;</span>this current&nbsp;2024/2025<font color="#ff0000">&nbsp;</font>school year, which level and grade is&nbsp;<span style="font-style: italic;">~~ED2~~</span>&nbsp;<u style="font-size: 9pt;"><span style="font-size: 26px;">attending</span></u>?</p><p><i style="color: rgb(0, 0, 255);">Record grade.</i><span style="font-size: 26px;"><br></span></p><p class="MsoNormal"><span lang="EN-GB"><o:p></o:p></span></p>
+            <p><span class="Qnum" style="font-family: &quot;Courier New&quot;; font-size: 26px;">EU1.&nbsp;</span><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">What does this household use for cooking </span><u style="font-family: &quot;Times New Roman&quot;, serif; font-size: 12pt;"><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">most of
+            the time</span></u><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">, including cooking food, making tea or coffee, boiling drinking
+            water?</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.ED10B
+  - name: MICS7HH.EU1A
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">ED10.&nbsp;</span>During this current 2024/2025 school year, which year is&nbsp;<span style="font-style: italic;">~~ED2~~</span>&nbsp;<u style="font-size: 9pt;"><span style="font-size: 26px;">attending</span></u>?</p><p><span class="Qtxt"><i style="color: rgb(0, 0, 255);">Record year.</i><br></span></p>
+            <b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">EU1A.
+            </span></b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">What is the (</span><b><i><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">name/brand</span></i></b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">) of this cookstove or device?</span><p></p>
+  - name: MICS7HH.EU4
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span style="font-size: 24px;"><b>EU4</b>. What type of fuel or energy source is used in this cookstove?</span></p>
+            
+            <p class="1IntvwqstChar1Char" style="margin-left:.1in;mso-add-space:auto;
+            text-indent:-.1in;line-height:115%"><span style="color: rgb(0, 0, 255); font-style: italic;">If more than one, record the main energy source for this cookstove.</span><br></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.ED15
+  - name: MICS7HH.EU6
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">ED<span style="font-size: 26px;">15. </span></span><span lang="EN-GB" style="text-indent: 0in; font-size: 9pt; line-height: 115%;"><span style="font-size: 26px;">At any time during the </span><span style="font-size: 26px;">previous</span><span style="font-size: 26px;">&nbsp;</span></span>2024/25&nbsp;<span lang="EN-GB" style="text-indent: 0in; font-size: 9pt; line-height: 115%;"><span style="font-size: 26px;">school year did&nbsp;</span></span><span style="font-style: italic;">~~ED2~~&nbsp;</span><span lang="EN-GB" style="text-indent: 0in; line-height: 115%;">attend school </span><span lang="EN-GB" style="text-indent: 0in; font-size: 9pt; line-height: 115%;"><span style="font-size: 26px;">or any </span><span style="font-size: 26px;">Early Childhood
-            Development</span><span style="font-size: 26px;"> programme?</span></span></p><p class="MsoNormal" style="margin-left:0in;mso-add-space:auto;text-indent:0in;
-            line-height:115%"><span lang="EN-GB" style="font-size:9.0pt;
-            mso-bidi-font-size:10.0pt;line-height:115%"><o:p></o:p></span></p>
+            <p><span class="Qnum" style="font-family: &quot;Courier New&quot;; font-size: 26px;">EU6.&nbsp;</span><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">What does this household use to heat the home </span><u style="font-family: &quot;Times New Roman&quot;, serif; font-size: 12pt;"><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">when
+            needed</span></u><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">?</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.ED16A
+  - name: MICS7HH.EU6A
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">ED1<span style="font-size: 26px;">6. </span></span><span style="font-size: 26px;">During&nbsp;</span>that previous 2024/25&nbsp;&nbsp;school year, which level and grade did&nbsp;<span style="font-style: italic; font-size: 26px;">~~ED2~~</span><span style="font-size: 26px;">&nbsp;</span><u style="font-size: 9pt;"><span style="font-size: 26px;">attend</span></u><span style="font-size: 26px;">?</span></p><p><i style="color: rgb(0, 0, 255);">Record grade.</i><span style="font-size: 26px;"><br></span></p><p class="MsoNormal"><span lang="EN-GB"><o:p></o:p></span></p>
+            <p><b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">EU6A.
+            </span></b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">What is the (</span><b><i><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">name/brand</span></i></b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">) of this heater, cookstove or device?</span></p><p><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;"><br></span><p></p></p>
+  - name: MICS7HH.EU8
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">EU8. </span><span class="Qtxt">What type of fuel and energy source is used in this heater?</span></p>
+            <p><span class="Itxt">If more than one, record the main energy source for this heater.</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.ED16B
+  - name: MICS7HH.EU9
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">ED16.&nbsp;</span>During that previous 2024/25&nbsp; school year, which year did&nbsp;<span style="font-style: italic;">~~ED2~~</span>&nbsp;<u style="font-size: 9pt;"><span style="font-size: 26px;">attend</span></u>?</p><p><i style="color: rgb(0, 0, 255);">Record year.</i><br></p>
+            <p><span class="Qnum"><span style="font-family: &quot;Courier New&quot;;">EU</span><span style="font-family: &quot;Courier New&quot;; font-size: 24px;">9.&nbsp;</span></span><span style="font-family: &quot;Courier New&quot;; font-size: 24px;">What does this household use </span><u style="font-family: &quot;Times New Roman&quot;, serif; font-size: 12pt;"><span style="font-family: &quot;Courier New&quot;; font-size: 24px;">most of the time</span></u><span style="font-family: &quot;Courier New&quot;; font-size: 24px;">
+            as energy for lighting, or as a light source?</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.HC1A
+  - name: MICS7HH.FE1
     conditions:
       - questionText:
           ENG: |
-            <p><b><span lang="EN-GB">HC1A</span></b><span lang="EN-GB">. What is the religion of&nbsp;<span style="font-style: italic;">~~hhname~~</span>?</span></p><p><span lang="EN-GB"><br></span><p></p></p>
-  - name: MICS7HH.HC1A1
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">HC1A1. </span>What is the nationality of&nbsp;<span style="font-style: italic;">~~hhname~~</span>?</p><p class="MsoNormal"><span lang="EN-GB"><o:p></o:p></span></p>
-        helpText:
-          ENG: |
+            <p class="1IntvwqstChar1Char" style="margin-left:.1in;mso-add-space:auto;
+            text-indent:-.1in;line-height:115%"><b><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">FE1</span></b><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">.
+            Now I would like to ask you some questions about food. During the last 1 year,
+            was there a time when</span><span style="font-family: &quot;Times New Roman&quot;, serif; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;"><span style="font-family: &quot;Courier New&quot;;"> you or others in your household worried about
+            not having enough food to eat because of a lack of money or other resources?</span><o:p></o:p></span></p>
             
-  - name: MICS7HH.HC1B
+            <p class="1IntvwqstChar1Char" style="margin-left:.1in;mso-add-space:auto;
+            text-indent:-.1in;line-height:115%"><b><span style="font-family: &quot;Courier New&quot;; font-size: 26px; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;"><font color="#0000ff">&nbsp;</font></span></b><i><span lang="EN-GB" style="font-size: 26px; font-family: &quot;Times New Roman&quot;;"><font color="#0000ff"><span style="font-family: &quot;Courier New&quot;;">Probe:</span></font><span style="font-family: &quot;Courier New&quot;;"> </span></span></i><span lang="EN-GB" style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;"><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">By lack of money or
+            other resources, I mean not having the means to get food, either through </span><span style="color: red; font-family: &quot;Courier New&quot;; font-size: 26px;">growing it, purchasing it, or trading for it</span><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">.</span></span></p><p></p>
+  - name: MICS7HH.FE2
     conditions:
       - questionText:
           ENG: |
-            <p><b><span lang="EN-GB">HC1B</span></b><span lang="EN-GB">. What is the mother tongue/native language
-            of&nbsp;<span style="font-style: italic;">~~hhname~~</span>?</span></p><p class="MsoNormal"><span lang="EN-GB"><o:p></o:p></span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.HC2
+            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">FE2</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">.
+            Still thinking about the last 1 year, was there a time when you or others in
+            your household were unable to eat healthy and nutritious food because of a lack
+            of money or other resources?</span><p></p>
+  - name: MICS7HH.FE3
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum" style="font-size: 26px; font-family: &quot;Courier New&quot;;">HC2. </span><span lang="EN-GB" style="font-size: 12pt; line-height: 150%; font-family: &quot;Times New Roman&quot;, serif;"><span style="font-size: 26px; font-family: &quot;Courier New&quot;;">To what ethnic group does&nbsp;</span><span style="font-family: &quot;Courier New&quot;; font-size: 26px; font-style: italic;">~~hhname~~</span><span style="font-size: 26px; font-family: &quot;Courier New&quot;;">&nbsp;belong?</span></span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.HC3
+            <p class="MsoNormal" style="margin-left:7.45pt;mso-add-space:auto;text-indent:
+            -7.45pt;line-height:115%"><b><span lang="EN-GB" style="font-size: 18pt; line-height: 115%;">FE3</span></b><span lang="EN-GB" style="font-size:10.0pt;line-height:115%"><span style="font-size: 18pt;">. Was there a time when
+            you or others in your household ate only a few kinds of foods because of a lack
+            of money or other resources?</span><o:p></o:p></span></p><p></p>
+  - name: MICS7HH.FE4
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">HC3. </span>How
-            many rooms do members of this household usually use for sleeping?</p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.HC4
+            <p class="MsoNormal" style="margin-left:7.45pt;mso-add-space:auto;text-indent:
+            -7.1pt;line-height:115%"><b><span lang="EN-GB" style="font-size: 18pt; line-height: 115%;">FE4</span></b><span lang="EN-GB" style="font-size:10.0pt;line-height:115%"><span style="font-size: 18pt;">. Was there a time when
+            you or others in your household had to skip a meal because there were not
+            enough money or other resources to get food?</span><o:p></o:p></span></p><p></p>
+  - name: MICS7HH.FE5
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Inum">HC4. </span><span class="Itxt">Main material of the dwelling floor.</span></p>
-            <p><span class="Itxt">Record observation.</span></p>
-            <p><span class="Itxt">If observation is not possible, ask the respondent to determine the material of the dwelling floor.</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.HC5
+            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">FE5</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">.
+            Still thinking about the last 1 year, was there a time when you or others in
+            your household ate less than you thought you should because of a lack of money
+            or other resources?</span><p></p>
+  - name: MICS7HH.FE6
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Inum">HC5. </span><span class="Itxt">Main material of the roof.</span></p>
-            <p><span class="Itxt">Record observation.</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.HC6
+            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">FE6</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">.
+            Was there a time when your household ran out of food because of a lack of money
+            or other resources?</span><p></p>
+  - name: MICS7HH.FE7
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Inum">HC6. </span><span class="Itxt">Main material of the exterior walls.</span></p>
-            <p><span class="Itxt">Record observation.</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.HC7A
+            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">FE7</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">.
+            Was there a time when you or others in your household were hungry but did not
+            eat because of a lack of money or other resources for food?</span><p></p>
+  - name: MICS7HH.FE8
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum"><span style="font-family: &quot;Courier New&quot;;">HC7</span><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">.&nbsp;</span></span><span class="Qtxt" style="font-family: &quot;Courier New&quot;; font-size: 26px;">Does your household have:</span></p><p><span class="Qnum" style="font-family: &quot;Courier New&quot;; font-size: 26px;">[A]&nbsp;</span><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">A fixed
-            telephone line?</span></p><p></p>
-  - name: MICS7HH.HC7B
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">HC7. </span><span class="Qtxt">Does your household have:</span></p>
-            <p><span class="Qnum">[B] </span><span class="Qtxt">A radio?</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.HC7C
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">HC7.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><span class="Qnum">[C]&nbsp;</span><span class="Qtxt">A bed?</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.HC7D
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">HC7.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><span class="Qnum">[D]&nbsp;</span><span class="Qtxt">A sofa?</span></p><p></p>
-  - name: MICS7HH.HC7E
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">HC7.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><span class="Qnum">[D]&nbsp;</span><span class="Qtxt">A dining table?</span></p>
-  - name: MICS7HH.HC7F
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">HC7.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><span class="Qnum">[D]&nbsp;</span><span class="Qtxt">A cupboard?</span></p><p></p>
-  - name: MICS7HH.HC7G
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">HC7.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><span class="Qnum">[D]&nbsp;</span><span class="Qtxt">A mattress?</span></p><p></p>
-  - name: MICS7HH.HC7H
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">HC7.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><span class="Qnum">[D]&nbsp;</span><span class="Qtxt">A generator?</span></p><p></p>
-  - name: MICS7HH.HC7I
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">HC7.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><span class="Qnum">[I] <span style="font-weight: normal;">A s</span></span>olar panel?</p><p></p>
-  - name: MICS7HH.HC8
-    conditions:
-      - questionText:
-          ENG: |
-            <span class="Qnum">HC8.&nbsp;</span><span class="Qtxt">Does your household have electricity?</span><p></p>
-  - name: MICS7HH.HC8A
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum"><span style="font-size: 26px; font-family: &quot;Courier New&quot;;">HC8A</span><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">.&nbsp;</span></span><span style="font-size: 26px; text-indent: -0.1in; font-family: &quot;Courier New&quot;;">What source of electricity is used
-            in this household?</span></p><p><i style="text-indent: -0.1in;"><span lang="EN-GB" style="font-size: 26px; line-height: 150%; font-family: &quot;Courier New&quot;;"><font color="#0000ff">Record
-            all mentioned.</font></span></i></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.HC8B
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">HC8B.&nbsp;</span><span style="text-indent: -0.1in;">What source of electricity is used <u>most</u> of the time in this household?</span></p><p><i style="text-indent: -0.1in;"><span lang="EN-GB" style="line-height: 39px;"><font color="#0000ff">Only a source recorded in HC8A can be recorded here.</font></span></i></p><p></p>
-  - name: MICS7HH.HC9A
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><span class="Qnum">[A]&nbsp;</span><span class="Qtxt">A television?</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.HC9B
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">HC9. </span><span class="Qtxt">Does your household have:</span></p>
-            <p><span class="Qnum">[B] </span><span class="Qtxt">A refrigerator?</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.HC9C
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[C] <span style="font-weight: normal;">A f</span></font></span><span class="QtxtC"><font color="#000000">an?</font></span></font></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.HC9D
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[D] <span style="font-weight: normal;">An a</span></font></span><span class="QtxtC"><font color="#000000">ir conditioner?</font></span></font></p><p></p>
-  - name: MICS7HH.HC9E
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[E] <span style="font-weight: normal;">A s</span></font></span><span class="QtxtC"><font color="#000000">atellite dish?</font></span></font></p><p></p>
-  - name: MICS7HH.HC9G
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[G] <span style="font-weight: normal;">A</span>&nbsp;<span style="font-weight: normal;">m</span></font></span><span class="QtxtC"><font color="#000000">icrowave Oven?</font></span></font></p><p></p>
-  - name: MICS7HH.HC9H
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[H] <span style="font-weight: normal;">A</span>&nbsp;</font></span><span class="QtxtC"><font color="#000000">water heater?</font></span></font></p><p></p>
-  - name: MICS7HH.HC9I
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[I] <span style="font-weight: normal;">A</span>&nbsp;</font></span><span class="QtxtC"><font color="#000000">blender?</font></span></font></p><p></p>
-  - name: MICS7HH.HC9J
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[J] <span style="font-weight: normal;">A</span>&nbsp;</font></span><span class="QtxtC"><font color="#000000">washing machine?</font></span></font></p><p></p>
-  - name: MICS7HH.HC9K
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[K] <span style="font-weight: normal;">An</span>&nbsp;</font></span><span class="QtxtC"><font color="#000000">electric iron?</font></span></font></p><p></p>
-  - name: MICS7HH.HC9L
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[L] <span style="font-weight: normal;">An</span>&nbsp;</font></span><span class="QtxtC"><font color="#000000">electric kettle?</font></span></font></p><p></p>
-  - name: MICS7HH.HC9M
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[M] <span style="font-weight: normal;">A</span>&nbsp;</font></span><span class="QtxtC"><font color="#000000">water tank?</font></span></font></p><p></p>
+            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">FE8</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">. During</span><b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;"> </span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">the last 1 year, was there a time when you or
+            others in your household went without eating for a whole day because of a lack
+            of money or other resources?</span><p></p>
   - name: MICS7HH.HC10A
     conditions:
       - questionText:
@@ -770,6 +506,36 @@ questions:
         helpText:
           ENG: |
             
+  - name: MICS7HH.HC1A
+    conditions:
+      - questionText:
+          ENG: |
+            <p><b><span lang="EN-GB">HC1A</span></b><span lang="EN-GB">. What is the religion of&nbsp;<span style="font-style: italic;">~~hhname~~</span>?</span></p><p><span lang="EN-GB"><br></span><p></p></p>
+  - name: MICS7HH.HC1A1
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">HC1A1. </span>What is the nationality of&nbsp;<span style="font-style: italic;">~~hhname~~</span>?</p><p class="MsoNormal"><span lang="EN-GB"><o:p></o:p></span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.HC1B
+    conditions:
+      - questionText:
+          ENG: |
+            <p><b><span lang="EN-GB">HC1B</span></b><span lang="EN-GB">. What is the mother tongue/native language
+            of&nbsp;<span style="font-style: italic;">~~hhname~~</span>?</span></p><p class="MsoNormal"><span lang="EN-GB"><o:p></o:p></span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.HC2
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum" style="font-size: 26px; font-family: &quot;Courier New&quot;;">HC2. </span><span lang="EN-GB" style="font-size: 12pt; line-height: 150%; font-family: &quot;Times New Roman&quot;, serif;"><span style="font-size: 26px; font-family: &quot;Courier New&quot;;">To what ethnic group does&nbsp;</span><span style="font-family: &quot;Courier New&quot;; font-size: 26px; font-style: italic;">~~hhname~~</span><span style="font-size: 26px; font-family: &quot;Courier New&quot;;">&nbsp;belong?</span></span></p>
+        helpText:
+          ENG: |
+            
   - name: MICS7HH.HC20
     conditions:
       - questionText:
@@ -779,461 +545,216 @@ questions:
             transactions such as sending or receiving money, paying bills, purchasing goods
             or services, or receiving wages, either through their bank or through a mobile
             service, such as&nbsp;</span><span style="font-size: 24px;">Wave, Afrimoney, Aps, Qmoney or Comcach</span><span style="font-size: 18pt;">?</span></span><span lang="EN-GB"><o:p></o:p></span></p><p></p>
-  - name: MICS7HH.EU1
+  - name: MICS7HH.HC3
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum" style="font-family: &quot;Courier New&quot;; font-size: 26px;">EU1.&nbsp;</span><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">What does this household use for cooking </span><u style="font-family: &quot;Times New Roman&quot;, serif; font-size: 12pt;"><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">most of
-            the time</span></u><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">, including cooking food, making tea or coffee, boiling drinking
-            water?</span></p>
+            <p><span class="Qnum">HC3. </span>How
+            many rooms do members of this household usually use for sleeping?</p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.EU1A
+  - name: MICS7HH.HC4
     conditions:
       - questionText:
           ENG: |
-            <b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">EU1A.
-            </span></b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">What is the (</span><b><i><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">name/brand</span></i></b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">) of this cookstove or device?</span><p></p>
-  - name: MICS7HH.EU4
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span style="font-size: 24px;"><b>EU4</b>. What type of fuel or energy source is used in this cookstove?</span></p>
-            
-            <p class="1IntvwqstChar1Char" style="margin-left:.1in;mso-add-space:auto;
-            text-indent:-.1in;line-height:115%"><span style="color: rgb(0, 0, 255); font-style: italic;">If more than one, record the main energy source for this cookstove.</span><br></p>
+            <p><span class="Inum">HC4. </span><span class="Itxt">Main material of the dwelling floor.</span></p>
+            <p><span class="Itxt">Record observation.</span></p>
+            <p><span class="Itxt">If observation is not possible, ask the respondent to determine the material of the dwelling floor.</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.EU6
+  - name: MICS7HH.HC5
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum" style="font-family: &quot;Courier New&quot;; font-size: 26px;">EU6.&nbsp;</span><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">What does this household use to heat the home </span><u style="font-family: &quot;Times New Roman&quot;, serif; font-size: 12pt;"><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">when
-            needed</span></u><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">?</span></p>
+            <p><span class="Inum">HC5. </span><span class="Itxt">Main material of the roof.</span></p>
+            <p><span class="Itxt">Record observation.</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.EU6A
+  - name: MICS7HH.HC6
     conditions:
       - questionText:
           ENG: |
-            <p><b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">EU6A.
-            </span></b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">What is the (</span><b><i><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">name/brand</span></i></b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">) of this heater, cookstove or device?</span></p><p><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;"><br></span><p></p></p>
-  - name: MICS7HH.EU8
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">EU8. </span><span class="Qtxt">What type of fuel and energy source is used in this heater?</span></p>
-            <p><span class="Itxt">If more than one, record the main energy source for this heater.</span></p>
+            <p><span class="Inum">HC6. </span><span class="Itxt">Main material of the exterior walls.</span></p>
+            <p><span class="Itxt">Record observation.</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.EU9
+  - name: MICS7HH.HC7A
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum"><span style="font-family: &quot;Courier New&quot;;">EU</span><span style="font-family: &quot;Courier New&quot;; font-size: 24px;">9.&nbsp;</span></span><span style="font-family: &quot;Courier New&quot;; font-size: 24px;">What does this household use </span><u style="font-family: &quot;Times New Roman&quot;, serif; font-size: 12pt;"><span style="font-family: &quot;Courier New&quot;; font-size: 24px;">most of the time</span></u><span style="font-family: &quot;Courier New&quot;; font-size: 24px;">
-            as energy for lighting, or as a light source?</span></p>
+            <p><span class="Qnum"><span style="font-family: &quot;Courier New&quot;;">HC7</span><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">.&nbsp;</span></span><span class="Qtxt" style="font-family: &quot;Courier New&quot;; font-size: 26px;">Does your household have:</span></p><p><span class="Qnum" style="font-family: &quot;Courier New&quot;; font-size: 26px;">[A]&nbsp;</span><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">A fixed
+            telephone line?</span></p><p></p>
+  - name: MICS7HH.HC7B
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">HC7. </span><span class="Qtxt">Does your household have:</span></p>
+            <p><span class="Qnum">[B] </span><span class="Qtxt">A radio?</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.TN1
+  - name: MICS7HH.HC7C
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">TN1. </span><span class="Qtxt">Does your household have any mosquito nets?</span></p>
+            <p><span class="Qnum">HC7.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><span class="Qnum">[C]&nbsp;</span><span class="Qtxt">A bed?</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.TN2
+  - name: MICS7HH.HC7D
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">TN2. </span><span class="Qtxt">How many mosquito nets does your household have?</span></p>
+            <p><span class="Qnum">HC7.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><span class="Qnum">[D]&nbsp;</span><span class="Qtxt">A sofa?</span></p><p></p>
+  - name: MICS7HH.HC7E
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">HC7.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><span class="Qnum">[D]&nbsp;</span><span class="Qtxt">A dining table?</span></p>
+  - name: MICS7HH.HC7F
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">HC7.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><span class="Qnum">[D]&nbsp;</span><span class="Qtxt">A cupboard?</span></p><p></p>
+  - name: MICS7HH.HC7G
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">HC7.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><span class="Qnum">[D]&nbsp;</span><span class="Qtxt">A mattress?</span></p><p></p>
+  - name: MICS7HH.HC7H
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">HC7.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><span class="Qnum">[D]&nbsp;</span><span class="Qtxt">A generator?</span></p><p></p>
+  - name: MICS7HH.HC7I
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">HC7.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><span class="Qnum">[I] <span style="font-weight: normal;">A s</span></span>olar panel?</p><p></p>
+  - name: MICS7HH.HC8
+    conditions:
+      - questionText:
+          ENG: |
+            <span class="Qnum">HC8.&nbsp;</span><span class="Qtxt">Does your household have electricity?</span><p></p>
+  - name: MICS7HH.HC8A
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum"><span style="font-size: 26px; font-family: &quot;Courier New&quot;;">HC8A</span><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">.&nbsp;</span></span><span style="font-size: 26px; text-indent: -0.1in; font-family: &quot;Courier New&quot;;">What source of electricity is used
+            in this household?</span></p><p><i style="text-indent: -0.1in;"><span lang="EN-GB" style="font-size: 26px; line-height: 150%; font-family: &quot;Courier New&quot;;"><font color="#0000ff">Record
+            all mentioned.</font></span></i></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.TN3
+  - name: MICS7HH.HC8B
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Inum">TN3. </span><span class="Itxt">Ask the respondent to show you all the nets in the household.</span></p>
-            <p><span class="Itxt">Did you see the net number ~~TNLN~~</span>?</span></p>
+            <p><span class="Qnum">HC8B.&nbsp;</span><span style="text-indent: -0.1in;">What source of electricity is used <u>most</u> of the time in this household?</span></p><p><i style="text-indent: -0.1in;"><span lang="EN-GB" style="line-height: 39px;"><font color="#0000ff">Only a source recorded in HC8A can be recorded here.</font></span></i></p><p></p>
+  - name: MICS7HH.HC9A
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><span class="Qnum">[A]&nbsp;</span><span class="Qtxt">A television?</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.TN4
+  - name: MICS7HH.HC9B
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">TN4. </span><span class="Qtxt">How many months ago did your household get the mosquito net? [NET <span class="REF">~~TNLN~~</span>]</span></p>
-            <p><span class="Itxt">If less than one month, record '00'.</span></p>
-            <p><span class="Itxt">If more than 36 months ago, record '95'.</span></p>
-            <p><span class="Itxt">If 'DK/Not sure', record '98'.</span></p>
+            <p><span class="Qnum">HC9. </span><span class="Qtxt">Does your household have:</span></p>
+            <p><span class="Qnum">[B] </span><span class="Qtxt">A refrigerator?</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.TN5
+  - name: MICS7HH.HC9C
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Inum">TN5. </span><span class="Itxt">Observe or ask the brand/type of mosquito net. [NET ~~TNLN~~]</span></p>
-            <p><span class="Itxt">If brand is unknown and you cannot observe the net, show pictures of typical net types/brands to respondent.</span></p>
+            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[C] <span style="font-weight: normal;">A f</span></font></span><span class="QtxtC"><font color="#000000">an?</font></span></font></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.TN10
+  - name: MICS7HH.HC9D
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">TN10. </span><span class="Qtxt">Did you get the net through a synchronize mass ITN<span class="QtxtC">&nbsp;<font color="#000000">distribution</font></span>, during an antenatal care visit, or during an immunization visitsuch as Infant Welfare Clinic? [NET <span class="REF">~~TNLN~~</span>]</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.TN12
+            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[D] <span style="font-weight: normal;">An a</span></font></span><span class="QtxtC"><font color="#000000">ir conditioner?</font></span></font></p><p></p>
+  - name: MICS7HH.HC9E
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">TN12. </span><span class="Qtxt">Where did you get the net? [NET <span class="REF">~~TNLN~~</span>]</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.TN13
+            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[E] <span style="font-weight: normal;">A s</span></font></span><span class="QtxtC"><font color="#000000">atellite dish?</font></span></font></p><p></p>
+  - name: MICS7HH.HC9G
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">TN13. </span><span class="Qtxt">Did anyone sleep under this mosquito net last night? [NET <span class="REF">~~TNLN~~</span>]</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.TN14A
+            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[G] <span style="font-weight: normal;">A</span>&nbsp;<span style="font-weight: normal;">m</span></font></span><span class="QtxtC"><font color="#000000">icrowave Oven?</font></span></font></p><p></p>
+  - name: MICS7HH.HC9H
     conditions:
       - questionText:
           ENG: |
-            <b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">TN14A</span></b><span lang="EN-GB" style="font-size:10.0pt;line-height:150%;font-family:&quot;Times New Roman&quot;,serif;
-            mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-GB;mso-fareast-language:
-            EN-US;mso-bidi-language:AR-SA"><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">. What is the </span><u><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">main</span></u><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;"> reason this net was
-            not used last night?</span></span><p></p>
-  - name: MICS7HH.TN15_1
+            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[H] <span style="font-weight: normal;">A</span>&nbsp;</font></span><span class="QtxtC"><font color="#000000">water heater?</font></span></font></p><p></p>
+  - name: MICS7HH.HC9I
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">TN15. </span><span class="Qtxt">Who slept under this mosquito net last night? [NET <span class="REF">~~TNLN~~</span>]</span></p>
-            <p><span class="Itxt">Record the person's line number from the List of Household Members.</span></p>
-            <p><span class="Itxt">If someone not in the List of Household Members slept under the mosquito net, record '00'.</span></p>
-            <p><span class="Itxt">'No one / No one else', record '90'.</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.TN15_2
+            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[I] <span style="font-weight: normal;">A</span>&nbsp;</font></span><span class="QtxtC"><font color="#000000">blender?</font></span></font></p><p></p>
+  - name: MICS7HH.HC9J
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">TN15. </span><span class="Qtxt">Who else slept under this mosquito net last night? [NET <span class="REF">~~TNLN~~</span>]</span></p>
-            <p><span class="Itxt">Record the person's line number from the List of Household Members.</span></p>
-            <p><span class="Itxt">If someone not in the List of Household Members slept under the mosquito net, record '00'.</span></p>
-            <p><span class="Itxt">'No one / No one else', record '90'.</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.TN15_3
+            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[J] <span style="font-weight: normal;">A</span>&nbsp;</font></span><span class="QtxtC"><font color="#000000">washing machine?</font></span></font></p><p></p>
+  - name: MICS7HH.HC9K
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">TN15. </span><span class="Qtxt">Who else slept under this mosquito net last night? [NET <span class="REF">~~TNLN~~</span>]</span></p>
-            <p><span class="Itxt">Record the person's line number from the List of Household Members.</span></p>
-            <p><span class="Itxt">If someone not in the List of Household Members slept under the mosquito net, record '00'.</span></p>
-            <p><span class="Itxt">'No one / No one else', record '90'.</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.TN15_4
+            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[K] <span style="font-weight: normal;">An</span>&nbsp;</font></span><span class="QtxtC"><font color="#000000">electric iron?</font></span></font></p><p></p>
+  - name: MICS7HH.HC9L
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">TN15. </span><span class="Qtxt">Who else slept under this mosquito net last night? [NET <span class="REF">~~TNLN~~</span>]</span></p>
-            <p><span class="Itxt">Record the person's line number from the List of Household Members.</span></p>
-            <p><span class="Itxt">If someone not in the List of Household Members slept under the mosquito net, record '00'.</span></p>
-            <p><span class="Itxt">'No one / No one else', record '90'.</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.WS1
+            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[L] <span style="font-weight: normal;">An</span>&nbsp;</font></span><span class="QtxtC"><font color="#000000">electric kettle?</font></span></font></p><p></p>
+  - name: MICS7HH.HC9M
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">WS1.&nbsp;</span><span class="Qtxt">What is the <u>main</u> source of drinking water used by members of your household?</span></p><p><span class="Itxt">If unclear, probe to identify the place from which members of this household most often collect drinking water (collection point).</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.WS2
+            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[M] <span style="font-weight: normal;">A</span>&nbsp;</font></span><span class="QtxtC"><font color="#000000">water tank?</font></span></font></p><p></p>
+  - name: MICS7HH.HH11C
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">WS2. </span><span class="Qtxt">What is the <u>main</u> source of water used by members of your household for other purposes such as cooking and handwashing?</span></p>
-            <p><span class="Itxt">If unclear, probe to identify the place from which members of this household most often collect water for other purposes.</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.WS3
+            <p class="1IntvwqstChar1Char" style="margin-left:.8pt;mso-add-space:auto;
+            text-indent:-.8pt;line-height:115%"><i><font color="#0000ff"><span class="Instructionsinparens" style="">Respondent
+            representing a household</span><span class="Instructionsinparens" style=""><span lang="MN" style="font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;"> shall be 18, and </span></span><span class="Instructionsinparens" style="">be </span><span class="Instructionsinparens" style=""><span lang="MN" style="font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">know</span></span><span class="Instructionsinparens" style="">ledgeable</span><span class="Instructionsinparens" style=""> </span><span class="Instructionsinparens" style="">about </span><span class="Instructionsinparens" style=""><span lang="MN" style="font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">household members. </span></span></font></i><span class="Instructionsinparens"><i><font color="#0000ff">If there is no adult member in the household or all
+            adult members are incapable to give interviews, a child aged 15-17 can be
+            interviewed. A child under 15 shall not be interviewed.&nbsp;</font></i><o:p></o:p></span></p><p></p>
+  - name: MICS7HH.HH12
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">WS3. </span><span class="Qtxt">Where is that water source located?</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.WS4
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">WS4. </span><span class="Qtxt">How long does it take for members of your household to go there, get water, and come back?</span></p>
-            <p><span class="Itxt">Record the time in minutes.</span></p>
-            <p><span class="Itxt">Use '000' for 'Members do not collect'</span></p>
-            <p><span class="Itxt">and '998' for 'DK'</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.WS5
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">WS5. </span><span class="Qtxt">Who usually goes to this source to collect the water for your household?</span></p>
-            <p><span class="Itxt">Record the name of the person and copy the line number of this person from the List of Household Members Module.</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.WS6
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">WS6. </span><span class="Qtxt">Since last </span><span class="Itxt Qtxt">~~daystring~~</span>, how many times has this person collected water?</p>
-            <p><span class="Itxt">Record number of times.</span></p>
-            <p><span class="Itxt">Record '98' for 'DK'.</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.WS7
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">WS7. </span><span class="Qtxt">In the last month, has there been any time when your household did not have sufficient quantities of drinking water?</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.WS7A
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">WS7A. </span><span class="Qtxt">In the last 12 months, has there been any time when your household did not have sufficient drinking water?</span></p>
-  - name: MICS7HH.WS8
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">WS8. </span><span class="Qtxt">The last time this happened, what was the main reason that your household was not able to access water in sufficient drinking water?</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.WS9
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">WS9. </span><span class="Qtxt">Do you or any other member of this household do anything to the water to make it safer to drink?</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.WS10
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">WS10. </span><span class="Qtxt">What do you usually do to make the water safer to drink?</span></p>
-            <p><span class="Itxt">Probe: </span><span class="Qtxt">Anything else?</span></p>
-            <p><span class="Itxt">Record all methods mentioned.</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.WS10AA
-    conditions:
-      - questionText:
-          ENG: |
-            <p class="1IntvwqstChar1Char" style="margin-left:.1in;mso-add-space:auto;
-            text-indent:-.1in;line-height:115%"><b style=""><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">WS10A</span></b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">. Is your water supply
-            managed by your own household, by a local or community organisation, or by a
-            public or private water utility?</span><br></p><p></p>
-  - name: MICS7HH.WS10BB
-    conditions:
-      - questionText:
-          ENG: |
-            <p class="1IntvwqstChar1Char" style="margin-left:.1in;mso-add-space:auto;
-            text-indent:-.1in;line-height:115%"><b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">WS10B</span></b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">.</span><b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;"> </span></b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">Is your main source of drinking water the same in
-            the </span><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">wet</span><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">&nbsp;season?</span><br></p><p></p>
-  - name: MICS7HH.WS10CC
-    conditions:
-      - questionText:
-          ENG: |
-            <p class="1IntvwqstChar1Char" style="margin-left:.1in;mso-add-space:auto;
-            text-indent:-.1in;line-height:115%"><b><span lang="MN" style="font-family: &quot;Courier New&quot;; font-size: 26px; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">WS10C.&nbsp;</span></b><span lang="EN-GB" style="font-size: 26px; line-height: 150%; font-family: &quot;Courier New&quot;;">What is your main source of drinking water in
-            the </span><span lang="EN-GB" style="font-size: 26px; line-height: 150%; font-family: &quot;Courier New&quot;;">wet</span><span lang="EN-GB" style="font-size: 26px; line-height: 150%; font-family: &quot;Courier New&quot;;">&nbsp;season?</span></p><b><span lang="EN-GB" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;line-height:150%;
-            font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:&quot;Times New Roman&quot;;
-            mso-ansi-language:EN-GB;mso-fareast-language:EN-US;mso-bidi-language:AR-SA"></span></b><p></p>
-  - name: MICS7HH.WS10DD
-    conditions:
-      - questionText:
-          ENG: |
-            <p class="1IntvwqstChar1Char" style="margin-left:.1in;mso-add-space:auto;
-            text-indent:-.1in;line-height:115%"><b><span lang="MN" style="font-family: &quot;Courier New&quot;; font-size: 26px; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">WS10D</span></b><span lang="MN" style="font-family: &quot;Courier New&quot;; font-size: 26px; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">.&nbsp;</span><span lang="EN-GB" style="font-size: 26px; line-height: 150%; font-family: &quot;Courier New&quot;;">&nbsp;Where is that water source located?</span></p><p></p>
-  - name: MICS7HH.WS10EE
-    conditions:
-      - questionText:
-          ENG: |
-            <p><b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">WS10E</span></b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">. How long does it take for members of your
-            household to go there, get water, and come back?</span></p><p><span class="Itxt" style="font-family: &quot;Courier New&quot;;">Use '000' for 'Members do not collect'</span></p><p><span class="Itxt" style="font-family: &quot;Courier New&quot;;">and '998' for 'DK'</span></p><p><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Times New Roman&quot;;"><br></span></p><p></p><p></p>
-  - name: MICS7HH.WS11
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">WS11.&nbsp;</span><span class="Qtxt">What kind of toilet facility do members of your household usually use?</span></p><p><span class="Itxt">If 'Flush' or 'Pour flush', probe:&nbsp;</span><span class="Qtxt">Where does it flush to?</span></p><p><span class="Itxt">If not possible to determine, ask permission to observe the facility.</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.WS11B
-    conditions:
-      - questionText:
-          ENG: |
-            <p class="1IntvwqstChar1Char" style="margin-left:0in;mso-add-space:auto;
-            text-indent:0in;line-height:115%"><b><span lang="MN" style="font-family: &quot;Courier New&quot;; font-size: 26px; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">WS11B. </span></b><span lang="MN" style="font-family: &quot;Courier New&quot;; font-size: 26px; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">Does&nbsp;</span><span lang="MN" style="font-family: &quot;Times New Roman&quot;; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important; font-size: 26px;"><span style="font-style: italic; font-family: &quot;Courier New&quot;;">~~worklabel~~&nbsp;</span><span style="font-family: &quot;Courier New&quot;;">h</span><span style="font-family: &quot;Courier New&quot;;">ave&nbsp;</span></span><span style="font-family: &quot;Courier New&quot;; text-indent: 0in;">an outlet pipe for
-            liquid waste?</span></p><span style="font-family: &quot;Courier New&quot;;">
-            
-            </span><p class="1IntvwqstChar1Char" style="margin-left:.1in;mso-add-space:auto;
-            text-indent:-.2pt;line-height:115%"><i><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-size: 26px; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;"><font color="#0000ff">If there is infiltration underground from the base or
-            sides of the tank or pit, select “No”</font></span></i></p><p class="1IntvwqstChar1Char" style="margin-left:.1in;mso-add-space:auto;
-            text-indent:-.2pt;line-height:115%"><font color="#0000ff"><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">
-            
-            
-            
-            </span><i><span lang="EN-GB" style="font-size: 26px; line-height: 150%; font-family: &quot;Courier New&quot;;">If the tank or pit containing wastes has a pipe which
-            discharges liquid wastes, select “Yes”</span></i></font><br></p><p></p>
-  - name: MICS7HH.WS11C
-    conditions:
-      - questionText:
-          ENG: |
-            <p class="1IntvwqstChar1Char" style="margin-left:0in;mso-add-space:auto;
-            text-indent:0in;line-height:115%"><b><span lang="MN" style="font-family: &quot;Courier New&quot;;">WS11C</span></b><b><span lang="MN" style="font-family: &quot;Courier New&quot;; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">. </span></b><span lang="MN" style="font-family: &quot;Courier New&quot;; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">Where does this</span><span style="font-family: &quot;Courier New&quot;; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">&nbsp;pipe go?</span></p><p></p>
-  - name: MICS7HH.WS11DA
-    conditions:
-      - questionText:
-          ENG: |
-            <p><b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">WS11D</span></b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">. In the last year, have excreta from your&nbsp;</span><span lang="EN-GB" style="font-size: 26pt; line-height: 150%; font-family: &quot;Times New Roman&quot;;"><span style="font-size: 18pt; font-style: italic; font-family: &quot;Courier New&quot;;">~~worklabel~~&nbsp;</span><span style="font-size: 18pt;"><span style="font-family: &quot;Courier New&quot;;">&nbsp;been released to the surface and surroundings due to any of the
-            following events?</span><br></span></span><span lang="EN-GB" style="font-size: 26pt; line-height: 150%;"><span style="font-size: 18pt;"><b>[A]&nbsp;</b></span></span><span style="font-size: 18pt;">Overflowed?</span></p><p></p><p></p>
-  - name: MICS7HH.WS11DB
-    conditions:
-      - questionText:
-          ENG: |
-            <p><b><span lang="EN-GB" style="font-size: 18pt; line-height: 36px;">WS11D</span></b><span lang="EN-GB" style="font-size: 18pt; line-height: 36px;">. In the last year, have excreta from your&nbsp;</span><span lang="EN-GB" style="font-size: 26pt; line-height: 52px;"><span style="font-size: 18pt; font-style: italic;">~~worklabel~~&nbsp;</span><span style="font-size: 18pt;">&nbsp;been released to the surface and surroundings due to any of the following events?<br></span></span><span lang="EN-GB" style="font-size: 26pt; line-height: 52px;"><span style="font-size: 18pt;"><b>[B]&nbsp;</b></span></span><span style="font-size: 24px;">Flooded?</span></p><p></p>
-  - name: MICS7HH.WS11DC
-    conditions:
-      - questionText:
-          ENG: |
-            <p><b><span lang="EN-GB" style="font-size: 18pt; line-height: 36px;">WS11D</span></b><span lang="EN-GB" style="font-size: 18pt; line-height: 36px;">. In the last year, have excreta from your&nbsp;</span><span lang="EN-GB" style="font-size: 26pt; line-height: 52px;"><span style="font-size: 18pt; font-style: italic;">~~worklabel~~&nbsp;</span><span style="font-size: 18pt;">&nbsp;been released to the surface and surroundings due to any of the following events?<br></span></span><span lang="EN-GB" style="font-size: 26pt; line-height: 52px;"><span style="font-size: 18pt;"><b>[C]&nbsp;</b></span></span><span style="font-size: 18pt;">Containment collapsed?</span></p><p></p>
-  - name: MICS7HH.WS11DD
-    conditions:
-      - questionText:
-          ENG: |
-            <p><b><span lang="EN-GB" style="font-size: 18pt; line-height: 36px;">WS11D</span></b><span lang="EN-GB" style="font-size: 18pt; line-height: 36px;">. In the last year, have excreta from your&nbsp;</span><span lang="EN-GB" style="font-size: 26pt; line-height: 52px;"><span style="font-size: 18pt; font-style: italic;">~~worklabel~~&nbsp;</span><span style="font-size: 18pt;">&nbsp;been released to the surface and surroundings due to any of the following events?<br></span></span><span lang="EN-GB" style="font-size: 26pt; line-height: 52px;"><span style="font-size: 18pt;"><b>[D]&nbsp;</b></span></span><span style="font-size: 18pt;">Other event releasing
-            excreta to the surface</span><span style="font-size: 18pt;">&nbsp;</span><span style="font-size: 18pt;">and surroundings?</span></p><p></p>
-  - name: MICS7HH.WS12
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">WS12. </span><span class="Qtxt">Has your <span class="REF">~~worklabel~~ </span>ever been emptied?</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.WS12A
-    conditions:
-      - questionText:
-          ENG: |
-            <p class="1IntvwqstChar1Char" style="text-indent: -9.6px; margin-left: 0.1in; line-height: 115%;"><b style="text-indent: -7pt;"><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">W</span><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">S12A</span></b><span lang="EN-GB" style="text-indent: -7pt; font-family: &quot;Times New Roman&quot;, serif; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;"><span style="font-family: &quot;Courier New&quot;;">. The last time it was emptied, who emptied the&nbsp;</span><span style="font-family: &quot;Courier New&quot;; font-style: italic; text-indent: 0px;">~~worklabel~~</span><span style="font-family: &quot;Courier New&quot;;">?</span></span></p><p class="1IntvwqstChar1Char" style="margin-left:7.0pt;mso-add-space:auto;
-            text-indent:-7.0pt;line-height:115%"><span lang="EN-GB" style="font-family: &quot;Times New Roman&quot;, serif; color: rgb(0, 176, 80); font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;"><o:p></o:p></span></p><p></p>
-  - name: MICS7HH.WS13
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">WS13. </span><span class="Qtxt">The last time it was emptied, where were the contents emptied to?</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.WS14
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">WS14. </span><span class="Qtxt">Where is this toilet facility located?</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.WS15
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">WS15.&nbsp;</span><span class="Qtxt">Do you share this facility with others who are not members of your household?</span><br></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.WS16
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">WS16. </span><span class="Qtxt">Do you share this facility only with members of other households that you know, or is the facility open to the use of the general public?</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.WS17
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">WS17. </span><span class="Qtxt">How many households in total use this toilet facility, including your own household?</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.HW1
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">HW1. </span><span class="Qtxt">We would like to learn about where members of this household wash their hands.</span></p>
-            <p><span class="Qtxt">Can you please show me where members of your household <u>most often</u> wash their hands?</span></p><p><span class="Qtxt"><span style="color: rgb(0, 0, 255); font-style: italic;">If the respondent indicates that there is no fixed place for handwashing, probe:&nbsp;</span>What do members of your household <u>most often</u> use to wash their hands?<br></span></p>
-            <p><span class="Itxt">Record result and observation.</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.HW2
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Inum">HW2. </span><span class="Itxt">Observe presence of water at the place for handwashing.</span></p>
-            <p><span class="Itxt">Verify by checking the tap/pump, or basin, bucket, water container or similar objects for presence of water.</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.HW3
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Inum">HW3.&nbsp;</span><span class="Itxt">Observe presence of soap, detergent, or ash/mud/sand at the place for handwashing.</span></p><p><span class="Itxt">Record all that apply.</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.HW4A
-    conditions:
-      - questionText:
-          ENG: |
-            <span class="Qnum" style="font-size: 24px;">HW4A. </span><span class="Qtxt"><span lang="EN-GB" style="font-size: 24px; line-height: 36px;">Do you have a bath or shower in your dwelling, yard, or plot</span><span style="font-size: 24px;">?</span></span><p></p>
-  - name: MICS7HH.HW5A
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum" style="font-size: 24px;">HW5A.&nbsp;</span><span class="Qtxt"><span lang="EN-GB" style="font-size: 24px; line-height: 36px;">Do you have water available there</span><span style="font-size: 24px;">?<br></span></span><font color="#0000ff"><i>If there is running water from a tap or water stored in a tank, bucket, jug, etc., record 'Yes'.</i></font></p>
+            <p style="text-indent: -9.6px; "><span class="Qnum" style="font-family: &quot;Courier New&quot;;">HH12.&nbsp;</span><span style="font-family: &quot;Courier New&quot;; text-indent: -0.1in;">Hello, my name is ~~STAFF_NAME~~</span><span style="text-indent: -9.6px; font-family: &quot;Courier New&quot;;">&nbsp;</span><span style="text-indent: -0.1in;"><span style="font-family: &quot;Courier New&quot;;">. We</span> are from&nbsp;</span>Gambia Bureau of Statistics<span style="text-indent: -0.1in;">. We are conducting
+            a survey about the situation of children, families, and households.&nbsp;</span></p><p style="text-indent: -9.6px; "><span style="text-indent: -0.1in;"></span></p><p><span style="text-indent: -0.2pt;">This interview usually
+            takes about<span style="font-family: &quot;Courier New&quot;;">&nbsp;45&nbsp;</span></span><span style="text-indent: -0.2pt;">minutes.</span></p><p><span style="text-indent: -9pt;">Participation in this
+            survey is voluntary. No payment or incentive will be given to you or your
+            family members for answering these questions. However, the information gathered
+            will be very helpful for the government and the general public to better
+            understand the situation and needs of the population.</span></p><p><span style="text-indent: -0.1in;">Please know that all
+            the information you share during the interview will remain strictly
+            confidential and anonymous. No information about you or your household will be
+            made publicly available. We will only produce information about the general
+            population.</span></p><p><span style="text-indent: -0.1in;">Should you feel
+            uncomfortable about any questions and not wish to answer, just let me know and
+            we can skip the question. Also, if you wish to stop the interview at any point
+            just let me know.</span></p><p><span style="text-indent: -0.1in; font-size: 26px;">If at any time you have
+            any complaints or concerns about this survey, please use the information on
+            this card to contact&nbsp;</span>Gambia Bureau of Statistics<span style="text-indent: -0.1in;">.</span></p><p><span style="font-size: 26px;">May
+            I start the interview?</span></p>
         helpText:
           ENG: |
             
@@ -1345,6 +866,46 @@ questions:
         helpText:
           ENG: |
             
+  - name: MICS7HH.HH47
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">HH47. </span><span class="Itxt">Name and line number of the respondent to Household Questionnaire interview</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.HH7
+    conditions:
+      - questionText:
+          ENG: |
+            
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.HHAUX
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Itxt">Make sure to probe for additional members: Those that are not currently at home, any infants or small children and any others who may not be family (such as servants, friends) but who usually live in the household.</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.HHFIN
+    conditions:
+      - questionText:
+          ENG: |
+            <p><font color="#0000ff"><i>Thank the respondent for his/her cooperation and then proceed with the administration of the remaining individual questionnaire(s) in this household.</i></font></p><p><i style="color: rgb(0, 0, 255);">If there is no individual questionnaire and no WATER QUALITY TESTING FORM to be completed in this household thank the respondent for his/her cooperation and move to the next household assigned to you by your supervisor.</i><br></p><div><br></div>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.HHNAME
+    conditions:
+      - questionText:
+          ENG: |
+            <p>First, please tell me the name of the household head.<br></p>
+        helpText:
+          ENG: |
+            
   - name: MICS7HH.HHWQ
     conditions:
       - questionText:
@@ -1359,358 +920,211 @@ questions:
         helpText:
           ENG: |
             
-  - name: MICS7HH.HHFIN
+  - name: MICS7HH.HL12
     conditions:
       - questionText:
           ENG: |
-            <p><font color="#0000ff"><i>Thank the respondent for his/her cooperation and then proceed with the administration of the remaining individual questionnaire(s) in this household.</i></font></p><p><i style="color: rgb(0, 0, 255);">If there is no individual questionnaire and no WATER QUALITY TESTING FORM to be completed in this household thank the respondent for his/her cooperation and move to the next household assigned to you by your supervisor.</i><br></p><div><br></div>
+            <p><span class="Qnum">HL12. </span><span class="Qtxt">Is <span class="REF">~~HL2~~</span>'s natural mother alive?</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.WQ3
+  - name: MICS7HH.HL13
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Inum">WQ3. </span><span class="Itxt">Measurer number</span></p>
+            <p><span class="Qnum">HL13. </span><span class="Qtxt">Does <span class="REF">~~HL2~~</span>'s natural mother live in this household?</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.WQ5D
+  - name: MICS7HH.HL14
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Inum">WQ5. </span><span class="Itxt">Day / Month / Year of water quality testing</span></p>
+            <p><span class="Inum">HL14. </span><span class="Itxt">Record the line number of natural mother.</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.WQ5M
+  - name: MICS7HH.HL15
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Inum">WQ5. </span><span class="Itxt">Day / Month / Year of water quality testing</span></p>
+            <p><span class="Qnum">HL15. </span><span class="Qtxt">Where does <span class="REF">~~HL2~~</span>'s natural mother live?</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.WQ5Y
+  - name: MICS7HH.HL16
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Inum">WQ5. </span><span class="Itxt">Day / Month / Year of water quality testing</span></p>
+            <p><span class="Qnum">HL16. </span><span class="Qtxt">Is <span class="REF">~~HL2~~</span>'s natural father alive?</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.WQ7
+  - name: MICS7HH.HL17
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Inum">WQ7. </span><span class="Itxt">Name and line number of the respondent to Water Quality Testing Questionnaire interview</span></p>
-  - name: MICS7HH.WQ10H
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Inum">WQ10. </span><span class="Itxt">Record the start time of water quality testing</span></p>
+            <p><span class="Qnum">HL17. </span><span class="Qtxt">Does <span class="REF">~~HL2~~</span>'s natural father live in this household?</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.WQ10M
+  - name: MICS7HH.HL18
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Inum">WQ10. </span><span class="Itxt">Record the start time of water quality testing</span></p>
+            <p><span class="Inum">HL18. </span><span class="Itxt">Record the line number of natural father.</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.WQ11
+  - name: MICS7HH.HL19
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">WQ11. </span><span class="Qtxt">Could you please provide me with a glass of the water that members of your household usually drink?</span></p>
+            <p><span class="Qnum">HL19. </span><span class="Qtxt">Where does <span class="REF">~~HL2~~</span>'s natural father live?</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.WQ12
+  - name: MICS7HH.HL20
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Inum">WQ12. </span><span class="Itxt">Observe and record whether the water was collected from the source or from a separate storage container.</span></p>
-            <p><span class="Itxt">Label sample as ~~worklabel~~.</span></p>
+            <p><span class="Inum">HL20. </span><span class="Itxt">Copy the line number of mother from HL14. If blank, ask:</span></p>
+            <p><span class="Qtxt">Who is the primary caretaker of <span class="REF">~~HL2~~</span>?</span></p>
+            <p><span class="Itxt">If 'No one' for a child age 15-17, record '90'.</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.WQ12A
+  - name: MICS7HH.HL5M
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">WQ12A. </span><span class="Qtxt">From where did you pour this water?</span></p><p><span class="Qtxt"><span style="color: rgb(0, 0, 255); font-style: italic;">Probe to understand if directly from the source or from a covered or uncovered container.&nbsp;</span><br></span><p></p></p>
-  - name: MICS7HH.WQ14
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">WQ14. </span><span class="Qtxt">Have you or any other member of this household done anything to this water to make it safer to drink?</span></p>
+            <p><span class="Qnum">HL5. </span><span class="Qtxt">What is <span class="REF">~~HL2~~</span>'s date of birth?</span></p>
+            <p><span class="Itxt">Record month of birth. </span></p>
+            <p><span class="Itxt">If 'DK' record '98'.</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.WQ15
+  - name: MICS7HH.HL5Y
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">WQ15. </span><span class="Qtxt">What has been done to the water to make it safer to drink?</span></p>
-            <p><span class="Itxt">Probe: </span><span class="Qtxt">Anything else?</span></p>
-            <p><span class="Itxt">Record all items mentioned.</span></p>
+            <p><span class="Itxt">Record year of birth. </span></p>
+            <p><span class="Itxt">If 'DK' record '9998'.</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.WQ17
+  - name: MICS7HH.HL6
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">WQ17. </span><span class="Qtxt">What source was this water collected from?</span></p>
+            <p><span class="Qnum">HL6. </span><span class="Qtxt">How old is <span class="REF">~~HL2~~</span>?</span></p>
+            <p><span class="Itxt">Record in completed years.</span></p>
+            <p><span class="Itxt">If age is 95 or above, record '95'.</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.WQ18
+  - name: MICS7HH.HL7
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">WQ18. </span><span class="Qtxt">Can you please show or tell me the location of the source of the glass of drinking water?</span></p>
+            <p><span class="Qnum">HL7. </span><span class="Qtxt">Did <span class="REF">~~HL2~~ </span>stay here last night?</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.WQ19
+  - name: MICS7HH.HW1
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Inum">WQ19. </span><span class="Itxt">Record whether source water sample collected.</span></p>
-            <p><span class="Itxt">Label sample as ~~worklabel~~. </span></p>
+            <p><span class="Qnum">HW1. </span><span class="Qtxt">We would like to learn about where members of this household wash their hands.</span></p>
+            <p><span class="Qtxt">Can you please show me where members of your household <u>most often</u> wash their hands?</span></p><p><span class="Qtxt"><span style="color: rgb(0, 0, 255); font-style: italic;">If the respondent indicates that there is no fixed place for handwashing, probe:&nbsp;</span>What do members of your household <u>most often</u> use to wash their hands?<br></span></p>
+            <p><span class="Itxt">Record result and observation.</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.WQ21
+  - name: MICS7HH.HW2
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Inum">WQ21. </span><span class="Itxt">Take out the sample of sterile/mineral water that you got from your supervisor.</span></p>
-            <p><span class="Itxt">Label sample as ~~worklabel~~.</span></p>
+            <p><span class="Inum">HW2. </span><span class="Itxt">Observe presence of water at the place for handwashing.</span></p>
+            <p><span class="Itxt">Verify by checking the tap/pump, or basin, bucket, water container or similar objects for presence of water.</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.WQ23H
+  - name: MICS7HH.HW3
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Inum">WQ23. </span><span class="Itxt">Record the end time of water quality testing</span></p>
+            <p><span class="Inum">HW3.&nbsp;</span><span class="Itxt">Observe presence of soap, detergent, or ash/mud/sand at the place for handwashing.</span></p><p><span class="Itxt">Record all that apply.</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.WQ23M
+  - name: MICS7HH.HW4A
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Inum">WQ23. </span><span class="Itxt">Record the end time of water quality testing</span></p>
+            <span class="Qnum" style="font-size: 24px;">HW4A. </span><span class="Qtxt"><span lang="EN-GB" style="font-size: 24px; line-height: 36px;">Do you have a bath or shower in your dwelling, yard, or plot</span><span style="font-size: 24px;">?</span></span><p></p>
+  - name: MICS7HH.HW5A
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum" style="font-size: 24px;">HW5A.&nbsp;</span><span class="Qtxt"><span lang="EN-GB" style="font-size: 24px; line-height: 36px;">Do you have water available there</span><span style="font-size: 24px;">?<br></span></span><font color="#0000ff"><i>If there is running water from a tap or water stored in a tank, bucket, jug, etc., record 'Yes'.</i></font></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.WQ24D
+  - name: MICS7HH.HX0
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Inum">WQ24. </span><span class="Itxt">Day / Month / Year of recording test results</span></p>
+            <p><span class="Qtxt">Is there another member in the household?</span></p>
+            <p><span class="Itxt">Probe for additional household members.</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.WQ24M
+  - name: MICS7HH.HX2
     conditions:
-      - questionText:
+      - logic: HX1=1
+        questionText:
           ENG: |
-            <p><span class="Inum">WQ24. </span><span class="Itxt">Day / Month / Year of recording test results</span></p>
+            <p><span class="Itxt">Name of the household head</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.WQ24Y
-    conditions:
-      - questionText:
+      - logic: HX1>1
+        questionText:
           ENG: |
-            <p><span class="Inum">WQ24. </span><span class="Itxt">Day / Month / Year of recording test results</span></p>
+            <span style="color: rgb(0, 0, 255); font-style: italic;">Name of the household member</span><p></p>
+  - name: MICS7HH.HX3
+    conditions:
+      - logic: curocc() = 1
+        questionText:
+          ENG: |
+            <span class="Qnum">HL3.&nbsp;</span><span class="Qtxt">Please confirm,&nbsp;<span class="REF">~~HX2~~&nbsp;</span>is the head of this household?</span><br>
         helpText:
           ENG: |
             
-  - name: MICS7HH.WQ25H
-    conditions:
-      - questionText:
+      - logic: curocc() in 2:50
+        questionText:
           ENG: |
-            <p><span class="Inum">WQ25. </span><span class="Itxt">Record the time of recording results</span></p>
+            <p><span class="Qnum">HL3. </span><span class="Qtxt">What is the relationship of <span class="REF">~~HX2~~ </span>to <span class="REF">~~hhname~~</span>?</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.WQ25M
+  - name: MICS7HH.HX4
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Inum">WQ25. </span><span class="Itxt">Record the time of recording results</span></p>
+            <p><span class="Qnum">HL4. </span><span class="Qtxt">Is <span class="REF">~~HX2~~ </span>male or female?</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.WQ26
+  - name: MICS7HH.INTROHL
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Inum">WQ26. </span><span class="Itxt">Household water test (100ml):</span></p>
-            <p><span class="Itxt">Water test result should be recorded as number between '0' and '100'.</span></p>
-            <p><span class="Itxt">If 101 or more colonies are counted, record '101'</span></p>
-            <p><span class="Itxt">If it is not possible to read results, record '991'</span></p>
-            <p><span class="Itxt">If the results are lost, record '992'</span></p>
+            <p><span class="Qnum">HL2. </span><span class="Qtxt">First, please tell me the name of each person who usually lives here, starting with the head of the household.</span></p>
         helpText:
           ENG: |
             
-  - name: MICS7HH.WQ27
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Inum">WQ27. </span><span class="Itxt">Source water test (100ml):</span></p>
-            <p><span class="Itxt">Water test result should be recorded as number between '0' and '100'.</span></p>
-            <p><span class="Itxt">If 101 or more colonies are counted, record '101'</span></p>
-            <p><span class="Itxt">If it is not possible to read results, record '991'</span></p>
-            <p><span class="Itxt">If the results are lost, record '992'</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.WQ29
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Inum">WQ29. </span><span class="Itxt">Blank water test (100ml):</span></p>
-            <p><span class="Itxt">Water test result should be recorded as number between '0' and '100'.</span></p>
-            <p><span class="Itxt">If 101 or more colonies are counted, record '101'</span></p>
-            <p><span class="Itxt">If it is not possible to read results, record '991'</span></p>
-            <p><span class="Itxt">If the results are lost, record '992'</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.WQ31
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Inum">WQ31. </span><span class="Itxt">Result of Water Quality Testing Questionnaire.</span></p>
-            <p><span class="Itxt">Discuss any result not completed with Supervisor.</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.ED11
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">ED11. </span><span class="Qtxt">Is <span class="REF">~~ED2~~ </span>attending a public school?</span></p>
-            <p><span class="Itxt">﻿If yes, record '1'. If no, probe to code who controls and manages the school.</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.ED12
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">ED12. </span><span class="Qtxt">In the <span class="QtxtC">current </span>school year, has <span class="REF">~~ED2~~ </span>received any school tuition support?</span></p>
-            <p><span class="Itxt">If yes, probe to ensure that support was not received from family, other relatives, friends or neighbours.</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.ED12A
-    conditions:
-      - questionText:
-          ENG: |
-            <span class="Qnum">ED12A.&nbsp;</span><span style="font-size: 26px; text-indent: 0in;">Do you think this tuition support is sufficient for paying the costs of&nbsp;</span><span style="font-style: italic;">~~ED2~~&nbsp;</span><span style="font-size: 26px; text-indent: 0in;">’s tuition?</span><p class="MsoNormal" style="margin-left:0in;mso-add-space:auto;text-indent:0in;
-            line-height:normal"><span lang="EN-GB" style="font-size:9.0pt;mso-bidi-font-size:
-            10.0pt"><o:p></o:p></span></p><p></p>
-  - name: MICS7HH.ED13
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">ED13. </span><span class="Qtxt">Who provided the tuition support?</span></p>
-            <p><span class="Itxt">Record all mentioned.</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.ED14
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">ED14. </span><span class="Qtxt">For the <span class="QtxtC">current </span>school year, has <span class="REF">~~ED2~~ </span></span>received any material support or cash to buy shoes, exercise books, notebooks, school uniforms or other school supplies?</span></p>
-            <p><span class="Itxt">If yes, probe to ensure that support was not received from family, other relatives, friends or neighbours.</span></p>
-        helpText:
-          ENG: |
-            
-  - name: MICS7HH.ED14A
-    conditions:
-      - questionText:
-          ENG: |
-            <b><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">ED14A.&nbsp;</span></b><span lang="EN-GB" style="font-size: 26px; line-height: 150%; font-family: &quot;Courier New&quot;;">Do you think this </span><span lang="EN-GB" style="font-size:9.0pt;line-height:150%;font-family:&quot;Times New Roman&quot;,serif;
-            mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-GB;mso-fareast-language:
-            EN-US;mso-bidi-language:AR-SA"><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">support is sufficient for the school supplies&nbsp;</span><span style="font-family: &quot;Courier New&quot;; font-size: 26px; font-style: italic;">~~ED2~~</span><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">&nbsp;needed?</span></span><p></p>
-  - name: MICS7HH.FE1
-    conditions:
-      - questionText:
-          ENG: |
-            <p class="1IntvwqstChar1Char" style="margin-left:.1in;mso-add-space:auto;
-            text-indent:-.1in;line-height:115%"><b><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">FE1</span></b><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">.
-            Now I would like to ask you some questions about food. During the last 1 year,
-            was there a time when</span><span style="font-family: &quot;Times New Roman&quot;, serif; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;"><span style="font-family: &quot;Courier New&quot;;"> you or others in your household worried about
-            not having enough food to eat because of a lack of money or other resources?</span><o:p></o:p></span></p>
-            
-            <p class="1IntvwqstChar1Char" style="margin-left:.1in;mso-add-space:auto;
-            text-indent:-.1in;line-height:115%"><b><span style="font-family: &quot;Courier New&quot;; font-size: 26px; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;"><font color="#0000ff">&nbsp;</font></span></b><i><span lang="EN-GB" style="font-size: 26px; font-family: &quot;Times New Roman&quot;;"><font color="#0000ff"><span style="font-family: &quot;Courier New&quot;;">Probe:</span></font><span style="font-family: &quot;Courier New&quot;;"> </span></span></i><span lang="EN-GB" style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;"><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">By lack of money or
-            other resources, I mean not having the means to get food, either through </span><span style="color: red; font-family: &quot;Courier New&quot;; font-size: 26px;">growing it, purchasing it, or trading for it</span><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">.</span></span></p><p></p>
-  - name: MICS7HH.FE2
-    conditions:
-      - questionText:
-          ENG: |
-            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">FE2</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">.
-            Still thinking about the last 1 year, was there a time when you or others in
-            your household were unable to eat healthy and nutritious food because of a lack
-            of money or other resources?</span><p></p>
-  - name: MICS7HH.FE3
-    conditions:
-      - questionText:
-          ENG: |
-            <p class="MsoNormal" style="margin-left:7.45pt;mso-add-space:auto;text-indent:
-            -7.45pt;line-height:115%"><b><span lang="EN-GB" style="font-size: 18pt; line-height: 115%;">FE3</span></b><span lang="EN-GB" style="font-size:10.0pt;line-height:115%"><span style="font-size: 18pt;">. Was there a time when
-            you or others in your household ate only a few kinds of foods because of a lack
-            of money or other resources?</span><o:p></o:p></span></p><p></p>
-  - name: MICS7HH.FE4
-    conditions:
-      - questionText:
-          ENG: |
-            <p class="MsoNormal" style="margin-left:7.45pt;mso-add-space:auto;text-indent:
-            -7.1pt;line-height:115%"><b><span lang="EN-GB" style="font-size: 18pt; line-height: 115%;">FE4</span></b><span lang="EN-GB" style="font-size:10.0pt;line-height:115%"><span style="font-size: 18pt;">. Was there a time when
-            you or others in your household had to skip a meal because there were not
-            enough money or other resources to get food?</span><o:p></o:p></span></p><p></p>
-  - name: MICS7HH.FE5
-    conditions:
-      - questionText:
-          ENG: |
-            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">FE5</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">.
-            Still thinking about the last 1 year, was there a time when you or others in
-            your household ate less than you thought you should because of a lack of money
-            or other resources?</span><p></p>
-  - name: MICS7HH.FE6
-    conditions:
-      - questionText:
-          ENG: |
-            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">FE6</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">.
-            Was there a time when your household ran out of food because of a lack of money
-            or other resources?</span><p></p>
-  - name: MICS7HH.FE7
-    conditions:
-      - questionText:
-          ENG: |
-            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">FE7</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">.
-            Was there a time when you or others in your household were hungry but did not
-            eat because of a lack of money or other resources for food?</span><p></p>
-  - name: MICS7HH.FE8
-    conditions:
-      - questionText:
-          ENG: |
-            <b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">FE8</span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">. During</span><b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;"> </span></b><span lang="EN-GB" style="font-size: 18pt; font-family: &quot;Courier New&quot;;">the last 1 year, was there a time when you or
-            others in your household went without eating for a whole day because of a lack
-            of money or other resources?</span><p></p>
   - name: MICS7HH.PE1
     conditions:
       - questionText:
@@ -2067,6 +1481,592 @@ questions:
         questionText:
           ENG: |
             <p><span class="Qnum">ST6.&nbsp;</span><span class="Qtxt">When was the last time your household or anyone in your household received assistance through ANY Other external assistance programme?</span></p><p><span class="Itxt">If less than one month, record '1' and record '00' in Months.</span></p><p><span class="Itxt">If less than 12 months, record '1' and record in Months.</span></p><p><span class="Itxt">If 1 year/12 months or more, record '2' and record in Years.</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.TN1
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">TN1. </span><span class="Qtxt">Does your household have any mosquito nets?</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.TN10
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">TN10. </span><span class="Qtxt">Did you get the net through a synchronize mass ITN<span class="QtxtC">&nbsp;<font color="#000000">distribution</font></span>, during an antenatal care visit, or during an immunization visitsuch as Infant Welfare Clinic? [NET <span class="REF">~~TNLN~~</span>]</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.TN12
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">TN12. </span><span class="Qtxt">Where did you get the net? [NET <span class="REF">~~TNLN~~</span>]</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.TN13
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">TN13. </span><span class="Qtxt">Did anyone sleep under this mosquito net last night? [NET <span class="REF">~~TNLN~~</span>]</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.TN14A
+    conditions:
+      - questionText:
+          ENG: |
+            <b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">TN14A</span></b><span lang="EN-GB" style="font-size:10.0pt;line-height:150%;font-family:&quot;Times New Roman&quot;,serif;
+            mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-GB;mso-fareast-language:
+            EN-US;mso-bidi-language:AR-SA"><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">. What is the </span><u><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;">main</span></u><span style="font-family: &quot;Courier New&quot;; font-size: 18pt;"> reason this net was
+            not used last night?</span></span><p></p>
+  - name: MICS7HH.TN15_1
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">TN15. </span><span class="Qtxt">Who slept under this mosquito net last night? [NET <span class="REF">~~TNLN~~</span>]</span></p>
+            <p><span class="Itxt">Record the person's line number from the List of Household Members.</span></p>
+            <p><span class="Itxt">If someone not in the List of Household Members slept under the mosquito net, record '00'.</span></p>
+            <p><span class="Itxt">'No one / No one else', record '90'.</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.TN15_2
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">TN15. </span><span class="Qtxt">Who else slept under this mosquito net last night? [NET <span class="REF">~~TNLN~~</span>]</span></p>
+            <p><span class="Itxt">Record the person's line number from the List of Household Members.</span></p>
+            <p><span class="Itxt">If someone not in the List of Household Members slept under the mosquito net, record '00'.</span></p>
+            <p><span class="Itxt">'No one / No one else', record '90'.</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.TN15_3
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">TN15. </span><span class="Qtxt">Who else slept under this mosquito net last night? [NET <span class="REF">~~TNLN~~</span>]</span></p>
+            <p><span class="Itxt">Record the person's line number from the List of Household Members.</span></p>
+            <p><span class="Itxt">If someone not in the List of Household Members slept under the mosquito net, record '00'.</span></p>
+            <p><span class="Itxt">'No one / No one else', record '90'.</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.TN15_4
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">TN15. </span><span class="Qtxt">Who else slept under this mosquito net last night? [NET <span class="REF">~~TNLN~~</span>]</span></p>
+            <p><span class="Itxt">Record the person's line number from the List of Household Members.</span></p>
+            <p><span class="Itxt">If someone not in the List of Household Members slept under the mosquito net, record '00'.</span></p>
+            <p><span class="Itxt">'No one / No one else', record '90'.</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.TN2
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">TN2. </span><span class="Qtxt">How many mosquito nets does your household have?</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.TN3
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">TN3. </span><span class="Itxt">Ask the respondent to show you all the nets in the household.</span></p>
+            <p><span class="Itxt">Did you see the net number ~~TNLN~~</span>?</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.TN4
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">TN4. </span><span class="Qtxt">How many months ago did your household get the mosquito net? [NET <span class="REF">~~TNLN~~</span>]</span></p>
+            <p><span class="Itxt">If less than one month, record '00'.</span></p>
+            <p><span class="Itxt">If more than 36 months ago, record '95'.</span></p>
+            <p><span class="Itxt">If 'DK/Not sure', record '98'.</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.TN5
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">TN5. </span><span class="Itxt">Observe or ask the brand/type of mosquito net. [NET ~~TNLN~~]</span></p>
+            <p><span class="Itxt">If brand is unknown and you cannot observe the net, show pictures of typical net types/brands to respondent.</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WQ10H
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">WQ10. </span><span class="Itxt">Record the start time of water quality testing</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WQ10M
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">WQ10. </span><span class="Itxt">Record the start time of water quality testing</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WQ11
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">WQ11. </span><span class="Qtxt">Could you please provide me with a glass of the water that members of your household usually drink?</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WQ12
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">WQ12. </span><span class="Itxt">Observe and record whether the water was collected from the source or from a separate storage container.</span></p>
+            <p><span class="Itxt">Label sample as ~~worklabel~~.</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WQ12A
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">WQ12A. </span><span class="Qtxt">From where did you pour this water?</span></p><p><span class="Qtxt"><span style="color: rgb(0, 0, 255); font-style: italic;">Probe to understand if directly from the source or from a covered or uncovered container.&nbsp;</span><br></span><p></p></p>
+  - name: MICS7HH.WQ14
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">WQ14. </span><span class="Qtxt">Have you or any other member of this household done anything to this water to make it safer to drink?</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WQ15
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">WQ15. </span><span class="Qtxt">What has been done to the water to make it safer to drink?</span></p>
+            <p><span class="Itxt">Probe: </span><span class="Qtxt">Anything else?</span></p>
+            <p><span class="Itxt">Record all items mentioned.</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WQ17
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">WQ17. </span><span class="Qtxt">What source was this water collected from?</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WQ18
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">WQ18. </span><span class="Qtxt">Can you please show or tell me the location of the source of the glass of drinking water?</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WQ19
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">WQ19. </span><span class="Itxt">Record whether source water sample collected.</span></p>
+            <p><span class="Itxt">Label sample as ~~worklabel~~. </span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WQ21
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">WQ21. </span><span class="Itxt">Take out the sample of sterile/mineral water that you got from your supervisor.</span></p>
+            <p><span class="Itxt">Label sample as ~~worklabel~~.</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WQ23H
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">WQ23. </span><span class="Itxt">Record the end time of water quality testing</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WQ23M
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">WQ23. </span><span class="Itxt">Record the end time of water quality testing</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WQ24D
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">WQ24. </span><span class="Itxt">Day / Month / Year of recording test results</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WQ24M
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">WQ24. </span><span class="Itxt">Day / Month / Year of recording test results</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WQ24Y
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">WQ24. </span><span class="Itxt">Day / Month / Year of recording test results</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WQ25H
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">WQ25. </span><span class="Itxt">Record the time of recording results</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WQ25M
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">WQ25. </span><span class="Itxt">Record the time of recording results</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WQ26
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">WQ26. </span><span class="Itxt">Household water test (100ml):</span></p>
+            <p><span class="Itxt">Water test result should be recorded as number between '0' and '100'.</span></p>
+            <p><span class="Itxt">If 101 or more colonies are counted, record '101'</span></p>
+            <p><span class="Itxt">If it is not possible to read results, record '991'</span></p>
+            <p><span class="Itxt">If the results are lost, record '992'</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WQ27
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">WQ27. </span><span class="Itxt">Source water test (100ml):</span></p>
+            <p><span class="Itxt">Water test result should be recorded as number between '0' and '100'.</span></p>
+            <p><span class="Itxt">If 101 or more colonies are counted, record '101'</span></p>
+            <p><span class="Itxt">If it is not possible to read results, record '991'</span></p>
+            <p><span class="Itxt">If the results are lost, record '992'</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WQ29
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">WQ29. </span><span class="Itxt">Blank water test (100ml):</span></p>
+            <p><span class="Itxt">Water test result should be recorded as number between '0' and '100'.</span></p>
+            <p><span class="Itxt">If 101 or more colonies are counted, record '101'</span></p>
+            <p><span class="Itxt">If it is not possible to read results, record '991'</span></p>
+            <p><span class="Itxt">If the results are lost, record '992'</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WQ3
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">WQ3. </span><span class="Itxt">Measurer number</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WQ31
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">WQ31. </span><span class="Itxt">Result of Water Quality Testing Questionnaire.</span></p>
+            <p><span class="Itxt">Discuss any result not completed with Supervisor.</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WQ5D
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">WQ5. </span><span class="Itxt">Day / Month / Year of water quality testing</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WQ5M
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">WQ5. </span><span class="Itxt">Day / Month / Year of water quality testing</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WQ5Y
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">WQ5. </span><span class="Itxt">Day / Month / Year of water quality testing</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WQ7
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Inum">WQ7. </span><span class="Itxt">Name and line number of the respondent to Water Quality Testing Questionnaire interview</span></p>
+  - name: MICS7HH.WS1
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">WS1.&nbsp;</span><span class="Qtxt">What is the <u>main</u> source of drinking water used by members of your household?</span></p><p><span class="Itxt">If unclear, probe to identify the place from which members of this household most often collect drinking water (collection point).</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WS10
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">WS10. </span><span class="Qtxt">What do you usually do to make the water safer to drink?</span></p>
+            <p><span class="Itxt">Probe: </span><span class="Qtxt">Anything else?</span></p>
+            <p><span class="Itxt">Record all methods mentioned.</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WS10AA
+    conditions:
+      - questionText:
+          ENG: |
+            <p class="1IntvwqstChar1Char" style="margin-left:.1in;mso-add-space:auto;
+            text-indent:-.1in;line-height:115%"><b style=""><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">WS10A</span></b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">. Is your water supply
+            managed by your own household, by a local or community organisation, or by a
+            public or private water utility?</span><br></p><p></p>
+  - name: MICS7HH.WS10BB
+    conditions:
+      - questionText:
+          ENG: |
+            <p class="1IntvwqstChar1Char" style="margin-left:.1in;mso-add-space:auto;
+            text-indent:-.1in;line-height:115%"><b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">WS10B</span></b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">.</span><b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;"> </span></b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">Is your main source of drinking water the same in
+            the </span><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">wet</span><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">&nbsp;season?</span><br></p><p></p>
+  - name: MICS7HH.WS10CC
+    conditions:
+      - questionText:
+          ENG: |
+            <p class="1IntvwqstChar1Char" style="margin-left:.1in;mso-add-space:auto;
+            text-indent:-.1in;line-height:115%"><b><span lang="MN" style="font-family: &quot;Courier New&quot;; font-size: 26px; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">WS10C.&nbsp;</span></b><span lang="EN-GB" style="font-size: 26px; line-height: 150%; font-family: &quot;Courier New&quot;;">What is your main source of drinking water in
+            the </span><span lang="EN-GB" style="font-size: 26px; line-height: 150%; font-family: &quot;Courier New&quot;;">wet</span><span lang="EN-GB" style="font-size: 26px; line-height: 150%; font-family: &quot;Courier New&quot;;">&nbsp;season?</span></p><b><span lang="EN-GB" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;line-height:150%;
+            font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:&quot;Times New Roman&quot;;
+            mso-ansi-language:EN-GB;mso-fareast-language:EN-US;mso-bidi-language:AR-SA"></span></b><p></p>
+  - name: MICS7HH.WS10DD
+    conditions:
+      - questionText:
+          ENG: |
+            <p class="1IntvwqstChar1Char" style="margin-left:.1in;mso-add-space:auto;
+            text-indent:-.1in;line-height:115%"><b><span lang="MN" style="font-family: &quot;Courier New&quot;; font-size: 26px; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">WS10D</span></b><span lang="MN" style="font-family: &quot;Courier New&quot;; font-size: 26px; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">.&nbsp;</span><span lang="EN-GB" style="font-size: 26px; line-height: 150%; font-family: &quot;Courier New&quot;;">&nbsp;Where is that water source located?</span></p><p></p>
+  - name: MICS7HH.WS10EE
+    conditions:
+      - questionText:
+          ENG: |
+            <p><b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">WS10E</span></b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">. How long does it take for members of your
+            household to go there, get water, and come back?</span></p><p><span class="Itxt" style="font-family: &quot;Courier New&quot;;">Use '000' for 'Members do not collect'</span></p><p><span class="Itxt" style="font-family: &quot;Courier New&quot;;">and '998' for 'DK'</span></p><p><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Times New Roman&quot;;"><br></span></p><p></p><p></p>
+  - name: MICS7HH.WS11
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">WS11.&nbsp;</span><span class="Qtxt">What kind of toilet facility do members of your household usually use?</span></p><p><span class="Itxt">If 'Flush' or 'Pour flush', probe:&nbsp;</span><span class="Qtxt">Where does it flush to?</span></p><p><span class="Itxt">If not possible to determine, ask permission to observe the facility.</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WS11B
+    conditions:
+      - questionText:
+          ENG: |
+            <p class="1IntvwqstChar1Char" style="margin-left:0in;mso-add-space:auto;
+            text-indent:0in;line-height:115%"><b><span lang="MN" style="font-family: &quot;Courier New&quot;; font-size: 26px; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">WS11B. </span></b><span lang="MN" style="font-family: &quot;Courier New&quot;; font-size: 26px; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">Does&nbsp;</span><span lang="MN" style="font-family: &quot;Times New Roman&quot;; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important; font-size: 26px;"><span style="font-style: italic; font-family: &quot;Courier New&quot;;">~~worklabel~~&nbsp;</span><span style="font-family: &quot;Courier New&quot;;">h</span><span style="font-family: &quot;Courier New&quot;;">ave&nbsp;</span></span><span style="font-family: &quot;Courier New&quot;; text-indent: 0in;">an outlet pipe for
+            liquid waste?</span></p><span style="font-family: &quot;Courier New&quot;;">
+            
+            </span><p class="1IntvwqstChar1Char" style="margin-left:.1in;mso-add-space:auto;
+            text-indent:-.2pt;line-height:115%"><i><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-size: 26px; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;"><font color="#0000ff">If there is infiltration underground from the base or
+            sides of the tank or pit, select “No”</font></span></i></p><p class="1IntvwqstChar1Char" style="margin-left:.1in;mso-add-space:auto;
+            text-indent:-.2pt;line-height:115%"><font color="#0000ff"><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">
+            
+            
+            
+            </span><i><span lang="EN-GB" style="font-size: 26px; line-height: 150%; font-family: &quot;Courier New&quot;;">If the tank or pit containing wastes has a pipe which
+            discharges liquid wastes, select “Yes”</span></i></font><br></p><p></p>
+  - name: MICS7HH.WS11C
+    conditions:
+      - questionText:
+          ENG: |
+            <p class="1IntvwqstChar1Char" style="margin-left:0in;mso-add-space:auto;
+            text-indent:0in;line-height:115%"><b><span lang="MN" style="font-family: &quot;Courier New&quot;;">WS11C</span></b><b><span lang="MN" style="font-family: &quot;Courier New&quot;; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">. </span></b><span lang="MN" style="font-family: &quot;Courier New&quot;; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">Where does this</span><span style="font-family: &quot;Courier New&quot;; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">&nbsp;pipe go?</span></p><p></p>
+  - name: MICS7HH.WS11DA
+    conditions:
+      - questionText:
+          ENG: |
+            <p><b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">WS11D</span></b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">. In the last year, have excreta from your&nbsp;</span><span lang="EN-GB" style="font-size: 26pt; line-height: 150%; font-family: &quot;Times New Roman&quot;;"><span style="font-size: 18pt; font-style: italic; font-family: &quot;Courier New&quot;;">~~worklabel~~&nbsp;</span><span style="font-size: 18pt;"><span style="font-family: &quot;Courier New&quot;;">&nbsp;been released to the surface and surroundings due to any of the
+            following events?</span><br></span></span><span lang="EN-GB" style="font-size: 26pt; line-height: 150%;"><span style="font-size: 18pt;"><b>[A]&nbsp;</b></span></span><span style="font-size: 18pt;">Overflowed?</span></p><p></p><p></p>
+  - name: MICS7HH.WS11DB
+    conditions:
+      - questionText:
+          ENG: |
+            <p><b><span lang="EN-GB" style="font-size: 18pt; line-height: 36px;">WS11D</span></b><span lang="EN-GB" style="font-size: 18pt; line-height: 36px;">. In the last year, have excreta from your&nbsp;</span><span lang="EN-GB" style="font-size: 26pt; line-height: 52px;"><span style="font-size: 18pt; font-style: italic;">~~worklabel~~&nbsp;</span><span style="font-size: 18pt;">&nbsp;been released to the surface and surroundings due to any of the following events?<br></span></span><span lang="EN-GB" style="font-size: 26pt; line-height: 52px;"><span style="font-size: 18pt;"><b>[B]&nbsp;</b></span></span><span style="font-size: 24px;">Flooded?</span></p><p></p>
+  - name: MICS7HH.WS11DC
+    conditions:
+      - questionText:
+          ENG: |
+            <p><b><span lang="EN-GB" style="font-size: 18pt; line-height: 36px;">WS11D</span></b><span lang="EN-GB" style="font-size: 18pt; line-height: 36px;">. In the last year, have excreta from your&nbsp;</span><span lang="EN-GB" style="font-size: 26pt; line-height: 52px;"><span style="font-size: 18pt; font-style: italic;">~~worklabel~~&nbsp;</span><span style="font-size: 18pt;">&nbsp;been released to the surface and surroundings due to any of the following events?<br></span></span><span lang="EN-GB" style="font-size: 26pt; line-height: 52px;"><span style="font-size: 18pt;"><b>[C]&nbsp;</b></span></span><span style="font-size: 18pt;">Containment collapsed?</span></p><p></p>
+  - name: MICS7HH.WS11DD
+    conditions:
+      - questionText:
+          ENG: |
+            <p><b><span lang="EN-GB" style="font-size: 18pt; line-height: 36px;">WS11D</span></b><span lang="EN-GB" style="font-size: 18pt; line-height: 36px;">. In the last year, have excreta from your&nbsp;</span><span lang="EN-GB" style="font-size: 26pt; line-height: 52px;"><span style="font-size: 18pt; font-style: italic;">~~worklabel~~&nbsp;</span><span style="font-size: 18pt;">&nbsp;been released to the surface and surroundings due to any of the following events?<br></span></span><span lang="EN-GB" style="font-size: 26pt; line-height: 52px;"><span style="font-size: 18pt;"><b>[D]&nbsp;</b></span></span><span style="font-size: 18pt;">Other event releasing
+            excreta to the surface</span><span style="font-size: 18pt;">&nbsp;</span><span style="font-size: 18pt;">and surroundings?</span></p><p></p>
+  - name: MICS7HH.WS12
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">WS12. </span><span class="Qtxt">Has your <span class="REF">~~worklabel~~ </span>ever been emptied?</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WS12A
+    conditions:
+      - questionText:
+          ENG: |
+            <p class="1IntvwqstChar1Char" style="text-indent: -9.6px; margin-left: 0.1in; line-height: 115%;"><b style="text-indent: -7pt;"><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">W</span><span lang="EN-GB" style="font-family: &quot;Courier New&quot;; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;">S12A</span></b><span lang="EN-GB" style="text-indent: -7pt; font-family: &quot;Times New Roman&quot;, serif; font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;"><span style="font-family: &quot;Courier New&quot;;">. The last time it was emptied, who emptied the&nbsp;</span><span style="font-family: &quot;Courier New&quot;; font-style: italic; text-indent: 0px;">~~worklabel~~</span><span style="font-family: &quot;Courier New&quot;;">?</span></span></p><p class="1IntvwqstChar1Char" style="margin-left:7.0pt;mso-add-space:auto;
+            text-indent:-7.0pt;line-height:115%"><span lang="EN-GB" style="font-family: &quot;Times New Roman&quot;, serif; color: rgb(0, 176, 80); font-variant-numeric: normal !important; font-variant-east-asian: normal !important; font-variant-alternates: normal !important;"><o:p></o:p></span></p><p></p>
+  - name: MICS7HH.WS13
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">WS13. </span><span class="Qtxt">The last time it was emptied, where were the contents emptied to?</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WS14
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">WS14. </span><span class="Qtxt">Where is this toilet facility located?</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WS15
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">WS15.&nbsp;</span><span class="Qtxt">Do you share this facility with others who are not members of your household?</span><br></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WS16
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">WS16. </span><span class="Qtxt">Do you share this facility only with members of other households that you know, or is the facility open to the use of the general public?</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WS17
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">WS17. </span><span class="Qtxt">How many households in total use this toilet facility, including your own household?</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WS2
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">WS2. </span><span class="Qtxt">What is the <u>main</u> source of water used by members of your household for other purposes such as cooking and handwashing?</span></p>
+            <p><span class="Itxt">If unclear, probe to identify the place from which members of this household most often collect water for other purposes.</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WS3
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">WS3. </span><span class="Qtxt">Where is that water source located?</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WS4
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">WS4. </span><span class="Qtxt">How long does it take for members of your household to go there, get water, and come back?</span></p>
+            <p><span class="Itxt">Record the time in minutes.</span></p>
+            <p><span class="Itxt">Use '000' for 'Members do not collect'</span></p>
+            <p><span class="Itxt">and '998' for 'DK'</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WS5
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">WS5. </span><span class="Qtxt">Who usually goes to this source to collect the water for your household?</span></p>
+            <p><span class="Itxt">Record the name of the person and copy the line number of this person from the List of Household Members Module.</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WS6
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">WS6. </span><span class="Qtxt">Since last </span><span class="Itxt Qtxt">~~daystring~~</span>, how many times has this person collected water?</p>
+            <p><span class="Itxt">Record number of times.</span></p>
+            <p><span class="Itxt">Record '98' for 'DK'.</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WS7
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">WS7. </span><span class="Qtxt">In the last month, has there been any time when your household did not have sufficient quantities of drinking water?</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WS7A
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">WS7A. </span><span class="Qtxt">In the last 12 months, has there been any time when your household did not have sufficient drinking water?</span></p>
+  - name: MICS7HH.WS8
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">WS8. </span><span class="Qtxt">The last time this happened, what was the main reason that your household was not able to access water in sufficient drinking water?</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.WS9
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">WS9. </span><span class="Qtxt">Do you or any other member of this household do anything to the water to make it safer to drink?</span></p>
         helpText:
           ENG: |
             

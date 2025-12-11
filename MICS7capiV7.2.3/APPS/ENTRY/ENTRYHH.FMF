@@ -307,6 +307,7 @@ Item=HC1A
 Item=HC1A1
 Item=HC7C
 Item=HC7I
+Item=HC16B
   
 Box=41,56,1120,57,Etched
   
@@ -4245,7 +4246,7 @@ Color=4210688
   
 [Field]
 Name=HC16
-Position=771,467,808,501
+Position=666,472,703,506
 Item=HC16,MICS7HH
 UpperCase=Yes
 FieldLabelType=DictionaryName
@@ -4254,8 +4255,8 @@ Keyboard=1033
 Form=5
   
 [Text]
-Position=689,469,749,501
-Text=HC16
+Position=581,476,656,508
+Text=HC16A
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
  
@@ -4452,6 +4453,14 @@ Text=HC20
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
  
+  
+[Field]
+Name=HC16B
+Position=720,473,775,507
+Item=HC16B,MICS7HH
+DataCaptureType=TextBox
+Form=5
+  
 [EndGroup]
   
 [Group]

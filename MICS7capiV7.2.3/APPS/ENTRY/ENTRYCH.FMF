@@ -582,9 +582,9 @@ Color=6472704
 [Form]
 Name=FORM007
 Label=Immunization
-QuestionTextHeight=300
+QuestionTextHeight=279
 Level=1
-Size=1128,1611
+Size=757,1611
 Color=15400917
   
 Item=IM2
@@ -605,8 +605,6 @@ Item=IM6P1Y
 Item=IM6P2D
 Item=IM6P2M
 Item=IM6P2Y
-Item=IM6P4D
-Item=IM6P4M
 Item=IM6I1D
 Item=IM6I1M
 Item=IM6I1Y
@@ -647,8 +645,6 @@ Item=IM6I2Y
 Item=IM5AD
 Item=IM5AM
 Item=IM5AY
-Item=IM6P4D000
-Item=IM6P4M000
 Item=IM6P4Y
 Item=IM6PCV2D
 Item=IM6P3Y1
@@ -657,11 +653,15 @@ Item=IM6MENM1
 Item=IM6MENY1
 Item=IM6TD1D1
 Item=IM6TD1M1
-Item=IM6TD1Y1000
 Item=IM6POLBD
 Item=IM6POLBM
 Item=IM6POLBY
 Item=IM6PCV2Y
+Item=IM6P3D1
+Item=IM6P3M1
+Item=IM6P4D
+Item=IM6P4M
+Item=IM6TD1Y1
   
 Box=49,154,726,155,Etched
   
@@ -731,13 +731,6 @@ Color=4210688
  
   
 [Text]
-Name=TEXT171
-Position=119,1238,314,1270
-Text=Polio (OPV) 4
-Form=10
- 
-  
-[Text]
 Name=TEXT170
 Position=124,1418,304,1450
 Text=Meningitis A
@@ -755,6 +748,20 @@ Form=10
 Name=TEXT173
 Position=125,1510,320,1542
 Text=Polio Booster
+Form=10
+ 
+  
+[Text]
+Name=TEXT8
+Position=132,1007,297,1039
+Text=Polio OPV 3
+Form=10
+ 
+  
+[Text]
+Name=TEXT9
+Position=127,1235,292,1267
+Text=Polio OPV 4
 Form=10
  
 [EndForm]
@@ -3565,33 +3572,24 @@ Form=10
   
   
 [Field]
-Name=IM6P4D
-Position=545,1009,582,1043
-Item=IM6P4D,MICS7CH
-UpperCase=Yes
-DataCaptureType=NumberPad
-Keyboard=1033
+Name=IM6P3D1
+Position=545,1006,582,1040
+Item=IM6P3D1,MICS7CH
+DataCaptureType=TextBox
 Form=10
   
-[Text]
-Position=124,1011,319,1043
-Text=Polio (OPV) 3
-Color=4210688
- 
   
 [Field]
-Name=IM6P4M
-Position=596,1009,633,1043
-Item=IM6P4M,MICS7CH
-UpperCase=Yes
+Name=IM6P3M1
+Position=603,1007,640,1041
+Item=IM6P3M1,MICS7CH
 DataCaptureType=RadioButton
-Keyboard=1033
 Form=10
   
   
 [Field]
 Name=IM6P3Y1
-Position=646,1008,719,1042
+Position=658,1007,731,1041
 Item=IM6P3Y1,MICS7CH
 DataCaptureType=RadioButton
 Form=10
@@ -3703,20 +3701,18 @@ Form=10
   
   
 [Field]
-Name=IM6P4D000
-Position=543,1235,580,1269
+Name=IM6P4D
+Position=545,1236,582,1270
 Item=IM6P4D,MICS7CH
-Mirror=Yes
 DataCaptureType=TextBox
 Form=10
   
   
 [Field]
-Name=IM6P4M000
-Position=592,1232,629,1266
+Name=IM6P4M
+Position=594,1237,631,1271
 Item=IM6P4M,MICS7CH
-Mirror=Yes
-DataCaptureType=TextBox
+DataCaptureType=RadioButton
 Form=10
   
   
@@ -3871,11 +3867,10 @@ Form=10
   
   
 [Field]
-Name=IM6TD1Y1000
-Position=648,1463,721,1497
+Name=IM6TD1Y1
+Position=650,1465,723,1499
 Item=IM6TD1Y1,MICS7CH
-Mirror=Yes
-DataCaptureType=TextBox
+DataCaptureType=RadioButton
 Form=10
   
   
@@ -4940,7 +4935,7 @@ Color=4210688
   
 [Field]
 Name=UF13
-Position=146,358,165,392
+Position=146,358,183,392
 Item=UF13,MICS7CH
 UpperCase=Yes
 FieldLabelType=DictionaryName
@@ -4957,7 +4952,7 @@ Color=4210688
   
 [Field]
 Name=UF14
-Position=146,410,165,444
+Position=146,410,183,444
 Item=UF14,MICS7CH
 UpperCase=Yes
 FieldLabelType=DictionaryName

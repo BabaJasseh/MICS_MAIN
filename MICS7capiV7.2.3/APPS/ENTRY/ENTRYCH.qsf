@@ -1232,30 +1232,26 @@ questions:
       - questionText:
           ENG: |
             <p><span class="Itxt">Rotavirus 2: year</span></p>
-  - name: MICS7CH.IM6P4D
+  - name: MICS7CH.IM6P3D1
     conditions:
       - logic: visualIM9<>1
         questionText:
           ENG: |
-            <p><span class="Itxt">Oral Polio (OPV) 3: day</span></p>
-            <p><span class="Itxt">Copy dates for each vaccination from the documents.</span></p>
-            <p><span class="Itxt">Record '00' in day column if the vaccination was not given.</span></p>
-            <p><span class="Itxt">Record '44' in day column if documents show that vaccination was given but no date recorded.</span></p>
+            <p><span class="Itxt">Oral Polio (OPV) 3: day</span></p><p><span class="Itxt">Copy dates for each vaccination from the documents.</span></p><p><span class="Itxt">Record '00' in day column if the vaccination was not given.</span></p><p><span class="Itxt">Record '44' in day column if documents show that vaccination was given but no date recorded.</span></p><p></p>
       - logic: visualIM9=1
         questionText:
           ENG: |
-            <p><span class="Itxt">Oral Polio (OPV) 3: day</span></p>
-            <p><span class="Itxt">Record '66' in the corresponding day column for each vaccine not in the card but reported by the mother.</span></p>
-  - name: MICS7CH.IM6P4M
+            <p><span style="color: rgb(0, 0, 255); font-style: italic;">Oral Polio (OPV) 3: day</span><span style="color: rgb(0, 0, 255); font-style: italic;"></span></p><p><span style="color: rgb(0, 0, 255); font-style: italic;">Record '66' in the corresponding day column for each vaccine not in the card but reported by the mother.</span></p><p></p><p></p><p></p>
+  - name: MICS7CH.IM6P3M1
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Itxt">Oral Polio (OPV) 3: month</span></p>
+            <p><span style="color: rgb(0, 0, 255); font-style: italic;">Oral Polio (OPV) 3: month</span></p><p><span style="color: rgb(0, 0, 255); font-style: italic;"><br></span><p></p></p>
   - name: MICS7CH.IM6P3Y1
     conditions:
       - questionText:
           ENG: |
-            <span style="color: rgb(0, 0, 255); font-style: italic;">Oral Polio (OPV) 3 (at birth): year</span><p></p>
+            <p><span style="color: rgb(0, 0, 255); font-style: italic;">Oral Polio (OPV) 3 : year</span></p><p><span style="color: rgb(0, 0, 255); font-style: italic;"><br></span></p><p></p><p></p>
   - name: MICS7CH.IM6PENTA3D
     conditions:
       - logic: visualIM9<>1
@@ -1328,11 +1324,30 @@ questions:
       - questionText:
           ENG: |
             <p><span class="Itxt">IPV1: year</span></p>
+  - name: MICS7CH.IM6P4D
+    conditions:
+      - logic: visualIM9<>1
+        questionText:
+          ENG: |
+            <p><span class="Itxt">Oral Polio (OPV) 4: day</span></p>
+            <p><span class="Itxt">Copy dates for each vaccination from the documents.</span></p>
+            <p><span class="Itxt">Record '00' in day column if the vaccination was not given.</span></p>
+            <p><span class="Itxt">Record '44' in day column if documents show that vaccination was given but no date recorded.</span></p>
+      - logic: visualIM9=1
+        questionText:
+          ENG: |
+            <p><span class="Itxt">Oral Polio (OPV) 4: day</span></p>
+            <p><span class="Itxt">Record '66' in the corresponding day column for each vaccine not in the card but reported by the mother.</span></p>
+  - name: MICS7CH.IM6P4M
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Itxt">Oral Polio (OPV) 4: month</span></p>
   - name: MICS7CH.IM6P4Y
     conditions:
       - questionText:
           ENG: |
-            <span style="color: rgb(0, 0, 255); font-style: italic;">Oral Polio (OPV) 4 (at birth): year</span><p></p>
+            <span style="color: rgb(0, 0, 255); font-style: italic;">Oral Polio (OPV) 4 : year</span><p></p>
   - name: MICS7CH.IM6M1D
     conditions:
       - logic: visualIM9<>1
@@ -1439,6 +1454,11 @@ questions:
       - questionText:
           ENG: |
             <span style="color: rgb(0, 0, 255); font-style: italic;">DPT Booster: month</span><p></p>
+  - name: MICS7CH.IM6TD1Y1
+    conditions:
+      - questionText:
+          ENG: |
+            <span style="color: rgb(0, 0, 255); font-style: italic;">DPT Booster: year</span><p></p>
   - name: MICS7CH.IM6POLBD
     conditions:
       - logic: visualIM9<>1
@@ -2541,11 +2561,6 @@ questions:
       - questionText:
           ENG: |
             <p><span class="Itxt">Rota3: year</span></p>
-  - name: MICS7CH.IM6TD1Y1
-    conditions:
-      - questionText:
-          ENG: |
-            <span style="color: rgb(0, 0, 255); font-style: italic;">DPT Booster: year</span><p></p>
   - name: MICS7CH.UCF19
     conditions:
       - questionText:

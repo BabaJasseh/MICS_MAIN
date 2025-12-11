@@ -1489,7 +1489,7 @@ Label=Household Characteristics
 Name=MODHC
 RecordTypeValue='0HC'
 Required=No
-RecordLen=101
+RecordLen=104
 
 [Item]
 Label=Religion of household head
@@ -2378,7 +2378,7 @@ Value=2;NO
 Value=9;NO RESPONSE
 
 [Item]
-Label=Hectares of agricultural land members of household owns
+Label=Hectares or acres of agricultural land members of household owns
 Name=HC16
 Start=79
 Len=2
@@ -2386,8 +2386,24 @@ DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Hectares of agricultural land members of household owns
-Name=HC16_VST
+Label=Hectares or acres of agricultural land members of household owns
+Name=HC16_VS1
+Value=0:94
+Value=95;95+
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Hectares or acres of agricultural land members of household owns
+Name=HC16B
+Start=81
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Hectares or acres of agricultural land members of household owns
+Name=HC16B_VS1
 Value=0:94
 Value=95;95+
 Value=98;DK
@@ -2396,7 +2412,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Household own any animals
 Name=HC17
-Start=81
+Start=84
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2411,7 +2427,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Milk cows or bulls
 Name=HC18A
-Start=82
+Start=85
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2427,7 +2443,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Other cattle
 Name=HC18B
-Start=84
+Start=87
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2443,7 +2459,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Horses, donkeys or mules
 Name=HC18C
-Start=86
+Start=89
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2459,7 +2475,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Goats
 Name=HC18D
-Start=88
+Start=91
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2475,7 +2491,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Sheep
 Name=HC18E
-Start=90
+Start=93
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2491,7 +2507,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Chickens
 Name=HC18F
-Start=92
+Start=95
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2507,7 +2523,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Pigs
 Name=HC18G
-Start=94
+Start=97
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2523,7 +2539,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Guinea fowls
 Name=HC18H
-Start=96
+Start=99
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2539,7 +2555,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Ducks
 Name=HC18I
-Start=98
+Start=101
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2555,7 +2571,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Any household member own bank account
 Name=HC19
-Start=100
+Start=103
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2570,7 +2586,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Any household member makes financial transactions via mobile phone
 Name=HC20
-Start=101
+Start=104
 Len=1
 DataType=Numeric
 ZeroFill=Yes
