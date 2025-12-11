@@ -2157,6 +2157,265 @@ Value=3;ALMOST EVERY DAY
 Value=9;NO RESPONSE
 
 [Record]
+Label=Fertility
+Name=MODMCM
+RecordTypeValue='MCM'
+Required=No
+RecordLen=45
+
+[Item]
+Label=Ever fathered a child
+Name=MCM1
+Start=16
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Ever fathered a child
+Name=MCM1_VST
+Value=1;YES|OUI|نعم
+Value=2;NO|NON|لا
+Value=8;DK|NSP|لا أعرف
+
+[Item]
+Label=Any sons or daughters living with you
+Name=MCM2
+Start=17
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Any sons or daughters living with you
+Name=MCM2_VST
+Value=1;YES|OUI|نعم
+Value=2;NO|NON|لا
+
+[Item]
+Label=Sons living with you
+Name=MCM3
+Start=18
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Sons living with you
+Name=MCM3_VST
+Value=0:20
+
+[Item]
+Label=Daughters living with you
+Name=MCM4
+Start=20
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Daughters living with you
+Name=MCM4_VST
+Value=0:20
+
+[Item]
+Label=Any sons or daughters not living with you
+Name=MCM5
+Start=22
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Any sons or daughters not living with you
+Name=MCM5_VST
+Value=1;YES|OUI|نعم
+Value=2;NO|NON|لا
+
+[Item]
+Label=Sons living elsewhere
+Name=MCM6
+Start=23
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Sons living elsewhere
+Name=MCM6_VST
+Value=0:20
+
+[Item]
+Label=Daughters living elsewhere
+Name=MCM7
+Start=25
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Daughters living elsewhere
+Name=MCM7_VST
+Value=0:20
+
+[Item]
+Label=Ever had child who later died
+Name=MCM8
+Start=27
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Ever had child who later died
+Name=MCM8_VST
+Value=1;YES|OUI|نعم
+Value=2;NO|NON|لا
+
+[Item]
+Label=Boys dead
+Name=MCM9
+Start=28
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Boys dead
+Name=MCM9_VST
+Value=0:20
+
+[Item]
+Label=Girls dead
+Name=MCM10
+Start=30
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Girls dead
+Name=MCM10_VST
+Value=0:20
+
+[Item]
+Label=Children ever fathered
+Name=MCM11
+Start=32
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Children ever fathered
+Name=MCM11_VST
+Value=0:20
+
+[Item]
+Label=Confirm total number of children ever fathered
+Name=MCM12
+Start=34
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Confirm total number of children ever fathered
+Name=MCM12_VST
+Value=1;YES|OUI|نعم
+Value=2;NO|NON|لا
+
+[Item]
+Label=Same biological mother
+Name=MCM15
+Start=35
+Len=1
+DataType=Numeric
+
+[ValueSet]
+Label=Same biological mother
+Name=MCM15_VST
+Value=1;YES|OUI|نعم
+Value=2;NO|NON|لا
+Value=9;NO RESPONSE|NON REPONSE|لا توجد اجابة
+
+[Item]
+Label=Number of women respondent fathered children with
+Name=MCM16
+Start=36
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Number of women respondent fathered children with
+Name=MCM16_VST
+Value=2:15
+Value=99;NO RESPONSE|NON REPONSE|لا توجد اجابة
+
+[Item]
+Label=Age when first child was born
+Name=MCM17
+Start=38
+Len=2
+DataType=Numeric
+
+[ValueSet]
+Label=Age when first child was born
+Name=MCM17_VST
+Value=10:80
+Value=99;NO RESPONSE|NON REPONSE|لا توجد اجابة
+
+[Item]
+Label=Date of last birth
+Name=MCM18
+Start=40
+Len=6
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Month of last birth
+Name=MCM18M
+Start=40
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of last birth
+Name=MCM18M_VST
+Value=1;JANUARY|JANVIER|يناير
+Value=2;FEBRUARY|FÉVRIER|فبراير
+Value=3;MARCH|MARS|مارس
+Value=4;APRIL|AVRIL|ابريل
+Value=5;MAY|MAI|مايو
+Value=6;JUNE|JUIN|يونيو
+Value=7;JULY|JUILLET|يوليو
+Value=8;AUGUST|AOUT|أغسطس
+Value=9;SEPTEMBER|SEPTEMBRE|سبتمبر
+Value=10;OCTOBER|OCTOBRE|أكتوبر
+Value=11;NOVEMBER|NOVEMBRE|نوفمبر
+Value=12;DECEMBER|DECEMBRE|ديسمبر
+Value=99;NO RESPONSE|NON REPONSE|لا توجد اجابة
+
+[Item]
+Label=Year of last birth
+Name=MCM18Y
+Start=42
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of last birth
+Name=MCM18Y_VST
+Value=1978:2018
+Value=9999;NO RESPONSE|NON REPONSE|لا توجد اجابة
+
+[Record]
 Label=Attitudes Toward Domestic Violence
 Name=MODMDV
 RecordTypeValue='MDV'
