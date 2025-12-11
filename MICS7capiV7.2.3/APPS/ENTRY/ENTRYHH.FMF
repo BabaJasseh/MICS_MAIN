@@ -253,7 +253,6 @@ Item=HC4
 Item=HC5
 Item=HC6
 Item=HC7B
-Item=HC7I
 Item=HC8A
 Item=HC9A
 Item=HC10A
@@ -293,7 +292,6 @@ Item=HC7E
 Item=HC7F
 Item=HC7G
 Item=HC7H
-Item=HC7I000
 Item=HC9C
 Item=HC9D
 Item=HC9E
@@ -303,10 +301,12 @@ Item=HC9I
 Item=HC9J
 Item=HC9K
 Item=HC9L
-Item=HC18H1
+Item=HC18H
 Item=HC9M
 Item=HC1A
 Item=HC1A1
+Item=HC7C
+Item=HC7I
   
 Box=41,56,1120,57,Etched
   
@@ -355,14 +355,6 @@ Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
 Name=TEXT53
 Position=228,272,288,304
 Text=HC7H
-Form=5
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
- 
-  
-[Text]
-Name=TEXT54
-Position=223,320,283,352
-Text=HC7I
 Form=5
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
  
@@ -467,6 +459,22 @@ Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
 Name=TEXT66
 Position=52,134,112,166
 Text=HC1A
+Form=5
+Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
+ 
+  
+[Text]
+Name=TEXT54
+Position=54,572,114,604
+Text=HC7C
+Form=5
+Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
+ 
+  
+[Text]
+Name=TEXT67
+Position=225,321,285,353
+Text=HC7I
 Form=5
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0049 Consolas
  
@@ -3878,20 +3886,12 @@ Color=4210688
  
   
 [Field]
-Name=HC7I
-Position=131,570,150,604
-Item=HC7I,MICS7HH
-UpperCase=Yes
+Name=HC7C
+Position=133,570,152,604
+Item=HC7C,MICS7HH
 DataCaptureType=RadioButton
-Keyboard=1033
 Form=5
   
-[Text]
-Position=54,572,114,604
-Text=HC7C
-Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
-Color=4210688
- 
   
 [Field]
 Name=HC7D
@@ -3934,11 +3934,10 @@ Form=5
   
   
 [Field]
-Name=HC7I000
-Position=301,318,320,352
+Name=HC7I
+Position=302,319,321,353
 Item=HC7I,MICS7HH
-Mirror=Yes
-DataCaptureType=TextBox
+DataCaptureType=RadioButton
 Form=5
   
   
@@ -4493,6 +4492,14 @@ Color=4210688
  
   
 [Field]
+Name=HC18H
+Position=938,486,975,520
+Item=HC18H,MICS7HH
+DataCaptureType=TextBox
+Form=5
+  
+  
+[Field]
 Name=HC18I
 Position=938,530,975,564
 Item=HC18I,MICS7HH
@@ -4540,14 +4547,6 @@ Text=HC20
 Font=-027 0000 0000 0000 0400 0000 0000 0000 0000 0003 0002 0001 0018 Consolas
 Color=4210688
  
-  
-[Field]
-Name=HC18H1
-Position=938,486,975,520
-Item=HC18H1,MICS7HH
-DataCaptureType=TextBox
-Form=5
-  
 [EndGroup]
   
 [Group]

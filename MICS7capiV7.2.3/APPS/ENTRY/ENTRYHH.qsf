@@ -443,11 +443,44 @@ questions:
         helpText:
           ENG: |
             
+  - name: MICS7HH.HC7C
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">HC7.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><span class="Qnum">[C]&nbsp;</span><span class="Qtxt">A bed?</span></p>
+        helpText:
+          ENG: |
+            
+  - name: MICS7HH.HC7D
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">HC7.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><span class="Qnum">[D]&nbsp;</span><span class="Qtxt">A sofa?</span></p><p></p>
+  - name: MICS7HH.HC7E
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">HC7.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><span class="Qnum">[D]&nbsp;</span><span class="Qtxt">A dining table?</span></p>
+  - name: MICS7HH.HC7F
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">HC7.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><span class="Qnum">[D]&nbsp;</span><span class="Qtxt">A cupboard?</span></p><p></p>
+  - name: MICS7HH.HC7G
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">HC7.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><span class="Qnum">[D]&nbsp;</span><span class="Qtxt">A mattress?</span></p><p></p>
+  - name: MICS7HH.HC7H
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">HC7.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><span class="Qnum">[D]&nbsp;</span><span class="Qtxt">A generator?</span></p><p></p>
   - name: MICS7HH.HC7I
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">HC7.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><span class="Qnum">[C]&nbsp;</span>Bed?</p><p></p>
+            <p><span class="Qnum">HC7.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><span class="Qnum">[I] <span style="font-weight: normal;">A s</span></span>olar panel?</p><p></p>
   - name: MICS7HH.HC8
     conditions:
       - questionText:
@@ -489,7 +522,7 @@ questions:
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[C]&nbsp;</font></span><span class="QtxtC"><font color="#000000">Fan?</font></span></font></p>
+            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[C] <span style="font-weight: normal;">A f</span></font></span><span class="QtxtC"><font color="#000000">an?</font></span></font></p>
         helpText:
           ENG: |
             
@@ -497,47 +530,47 @@ questions:
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[D]&nbsp;</font></span><span class="QtxtC"><font color="#000000">Air conditioner?</font></span></font></p><p></p>
+            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[D] <span style="font-weight: normal;">An a</span></font></span><span class="QtxtC"><font color="#000000">ir conditioner?</font></span></font></p><p></p>
   - name: MICS7HH.HC9E
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[E]&nbsp;</font></span><span class="QtxtC"><font color="#000000">Satellite dish?</font></span></font></p><p></p>
+            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[E] <span style="font-weight: normal;">A s</span></font></span><span class="QtxtC"><font color="#000000">atellite dish?</font></span></font></p><p></p>
   - name: MICS7HH.HC9G
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[G]&nbsp;</font></span><span class="QtxtC"><font color="#000000">Microwave Oven?</font></span></font></p><p></p>
+            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[G] <span style="font-weight: normal;">A</span>&nbsp;<span style="font-weight: normal;">m</span></font></span><span class="QtxtC"><font color="#000000">icrowave Oven?</font></span></font></p><p></p>
   - name: MICS7HH.HC9H
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[H]&nbsp;</font></span><span class="QtxtC"><font color="#000000">Water Heater?</font></span></font></p><p></p>
+            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[H] <span style="font-weight: normal;">A</span>&nbsp;</font></span><span class="QtxtC"><font color="#000000">water heater?</font></span></font></p><p></p>
   - name: MICS7HH.HC9I
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[I]&nbsp;</font></span><span class="QtxtC"><font color="#000000">Blender?</font></span></font></p><p></p>
+            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[I] <span style="font-weight: normal;">A</span>&nbsp;</font></span><span class="QtxtC"><font color="#000000">blender?</font></span></font></p><p></p>
   - name: MICS7HH.HC9J
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[J]&nbsp;</font></span><span class="QtxtC"><font color="#000000">Washing Machine?</font></span></font></p><p></p>
+            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[J] <span style="font-weight: normal;">A</span>&nbsp;</font></span><span class="QtxtC"><font color="#000000">washing machine?</font></span></font></p><p></p>
   - name: MICS7HH.HC9K
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[K]&nbsp;</font></span><span class="QtxtC"><font color="#000000">Electric Iron?</font></span></font></p><p></p>
+            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[K] <span style="font-weight: normal;">An</span>&nbsp;</font></span><span class="QtxtC"><font color="#000000">electric iron?</font></span></font></p><p></p>
   - name: MICS7HH.HC9L
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[L]&nbsp;</font></span><span class="QtxtC"><font color="#000000">Electric Kettle?</font></span></font></p><p></p>
+            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[L] <span style="font-weight: normal;">An</span>&nbsp;</font></span><span class="QtxtC"><font color="#000000">electric kettle?</font></span></font></p><p></p>
   - name: MICS7HH.HC9M
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[M]&nbsp;</font></span><span class="QtxtC"><font color="#000000">Water Tank?</font></span></font></p><p></p>
+            <p><span class="Qnum">HC9.&nbsp;</span><span class="Qtxt">Does your household have:</span></p><p><font color="#000000"><span class="QnumC"><font color="#000000">[M] <span style="font-weight: normal;">A</span>&nbsp;</font></span><span class="QtxtC"><font color="#000000">water tank?</font></span></font></p><p></p>
   - name: MICS7HH.HC10A
     conditions:
       - questionText:
@@ -630,14 +663,12 @@ questions:
       - questionText:
           ENG: |
             <p class="MsoNormal" style="margin-left:.1in;mso-add-space:auto;text-indent:-.1in;
-            line-height:115%;tab-stops:25.1pt"><b><span lang="MN" style="font-size: 24pt; line-height: 115%; font-family: &quot;Courier New&quot;;">HC13B</span></b><span lang="MN" style="font-size: 24pt; line-height: 115%; font-family: &quot;Courier New&quot;;">.&nbsp;</span><span style="font-family: &quot;Courier New&quot;; font-size: 24pt;">You mentioned that a member of your household has a
-            smartphone and that you do not have access to internet at home. Just to
-            confirm, can the smartphone access the internet while being used at home?</span></p><p></p>
+            line-height:115%;tab-stops:25.1pt"><span style="font-weight: 700;">HC13B.&nbsp;</span>You mentioned that a member of your household has a smartphone and that you do not have access to internet at home. Just to confirm, can the smartphone access the internet while being used at home?</p><p></p>
   - name: MICS7HH.HC14
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">HC14.&nbsp;</span><span class="Qtxt">Do you or someone living in this household own this dwelling?</span></p><p><span class="Itxt">If 'No', then ask:&nbsp;</span><span class="Qtxt">Do you rent this dwelling from someone not living in this household?</span></p><p><span class="Itxt">If 'Rented from someone else', record '2'. For other responses, record '6' and specify.</span></p>
+            <p><span class="Qnum">HC14.&nbsp;</span><span class="Qtxt">Do you or someone living in this household own this dwelling?</span></p><p><span class="Itxt">If 'No', then ask:&nbsp;</span><span class="Qtxt">Do you rent this dwelling from someone not living in this household&nbsp;or the living is rent-free?</span></p><p><span style="color: rgb(0, 0, 255); font-style: italic;">If 'Rented from someone else', record '2'. For other responses, record '6' and specify.</span></p>
         helpText:
           ENG: |
             
@@ -653,7 +684,7 @@ questions:
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum">HC16.&nbsp;</span><span class="Qtxt">How many&nbsp;<span class="QtxtC">hectares&nbsp;</span>of agricultural land do members of this household own?</span></p><p><span class="Itxt">If less than 1, record '00'.</span></p><p><span class="Itxt">If 95 or more record '95'</span></p><p><span class="Itxt">If Don't know record '98'</span></p>
+            <p><span class="Qnum">HC16.&nbsp;</span><span class="Qtxt">How many hectares or acres of agricultural land do members of this household own?</span></p><p><font color="#0000ff"><i>If 1 hectare or more, circle ‘1’ and record hectares.</i></font></p><p><font color="#0000ff"><i>I</i></font><i style="color: rgb(0, 0, 255);">f 95 or more hectares, circle ‘1’ and record ‘95’. </i></p><p><i style="color: rgb(0, 0, 255);">If less than 1 hectare, circle ‘2’ and record in acres.&nbsp;</i></p><p><font color="#0000ff"><i>If less than 1 acre, circle ‘2’ and record ‘00’. If unknown, circle ‘998’.</i></font></p>
         helpText:
           ENG: |
             
@@ -721,6 +752,16 @@ questions:
         helpText:
           ENG: |
             
+  - name: MICS7HH.HC18H
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">HC18.&nbsp;</span><span class="Qtxt">How many of the following animals does this household have?</span></p><p><span class="QnumC"><font color="#000000">[H]</font>&nbsp;<span style="font-weight: normal;"><font color="#000000">Guinea fowls</font></span></span></p><p><span class="Itxt">If none, record '00'.</span></p><p><span class="Itxt">If 95 or more, record '95'.</span></p><p><span class="Itxt">If unknown, record '98'.</span></p><p></p>
+  - name: MICS7HH.HC18I
+    conditions:
+      - questionText:
+          ENG: |
+            <p><span class="Qnum">HC18.&nbsp;</span><span class="Qtxt">How many of the following animals does this household have?</span></p><p><span class="Qnum">[I]&nbsp;</span><span class="Qtxt">Ducks?</span></p><p><span class="Itxt">If none, record '00'.</span></p><p><span class="Itxt">If 95 or more, record '95'.</span></p><p><span class="Itxt">If unknown, record '98'.</span></p><p></p>
   - name: MICS7HH.HC19
     conditions:
       - questionText:
@@ -733,11 +774,11 @@ questions:
     conditions:
       - questionText:
           ENG: |
-            <p class="MsoNormal"><b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%;">HC20</span></b><span lang="EN-GB" style="font-size:10.0pt;line-height:150%;mso-bidi-font-weight:bold"><span style="font-size: 18pt;">. Does any
-            member of this household use </span><u><span style="font-size: 18pt;">a mobile phone</span></u><span style="font-size: 18pt;"> to make financial
+            <p class="MsoNormal"><b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%;">HC20</span></b><span lang="EN-GB" style="line-height: 150%;"><span style="font-size: 18pt;">. Does any
+            member of this household use </span><u style="font-size: 10pt;"><span style="font-size: 18pt;">a mobile phone</span></u><span style="font-size: 18pt;"> to make financial
             transactions such as sending or receiving money, paying bills, purchasing goods
             or services, or receiving wages, either through their bank or through a mobile
-            service, such as </span><span style="color: red; font-size: 18pt;">insert mobile services, e.g., M-PESA</span><span style="font-size: 18pt;">?</span></span><span lang="EN-GB"><o:p></o:p></span></p><p></p>
+            service, such as&nbsp;</span><span style="font-size: 24px;">Wave, Afrimoney, Aps, Qmoney or Comcach</span><span style="font-size: 18pt;">?</span></span><span lang="EN-GB"><o:p></o:p></span></p><p></p>
   - name: MICS7HH.EU1
     conditions:
       - questionText:
@@ -758,8 +799,7 @@ questions:
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Qnum" style="font-family: &quot;Times New Roman&quot;; font-size: 26px;">EU4.&nbsp;</span><span style="font-family: &quot;Times New Roman&quot;; text-indent: -0.1in; font-size: 26px;">What type of fuel or
-            energy source is used in this cookstove?</span></p>
+            <p><span style="font-size: 24px;"><b>EU4</b>. What type of fuel or energy source is used in this cookstove?</span></p>
             
             <p class="1IntvwqstChar1Char" style="margin-left:.1in;mso-add-space:auto;
             text-indent:-.1in;line-height:115%"><span style="color: rgb(0, 0, 255); font-style: italic;">If more than one, record the main energy source for this cookstove.</span><br></p>
@@ -779,8 +819,8 @@ questions:
     conditions:
       - questionText:
           ENG: |
-            <b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">EU6A.
-            </span></b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">What is the (</span><b><i><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">name/brand</span></i></b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">) of this heater, cookstove or device?</span><p></p>
+            <p><b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">EU6A.
+            </span></b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">What is the (</span><b><i><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">name/brand</span></i></b><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;">) of this heater, cookstove or device?</span></p><p><span lang="EN-GB" style="font-size: 18pt; line-height: 150%; font-family: &quot;Courier New&quot;;"><br></span><p></p></p>
   - name: MICS7HH.EU8
     conditions:
       - questionText:
@@ -2030,18 +2070,4 @@ questions:
             <b><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">ED14A.&nbsp;</span></b><span lang="EN-GB" style="font-size: 26px; line-height: 150%; font-family: &quot;Courier New&quot;;">Do you think this </span><span lang="EN-GB" style="font-size:9.0pt;line-height:150%;font-family:&quot;Times New Roman&quot;,serif;
             mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-GB;mso-fareast-language:
             EN-US;mso-bidi-language:AR-SA"><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">support is sufficient for the school supplies&nbsp;</span><span style="font-family: &quot;Courier New&quot;; font-size: 26px; font-style: italic;">~~ED2~~</span><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">&nbsp;needed?</span></span><p></p>
-  - name: MICS7HH.HC18H
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">HC18.&nbsp;</span><span class="Qtxt">How many of the following animals does this household have?</span></p><p><span class="QnumC">[H]&nbsp;</span><span class="QtxtC">Country Specific Additions (See Qustomization Guidelines)</span></p><p><span class="Itxt">If none, record '00'.</span></p><p><span class="Itxt">If 95 or more, record '95'.</span></p><p><span class="Itxt">If unknown, record '98'.</span></p><p></p>
-  - name: MICS7HH.HC7C
-    conditions:
-      - questionText:
-          ENG: |
-            <p><span class="Qnum">HC7. </span><span class="Qtxt">Does your household have:</span></p><span style="font-family: &quot;Courier New&quot;;">
-            </span><p><span class="QnumC" style="font-family: &quot;Courier New&quot;; font-size: 26px;">[C]&nbsp;</span><font color="#ff0000"><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">Country Specific Items That Do Not Run On </span><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">&nbsp;</span><span style="font-family: &quot;Courier New&quot;; font-size: 26px;">Electricity (See Customisation Guidelines)</span></font></p>
-        helpText:
-          ENG: |
-            
 ...
