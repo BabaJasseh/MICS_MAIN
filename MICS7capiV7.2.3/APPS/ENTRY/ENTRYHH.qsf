@@ -1220,7 +1220,7 @@ questions:
     conditions:
       - questionText:
           ENG: |
-            <p><span class="Inum">HW3.&nbsp;</span><span class="Itxt">Observe presence of soap, detergent, <font color="#ff0000">or ash/mud/sand</font> at the place for handwashing.</span></p><p><span class="Itxt">Record all that apply.</span></p>
+            <p><span class="Inum">HW3.&nbsp;</span><span class="Itxt">Observe presence of soap, detergent, or ash/mud/sand at the place for handwashing.</span></p><p><span class="Itxt">Record all that apply.</span></p>
         helpText:
           ENG: |
             
@@ -1303,7 +1303,7 @@ questions:
       - logic: HC7A<>1 and HC12<>1
         questionText:
           ENG: |
-            <p><span class="Qnum">HC44C.&nbsp;</span><span class="Qtxt">Thank you for your participation.</span></p><p><span class="Qtxt">The&nbsp;<span class="QtxtC">National Statistical Office</span>&nbsp;will be conducting a follow-up survey about the situation of children, families, and households in the future. We may contact you a few times over a period of a few months, for about 15 minutes at a time.</span></p><p><span class="Qtxt">Participation is voluntary. If you agree to participate now, you can still withdraw later. It will not cost you anything to participate. All the information you share during these interviews will not be shared with anyone outside our team.</span></p><p><span class="Qtxt">Would you like to participate?</span></p><p></p>
+            <p><span class="Qnum">HC44C.&nbsp;</span><span class="Qtxt">Thank you for your participation.</span></p><p><span class="Qtxt"><span class="QtxtC"><font color="#000000">The Gambia Bureau of Statistics&nbsp;</font></span>will be conducting a follow-up survey about the situation of children, families, and households in the future. We may contact you a few times over a period of a few months, for about 15 minutes at a time.</span></p><p><span class="Qtxt">Participation is voluntary. If you agree to participate now, you can still withdraw later. It will not cost you anything to participate. All the information you share during these interviews will not be shared with anyone outside our team.</span></p><p><span class="Qtxt">Would you like to participate?</span></p><p></p>
       - questionText:
           ENG: |
             <p><span class="Qnum">HC44B.&nbsp;</span><span class="Qtxt">Thank you for your participation.</span></p><p><span class="Qtxt">The&nbsp;<span class="QtxtC">National Statistical Office</span>&nbsp;will be conducting a phone survey about the situation of children, families, and households in the future. We may call a few times over a period of a few months, for about 15 minutes at a time.</span></p><p><span class="Qtxt">Participation is voluntary. If you agree to participate now, you can still withdraw later. It will not cost you anything to participate. Your phone number and all the information you share during these phone interviews will not be shared with anyone outside our team.</span></p><p><span class="Qtxt">Would you like to participate?</span></p><p></p>
