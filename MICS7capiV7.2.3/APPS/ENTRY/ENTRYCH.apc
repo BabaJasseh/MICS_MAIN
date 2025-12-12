@@ -2175,7 +2175,7 @@ preproc
 	 elseif  
 		 (IM6BD = 66 or 
 		 IM6H0D = 66 or 
-		 IM6P0D = 66 or IM6P1D = 66 or IM6P2D = 66 or IM6P3D1 = 66 or IM6P4D = 66
+		 IM6P0D = 66 or IM6P1D = 66 or IM6P2D = 66 or IM6P3D1 = 66 or IM6P4D = 66 or
 		 IM6I1D = 66 or IM6I2D = 66 or
 		 IM6PENTA1D = 66 or IM6PENTA2D = 66 and IM6PENTA3D = 66 or 
 		 IM6PCV1D = 66 or IM6PCV2D = 66 or IM6PCV3D = 66 or
