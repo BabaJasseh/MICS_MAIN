@@ -346,7 +346,7 @@ function genhtmlrow(list string htmlrow, rowtype, optional string titlebgcolor="
 end;
 
 
-function   printindivnotes(indquest,tnotes, array string allnotes(,), totnotes);
+function printindivnotes(indquest,tnotes, array string allnotes(,), totnotes);
    //indquest 0-> Household 1->woman, 2->Under 5, 3->5-17, 4->man
    list string htmlrow;
    

@@ -375,224 +375,224 @@ PROC GLOBAL
 	end;
 
 
-PROC FE1
-preproc
-	if addmode then
-		savepartial();
-	endif;
-PROC FORMFE
-preproc
-if visualvalue(HHFETSTMPS) = notappl then
-   HHFETSTMPS = timestamp (); 
-   endif; 
+// PROC FE1
+// preproc
+	// if addmode then
+		// savepartial();
+	// endif;
+// PROC FORMFE
+// preproc
+// if visualvalue(HHFETSTMPS) = notappl then
+   // HHFETSTMPS = timestamp (); 
+   // endif; 
    
 postproc
 if visualvalue(HHFETSTMPE) = notappl then
    HHFETSTMPE = timestamp (); 
    endif; 
-PROC FORMPE
-preproc
-if visualvalue(HHPETSTMPS) = notappl then
-   HHPETSTMPS = timestamp (); 
-   endif; 
+// PROC FORMPE
+// preproc
+// if visualvalue(HHPETSTMPS) = notappl then
+   // HHPETSTMPS = timestamp (); 
+   // endif; 
 
-postproc
-if visualvalue(HHPETSTMPE) = notappl then
-   HHPETSTMPE = timestamp (); 
-   endif; 
-PROC FORMST
-preproc
-if visualvalue(HHSTTSTMPS) = notappl then
-   HHSTTSTMPS = timestamp (); 
-   endif; 
+// postproc
+// if visualvalue(HHPETSTMPE) = notappl then
+   // HHPETSTMPE = timestamp (); 
+   // endif; 
+// PROC FORMST
+// preproc
+// if visualvalue(HHSTTSTMPS) = notappl then
+   // HHSTTSTMPS = timestamp (); 
+   // endif; 
 
-postproc
-if visualvalue(HHSTTSTMPE) = notappl then
-   HHSTTSTMPE = timestamp (); 
-   endif; 
-PROC PE1
-preproc
-	if addmode then
-		savepartial();
-	endif;
+// postproc
+// if visualvalue(HHSTTSTMPE) = notappl then
+   // HHSTTSTMPE = timestamp (); 
+   // endif; 
+// PROC PE1
+// preproc
+	// if addmode then
+		// savepartial();
+	// endif;
 	
 postproc
 if $ <> 1 then
 	skip to PE3;
 endif;	
-PROC PE12
-if $ <> 1 then
-	skip to PE15;
-endif;
-PROC PE15
-if $ <> 1 then
-	skip to PE18;
-endif;
-PROC PE16
-if $ <> 1 then
-	skip to PE18;
-endif;
-PROC PE20
-if $ <> 2 then
-	skip to PE22;
-endif;
-PROC PE21
-alphavar = $;
-if alphachk("ABCDEFGHIJX?") then
-	errmsg(9998);
-	reenter
-else
-	$ = alphavar;
-endif;
-{ Check "Missing" is only response }
-if pos("?",$) & alphsize > 1 then
-	errmsg(9995);
-	reenter
-endif;
-{ Display the note entry dialog box for recording "Other" answer }
-if pos("X",$)  and !inadvance() then
-	string other = editnote();
-	ensureNotBlank(other);
-endif;
-PROC PE3
-if $ <> 1 then
-	skip to PE5;
-endif;	
-PROC PE4N
-recode PE4U  ::          $ -> aok;
-		 1   :: 0:6 ,98,99 -> 1;
-		 2   :: 0:15,98,99 -> 1;
-		 3   :: 0:20,98,99 -> 1;
-		 9   ::   95,98,99 -> 1;
-			 ::            -> 0;
-endrecode;
-if !aok then
-	errmsg(9992);
-	reenter;
-endif;
-PROC PE4U
-if     $ = 1 then    worklabel=tr("number of days")
-elseif $ = 2 then    worklabel=tr("number of months")
-elseif $ = 3 then    worklabel=tr("number of years")
-else                 worklabel="95/98/99"
-endif;
-PROC PE7
-if $ <> 1 then
-	skip to PE9;
-endif;
-PROC PE9
-if $ <> 1 then
-	skip to PE11;
-endif;
-PROC ST2
-preproc
-	if addmode then
-		savepartial();
-	endif;
+// PROC PE12
+// if $ <> 1 then
+	// skip to PE15;
+// endif;
+// PROC PE15
+// if $ <> 1 then
+	// skip to PE18;
+// endif;
+// PROC PE16
+// if $ <> 1 then
+	// skip to PE18;
+// endif;
+// PROC PE20
+// if $ <> 2 then
+	// skip to PE22;
+// endif;
+// PROC PE21
+// alphavar = $;
+// if alphachk("ABCDEFGHIJX?") then
+	// errmsg(9998);
+	// reenter
+// else
+	// $ = alphavar;
+// endif;
+// { Check "Missing" is only response }
+// if pos("?",$) & alphsize > 1 then
+	// errmsg(9995);
+	// reenter
+// endif;
+// { Display the note entry dialog box for recording "Other" answer }
+// if pos("X",$)  and !inadvance() then
+	// string other = editnote();
+	// ensureNotBlank(other);
+// endif;
+// PROC PE3
+// if $ <> 1 then
+	// skip to PE5;
+// endif;	
+// PROC PE4N
+// recode PE4U  ::          $ -> aok;
+		 // 1   :: 0:6 ,98,99 -> 1;
+		 // 2   :: 0:15,98,99 -> 1;
+		 // 3   :: 0:20,98,99 -> 1;
+		 // 9   ::   95,98,99 -> 1;
+			 // ::            -> 0;
+// endrecode;
+// if !aok then
+	// errmsg(9992);
+	// reenter;
+// endif;
+// PROC PE4U
+// if     $ = 1 then    worklabel=tr("number of days")
+// elseif $ = 2 then    worklabel=tr("number of months")
+// elseif $ = 3 then    worklabel=tr("number of years")
+// else                 worklabel="95/98/99"
+// endif;
+// PROC PE7
+// if $ <> 1 then
+	// skip to PE9;
+// endif;
+// PROC PE9
+// if $ <> 1 then
+	// skip to PE11;
+// endif;
+// PROC ST2
+// preproc
+	// if addmode then
+		// savepartial();
+	// endif;
   
-postproc
-if curocc(FORMST_ROSTER) = 5 then
-	if $(5) = 1 and !inadvance() then
-		string other = editnote();
-		ensureNotBlank(other);
-	endif;
-endif;
+// postproc
+// if curocc(FORMST_ROSTER) = 5 then
+	// if $(5) = 1 and !inadvance() then
+		// string other = editnote();
+		// ensureNotBlank(other);
+	// endif;
+// endif;
 	
-if $ <> 1 then 
-	skip to next ST2
-endif;  
+// if $ <> 1 then 
+	// skip to next ST2
+// endif;  
 
-PROC ST3
-if $ <> 1 then
-	skip to next ST2
-endif;  
+// PROC ST3
+// if $ <> 1 then
+	// skip to next ST2
+// endif;  
 
-PROC ST4
-onfocus;
-valueset string ST4_valuesets;
+// PROC ST4
+// onfocus;
+// valueset string ST4_valuesets;
 
-do j=1 while j<=totocc(MODHL)
-	ST4_valuesets.add(HL2(j),edit("99",j));
-enddo;
-ST4_valuesets.add(tr("ALL MEMBERS"), "95");
-ST4_valuesets.add(tr("DK"), "98");
-ST4_valuesets.add(tr("NO RESPONSE"), "99");
-setvalueset(ST4,ST4_valuesets);
+// do j=1 while j<=totocc(MODHL)
+	// ST4_valuesets.add(HL2(j),edit("99",j));
+// enddo;
+// ST4_valuesets.add(tr("ALL MEMBERS"), "95");
+// ST4_valuesets.add(tr("DK"), "98");
+// ST4_valuesets.add(tr("NO RESPONSE"), "99");
+// setvalueset(ST4,ST4_valuesets);
 
-killfocus;
-if length(strip($))=0 then
-	errmsg(tr("Select the household members who receive/have received assistance"));
-	reenter;
-endif;
+// killfocus;
+// if length(strip($))=0 then
+	// errmsg(tr("Select the household members who receive/have received assistance"));
+	// reenter;
+// endif;
 
-if ischecked("95",$) and length(strip($))>2 then
-	errmsg(tr("Do not select ALL MEMBERS or other answers at the same time"));
-	reenter;
-endif;
-if ischecked("98",$) and length(strip($))>2 then
-	errmsg(9996);
-	reenter;
-endif;
-if ischecked("99",$) and length(strip($))>2 then
-	errmsg(9996);
-	reenter;
-endif;
+// if ischecked("95",$) and length(strip($))>2 then
+	// errmsg(tr("Do not select ALL MEMBERS or other answers at the same time"));
+	// reenter;
+// endif;
+// if ischecked("98",$) and length(strip($))>2 then
+	// errmsg(9996);
+	// reenter;
+// endif;
+// if ischecked("99",$) and length(strip($))>2 then
+	// errmsg(9996);
+	// reenter;
+// endif;
 
-if curocc()=4 then  //********DO NOT ASK THIS QUESTION FOR PENSION RETIREMENT FOND **** BE SURE IT IS THE 5TH SOCIAL TRANSFER
-   skip to ST6U;
-endif;
-PROC ST5
-onfocus;
-valueset string ST5_valuesets;
+// if curocc()=4 then  //********DO NOT ASK THIS QUESTION FOR PENSION RETIREMENT FOND **** BE SURE IT IS THE 5TH SOCIAL TRANSFER
+   // skip to ST6U;
+// endif;
+// PROC ST5
+// onfocus;
+// valueset string ST5_valuesets;
 
-do j=1 while j<=totocc(MODHL)
-	ST5_valuesets.add(HL2(j), edit("99",j));
-enddo;
-ST5_valuesets.add(tr("NO ONE IN THIS HOUSEHOLD"), "00");
-ST5_valuesets.add(tr("ALL MEMBERS"), "95");
-ST5_valuesets.add(tr("DK"), "98");
-ST5_valuesets.add(tr("NO RESPONSE"), "99");
-setvalueset(ST5,ST5_valuesets);
+// do j=1 while j<=totocc(MODHL)
+	// ST5_valuesets.add(HL2(j), edit("99",j));
+// enddo;
+// ST5_valuesets.add(tr("NO ONE IN THIS HOUSEHOLD"), "00");
+// ST5_valuesets.add(tr("ALL MEMBERS"), "95");
+// ST5_valuesets.add(tr("DK"), "98");
+// ST5_valuesets.add(tr("NO RESPONSE"), "99");
+// setvalueset(ST5,ST5_valuesets);
 
-killfocus;
-if length(strip($))=0 then
-	errmsg(tr("Select household members who are eligible to receive and collect assistance"));
-	reenter;
-endif;
+// killfocus;
+// if length(strip($))=0 then
+	// errmsg(tr("Select household members who are eligible to receive and collect assistance"));
+	// reenter;
+// endif;
 
-if ischecked("00",$) and length(strip($))>2 then
-	errmsg(tr("Do not select NO ONE IN THIS HOUSEHOLD and other answers at the same time"));
-	reenter;
-endif;
+// if ischecked("00",$) and length(strip($))>2 then
+	// errmsg(tr("Do not select NO ONE IN THIS HOUSEHOLD and other answers at the same time"));
+	// reenter;
+// endif;
 
-if ischecked("95",$) and length(strip($))>2 then
-	errmsg(tr("Do not select ALL MEMBERS and other answers at the same time"));
-	reenter;
-endif;
-if ischecked("98",$) and length(strip($))>2 then
-	errmsg(9996);
-	reenter;
-endif;
-if ischecked("99",$) and length(strip($))>2 then
-	errmsg(9996);
-	reenter;
-endif;
-PROC ST6N
-recode ST6U  ::          $ -> aok;
-		 1   :: 0:11,98,99 -> 1;
-		 2   :: 0:15,98,99 -> 1;
-		 9   ::      98,99 -> 1;
-			 ::            -> 0;
-endrecode;
-if !aok then
-	errmsg(9992);
-	reenter;
-endif;
-PROC ST6U
-if     $ = 1 then    worklabel=tr("number of months")
-elseif $ = 2 then    worklabel=tr("number of years")
-else                 worklabel="98 DK /99 NO RESPONSE"
-endif;
+// if ischecked("95",$) and length(strip($))>2 then
+	// errmsg(tr("Do not select ALL MEMBERS and other answers at the same time"));
+	// reenter;
+// endif;
+// if ischecked("98",$) and length(strip($))>2 then
+	// errmsg(9996);
+	// reenter;
+// endif;
+// if ischecked("99",$) and length(strip($))>2 then
+	// errmsg(9996);
+	// reenter;
+// endif;
+// PROC ST6N
+// recode ST6U  ::          $ -> aok;
+		 // 1   :: 0:11,98,99 -> 1;
+		 // 2   :: 0:15,98,99 -> 1;
+		 // 9   ::      98,99 -> 1;
+			 // ::            -> 0;
+// endrecode;
+// if !aok then
+	// errmsg(9992);
+	// reenter;
+// endif;
+// PROC ST6U
+// if     $ = 1 then    worklabel=tr("number of months")
+// elseif $ = 2 then    worklabel=tr("number of years")
+// else                 worklabel="98 DK /99 NO RESPONSE"
+// endif;
 PROC FL_ENTRYHH
 preproc
   
