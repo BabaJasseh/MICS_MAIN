@@ -111,9 +111,9 @@ PROC GLOBAL
 		elseif selection = 16 then
 			move to FORMAN advance;
 		elseif selection = 17 then
-			move to FORMHF advance;  		
+{			move to FORMHF advance;  		
 		endif;
-	end;
+	end;}
 
 	{ setup basic user bar }
 	function userbase();
@@ -831,13 +831,13 @@ PROC GLOBAL
 		dayOfWeek = diff % 7 + 1;
 	end;
 
-PROC FORMHF
+{PROC FORMHF
 preproc
 	if UB2 > 2 then
 		endlevel
 	endif;
 
-PROC FORMHF2
+{PROC FORMHF2
 preproc
 	clean_labels();
 	j = 0;
@@ -847,7 +847,7 @@ preproc
 		j = j + 1;
 	enddo;
 	codes(j) = 9999;
-	labels(j) = tr("NO RESPONSE");
+	labels(j) = tr("NO RESPONSE");}
 
 postproc
 	if HF15 <> 1 then
@@ -1258,7 +1258,7 @@ if $ <> 1 then
 	else
 		endlevel
 	endif;
-endif;
+endif;}
 PROC IM6P3D
 if $ in 0,44,66 then
 	IM6P3M = $;
@@ -2747,16 +2747,16 @@ if $ < 98 then
    if ($=11 and DA6A<>"A") or
       ($=12 and DA6B<>"B") or
       ($=13 and DA6C<>"C") or
-      ($=14 and DA6D<>"D") or
+      {($=14 and DA6D<>"D") or}
       ($=15 and DA6E<>"E") or
       ($=16 and DA6G<>"G") or
       ($=21 and DA6H<>"H") or
       ($=22 and DA6I<>"I") or
       ($=23 and DA6J<>"J") or
-      ($=24 and DA6K<>"K") or 
+      {($=24 and DA6K<>"K") or} 
       ($=25 and DA6L<>"L") or
       ($=26 and DA6N<>"N") or
-      ($=31 and DA6O<>"O") or
+      {($=31 and DA6O<>"O") or}
       ($=32 and DA6P<>"P") or 
       ($=36 and DA6Q<>"Q") or
       ($=76 and DA6W<>"W") or
@@ -2861,16 +2861,16 @@ if $ < 98 then
    if ($=11 and AR5A<>"A") or
       ($=12 and AR5B<>"B") or
       ($=13 and AR5C<>"C") or
-      ($=14 and AR5D<>"D") or
+      {($=14 and AR5D<>"D") or}
       ($=15 and AR5E<>"E") or
       ($=16 and AR5G<>"G") or
       ($=21 and AR5H<>"H") or
       ($=22 and AR5I<>"I") or
       ($=23 and AR5J<>"J") or
-      ($=24 and AR5K<>"K") or 
+      {($=24 and AR5K<>"K") or} 
       ($=25 and AR5L<>"L") or
       ($=26 and AR5N<>"N") or
-      ($=31 and AR5O<>"O") or
+      {($=31 and AR5O<>"O") or}
       ($=32 and AR5P<>"P") or 
       ($=36 and AR5Q<>"Q") or
       ($=76 and AR5W<>"W") or
@@ -2974,7 +2974,7 @@ if $ < 98 then
       ($=21 and MC5H<>"H") or
       ($=22 and MC5I<>"I") or
       ($=23 and MC5J<>"J") or
-      ($=24 and MC5K<>"K") or 
+      {($=24 and MC5K<>"K") or} 
       ($=25 and MC5L<>"L") or
       ($=26 and MC5N<>"N") or
       ($=31 and MC5O<>"O") or
