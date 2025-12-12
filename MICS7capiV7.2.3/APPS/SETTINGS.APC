@@ -29,7 +29,7 @@ numeric menselection=1;  // This variable is used to determine if men are interv
 						 // 1->men are interviewed
 						 // 0->men are not interviewed
 
-numeric BTSyncMode=1;	//This variable is used to determine if the Bluetooth name of the tables contains
+numeric BTSyncMode=2;	//This variable is used to determine if the Bluetooth name of the tables contains
 						//the staff code of its user (BTname=IDnnn). The options are:
 						// 1->tablet BT name is IDnnn, where nnn is the staff code of the user. This name
 						//    was created by the MENU system when the tablet was assigned to the user.

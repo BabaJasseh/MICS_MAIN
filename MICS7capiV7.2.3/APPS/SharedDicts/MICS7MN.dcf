@@ -59,7 +59,7 @@ Value=1:50
 Label=Man's Information Panel
 Name=MODMWM
 RecordTypeValue='MWM'
-RecordLen=74
+RecordLen=76
 
 [Item]
 Label=Man's name
@@ -291,14 +291,12 @@ ZeroFill=Yes
 Label=Language of the questionnaire
 Name=MWM12_VST
 Value=1;ENGLISH
-Value=2;LANGUAGE 2
-Value=3;LANGUAGE 3
 
 [Item]
 Label=Language of the interview
 Name=MWM13
 Start=64
-Len=1
+Len=2
 DataType=Numeric
 ZeroFill=Yes
 
@@ -306,30 +304,44 @@ ZeroFill=Yes
 Label=Language of the interview
 Name=MWM13_VST
 Value=1;ENGLISH
-Value=2;LANGUAGE 2
-Value=3;LANGUAGE 3
-Value=6;OTHER LANGUAGE
+Value=2;MANDINKA/JAHANKA
+Value=3;WOLLOF
+Value=4;FULA/TUKULOR/LOROBO/
+Value=5;JOLA/KARONINKA
+Value=6;SARAHULE
+Value=7;SERERE
+Value=8;MANJAGO
+Value=9;KRIO/AKU MARABOUT
+Value=10;BAMBARA
+Value=96;OTHER LANGUAGE
 
 [Item]
 Label=Native language of the respondent
 Name=MWM14
-Start=65
-Len=1
+Start=66
+Len=2
 DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
 Label=Native language of the respondent
-Name=MWM14_VST
+Name=MWM14_VS1
 Value=1;ENGLISH
-Value=2;LANGUAGE 2
-Value=3;LANGUAGE 3
-Value=6;OTHER LANGUAGE
+Value=2;MANDINKA/JAHANKA
+Value=3;WOLLOF
+Value=4;FULA/TUKULOR/LOROBO/
+Value=5;JOLA/KARONINKA
+Value=6;SARAHULE
+Value=7;SERERE
+Value=8;MANJAGO
+Value=9;KRIO/AKU MARABOUT
+Value=10;BAMBARA
+Value=96;OTHER LANGUAGE
 
 [Item]
 Label=Translator used
 Name=MWM15
-Start=66
+Start=68
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -344,7 +356,7 @@ Value=3;NO, NOT USED
 [Item]
 Label=Has been interviewed for any individual questionnaires
 Name=MWM15C
-Start=67
+Start=69
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -358,7 +370,7 @@ Value=2;NO, NOT ALREADY INTERVIEWED
 [Item]
 Label=Consent for phone survey
 Name=MWM15EF
-Start=68
+Start=70
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -372,7 +384,7 @@ Value=2;NO
 [Item]
 Label=Have personal phone number or phone number for the household
 Name=MWM15GH
-Start=69
+Start=71
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -386,7 +398,7 @@ Value=2;NO
 [Item]
 Label=Note on sharing phone number for the household
 Name=MWM15I
-Start=70
+Start=72
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -399,7 +411,7 @@ Value=1;CONTINUE
 [Item]
 Label=Household interviewer
 Name=MWMHINT
-Start=71
+Start=73
 Len=3
 DataType=Numeric
 ZeroFill=Yes
@@ -407,7 +419,7 @@ ZeroFill=Yes
 [Item]
 Label=Finish
 Name=MWMFIN
-Start=74
+Start=76
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -501,7 +513,7 @@ ZeroFill=Yes
 [ValueSet]
 Label=Born in this country or another one
 Name=MWB5_VS1
-Value=1;THIS COUNTRY
+Value=1;THE GAMBIA
 Value=2;OTHER COUNTRY
 Value=8;DK
 Value=9;NO RESPONSE
@@ -517,11 +529,14 @@ ZeroFill=Yes
 [ValueSet]
 Label=Region of birth
 Name=MWB5A_VS1
-Value=1;REGION 1
-Value=2;REGION 2
-Value=3;REGION 3
-Value=4;REGION 4
-Value=5;REGION 5
+Value=1;BANJUL
+Value=2;KANIFING
+Value=3;BRIKAMA
+Value=4;MANSAKONKO
+Value=5;KEREWAN
+Value=6;KUNTAUR
+Value=7;JANJANBUREH
+Value=8;BASSE
 Value=98;DK
 Value=99;NO RESPONSE
 
@@ -1681,7 +1696,7 @@ Label=Migration
 Name=MODMMG
 RecordTypeValue='MMG'
 Required=No
-RecordLen=20
+RecordLen=21
 
 [Item]
 Label=Time lived in current city/town/village
@@ -1709,17 +1724,25 @@ ZeroFill=Yes
 [ValueSet]
 Label=Type of place before move
 Name=MWB9_VS1
-Value=1;CITY
-Value=2;TOWN
+Value=1;BANJUL
+Value=2;OTHER TOWN
 Value=3;RURAL AREA
 Value=5;UNABLE TO DETERMINE IF CITY/TOWN/RURAL
-Value=8;DK/ DON'T REMEMBER
+Value=8;OUTSIDE THE GAMBIA (SPECIFY)
 Value=9;NO RESPONSE
+
+[Item]
+Label=Other Country
+Name=MWB9_OTH
+Start=19
+Len=1
+DataType=Numeric
+ZeroFill=Yes
 
 [Item]
 Label=Region lived before move
 Name=MWB10
-Start=19
+Start=20
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -1727,11 +1750,14 @@ ZeroFill=Yes
 [ValueSet]
 Label=Region lived before move
 Name=MWB10_VS1
-Value=1;REGION 1
-Value=2;REGION 2
-Value=3;REGION 3
-Value=4;REGION 4
-Value=5;REGION 5
+Value=1;BANJUL
+Value=2;KANIFING
+Value=3;BRIKAMA
+Value=4;MANSAKONKO
+Value=5;KEREWAN
+Value=6;KUNTAUR
+Value=7;JANJANBUREH
+Value=8;BASSE
 Value=96;OUTSIDE OF COUNTRY
 Value=99;NO RESPONSE
 
@@ -1767,27 +1793,11 @@ DataType=Alpha
 [ValueSet]
 Label=Type of health insurance
 Name=MIN2_VS1
-Value='A     ';MUTUAL HEALTH ORGANIZATION / COMMUNITY-BASED HEALTH INSURANCE
 Value='B     ';HEALTH INSURANCE THROUGH EMPLOYER
-Value='C     ';SOCIAL SECURITY
+Value='C     ';NATIONAL HEALTH INSURANCE AUTHORITY (NHIA)
 Value='D     ';OTHER PRIVATELY PURCHASED COMMERCIAL HEALTH INSURANCE
 Value='X     ';OTHER
 Value='?     ';NO RESPONSE
-
-[Item]
-Label=Type of health insurance - Mutual-health organization / Community-based health insurance
-Name=MIN2A
-Start=17
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Type of health insurance - Mutual-health organization / Community-based health insurance
-Name=MIN2A_VS1
-Value='A';MUTUAL HEALTH ORGANIZATION / COMMUNITY-BASED HEALTH INSURANCE
-Value=' '
-Value='?';NO RESPONSE
 
 [Item]
 Label=Type of health insurance - Health insurance through employer
@@ -1815,7 +1825,7 @@ DataType=Alpha
 [ValueSet]
 Label=Type of health insurance - Social security
 Name=MIN2C_VS1
-Value='C';SOCIAL SECURITY
+Value='C';NATIONAL HEALTH INSURANCE AUTHORITY (NHIA)
 Value=' '
 Value='?';NO RESPONSE
 
@@ -1862,396 +1872,6 @@ Label=Type of health insurance - No response
 Name=MIN2NR_VS1
 Value='?';NO RESPONSE
 Value=' '
-
-[Record]
-Label=Employment and Training
-Name=MODMNE
-RecordTypeValue='MNE'
-Required=No
-RecordLen=40
-
-[Item]
-Label=In the past 4 weeks: Attended school
-Name=MNE3
-Start=16
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 4 weeks: Attended school
-Name=MNE3_VS1
-Value=1;YES
-Value=2;NO
-Value=3;NO, FULL-TIME STUDENT ON SCHOOL BREAK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 4 weeks: Participated in any unpaid activity in a workplace
-Name=MNE4
-Start=17
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 4 weeks: Participated in any unpaid activity in a workplace
-Name=MNE4_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Within last one year: Participated in any unpaid activity in a workplace
-Name=MNE5
-Start=18
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Within last one year: Participated in any unpaid activity in a workplace
-Name=MNE5_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 4 weeks: Attended courses, seminars or training
-Name=MNE6
-Start=19
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 4 weeks: Attended courses, seminars or training
-Name=MNE6_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Within last one year: Attended courses, seminars or training
-Name=MNE7
-Start=20
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Within last one year: Attended courses, seminars or training
-Name=MNE7_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Last week: Did paid work
-Name=MNE8
-Start=21
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Last week: Did paid work
-Name=MNE8_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Last week: Ran or did kind of business, farming or other activity
-Name=MNE9
-Start=22
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Last week: Ran or did kind of business, farming or other activity
-Name=MNE9_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Last week: Helped in a family business or farm
-Name=MNE10
-Start=23
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Last week: Helped in a family business or farm
-Name=MNE10_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Last week: Had an absence to the paid job
-Name=MNE11
-Start=24
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Last week: Had an absence to the paid job
-Name=MNE11_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Last week reason for absence: Due to a shift work, flexi time
-Name=MNE12A
-Start=25
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Last week reason for absence: Due to a shift work, flexi time
-Name=MNE12A_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Last week reason for absence: Were on vacation
-Name=MNE12B
-Start=26
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Last week reason for absence: Were on vacation
-Name=MNE12B_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Last week reason for absence: Sick, ill, suffered an ancident
-Name=MNE12C
-Start=27
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Last week reason for absence: Sick, ill, suffered an ancident
-Name=MNE12C_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Last week reason for absence: On paternal leave
-Name=MNE12D
-Start=28
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Last week reason for absence: On paternal leave
-Name=MNE12D_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Last week reason for absence: Waiting to start new job or business
-Name=MNE13
-Start=29
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Last week reason for absence: Waiting to start new job or business
-Name=MNE13_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Last week reason for absence: Job/Business was in low or off-season
-Name=MNE14
-Start=30
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Last week reason for absence: Job/Business was in low or off-season
-Name=MNE14_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=During the low or off-season contines to do some work for that job / business
-Name=MNE15
-Start=31
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=During the low or off-season contines to do some work for that job / business
-Name=MNE15_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Will return to same job / business in 3 months or less
-Name=MNE16
-Start=32
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Will return to same job / business in 3 months or less
-Name=MNE16_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=Continue to receive an income from the job / business during this absence
-Name=MNE17
-Start=33
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Continue to receive an income from the job / business during this absence
-Name=MNE17_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=Work: Farming or rearing farm animals
-Name=MNE18A
-Start=34
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Work: Farming or rearing farm animals
-Name=MNE18A_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Work: Fishing or fishing farming
-Name=MNE18B
-Start=35
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Work: Fishing or fishing farming
-Name=MNE18B_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Work: Another type of business
-Name=MNE18X
-Start=36
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Work: Another type of business
-Name=MNE18X_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Last week: Did farming, raring animals, fishing or fish farming
-Name=MNE20
-Start=37
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Last week: Did farming, raring animals, fishing or fish farming
-Name=MNE20_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Products from work: Intention for sale
-Name=MNE21
-Start=38
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Products from work: Intention for sale
-Name=MNE21_VS1
-Value=1;ONLY FOR SALE
-Value=2;MAINLY FOR SALE
-Value=3;MAINLY FOR FAMILY USE
-Value=4;ONLY FOR FAMILY USE
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=Products from work: Type of sale
-Name=MNE22
-Start=39
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Products from work: Type of sale
-Name=MNE22_VS1
-Value=1;ONLY SOLD
-Value=2;MAINLY SOLD
-Value=3;MAINLY KEPT FOR FAMILY USE
-Value=4;ONLY KEPT FOR FAMILY USE
-Value=9;NO RESPONSE
-
-[Item]
-Label=Hired by someone else to do this work
-Name=MNE23
-Start=40
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Hired by someone else to do this work
-Name=MNE23_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
 
 [Record]
 Label=ICT Use
@@ -2537,637 +2157,263 @@ Value=3;ALMOST EVERY DAY
 Value=9;NO RESPONSE
 
 [Record]
-Label=Time Use
-Name=MODMTU1
-RecordTypeValue='MTX'
+Label=Fertility
+Name=MODMCM
+RecordTypeValue='MCM'
 Required=No
-RecordLen=27
+RecordLen=45
 
 [Item]
-Label=Introduction
-Name=MTU3
+Label=Ever fathered a child
+Name=MCM1
 Start=16
 Len=1
 DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Introduction
-Name=MTU3_VS1
-Value=1;CONTINUE
+Label=Ever fathered a child
+Name=MCM1_VST
+Value=1;YES
+Value=2;NO
+Value=8;DK
 
 [Item]
-Label=Time woke up yesterday
-Name=MTU4
+Label=Any sons or daughters living with you
+Name=MCM2
 Start=17
-Len=5
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Time woke up yesterday - Hour
-Name=MTU4H
-Start=17
-Len=2
-ItemType=SubItem
+Len=1
 DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Time woke up yesterday - Hour
-Name=MTU4H_VS1
-Value=0:23
-Value='  '
-Name=NOTAPPL,Special
+Label=Any sons or daughters living with you
+Name=MCM2_VST
+Value=1;YES
+Value=2;NO
 
 [Item]
-Label=Time woke up yesterday - Decimal
-Name=MTU4DEC
-Start=19
-Len=1
-ItemType=SubItem
-DataType=Alpha
+Label=Sons living with you
+Name=MCM3
+Start=18
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Sons living with you
+Name=MCM3_VST
+Value=0:20
 
 [Item]
-Label=Time woke up yesterday - Minutes
-Name=MTU4M
+Label=Daughters living with you
+Name=MCM4
 Start=20
 Len=2
-ItemType=SubItem
 DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Time woke up yesterday - Minutes
-Name=MTU4M_VS1
-Value=0:59
-Value='  '
-Name=NOTAPPL,Special
+Label=Daughters living with you
+Name=MCM4_VST
+Value=0:20
 
 [Item]
-Label=Time went to sleep yesterday
-Name=MTU5
+Label=Any sons or daughters not living with you
+Name=MCM5
 Start=22
-Len=5
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Time went to sleep yesterday - Hour
-Name=MTU5H
-Start=22
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Time went to sleep yesterday - Hour
-Name=MTU5H_VS1
-Value=0:23
-Value='  '
-Name=NOTAPPL,Special
-
-[Item]
-Label=Time went to sleep yesterday - Decimal
-Name=MTU5DEC
-Start=24
 Len=1
-ItemType=SubItem
-DataType=Alpha
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Any sons or daughters not living with you
+Name=MCM5_VST
+Value=1;YES
+Value=2;NO
 
 [Item]
-Label=Time went to sleep yesterday - Minutes
-Name=MTU5M
+Label=Sons living elsewhere
+Name=MCM6
+Start=23
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Sons living elsewhere
+Name=MCM6_VST
+Value=0:20
+
+[Item]
+Label=Daughters living elsewhere
+Name=MCM7
 Start=25
 Len=2
-ItemType=SubItem
 DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Time went to sleep yesterday - Minutes
-Name=MTU5M_VS1
-Value=0:59
-Value='  '
-Name=NOTAPPL,Special
+Label=Daughters living elsewhere
+Name=MCM7_VST
+Value=0:20
 
 [Item]
-Label=Did anything else other than mentioned
-Name=MTU18
+Label=Ever had child who later died
+Name=MCM8
 Start=27
 Len=1
 DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Did anything else other than mentioned
-Name=MTU18_VS1
-Value=0;Show list of activities to read them
+Label=Ever had child who later died
+Name=MCM8_VST
 Value=1;YES
 Value=2;NO
 
-[Record]
-Label=Time Use Activities
-Name=MODMTU2
-RecordTypeValue='MTU'
-Required=No
-MaxRecords=100
-RecordLen=83
-
 [Item]
-Label=Activity order
-Name=MTU6
-Start=16
-Len=3
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Activity code
-Name=MTU7
-Start=19
-Len=3
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Activity code
-Name=MTU7_VS1
-Value=10;SLEEPING
-Value=20;EATING AND DRINKING
-Value=30;TAKING CARE OF PERSONAL HYGIENE AND HEALTH CARE
-Value=41;SCHOOL ATTENDANCE (IN PERSON) - FORMAL EDUCATION
-Value=42;SCHOOL ATTENDANCE (REMOTE) - FORMAL EDUCATION
-Value=43;HOMEWORK AND STUDYING AFTER SCHOOL HOURS - FORMAL EDUCATION
-Value=44;TRAVEL TO / FROM SCHOOL - FORMAL EDUCATION
-Value=51;SOCIAL RELATIONSHIPS - IN-PERSON, FACE-TO-FACE
-Value=52;SOCIAL RELATIONSHIPS - USING SOCIAL MEDIA AND CHAT-BASED PLATFORMS
-Value=60;WORK ACTIVITIES AND CHORES
-Value=70;PLAYING (EXCLUDING GAMING)
-Value=80;GAMING
-Value=90;WATCHING TV SHOWS OR MOVIES AS ENTERTAINMENT
-Value=100;SOCIAL MEDIA AS ENTERTAINMENT
-Value=110;FOLLOWING THE NEWS
-Value=120;CIVIC ENGAGEMENT ACTIVITIES
-Value=130;ARTS, CRAFTS, AND OTHER CREATIVE ACTIVITIES
-Value=140;PLAYING SPORTS, EXERCISING AND PHYSICAL ACTIVITY
-Value=150;READING FOR LEISURE
-Value=996;OTHER  ACTIVITIES NOT CAPTURED ELSEWHERE
-
-[Item]
-Label=Activity label
-Name=MTU7A
-Start=22
-Len=30
-DataType=Alpha
-
-[Item]
-Label=Activity start time
-Name=MTU8
-Start=52
-Len=5
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[ValueSet]
-Label=Activity start time
-Name=MTU8_VS1
-Value=0.00:23.59
-Value='     '
-Name=NOTAPPL,Special
-
-[Item]
-Label=Activity start time - Hour
-Name=MTU8H
-Start=52
+Label=Boys dead
+Name=MCM9
+Start=28
 Len=2
-ItemType=SubItem
 DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Activity start time - Hour
-Name=MTU8H_VS1
-Value=0:23
-Value='  '
-Name=NOTAPPL,Special
+Label=Boys dead
+Name=MCM9_VST
+Value=0:20
 
 [Item]
-Label=Activity start time - Decimal
-Name=MTU8DEC
-Start=54
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[Item]
-Label=Activity start time - Minutes
-Name=MTU8M
-Start=55
+Label=Girls dead
+Name=MCM10
+Start=30
 Len=2
-ItemType=SubItem
 DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Activity start time - Minutes
-Name=MTU8M_VS1
-Value=0:59
-Value='  '
-Name=NOTAPPL,Special
+Label=Girls dead
+Name=MCM10_VST
+Value=0:20
 
 [Item]
-Label=Duration and End Time
-Name=MTU9X
-Start=57
+Label=Children ever fathered
+Name=MCM11
+Start=32
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Children ever fathered
+Name=MCM11_VST
+Value=0:20
+
+[Item]
+Label=Confirm total number of children ever fathered
+Name=MCM12
+Start=34
 Len=1
 DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Duration and End Time
-Name=MTU9X_VS1
-Value=1;DURATION
-Value=2;END TIME
+Label=Confirm total number of children ever fathered
+Name=MCM12_VST
+Value=1;YES
+Value=2;NO
 
 [Item]
-Label=Duration of activity
-Name=MTU9
-Start=58
-Len=5
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Duration of activity - Hour
-Name=MTU9H
-Start=58
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Duration of activity - Hour
-Name=MTU9H_VS1
-Value=0:23
-Value='  '
-Name=NOTAPPL,Special
-
-[Item]
-Label=Duration of activity - Decimal
-Name=MTU9DEC
-Start=60
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[Item]
-Label=Duration of activity - Minutes
-Name=MTU9M
-Start=61
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Duration of activity - Minutes
-Name=MTU9M_VS1
-Value=0:59
-Value='  '
-Name=NOTAPPL,Special
-
-[Item]
-Label=Activity end time
-Name=MTU10
-Start=63
-Len=5
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Activity end time - Hour
-Name=MTU10H
-Start=63
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Activity end time - Hour
-Name=MTU10H_VS1
-Value=0:23
-Value='  '
-Name=NOTAPPL,Special
-
-[Item]
-Label=Activity end time - Decimal
-Name=MTU10DEC
-Start=65
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[Item]
-Label=Activity end time - Minutes
-Name=MTU10M
-Start=66
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Activity end time - Minutes
-Name=MTU10M_VS1
-Value=0:59
-Value='  '
-Name=NOTAPPL,Special
-
-[Item]
-Label=Played online
-Name=MTU12
-Start=68
+Label=Same biological mother
+Name=MCM15
+Start=35
 Len=1
 DataType=Numeric
-ZeroFill=Yes
 
 [ValueSet]
-Label=Played online
-Name=MTU12_VS1
+Label=Same biological mother
+Name=MCM15_VST
 Value=1;YES
 Value=2;NO
 Value=9;NO RESPONSE
 
 [Item]
-Label=Played with whom
-Name=MTU13
-Start=69
-Len=5
-DataType=Alpha
-
-[ValueSet]
-Label=Played with whom
-Name=MTU13_VS1
-Value='A    ';ALONE (ONLINE / OFFLINE)
-Value='B    ';WITH FRIENDS IN PERSON (ONLINE / OFFLINE)
-Value='C    ';WITH FRIENDS ONLINE
-Value='D    ';WITH OTHERS ONLINE
-Value='?    ';NO RESPONSE
-
-[Item]
-Label=Played with whom - Alone
-Name=MTU13A
-Start=69
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Played with whom - Alone
-Name=MTU13A_VS1
-Value='A';ALONE (ONLINE / OFFLINE)
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Played with whom - With friends in person
-Name=MTU13B
-Start=70
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Played with whom - With friends in person
-Name=MTU13B_VS1
-Value='B';WITH FRIENDS IN PERSON (ONLINE / OFFLINE)
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Played with whom - With friends online
-Name=MTU13C
-Start=71
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Played with whom - With friends online
-Name=MTU13C_VS1
-Value='C';WITH FRIENDS ONLINE
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Played with whom - With others online
-Name=MTU13D
-Start=72
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Played with whom - With others online
-Name=MTU13D_VS1
-Value='D';WITH OTHERS ONLINE
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Played with whom - No response
-Name=MTU13NR
-Start=73
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Played with whom - No response
-Name=MTU13NR_VS1
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Watched online
-Name=MTU14
-Start=74
-Len=1
+Label=Number of women respondent fathered children with
+Name=MCM16
+Start=36
+Len=2
 DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Watched online
-Name=MTU14_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
+Label=Number of women respondent fathered children with
+Name=MCM16_VST
+Value=2:15
+Value=99;NO RESPONSE
 
 [Item]
-Label=Got the news online
-Name=MTU15
-Start=75
-Len=1
+Label=Age when first child was born
+Name=MCM17
+Start=38
+Len=2
+DataType=Numeric
+
+[ValueSet]
+Label=Age when first child was born
+Name=MCM17_VST
+Value=10:80
+Value=99;NO RESPONSE
+
+[Item]
+Label=Date of last birth
+Name=MCM18
+Start=40
+Len=6
+DataType=Numeric
+ZeroFill=Yes
+
+[Item]
+Label=Month of last birth
+Name=MCM18M
+Start=40
+Len=2
+ItemType=SubItem
 DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Got the news online
-Name=MTU15_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
+Label=Month of last birth
+Name=MCM18M_VST
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=99;NO RESPONSE
 
 [Item]
-Label=Engaged in the civic activities online
-Name=MTU16
-Start=76
-Len=1
+Label=Year of last birth
+Name=MCM18Y
+Start=42
+Len=4
+ItemType=SubItem
 DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Engaged in the civic activities online
-Name=MTU16_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=How lessons delivered
-Name=MTU17
-Start=77
-Len=7
-DataType=Alpha
-
-[ValueSet]
-Label=How lessons delivered
-Name=MTU17_VS1
-Value='A      ';SELF-STUDY WITH MATERIALS PROVIDED BY SCHOOL / TEACHERS
-Value='B      ';RADIO-BASED LESSON
-Value='C      ';TV-BASED LESSON
-Value='D      ';INTERNET-BASED LESSON
-Value='E      ';FACE-TO-FACE LESSON (AT CHILD’S HOME OR OUTSIDE SCHOOL)
-Value='X      ';OTHER
-Value='?      ';NO RESPONSE
-
-[Item]
-Label=How lessons delivered - Self study
-Name=MTU17A
-Start=77
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=How lessons delivered - Self study
-Name=MTU17A_VS1
-Value='A';SELF-STUDY WITH MATERIALS PROVIDED BY SCHOOL / TEACHERS
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=How lessons delivered - Radio-based lesson
-Name=MTU17B
-Start=78
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=How lessons delivered - Radio-based lesson
-Name=MTU17B_VS1
-Value='B';RADIO-BASED LESSON
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=How lessons delivered - TV-based lesson
-Name=MTU17C
-Start=79
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=How lessons delivered - TV-based lesson
-Name=MTU17C_VS1
-Value='C';TV-BASED LESSON
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=How lessons delivered - Internet-based lesson
-Name=MTU17D
-Start=80
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=How lessons delivered - Internet-based lesson
-Name=MTU17D_VS1
-Value='D';INTERNET-BASED LESSON
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=How lessons delivered - Face-to-face lesson
-Name=MTU17E
-Start=81
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=How lessons delivered - Face-to-face lesson
-Name=MTU17E_VS1
-Value='E';FACE-TO-FACE LESSON (AT CHILD’S HOME OR OUTSIDE SCHOOL)
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=How lessons delivered - Other
-Name=MTU17X
-Start=82
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=How lessons delivered - Other
-Name=MTU17X_VS1
-Value='X';OTHER
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=How lessons delivered - No response
-Name=MTU17NR
-Start=83
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=How lessons delivered - No response
-Name=MTU17NR_VS1
-Value=' '
-Value='?';NO RESPONSE
+Label=Year of last birth
+Name=MCM18Y_VST
+Value=1978:2018
+Value=9999;NO RESPONSE
 
 [Record]
 Label=Attitudes Toward Domestic Violence
@@ -3251,433 +2497,6 @@ ZeroFill=Yes
 [ValueSet]
 Label=If she burns the food: wife beating justified
 Name=MDV1E_VST
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Record]
-Label=Safety / Discrimination
-Name=MODMVT
-RecordTypeValue='MVT'
-Required=No
-RecordLen=41
-
-[Item]
-Label=Feeling safe walking alone in neighbourhood after dark
-Name=MVT20
-Start=16
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Feeling safe walking alone in neighbourhood after dark
-Name=MVT20_VST
-Value=1;VERY SAFE
-Value=2;SAFE
-Value=3;UNSAFE
-Value=4;VERY UNSAFE
-Value=7;NEVER WALK ALONE AFTER DARK
-Value=9;NO RESPONSE
-
-[Item]
-Label=Feeling safe at home alone after dark
-Name=MVT21
-Start=17
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Feeling safe at home alone after dark
-Name=MVT21_VST
-Value=1;VERY SAFE
-Value=2;SAFE
-Value=3;UNSAFE
-Value=4;VERY UNSAFE
-Value=7;NEVER ALONE AFTER DARK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 3 years, felt discriminated: Sex
-Name=MVT23A
-Start=18
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 3 years, felt discriminated: Sex
-Name=MVT23A_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 1 year, felt discriminated: Sex
-Name=MVT23A1
-Start=19
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 1 year, felt discriminated: Sex
-Name=MVT23A1_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 3 years, felt discriminated: Age
-Name=MVT23B
-Start=20
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 3 years, felt discriminated: Age
-Name=MVT23B_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 1 year, felt discriminated: Age
-Name=MVT23B1
-Start=21
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 1 year, felt discriminated: Age
-Name=MVT23B1_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 3 years, felt discriminated: Disability
-Name=MVT23C
-Start=22
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 3 years, felt discriminated: Disability
-Name=MVT23C_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 1 year, felt discriminated: Disability
-Name=MVT23C1
-Start=23
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 1 year, felt discriminated: Disability
-Name=MVT23C1_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 3 years, felt discriminated: Ethnicity, Race
-Name=MVT23D
-Start=24
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 3 years, felt discriminated: Ethnicity, Race
-Name=MVT23D_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 1 year, felt discriminated: Ethnicity, Race
-Name=MVT23D1
-Start=25
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 1 year, felt discriminated: Ethnicity, Race
-Name=MVT23D1_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 3 years, felt discriminated: Migration status
-Name=MVT23E
-Start=26
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 3 years, felt discriminated: Migration status
-Name=MVT23E_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 1 year, felt discriminated: Migration status
-Name=MVT23E1
-Start=27
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 1 year, felt discriminated: Migration status
-Name=MVT23E1_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 3 years, felt discriminated: Socio-Economic status
-Name=MVT23F
-Start=28
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 3 years, felt discriminated: Socio-Economic status
-Name=MVT23F_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 1 year, felt discriminated: Socio-Economic status
-Name=MVT23F1
-Start=29
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 1 year, felt discriminated: Socio-Economic status
-Name=MVT23F1_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 3 years, felt discriminated: Geographic location
-Name=MVT23G
-Start=30
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 3 years, felt discriminated: Geographic location
-Name=MVT23G_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 1 year, felt discriminated: Geographic location
-Name=MVT23G1
-Start=31
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 1 year, felt discriminated: Geographic location
-Name=MVT23G1_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 3 years, felt discriminated: Religion
-Name=MVT23H
-Start=32
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 3 years, felt discriminated: Religion
-Name=MVT23H_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 1 year, felt discriminated: Religion
-Name=MVT23H1
-Start=33
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 1 year, felt discriminated: Religion
-Name=MVT23H1_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 3 years, felt discriminated: Marital status
-Name=MVT23I
-Start=34
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 3 years, felt discriminated: Marital status
-Name=MVT23I_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 1 year, felt discriminated: Marital status
-Name=MVT23I1
-Start=35
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 1 year, felt discriminated: Marital status
-Name=MVT23I1_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 3 years, felt discriminated: Sexual orientation, Gender
-Name=MVT23J
-Start=36
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 3 years, felt discriminated: Sexual orientation, Gender
-Name=MVT23J_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 1 year, felt discriminated: Sexual orientation, Gender
-Name=MVT23J1
-Start=37
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 1 year, felt discriminated: Sexual orientation, Gender
-Name=MVT23J1_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 3 years, felt discriminated: Political opinion
-Name=MVT23K
-Start=38
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 3 years, felt discriminated: Political opinion
-Name=MVT23K_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 1 year, felt discriminated: Political opinion
-Name=MVT23K1
-Start=39
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 1 year, felt discriminated: Political opinion
-Name=MVT23K1_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 3 years, felt discriminated: Other
-Name=MVT23X
-Start=40
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 3 years, felt discriminated: Other
-Name=MVT23X_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past 1 years, felt discriminated: Other
-Name=MVT23X2
-Start=41
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past 1 years, felt discriminated: Other
-Name=MVT23X1_VS2
 Value=1;YES
 Value=2;NO
 Value=8;DK
@@ -3884,1523 +2703,6 @@ DataType=Numeric
 ZeroFill=Yes
 
 [Record]
-Label=Adult Functioning
-Name=MODMAF
-RecordTypeValue='MAF'
-Required=No
-RecordLen=29
-
-[Item]
-Label=Use glasses or contact lenses
-Name=MAF2
-Start=16
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Use glasses or contact lenses
-Name=MAF2_VST
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Use hearing aid
-Name=MAF3
-Start=17
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Use hearing aid
-Name=MAF3_VST
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Difficulty seeing, even if wearing glasses or contact lenses
-Name=MAF6
-Start=18
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Difficulty seeing, even if wearing glasses or contact lenses
-Name=MAF6_VST
-Value=1;NO DIFFICULTY
-Value=2;SOME DIFFICULTY
-Value=3;A LOT OF DIFFICULTY
-Value=4;CANNOT SEE AT ALL
-Value=9;NO RESPONSE
-
-[Item]
-Label=Difficulty hearing, even if using a hearing aid
-Name=MAF8
-Start=19
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Difficulty hearing, even if using a hearing aid
-Name=MAF8_VST
-Value=1;NO DIFFICULTY
-Value=2;SOME DIFFICULTY
-Value=3;A LOT OF DIFFICULTY
-Value=4;CANNOT HEAR AT ALL
-Value=9;NO RESPONSE
-
-[Item]
-Label=Difficulty walking or climbing steps
-Name=MAF9
-Start=20
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Difficulty walking or climbing steps
-Name=MAF9_VST
-Value=1;NO DIFFICULTY
-Value=2;SOME DIFFICULTY
-Value=3;A LOT OF DIFFICULTY
-Value=4;CANNOT WALK / CLIMB STEPS AT ALL
-Value=9;NO RESPONSE
-
-[Item]
-Label=Difficulty remembering or concentrating
-Name=MAF10
-Start=21
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Difficulty remembering or concentrating
-Name=MAF10_VST
-Value=1;NO DIFFICULTY
-Value=2;SOME DIFFICULTY
-Value=3;A LOT OF DIFFICULTY
-Value=4;CANNOT REMEMBER / CONCENTRATE AT ALL
-Value=9;NO RESPONSE
-
-[Item]
-Label=Difficulty with self-care, such as washing all over or dressing
-Name=MAF11
-Start=22
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Difficulty with self-care, such as washing all over or dressing
-Name=MAF11_VST
-Value=1;NO DIFFICULTY
-Value=2;SOME DIFFICULTY
-Value=3;A LOT OF DIFFICULTY
-Value=4;CANNOT CARE FOR SELF AT ALL
-Value=9;NO RESPONSE
-
-[Item]
-Label=Difficulty communicating
-Name=MAF12
-Start=23
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Difficulty communicating
-Name=MAF12_VST
-Value=1;NO DIFFICULTY
-Value=2;SOME DIFFICULTY
-Value=3;A LOT OF DIFFICULTY
-Value=9;NO RESPONSE
-
-[Item]
-Label=Difficulty with raising 2 litre of water/soda from waist to eye level
-Name=MAF13
-Start=24
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Difficulty with raising 2 litre of water/soda from waist to eye level
-Name=MAF13_VS1
-Value=1;NO DIFFICULTY
-Value=2;SOME DIFFICULTY
-Value=3;A LOT OF DIFFICULTY
-Value=4;CANNOT RAISE AT ALL
-Value=9;NO RESPONSE
-
-[Item]
-Label=Difficulty with using fingers to pick up small objects
-Name=MAF14
-Start=25
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Difficulty with using fingers to pick up small objects
-Name=MAF14_VS1
-Value=1;NO DIFFICULTY
-Value=2;SOME DIFFICULTY
-Value=3;A LOT OF DIFFICULTY
-Value=4;CANNOT USE AT ALL
-Value=9;NO RESPONSE
-
-[Item]
-Label=Feel worried nervous or anxious
-Name=MAF15
-Start=26
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Feel worried nervous or anxious
-Name=MAF15_VS1
-Value=1;DAILY
-Value=2;WEEKLY
-Value=3;MONTHLY
-Value=4;A FEW TIMES A YEAR
-Value=5;NEVER
-Value=9;NO RESPONSE
-
-[Item]
-Label=Level of last anxiety
-Name=MAF16
-Start=27
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Level of last anxiety
-Name=MAF16_VS1
-Value=1;A LITTLE
-Value=2;A LOT
-Value=3;SOMEWHERE IN BETWEEN A LITTLE AND A LOT
-Value=9;NO RESPONSE
-
-[Item]
-Label=Feel depressed
-Name=MAF17
-Start=28
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Feel depressed
-Name=MAF17_VS1
-Value=1;DAILY
-Value=2;WEEKLY
-Value=3;MONTHLY
-Value=4;A FEW TIMES A YEAR
-Value=5;NEVER
-Value=9;NO RESPONSE
-
-[Item]
-Label=Level of last depression
-Name=MAF18
-Start=29
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Level of last depression
-Name=MAF18_VS1
-Value=1;A LITTLE
-Value=2;A LOT
-Value=3;SOMEWHERE IN BETWEEN A LITTLE AND A LOT
-Value=9;NO RESPONSE
-
-[Record]
-Label=Tobacco Use
-Name=MODMTO
-RecordTypeValue='MTO'
-Required=No
-RecordLen=29
-
-[Item]
-Label=Ever tried cigarette smoking
-Name=MTO1
-Start=16
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Ever tried cigarette smoking
-Name=MTO1_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Age when cigarette was smoked for the first time
-Name=MTO2
-Start=17
-Len=2
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Age when cigarette was smoked for the first time
-Name=MTO2_VS1
-Value=0;NEVER SMOKED A WHOLE CIGARETTE
-Value=5:49
-Value=99;NO RESPONSE
-
-[Item]
-Label=Currently smoking cigarettes
-Name=MTO3
-Start=19
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Currently smoking cigarettes
-Name=MTO3_VS1
-Value=1;EVERY DAY
-Value=2;SOME DAYS
-Value=3;NOT AT ALL
-Value=9;NO RESPONSE
-
-[Item]
-Label=Number of cigarettes smoked each day
-Name=MTO4
-Start=20
-Len=2
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Number of cigarettes smoked each day
-Name=MTO4_VS1
-Value=0:70
-Value=99;NO RESPONSE
-
-[Item]
-Label=Smoked cigarette in past month
-Name=MTO5
-Start=22
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Smoked cigarette in past month
-Name=MTO5_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Ever heard electronic cigarette
-Name=MTO6
-Start=23
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Ever heard electronic cigarette
-Name=MTO6_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Currently smoking electronic cigarettes
-Name=MTO7
-Start=24
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Currently smoking electronic cigarettes
-Name=MTO7_VS1
-Value=1;EVERY DAY
-Value=2;SOME DAYS
-Value=3;NOT AT ALL
-Value=9;NO RESPONSE
-
-[Item]
-Label=Smoked electronic cigarette in past month
-Name=MTO8
-Start=25
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Smoked electronic cigarette in past month
-Name=MTO8_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Currently smoking other tobacco products
-Name=MTO9
-Start=26
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Currently smoking other tobacco products
-Name=MTO9_VS1
-Value=1;EVERY DAY
-Value=2;SOME DAYS
-Value=3;NOT AT ALL
-Value=9;NO RESPONSE
-
-[Item]
-Label=Smoked other tobacco products in past month
-Name=MTO10
-Start=27
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Smoked other tobacco products in past month
-Name=MTO10_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Currently using smokeless tobacco
-Name=MTO11
-Start=28
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Currently using smokeless tobacco
-Name=MTO11_VS1
-Value=1;EVERY DAY
-Value=2;SOME DAYS
-Value=3;NOT AT ALL
-Value=9;NO RESPONSE
-
-[Item]
-Label=Used smokeless tobacco in past month
-Name=MTO12
-Start=29
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Used smokeless tobacco in past month
-Name=MTO12_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Record]
-Label=Mental Health
-Name=MODMMH
-RecordTypeValue='MMH'
-Required=No
-RecordLen=505
-
-[Item]
-Label=Privacy obtanied
-Name=MMH1
-Start=16
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Privacy obtanied
-Name=MMH1_VS1
-Value=1;PRIVACY OBTAINED
-Value=2;PRIVACY NOT POSSIBLE
-
-[Item]
-Label=Introduction
-Name=MMH2
-Start=17
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Introduction
-Name=MMH2_VS1
-Value=1;CONTINUE
-
-[Item]
-Label=Been feeling very sad or depressed during the past two weeks
-Name=MMH3
-Start=18
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Been feeling very sad or depressed during the past two weeks
-Name=MMH3_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Felt easily annoyyed or irritable at small things during the past two weeks
-Name=MMH4
-Start=19
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Felt easily annoyyed or irritable at small things during the past two weeks
-Name=MMH4_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Not enjoyed doing things she eused to enjoy during the past two weeks
-Name=MMH5
-Start=20
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Not enjoyed doing things she eused to enjoy during the past two weeks
-Name=MMH5_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Felt hopeless about the future during the past two weeks
-Name=MMH6
-Start=21
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Felt hopeless about the future during the past two weeks
-Name=MMH6_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Felt nervous anxious or on edge during the past two weeks
-Name=MMH7
-Start=22
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Felt nervous anxious or on edge during the past two weeks
-Name=MMH7_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Worried not doing the things right or doing poorly during the past two weeks
-Name=MMH8
-Start=23
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Worried not doing the things right or doing poorly during the past two weeks
-Name=MMH8_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Worried about what others think of her during the past two weeks
-Name=MMH9
-Start=24
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Worried about what others think of her during the past two weeks
-Name=MMH9_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Worried something bad will happen during the past two weeks
-Name=MMH10
-Start=25
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Worried something bad will happen during the past two weeks
-Name=MMH10_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Worried too much about different things during the past two weeks
-Name=MMH11
-Start=26
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Worried too much about different things during the past two weeks
-Name=MMH11_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Felt unable to stop or control your worries during the past two weeks
-Name=MMH12
-Start=27
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Felt unable to stop or control your worries during the past two weeks
-Name=MMH12_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Not wanted to eat food or eaten too much during past two weeks
-Name=MMH15
-Start=28
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Not wanted to eat food or eaten too much during past two weeks
-Name=MMH15_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Had sleeping issues during past two weeks
-Name=MMH16
-Start=29
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Had sleeping issues during past two weeks
-Name=MMH16_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Felt she got tired easily or did not have energy during past two weeks
-Name=MMH17
-Start=30
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Felt she got tired easily or did not have energy during past two weeks
-Name=MMH17_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Had trouble on concentrating things during past two weeks
-Name=MMH18
-Start=31
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Had trouble on concentrating things during past two weeks
-Name=MMH18_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Felt lonely during past two weeks
-Name=MMH19
-Start=32
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Felt lonely during past two weeks
-Name=MMH19_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Felt like a failure during past two weeks
-Name=MMH20
-Start=33
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Felt like a failure during past two weeks
-Name=MMH20_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Had thoughts rather be dead or hurting herself during past two weeks
-Name=MMH21
-Start=34
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Had thoughts rather be dead or hurting herself during past two weeks
-Name=MMH21_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Others said she was moving more slowly than usual during past two weeks
-Name=MMH22
-Start=35
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Others said she was moving more slowly than usual during past two weeks
-Name=MMH22_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Others said she was restless during past two weeks
-Name=MMH23
-Start=36
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Others said she was restless during past two weeks
-Name=MMH23_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Felt that it was difficult to breath during past two weeks
-Name=MMH24
-Start=37
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Felt that it was difficult to breath during past two weeks
-Name=MMH24_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Felt dizzy or faint during past two weeks
-Name=MMH25
-Start=38
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Felt dizzy or faint during past two weeks
-Name=MMH25_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Gotten suddenly scared for no reason during past two weeks
-Name=MMH27
-Start=39
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Gotten suddenly scared for no reason during past two weeks
-Name=MMH27_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Had difficulty relaxing or feeling calm during past two weeks
-Name=MMH28
-Start=40
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Had difficulty relaxing or feeling calm during past two weeks
-Name=MMH28_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Felt like her heart was pounding or beating too fast during past two weeks
-Name=MMH29
-Start=41
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Felt like her heart was pounding or beating too fast during past two weeks
-Name=MMH29_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Had headaches or muscle tension during past two weeks
-Name=MMH30
-Start=42
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Had headaches or muscle tension during past two weeks
-Name=MMH30_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Her daily activities negatively affected during past two weeks
-Name=MMH33
-Start=43
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Her daily activities negatively affected during past two weeks
-Name=MMH33_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Her school or work activities negatively affected during past two weeks
-Name=MMH34
-Start=44
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Her school or work activities negatively affected during past two weeks
-Name=MMH34_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=5;NOT APPLICABLE
-Value=9;NO RESPONSE
-
-[Item]
-Label=Her relationships with peers negatively affected during past two weeks
-Name=MMH35
-Start=45
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Her relationships with peers negatively affected during past two weeks
-Name=MMH35_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Talking to someone else about these feelings and experiences
-Name=MMH36
-Start=46
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Talking to someone else about these feelings and experiences
-Name=MMH36_VS1
-Value=0;NEVER
-Value=1;SOMETIMES
-Value=2;OFTEN
-Value=3;ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=Talking to someone else about these feelings and experiences - to confirm
-Name=MMH36A
-Start=47
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Talking to someone else about these feelings and experiences - to confirm
-Name=MMH36A_VS1
-Value=0;NO, NEVER
-Value=1;YES, SOMETIMES
-Value=2;YES, OFTEN
-Value=3;YES, ALWAYS
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past month talked someone about these kinds of problems or worries
-Name=MMH37
-Start=48
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past month talked someone about these kinds of problems or worries
-Name=MMH37_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=In the past month talked someone about these kinds of problems or worries - to confrm
-Name=MMH37A
-Start=49
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=In the past month talked someone about these kinds of problems or worries - to confrm
-Name=MMH37A_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Person taked to
-Name=MMH38
-Start=50
-Len=12
-DataType=Alpha
-
-[ValueSet]
-Label=Person taked to
-Name=MMH38_VS1
-Value='A           ';COUNSELLOR
-Value='B           ';DOCTOR / NURSE / HEALTH AID
-Value='C           ';OTHER QUALIFIED
-Value='D           ';OTHER QUALIFIED
-Value='E           ';OTHER QUALIFIED
-Value='F           ';PARENT
-Value='G           ';OTHER RELATIVE (ADULT)
-Value='H           ';OTHER RELATIVE (<18)
-Value='I           ';TEACHER
-Value='J           ';FRIEND
-Value='X           ';OTHER
-Value='?           ';NO RESPONSE
-
-[Item]
-Label=Person talked to: Counsellor
-Name=MMH38A
-Start=50
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person talked to: Counsellor
-Name=MMH38A_VS1
-Value='A';COUNSELLOR
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person talked to: Doctor, Nurse, Health Aid
-Name=MMH38B
-Start=51
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person talked to: Doctor, Nurse, Health Aid
-Name=MMH38B_VS1
-Value='B';DOCTOR / NURSE / HEALTH AID
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person talked to: Other Qualified
-Name=MMH38C
-Start=52
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person talked to: Other Qualified
-Name=MMH38C_VS1
-Value='C';OTHER QUALIFIED
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person talked to: Other Qualified
-Name=MMH38D
-Start=53
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person talked to: Other Qualified
-Name=MMH38D_VS1
-Value='D';OTHER QUALIFIED
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person talked to: Other Qualified
-Name=MMH38E
-Start=54
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person talked to: Other Qualified
-Name=MMH38E_VS1
-Value='E';OTHER QUALIFIED
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person talked to: Parent
-Name=MMH38F
-Start=55
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person talked to: Parent
-Name=MMH38F_VS1
-Value='F';PARENT
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person talked to: Other Relative (Adult)
-Name=MMH38G
-Start=56
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person talked to: Other Relative (Adult)
-Name=MMH38G_VS1
-Value='G';OTHER RELATIVE (ADULT)
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person talked to: Other Relative (<18)
-Name=MMH38H
-Start=57
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person talked to: Other Relative (<18)
-Name=MMH38H_VS1
-Value='H';OTHER RELATIVE (<18)
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person talked to: Teacher
-Name=MMH38I
-Start=58
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person talked to: Teacher
-Name=MMH38I_VS1
-Value='I';TEACHER
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person talked to: Friend
-Name=MMH38J
-Start=59
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person talked to: Friend
-Name=MMH38J_VS1
-Value='J';FRIEND
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person talked to: Other
-Name=MMH38X
-Start=60
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person talked to: Other
-Name=MMH38X_VS1
-Value='X';OTHER
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Person talked to: No response
-Name=MMH38NR
-Start=61
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Person talked to: No response
-Name=MMH38NR_VS1
-Value='?';NO RESPONSE
-Value=' '
-
-[Item]
-Label=Privacy obtanied
-Name=MMH40
-Start=62
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Privacy obtanied
-Name=MMH40_VS1
-Value=1;PRIVACY OBTAINED
-Value=2;PRIVACY NOT POSSIBLE
-
-[Item]
-Label=Tried suicide in past 12 months
-Name=MMH42
-Start=63
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Tried suicide in past 12 months
-Name=MMH42_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Thought about suicide in the past 2 weeks
-Name=MMH43
-Start=64
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Thought about suicide in the past 2 weeks
-Name=MMH43_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=High Suicidal Risk Emergency Referral Protocol
-Name=MMH45
-Start=65
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=High Suicidal Risk Emergency Referral Protocol
-Name=MMH45_VS1
-Value=1;YES, PERMISSION FOR REFERRAL
-Value=2;NO PERMISSION FOR REFERRAL
-
-[Item]
-Label=MH46 filter
-Name=MMH46
-Start=66
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=MH47 filter
-Name=MMH47
-Start=67
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Low/Moderate Risk Referral Protocol
-Name=MMH48
-Start=68
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Low/Moderate Risk Referral Protocol
-Name=MMH48_VS1
-Value=1;YES, PERMISSION FOR REFERRAL
-Value=2;NO PERMISSION FOR REFERRAL
-
-[Item]
-Label=Protocol text MH49AB
-Name=MMH49AB
-Start=69
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Protocol text MH49AB
-Name=MMH49AB_VS1
-Value=1;CONTINUE
-
-[Item]
-Label=Referral CASEID
-Name=MMH49AB1
-Start=70
-Len=7
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Referral Type
-Name=MMH49AB2
-Start=77
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Referral Type
-Name=MMH49AB2_VS1
-Value=1;HIGH RISK
-Value=2;LOW/MODERATE RISK
-
-[Item]
-Label=Referral Name of the Women
-Name=MMH49AB3
-Start=78
-Len=20
-DataType=Alpha
-
-[Item]
-Label=Referral Sex
-Name=MMH49AB4
-Start=98
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Referral Sex
-Name=MMH49AB4_VS1
-Value=1;MALE
-Value=2;FEMALE
-
-[Item]
-Label=Referral Age
-Name=MMH49AB5
-Start=99
-Len=2
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Referral Age
-Name=MMH49AB5_VS1
-Value=15:49
-
-[Item]
-Label=Best and Safest Way
-Name=MMH49AB6
-Start=101
-Len=3
-DataType=Alpha
-
-[ValueSet]
-Label=Best and Safest Way
-Name=MMH49AB6_VS1
-Value='A  ';PHONE
-Value='B  ';IN PERSON
-Value='X  ';OTHER
-
-[Item]
-Label=Best and Safest Way - Phone
-Name=MMH49AB6A
-Start=101
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Best and Safest Way - Phone
-Name=MMH49AB6A_VS1
-Value='A';PHONE
-Value=' '
-
-[Item]
-Label=Best and Safest Way - In Person
-Name=MMH49AB6B
-Start=102
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Best and Safest Way - In Person
-Name=MMH49AB6B_VS1
-Value='B';IN PERSON
-Value=' '
-
-[Item]
-Label=Best and Safest Way - Other
-Name=MMH49AB6X
-Start=103
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Best and Safest Way - Other
-Name=MMH49AB6X_VS1
-Value='X';OTHER
-Value=' '
-
-[Item]
-Label=Referral Phone
-Name=MMH49AB7
-Start=104
-Len=8
-DataType=Alpha
-
-[Item]
-Label=Referral Meetup Location  - Region No
-Name=MMH49AB8
-Start=112
-Len=2
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Referral Meetup Location  - Region Name
-Name=MMH49AB8N
-Start=114
-Len=50
-DataType=Alpha
-
-[Item]
-Label=Referral Meetup Location  - District Name
-Name=MMH49AB9N
-Start=164
-Len=50
-DataType=Alpha
-
-[Item]
-Label=Referral Meetup Location  - Name of Village Town
-Name=MMH49AB10N
-Start=214
-Len=50
-DataType=Alpha
-
-[Item]
-Label=Referral Meetup Location  - Description of Location
-Name=MMH49AB11N
-Start=264
-Len=50
-DataType=Alpha
-
-[Item]
-Label=Referral Meetup Location  - Nearby Landmark
-Name=MMH49AB12
-Start=314
-Len=50
-DataType=Alpha
-
-[Item]
-Label=Referral Meetup Location  - Best Time to Contact
-Name=MMH49AB13
-Start=364
-Len=50
-DataType=Alpha
-
-[Item]
-Label=Referral Meetup Location  - Best Time to Contact
-Name=MMH49AB14
-Start=414
-Len=40
-DataType=Alpha
-
-[Item]
-Label=Protocol text MH49C
-Name=MMH49C
-Start=454
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Protocol text MH49C
-Name=MMH49C_VS1
-Value=1;CONTINUE
-
-[Item]
-Label=Protocol text MH49D
-Name=MMH49D
-Start=455
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Protocol text MH49D
-Name=MMH49D_VS1
-Value=1;CONTINUE
-
-[Item]
-Label=Interviewer's Observations
-Name=MMH51
-Start=456
-Len=50
-DataType=Alpha
-
-[Record]
 Label=MICS plus consent
 Name=MODMPN
 RecordTypeValue='MPN'
@@ -5448,7 +2750,7 @@ Value=2;NO
 Label=Time Stamps of the Women Questionnaire Modules
 Name=MODMNTS
 RecordTypeValue='MTS'
-RecordLen=465
+RecordLen=270
 
 [Item]
 Label=Timestamp of start of MN Questionnaire - Man’s information panel
@@ -5531,29 +2833,9 @@ DecimalChar=Yes
 ZeroFill=Yes
 
 [Item]
-Label=Timestamp of start of Module MNE Employment and training [15-24]
-Name=MWMMNETSTMPS
-Start=136
-Len=15
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Timestamp of end of Module MNE Employment and training [15-24]
-Name=MWMMNETSTMPE
-Start=151
-Len=15
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
 Label=Timestamp of start of Module MIC ICT use
 Name=MWMMICTSTMPS
-Start=166
+Start=136
 Len=15
 DataType=Numeric
 Decimal=2
@@ -5563,27 +2845,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of end of Module MIC ICT use
 Name=MWMMICTSTMPE
-Start=181
-Len=15
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Timestamp of start of Module MTU Time-use [15-17]
-Name=MWMMTUTSTMPS
-Start=196
-Len=15
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Timestamp of end of Module MTU Time-use [15-17]
-Name=MWMMTUTSTMPE
-Start=211
+Start=151
 Len=15
 DataType=Numeric
 Decimal=2
@@ -5593,7 +2855,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of start of Module MDV Attitudes toward domestic violence
 Name=MWMMDVTSTMPS
-Start=226
+Start=166
 Len=15
 DataType=Numeric
 Decimal=2
@@ -5603,47 +2865,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of end of Module MDV Attitudes toward domestic violence
 Name=MWMMDVTSTMPE
-Start=241
-Len=15
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Timestamp of start of Module MVT SDG16: Safety
-Name=MWMMVT1TSTMPS
-Start=256
-Len=15
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Timestamp of end of Module MVT SDG16: Safety
-Name=MWMMVT1TSTMPE
-Start=271
-Len=15
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Timestamp of start of Module MVT SDG16: Discrimination
-Name=MWMMVT2TSTMPS
-Start=286
-Len=15
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Timestamp of end of Module MVT SDG16: Discrimination
-Name=MWMMVT2TSTMPE
-Start=301
+Start=181
 Len=15
 DataType=Numeric
 Decimal=2
@@ -5653,7 +2875,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of start of Module MMA Marriage / Union
 Name=MWMMMATSTMPS
-Start=316
+Start=196
 Len=15
 DataType=Numeric
 Decimal=2
@@ -5663,67 +2885,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of end of Module MMA Marriage / Union
 Name=MWMMMATSTMPE
-Start=331
-Len=15
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Timestamp of start of Module MAF Adult functioning [18-49]
-Name=MWMMAFTSTMPS
-Start=346
-Len=15
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Timestamp of end of Module MAF Adult functioning [18-49]
-Name=MWMMAFTSTMPE
-Start=361
-Len=15
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Timestamp of start of Module MTO Tobacco use
-Name=MWMMTOTSTMPS
-Start=376
-Len=15
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Timestamp of end of Module MTO Tobacco use
-Name=MWMMTOTSTMPE
-Start=391
-Len=15
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Timestamp of start of Module MMH Mental health [15-24]
-Name=MWMMMHTSTMPS
-Start=406
-Len=15
-DataType=Numeric
-Decimal=2
-DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=Timestamp of end of Module MMH Mental health [15-24]
-Name=MWMMMHTSTMPE
-Start=421
+Start=211
 Len=15
 DataType=Numeric
 Decimal=2
@@ -5733,7 +2895,7 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of start of MN - End of Interview
 Name=MWMENDTSTMPS
-Start=436
+Start=226
 Len=15
 DataType=Numeric
 Decimal=2
@@ -5743,9 +2905,17 @@ ZeroFill=Yes
 [Item]
 Label=Timestamp of end of MN - End of Interview
 Name=MWMENDTSTMPE
-Start=451
+Start=241
 Len=15
 DataType=Numeric
 Decimal=2
 DecimalChar=Yes
+ZeroFill=Yes
+
+[Item]
+Label=MWMMMHTSTMPS
+Name=MWMMMHTSTMPS
+Start=256
+Len=15
+DataType=Numeric
 ZeroFill=Yes

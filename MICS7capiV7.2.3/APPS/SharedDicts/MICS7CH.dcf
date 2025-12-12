@@ -59,7 +59,7 @@ Value=1:50
 Label=Under-Five Child Information Panel
 Name=MODUF
 RecordTypeValue='0UF'
-RecordLen=95
+RecordLen=97
 
 [Item]
 Label=Child's name
@@ -285,14 +285,12 @@ ZeroFill=Yes
 Label=Language of the questionnaire
 Name=UF12_VS1
 Value=1;ENGLISH
-Value=2;LANGUAGE 2
-Value=3;LANGUAGE 3
 
 [Item]
 Label=Language of the interview
 Name=UF13
 Start=85
-Len=1
+Len=2
 DataType=Numeric
 ZeroFill=Yes
 
@@ -300,15 +298,22 @@ ZeroFill=Yes
 Label=Language of the interview
 Name=UF13_VS1
 Value=1;ENGLISH
-Value=2;LANGUAGE 2
-Value=3;LANGUAGE 3
+Value=2;MANDINKA/JAHANKA
+Value=3;WOLLOF
+Value=4;FULA/TUKULOR/LOROBO
+Value=5;JOLA/KARONINKA
+Value=6;SARAHULE
+Value=7;SERERE
+Value=8;MANJAGO
+Value=9;KRIO/AKU MARABOUT
+Value=10;BAMBARA
 Value=6;OTHER LANGUAGE
 
 [Item]
 Label=Native language of the respondent
 Name=UF14
-Start=86
-Len=1
+Start=87
+Len=2
 DataType=Numeric
 ZeroFill=Yes
 
@@ -316,14 +321,21 @@ ZeroFill=Yes
 Label=Native language of the respondent
 Name=UF14_VS1
 Value=1;ENGLISH
-Value=2;LANGUAGE 2
-Value=3;LANGUAGE 3
+Value=2;MANDINKA/JAHANKA
+Value=3;WOLLOF
+Value=4;FULA/TUKULOR/LOROBO
+Value=5;JOLA/KARONINKA
+Value=6;SARAHULE
+Value=7;SERERE
+Value=8;MANJAGO
+Value=9;CREOLEKRIO/AKU MARABOUT
+Value=10;BAMBARA
 Value=6;OTHER LANGUAGE
 
 [Item]
 Label=Translator used
 Name=UF15
-Start=87
+Start=89
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -338,7 +350,7 @@ Value=3;NO, NOT USED
 [Item]
 Label=Has been interviewed for any individual questionnaires
 Name=UF15C
-Start=88
+Start=90
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -352,7 +364,7 @@ Value=2;NO, NOT ALREADY INTERVIEWED
 [Item]
 Label=Consent for phone survey
 Name=UF15EF
-Start=89
+Start=91
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -366,7 +378,7 @@ Value=2;NO
 [Item]
 Label=Have personal phone number or phone number for the household
 Name=UF15GH
-Start=90
+Start=92
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -380,7 +392,7 @@ Value=2;NO
 [Item]
 Label=Note on sharing phone number for the household
 Name=UF15I
-Start=91
+Start=93
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -393,7 +405,7 @@ Value=1;CONTINUE
 [Item]
 Label=Household interviewer
 Name=UFHINT
-Start=92
+Start=94
 Len=3
 DataType=Numeric
 ZeroFill=Yes
@@ -401,7 +413,7 @@ ZeroFill=Yes
 [Item]
 Label=Finish
 Name=CHFIN
-Start=95
+Start=97
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2595,7 +2607,7 @@ Value=9;NO RESPONSE
 
 [Item]
 Label=Any fortified baby food such as Cerelac, Nutrilac?
-Name=BD8B1
+Name=BD8R
 Start=41
 Len=1
 DataType=Numeric
@@ -2603,7 +2615,7 @@ ZeroFill=Yes
 
 [ValueSet]
 Label=Any fortified baby food such as Cerelac, Nutrilac?
-Name=BD8B1_VS1
+Name=BD8R_VS11
 Value=1;YES
 Value=2;NO
 Value=8;DK
@@ -2904,7 +2916,7 @@ Label=Immunization
 Name=MODIM
 RecordTypeValue='0IM'
 Required=No
-RecordLen=220
+RecordLen=239
 
 [Item]
 Label=Has vaccination card for child
@@ -4342,14 +4354,14 @@ Value=6666;MOTHER REPORTED
 Value=9999;NO RESPONSE
 
 [Item]
-Label=Date of MMR/MR 1 immunization
+Label=Date of MR 1 immunization
 Name=IM6M1
 Start=163
 Len=8
 DataType=Alpha
 
 [Item]
-Label=Day of MMR/MR 1 immunization
+Label=Day of MR 1 immunization
 Name=IM6M1D
 Start=163
 Len=2
@@ -4358,7 +4370,7 @@ DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Day of MMR/MR 1 immunization
+Label=Day of MR 1 immunization
 Name=IM6M1D_VST
 Value=0;NOT GIVEN
 Value=1:31
@@ -4367,7 +4379,7 @@ Value=66;MOTHER REPORTED
 Value=99;NO RESPONSE
 
 [Item]
-Label=Month of MMR/MR 1 immunization
+Label=Month of MR 1 immunization
 Name=IM6M1M
 Start=165
 Len=2
@@ -4376,7 +4388,7 @@ DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Month of MMR/MR 1 immunization
+Label=Month of MR 1 immunization
 Name=IM6M1M_VST
 Value=0;NOT GIVEN
 Value=1;JANUARY
@@ -4396,7 +4408,7 @@ Value=66;MOTHER REPORTED
 Value=99;NO RESPONSE
 
 [Item]
-Label=Year of MMR/MR 1 immunization
+Label=Year of MR 1 immunization
 Name=IM6M1Y
 Start=167
 Len=4
@@ -4405,7 +4417,7 @@ DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Year of MMR/MR 1 immunization
+Label=Year of MR 1 immunization
 Name=IM6M1Y_VS1
 Value=0;NOT GIVEN
 Value=2020;2020
@@ -4419,14 +4431,14 @@ Value=6666;MOTHER REPORTED
 Value=9999;NO RESPONSE
 
 [Item]
-Label=Date of MMR/MR 2 immunization
+Label=Date of MR 2 immunization
 Name=IM6M2
 Start=171
 Len=8
 DataType=Alpha
 
 [Item]
-Label=Day of MMR/MR 2 immunization
+Label=Day of MR 2 immunization
 Name=IM6M2D
 Start=171
 Len=2
@@ -4435,7 +4447,7 @@ DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Day of MMR/MR 2 immunization
+Label=Day of MR 2 immunization
 Name=IM6M2D_VST
 Value=0;NOT GIVEN
 Value=1:31
@@ -4444,7 +4456,7 @@ Value=66;MOTHER REPORTED
 Value=99;NO RESPONSE
 
 [Item]
-Label=Month of MMR/MR 2 immunization
+Label=Month of MR 2 immunization
 Name=IM6M2M
 Start=173
 Len=2
@@ -4453,7 +4465,7 @@ DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Month of MMR/MR 2 immunization
+Label=Month of MR 2 immunization
 Name=IM6M2M_VST
 Value=0;NOT GIVEN
 Value=1;JANUARY
@@ -4473,7 +4485,7 @@ Value=66;MOTHER REPORTED
 Value=99;NO RESPONSE
 
 [Item]
-Label=Year of MMR/MR 2 immunization
+Label=Year of MR 2 immunization
 Name=IM6M2Y
 Start=175
 Len=4
@@ -4482,7 +4494,7 @@ DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Year of MMR/MR 2 immunization
+Label=Year of MR 2 immunization
 Name=IM6M2Y_VS1
 Value=0;NOT GIVEN
 Value=2020;2020
@@ -4573,15 +4585,15 @@ Value=6666;MOTHER REPORTED
 Value=9999;NO RESPONSE
 
 [Item]
-Label=Date of Td Booster 1 immunization
-Name=IM6TD1
+Label=Date of DPT Booster 1 immunization
+Name=IM6TD11
 Start=187
 Len=8
 DataType=Alpha
 
 [Item]
-Label=Day of Td Booster 1 immunization
-Name=IM6TD1D
+Label=Day of DPT Booster 1 immunization
+Name=IM6TD1D1
 Start=187
 Len=2
 ItemType=SubItem
@@ -4589,8 +4601,8 @@ DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Day of Td Booster 1 immunization
-Name=IM6TD1D_VS1
+Label=Day of DPT Booster 1 immunization
+Name=IM6TD1D1_VS1
 Value=0;NOT GIVEN
 Value=1:31
 Value=44;MARKED ON CARD
@@ -4598,8 +4610,8 @@ Value=66;MOTHER REPORTED
 Value=99;NO RESPONSE
 
 [Item]
-Label=Month of Td Booster 1 immunization
-Name=IM6TD1M
+Label=Month of DPT Booster 1 immunization
+Name=IM6TD1M1
 Start=189
 Len=2
 ItemType=SubItem
@@ -4607,8 +4619,8 @@ DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Month of Td Booster 1 immunization
-Name=IM6TD1M_VS1
+Label=Month of DPT Booster 1 immunization
+Name=IM6TD1M1_VS1
 Value=0;NOT GIVEN
 Value=1;JANUARY
 Value=2;FEBRUARY
@@ -4627,8 +4639,8 @@ Value=66;MOTHER REPORTED
 Value=99;NO RESPONSE
 
 [Item]
-Label=Year of Td Booster 1 immunization
-Name=IM6TD1Y
+Label=Year of DPT Booster 1 immunization
+Name=IM6TD1Y1
 Start=191
 Len=4
 ItemType=SubItem
@@ -4636,8 +4648,162 @@ DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Year of Td Booster 1 immunization
-Name=IM6TD1Y_VS1
+Label=Year of DPT Booster 1 immunization
+Name=IM6TD1Y1_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=6666;MOTHER REPORTED
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Meningitis A immunization
+Name=IM6MENA1
+Start=195
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Meningitis A immunization
+Name=IM6MEND1
+Start=195
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Meningitis A immunization
+Name=IM6MEND1_VS1
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Meningitis A immunization
+Name=IM6MENM1
+Start=197
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Meningitis A immunization
+Name=IM6MENM1_VS1
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Meningitis A immunization
+Name=IM6MENY1
+Start=199
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Meningitis A immunization
+Name=IM6MENY1_VS1
+Value=0;NOT GIVEN
+Value=2020;2020
+Value=2021;2021
+Value=2022;2022
+Value=2023;2023
+Value=2024;2024
+Value=2025;2025
+Value=4444;MARKED ON CARD
+Value=6666;MOTHER REPORTED
+Value=9999;NO RESPONSE
+
+[Item]
+Label=Date of Polio Booster immunization
+Name=IM6POLB
+Start=203
+Len=8
+DataType=Alpha
+
+[Item]
+Label=Day of Polio Booster immunization
+Name=IM6POLBD
+Start=203
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Day of Polio Booster immunization
+Name=IM6POLBD_VS1
+Value=0;NOT GIVEN
+Value=1:31
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Month of Polio Booster immunization
+Name=IM6POLBM
+Start=205
+Len=2
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Month of Polio Booster immunization
+Name=IM6POLBM_VS1
+Value=0;NOT GIVEN
+Value=1;JANUARY
+Value=2;FEBRUARY
+Value=3;MARCH
+Value=4;APRIL
+Value=5;MAY
+Value=6;JUNE
+Value=7;JULY
+Value=8;AUGUST
+Value=9;SEPTEMBER
+Value=10;OCTOBER
+Value=11;NOVEMBER
+Value=12;DECEMBER
+Value=44;MARKED ON CARD
+Value=66;MOTHER REPORTED
+Value=99;NO RESPONSE
+
+[Item]
+Label=Year of Polio Booster immunization
+Name=IM6POLBY
+Start=207
+Len=4
+ItemType=SubItem
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Year of Polio Booster immunization
+Name=IM6POLBY_VS1
 Value=0;NOT GIVEN
 Value=2020;2020
 Value=2021;2021
@@ -4652,7 +4818,7 @@ Value=9999;NO RESPONSE
 [Item]
 Label=Participate in campaign, national immunization day A
 Name=IM8A
-Start=195
+Start=211
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -4668,7 +4834,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Participate in campaign, national immunization day B
 Name=IM8B
-Start=196
+Start=212
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -4684,7 +4850,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Participate in campaign, national immunization day C
 Name=IM8C
-Start=197
+Start=213
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -4698,9 +4864,25 @@ Value=8;DK
 Value=9;NO RESPONSE
 
 [Item]
+Label=Participate in campaign, national immunization day D
+Name=IM8D
+Start=214
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Participate in campaign, national immunization day D
+Name=IM8D_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
 Label=Child received any other vaccinations during campaigns, immunization days or child health days
 Name=IM9
-Start=198
+Start=215
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -4716,7 +4898,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Child ever received any vaccinations
 Name=IM11
-Start=199
+Start=216
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -4732,7 +4914,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Participate in campaign, national immunization day A
 Name=IM12A
-Start=200
+Start=217
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -4748,7 +4930,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Participate in campaign, national immunization day B
 Name=IM12B
-Start=201
+Start=218
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -4764,7 +4946,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Participate in campaign, national immunization day C
 Name=IM12C
-Start=202
+Start=219
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -4778,9 +4960,25 @@ Value=8;DK
 Value=9;NO RESPONSE
 
 [Item]
+Label=Participate in campaign, national immunization day D
+Name=IM12D
+Start=220
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Participate in campaign, national immunization day D
+Name=IM12D_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
 Label=Child ever received BCG vaccination
 Name=IM14
-Start=203
+Start=221
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -4796,7 +4994,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Hepatitis B vaccination received at or soon after birth
 Name=IM15
-Start=204
+Start=222
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -4812,7 +5010,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Hepatitis B vaccination received within 24 hours of birth
 Name=IM15A
-Start=205
+Start=223
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -4828,7 +5026,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Child ever received oral Polio vaccination
 Name=IM16
-Start=206
+Start=224
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -4844,7 +5042,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=First oral polio vaccination in the first two weeks after birth or later
 Name=IM17
-Start=207
+Start=225
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -4860,7 +5058,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Times received oral Polio vaccination
 Name=IM18
-Start=208
+Start=226
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -4881,7 +5079,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Child ever received injected Polio vaccination
 Name=IM19
-Start=209
+Start=227
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -4897,7 +5095,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Times received injected Polio vaccination
 Name=IM19A
-Start=210
+Start=228
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -4918,7 +5116,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Child ever received Pentavelent vaccination
 Name=IM20
-Start=211
+Start=229
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -4934,7 +5132,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Times received Pentavelent vaccination
 Name=IM21
-Start=212
+Start=230
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -4955,7 +5153,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Child ever given Pneumococcal Conjugate vaccination
 Name=IM22
-Start=213
+Start=231
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -4971,7 +5169,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Times received Pneumococcal Conjugate vaccination
 Name=IM23
-Start=214
+Start=232
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -4992,7 +5190,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Child ever given Rotavirus vaccination
 Name=IM24
-Start=215
+Start=233
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5008,7 +5206,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Times received Rotavirus vaccination
 Name=IM25
-Start=216
+Start=234
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5027,15 +5225,15 @@ Value=8;DK
 Value=9;NO RESPONSE
 
 [Item]
-Label=Child ever received MMR/MR vaccination
+Label=Child ever received MR vaccination
 Name=IM26
-Start=217
+Start=235
 Len=1
 DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Child ever received MMR/MR vaccination
+Label=Child ever received MR vaccination
 Name=IM26_VST
 Value=1;YES
 Value=2;NO
@@ -5043,15 +5241,15 @@ Value=8;DK
 Value=9;NO RESPONSE
 
 [Item]
-Label=Times received MMR/MR vaccination
+Label=Times received MR vaccination
 Name=IM26A
-Start=218
+Start=236
 Len=1
 DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Times received MMR/MR vaccination
+Label=Times received MR vaccination
 Name=IM26A_VST
 Value=1;ONE
 Value=2;TWO
@@ -5066,7 +5264,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Child ever received Yellow Fever vaccination
 Name=IM27
-Start=219
+Start=237
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -5080,16 +5278,32 @@ Value=8;DK
 Value=9;NO RESPONSE
 
 [Item]
-Label=Child ever received Td Booster vaccination
-Name=IM27A
-Start=220
+Label=Child ever received Meningitis A vaccination
+Name=IM29
+Start=238
 Len=1
 DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Child ever received Td Booster vaccination
-Name=IM27A_VS1
+Label=Child ever received Meningitis A vaccination
+Name=IM29_VS1
+Value=1;YES
+Value=2;NO
+Value=8;DK
+Value=9;NO RESPONSE
+
+[Item]
+Label=Child ever received DPT Booster vaccination
+Name=IM30
+Start=239
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Child ever received DPT Booster vaccination
+Name=IM30_VS1
 Value=1;YES
 Value=2;NO
 Value=8;DK
@@ -5186,16 +5400,14 @@ Name=DA6_VS1
 Value='A                     ';GOVERNMENT HOSPITAL
 Value='B                     ';GOVERNMENT HEALTH CENTRE
 Value='C                     ';GOVERNMENT HEALTH POST
-Value='D                     ';COMMUNITY HEALTH WORKER
+Value='D                     ';VILLAGE HEALTH SERVICES
 Value='E                     ';MOBILE / OUTREACH CLINIC
 Value='G                     ';OTHER PUBLIC MEDICAL
 Value='H                     ';PRIVATE HOSPITAL / CLINIC
 Value='I                     ';PRIVATE PHYSICIAN
 Value='J                     ';PRIVATE PHARMACY
-Value='K                     ';COMMUNITY HEALTH WORKER (NON-GOVERNMENT)
 Value='L                     ';PRIVATE MOBILE CLINIC
 Value='N                     ';OTHER PRIVATE MEDICAL
-Value='O                     ';NGO HOSPITAL
 Value='P                     ';NGO CLINIC
 Value='Q                     ';OTHER NGO
 Value='W                     ';DK PUBLIC OR PRIVATE
@@ -5252,7 +5464,7 @@ Value=' '
 Value='?';NO RESPONSE
 
 [Item]
-Label=Place sought care: Community health worker
+Label=Place sought care: Village health services
 Name=DA6D
 Start=23
 Len=1
@@ -5260,9 +5472,9 @@ ItemType=SubItem
 DataType=Alpha
 
 [ValueSet]
-Label=Place sought care: Community health worker
+Label=Place sought care: Village health services
 Name=DA6D_VS1
-Value='D';COMMUNITY HEALTH WORKER
+Value='D';VILLAGE HEALTH SERVICES
 Value=' '
 Value='?';NO RESPONSE
 
@@ -5342,21 +5554,6 @@ Value=' '
 Value='?';NO RESPONSE
 
 [Item]
-Label=Place sought care: Community health worker (Non Government)
-Name=DA6K
-Start=29
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Place sought care: Community health worker (Non Government)
-Name=DA6K_VS1
-Value='K';COMMUNITY HEALTH WORKER (NON-GOVERNMENT)
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
 Label=Place sought care: Private mobile clinic
 Name=DA6L
 Start=30
@@ -5383,21 +5580,6 @@ DataType=Alpha
 Label=Place sought care: Other private medical
 Name=DA6N_VS1
 Value='N';OTHER PRIVATE MEDICAL
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Place sought care: NGO hospital
-Name=DA6O
-Start=32
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Place sought care: NGO hospital
-Name=DA6O_VS1
-Value='O';NGO HOSPITAL
 Value=' '
 Value='?';NO RESPONSE
 
@@ -5549,16 +5731,14 @@ Name=DA8_VS1
 Value=11;GOVERNMENT HOSPITAL
 Value=12;GOVERNMENT HEALTH CENTRE
 Value=13;GOVERNMENT HEALTH POST
-Value=14;COMMUNITY HEALTH WORKER
+Value=14;VILLAGE HEALTH SERVICES
 Value=15;MOBILE / OUTREACH CLINIC
 Value=16;OTHER PUBLIC MEDICAL
 Value=21;PRIVATE HOSPITAL / CLINIC
 Value=22;PRIVATE PHYSICIAN
 Value=23;PRIVATE PHARMACY
-Value=24;COMMUNITY HEALTH WORKER (NON-GOVERNMENT)
 Value=25;PRIVATE MOBILE CLINIC
 Value=26;OTHER PRIVATE MEDICAL
-Value=31;NGO HOSPITAL
 Value=32;NGO CLINIC
 Value=36;OTHER NGO
 Value=76;DK PUBLIC OR PRIVATE
@@ -5987,7 +6167,7 @@ Value=' '
 Value='?';NO RESPONSE
 
 [Item]
-Label=Place sought care: Community health worker
+Label=Place sought care: Village health services
 Name=AR5D
 Start=23
 Len=1
@@ -5995,7 +6175,7 @@ ItemType=SubItem
 DataType=Alpha
 
 [ValueSet]
-Label=Place sought care: Community health worker
+Label=Place sought care: Village health services
 Name=AR5D_VS1
 Value='D';COMMUNITY HEALTH WORKER
 Value=' '
@@ -6077,21 +6257,6 @@ Value=' '
 Value='?';NO RESPONSE
 
 [Item]
-Label=Place sought care: Community health worker (Non Government)
-Name=AR5K
-Start=29
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Place sought care: Community health worker (Non Government)
-Name=AR5K_VS1
-Value='K';COMMUNITY HEALTH WORKER (NON-GOVERNMENT)
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
 Label=Place sought care: Private mobile clinic
 Name=AR5L
 Start=30
@@ -6118,21 +6283,6 @@ DataType=Alpha
 Label=Place sought care: Other private medical
 Name=AR5N_VS1
 Value='N';OTHER PRIVATE MEDICAL
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Place sought care: NGO hospital
-Name=AR5O
-Start=32
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Place sought care: NGO hospital
-Name=AR5O_VS1
-Value='O';NGO HOSPITAL
 Value=' '
 Value='?';NO RESPONSE
 
@@ -6284,16 +6434,14 @@ Name=AR7_VS1
 Value=11;GOVERNMENT HOSPITAL
 Value=12;GOVERNMENT HEALTH CENTRE
 Value=13;GOVERNMENT HEALTH POST
-Value=14;COMMUNITY HEALTH WORKER
+Value=14;VILLAGE HEALTH SERVICES
 Value=15;MOBILE / OUTREACH CLINIC
 Value=16;OTHER PUBLIC MEDICAL
 Value=21;PRIVATE HOSPITAL / CLINIC
 Value=22;PRIVATE PHYSICIAN
 Value=23;PRIVATE PHARMACY
-Value=24;COMMUNITY HEALTH WORKER (NON-GOVERNMENT)
 Value=25;PRIVATE MOBILE CLINIC
 Value=26;OTHER PRIVATE MEDICAL
-Value=31;NGO HOSPITAL
 Value=32;NGO CLINIC
 Value=36;OTHER NGO
 Value=76;DK PUBLIC OR PRIVATE
@@ -6607,16 +6755,14 @@ Name=MC5_VS1
 Value='A                     ';GOVERNMENT HOSPITAL
 Value='B                     ';GOVERNMENT HEALTH CENTRE
 Value='C                     ';GOVERNMENT HEALTH POST
-Value='D                     ';COMMUNITY HEALTH WORKER
+Value='D                     ';VILLAGE HEALTH SERVICES
 Value='E                     ';MOBILE / OUTREACH CLINIC
 Value='G                     ';OTHER PUBLIC MEDICAL
 Value='H                     ';PRIVATE HOSPITAL / CLINIC
 Value='I                     ';PRIVATE PHYSICIAN
 Value='J                     ';PRIVATE PHARMACY
-Value='K                     ';COMMUNITY HEALTH WORKER (NON-GOVERNMENT)
 Value='L                     ';PRIVATE MOBILE CLINIC
 Value='N                     ';OTHER PRIVATE MEDICAL
-Value='O                     ';NGO HOSPITAL
 Value='P                     ';NGO CLINIC
 Value='Q                     ';OTHER NGO
 Value='W                     ';DK PUBLIC OR PRIVATE
@@ -6673,7 +6819,7 @@ Value=' '
 Value='?';NO RESPONSE
 
 [Item]
-Label=Place sought care: Community health worker
+Label=Place sought care: Village health services
 Name=MC5D
 Start=23
 Len=1
@@ -6681,7 +6827,7 @@ ItemType=SubItem
 DataType=Alpha
 
 [ValueSet]
-Label=Place sought care: Community health worker
+Label=Place sought care: Village health services
 Name=MC5D_VS1
 Value='D';COMMUNITY HEALTH WORKER
 Value=' '
@@ -6763,21 +6909,6 @@ Value=' '
 Value='?';NO RESPONSE
 
 [Item]
-Label=Place sought care: Community health worker (Non Government)
-Name=MC5K
-Start=29
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Place sought care: Community health worker (Non Government)
-Name=MC5K_VS1
-Value='K';COMMUNITY HEALTH WORKER (NON-GOVERNMENT)
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
 Label=Place sought care: Private mobile clinic
 Name=MC5L
 Start=30
@@ -6804,21 +6935,6 @@ DataType=Alpha
 Label=Place sought care: Other private medical
 Name=MC5N_VS1
 Value='N';OTHER PRIVATE MEDICAL
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Place sought care: NGO hospital
-Name=MC5O
-Start=32
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Place sought care: NGO hospital
-Name=MC5O_VS1
-Value='O';NGO HOSPITAL
 Value=' '
 Value='?';NO RESPONSE
 
@@ -6970,16 +7086,14 @@ Name=MC7_VS1
 Value=11;GOVERNMENT HOSPITAL
 Value=12;GOVERNMENT HEALTH CENTRE
 Value=13;GOVERNMENT HEALTH POST
-Value=14;COMMUNITY HEALTH WORKER
+Value=14;VILLAGE HEALTH SERVICES
 Value=15;MOBILE / OUTREACH CLINIC
 Value=16;OTHER PUBLIC MEDICAL
 Value=21;PRIVATE HOSPITAL / CLINIC
 Value=22;PRIVATE PHYSICIAN
 Value=23;PRIVATE PHARMACY
-Value=24;COMMUNITY HEALTH WORKER (NON-GOVERNMENT)
 Value=25;PRIVATE MOBILE CLINIC
 Value=26;OTHER PRIVATE MEDICAL
-Value=31;NGO HOSPITAL
 Value=32;NGO CLINIC
 Value=36;OTHER NGO
 Value=76;DK PUBLIC OR PRIVATE
@@ -7646,1980 +7760,6 @@ ZeroFill=Yes
 Label=Year of measurement
 Name=AN14Y_VS1
 Value=2025;2025
-
-[Record]
-Label=Facility Based Records of Vaccination Form
-Name=MODHF
-RecordTypeValue='0HF'
-Required=No
-RecordLen=301
-
-[Item]
-Label=Cluster number
-Name=HF1
-Start=16
-Len=5
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Household number
-Name=HF2
-Start=21
-Len=2
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Child's name
-Name=HF3N
-Start=23
-Len=20
-DataType=Alpha
-
-[Item]
-Label=Child's line number
-Name=HF3
-Start=43
-Len=2
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Child's line number
-Name=HF3_VST
-Value=1:50
-
-[Item]
-Label=Mother / Caregiver's name
-Name=HF4N
-Start=45
-Len=20
-DataType=Alpha
-
-[Item]
-Label=Mother / Caregiver's line number
-Name=HF4
-Start=65
-Len=2
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Mother / Caregiver's line number
-Name=HF4_VST
-Value=1:50
-
-[Item]
-Label=Interviewer number
-Name=HF5
-Start=67
-Len=3
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Name of the health facility
-Name=HF6
-Start=70
-Len=20
-DataType=Alpha
-
-[Item]
-Label=Date of birth of child from UB2
-Name=HF7A
-Start=90
-Len=8
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Day of birth of child from UB2
-Name=HF7AD
-Start=90
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Day of birth of child from UB2
-Name=HF7AD_VS1
-Value=1:31
-Value=98;DK
-Value=99;NO RESPONSE
-
-[Item]
-Label=Month of birth of child from UB2
-Name=HF7AM
-Start=92
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Month of birth of child from UB2
-Name=HF7AM_VS1
-Value=1:12
-Value=99;NO RESPONSE
-
-[Item]
-Label=Year of birth of child from UB2
-Name=HF7AY
-Start=94
-Len=4
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Year of birth of child from UB2
-Name=HF7AY_VS1
-Value=2020:2025
-Value=9999;NO RESPONSE
-
-[Item]
-Label=Date of birth of child from IM5A
-Name=HF7B
-Start=98
-Len=8
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Day of birth of child from IM5A
-Name=HF7BD
-Start=98
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Day of birth of child from IM5A
-Name=HF7BD_VS1
-Value=1:31
-Value=98;DK
-Value=99;NO RESPONSE
-Value='  ';NotAppl
-Name=NOTAPPL,Special
-
-[Item]
-Label=Month of birth of child from IM5A
-Name=HF7BM
-Start=100
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Month of birth of child from IM5A
-Name=HF7BM_VS1
-Value=1:12
-Value=98;DK
-Value=99;NO RESPONSE
-Value='  ';NotAppl
-Name=NOTAPPL,Special
-
-[Item]
-Label=Year of birth of child from IM5A
-Name=HF7BY
-Start=102
-Len=4
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Year of birth of child from IM5A
-Name=HF7BY_VS1
-Value=2020:2025
-Value=9998;DK
-Value=9999;NO RESPONSE
-Value='    ';NotAppl
-Name=NOTAPPL,Special
-
-[Item]
-Label=Field staff's number recording at facility
-Name=HF8
-Start=106
-Len=2
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Date of facility visit
-Name=HF9
-Start=108
-Len=8
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Day of facility visit
-Name=HF9D
-Start=108
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Day of facility visit
-Name=HF9D_VS1
-Value=1:31
-
-[Item]
-Label=Month of facility visit
-Name=HF9M
-Start=110
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Month of facility visit
-Name=HF9M_VS1
-Value=1;JANUARY
-Value=2;FEBRUARY
-Value=3;MARCH
-Value=4;APRIL
-Value=5;MAY
-Value=6;JUNE
-Value=7;JULY
-Value=8;AUGUST
-Value=9;SEPTEMBER
-Value=10;OCTOBER
-Value=11;NOVEMBER
-Value=12;DECEMBER
-
-[Item]
-Label=Year of facility visit
-Name=HF9Y
-Start=112
-Len=4
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Year of facility visit
-Name=HF9Y_VS1
-Value=2025;2025
-
-[Item]
-Label=Time of start of interview
-Name=HF10
-Start=116
-Len=4
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Start of interview - Hour
-Name=HF10H
-Start=116
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Start of interview - Hour
-Name=HF10H_VS1
-Value=6:23
-
-[Item]
-Label=Start of interview - Minutes
-Name=HF10M
-Start=118
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Start of interview - Minutes
-Name=HF10M_VS1
-Value=0:59
-
-[Item]
-Label=Time of end of interview
-Name=HF14
-Start=120
-Len=4
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=End of interview - Hour
-Name=HF14H
-Start=120
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=End of interview - Hour
-Name=HF14H_VST
-Value=6:23
-
-[Item]
-Label=End of interview - Minutes
-Name=HF14M
-Start=122
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=End of interview - Minutes
-Name=HF14M_VST
-Value=0:59
-
-[Item]
-Label=Result of health facility visit
-Name=HF15
-Start=124
-Len=2
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Result of health facility visit
-Name=HF15_VST
-Value=1;RECORDS AT FACILITY AND COPIED
-Value=2;RECORDS AT FACILITY AND NOT COPIED
-Value=3;RECORDS NOT AVAILABLE AT FACILITY
-Value=6;OTHER
-
-[Item]
-Label=Date of birth as written on vaccination record
-Name=HF11
-Start=126
-Len=8
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Day of birth as written on vaccination record
-Name=HF11D
-Start=126
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Day of birth as written on vaccination record
-Name=HF11D_VST
-Value=1:31
-Value=99;NO RESPONSE
-
-[Item]
-Label=Month of birth as written on vaccination record
-Name=HF11M
-Start=128
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Month of birth as written on vaccination record
-Name=HF11M_VST
-Value=1;JANUARY
-Value=2;FEBRUARY
-Value=3;MARCH
-Value=4;APRIL
-Value=5;MAY
-Value=6;JUNE
-Value=7;JULY
-Value=8;AUGUST
-Value=9;SEPTEMBER
-Value=10;OCTOBER
-Value=11;NOVEMBER
-Value=12;DECEMBER
-Value=99;NO RESPONSE
-
-[Item]
-Label=Year of birth as written on vaccination record
-Name=HF11Y
-Start=130
-Len=4
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Year of birth as written on vaccination record
-Name=HF11Y_VST
-Value=2020;2020
-Value=2021;2021
-Value=2022;2022
-Value=2023;2023
-Value=2024;2024
-Value=2025;2025
-Value=9999;NO RESPONSE
-
-[Item]
-Label=Date of BCG immunization
-Name=HF12B
-Start=134
-Len=8
-DataType=Alpha
-
-[Item]
-Label=Day of BCG immunization
-Name=HF12BD
-Start=134
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Day of BCG immunization
-Name=HF12BD_VST
-Value=0;NOT GIVEN
-Value=1:31
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Month of BCG immunization
-Name=HF12BM
-Start=136
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Month of BCG immunization
-Name=HF12BM_VST
-Value=0;NOT GIVEN
-Value=1;JANUARY
-Value=2;FEBRUARY
-Value=3;MARCH
-Value=4;APRIL
-Value=5;MAY
-Value=6;JUNE
-Value=7;JULY
-Value=8;AUGUST
-Value=9;SEPTEMBER
-Value=10;OCTOBER
-Value=11;NOVEMBER
-Value=12;DECEMBER
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Year of BCG immunization
-Name=HF12BY
-Start=138
-Len=4
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Year of BCG immunization
-Name=HF12BY_VST
-Value=0;NOT GIVEN
-Value=2020;2020
-Value=2021;2021
-Value=2022;2022
-Value=2023;2023
-Value=2024;2024
-Value=2025;2025
-Value=4444;MARKED ON CARD
-Value=9999;NO RESPONSE
-
-[Item]
-Label=Date of HepB (at birth) immunization
-Name=HF12H0
-Start=142
-Len=8
-DataType=Alpha
-
-[Item]
-Label=Day of HepB (at birth) immunization
-Name=HF12H0D
-Start=142
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Day of HepB (at birth) immunization
-Name=HF12H0D_VST
-Value=0;NOT GIVEN
-Value=1:31
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Month of HepB (at birth) immunization
-Name=HF12H0M
-Start=144
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Month of HepB (at birth) immunization
-Name=HF12H0M_VST
-Value=0;NOT GIVEN
-Value=1;JANUARY
-Value=2;FEBRUARY
-Value=3;MARCH
-Value=4;APRIL
-Value=5;MAY
-Value=6;JUNE
-Value=7;JULY
-Value=8;AUGUST
-Value=9;SEPTEMBER
-Value=10;OCTOBER
-Value=11;NOVEMBER
-Value=12;DECEMBER
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Year of HepB (at birth) immunization
-Name=HF12H0Y
-Start=146
-Len=4
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Year of HepB (at birth) immunization
-Name=HF12H0Y_VS1
-Value=0;NOT GIVEN
-Value=2020;2020
-Value=2021;2021
-Value=2022;2022
-Value=2023;2023
-Value=2024;2024
-Value=2025;2025
-Value=4444;MARKED ON CARD
-Value=9999;NO RESPONSE
-
-[Item]
-Label=Date of Polio (OPV) (at birth) immunization
-Name=HF12P0
-Start=150
-Len=8
-DataType=Alpha
-
-[Item]
-Label=Day of Polio (OPV) (at birth) immunization
-Name=HF12P0D
-Start=150
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Day of Polio (OPV) (at birth) immunization
-Name=HF12P0D_VST
-Value=0;NOT GIVEN
-Value=1:31
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Month of Polio (OPV) (at birth) immunization
-Name=HF12P0M
-Start=152
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Month of Polio (OPV) (at birth) immunization
-Name=HF12P0M_VST
-Value=0;NOT GIVEN
-Value=1;JANUARY
-Value=2;FEBRUARY
-Value=3;MARCH
-Value=4;APRIL
-Value=5;MAY
-Value=6;JUNE
-Value=7;JULY
-Value=8;AUGUST
-Value=9;SEPTEMBER
-Value=10;OCTOBER
-Value=11;NOVEMBER
-Value=12;DECEMBER
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Year of Polio (OPV) (at birth) immunization
-Name=HF12P0Y
-Start=154
-Len=4
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Year of Polio (OPV) (at birth) immunization
-Name=HF12P0Y_VS1
-Value=0;NOT GIVEN
-Value=2020;2020
-Value=2021;2021
-Value=2022;2022
-Value=2023;2023
-Value=2024;2024
-Value=2025;2025
-Value=4444;MARKED ON CARD
-Value=9999;NO RESPONSE
-
-[Item]
-Label=Date of Polio1 (OPV) immunization
-Name=HF12P1
-Start=158
-Len=8
-DataType=Alpha
-
-[Item]
-Label=Day of Polio1 (OPV) immunization
-Name=HF12P1D
-Start=158
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Day of Polio1 (OPV) immunization
-Name=HF12P1D_VST
-Value=0;NOT GIVEN
-Value=1:31
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Month of Polio1 (OPV) immunization
-Name=HF12P1M
-Start=160
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Month of Polio1 (OPV) immunization
-Name=HF12P1M_VST
-Value=0;NOT GIVEN
-Value=1;JANUARY
-Value=2;FEBRUARY
-Value=3;MARCH
-Value=4;APRIL
-Value=5;MAY
-Value=6;JUNE
-Value=7;JULY
-Value=8;AUGUST
-Value=9;SEPTEMBER
-Value=10;OCTOBER
-Value=11;NOVEMBER
-Value=12;DECEMBER
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Year of Polio1 (OPV) immunization
-Name=HF12P1Y
-Start=162
-Len=4
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Year of Polio1 (OPV) immunization
-Name=HF12P1Y_VS1
-Value=0;NOT GIVEN
-Value=2020;2020
-Value=2021;2021
-Value=2022;2022
-Value=2023;2023
-Value=2024;2024
-Value=2025;2025
-Value=4444;MARKED ON CARD
-Value=9999;NO RESPONSE
-
-[Item]
-Label=Date of Polio2 (OPV) immunization
-Name=HF12P2
-Start=166
-Len=8
-DataType=Alpha
-
-[Item]
-Label=Day of Polio2 (OPV) immunization
-Name=HF12P2D
-Start=166
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Day of Polio2 (OPV) immunization
-Name=HF12P2D_VST
-Value=0;NOT GIVEN
-Value=1:31
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Month of Polio2 (OPV) immunization
-Name=HF12P2M
-Start=168
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Month of Polio2 (OPV) immunization
-Name=HF12P2M_VST
-Value=0;NOT GIVEN
-Value=1;JANUARY
-Value=2;FEBRUARY
-Value=3;MARCH
-Value=4;APRIL
-Value=5;MAY
-Value=6;JUNE
-Value=7;JULY
-Value=8;AUGUST
-Value=9;SEPTEMBER
-Value=10;OCTOBER
-Value=11;NOVEMBER
-Value=12;DECEMBER
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Year of Polio2 (OPV) immunization
-Name=HF12P2Y
-Start=170
-Len=4
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Year of Polio2 (OPV) immunization
-Name=HF12P2Y_VS1
-Value=0;NOT GIVEN
-Value=2020;2020
-Value=2021;2021
-Value=2022;2022
-Value=2023;2023
-Value=2024;2024
-Value=2025;2025
-Value=4444;MARKED ON CARD
-Value=9999;NO RESPONSE
-
-[Item]
-Label=Date of Polio3 (OPV) immunization
-Name=HF12P3
-Start=174
-Len=8
-DataType=Alpha
-
-[Item]
-Label=Day of Polio3 (OPV) immunization
-Name=HF12P3D
-Start=174
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Day of Polio3 (OPV) immunization
-Name=HF12P3D_VST
-Value=0;NOT GIVEN
-Value=1:31
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Month of Polio3 (OPV) immunization
-Name=HF12P3M
-Start=176
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Month of Polio3 (OPV) immunization
-Name=HF12P3M_VST
-Value=0;NOT GIVEN
-Value=1;JANUARY
-Value=2;FEBRUARY
-Value=3;MARCH
-Value=4;APRIL
-Value=5;MAY
-Value=6;JUNE
-Value=7;JULY
-Value=8;AUGUST
-Value=9;SEPTEMBER
-Value=10;OCTOBER
-Value=11;NOVEMBER
-Value=12;DECEMBER
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Year of Polio3 (OPV) immunization
-Name=HF12P3Y
-Start=178
-Len=4
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Year of Polio3 (OPV) immunization
-Name=HF12P3Y_VS1
-Value=0;NOT GIVEN
-Value=2020;2020
-Value=2021;2021
-Value=2022;2022
-Value=2023;2023
-Value=2024;2024
-Value=2025;2025
-Value=4444;MARKED ON CARD
-Value=9999;NO RESPONSE
-
-[Item]
-Label=Date of Polio (IPV) 1 immunization
-Name=HF12I1
-Start=182
-Len=8
-DataType=Alpha
-
-[Item]
-Label=Day of Polio (IPV) 1 immunization
-Name=HF12I1D
-Start=182
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Day of Polio (IPV) 1 immunization
-Name=HF12I1D_VS1
-Value=0;NOT GIVEN
-Value=1:31
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Month of Polio (IPV) 1 immunization
-Name=HF12I1M
-Start=184
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Month of Polio (IPV) 1 immunization
-Name=HF12I1M_VS1
-Value=0;NOT GIVEN
-Value=1;JANUARY
-Value=2;FEBRUARY
-Value=3;MARCH
-Value=4;APRIL
-Value=5;MAY
-Value=6;JUNE
-Value=7;JULY
-Value=8;AUGUST
-Value=9;SEPTEMBER
-Value=10;OCTOBER
-Value=11;NOVEMBER
-Value=12;DECEMBER
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Year of Polio (IPV) 1 immunization
-Name=HF12I1Y
-Start=186
-Len=4
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Year of Polio (IPV) 1 immunization
-Name=HF12I1Y_VS1
-Value=0;NOT GIVEN
-Value=2020;2020
-Value=2021;2021
-Value=2022;2022
-Value=2023;2023
-Value=2024;2024
-Value=2025;2025
-Value=4444;MARKED ON CARD
-Value=9999;NO RESPONSE
-
-[Item]
-Label=Date of Polio (IPV) 2 immunization
-Name=HF12I2
-Start=190
-Len=8
-DataType=Alpha
-
-[Item]
-Label=Day of Polio (IPV) 2 immunization
-Name=HF12I2D
-Start=190
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Day of Polio (IPV) 2 immunization
-Name=HF12I2D_VS1
-Value=0;NOT GIVEN
-Value=1:31
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Month of Polio (IPV) 2 immunization
-Name=HF12I2M
-Start=192
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Month of Polio (IPV) 2 immunization
-Name=HF12I2M_VS1
-Value=0;NOT GIVEN
-Value=1;JANUARY
-Value=2;FEBRUARY
-Value=3;MARCH
-Value=4;APRIL
-Value=5;MAY
-Value=6;JUNE
-Value=7;JULY
-Value=8;AUGUST
-Value=9;SEPTEMBER
-Value=10;OCTOBER
-Value=11;NOVEMBER
-Value=12;DECEMBER
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Year of Polio (IPV) 2 immunization
-Name=HF12I2Y
-Start=194
-Len=4
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Year of Polio (IPV) 2 immunization
-Name=HF12I2Y_VS1
-Value=0;NOT GIVEN
-Value=2020;2020
-Value=2021;2021
-Value=2022;2022
-Value=2023;2023
-Value=2024;2024
-Value=2025;2025
-Value=4444;MARKED ON CARD
-Value=9999;NO RESPONSE
-
-[Item]
-Label=Date of Pentavalent (DPTHibHepB) 1 immunization
-Name=HF12PENTA1
-Start=198
-Len=8
-DataType=Alpha
-
-[Item]
-Label=Day of Pentavalent (DPTHibHepB) 1 immunization
-Name=HF12PENTA1D
-Start=198
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Day of Pentavalent (DPTHibHepB) 1 immunization
-Name=HF12PENTA1D_VST
-Value=0;NOT GIVEN
-Value=1:31
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Month of Pentavalent (DPTHibHepB) 1 immunization
-Name=HF12PENTA1M
-Start=200
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Month of Pentavalent (DPTHibHepB) 1 immunization
-Name=HF12PENTA1M_VST
-Value=0;NOT GIVEN
-Value=1;JANUARY
-Value=2;FEBRUARY
-Value=3;MARCH
-Value=4;APRIL
-Value=5;MAY
-Value=6;JUNE
-Value=7;JULY
-Value=8;AUGUST
-Value=9;SEPTEMBER
-Value=10;OCTOBER
-Value=11;NOVEMBER
-Value=12;DECEMBER
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Year of Pentavalent (DPTHibHepB) 1 immunization
-Name=HF12PENTA1Y
-Start=202
-Len=4
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Year of Pentavalent (DPTHibHepB) 1 immunization
-Name=HF12PENTA1Y_VS1
-Value=0;NOT GIVEN
-Value=2020;2020
-Value=2021;2021
-Value=2022;2022
-Value=2023;2023
-Value=2024;2024
-Value=2025;2025
-Value=4444;MARKED ON CARD
-Value=9999;NO RESPONSE
-
-[Item]
-Label=Date of Pentavalent (DPTHibHepB) 2 immunization
-Name=HF12PENTA2
-Start=206
-Len=8
-DataType=Alpha
-
-[Item]
-Label=Day of Pentavalent (DPTHibHepB) 2 immunization
-Name=HF12PENTA2D
-Start=206
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Day of Pentavalent (DPTHibHepB) 2 immunization
-Name=HF12PENTA2D_VST
-Value=0;NOT GIVEN
-Value=1:31
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Month of Pentavalent (DPTHibHepB) 2 immunization
-Name=HF12PENTA2M
-Start=208
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Month of Pentavalent (DPTHibHepB) 2 immunization
-Name=HF12PENTA2M_VST
-Value=0;NOT GIVEN
-Value=1;JANUARY
-Value=2;FEBRUARY
-Value=3;MARCH
-Value=4;APRIL
-Value=5;MAY
-Value=6;JUNE
-Value=7;JULY
-Value=8;AUGUST
-Value=9;SEPTEMBER
-Value=10;OCTOBER
-Value=11;NOVEMBER
-Value=12;DECEMBER
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Year of Pentavalent (DPTHibHepB) 2 immunization
-Name=HF12PENTA2Y
-Start=210
-Len=4
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Year of Pentavalent (DPTHibHepB) 2 immunization
-Name=HF12PENTA2Y_VS1
-Value=0;NOT GIVEN
-Value=2020;2020
-Value=2021;2021
-Value=2022;2022
-Value=2023;2023
-Value=2024;2024
-Value=2025;2025
-Value=4444;MARKED ON CARD
-Value=9999;NO RESPONSE
-
-[Item]
-Label=Date of Pentavalent (DPTHibHepB) 3 immunization
-Name=HF12PENTA3
-Start=214
-Len=8
-DataType=Alpha
-
-[Item]
-Label=Day of Pentavalent (DPTHibHepB) 3 immunization
-Name=HF12PENTA3D
-Start=214
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Day of Pentavalent (DPTHibHepB) 3 immunization
-Name=HF12PENTA3D_VST
-Value=0;NOT GIVEN
-Value=1:31
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Month of Pentavalent (DPTHibHepB) 3 immunization
-Name=HF12PENTA3M
-Start=216
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Month of Pentavalent (DPTHibHepB) 3 immunization
-Name=HF12PENTA3M_VST
-Value=0;NOT GIVEN
-Value=1;JANUARY
-Value=2;FEBRUARY
-Value=3;MARCH
-Value=4;APRIL
-Value=5;MAY
-Value=6;JUNE
-Value=7;JULY
-Value=8;AUGUST
-Value=9;SEPTEMBER
-Value=10;OCTOBER
-Value=11;NOVEMBER
-Value=12;DECEMBER
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Year of Pentavalent (DPTHibHepB) 3 immunization
-Name=HF12PENTA3Y
-Start=218
-Len=4
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Year of Pentavalent (DPTHibHepB) 3 immunization
-Name=HF12PENTA3Y_VS1
-Value=0;NOT GIVEN
-Value=2020;2020
-Value=2021;2021
-Value=2022;2022
-Value=2023;2023
-Value=2024;2024
-Value=2025;2025
-Value=4444;MARKED ON CARD
-Value=9999;NO RESPONSE
-
-[Item]
-Label=Date of Pneumococcal (Conjugate) 1 immunization
-Name=HF12PCV1
-Start=222
-Len=8
-DataType=Alpha
-
-[Item]
-Label=Day of Pneumococcal (Conjugate) 1 immunization
-Name=HF12PCV1D
-Start=222
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Day of Pneumococcal (Conjugate) 1 immunization
-Name=HF12PCV1D_VST
-Value=0;NOT GIVEN
-Value=1:31
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Month of Pneumococcal (Conjugate) 1 immunization
-Name=HF12PCV1M
-Start=224
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Month of Pneumococcal (Conjugate) 1 immunization
-Name=HF12PCV1M_VST
-Value=0;NOT GIVEN
-Value=1;JANUARY
-Value=2;FEBRUARY
-Value=3;MARCH
-Value=4;APRIL
-Value=5;MAY
-Value=6;JUNE
-Value=7;JULY
-Value=8;AUGUST
-Value=9;SEPTEMBER
-Value=10;OCTOBER
-Value=11;NOVEMBER
-Value=12;DECEMBER
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Year of Pneumococcal (Conjugate) 1 immunization
-Name=HF12PCV1Y
-Start=226
-Len=4
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Year of Pneumococcal (Conjugate) 1 immunization
-Name=HF12PCV1Y_VS1
-Value=0;NOT GIVEN
-Value=2020;2020
-Value=2021;2021
-Value=2022;2022
-Value=2023;2023
-Value=2024;2024
-Value=2025;2025
-Value=4444;MARKED ON CARD
-Value=9999;NO RESPONSE
-
-[Item]
-Label=Date of Pneumococcal (Conjugate) 2 immunization
-Name=HF12PCV2
-Start=230
-Len=8
-DataType=Alpha
-
-[Item]
-Label=Day of Pneumococcal (Conjugate) 2 immunization
-Name=HF12PCV2D
-Start=230
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Day of Pneumococcal (Conjugate) 2 immunization
-Name=HF12PCV2D_VST
-Value=0;NOT GIVEN
-Value=1:31
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Month of Pneumococcal (Conjugate) 2 immunization
-Name=HF12PCV2M
-Start=232
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Month of Pneumococcal (Conjugate) 2 immunization
-Name=HF12PCV2M_VST
-Value=0;NOT GIVEN
-Value=1;JANUARY
-Value=2;FEBRUARY
-Value=3;MARCH
-Value=4;APRIL
-Value=5;MAY
-Value=6;JUNE
-Value=7;JULY
-Value=8;AUGUST
-Value=9;SEPTEMBER
-Value=10;OCTOBER
-Value=11;NOVEMBER
-Value=12;DECEMBER
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Year of Pneumococcal (Conjugate) 2 immunization
-Name=HF12PCV2Y
-Start=234
-Len=4
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Year of Pneumococcal (Conjugate) 2 immunization
-Name=HF12PCV2Y_VS1
-Value=0;NOT GIVEN
-Value=2020;2020
-Value=2021;2021
-Value=2022;2022
-Value=2023;2023
-Value=2024;2024
-Value=2025;2025
-Value=4444;MARKED ON CARD
-Value=9999;NO RESPONSE
-
-[Item]
-Label=Date of Pneumococcal (Conjugate) 3 immunization
-Name=HF12PCV3
-Start=238
-Len=8
-DataType=Alpha
-
-[Item]
-Label=Day of Pneumococcal (Conjugate) 3 immunization
-Name=HF12PCV3D
-Start=238
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Day of Pneumococcal (Conjugate) 3 immunization
-Name=HF12PCV3D_VST
-Value=0;NOT GIVEN
-Value=1:31
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Month of Pneumococcal (Conjugate) 3 immunization
-Name=HF12PCV3M
-Start=240
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Month of Pneumococcal (Conjugate) 3 immunization
-Name=HF12PCV3M_VST
-Value=0;NOT GIVEN
-Value=1;JANUARY
-Value=2;FEBRUARY
-Value=3;MARCH
-Value=4;APRIL
-Value=5;MAY
-Value=6;JUNE
-Value=7;JULY
-Value=8;AUGUST
-Value=9;SEPTEMBER
-Value=10;OCTOBER
-Value=11;NOVEMBER
-Value=12;DECEMBER
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Year of Pneumococcal (Conjugate) 3 immunization
-Name=HF12PCV3Y
-Start=242
-Len=4
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Year of Pneumococcal (Conjugate) 3 immunization
-Name=HF12PCV3Y_VS1
-Value=0;NOT GIVEN
-Value=2020;2020
-Value=2021;2021
-Value=2022;2022
-Value=2023;2023
-Value=2024;2024
-Value=2025;2025
-Value=4444;MARKED ON CARD
-Value=9999;NO RESPONSE
-
-[Item]
-Label=Date of Rotavirus 1 immunization
-Name=HF12R1
-Start=246
-Len=8
-DataType=Alpha
-
-[Item]
-Label=Day of Rotavirus 1 immunization
-Name=HF12R1D
-Start=246
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Day of Rotavirus 1 immunization
-Name=HF12R1D_VST
-Value=0;NOT GIVEN
-Value=1:31
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Month of Rotavirus 1 immunization
-Name=HF12R1M
-Start=248
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Month of Rotavirus 1 immunization
-Name=HF12R1M_VST
-Value=0;NOT GIVEN
-Value=1;JANUARY
-Value=2;FEBRUARY
-Value=3;MARCH
-Value=4;APRIL
-Value=5;MAY
-Value=6;JUNE
-Value=7;JULY
-Value=8;AUGUST
-Value=9;SEPTEMBER
-Value=10;OCTOBER
-Value=11;NOVEMBER
-Value=12;DECEMBER
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Year of Rotavirus 1 immunization
-Name=HF12R1Y
-Start=250
-Len=4
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Year of Rotavirus 1 immunization
-Name=HF12R1Y_VS1
-Value=0;NOT GIVEN
-Value=2020;2020
-Value=2021;2021
-Value=2022;2022
-Value=2023;2023
-Value=2024;2024
-Value=2025;2025
-Value=4444;MARKED ON CARD
-Value=9999;NO RESPONSE
-
-[Item]
-Label=Date of Rotavirus 2 immunization
-Name=HF12R2
-Start=254
-Len=8
-DataType=Alpha
-
-[Item]
-Label=Day of Rotavirus 2 immunization
-Name=HF12R2D
-Start=254
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Day of Rotavirus 2 immunization
-Name=HF12R2D_VST
-Value=0;NOT GIVEN
-Value=1:31
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Month of Rotavirus 2 immunization
-Name=HF12R2M
-Start=256
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Month of Rotavirus 2 immunization
-Name=HF12R2M_VST
-Value=0;NOT GIVEN
-Value=1;JANUARY
-Value=2;FEBRUARY
-Value=3;MARCH
-Value=4;APRIL
-Value=5;MAY
-Value=6;JUNE
-Value=7;JULY
-Value=8;AUGUST
-Value=9;SEPTEMBER
-Value=10;OCTOBER
-Value=11;NOVEMBER
-Value=12;DECEMBER
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Year of Rotavirus 2 immunization
-Name=HF12R2Y
-Start=258
-Len=4
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Year of Rotavirus 2 immunization
-Name=HF12R2Y_VS1
-Value=0;NOT GIVEN
-Value=2020;2020
-Value=2021;2021
-Value=2022;2022
-Value=2023;2023
-Value=2024;2024
-Value=2025;2025
-Value=4444;MARKED ON CARD
-Value=9999;NO RESPONSE
-
-[Item]
-Label=Date of Rotavirus 3 immunization
-Name=HF12R3
-Start=262
-Len=8
-DataType=Alpha
-
-[Item]
-Label=Day of Rotavirus 3 immunization
-Name=HF12R3D
-Start=262
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Day of Rotavirus 3 immunization
-Name=HF12R3D_VST
-Value=0;NOT GIVEN
-Value=1:31
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Month of Rotavirus 3 immunization
-Name=HF12R3M
-Start=264
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Month of Rotavirus 3 immunization
-Name=HF12R3M_VST
-Value=0;NOT GIVEN
-Value=1;JANUARY
-Value=2;FEBRUARY
-Value=3;MARCH
-Value=4;APRIL
-Value=5;MAY
-Value=6;JUNE
-Value=7;JULY
-Value=8;AUGUST
-Value=9;SEPTEMBER
-Value=10;OCTOBER
-Value=11;NOVEMBER
-Value=12;DECEMBER
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Year of Rotavirus 3 immunization
-Name=HF12R3Y
-Start=266
-Len=4
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Year of Rotavirus 3 immunization
-Name=HF12R3Y_VS1
-Value=0;NOT GIVEN
-Value=2020;2020
-Value=2021;2021
-Value=2022;2022
-Value=2023;2023
-Value=2024;2024
-Value=2025;2025
-Value=4444;MARKED ON CARD
-Value=9999;NO RESPONSE
-
-[Item]
-Label=Date of MMR/MR 1 immunization
-Name=HF12M1
-Start=270
-Len=8
-DataType=Alpha
-
-[Item]
-Label=Day of MMR/MR 1 immunization
-Name=HF12M1D
-Start=270
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Day of MMR/MR 1 immunization
-Name=HF12M1D_VST
-Value=0;NOT GIVEN
-Value=1:31
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Month of MMR/MR 1 immunization
-Name=HF12M1M
-Start=272
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Month of MMR/MR 1 immunization
-Name=HF12M1M_VST
-Value=0;NOT GIVEN
-Value=1;JANUARY
-Value=2;FEBRUARY
-Value=3;MARCH
-Value=4;APRIL
-Value=5;MAY
-Value=6;JUNE
-Value=7;JULY
-Value=8;AUGUST
-Value=9;SEPTEMBER
-Value=10;OCTOBER
-Value=11;NOVEMBER
-Value=12;DECEMBER
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Year of MMR/MR 1 immunization
-Name=HF12M1Y
-Start=274
-Len=4
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Year of MMR/MR 1 immunization
-Name=HF12M1Y_VS1
-Value=0;NOT GIVEN
-Value=2020;2020
-Value=2021;2021
-Value=2022;2022
-Value=2023;2023
-Value=2024;2024
-Value=2025;2025
-Value=4444;MARKED ON CARD
-Value=9999;NO RESPONSE
-
-[Item]
-Label=Date of MMR/MR 2 immunization
-Name=HF12M2
-Start=278
-Len=8
-DataType=Alpha
-
-[Item]
-Label=Day of MMR/MR 2 immunization
-Name=HF12M2D
-Start=278
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Day of MMR/MR 2 immunization
-Name=HF12M2D_VST
-Value=0;NOT GIVEN
-Value=1:31
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Month of MMR/MR 2 immunization
-Name=HF12M2M
-Start=280
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Month of MMR/MR 2 immunization
-Name=HF12M2M_VST
-Value=0;NOT GIVEN
-Value=1;JANUARY
-Value=2;FEBRUARY
-Value=3;MARCH
-Value=4;APRIL
-Value=5;MAY
-Value=6;JUNE
-Value=7;JULY
-Value=8;AUGUST
-Value=9;SEPTEMBER
-Value=10;OCTOBER
-Value=11;NOVEMBER
-Value=12;DECEMBER
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Year of MMR/MR 2 immunization
-Name=HF12M2Y
-Start=282
-Len=4
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Year of MMR/MR 2 immunization
-Name=HF12M2Y_VS1
-Value=0;NOT GIVEN
-Value=2020;2020
-Value=2021;2021
-Value=2022;2022
-Value=2023;2023
-Value=2024;2024
-Value=2025;2025
-Value=4444;MARKED ON CARD
-Value=9999;NO RESPONSE
-
-[Item]
-Label=Date of Yellow Fever immunization
-Name=HF12Y
-Start=286
-Len=8
-DataType=Alpha
-
-[Item]
-Label=Day of Yellow Fever immunization
-Name=HF12YD
-Start=286
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Day of Yellow Fever immunization
-Name=HF12YD_VST
-Value=0;NOT GIVEN
-Value=1:31
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Month of Yellow Fever immunization
-Name=HF12YM
-Start=288
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Month of Yellow Fever immunization
-Name=HF12YM_VST
-Value=0;NOT GIVEN
-Value=1;JANUARY
-Value=2;FEBRUARY
-Value=3;MARCH
-Value=4;APRIL
-Value=5;MAY
-Value=6;JUNE
-Value=7;JULY
-Value=8;AUGUST
-Value=9;SEPTEMBER
-Value=10;OCTOBER
-Value=11;NOVEMBER
-Value=12;DECEMBER
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Year of Yellow Fever immunization
-Name=HF12YY
-Start=290
-Len=4
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Year of Yellow Fever immunization
-Name=HF12YY_VS1
-Value=0;NOT GIVEN
-Value=2020;2020
-Value=2021;2021
-Value=2022;2022
-Value=2023;2023
-Value=2024;2024
-Value=2025;2025
-Value=4444;MARKED ON CARD
-Value=9999;NO RESPONSE
-
-[Item]
-Label=Date of Td Booster 1 immunization
-Name=HF12TD1
-Start=294
-Len=8
-DataType=Alpha
-
-[Item]
-Label=Day of Td Booster 1 immunization
-Name=HF12TD1D
-Start=294
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Day of Td Booster 1 immunization
-Name=HF12TD1D_VS1
-Value=0;NOT GIVEN
-Value=1:31
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Month of Td Booster 1 immunization
-Name=HF12TD1M
-Start=296
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Month of Td Booster 1 immunization
-Name=HF12TD1M_VS1
-Value=0;NOT GIVEN
-Value=1;JANUARY
-Value=2;FEBRUARY
-Value=3;MARCH
-Value=4;APRIL
-Value=5;MAY
-Value=6;JUNE
-Value=7;JULY
-Value=8;AUGUST
-Value=9;SEPTEMBER
-Value=10;OCTOBER
-Value=11;NOVEMBER
-Value=12;DECEMBER
-Value=44;MARKED ON CARD
-Value=99;NO RESPONSE
-
-[Item]
-Label=Year of Td Booster 1 immunization
-Name=HF12TD1Y
-Start=298
-Len=4
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Year of Td Booster 1 immunization
-Name=HF12TD1Y_VS1
-Value=0;NOT GIVEN
-Value=2020;2020
-Value=2021;2021
-Value=2022;2022
-Value=2023;2023
-Value=2024;2024
-Value=2025;2025
-Value=4444;MARKED ON CARD
-Value=9999;NO RESPONSE
 
 [Record]
 Label=Time Stamps of the Under-Five Questionnaire Modules

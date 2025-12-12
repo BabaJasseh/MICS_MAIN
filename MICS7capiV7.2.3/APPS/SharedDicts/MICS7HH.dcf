@@ -54,7 +54,7 @@ ZeroFill=Yes
 Label=Household Information Panel
 Name=MODHH
 RecordTypeValue='0HH'
-RecordLen=250
+RecordLen=251
 
 [Item]
 Label=Interviewer number
@@ -123,7 +123,7 @@ Name=HH5Y_VST
 Value=2025:2028
 
 [Item]
-Label=Location
+Label=Area
 Name=HH6
 Start=30
 Len=1
@@ -131,13 +131,13 @@ DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Location
+Label=Area
 Name=HH6_VST
 Value=1;URBAN
 Value=2;RURAL
 
 [Item]
-Label=Region
+Label=LGA
 Name=HH7
 Start=31
 Len=1
@@ -145,18 +145,40 @@ DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Region
+Label=LGA
 Name=HH7_VST
-Value=1;REGION 1
-Value=2;REGION 2
-Value=3;REGION 3
-Value=4;REGION 4
-Value=5;REGION 5
+Value=1;BANJUL
+Value=2;KANIFING
+Value=3;BRIKAMA
+Value=4;MANSAKONKO
+Value=5;KEREWAN
+Value=6;KUNTAUR
+Value=7;JANJANBUREH
+Value=8;BASSE
+
+[Item]
+Label=District number
+Name=HH7A
+Start=32
+Len=1
+DataType=Alpha
+
+[ValueSet]
+Label=District number
+Name=HH7A_VS1
+Value=1;BANJUL
+Value=2;KANIFING
+Value=3;BRIKAMA
+Value=4;MANSAKONKO
+Value=5;KEREWAN
+Value=6;KUNTAUR
+Value=7;JANJANBUREH
+Value=8;BASSE
 
 [Item]
 Label=HH selected for Questionnaire for Men
 Name=HH8
-Start=32
+Start=33
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -170,7 +192,7 @@ Value=2;NO
 [Item]
 Label=HH selected for Water Quality Testing
 Name=HH9
-Start=33
+Start=34
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -184,7 +206,7 @@ Value=2;NO
 [Item]
 Label=HH selected for Blank Testing
 Name=HH10
-Start=34
+Start=35
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -198,14 +220,14 @@ Value=2;NO
 [Item]
 Label=Name of household head
 Name=HHNAME
-Start=35
+Start=36
 Len=20
 DataType=Alpha
 
 [Item]
 Label=Time of start of interview
 Name=HH11
-Start=55
+Start=56
 Len=4
 DataType=Numeric
 ZeroFill=Yes
@@ -213,7 +235,7 @@ ZeroFill=Yes
 [Item]
 Label=Start of interview - Hour
 Name=HH11H
-Start=55
+Start=56
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -227,7 +249,7 @@ Value=6:23
 [Item]
 Label=Start of interview - Minutes
 Name=HH11M
-Start=57
+Start=58
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -241,7 +263,7 @@ Value=0:59
 [Item]
 Label=Respondent age confirmation
 Name=HH11C
-Start=59
+Start=60
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -254,7 +276,7 @@ Value=1;CONTINUE
 [Item]
 Label=Consent
 Name=HH12
-Start=60
+Start=61
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -268,7 +290,7 @@ Value=2;NO / NOT ASKED
 [Item]
 Label=Result of HH interview
 Name=HH46
-Start=61
+Start=62
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -288,7 +310,7 @@ Value=96;OTHER
 [Item]
 Label=Time of end of interview
 Name=HH13
-Start=63
+Start=64
 Len=4
 DataType=Numeric
 ZeroFill=Yes
@@ -296,7 +318,7 @@ ZeroFill=Yes
 [Item]
 Label=End of interview - Hour
 Name=HH13H
-Start=63
+Start=64
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -310,7 +332,7 @@ Value=6:23
 [Item]
 Label=End of interview - Minutes
 Name=HH13M
-Start=65
+Start=66
 Len=2
 ItemType=SubItem
 DataType=Numeric
@@ -324,7 +346,7 @@ Value=0:59
 [Item]
 Label=Language of the Questionnaire
 Name=HH14
-Start=67
+Start=68
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -339,7 +361,7 @@ Value=3;LANGUAGE 3
 [Item]
 Label=Language of the Interview
 Name=HH15
-Start=68
+Start=69
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -355,7 +377,7 @@ Value=6;OTHER LANGUAGE
 [Item]
 Label=Native language of the Respondent
 Name=HH16
-Start=69
+Start=70
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -371,7 +393,7 @@ Value=6;OTHER LANGUAGE
 [Item]
 Label=Translator used
 Name=HH17
-Start=70
+Start=71
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -386,7 +408,7 @@ Value=3;NO, NOT USED
 [Item]
 Label=Rank number of the selected child
 Name=HH26A
-Start=71
+Start=72
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -399,7 +421,7 @@ Value=1:8
 [Item]
 Label=Child line number
 Name=HH26B
-Start=72
+Start=73
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -413,7 +435,7 @@ Value=97;Inconsistent
 [Item]
 Label=Child's age
 Name=HH26C
-Start=74
+Start=75
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -421,7 +443,7 @@ ZeroFill=Yes
 [Item]
 Label=Rank number of the selected woman for the VW module
 Name=HH30HA
-Start=76
+Start=77
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -434,7 +456,7 @@ Value=1:8
 [Item]
 Label=Woman line number for the VW module
 Name=HH30HB
-Start=77
+Start=78
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -448,7 +470,7 @@ Value=97;Inconsistent
 [Item]
 Label=Woman's age (selected for the VW module)
 Name=HH30HC
-Start=79
+Start=80
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -456,7 +478,7 @@ ZeroFill=Yes
 [Item]
 Label=Roster to check the consent for interview girls 15-17
 Name=HH33X
-Start=81
+Start=82
 Len=1
 DataType=Numeric
 Occurrences=50
@@ -471,7 +493,7 @@ Value=2;NO, PERMISSION IS NOT GIVEN
 [Item]
 Label=Consent for interview girls 15-17
 Name=HH33
-Start=131
+Start=132
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -486,7 +508,7 @@ Value=3;NO for all girls age 15-17
 [Item]
 Label=Roster to check the consent for interview boys 15-17
 Name=HH39X
-Start=132
+Start=133
 Len=1
 DataType=Numeric
 Occurrences=50
@@ -501,7 +523,7 @@ Value=2;NO, PERMISSION IS NOT GIVEN
 [Item]
 Label=Consent for interview boys 15-17
 Name=HH39
-Start=182
+Start=183
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -516,7 +538,7 @@ Value=3;NO for all boys age 15-17
 [Item]
 Label=Consent for Water Quality Testing
 Name=HH44
-Start=183
+Start=184
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -530,7 +552,7 @@ Value=2;NO, PERMISSION IS NOT GIVEN
 [Item]
 Label=Respondent to HH questionnaire
 Name=HH47
-Start=184
+Start=185
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -543,7 +565,7 @@ Value=1:50
 [Item]
 Label=Number of HH members
 Name=HH48
-Start=186
+Start=187
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -556,7 +578,7 @@ Value=1:50
 [Item]
 Label=Number of women 15-49 years
 Name=HH49
-Start=188
+Start=189
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -569,7 +591,7 @@ Value=0:50
 [Item]
 Label=Number of woman's questionnaires completed
 Name=HH53
-Start=190
+Start=191
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -582,7 +604,7 @@ Value=0:50
 [Item]
 Label=Number of men 15-49 years [If household is selected for Questionnaire for Men]
 Name=HH50
-Start=192
+Start=193
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -595,7 +617,7 @@ Value=0:50
 [Item]
 Label=Number of man's questionnaires completed [If household is selected for Questionnaire for Men]
 Name=HH54
-Start=194
+Start=195
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -608,7 +630,7 @@ Value=0:50
 [Item]
 Label=Number of children under age 5
 Name=HH51
-Start=196
+Start=197
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -621,7 +643,7 @@ Value=0:50
 [Item]
 Label=Number of under-5 questionnaires completed
 Name=HH55
-Start=198
+Start=199
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -634,7 +656,7 @@ Value=0:50
 [Item]
 Label=Number of children age 5-17
 Name=HH52
-Start=200
+Start=201
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -647,7 +669,7 @@ Value=0:50
 [Item]
 Label=Number of 5-17 questionnaires completed
 Name=HH56
-Start=202
+Start=203
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -661,7 +683,7 @@ Value=1;ONE
 [Item]
 Label=Introduction HH Listing
 Name=INTROHL
-Start=204
+Start=205
 Len=1
 DataType=Alpha
 
@@ -673,7 +695,7 @@ Value=1;CONTINUE
 [Item]
 Label=Other household members
 Name=HHAUX
-Start=205
+Start=206
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -687,14 +709,14 @@ Value=2;NO
 [Item]
 Label=Household address
 Name=HHADDR
-Start=206
+Start=207
 Len=40
 DataType=Alpha
 
 [Item]
 Label=Water Quality prompt
 Name=HHWQ
-Start=246
+Start=247
 Len=1
 DataType=Alpha
 
@@ -706,7 +728,7 @@ Value=1;CONTINUE
 [Item]
 Label=Consent for phone survey
 Name=HH44BC
-Start=247
+Start=248
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -720,7 +742,7 @@ Value=2;NO
 [Item]
 Label=Have personal phone number or phone number for the household
 Name=HH44DE
-Start=248
+Start=249
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -734,7 +756,7 @@ Value=2;NO
 [Item]
 Label=Note on sharing phone number for the household
 Name=HH44F
-Start=249
+Start=250
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -747,7 +769,7 @@ Value=1;CONTINUE
 [Item]
 Label=Finish
 Name=HHFIN
-Start=250
+Start=251
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -896,6 +918,8 @@ Value=11;NIECE / NEPHEW
 Value=12;OTHER RELATIVE
 Value=13;ADOPTED / FOSTER / STEPCHILD
 Value=14;SERVANT (LIVE-IN)
+Value=15;CO-WIFE
+Value=16;GRANDPARENT
 Value=96;OTHER (NOT RELATED)
 Value=98;DK
 
@@ -1108,8 +1132,8 @@ ZeroFill=Yes
 Label=Where does natural mother live
 Name=HL15_VST
 Value=1;ABROAD
-Value=2;IN ANOTHER HOUSEHOLD IN THE SAME REGION
-Value=3;IN ANOTHER HOUSEHOLD IN ANOTHER REGION
+Value=2;IN ANOTHER HOUSEHOLD IN THE SAME LGA
+Value=3;IN ANOTHER HOUSEHOLD IN ANOTHER LGA
 Value=4;INSTITUTION IN THIS COUNTRY
 Value=8;DK
 Value=9;NO RESPONSE
@@ -1171,8 +1195,8 @@ ZeroFill=Yes
 Label=Where does natural father live
 Name=HL19_VST
 Value=1;ABROAD
-Value=2;IN ANOTHER HOUSEHOLD IN THE SAME REGION
-Value=3;IN ANOTHER HOUSEHOLD IN ANOTHER REGION
+Value=2;IN ANOTHER HOUSEHOLD IN THE SAME LGA
+Value=3;IN ANOTHER HOUSEHOLD IN ANOTHER LGA
 Value=4;INSTITUTION IN THIS COUNTRY
 Value=8;DK
 Value=9;NO RESPONSE
@@ -1197,7 +1221,7 @@ Name=MODED
 RecordTypeValue='0ED'
 Required=No
 MaxRecords=50
-RecordLen=66
+RecordLen=55
 
 [Item]
 Label=Line number
@@ -1250,7 +1274,7 @@ DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Ever attended school or any Early Childhood Education programme
+Label=Ever attended school or any Early Childhood Development programme
 Name=ED4_VST
 Value=1;YES
 Value=2;NO
@@ -1267,13 +1291,14 @@ ZeroFill=Yes
 [ValueSet]
 Label=Highest level of education attended
 Name=ED5A_VST
-Value=0;EARLY CHILDHOOD EDUCATION
-Value=1;PRIMARY
-Value=2;LOWER SECONDARY
-Value=3;UPPER SECONDARY
-Value=4;HIGHER
+Value=0;ECD
+Value=1;LOWER BASIC EDUCATION
+Value=2;UPPER BASIC EDUCATION
+Value=3;SENIOR SECONDARY EDUCATION
+Value=4;VOCATIONAL
+Value=5;DIPLOMA
+Value=6;HIGHER
 Value=8;DK
-Value=9;NO RESPONSE
 
 [Item]
 Label=Highest grade attended at that level
@@ -1368,11 +1393,13 @@ ZeroFill=Yes
 [ValueSet]
 Label=Level of education attended during current school year
 Name=ED10A_VST
-Value=0;EARLY CHILDHOOD EDUCATION
-Value=1;PRIMARY
-Value=2;LOWER SECONDARY
-Value=3;UPPER SECONDARY
-Value=4;HIGHER
+Value=0;ECD
+Value=1;LOWER BASIC EDUCATION
+Value=2;UPPER BASIC EDUCATION
+Value=3;SENIOR SECONDARY EDUCATION
+Value=4;VOCATIONAL
+Value=5;DIPLOMA
+Value=6;HIGHER
 Value=8;DK
 Value=9;NO RESPONSE
 
@@ -1399,197 +1426,9 @@ Value=98;DK
 Value=99;NO RESPONSE
 
 [Item]
-Label=Attended public school during current school year
-Name=ED11
-Start=52
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Attended public school during current school year
-Name=ED11_VS1
-Value=1;GOVT./ PUBLIC
-Value=2;RELIGIOUS/ FAITH ORG.
-Value=3;PRIVATE
-Value=6;OTHER
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=School tuition support in the current school year
-Name=ED12
-Start=53
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=School tuition support in the current school year
-Name=ED12_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=School tuition support was sufficient for paying the costs
-Name=ED12A
-Start=54
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=School tuition support was sufficient for paying the costs
-Name=ED12A_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=Tuition support provided
-Name=ED13
-Start=55
-Len=6
-DataType=Alpha
-
-[ValueSet]
-Label=Tuition support provided
-Name=ED13_VS1
-Value='A     ';GOVT./ PUBLIC
-Value='B     ';RELIGIOUS/ FAITH ORG.
-Value='C     ';PRIVATE
-Value='X     ';OTHER
-Value='Z     ';DK
-Value='?     ';NO RESPONSE
-
-[Item]
-Label=Tuition support provided: Govt./public
-Name=ED13A
-Start=55
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Tuition support provided: Govt./public
-Name=ED13A_VS1
-Value='A';GOVT./ PUBLIC
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Tuition support provided: Religious/faith org.
-Name=ED13B
-Start=56
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Tuition support provided: Religious/faith org.
-Name=ED13B_VS1
-Value='B';RELIGIOUS/ FAITH ORG.
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Tuition support provided: Private
-Name=ED13C
-Start=57
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Tuition support provided: Private
-Name=ED13C_VS1
-Value='C';PRIVATE
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Tuition support provided: Other
-Name=ED13X
-Start=58
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Tuition support provided: Other
-Name=ED13X_VS1
-Value='X';OTHER
-Value='?';NO RESPONSE
-
-[Item]
-Label=Tuition support provided: DK
-Name=ED13Z
-Start=59
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Tuition support provided: DK
-Name=ED13Z_VS1
-Value='Z';DK
-Value='?';NO RESPONSE
-
-[Item]
-Label=Tuition support provided: No response
-Name=ED13NR
-Start=60
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Tuition support provided: No response
-Name=ED13NR_VS1
-Value='?';NO RESPONSE
-Value=' '
-
-[Item]
-Label=Material support in the current school year
-Name=ED14
-Start=61
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Material support in the current school year
-Name=ED14_VS1
-Value=1;YES, CASH ONLY
-Value=2;YES, IN KIND ONLY
-Value=3;YES, BOTH
-Value=4;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=Material support was sufficient
-Name=ED14A
-Start=62
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Material support was sufficient
-Name=ED14A_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
 Label=Attended school during previous school year
 Name=ED15
-Start=63
+Start=52
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -1605,7 +1444,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Level of education attended during previous school year
 Name=ED16A
-Start=64
+Start=53
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -1613,18 +1452,20 @@ ZeroFill=Yes
 [ValueSet]
 Label=Level of education attended during previous school year
 Name=ED16A_VST
-Value=0;EARLY CHILDHOOD EDUCATION
-Value=1;PRIMARY
-Value=2;LOWER SECONDARY
-Value=3;UPPER SECONDARY
-Value=4;HIGHER
+Value=0;ECD
+Value=1;LOWER BASIC EDUCATION
+Value=2;UPPER BASIC EDUCATION
+Value=3;SENIOR SECONDARY EDUCATION
+Value=4;VOCATIONAL
+Value=5;DIPLOMA
+Value=6;HIGHER
 Value=8;DK
 Value=9;NO RESPONSE
 
 [Item]
 Label=Grade attended at that level during previous school year
 Name=ED16B
-Start=65
+Start=54
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -1648,7 +1489,7 @@ Label=Household Characteristics
 Name=MODHC
 RecordTypeValue='0HC'
 Required=No
-RecordLen=80
+RecordLen=104
 
 [Item]
 Label=Religion of household head
@@ -1661,51 +1502,85 @@ ZeroFill=Yes
 [ValueSet]
 Label=Religion of household head
 Name=HC1A_VS1
-Value=1;RELIGION 1
-Value=2;RELIGION 2
-Value=3;RELIGION 3
+Value=1;ISLAM
+Value=2;CHRISTIANITY
+Value=3;TRADITIONAL
 Value=6;OTHER RELIGION
 Value=7;NO RELIGION
-Value=9;NO RESPONSE
+
+[Item]
+Label=Nationality of household head
+Name=HC1A1
+Start=17
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Nationality of household head
+Name=HC1A1_VS1
+Value=1;GAMBIAN
+Value=2;SENEGALESE
+Value=3;GUINEAN
+Value=4;BISSAU-GUINEAN
+Value=5;MALIAN
+Value=6;NIGERIAN
+Value=7;SIERRA LEONEAN
+Value=8;MAURITANIAN
+Value=9;GHANAIAN
+Value=10;LIBERIAN
+Value=11;OTHER WEST AFRICAN
+Value=12;OTHER AFRICAN
+Value=13;NON-AFRICAN
 
 [Item]
 Label=Language of household head
 Name=HC1B
-Start=17
-Len=1
+Start=19
+Len=2
 DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
 Label=Language of household head
 Name=HC1B_VS1
-Value=1;LANGUAGE 1
-Value=2;LANGUAGE 2
-Value=3;LANGUAGE 3
-Value=6;OTHER LANGUAGE
-Value=9;NO RESPONSE
+Value=1;MANDINKA/JAHANKA
+Value=2;WOLLOF
+Value=3;FULA/TUKULOR/LOROBO
+Value=4;JOLA/KARONINKA
+Value=5;SARAHULE
+Value=6;SERERE
+Value=7;MANJAGO
+Value=8;KRIO/ AKU MARABOUT
+Value=9;BAMBARA
+Value=96;OTHER LANGUAGE
 
 [Item]
 Label=Ethnic group of household head
 Name=HC2
-Start=18
-Len=1
+Start=21
+Len=2
 DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
 Label=Ethnic group of household head
 Name=HC2_VST
-Value=1;ETHNIC GROUP 1
-Value=2;ETHNIC GROUP 2
-Value=3;ETHNIC GROUP 3
-Value=6;OTHER
-Value=9;NO RESPONSE
+Value=1;MANDINKA/JAHANKA
+Value=2;WOLLOF
+Value=3;FULA/TUKULOR/LOROBO
+Value=4;JOLA/KARONINKA
+Value=5;SARAHULE
+Value=6;SERERE
+Value=7;MANJAGO
+Value=8;KRIO/ AKU MARABOUT
+Value=9;BAMBARA
+Value=96;Other
 
 [Item]
 Label=Number of rooms used for sleeping
 Name=HC3
-Start=19
+Start=23
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -1719,7 +1594,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Main material of floor
 Name=HC4
-Start=21
+Start=25
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -1730,9 +1605,8 @@ Name=HC4_VST
 Value=11;NATURAL FLOOR: EARTH/ SAND
 Value=12;NATURAL FLOOR: DUNG
 Value=21;RUDIMENTARY FLOOR: WOOD PLANKS
-Value=22;RUDIMENTARY FLOOR: PALM / BAMBOO
 Value=31;FINISHED FLOOR: PARQUET OR POLISHED WOOD
-Value=32;FINISHED FLOOR: VINYL OR ASPHALT STRIPS
+Value=32;FINISHED FLOOR: LINOLEUM/VINYL("TAPEH") OR ASPHALT STRIPS
 Value=33;FINISHED FLOOR: CERAMIC TILES
 Value=34;FINISHED FLOOR: CEMENT
 Value=35;FINISHED FLOOR: CARPET
@@ -1741,7 +1615,7 @@ Value=96;OTHER
 [Item]
 Label=Main material of roof
 Name=HC5
-Start=23
+Start=27
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -1751,23 +1625,18 @@ Label=Main material of roof
 Name=HC5_VST
 Value=11;NO ROOF
 Value=12;NATURAL ROOFING: THATCH / PALM LEAF
-Value=13;NATURAL ROOFING: SOD
-Value=21;RUDIMENTARY ROOFING: RUSTIC MAT
 Value=22;RUDIMENTARY ROOFING: PALM / BAMBOO
-Value=23;RUDIMENTARY ROOFING: WOOD PLANKS
-Value=24;RUDIMENTARY ROOFING: CARDBOARD
 Value=31;FINISHED ROOFING: METAL / TIN
-Value=32;FINISHED ROOFING: WOOD
 Value=33;FINISHED ROOFING: CALAMINE / CEMENT FIBRE
 Value=34;FINISHED ROOFING: CERAMIC TILES
 Value=35;FINISHED ROOFING: CEMENT
-Value=36;FINISHED ROOFING: ROOFING SHINGLES
+Value=36;FINISHED ROOFING: ROOFING SHINGLES (DECRA)
 Value=96;OTHER
 
 [Item]
 Label=Main material of exterior wall
 Name=HC6
-Start=25
+Start=29
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -1780,22 +1649,20 @@ Value=12;NATURAL WALLS: CANE / PALM / TRUNKS
 Value=13;NATURAL WALLS: DIRT
 Value=21;RUDIMENTARY WALLS: BAMBOO WITH MUD
 Value=22;RUDIMENTARY WALLS: STONE WITH MUD
-Value=23;RUDIMENTARY WALLS: UNCOVERED ADOBE
 Value=24;RUDIMENTARY WALLS: PLYWOOD
-Value=25;RUDIMENTARY WALLS: CARDBOARD
 Value=26;RUDIMENTARY WALLS: REUSED WOOD
 Value=31;FINISHED WALLS: CEMENT
 Value=32;FINISHED WALLS: STONE WITH LIME / CEMENT
 Value=33;FINISHED WALLS: BRICKS
 Value=34;FINISHED WALLS: CEMENT BLOCKS
-Value=35;FINISHED WALLS: COVERED ADOBE
 Value=36;FINISHED WALLS: WOOD PLANKS / SHINGLES
+Value=37;FINISHED WALLS: BAMBOO WITH CEMENT
 Value=96;OTHER
 
 [Item]
 Label=Household have: Fixed telephone line
 Name=HC7A
-Start=27
+Start=31
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -1810,7 +1677,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Household have: Radio
 Name=HC7B
-Start=28
+Start=32
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -1823,16 +1690,106 @@ Value=2;NO
 Value=9;NO RESPONSE
 
 [Item]
-Label=Household have: Country Specific Items That Do Not Run On Electricity
+Label=Household have: Bed
 Name=HC7C
-Start=29
+Start=33
 Len=1
 DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Household have: Country Specific Items That Do Not Run On Electricity
+Label=Household have: Bed
 Name=HC7C_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have: Sofa
+Name=HC7D
+Start=34
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Sofa
+Name=HC7D_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have: Dining table
+Name=HC7E
+Start=35
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Dining table
+Name=HC7E_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have: Cupboard
+Name=HC7F
+Start=36
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Cupboard
+Name=HC7F_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have: Mattress
+Name=HC7G
+Start=37
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Mattress
+Name=HC7G_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have: Generator
+Name=HC7H
+Start=38
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Generator
+Name=HC7H_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have: Solar Panel
+Name=HC7I
+Start=39
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Solar Panel
+Name=HC7I_VS1
 Value=1;YES
 Value=2;NO
 Value=9;NO RESPONSE
@@ -1840,7 +1797,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Household have electricity
 Name=HC8
-Start=30
+Start=40
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -1855,7 +1812,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Source of electricity for the household
 Name=HC8A
-Start=31
+Start=41
 Len=10
 DataType=Alpha
 
@@ -1863,7 +1820,6 @@ DataType=Alpha
 Label=Source of electricity for the household
 Name=HC8A_VS1
 Value='A         ';NATIONAL / INTERCONNECTED GRID
-Value='B         ';LOCAL MINI GRID
 Value='C         ';SOLAR HOME SYSTEM
 Value='D         ';SOLAR LANTERN
 Value='E         ';ELECTRIC GENERATOR
@@ -1876,7 +1832,7 @@ Value='?         ';NO RESPONSE
 [Item]
 Label=Source of electricity for the household: National / Interconnected grid
 Name=HC8AA
-Start=31
+Start=41
 Len=1
 ItemType=SubItem
 DataType=Alpha
@@ -1889,24 +1845,9 @@ Value=' '
 Value='?';NO RESPONSE
 
 [Item]
-Label=Source of electricity for the household: Local mini grid
-Name=HC8AB
-Start=32
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Source of electricity for the household: Local mini grid
-Name=HC8AB_VS1
-Value='B';LOCAL MINI GRID
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
 Label=Source of electricity for the household: Solar home system
 Name=HC8AC
-Start=33
+Start=43
 Len=1
 ItemType=SubItem
 DataType=Alpha
@@ -1921,7 +1862,7 @@ Value='?';NO RESPONSE
 [Item]
 Label=Source of electricity for the household: Solar lantern
 Name=HC8AD
-Start=34
+Start=44
 Len=1
 ItemType=SubItem
 DataType=Alpha
@@ -1936,7 +1877,7 @@ Value='?';NO RESPONSE
 [Item]
 Label=Source of electricity for the household: Electric generator
 Name=HC8AE
-Start=35
+Start=45
 Len=1
 ItemType=SubItem
 DataType=Alpha
@@ -1951,7 +1892,7 @@ Value='?';NO RESPONSE
 [Item]
 Label=Source of electricity for the household: Rechargeable battery
 Name=HC8AF
-Start=36
+Start=46
 Len=1
 ItemType=SubItem
 DataType=Alpha
@@ -1966,7 +1907,7 @@ Value='?';NO RESPONSE
 [Item]
 Label=Source of electricity for the household: Dry cell battery / torch
 Name=HC8AG
-Start=37
+Start=47
 Len=1
 ItemType=SubItem
 DataType=Alpha
@@ -1981,7 +1922,7 @@ Value='?';NO RESPONSE
 [Item]
 Label=Source of electricity for the household: Other
 Name=HC8AX
-Start=38
+Start=48
 Len=1
 ItemType=SubItem
 DataType=Alpha
@@ -1996,7 +1937,7 @@ Value='?';NO RESPONSE
 [Item]
 Label=Source of electricity for the household: DK
 Name=HC8AZ
-Start=39
+Start=49
 Len=1
 ItemType=SubItem
 DataType=Alpha
@@ -2011,7 +1952,7 @@ Value='?';NO RESPONSE
 [Item]
 Label=Source of electricity for the household: No response
 Name=HC8ANR
-Start=40
+Start=50
 Len=1
 ItemType=SubItem
 DataType=Alpha
@@ -2025,7 +1966,7 @@ Value='?';NO RESPONSE
 [Item]
 Label=Most used source of electricity
 Name=HC8B
-Start=41
+Start=51
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2034,7 +1975,6 @@ ZeroFill=Yes
 Label=Most used source of electricity
 Name=HC8B_VS1
 Value=11;NATIONAL / INTERCONNECTED GRID
-Value=21;LOCAL MINI GRID
 Value=31;SOLAR HOME SYSTEM
 Value=32;SOLAR LANTERN
 Value=41;ELECTRIC GENERATOR
@@ -2047,7 +1987,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Household have: Television
 Name=HC9A
-Start=43
+Start=53
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2062,7 +2002,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Household have: Refrigerator
 Name=HC9B
-Start=44
+Start=54
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2075,16 +2015,151 @@ Value=2;NO
 Value=9;NO RESPONSE
 
 [Item]
-Label=Household have: Country Specific Items That Run On Electricity
+Label=Household have: Fan
 Name=HC9C
-Start=45
+Start=55
 Len=1
 DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Household have: Country Specific Items That Run On Electricity
+Label=Household have: Fan
 Name=HC9C_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have: Air conditioner
+Name=HC9D
+Start=56
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Air conditioner
+Name=HC9D_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have: Satellite dish
+Name=HC9E
+Start=57
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Satellite dish
+Name=HC9E_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have: Microwave Oven
+Name=HC9G
+Start=58
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Microwave Oven
+Name=HC9G_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have: Water Heater
+Name=HC9H
+Start=59
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Water Heater
+Name=HC9H_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have: Blender
+Name=HC9I
+Start=60
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Blender
+Name=HC9I_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have: Washing Machine
+Name=HC9J
+Start=61
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Washing Machine
+Name=HC9J_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have: Electric Iron
+Name=HC9K
+Start=62
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Electric Iron
+Name=HC9K_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have: Electric Kettle
+Name=HC9L
+Start=63
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Electric Kettle
+Name=HC9L_VS1
+Value=1;YES
+Value=2;NO
+Value=9;NO RESPONSE
+
+[Item]
+Label=Household have: Water Tank
+Name=HC9M
+Start=64
+Len=1
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Household have: Water Tank
+Name=HC9M_VS1
 Value=1;YES
 Value=2;NO
 Value=9;NO RESPONSE
@@ -2092,7 +2167,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Any member of household own: Wristwatch
 Name=HC10A
-Start=46
+Start=65
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2107,7 +2182,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Any member of household own: Bicycle
 Name=HC10B
-Start=47
+Start=66
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2122,7 +2197,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Any member of household own: Motorcycle or scooter
 Name=HC10C
-Start=48
+Start=67
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2137,7 +2212,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Any member of household own: Animal-drawn cart
 Name=HC10D
-Start=49
+Start=68
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2152,7 +2227,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Any member of household own: Car, truck or van
 Name=HC10E
-Start=50
+Start=69
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2167,7 +2242,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Any member of household own: Boat with motor
 Name=HC10F
-Start=51
+Start=70
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2180,15 +2255,15 @@ Value=2;NO
 Value=9;NO RESPONSE
 
 [Item]
-Label=Any member of household own: Country Specific Items
+Label=Any member of household own: A boat without motor
 Name=HC10G
-Start=52
+Start=71
 Len=1
 DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Any member of household own: Country Specific Items
+Label=Any member of household own: A boat without motor
 Name=HC10G_VS1
 Value=1;YES
 Value=2;NO
@@ -2197,7 +2272,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Any member have a computer
 Name=HC11
-Start=53
+Start=72
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2212,7 +2287,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Any member have a mobile telephone
 Name=HC12
-Start=54
+Start=73
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2227,7 +2302,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Any member have a smart telephone
 Name=HC12A
-Start=55
+Start=74
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2242,7 +2317,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Internet access at home
 Name=HC13
-Start=56
+Start=75
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2257,7 +2332,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Internet access via smart phone
 Name=HC13B
-Start=57
+Start=76
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2273,7 +2348,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Household owns the dwelling
 Name=HC14
-Start=58
+Start=77
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2283,13 +2358,14 @@ Label=Household owns the dwelling
 Name=HC14_VST
 Value=1;OWN
 Value=2;RENT
+Value=3;RENT-FREE
 Value=6;OTHER
 Value=9;NO RESPONSE
 
 [Item]
 Label=Any household member own land that can be used for agriculture
 Name=HC15
-Start=59
+Start=78
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2302,16 +2378,32 @@ Value=2;NO
 Value=9;NO RESPONSE
 
 [Item]
-Label=Hectares of agricultural land members of household owns
+Label=Hectares or acres of agricultural land members of household owns
 Name=HC16
-Start=60
+Start=79
 Len=2
 DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Hectares of agricultural land members of household owns
-Name=HC16_VST
+Label=Hectares or acres of agricultural land members of household owns
+Name=HC16_VS1
+Value=0:94
+Value=95;95+
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Hectares or acres of agricultural land members of household owns
+Name=HC16B
+Start=81
+Len=3
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Hectares or acres of agricultural land members of household owns
+Name=HC16B_VS1
 Value=0:94
 Value=95;95+
 Value=98;DK
@@ -2320,7 +2412,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Household own any animals
 Name=HC17
-Start=62
+Start=84
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2335,7 +2427,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Milk cows or bulls
 Name=HC18A
-Start=63
+Start=85
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2351,7 +2443,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Other cattle
 Name=HC18B
-Start=65
+Start=87
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2367,7 +2459,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Horses, donkeys or mules
 Name=HC18C
-Start=67
+Start=89
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2383,7 +2475,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Goats
 Name=HC18D
-Start=69
+Start=91
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2399,7 +2491,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Sheep
 Name=HC18E
-Start=71
+Start=93
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2415,7 +2507,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Chickens
 Name=HC18F
-Start=73
+Start=95
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2431,7 +2523,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Pigs
 Name=HC18G
-Start=75
+Start=97
 Len=2
 DataType=Numeric
 ZeroFill=Yes
@@ -2445,16 +2537,32 @@ Value=98;DK
 Value=99;NO RESPONSE
 
 [Item]
-Label=Country Specific Additions
+Label=Guinea fowls
 Name=HC18H
-Start=77
+Start=99
 Len=2
 DataType=Numeric
 ZeroFill=Yes
 
 [ValueSet]
-Label=Country Specific Additions
+Label=Guinea fowls
 Name=HC18H_VS1
+Value=0:94
+Value=95;95+
+Value=98;DK
+Value=99;NO RESPONSE
+
+[Item]
+Label=Ducks
+Name=HC18I
+Start=101
+Len=2
+DataType=Numeric
+ZeroFill=Yes
+
+[ValueSet]
+Label=Ducks
+Name=HC18I_VS1
 Value=0:94
 Value=95;95+
 Value=98;DK
@@ -2463,7 +2571,7 @@ Value=99;NO RESPONSE
 [Item]
 Label=Any household member own bank account
 Name=HC19
-Start=79
+Start=103
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2478,7 +2586,7 @@ Value=9;NO RESPONSE
 [Item]
 Label=Any household member makes financial transactions via mobile phone
 Name=HC20
-Start=80
+Start=104
 Len=1
 DataType=Numeric
 ZeroFill=Yes
@@ -2510,12 +2618,10 @@ Label=Type of cookstove mainly used for cooking
 Name=EU1_VS1
 Value=1;SOLAR COOKER (THERMAL ENERGY, NOT SOLAR PANELS)
 Value=2;ELECTRIC STOVE
-Value=3;PIPED NATURAL GAS STOVE
 Value=4;BIOGAS STOVE
 Value=5;LIQUEFIED PETROLEUM GAS (LPG)/ COOKING GAS STOVE
 Value=6;MANUFACTURED SOLID FUEL STOVE
 Value=7;TRADITIONAL SOLID FUEL STOVE (NON-MANUFACTURED)
-Value=8;LIQUID FUEL STOVE
 Value=9;MOVEABLE FIREPAN
 Value=10;THREE STONE STOVE / OPEN FIRE
 Value=96;OTHER
@@ -2533,9 +2639,9 @@ ZeroFill=Yes
 [ValueSet]
 Label=Name of the stove brand
 Name=EU1A_VS1
-Value=1;NAME/BRAND 1
-Value=2;NAME/BRAND 2
-Value=3;NAME/BRAND 3
+Value=1;“FURNO JAMBARR”
+Value=2;“NOFLAI”
+Value=3;“KUMBA GAYE”
 Value=96;OTHER
 Value=98;DK
 Value=99;NO RESPONSE
@@ -2551,19 +2657,12 @@ ZeroFill=Yes
 [ValueSet]
 Label=Type of energy source for cookstove
 Name=EU4_VS1
-Value=1;ALCOHOL / ETHANOL
-Value=2;GASOLINE / DIESEL (NOT IN GENERATOR)
-Value=3;KEROSENE / PARAFFIN
-Value=4;COAL / LIGNITE UNPROCESSED
-Value=5;COAL / LIGNITE BRIQUETTES / PELLETS
 Value=6;CHARCOAL UNPROCESSED
-Value=7;CHARCOAL BRIQUETTES / PELLETS
 Value=8;WOOD
 Value=9;AGRICULTURAL OR CROP RESIDUE / 	GRASS / STRAW / SHRUBS / CORN COBS
 Value=10;ANIMAL DUNG / WASTE
 Value=11;PROCESSED BIOMASS PELLETS / BRIQUETTES
 Value=12;WOODCHIPS
-Value=13;GARBAGE / PLASTIC
 Value=14;SAWDUST
 Value=96;OTHER
 Value=99;NO RESPONSE
@@ -2580,14 +2679,10 @@ ZeroFill=Yes
 Label=Type of space heating in household
 Name=EU6_VS1
 Value=0;SPACE HEATING NEVER NEEDED
-Value=1;CENTRAL HEATING
-Value=2;MANUFACTURED SPACE HEATER
-Value=3;TRADITIONAL SPACE HEATER
 Value=4;MANUFACTURED COOKSTOVE
 Value=5;TRADITIONAL COOKSTOVE (NON-MANUFACTURED)
 Value=6;MOVEABLE HEATING PAN
 Value=7;OPEN FIRE / THREE STONE STOVE
-Value=8;HEAT PUMP
 Value=96;OTHER
 Value=97;NO SPACE HEATING IN HOUSEHOLD
 Value=99;NO RESPONSE
@@ -2603,9 +2698,9 @@ ZeroFill=Yes
 [ValueSet]
 Label=Name of the space heater brand
 Name=EU6A_VS1
-Value=1;NAME/BRAND 1
-Value=2;NAME/BRAND 2
-Value=3;NAME/BRAND 3
+Value=1;“FURNO JAMBARR”
+Value=2;“NOFLAI”
+Value=3;“KUMBA GAYE”
 Value=96;OTHER
 Value=98;DK
 Value=99;NO RESPONSE
@@ -2622,23 +2717,12 @@ ZeroFill=Yes
 Label=Type of energy source for heater
 Name=EU8_VS1
 Value=1;ELECTRICITY (INCLUDING SOLAR PANELS)
-Value=2;PIPED NATURAL GAS
-Value=3;LIQUEFIED PETROLEUM GAS (LPG) / COOKING GAS
-Value=4;BIOGAS
-Value=5;ALCOHOL / ETHANOL
-Value=6;GASOLINE / DIESEL (NOT IN GENERATOR)
-Value=7;KEROSENE / PARAFFIN
-Value=8;COAL / LIGNITE UNPROCESSED
-Value=9;COAL / LIGNITE BRIQUETTES / PELLETS
 Value=10;CHARCOAL UNPROCESSED
-Value=11;CHARCOAL BRIQUETTES / PELLETS
 Value=12;WOOD
 Value=13;AGRICULTURAL OR CROP RESIDUE / 	GRASS / STRAW / SHRUBS / CORN COBS
 Value=14;ANIMAL WASTE / DUNG
 Value=15;PROCESSED BIOMASS PELLETS / BRIQUETTES
 Value=16;WOODCHIPS
-Value=17;GARBAGE / PLASTIC
-Value=18;SAWDUST
 Value=96;OTHER
 Value=98;DK
 Value=99;NO RESPONSE
@@ -2658,11 +2742,8 @@ Value=1;ELECTRICITY (INCLUDING SOLAR PANELS)
 Value=2;SOLAR-POWERED LANTERN OR FLASHLIGHT
 Value=3;RECHARGEABLE FLASHLIGHT, MOBILE, 	TORCH OR LANTERN
 Value=4;BATTERY POWERED FLASHLIGHT, TORCH OR LANTERN
-Value=5;BIOGAS LAMP
 Value=6;LIQUEFIED PETROLEUM GAS (LPG) LAMP
-Value=7;GASOLINE LAMP
 Value=8;KEROSENE / PARAFFIN LAMP
-Value=9;OIL LAMP
 Value=10;CANDLE
 Value=11;OPEN FIRE
 Value=96;OTHER
@@ -2759,10 +2840,12 @@ ZeroFill=Yes
 [ValueSet]
 Label=Brand/type of observed net
 Name=TN5_VST
-Value=11;LONG-LASTING INSECTICIDE TREATED NETS (LLIN): BRAND A
-Value=12;LONG-LASTING INSECTICIDE TREATED NETS (LLIN): BRAND B
-Value=13;LONG-LASTING INSECTICIDE TREATED NETS (LLIN): BRAND C
-Value=16;LONG-LASTING INSECTICIDE TREATED NETS (LLIN): OTHER / DK BRAND
+Value=11;INTERCEPTOR G2
+Value=12;PERMANET 2
+Value=13;PERMANET 3.0
+Value=14;OLYSET PLUS
+Value=15;DURANET
+Value=16;OTHER/DK BRAND
 Value=36;OTHER TYPE (NOT LLIN)
 Value=98;DK TYPE
 Value=99;NO RESPONSE
@@ -2778,7 +2861,7 @@ ZeroFill=Yes
 [ValueSet]
 Label=Way net was obtained
 Name=TN10_VST
-Value=1;YES, NAME OF CAMPAIGN
+Value=1;YES, SYNCHRONIZE MASS ITN DISTRIBUTION
 Value=2;YES, ANC
 Value=3;YES, IMMUNIZATION
 Value=4;NO
@@ -2907,971 +2990,6 @@ Value=1:50
 Value=90;NO ONE ELSE
 
 [Record]
-Label=Social Transfers
-Name=MODST
-RecordTypeValue='0ST'
-Required=No
-MaxRecords=5
-RecordLen=220
-
-[Item]
-Label=Aware of (name of programme)
-Name=ST2
-Start=16
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Aware of (name of programme)
-Name=ST2_VST
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Received assistance through (name of programme)
-Name=ST3
-Start=17
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Received assistance through (name of programme)
-Name=ST3_VST
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=Assistance intended for
-Name=ST4
-Start=18
-Len=100
-DataType=Alpha
-
-[ValueSet]
-Label=Assistance intended for
-Name=ST4_VS1
-Value='95                                                                                                  ';ALL MEMBERS
-Value='98                                                                                                  ';DK
-Value='99                                                                                                  ';NO RESPONSE
-
-[Item]
-Label=Person 1 (needed to force CSPRO put 0 at beginning)
-Name=ST4_1
-Start=18
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Person 1 (needed to force CSPRO put 0 at beginning)
-Name=ST4_1_VS1
-Value=95;ALL MEMBERS
-Value=98;DK
-Value=99;NO RESPONSE
-
-[Item]
-Label=Person 2 (needed to force CSPRO put 0 at beginning)
-Name=ST4_2
-Start=20
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Person 3 (needed to force CSPRO put 0 at beginning)
-Name=ST4_3
-Start=22
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Person 4 (needed to force CSPRO put 0 at beginning)
-Name=ST4_4
-Start=24
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Person 5 (needed to force CSPRO put 0 at beginning)
-Name=ST4_9
-Start=26
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Person 6 (needed to force CSPRO put 0 at beginning)
-Name=ST4_5
-Start=28
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Person 7 (needed to force CSPRO put 0 at beginning)
-Name=ST4_6
-Start=30
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Person 8 (needed to force CSPRO put 0 at beginning)
-Name=ST4_7
-Start=32
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Person 9 (needed to force CSPRO put 0 at beginning)
-Name=ST4_8
-Start=34
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Person authorised to receive or collect the assistance
-Name=ST5
-Start=118
-Len=100
-DataType=Alpha
-
-[ValueSet]
-Label=Person authorised to receive or collect the assistance
-Name=ST5_VS1
-Value='00                                                                                                  ';NO ONE IN THIS HOUSEHOLD
-Value='95                                                                                                  ';ALL MEMBERS
-Value='98                                                                                                  ';DK
-Value='99                                                                                                  ';NO RESPONSE
-
-[Item]
-Label=Person 1 (needed to force CSPRO put 0 at beginning)
-Name=ST5_1
-Start=118
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Person 1 (needed to force CSPRO put 0 at beginning)
-Name=ST5_1_VS1
-Value=0;NO ONE IN THIS HOUSEHOLD
-Value=95;ALL MEMBERS
-Value=98;DK
-Value=99;NO RESPONSE
-
-[Item]
-Label=Person 2 (needed to force CSPRO put 0 at beginning)
-Name=ST5_2
-Start=120
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Person 3 (needed to force CSPRO put 0 at beginning)
-Name=ST5_3
-Start=122
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Person 4 (needed to force CSPRO put 0 at beginning)
-Name=ST5_4
-Start=124
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Person 5 (needed to force CSPRO put 0 at beginning)
-Name=ST5_5
-Start=126
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Person 6 (needed to force CSPRO put 0 at beginning)
-Name=ST5_6
-Start=128
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Person 7 (needed to force CSPRO put 0 at beginning)
-Name=ST5_7
-Start=130
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Person 8 (needed to force CSPRO put 0 at beginning)
-Name=ST5_8
-Start=132
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Person 9 (needed to force CSPRO put 0 at beginning)
-Name=ST5_9
-Start=134
-Len=2
-ItemType=SubItem
-DataType=Numeric
-ZeroFill=Yes
-
-[Item]
-Label=Last time assistance was received (unit)
-Name=ST6U
-Start=218
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Last time assistance was received (unit)
-Name=ST6U_VS1
-Value=1;MONTHS AGO
-Value=2;YEARS AGO
-Value=9;DK / NO RESPONSE
-
-[Item]
-Label=Last time assistance was received (number)
-Name=ST6N
-Start=219
-Len=2
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Last time assistance was received (number)
-Name=ST6N_VS1
-Value=0:90
-Value=98;DK
-Value=99;NO RESPONSE
-
-[Record]
-Label=Post Emergency
-Name=MODPE
-RecordTypeValue='0PE'
-Required=No
-RecordLen=52
-
-[Item]
-Label=New household member post emergency
-Name=PE1
-Start=16
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=New household member post emergency
-Name=PE1_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=Number of new household members post emergency
-Name=PE2
-Start=17
-Len=2
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Number of new household members post emergency
-Name=PE2_VS1
-Value=1:15
-Value=99;NO RESPONSE
-
-[Item]
-Label=All members of the household moves somewhere else because of the emergency
-Name=PE3
-Start=19
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=All members of the household moves somewhere else because of the emergency
-Name=PE3_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=How long did all the members of this household live in that other place(s): Unit
-Name=PE4U
-Start=20
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=How long did all the members of this household live in that other place(s): Unit
-Name=PE4U_VS1
-Value=1;DAYS
-Value=2;WEEKS
-Value=3;MONTHS
-Value=9;SPECIAL
-
-[Item]
-Label=How long did all the members of this household live in that other place(s): Number
-Name=PE4N
-Start=21
-Len=2
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=How long did all the members of this household live in that other place(s): Number
-Name=PE4N_VS1
-Value=1:36
-Value=95;NOT YET RETURNED
-Value=98;DK / NOT SURE
-Value=99;NO RESPONSE
-
-[Item]
-Label=House damaged or destroyed due to emergency
-Name=PE5
-Start=23
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=House damaged or destroyed due to emergency
-Name=PE5_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Anyone who was living in the household during the emergency died as a direct result of the emergency
-Name=PE6
-Start=24
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Anyone who was living in the household during the emergency died as a direct result of the emergency
-Name=PE6_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK / NOT SURE
-Value=9;NO RESPONSE
-
-[Item]
-Label=Any of the members of this household needed medical care for any reason at the time of the emergency
-Name=PE7
-Start=25
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Any of the members of this household needed medical care for any reason at the time of the emergency
-Name=PE7_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK / NOT SURE
-Value=9;NO RESPONSE
-
-[Item]
-Label=All members that needed medical care receive this care
-Name=PE8
-Start=26
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=All members that needed medical care receive this care
-Name=PE8_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK / NOT SURE
-Value=9;NO RESPONSE
-
-[Item]
-Label=Any member of household became seriously ill at the time of the emergency
-Name=PE9
-Start=27
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Any member of household became seriously ill at the time of the emergency
-Name=PE9_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK / NOT SURE
-Value=9;NO RESPONSE
-
-[Item]
-Label=Household member was unable to perform usual daily activities
-Name=PE10
-Start=28
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Household member was unable to perform usual daily activities
-Name=PE10_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK / NOT SURE
-Value=9;NO RESPONSE
-
-[Item]
-Label=Anyone in this household becme seriously injured due to the emergency
-Name=PE11
-Start=29
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Anyone in this household becme seriously injured due to the emergency
-Name=PE11_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK / NOT SURE
-Value=9;NO RESPONSE
-
-[Item]
-Label=Any household members were separated from the household
-Name=PE12
-Start=30
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Any household members were separated from the household
-Name=PE12_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Number of household members that were separated
-Name=PE13
-Start=31
-Len=2
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Number of household members that were separated
-Name=PE13_VS1
-Value=1:50
-Value=99;NO RESPONSE
-
-[Item]
-Label=Any of the separated household members were less than 18 years old at the time of separation
-Name=PE14
-Start=33
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Any of the separated household members were less than 18 years old at the time of separation
-Name=PE14_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK / NOT SURE
-Value=9;NO RESPONSE
-
-[Item]
-Label=Children age 5-17 years living in this household during the emergency
-Name=PE15
-Start=34
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Children age 5-17 years living in this household during the emergency
-Name=PE15_VS1
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
-
-[Item]
-Label=Before the emergency, any of children age 5-17 were attending school
-Name=PE16
-Start=35
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Before the emergency, any of children age 5-17 were attending school
-Name=PE16_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=During the emergency, any children age 5 to 17 years stopped attending school
-Name=PE17
-Start=36
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=During the emergency, any children age 5 to 17 years stopped attending school
-Name=PE17_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK / NOT SURE
-Value=9;NO RESPONSE
-
-[Item]
-Label=During the emergency, the household’s main source of drinking water was unusable
-Name=PE18
-Start=37
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=During the emergency, the household’s main source of drinking water was unusable
-Name=PE18_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK / NOT SURE
-Value=9;NO RESPONSE
-
-[Item]
-Label=During the emergency, the household’s main toilet facility was unusable
-Name=PE19
-Start=38
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=During the emergency, the household’s main toilet facility was unusable
-Name=PE19_VS1
-Value=1;YES
-Value=2;NO
-Value=7;NO TOILET FACILITY
-Value=8;DK / NOT SURE
-Value=9;NO RESPONSE
-
-[Item]
-Label=Household income affected by the emergency
-Name=PE20
-Start=39
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Household income affected by the emergency
-Name=PE20_VS1
-Value=1;YES, INCREASED
-Value=2;YES, DECREASED
-Value=3;NO, NO CHANGE
-Value=8;DK / NOT SURE
-Value=9;NO RESPONSE
-
-[Item]
-Label=Why did your household’s income decrease
-Name=PE21
-Start=40
-Len=12
-DataType=Alpha
-
-[ValueSet]
-Label=Why did your household’s income decrease
-Name=PE21_VS1
-Value='A           ';LOST JOB
-Value='B           ';REDUCTION IN WORK HOURS / EARNINGS
-Value='C           ';UNABLE TO HARVEST OR PLANT
-Value='D           ';UNABLE TO MAINTAIN LIVESTOCK
-Value='E           ';COULD NOT GO TO WORK
-Value='F           ';COULD NOT OPEN BUSINESS
-Value='G           ';LOSS OF BUSINESS LOCATION
-Value='H           ';LOSS OF BUSINESS INVENTORY
-Value='I           ';LOSS OF BUSINESS EQUIPMENT / ASSETS
-Value='J           ';DEATH / INJURY / INJURY OF FAMILY MEMBER
-Value='X           ';OTHER
-Value='?           ';NO RESPONSE
-
-[Item]
-Label=Why did your household's income decrease: Lost job
-Name=PE21A
-Start=40
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Why did your household's income decrease: Lost job
-Name=PE21A_VS1
-Value='A';LOST JOB
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Why did your household's income decrease: Reduction in work hours / Earnings
-Name=PE21B
-Start=41
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Why did your household's income decrease: Reduction in work hours / Earnings
-Name=PE21B_VS1
-Value='B';REDUCTION IN WORK HOURS / EARNINGS
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Why did your household's income decrease: Unable to harvest or plant
-Name=PE21C
-Start=42
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Why did your household's income decrease: Unable to harvest or plant
-Name=PE21C_VS1
-Value='C';UNABLE TO HARVEST OR PLANT
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Why did your household's income decrease: Unable to maintain livestock
-Name=PE21D
-Start=43
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Why did your household's income decrease: Unable to maintain livestock
-Name=PE21D_VS1
-Value='D';UNABLE TO MAINTAIN LIVESTOCK
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Why did your household's income decrease: Could not go to work
-Name=PE21E
-Start=44
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Why did your household's income decrease: Could not go to work
-Name=PE21E_VS1
-Value='E';COULD NOT GO TO WORK
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Why did your household's income decrease: Could not open business
-Name=PE21F
-Start=45
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Why did your household's income decrease: Could not open business
-Name=PE21F_VS1
-Value='F';COULD NOT OPEN BUSINESS
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Why did your household's income decrease: Loss of business location
-Name=PE21G
-Start=46
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Why did your household's income decrease: Loss of business location
-Name=PE21G_VS1
-Value='G';LOSS OF BUSINESS LOCATION
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Why did your household's income decrease: Loss of business inventory
-Name=PE21H
-Start=47
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Why did your household's income decrease: Loss of business inventory
-Name=PE21H_VS1
-Value='H';LOSS OF BUSINESS INVENTORY
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Why did your household's income decrease: Loss of business equipment/assets
-Name=PE21I
-Start=48
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Why did your household's income decrease: Loss of business equipment/assets
-Name=PE21I_VS1
-Value='I';LOSS OF BUSINESS EQUIPMENT / ASSETS
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Why did your household's income decrease: Death/injury / injury of family member
-Name=PE21J
-Start=49
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Why did your household's income decrease: Death/injury / injury of family member
-Name=PE21J_VS1
-Value='J';DEATH / INJURY / INJURY OF FAMILY MEMBER
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Why did your household's income decrease: Other
-Name=PE21X
-Start=50
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Why did your household's income decrease: Other
-Name=PE21X_VS1
-Value='X';OTHER
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Why did your household's income decrease: No response
-Name=PE21NR
-Start=51
-Len=1
-ItemType=SubItem
-DataType=Alpha
-
-[ValueSet]
-Label=Why did your household's income decrease: No response
-Name=PE21NR_VS1
-Value=' '
-Value='?';NO RESPONSE
-
-[Item]
-Label=Any items of value in the home, farm or business, either damaged, destroyed or stolen
-Name=PE22
-Start=52
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Any items of value in the home, farm or business, either damaged, destroyed or stolen
-Name=PE22_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Record]
-Label=Food Insecurity Experience
-Name=MODFE
-RecordTypeValue='0FE'
-Required=No
-RecordLen=23
-
-[Item]
-Label=Food security concern in past year
-Name=FE1
-Start=16
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Food security concern in past year
-Name=FE1_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=Access to healthy food in past year
-Name=FE2
-Start=17
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Access to healthy food in past year
-Name=FE2_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=Limited food variety due to resource constraints
-Name=FE3
-Start=18
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Limited food variety due to resource constraints
-Name=FE3_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=Meal skipping due to resource constraints
-Name=FE4
-Start=19
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Meal skipping due to resource constraints
-Name=FE4_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=Eating less due to resource constraints in past year
-Name=FE5
-Start=20
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Eating less due to resource constraints in past year
-Name=FE5_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=Running out of food due to resource constraints
-Name=FE6
-Start=21
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Running out of food due to resource constraints
-Name=FE6_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=Hunger without eating due to resource constraints
-Name=FE7
-Start=22
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Hunger without eating due to resource constraints
-Name=FE7_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Item]
-Label=Going without eating for a whole day due to resource constraints in past year
-Name=FE8
-Start=23
-Len=1
-DataType=Numeric
-ZeroFill=Yes
-
-[ValueSet]
-Label=Going without eating for a whole day due to resource constraints in past year
-Name=FE8_VS1
-Value=1;YES
-Value=2;NO
-Value=8;DK
-Value=9;NO RESPONSE
-
-[Record]
 Label=Water and Sanitation
 Name=MODWS
 RecordTypeValue='0WS'
@@ -3896,13 +3014,8 @@ Value=14;PIPED WATER: PUBLIC TAP / STANDPIPE
 Value=21;TUBE WELL / BOREHOLE
 Value=31;DUG WELL: PROTECTED WELL
 Value=32;DUG WELL: UNPROTECTED WELL
-Value=41;SPRING: PROTECTED SPRING
-Value=42;SPRING: UNPROTECTED SPRING
-Value=51;RAINWATER
-Value=61;TANKER-TRUCK
 Value=71;CART WITH SMALL TANK
-Value=72;WATER KIOSK
-Value=81;SURFACE WATER (RIVER, DAM, LAKE, POND, STREAM, CANAL, IRRIGATION CHANNEL)
+Value=81;SURFACE WATER (RIVER, LAKE, STREAM)
 Value=91;PACKAGED WATER: BOTTLED WATER
 Value=92;PACKAGED WATER: SACHET WATER
 Value=93;LARGE BOTTLE / DISPENSER REFILL
@@ -3927,13 +3040,8 @@ Value=14;PIPED WATER: PUBLIC TAP / STANDPIPE
 Value=21;TUBE WELL / BOREHOLE
 Value=31;DUG WELL: PROTECTED WELL
 Value=32;DUG WELL: UNPROTECTED WELL
-Value=41;SPRING: PROTECTED SPRING
-Value=42;SPRING: UNPROTECTED SPRING
-Value=51;RAINWATER
-Value=61;TANKER-TRUCK
 Value=71;CART WITH SMALL TANK
-Value=72;WATER KIOSK
-Value=81;SURFACE WATER (RIVER, DAM, LAKE, POND, STREAM, CANAL, IRRIGATION CHANNEL)
+Value=81;SURFACE WATER (RIVER, LAKE, STREAM)
 Value=96;OTHER
 Value=99;NO RESPONSE
 
@@ -4270,13 +3378,9 @@ Value=14;PIPED WATER: PUBLIC TAP / STANDPIPE
 Value=21;TUBE WELL / BOREHOLE
 Value=31;DUG WELL: PROTECTED WELL
 Value=32;DUG WELL: UNPROTECTED WELL
-Value=41;SPRING: PROTECTED SPRING
-Value=42;SPRING: UNPROTECTED SPRING
 Value=51;RAINWATER
-Value=61;TANKER-TRUCK
 Value=71;CART WITH SMALL TANK
-Value=72;WATER KIOSK
-Value=81;SURFACE WATER (RIVER, DAM, LAKE, POND, STREAM, CANAL, IRRIGATION CHANNEL)
+Value=81;SURFACE WATER (RIVER, LAKE, STREAM)
 Value=91;PACKAGED WATER: BOTTLED WATER
 Value=92;PACKAGED WATER: SACHET WATER
 Value=93;LARGE BOTTLE / DISPENSER REFILL
@@ -4329,16 +3433,10 @@ Name=WS11_VS1
 Value=11;FLUSH / POUR FLUSH: PIPED SEWER SYSTEM
 Value=12;FLUSH / POUR FLUSH: SEPTIC TANK
 Value=13;FLUSH / POUR FLUSH: PIT / CESSPOOL
-Value=14;FLUSH / POUR FLUSH: OPEN DRAIN
 Value=18;FLUSH / POUR FLUSH: DK WHERE
 Value=21;PIT LATRINE: VENTILATED IMPROVED PIT LATRINE (WITH SLAB)
-Value=22;PIT LATRINE: SINGLE PIT LATRINE WITH SLAB
-Value=24;PIT LATRINE: TWIN PIT LATRINE WITH SLAB
+Value=22;PIT LATRINE: PIT LATRINE WITH SLAB
 Value=23;PIT LATRINE: PIT LATRINE WITHOUT SLAB / OPEN PIT
-Value=31;COMPOSTING TOILET
-Value=32;CONTAINER BASED SANITATION
-Value=41;BUCKET
-Value=51;HANGING TOILET / HANGING LATRINE
 Value=95;NO FACILITY / BUSH / FIELD
 Value=96;OTHER
 Value=99;NO RESPONSE
@@ -4472,9 +3570,8 @@ ZeroFill=Yes
 [ValueSet]
 Label=Entity responsible for the last emptying of water source
 Name=WS12A_VS1
-Value=11;SERVICE PROVIDER: PUBLIC / MUNICIPALITY / GOVERNMENT
-Value=12;SERVICE PROVIDER: PRIVATE COMPANY / NGO
-Value=13;SERVICE PROVIDER: INFORMAL EMPTIER (E.G., UNLICENSED)
+Value=11;SERVICE PROVIDER: MUNICIPALITIES/COUNCILS
+Value=12;SERVICE PROVIDER: PRIVATE COMPANY
 Value=21;NOT SERVICE PROVIDER: SELF EMPTIED
 Value=22;NOT SERVICE PROVIDER: NEIGHBOUR, FAMILY MEMBER, FRIEND
 Value=96;OTHER
@@ -4588,8 +3685,8 @@ ZeroFill=Yes
 [ValueSet]
 Label=Place where household members most often wash their hands
 Name=HW1_VST
-Value=1;OBSERVED: FIXED FACILITY OBSERVED (SINK / TAP) IN DWELLING
-Value=2;OBSERVED: FIXED FACILITY OBSERVED (SINK / TAP) IN YARD /PLOT
+Value=1;OBSERVED: FIXED FACILITY OBSERVED (SINK / TAP/ TIPPY-TAP) IN DWELLING
+Value=2;OBSERVED: FIXED FACILITY OBSERVED (SINK / TAP / TIPPY-TAP) IN YARD /PLOT
 Value=3;OBSERVED: MOBILE OBJECT (BUCKET / JUG / KETTLE)
 Value=4;NOT OBSERVED: NO HANDWASHING PLACE IN DWELLING / YARD / PLOT
 Value=5;NOT OBSERVED: NO PERMISSION TO SEE
@@ -5234,13 +4331,8 @@ Value=14;PIPED WATER: PUBLIC TAP / STANDPIPE
 Value=21;TUBE WELL / BOREHOLE
 Value=31;DUG WELL: PROTECTED WELL
 Value=32;DUG WELL: UNPROTECTED WELL
-Value=41;SPRING: PROTECTED SPRING
-Value=42;SPRING: UNPROTECTED SPRING
-Value=51;RAINWATER
-Value=61;TANKER-TRUCK
 Value=71;CART WITH SMALL TANK
-Value=72;WATER KIOSK
-Value=81;SURFACE WATER (RIVER, DAM, LAKE, POND, STREAM, CANAL, IRRIGATION CHANNEL)
+Value=81;SURFACE WATER (RIVER, LAKE, STREAM)
 Value=91;PACKAGED WATER: BOTTLED WATER
 Value=92;PACKAGED WATER: SACHET WATER
 Value=93;LARGE BOTTLE / DISPENSER REFILL
