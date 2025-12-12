@@ -1806,7 +1806,7 @@ postproc
 	endif;
 
 PROC FL18
-skip to FL21D;
+//skip to FL21D; 
 
 PROC FL19INTRO
 preproc
@@ -2272,7 +2272,7 @@ preproc
 	words(70) = FL19W70;
 	words(71) = FL19W71;
 	words(72) = FL19W72;
-	words(73) = FL19W73;
+	{words(73) = FL19W73;
 	words(74) = FL19W74;
 	words(75) = FL19W75;
 	words(76) = FL19W76;
@@ -2286,7 +2286,7 @@ preproc
 	words(84) = FL19W84;
 	words(85) = FL19W85;
 	words(86) = FL19W86;
-  
+ }
 	n = 0;
 	do i = 1 while i <= ST1WNUM
 		if words(i) <> "!" then n = n + 1; endif;  
@@ -2301,12 +2301,12 @@ preproc
 		if words(i) = "1" then n = n + 1; endif;  
 	enddo;
 	$ = n + ST1WNUM - FL20A;
-
+{
 PROC FL19END
 	if FL20B >= int(ST1WNUM/10)+1 then
 		skip to FL21D
 	endif;
-
+}
 PROC FL21BA
 onfocus
 	clean_labels();
@@ -2408,12 +2408,13 @@ if visualvalue (FSFLTSTMPE) = notappl then
    FSFLTSTMPE = timestamp (); 
    endif; 
 PROC FL23A
+{
 preproc
 	if FL21H <> 1 or FL21J = 1 or FL21L = 1 then
 		ST2LANG = 0;
 		ST2WNUM = notappl;
 	endif;
-
+}
 PROC FL23B
 if FL23A = 3 and $ = 3 then
 	FL23C = 3;
