@@ -107,12 +107,12 @@ PROC GLOBAL
 		elseif selection = 7 then    
 			move to FORMTN advance;
 		elseif selection = 8 then    
-			move to FORMST advance;
-		elseif selection = 9 then
-			move to FORMPE advance;
-		elseif selection = 10 then
-			move to FORMFE advance;
-		elseif selection = 11 then
+			//move to FORMST advance;
+		//elseif selection = 9 then
+			//move to FORMPE advance;
+		//elseif selection = 10 then
+			//move to FORMFE advance;
+		//elseif selection = 11 then
 			move to FORMWS advance;	  
 		elseif selection = 12 then
 			move to FORMWS2 advance;	  
@@ -386,10 +386,10 @@ PROC GLOBAL
    // HHFETSTMPS = timestamp (); 
    // endif; 
    
-postproc
+{postproc
 if visualvalue(HHFETSTMPE) = notappl then
    HHFETSTMPE = timestamp (); 
-   endif; 
+   endif; }
 // PROC FORMPE
 // preproc
 // if visualvalue(HHPETSTMPS) = notappl then
@@ -416,10 +416,10 @@ if visualvalue(HHFETSTMPE) = notappl then
 		// savepartial();
 	// endif;
 	
-postproc
+{postproc
 if $ <> 1 then
 	skip to PE3;
-endif;	
+endif;}
 // PROC PE12
 // if $ <> 1 then
 	// skip to PE15;
@@ -593,6 +593,7 @@ endif;
 // elseif $ = 2 then    worklabel=tr("number of years")
 // else                 worklabel="98 DK /99 NO RESPONSE"
 // endif;
+
 PROC FL_ENTRYHH
 preproc
   
