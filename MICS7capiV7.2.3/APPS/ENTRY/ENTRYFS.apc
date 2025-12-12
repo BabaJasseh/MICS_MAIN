@@ -88,8 +88,8 @@ PROC GLOBAL
 		elseif selection = 10 then    
 			move to FORMFL3 advance;
 		elseif selection = 11 then
-			move to FORMFL4 advance;
-		elseif selection = 12 then
+			//move to FORMFL4 advance;
+		//elseif selection = 12 then
 			move to FORMFL5 advance;
 		elseif selection = 13 then
 			move to FORMEND advance;
@@ -244,7 +244,7 @@ PROC GLOBAL
 		dayOfWeek = diff % 7 + 1;
 	end;
 	
-PROC FL10C
+{PROC FL10C
 if $ = 11 then
 	ST1LANG = 11;
 elseif $ = 12 then
@@ -254,13 +254,13 @@ elseif $ = 13 then
 elseif $ = 95 then
 	ST1LANG = 95;
 	ST1WNUM = notappl;
-endif;
+endif;}
 
-if $ >= 95 then
-	skip to FL23A
-endif;
+//if $ >= 95 then
+	//skip to FL23A
+//endif;
   
-PROC FL19W73
+{PROC FL19W73
 if $  = "!" then
 	skip to FL20A;
 endif;
@@ -323,9 +323,9 @@ endif;
 PROC FL19W85
 if $  = "!" then
 	skip to FL20A;
-endif;
+endif;}
 
-PROC FL21D
+{PROC FL21D
 preproc
 	if FL14 = 2 or FL16 = 1 or FL18 = 1 then
 		ST1LANG = 0;
@@ -446,9 +446,9 @@ skip to FL23A;
 PROC FL21OEND
 	if FL21PB >= int(ST2WNUM/10)+1 then
 		skip to FL23A
-	endif;
+	endif;//}
 
-PROC FL21OINTRO
+{PROC FL21OINTRO
 preproc
 	if addmode then
 		savepartial();
@@ -977,7 +977,7 @@ onfocus
 		labels(2) = tr("INCORRECT");
 		labels(3) = tr("NO RESPONSE / SAYS 'I DON'T KNOW'");	  
 		labels(4) = tr("NO RESPONSE");	
-	SetValueSet( @GetSymbol(), codes, labels );
+	SetValueSet( @GetSymbol(), codes, labels );}
 
 {
 PROC FTU10
@@ -1142,6 +1142,22 @@ else
    protect(FTU10,false);
    skip to FTU10;
 endif;   }
+{PROC FORMFTU
+preproc;
+if visualvalue (FSFTUTSTMPS) = notappl then
+   FSFTUTSTMPS = timestamp (); 
+   endif; 
+   
+   
+	if !CB3 in 10:14 then
+		endgroup;
+	endif;
+
+postproc;
+if visualvalue (FSFTUTSTMPE) = notappl then
+   FSFTUTSTMPE = timestamp (); 
+   endif; }
+   
 PROC FL_ENTRYFS
 preproc
 	//Initializing global variables
@@ -1592,22 +1608,6 @@ if $ in 3,4 then
 	skip to FCF16
 endif;
 
-PROC FORMFTU
-preproc;
-if visualvalue (FSFTUTSTMPS) = notappl then
-   FSFTUTSTMPS = timestamp (); 
-   endif; 
-   
-   
-	if !CB3 in 10:14 then
-		endgroup;
-	endif;
-
-postproc;
-if visualvalue (FSFTUTSTMPE) = notappl then
-   FSFTUTSTMPE = timestamp (); 
-   endif; 
-   
 PROC FORMPR
 preproc
 if visualvalue (FSPRTSTMPS) = notappl then
