@@ -2174,9 +2174,9 @@ ZeroFill=Yes
 [ValueSet]
 Label=Ever fathered a child
 Name=MCM1_VST
-Value=1;YES
-Value=2;NO
-Value=8;DK
+Value=1;YES|OUI|نعم
+Value=2;NO|NON|لا
+Value=8;DK|NSP|لا أعرف
 
 [Item]
 Label=Any sons or daughters living with you
@@ -2189,8 +2189,8 @@ ZeroFill=Yes
 [ValueSet]
 Label=Any sons or daughters living with you
 Name=MCM2_VST
-Value=1;YES
-Value=2;NO
+Value=1;YES|OUI|نعم
+Value=2;NO|NON|لا
 
 [Item]
 Label=Sons living with you
@@ -2229,8 +2229,8 @@ ZeroFill=Yes
 [ValueSet]
 Label=Any sons or daughters not living with you
 Name=MCM5_VST
-Value=1;YES
-Value=2;NO
+Value=1;YES|OUI|نعم
+Value=2;NO|NON|لا
 
 [Item]
 Label=Sons living elsewhere
@@ -2269,8 +2269,8 @@ ZeroFill=Yes
 [ValueSet]
 Label=Ever had child who later died
 Name=MCM8_VST
-Value=1;YES
-Value=2;NO
+Value=1;YES|OUI|نعم
+Value=2;NO|NON|لا
 
 [Item]
 Label=Boys dead
@@ -2322,8 +2322,8 @@ ZeroFill=Yes
 [ValueSet]
 Label=Confirm total number of children ever fathered
 Name=MCM12_VST
-Value=1;YES
-Value=2;NO
+Value=1;YES|OUI|نعم
+Value=2;NO|NON|لا
 
 [Item]
 Label=Same biological mother
@@ -2335,9 +2335,9 @@ DataType=Numeric
 [ValueSet]
 Label=Same biological mother
 Name=MCM15_VST
-Value=1;YES
-Value=2;NO
-Value=9;NO RESPONSE
+Value=1;YES|OUI|نعم
+Value=2;NO|NON|لا
+Value=9;NO RESPONSE|NON REPONSE|لا توجد اجابة
 
 [Item]
 Label=Number of women respondent fathered children with
@@ -2351,7 +2351,7 @@ ZeroFill=Yes
 Label=Number of women respondent fathered children with
 Name=MCM16_VST
 Value=2:15
-Value=99;NO RESPONSE
+Value=99;NO RESPONSE|NON REPONSE|لا توجد اجابة
 
 [Item]
 Label=Age when first child was born
@@ -2364,7 +2364,7 @@ DataType=Numeric
 Label=Age when first child was born
 Name=MCM17_VST
 Value=10:80
-Value=99;NO RESPONSE
+Value=99;NO RESPONSE|NON REPONSE|لا توجد اجابة
 
 [Item]
 Label=Date of last birth
@@ -2386,19 +2386,19 @@ ZeroFill=Yes
 [ValueSet]
 Label=Month of last birth
 Name=MCM18M_VST
-Value=1;JANUARY
-Value=2;FEBRUARY
-Value=3;MARCH
-Value=4;APRIL
-Value=5;MAY
-Value=6;JUNE
-Value=7;JULY
-Value=8;AUGUST
-Value=9;SEPTEMBER
-Value=10;OCTOBER
-Value=11;NOVEMBER
-Value=12;DECEMBER
-Value=99;NO RESPONSE
+Value=1;JANUARY|JANVIER|يناير
+Value=2;FEBRUARY|FÉVRIER|فبراير
+Value=3;MARCH|MARS|مارس
+Value=4;APRIL|AVRIL|ابريل
+Value=5;MAY|MAI|مايو
+Value=6;JUNE|JUIN|يونيو
+Value=7;JULY|JUILLET|يوليو
+Value=8;AUGUST|AOUT|أغسطس
+Value=9;SEPTEMBER|SEPTEMBRE|سبتمبر
+Value=10;OCTOBER|OCTOBRE|أكتوبر
+Value=11;NOVEMBER|NOVEMBRE|نوفمبر
+Value=12;DECEMBER|DECEMBRE|ديسمبر
+Value=99;NO RESPONSE|NON REPONSE|لا توجد اجابة
 
 [Item]
 Label=Year of last birth
@@ -2413,7 +2413,7 @@ ZeroFill=Yes
 Label=Year of last birth
 Name=MCM18Y_VST
 Value=1978:2018
-Value=9999;NO RESPONSE
+Value=9999;NO RESPONSE|NON REPONSE|لا توجد اجابة
 
 [Record]
 Label=Attitudes Toward Domestic Violence
@@ -2750,7 +2750,7 @@ Value=2;NO
 Label=Time Stamps of the Women Questionnaire Modules
 Name=MODMNTS
 RecordTypeValue='MTS'
-RecordLen=270
+RecordLen=255
 
 [Item]
 Label=Timestamp of start of MN Questionnaire - Man’s information panel
@@ -2910,12 +2910,4 @@ Len=15
 DataType=Numeric
 Decimal=2
 DecimalChar=Yes
-ZeroFill=Yes
-
-[Item]
-Label=MWMMMHTSTMPS
-Name=MWMMMHTSTMPS
-Start=256
-Len=15
-DataType=Numeric
 ZeroFill=Yes

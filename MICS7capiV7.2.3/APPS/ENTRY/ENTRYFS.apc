@@ -979,7 +979,7 @@ onfocus
 		labels(4) = tr("NO RESPONSE");	
 	SetValueSet( @GetSymbol(), codes, labels );
 
-
+{
 PROC FTU10
 preproc;
 if FTU9X=1 then
@@ -1141,7 +1141,7 @@ else
    protect(FTU9,true);
    protect(FTU10,false);
    skip to FTU10;
-endif;   
+endif;   }
 PROC FL_ENTRYFS
 preproc
 	//Initializing global variables
@@ -1699,7 +1699,7 @@ preproc
 	elseif ED4(FS3) = 1 then
 		forFL9=2;
 	endif;	
-
+{
 	if (ED9(FS3) <> 1 and ED4(FS3) <> 1) then
 		if FL7 >= 21 then
 			skip to FL10C
@@ -1716,7 +1716,7 @@ postproc
 	
 	if $ >= 21 and FL7 >= 21 then
 		skip to FL10C;
-	endif;
+	endif;}
 PROC FL10
 onfocus
 	if (ED9(FS3) = 1 or (ED9(FS3) <> 1 and ED4(FS3) = 1)) then
@@ -1748,12 +1748,12 @@ preproc
 	if CB3 >= 10 and ED9(FS3) = 1 then
 		skip to FL19INTRO;
 	endif;
-
+{
 PROC FL14
 if $ <> 1 then
 	skip to FL21D;
 endif;
-
+}
 PROC FL15
 onfocus
 	clean_labels();
