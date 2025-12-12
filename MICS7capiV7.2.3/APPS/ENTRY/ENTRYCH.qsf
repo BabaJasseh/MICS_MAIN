@@ -1695,11 +1695,11 @@ questions:
       - logic: chsex=1
         questionText:
           ENG: |
-            <b>IM30.</b> Has ~~<i>UF3N</i>~~ ever received the DTP Booster vaccination, that is, an injection in the right upper thigh at the age of 1 year or older to prevent him from getting diphtheria, tetanus, pertussis?&nbsp;<p></p>
+            <b>IM30.</b> Has ~~UF3N~~ ever received the DTP Booster vaccination, that is, an injection in the right upper thigh at the age of 1 year or older to prevent him from getting diphtheria, tetanus, pertussis?&nbsp;<p></p>
       - logic: chsex=2
         questionText:
           ENG: |
-            <b>IM30.</b>&nbsp;Has ~~<i>UF3N</i>~~ ever received the DTP Booster vaccination, that is, an injection in the right upper thigh at the age of 1 year or older to prevent her from getting diphtheria, tetanus, pertussis?<p></p>
+            <b>IM30.</b>&nbsp;Has ~~UF3N~~ ever received the DTP Booster vaccination, that is, an injection in the right upper thigh at the age of 1 year or older to prevent her from getting diphtheria, tetanus, pertussis?<p></p>
   - name: MICS7CH.DA1
     conditions:
       - questionText:
